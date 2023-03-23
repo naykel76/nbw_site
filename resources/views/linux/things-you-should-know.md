@@ -1,15 +1,15 @@
 # Things You Should Know in Linux to Have a Fighting Chance
 
-<p class="lead">Disclaimer: These notes are an interpretation of the concepts we are taught at university, as well as many we are not. As much as I would like to think I have everything right I can not guarantee it, so do yourself a favour and check for yourself.</p>
+<p class="bx warning-light lead">Disclaimer: These notes are an interpretation of the concepts we are taught at university, as well as many we are not. As much as I would like to think I have everything right I can not guarantee it, so do yourself a favour and check for yourself.</p>
 
 <!-- MarkdownTOC -->
 
 - [What is the shell?](#what-is-the-shell)
+- [General Information](#general-information)
 - [How to create a new user](#how-to-create-a-new-user)
     - [How to get a list available users](#how-to-get-a-list-available-users)
     - [How to display user information and change a user password](#how-to-display-user-information-and-change-a-user-password)
-    - [\(?\) What is dash check?](#-what-is-dash-check)
-    - [Understanding id's](#understanding-ids)
+- [Understanding the id's](#understanding-the-ids)
 - [Understanding permissions](#understanding-permissions)
 - [What is the difference between `/etc/passwd` and `/etc/shaddow`?](#what-is-the-difference-between-etcpasswd-and-etcshaddow)
 
@@ -20,20 +20,27 @@
 
 The **shell** is the program that is run when the user logs in, and it provides an interface for the user to interact with the system. Bash is the default shell for most Linux distributions, 'zsh' and 'sh' are some other shells.
 
+You can run the following commands to find out information about your shell.
+
 ```bash
 # to check your default shell run:
 ps -p $$
 # or
 echo "$SHELL"
+
 # to see all available shells run:
 cat /etc/shells
 ```
 
+
+<a id="general-information"></a>
+## General Information
+
 The `/etc/shadow` file contains password information for each user account, such as the encrypted password and information about when the password was last changed. This file is only readable by the root user and is used to store sensitive information that should not be accessible to other users on the system.
 
-
-
 `/bin/cat` is a program used to display a specific file
+
+
 
 <a id="how-to-create-a-new-user"></a>
 ## How to create a new user
@@ -48,7 +55,7 @@ bob:x:1001:1001:bob,,,:/home/bob:/bin/bash
 ```
 
 <question></question>
-Why does the output look weird? What are The commas?
+Q. Why does the output look weird? What are The commas?
 <answer></answer>
 The commas are there because you were lazy and did not add any user information! Don't loose sleep
 over it because these are optional felids anyway so as long as you are ok look at ugly commas it's
@@ -70,20 +77,17 @@ The `/etc/passwd` file contains basic information about user accounts, such as t
 -rwxr-xr-x 1 root root 47480 Sep  5  2019 /usr/bin/id
 -rwsr-xr-x 1 root root 68208 Mar 14  2022 /usr/bin/passwd
 ```
-<question></question>
 
-What is the difference between `/usr/bin/passwd` and `/bin/passwd`
+<question></question>
+Q. What is the difference between `/usr/bin/passwd` and `/bin/passwd`
 
 <answer></answer>
 In most modern Linux distributions, `/bin` and `/usr/bin` are merged, and both directories contain
 the same set of binaries so both `/usr/bin/passwd` and `/bin/passwd` refer to the same command
 which is used to change the users password.
 
-<a id="-what-is-dash-check"></a>
-### (?) What is dash check?
-
 <a id="understanding-ids"></a>
-### Understanding id's
+## Understanding the id's
 
 **User IDs** are used by the system to identify users internally.
 
