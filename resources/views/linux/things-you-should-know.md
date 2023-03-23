@@ -40,8 +40,6 @@ The `/etc/shadow` file contains password information for each user account, such
 
 `/bin/cat` is a program used to display a specific file
 
-
-
 <a id="how-to-create-a-new-user"></a>
 ## How to create a new user
 

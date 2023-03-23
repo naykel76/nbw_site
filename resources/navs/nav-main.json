@@ -10,6 +10,11 @@
         "name": "Linux",
         "route_name": "linux.things-you-should-know",
         "type": "md"
+      },
+      {
+        "name": "WS1-3 Task 1",
+        "route_name": "markdown.uni.2705-WS1-3-task-1",
+        "type": "md"
       }
     ]
   },
