@@ -36,7 +36,7 @@ cat /etc/shells
 Q. Why does this matter?
 
 <answer></answer>
-The shells are all built equally, some shells have different privileges. For example, `dash` and `zsh`.
+Not all shells are all built equally, some shells have different privileges. For example, `dash` and `zsh`.
 
 
 <a id="general-information"></a>
@@ -166,3 +166,15 @@ sudo chown root some_program
 sudo chmod 4755 some_program
 ```
 
+
+
+<!-- ## What is the ($) at the beginning of some examples?
+
+This depends on the context in which it is used.
+
+$
+gcc is the actual command for invoking the GNU Compiler Collection on Unix-based systems. So, if you want to compile a C program using GCC, you would typically run the command gcc program.c in the terminal.
+
+$gcc, on the other hand, is sometimes used as a placeholder for the command prompt in tutorials or documentation. The $ symbol is often used to indicate the start of a command prompt, and $gcc would be used to indicate that the following command should be entered at the command prompt.
+
+So, in summary, if you are trying to compile a program using GCC, you would use gcc. If you see $gcc in a tutorial or documentation, it is simply indicating that the following command should be entered at the command prompt. -->

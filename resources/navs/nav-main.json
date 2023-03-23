@@ -12,8 +12,28 @@
         "type": "md"
       },
       {
+        "name": "Users and Permissions",
+        "route_name": "linux.users-and-permissions",
+        "type": "md"
+      },
+      {
         "name": "WS1-3 Task 1",
         "route_name": "markdown.uni.2705-WS1-3-task-1",
+        "type": "md"
+      },
+      {
+        "name": "WS1-3 Task 2",
+        "route_name": "markdown.uni.2705-WS1-3-task-2",
+        "type": "md"
+      },
+      {
+        "name": "WS1-3 Task 3",
+        "route_name": "markdown.uni.2705-WS1-3-task-3",
+        "type": "md"
+      },
+      {
+        "name": "WS1-3 Task 4",
+        "route_name": "markdown.uni.2705-WS1-3-task-4",
         "type": "md"
       }
     ]
