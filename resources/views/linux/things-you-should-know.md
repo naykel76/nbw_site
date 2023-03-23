@@ -32,6 +32,12 @@ echo "$SHELL"
 cat /etc/shells
 ```
 
+<question></question>
+Q. Why does this matter?
+
+<answer></answer>
+The shells are all built equally, some shells have different privileges. For example, `dash` and `zsh`.
+
 
 <a id="general-information"></a>
 ## General Information
