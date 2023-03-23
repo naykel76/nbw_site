@@ -1,0 +1,25 @@
+{
+  "main": {
+    "links": [
+      {
+        "name": "Home",
+        "route_name": "home",
+        "exclude_route": true
+      },
+      {
+        "name": "Linux",
+        "route_name": "linux.things-you-should-know",
+        "type": "md"
+      }
+    ]
+  },
+  "footer": {
+    "links": [
+      {
+        "name": "Home",
+        "route_name": "home",
+        "exclude_route": true
+      }
+    ]
+  }
+}
