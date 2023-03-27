@@ -1,5 +1,5 @@
-170.64.134.38:5901
-39****
+170.64.150.52:5901
+39**** for root and seed
 
 curl -o src-cloud.zip https://seed.nyc3.cdn.digitaloceanspaces.com/src-cloud.zip
 
@@ -19,3 +19,6 @@ Gr1F$ithP@uL
 
 Nathan
 170.64.178.88:5901
+
+
+I see

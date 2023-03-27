@@ -1,7 +1,5 @@
 # Things You Should Know in Linux to Have a Fighting Chance
 
-<p class="bx warning-light lead">Disclaimer: These notes are an interpretation of the concepts we are taught at university, as well as many we are not. As much as I would like to think I have everything right I can not guarantee it, so do yourself a favour and check for yourself.</p>
-
 <!-- MarkdownTOC -->
 
 - [What is the shell?](#what-is-the-shell)

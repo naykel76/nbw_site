@@ -1,3 +1,12 @@
+
+<!-- MarkdownTOC -->
+
+- [How can I relax Linux password requirements?](#how-can-i-relax-linux-password-requirements)
+
+<!-- /MarkdownTOC -->
+
+
+<a id="how-can-i-relax-linux-password-requirements"></a>
 ## How can I relax Linux password requirements?
 
 First of all, unless you are trying to make life easy for the black hats, it's a **terrible idea**

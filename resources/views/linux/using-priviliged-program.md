@@ -14,11 +14,12 @@ cp /bin/cat mycat
 sudo chown root mycat
 # run mycat to access /bin/shadow
 ./mycat /etc/shadow
-# output
-./mycat: /etc/shadow: Permission denied
 ```
 
+Expected output:
+
 ```bash
+./mycat: /etc/shadow: Permission denied
 # permission status:
 -rwxr-xr-x 1 root seed 43416 Mar 22 20:23 mycat
 ```
