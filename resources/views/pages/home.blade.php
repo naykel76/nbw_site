@@ -8,4 +8,16 @@
 
     <a href="{{ route('linux.things-you-should-know') }}">Things You Should Know about Linux to Have a Fighting Chance</a>
 
+    <section class="py-5-3-2">
+        <div class="container">
+            <x-gt-menu filename="nav-programming" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
+            <hr>
+        </div>
+    </section>
+
+
+    {{-- <div class="wh-10 blue flex ha-c va-c">
+        <div class="wh-3 orange"></div>
+    </div> --}}
+
 </x-gotime-app-layout>

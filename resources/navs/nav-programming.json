@@ -1,0 +1,37 @@
+{
+    "main": {
+        "links": [
+            {
+                "name": "Angular Cheatsheet",
+                "route_name": "docs.angular.angular-cheatsheet"
+            },
+            {
+                "name": "Ionic CheatSheet",
+                "route_name": "docs.ionic.ionic-cheatsheet"
+            },
+            {
+                "name": "Ionic Components",
+                "route_name": "docs.ionic.components"
+            },
+            {
+                "name": "Ionic Modal",
+                "route_name": "docs.ionic.modal"
+            },
+            {
+                "name": "CSS",
+                "route_name": "docs.css-cheatsheet",
+                "icon": "css"
+            },
+            {
+                "name": "CSS Position and Alignment Tips",
+                "route_name": "docs.css.position-and-alignment-tips",
+                "icon": "css"
+            },
+            {
+                "name": "CSS FAQ's",
+                "route_name": "docs.css-faqs",
+                "icon": "css"
+            }
+        ]
+    }
+}

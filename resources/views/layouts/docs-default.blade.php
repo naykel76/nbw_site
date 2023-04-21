@@ -12,7 +12,7 @@
 
                 <h2>{{ $menu }}</h2>
 
-                <x-gt-menu menuname="{{ $menu }}" filename="{{ $data['navJsonFile'] }}" class="menu" />
+                <x-gt-menu menuname="{{ $menu }}" filename="{{ $data['navFileName'] }}" class="menu" />
 
             @endforeach
 
@@ -26,7 +26,7 @@
 
     @elseif(!empty($data['path']))
 
-        <x-gotime-parsedown dir="views/" path="{{ $data['path'] }}" />
+        <x-gt-parsedown dir="views/" path="{{ $data['path'] }}" />
 
     @endif
 
