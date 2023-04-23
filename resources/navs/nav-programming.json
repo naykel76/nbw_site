@@ -6,6 +6,10 @@
                 "route_name": "docs.angular.angular-cheatsheet"
             },
             {
+                "name": "Angular Components",
+                "route_name": "docs.angular.components"
+            },
+            {
                 "name": "Ionic CheatSheet",
                 "route_name": "docs.ionic.ionic-cheatsheet"
             },

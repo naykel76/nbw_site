@@ -1,8 +1,26 @@
+# Modals
+
+<!-- MarkdownTOC -->
+
+- [Inline Modal](#inline-modal)
+    - [Open inline modal from a method](#open-inline-modal-from-a-method)
+- [Controller Modal](#controller-modal)
+- [Closing the modal](#closing-the-modal)
+
+<!-- /MarkdownTOC -->
+
+
+<a id="inline-modal"></a>
 ## Inline Modal
+
 
 `ion-modal` can be used by writing the component directly in your template. This reduces the number
 of handlers you need to wire up in order to present the modal.
 
+<a id="open-inline-modal-from-a-method"></a>
+### Open inline modal from a method
+
+<a id="controller-modal"></a>
 ## Controller Modal
 
 Create the modal page and remove the automatically created route. For this example, we are going
@@ -12,19 +30,22 @@ to create a user-profile modal.
 ionic generate page user-profile
 ```
 
-### 1. Import the newly crated `UserProfilePage` and `ModalController`
+<a id="1-import-the-newly-crated-userprofilepage-and-modalcontroller"></a>
+##### 1. Import the newly crated `UserProfilePage` and `ModalController`
 
 ```js
 import { ModalController } from '@ionic/angular';
 import { UserPage } from './user/user.page';
 ```
 
-### 2. Inject the `ModalController` into the constructor
+<a id="2-inject-the-modalcontroller-into-the-constructor"></a>
+##### 2. Inject the `ModalController` into the constructor
 
 Injecting the ModalController into the `page.ts` constructor gives us access to the
 `ModalController` within the class.
 
-### 3. Create an async method to display the modal passing in the `component` and `componentProps`
+<a id="3-create-an-async-method-to-display-the-modal-passing-in-the-component-and-componentprops"></a>
+##### 3. Create an async method to display the modal passing in the `component` and `componentProps`
 
 The `component` parameter defines the page/component that will be displayed in the modal
 
@@ -51,7 +72,8 @@ async editProfile() {
 ```
 
 
-### Call the modal with a click event
+<a id="call-the-modal-with-a-click-event"></a>
+##### Call the modal with a click event
 
 ```html
 <ion-tab-button (click)="editProfile()">
@@ -60,6 +82,7 @@ async editProfile() {
 ```
 
 
+<a id="closing-the-modal"></a>
 ## Closing the modal
 
 `*.ts`
