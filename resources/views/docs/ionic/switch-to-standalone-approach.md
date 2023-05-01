@@ -34,5 +34,3 @@ If you want to permanently enable standalone components in your Ionic applicatio
 
 more info https://ionic.io/blog/ionic-cli-v7
 
-
-

@@ -15,3 +15,4 @@ In this case, `@ViewChild(IonModal) modal: IonModal;` is declaring a property ca
 `IonModal` component and its properties and methods.
 
 
+
