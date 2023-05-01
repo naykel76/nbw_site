@@ -10,16 +10,8 @@
                 "route_name": "docs.angular.components"
             },
             {
-                "name": "Ionic CheatSheet",
-                "route_name": "docs.ionic.ionic-cheatsheet"
-            },
-            {
-                "name": "Ionic Components",
-                "route_name": "docs.ionic.components"
-            },
-            {
-                "name": "Ionic Modal",
-                "route_name": "docs.ionic.modal"
+                "name": "Angular Routing",
+                "route_name": "docs.angular.routing"
             },
             {
                 "name": "CSS",
@@ -35,6 +27,23 @@
                 "name": "CSS FAQ's",
                 "route_name": "docs.css-faqs",
                 "icon": "css"
+            },
+            {
+                "name": "Ionic CheatSheet",
+                "route_name": "docs.ionic.ionic-cheatsheet"
+            },
+            {
+                "name": "Ionic Components",
+                "route_name": "docs.ionic.components"
+            },
+            {
+                "name": "Ionic Modal",
+                "route_name": "docs.ionic.modal"
+            },
+            {
+                "name": "Javascript Arrays",
+                "route_name": "docs.javascript.arrays",
+                "icon": "javascript"
             }
         ]
     }

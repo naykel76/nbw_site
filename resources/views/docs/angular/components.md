@@ -1,6 +1,6 @@
 # Components
 
-## Pass data from child to parent
+## Fire parent event from child component
 
 ##### In the child component
 
@@ -24,8 +24,6 @@ export class ChildComponent {
 ##### In the parent component
 
 ```html
-<!-- myMessage, is the @output from child -->
-<!-- getChildData, is the method on the parent component -->
 <!-- $event is the data??? -->
 <my-component (myMessage)="getChildData($event)"></my-component>
 ```

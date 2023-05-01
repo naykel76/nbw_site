@@ -1,18 +1,17 @@
 ionic-components-cheatsheet
 
+## `@ViewChild`
 
-## ion-button
+`@ViewChild` is a decorator that is used to access a child component or element in the parent component.
 
-https://ionicframework.com/docs/api/button
+```js
+import { ViewChild } from '@angular/core';
 
-```html
-<ion-button expand="block|full"></ion-button>
-<ion-button color="primary|secondary|tertiary|success|warning|danger|light|medium|dark"></ion-button>
-<ion-button fill="clear|outline|solid"> </ion-button>
-<ion-button shape="round"></ion-button>
-<ion-button size="small|default|large"> </ion-button>
-
-<ion-button>
-    <ion-icon slot="end|start|icon-only" name="search"></ion-icon>
-</ion-button>
+@ViewChild(IonModal) modal: IonModal;
 ```
+
+In this case, `@ViewChild(IonModal) modal: IonModal;` is declaring a property called `modal` of type
+`IonModal` that is decorated with `@ViewChild`. This allows the parent component to access the
+`IonModal` component and its properties and methods.
+
+

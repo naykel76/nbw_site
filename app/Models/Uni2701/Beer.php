@@ -10,4 +10,5 @@ class Beer extends Model
     use HasFactory;
 
     public $timestamps = false;
+
 }

@@ -4,6 +4,7 @@ ionic-components-cheatsheet
 - [ion-list](#ion-list)
 
 
+
 ## ion-button
 
 https://ionicframework.com/docs/api/button
@@ -20,8 +21,8 @@ https://ionicframework.com/docs/api/button
 </ion-button>
 ```
 
-
 ## ion-list
+
 ```html
 <ion-list #item>
   <ion-item-sliding *ngFor="let contact of contacts; index as i">
@@ -39,3 +40,4 @@ https://ionicframework.com/docs/api/button
   </ion-item-sliding>
 </ion-list>
 ```
+

@@ -12,7 +12,13 @@ import { Component, Input } from '@angular/core';
 
 export class MyCustomComponent {
 
-    @Input() title?: String;
+    @Input() myProperty?: String;
 
 }
 ```
+
+```html
+<nk-header-create myProperty="value" (runCreate)="create($event)" />
+```
+
+import { Component, Input, Output, EventEmitter } from '@angular/core';

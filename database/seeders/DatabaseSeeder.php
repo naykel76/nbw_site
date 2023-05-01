@@ -13,15 +13,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
 
-        $this->call(BeerSeeder::Class);
-        $this->call(VenueSeeder::Class);
-        $this->call(MyBeerSeeder::Class);
+        // create a list of items available in the items list
+        // \App\Models\Uni2701\MyBeer::factory(10)->create();
 
-        // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call(Uni2701Seeder::Class);
     }
 }

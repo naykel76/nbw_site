@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('my_beers', function (Blueprint $table) {
             $table->id();
-            $table->string('beer');
+            $table->boolean('is_favourite');
+            $table->foreignId('beer_id')->constrained();
         });
     }
 

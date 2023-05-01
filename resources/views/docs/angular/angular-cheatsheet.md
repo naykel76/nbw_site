@@ -9,6 +9,8 @@
 
 ## `ngIf`
 
+    <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
+
 ```html
 <div *ngIf="condition">Content to render when condition is true.</div>
 ```

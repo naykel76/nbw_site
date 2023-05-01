@@ -16,8 +16,7 @@
     </section>
 
 
-    {{-- <div class="wh-10 blue flex ha-c va-c">
-        <div class="wh-3 orange"></div>
-    </div> --}}
+
+
 
 </x-gotime-app-layout>
