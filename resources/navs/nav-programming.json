@@ -41,6 +41,10 @@
                 "route_name": "docs.ionic.modal"
             },
             {
+                "name": "Ionic Switch To Standalone Components",
+                "route_name": "docs.ionic.switch-to-standalone-approach"
+            },
+            {
                 "name": "Javascript Arrays",
                 "route_name": "docs.javascript.arrays",
                 "icon": "javascript"

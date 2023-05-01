@@ -6,7 +6,7 @@
 
     <hr>
 
-    <a href="{{ route('linux.things-you-should-know') }}">Things You Should Know about Linux to Have a Fighting Chance</a>
+    {{-- <a href="{{ route('linux.things-you-should-know') }}">Things You Should Know about Linux to Have a Fighting Chance</a> --}}
 
     <section class="py-5-3-2">
         <div class="container">

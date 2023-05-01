@@ -15,32 +15,8 @@
                 "name": "Linux",
                 "route_name": "linux.things-you-should-know",
                 "type": "md"
-            },
-            {
-                "name": "Set UID Approach",
-                "route_name": "linux.set-uid-approach",
-                "type": "md"
-            },
-            {
-                "name": "Steal a Shell",
-                "route_name": "linux.stealing-a-shell",
-                "type": "md"
-            },
-            {
-                "name": "Users and Permissions",
-                "route_name": "linux.users-and-permissions",
-                "type": "md"
-            },
-            {
-                "name": "Priviliged Programs",
-                "route_name": "linux.using-priviliged-program",
-                "type": "md"
-            },
-            {
-                "name": "WS1-3 Task 4",
-                "route_name": "markdown.uni.2705-WS1-3-task-4",
-                "type": "md"
             }
+
         ]
     },
     "footer": {
