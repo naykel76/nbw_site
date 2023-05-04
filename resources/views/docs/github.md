@@ -6,14 +6,14 @@
 - [GIT Branches](#git-branches)
 - [Repositories](#repositories)
 - [Commit and Push](#commit-and-push)
-  - [How to change commit message](#how-to-change-commit-message)
+    - [How to change commit message](#how-to-change-commit-message)
 - [Git Merge, Squash, Rebase and Conflicts](#git-merge-squash-rebase-and-conflicts)
-  - [Merge changes and into a single commit. `--squash`](#merge-changes-and-into-a-single-commit---squash)
+    - [Merge changes and into a single commit. `--squash`](#merge-changes-and-into-a-single-commit---squash)
 - [Create and Modify Repositories](#create-and-modify-repositories)
 - [GIT Stash](#git-stash)
 - [Releases \& Version Tags](#releases--version-tags)
 - [Creating Alias](#creating-alias)
-  - [Create Alias to Clone Repo](#create-alias-to-clone-repo)
+    - [Create Alias to Clone Repo](#create-alias-to-clone-repo)
 
 <!-- /MarkdownTOC -->
 
@@ -124,19 +124,15 @@ git remote -v                                       # Check repo location
 <a id="git-stash"></a>
 ## GIT Stash
 
-| Category | Action                 | Command          |
-| :------- | :--------------------- | :--------------- |
-| Stash    | Stash changes          | `git stash`      |
-| Stash    | Get changes from stash | `git stash pop`  |
-| Stash    | Show stash list        | `git stash list` |
-| Stash    | Show changes in stash  | `git stash show` |
 
-git stash drop [-q|--quiet][<stash>]
-git stash clear
-git stash create [<message>]
-git stash store [-m|--message <message>][-q|--quiet] <commit>
-
-Put in stash: git stash save 'Message'
+<div class="code-first-col"></div>
+| Command         | Action                 |
+| :-------------- | :--------------------- |
+| git stash       | Stash changes          |
+| git stash pop   | Get changes from stash |
+| git stash list  | Show stash list        |
+| git stash show  | Show changes in stash  |
+| git stash clear |                        |
 
 
 <a id="releases--version-tags"></a>
