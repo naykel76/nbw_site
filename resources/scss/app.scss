@@ -49,6 +49,53 @@
 }
 
 // make the first column in the table body code font
+
+.code-first-col,
+.code-second-col,
+.code-all-col {
+    + table tbody {
+        margin-top: $content-gap;
+        font-size: 0.85em;
+        tr td:first-child {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            color: #f0506e;
+            border-radius: 0.25rem;
+        }
+    }
+}
+
+.code-all-col {
+    + table tbody {
+        td {
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            color: #f0506e;
+            border-radius: 0.25rem;
+        }
+    }
+}
+
+// code-first-col + table,
+// .code-first-col + table {
+//     margin-top: $content-gap;
+//     tbody {
+//         font-size: 0.85em;
+//         tr td:first-child {
+//             font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+//             color: #f0506e;
+//             border-radius: 0.25rem;
+//         }
+//     }
+// }
+// .code-second-col + table tbody {
+//     font-size: 0.85em;
+//     tr td:nth-child(2) {
+//         font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+//         color: #f0506e;
+//         border-radius: 0.25rem;
+//     }
+// }
+
+// make the first column in the table body code font
 question {
     + * {
         margin-top: 2rem;

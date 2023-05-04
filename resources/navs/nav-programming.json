@@ -3,15 +3,18 @@
         "links": [
             {
                 "name": "Angular Cheatsheet",
-                "route_name": "docs.angular.angular-cheatsheet"
+                "route_name": "docs.angular.angular-cheatsheet",
+                "icon": "angular"
             },
             {
                 "name": "Angular Components",
-                "route_name": "docs.angular.components"
+                "route_name": "docs.angular.components",
+                "icon": "angular"
             },
             {
                 "name": "Angular Routing",
-                "route_name": "docs.angular.routing"
+                "route_name": "docs.angular.routing",
+                "icon": "angular"
             },
             {
                 "name": "CSS",
@@ -29,29 +32,72 @@
                 "icon": "css"
             },
             {
-                "name": "Ionic CheatSheet",
-                "route_name": "docs.ionic.ionic-cheatsheet"
-            },
-            {
-                "name": "Ionic Components",
-                "route_name": "docs.ionic.components"
-            },
-            {
-                "name": "Ionic Modal",
-                "route_name": "docs.ionic.modal"
-            },
-            {
-                "name": "Ionic Storage",
-                "route_name": "docs.ionic.storage"
-            },
-            {
-                "name": "Ionic Switch To Standalone Components",
-                "route_name": "docs.ionic.switch-to-standalone-approach"
+                "name": "Github",
+                "route_name": "docs.github",
+                "icon": "github"
             },
             {
                 "name": "Javascript Arrays",
                 "route_name": "docs.javascript.arrays",
                 "icon": "javascript"
+            },
+            {
+                "name": "Laravel",
+                "route_name": "docs.laravel.laravel",
+                "icon": "laravel",
+                "exclude_route": true
+            },
+            {
+                "name": "PHP Array",
+                "route_name": "docs.php.array",
+                "icon": "php"
+            }
+        ]
+    },
+    "Ionic": {
+        "links": [
+            {
+                "name": "General Cheatsheet",
+                "route_name": "docs.ionic.ionic-cheatsheet",
+                "icon": "ionic"
+            },
+            {
+                "name": "Components",
+                "route_name": "docs.ionic.components",
+                "icon": "ionic"
+            },
+            {
+                "name": "Custom Components",
+                "route_name": "docs.ionic.custom-components",
+                "icon": "ionic"
+            },
+            {
+                "name": "Modal",
+                "route_name": "docs.ionic.modal",
+                "icon": "ionic"
+            },
+            {
+                "name": "Storage",
+                "route_name": "docs.ionic.storage",
+                "icon": "ionic"
+            },
+            {
+                "name": "Custom Component - Confirmation Modal ",
+                "route_name": "docs.ionic.custom-modal-confirmation-component",
+                "icon": "ionic"
+            },
+            {
+                "name": "Switch To Standalone Components",
+                "route_name": "docs.ionic.switch-to-standalone-approach",
+                "icon": "ionic"
+            }
+        ]
+    },
+    "other": {
+        "links": [
+            {
+                "name": "Google Maps",
+                "route_name": "docs.google-maps"
             }
         ]
     }

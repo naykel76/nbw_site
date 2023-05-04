@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ad8d1990d1bd0181f39ebfaa3ef0efc4",
+    "content-hash": "2d44d7b761229d75c2d6cd2d6587120d",
     "packages": [
         {
             "name": "brick/math",
@@ -1229,16 +1229,16 @@
         },
         {
             "name": "laravel/sanctum",
-            "version": "v3.2.4",
+            "version": "v3.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sanctum.git",
-                "reference": "c8269dcff3cda261ce113ab9548a0253d709aa91"
+                "reference": "8ebda85d59d3c414863a7f4d816ef8302faad876"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sanctum/zipball/c8269dcff3cda261ce113ab9548a0253d709aa91",
-                "reference": "c8269dcff3cda261ce113ab9548a0253d709aa91",
+                "url": "https://api.github.com/repos/laravel/sanctum/zipball/8ebda85d59d3c414863a7f4d816ef8302faad876",
+                "reference": "8ebda85d59d3c414863a7f4d816ef8302faad876",
                 "shasum": ""
             },
             "require": {
@@ -1291,7 +1291,7 @@
                 "issues": "https://github.com/laravel/sanctum/issues",
                 "source": "https://github.com/laravel/sanctum"
             },
-            "time": "2023-04-26T18:55:47+00:00"
+            "time": "2023-05-01T19:39:51+00:00"
         },
         {
             "name": "laravel/serializable-closure",
@@ -1928,16 +1928,16 @@
         },
         {
             "name": "naykel/gotime",
-            "version": "v10.0.1",
+            "version": "v0.10.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/naykel76/gotime.git",
-                "reference": "4bcf446c9053fff189316da36d67d0a51ec7f321"
+                "reference": "fee831aa6a681cf473faf30e3d90166068c64c97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/naykel76/gotime/zipball/4bcf446c9053fff189316da36d67d0a51ec7f321",
-                "reference": "4bcf446c9053fff189316da36d67d0a51ec7f321",
+                "url": "https://api.github.com/repos/naykel76/gotime/zipball/fee831aa6a681cf473faf30e3d90166068c64c97",
+                "reference": "fee831aa6a681cf473faf30e3d90166068c64c97",
                 "shasum": ""
             },
             "require": {
@@ -1984,9 +1984,9 @@
             ],
             "support": {
                 "issues": "https://github.com/naykel76/gotime/issues",
-                "source": "https://github.com/naykel76/gotime/tree/v10.0.1"
+                "source": "https://github.com/naykel76/gotime/tree/v0.10.2"
             },
-            "time": "2023-05-01T19:18:24+00:00"
+            "time": "2023-05-02T01:51:04+00:00"
         },
         {
             "name": "nesbot/carbon",

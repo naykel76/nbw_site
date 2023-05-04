@@ -11,12 +11,18 @@
     <section class="py-5-3-2">
         <div class="container">
             <x-gt-menu filename="nav-programming" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
-            <hr>
+        </div>
+        <hr>
+        <div class="container">
+            <h2>Ionic</h2>
+            <x-gt-menu filename="nav-programming" menuname="Ionic" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
+        </div>
+        <hr>
+        <div class="container">
+            <x-gt-menu filename="nav-programming" menuname="other" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
         </div>
     </section>
 
-
-
-
+    Get 100 random dates om the last 365 days
 
 </x-gotime-app-layout>

@@ -1,0 +1,22 @@
+{
+    "General": {
+        "links": [
+            {
+                "name": "Cheatsheet",
+                "route_name": "docs.laravel.laravel"
+            }
+        ]
+    },
+    "Cheatsheets": {
+        "links": [
+            {
+                "name": "Collections",
+                "route_name": "docs.laravel.collections"
+            },
+            {
+                "name": "Date Time",
+                "route_name": "docs.laravel.date-and-time"
+            }
+        ]
+    }
+}

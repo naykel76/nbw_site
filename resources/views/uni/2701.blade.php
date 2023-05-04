@@ -28,5 +28,9 @@
     <h2>Beer Venues Data</h2>
     <pre> {{ json_encode($myBeerVenues) }} </pre>
 
+    <h2>100 Random Check In</h2>
+    {{-- <pre> {{ dd($dates) }} </pre> --}}
+    <pre> {{ json_encode($dates) }} </pre>
+
 
 </x-gotime-app-layout>

@@ -3,10 +3,22 @@
 <!-- MarkdownTOC -->
 
 - [Import the storage module](#import-the-storage-module)
-- [Create new storage service](#create-new-storage-service)
+- [Create a storage service](#create-a-storage-service)
     - [Add methods to the storage service](#add-methods-to-the-storage-service)
+- [Storage service usage examples](#storage-service-usage-examples)
+- [Questions](#questions)
+        - [Can I make `StorageService` accessible globally rather than injecting each time?](#can-i-make-storageservice-accessible-globally-rather-than-injecting-each-time)
 
 <!-- /MarkdownTOC -->
+
+more information https://github.com/ionic-team/ionic-storage
+
+```bash
+# using Angular
+npm install @ionic/storage-angular
+# otherwise
+npm install @ionic/storage
+```
 
 <a id="import-the-storage-module"></a>
 ## Import the storage module
@@ -24,8 +36,8 @@ bootstrapApplication(AppComponent, {
 
 ```
 
-<a id="create-new-storage-service"></a>
-## Create new storage service
+<a id="create-a-storage-service"></a>
+## Create a storage service
 
 ```bash
 ionic g service services/storage
@@ -44,38 +56,63 @@ import { Storage } from '@ionic/storage-angular';
 })
 export class StorageService {
 
-    private _storage: Storage | null = null;
-
-    constructor(private storage: Storage) { this.init(); }
+    constructor(private storage: Storage) {
+        this.init();
+    }
 
     async init() {
-        const storage = await this.storage.create();
-        this._storage = storage;
+        await this.storage.create();
     }
 
     public async set(key: string, value: any) {
-        let result = await this._storage?.set(key, value);
+        let result = await this.storage?.set(key, value);
     }
 
     public async get(key: string) {
-        return await this._storage?.get(key);
+        return await this.storage?.get(key);
     }
 
     public async remove(key: string) {
-        let value = await this._storage?.remove(key);
+        let value = await this.storage?.remove(key);
     }
 
     public async clear(key: string) {
-        let value = await this._storage?.clear();
+        let value = await this.storage?.clear();
     }
 
     public async keys(key: string) {
-        return await this._storage?.keys();
+        return await this.storage?.keys();
     }
+
+    // await storage.length()
+    // storage.forEach((key, value, index) => { });
+    // storage.setEncryptionKey('mykey');
 }
 ```
 
+<a id="using-the-storage-service"></a>
+## Storage service usage examples
 
-    await storage.length()
-    storage.forEach((key, value, index) => { });
-    storage.setEncryptionKey('mykey');
+```js
+constructor(private storageService: StorageService) { }
+
+async ngOnInit() {
+
+    await this.storageService.get('name') === null
+        ? this.storageService.set('name', 'Paul')
+        : console.log(await this.storageService.get('name'));
+
+}
+
+async setNameToStorage() {
+    await this.storageService.set('name', 'Sam');
+}
+
+async getNameFromStorage() {
+    return await this.storageService.get('name');
+}
+```
+
+## Questions
+<a id="can-i-make-storageservice-accessible-globally-rather-than-injecting-each-time"></a>
+#### Can I make `StorageService` accessible globally rather than injecting each time?

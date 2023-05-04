@@ -12,11 +12,16 @@
                 "exclude_route": true
             },
             {
+                "name": "Laravel",
+                "route_name": "docs.laravel.laravel",
+                "type": "md",
+                "exclude_route": true
+            },
+            {
                 "name": "Linux",
                 "route_name": "linux.things-you-should-know",
                 "type": "md"
             }
-
         ]
     },
     "footer": {

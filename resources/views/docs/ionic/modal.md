@@ -3,7 +3,6 @@
 <!-- MarkdownTOC -->
 
 - [Inline Modal](#inline-modal)
-    - [Open inline modal from a method](#open-inline-modal-from-a-method)
 - [Controller Modal](#controller-modal)
 - [Closing the modal](#closing-the-modal)
 
@@ -13,12 +12,30 @@
 <a id="inline-modal"></a>
 ## Inline Modal
 
+```html
+<ion-content [fullscreen]="true" class="ion-padding">
 
-`ion-modal` can be used by writing the component directly in your template. This reduces the number
-of handlers you need to wire up in order to present the modal.
+    <ion-button id="open-modal">Open Modal</ion-button>
 
-<a id="open-inline-modal-from-a-method"></a>
-### Open inline modal from a method
+    <p>{{ message }}</p>
+
+    <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+
+        <ng-template>
+
+            <ion-content class="ion-padding"> ... </ion-content>
+
+            <ion-footer class="grid-0 cols-2">
+                <ion-button slot="end" (click)="cancel()" fill="outline">Cancel</ion-button>
+                <ion-button slot="end" (click)="confirm()" [strong]="true">Confirm</ion-button>
+            </ion-footer>
+
+        </ng-template>
+
+    </ion-modal>
+
+</ion-content>
+```
 
 <a id="controller-modal"></a>
 ## Controller Modal

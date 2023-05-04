@@ -13,7 +13,8 @@ export default defineConfig({
         {
             name: 'blade',
             handleHotUpdate({ file, server }) {
-                if (file.endsWith('.blade.php')) {
+                // if (file.endsWith('.blade.php')) {
+                if (file.endsWith('.php')) {
                     server.ws.send({
                         type: 'full-reload',
                         path: '*',

@@ -1,4 +1,6 @@
 
+To use data binding import the angular `FormsModule`
+
 ## Data binding `ngModel`
 
 **do not wrap in {{  }}**
