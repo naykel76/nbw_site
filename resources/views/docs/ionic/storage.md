@@ -1,15 +1,14 @@
 # Ionic Storage
+<a id="markdown-ionic-storage" name="ionic-storage"></a>
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
-- [Import the storage module](#import-the-storage-module)
+- [Import the storage module into main.ts](#import-the-storage-module-into-maints)
 - [Create a storage service](#create-a-storage-service)
-    - [Add methods to the storage service](#add-methods-to-the-storage-service)
 - [Storage service usage examples](#storage-service-usage-examples)
-- [Questions](#questions)
-        - [Can I make `StorageService` accessible globally rather than injecting each time?](#can-i-make-storageservice-accessible-globally-rather-than-injecting-each-time)
+    - [Setting initial values on application load](#setting-initial-values-on-application-load)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
 more information https://github.com/ionic-team/ionic-storage
 
@@ -20,8 +19,10 @@ npm install @ionic/storage-angular
 npm install @ionic/storage
 ```
 
-<a id="import-the-storage-module"></a>
-## Import the storage module
+## Import the storage module into main.ts
+<a id="markdown-import-the-storage-module-into-main.ts" name="import-the-storage-module-into-main.ts"></a>
+
+!! This may be different when using ngModules !!
 
 ```js
 // src/main.ts
@@ -36,15 +37,16 @@ bootstrapApplication(AppComponent, {
 
 ```
 
-<a id="create-a-storage-service"></a>
 ## Create a storage service
+<a id="markdown-create-a-storage-service" name="create-a-storage-service"></a>
+
+From the command line run:
 
 ```bash
 ionic g service services/storage
 ```
 
-<a id="add-methods-to-the-storage-service"></a>
-### Add methods to the storage service
+The add methods to the storage service
 
 ```js
 // src/services/storage.service.ts
@@ -90,29 +92,26 @@ export class StorageService {
 }
 ```
 
-<a id="using-the-storage-service"></a>
 ## Storage service usage examples
+<a id="markdown-storage-service-usage-examples" name="storage-service-usage-examples"></a>
+
+For all examples, make sure you import the `StorageService` and injected it into the component `constructor`.
 
 ```js
-constructor(private storageService: StorageService) { }
+import { StorageService } from './services/storage.service';
 
-async ngOnInit() {
-
-    await this.storageService.get('name') === null
-        ? this.storageService.set('name', 'Paul')
-        : console.log(await this.storageService.get('name'));
-
-}
-
-async setNameToStorage() {
-    await this.storageService.set('name', 'Sam');
-}
-
-async getNameFromStorage() {
-    return await this.storageService.get('name');
+export class SomeComponent implements OnInit {
+    constructor(private storageService: StorageService) { }
 }
 ```
 
-## Questions
-<a id="can-i-make-storageservice-accessible-globally-rather-than-injecting-each-time"></a>
-#### Can I make `StorageService` accessible globally rather than injecting each time?
+### Setting initial values on application load
+<a id="markdown-setting-initial-values-on-application-load" name="setting-initial-values-on-application-load"></a>
+
+```js
+// src/app/app.component.ts
+async ngOnInit() {
+    const name = (await this.storageService.get('name')) || 'Paul';
+    await this.storageService.set('name', name);
+}
+```

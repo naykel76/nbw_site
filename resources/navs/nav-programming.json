@@ -42,6 +42,11 @@
                 "icon": "javascript"
             },
             {
+                "name": "Javascript Operators",
+                "route_name": "docs.javascript.operators",
+                "icon": "javascript"
+            },
+            {
                 "name": "Laravel",
                 "route_name": "docs.laravel.laravel",
                 "icon": "laravel",
@@ -51,6 +56,15 @@
                 "name": "PHP Array",
                 "route_name": "docs.php.array",
                 "icon": "php"
+            },
+            {
+                "name": "PHP Conditionals",
+                "route_name": "docs.php.conditionals"
+            },
+            {
+                "name": "SQL",
+                "route_name": "docs.sql-cheatsheet",
+                "icon": "mysql"
             }
         ]
     },
@@ -69,6 +83,11 @@
             {
                 "name": "Custom Components",
                 "route_name": "docs.ionic.custom-components",
+                "icon": "ionic"
+            },
+            {
+                "name": "Date and Time",
+                "route_name": "docs.ionic.date-time",
                 "icon": "ionic"
             },
             {

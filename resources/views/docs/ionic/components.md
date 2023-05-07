@@ -1,9 +1,15 @@
-ionic-components-cheatsheet
+# Ionic Components
+<a id="markdown-ionic-components" name="ionic-components"></a>
+
+<!-- TOC -->
 
 - [ion-button](#ion-button)
 - [ion-list](#ion-list)
 
+<!-- /TOC -->
+
 ## ion-button
+<a id="markdown-ion-button" name="ion-button"></a>
 
 https://ionicframework.com/docs/api/button
 
@@ -23,6 +29,7 @@ https://ionicframework.com/docs/api/button
 | size      | small \| default \| large                                                         |
 
 ## ion-list
+<a id="markdown-ion-list" name="ion-list"></a>
 
 ```html
 <ion-list #item>
