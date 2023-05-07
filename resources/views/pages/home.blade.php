@@ -23,6 +23,4 @@
         </div>
     </section>
 
-    Get 100 random dates om the last 365 days
-
 </x-gotime-app-layout>
