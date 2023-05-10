@@ -16,6 +16,10 @@
             {
                 "name": "Date Time",
                 "route_name": "docs.laravel.date-and-time"
+            },
+            {
+                "name": "Eloquent and Query Builder",
+                "route_name": "docs.laravel.eloquent-query-builder"
             }
         ]
     }

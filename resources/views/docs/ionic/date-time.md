@@ -36,7 +36,7 @@ export class SomePage {
 ```
 
 Note: In the html, pass the date value as a reference rather than using data binding because dates
-are a pain in the a$$ and there is no useful documentation to tell me otherwise!
+are a pain in the a$$ and I can't find any useful documentation to tell me otherwise!
 
 ```html
 <!-- src/app/some.page.html -->

@@ -8,19 +8,27 @@
 
     {{-- <a href="{{ route('linux.things-you-should-know') }}">Things You Should Know about Linux to Have a Fighting Chance</a> --}}
 
-    <section class="py-5-3-2">
-        <div class="container">
-            <x-gt-menu filename="nav-programming" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
-        </div>
-        <hr>
-        <div class="container">
-            <h2>Ionic</h2>
-            <x-gt-menu filename="nav-programming" menuname="Ionic" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
-        </div>
-        <hr>
-        <div class="container">
-            <x-gt-menu filename="nav-programming" menuname="other" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
-        </div>
+    <section class="px">
+        <x-gt-menu filename="nav-programming" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
     </section>
+    <hr>
+    <section class="px">
+        <h2>Ionic</h2>
+        <x-gt-menu filename="nav-programming" menuname="Ionic" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
+    </section>
+    <hr>
+    <section class="px space-y">
+        <h2>Laravel</h2>
+        <x-gt-menu filename="nav-laravel" menuname="General" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
+        <h4>Tips, Techniques and Code Examples</h4>
+        <x-gt-menu filename="nav-laravel" menuname="Cheatsheets" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
+    </section>
+    <hr>
+    <section class="px">
+        <h2>Misc</h2>
+        <x-gt-menu filename="nav-programming" menuname="other" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
+    </section>
+
+
 
 </x-gotime-app-layout>

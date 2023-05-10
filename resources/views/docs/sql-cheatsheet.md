@@ -14,10 +14,6 @@
 - [`DELETE` conditional records](#delete-conditional-records)
 - [INSERT](#insert)
     - [Specify Columns](#specify-columns)
-- [SELECT](#select)
-    - [DISTINCT](#distinct)
-- [JOIN](#join)
-    - [Examples](#examples)
 - [Functions](#functions)
     - [REPLACE](#replace)
 - [`UPDATE`, `SET` column value(s)](#update-set-column-values)
@@ -28,6 +24,12 @@
 
 <!-- /TOC -->
 
+| Action | Command                                    | Notes |
+| :----- | :----------------------------------------- | :---- |
+| COUNT  | `SELECT COUNT(Id) FROM stock;`             |       |
+| MAX    | `SELECT MAX(Quantity) FROM stock;`         |       |
+| SUM    | `SELECT SUM(Price * Quantity) FROM stock;` |       |
+| SUM    | `SELECT SUM(Price) FROM stock;`            |       |
 
 ## ALTER
 <a id="markdown-alter" name="alter"></a>
@@ -124,50 +126,7 @@ INSERT INTO my_table(id, col1, col2) VALUES (null, val1, val2)
 INSERT INTO my_table(id, col1, col2) VALUES (null, val1, val2), (null, val1, val2)
 ```
 
-## SELECT
-<a id="markdown-select" name="select"></a>
 
-### DISTINCT
-<a id="markdown-distinct" name="distinct"></a>
-
-```sql
-SELECT DISTINCT col_name FROM table_name;
-```
-
-## JOIN
-<a id="markdown-join" name="join"></a>
-
-```sql
-SELECT * FROM table_has_pk
-INNER JOIN table_has_fk
-ON table_has_pk.id = table_has_fk.table_has_pk_id;
-```
-
-
-### Examples
-<a id="markdown-examples" name="examples"></a>
-```sql
--- SELECT all the categories,
--- JOIN the 'products' table ON the id from 'categories' table with the category_id on the 'products' table
-SELECT * FROM categories
-INNER JOIN products ON categories.id = products.category_id;
-
-
-SELECT * FROM chapters
-INNER JOIN media ON chapters.id = media.chapter_id;
-```
-
-
-**Task:** Select all the 'chapter titles' with no related media
-
-```sql
-SELECT * FROM chapters
-INNER JOIN media ON chapters.id = media.chapter_id;
-```
-
-
-    SELECT id, title FROM chapters
-    WHERE id NOT IN (SELECT chapter_id FROM media group by chapter_id);
 
 
 ## Functions
