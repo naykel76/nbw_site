@@ -2,45 +2,11 @@
 
 <!-- MarkdownTOC -->
 
-- [UNIQUE](#unique)
-- [Snippets](#snippets)
-    - [Get random record](#get-random-record)
-    - [Get unique records `distinct()`](#get-unique-records-distinct)
 - [Examples](#examples)
-- [Grouping Examples](#grouping-examples)
     - [Group with nesting loops](#group-with-nesting-loops)
     - [Group with groupBy()](#group-with-groupby)
 
 <!-- /MarkdownTOC -->
-
-
-## UNIQUE
-
-In the migration create composite key
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-
-<a id="snippets"></a>
-## Snippets
 
 <a id="get-random-record"></a>
 ### Get random record
@@ -123,16 +89,10 @@ Page::where(function ($query) {
 ```
 
 
-## Grouping Examples
 
 ### Group with nesting loops
 
 ```php
-// controller
-$categories = Page::categories()->get();
-$pages = Page::where('is_category', false)->get();
-
-// blade
 @foreach($categories as $category)
     <h6>{{ $category->route_prefix }}</h6>
 
@@ -155,7 +115,7 @@ Notice that `sortBy` and `groupBy` come after `get`
 ```php
 // controller
 $pages = \Naykel\Pageit\Models\Page::get()
-    ->sortBy('route_prefix') ->groupBy('route_prefix');
+    ->sortBy('route_prefix')->groupBy('route_prefix');
 
 // blade
 @foreach($pages as $route_prefix => $pagesGrouped)
@@ -169,8 +129,3 @@ $pages = \Naykel\Pageit\Models\Page::get()
 @endforeach
 ```
 
-Categorized
-
-
-Get the page title, route_prefix and slug from the pages table grouped by the
-category or sub-category.

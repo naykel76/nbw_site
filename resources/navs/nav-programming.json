@@ -63,7 +63,12 @@
             },
             {
                 "name": "SQL",
-                "route_name": "docs.sql-cheatsheet",
+                "route_name": "docs.sql.sql-cheatsheet",
+                "icon": "mysql"
+            },
+            {
+                "name": "SQL DELETE",
+                "route_name": "docs.sql.delete",
                 "icon": "mysql"
             },
             {
@@ -74,6 +79,11 @@
             {
                 "name": "SQL SELECT",
                 "route_name": "docs.sql.select",
+                "icon": "mysql"
+            },
+            {
+                "name": "SQL UPDATE",
+                "route_name": "docs.sql.update",
                 "icon": "mysql"
             }
         ]

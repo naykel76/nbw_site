@@ -3,7 +3,7 @@
 
 - [Ionic using Google Maps API](#ionic-using-google-maps-api)
 - [Trouble Shooting](#trouble-shooting)
-	- [The lights are on but nobody's home](#the-lights-are-on-but-nobodys-home)
+        - [The lights are on but nobody's home](#the-lights-are-on-but-nobodys-home)
 
 <!-- /MarkdownTOC -->
 
@@ -37,7 +37,7 @@ export class MapPage implements AfterViewInit {
 
   ngAfterViewInit() {
 
-        let latLng = new google.maps.LatLng(-27.5526, 153.0539);
+        let latLng = new google.maps.LatLng(40.741895, 73.989308);
 
         let mapOptions = {
             center: latLng,
@@ -47,7 +47,7 @@ export class MapPage implements AfterViewInit {
 
         this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
 
-        this.addMarker(latLng, 'Griffith')
+        this.addMarker(latLng, 'Runcorn Tavern')
     }
 
     addMarker(position, title) {

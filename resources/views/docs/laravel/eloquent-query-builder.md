@@ -7,8 +7,10 @@
     - [JOIN and SELECT specific columns](#join-and-select-specific-columns)
     - [JOIN and ORDER BY relationship attribute](#join-and-order-by-relationship-attribute)
     - [Create an alias for shorter code](#create-an-alias-for-shorter-code)
+- [where or Where](#where-or-where)
 
 <!-- /TOC -->
+
 ## JOIN
 <a id="markdown-join" name="join"></a>
 
@@ -47,6 +49,16 @@ $query = Chapter::join('courses', 'courses.id', '=', 'chapters.course_id')
 $courseOutline = ExamPrepOutline::from('exam_prep_outlines as t1')
     ->join('exam_prep_outlines as t2', 't1.parent_id', '=', 't2.id')
     ->select('t1.id', 't1.type', 't1.title', 't1.parent_id', 't2.title AS parent_title')
+    ->get();
+```
+
+## where or Where
+<a id="markdown-where-orwhere" name="where-orwhere"></a>
+
+```php
+$courses = DB::table('courses')
+    ->where('type', 'ep')
+    ->orWhere('type', 'ep-prog')
     ->get();
 ```
 

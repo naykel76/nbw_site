@@ -21,6 +21,12 @@
                 "name": "Linux",
                 "route_name": "linux.things-you-should-know",
                 "type": "md"
+            },
+            {
+                "name": "SQL",
+                "route_name": "docs.sql.sql-cheatsheet",
+                "type": "md",
+                "exclude_route": true
             }
         ]
     },
