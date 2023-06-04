@@ -1,0 +1,41 @@
+{
+	"main": {
+		"links": [
+			{
+				"name": "Admin",
+				"route_name": "admin",
+				"icon": "dashboard",
+				"exclude_route": true
+			},
+			{
+				"name": "Site Pages",
+				"route_name": "admin.pages.index",
+				"icon": "document-o",
+				"exclude_route": true
+			},
+			{
+				"name": "Menu Test",
+				"url": "/admin",
+				"icon": "document-o",
+				"exclude_route": true,
+				"children": [
+					{
+						"name": "Admin",
+						"url": "admin",
+						"exclude_route": true
+					}
+				]
+			}
+		]
+	},
+	"user": {
+		"links": [
+			{
+				"name": "Admin",
+				"route_name": "admin",
+				"icon": "dashboard",
+				"exclude_route": true
+			}
+		]
+	}
+}

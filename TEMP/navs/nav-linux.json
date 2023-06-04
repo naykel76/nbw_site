@@ -1,0 +1,26 @@
+{
+    "main": {
+        "links": [
+            {
+                "name": "General File and Directory Actions",
+                "route_name": "docs.linux.file-and-directory-actions",
+                "icon": "terminal"
+            },
+            {
+                "name": "Linux Common",
+                "route_name": "docs.linux.common-commands",
+                "icon": "terminal"
+            },
+            {
+                "name": "Linux Web Dev",
+                "route_name": "docs.linux.web-development-setup",
+                "icon": "terminal"
+            },
+            {
+                "name": "SSH, Permissions and Security",
+                "route_name": "docs.linux.ssh-permissions-and-security",
+                "icon": "terminal"
+            }
+        ]
+    }
+}

@@ -32,5 +32,7 @@
     {{-- <pre> {{ dd($dates) }} </pre> --}}
     <pre> {{ json_encode($dates) }} </pre>
 
+    {{ dd($dates) }}
+
 
 </x-gotime-app-layout>

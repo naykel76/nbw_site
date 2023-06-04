@@ -33,9 +33,9 @@ class Uni2701Controller extends Controller
     {
         $dates = [];
 
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 1000; $i++) {
             $d = Carbon::today()->subDays(rand(0, 365))->format('y-m-d');
-            $dates[] = ['date' => $d, 'venue_id' => rand(1, 8)];
+            $dates[] = ['date' => $d, 'venue_id' => rand(301, 400)];
         }
 
         $dates = collect($dates)->sortBy('date');

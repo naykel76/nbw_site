@@ -17,6 +17,11 @@
                 "icon": "angular"
             },
             {
+                "name": "Observable Example",
+                "route_name": "docs.angular.user-observable-example",
+                "icon": "angular"
+            },
+            {
                 "name": "CSS",
                 "route_name": "docs.css-cheatsheet",
                 "icon": "css"
@@ -42,6 +47,16 @@
                 "icon": "javascript"
             },
             {
+                "name": "Code Snippets - Numbers",
+                "route_name": "docs.javascript.code-snippets-numbers",
+                "icon": "javascript"
+            },
+            {
+                "name": "Boolean Promise",
+                "route_name": "docs.javascript.promise",
+                "icon": "javascript"
+            },
+            {
                 "name": "Javascript Operators",
                 "route_name": "docs.javascript.operators",
                 "icon": "javascript"
@@ -51,6 +66,11 @@
                 "route_name": "docs.laravel.laravel",
                 "icon": "laravel",
                 "exclude_route": true
+            },
+            {
+                "name": "NPM",
+                "route_name": "docs.npm-cheatsheet",
+                "icon": "npm"
             },
             {
                 "name": "PHP Array",
@@ -91,23 +111,18 @@
     "Ionic": {
         "links": [
             {
-                "name": "General Cheatsheet",
-                "route_name": "docs.ionic.ionic-cheatsheet",
-                "icon": "ionic"
-            },
-            {
                 "name": "Components",
                 "route_name": "docs.ionic.components",
                 "icon": "ionic"
             },
             {
-                "name": "Custom Components",
-                "route_name": "docs.ionic.custom-components",
+                "name": "Date and Time",
+                "route_name": "docs.ionic.date-time",
                 "icon": "ionic"
             },
             {
-                "name": "Date and Time",
-                "route_name": "docs.ionic.date-time",
+                "name": "Form Controls",
+                "route_name": "docs.ionic.form-controls",
                 "icon": "ionic"
             },
             {

@@ -1,15 +1,17 @@
 # Modals
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
 - [Inline Modal](#inline-modal)
 - [Controller Modal](#controller-modal)
 - [Closing the modal](#closing-the-modal)
+- [Layout Examples (HTML)](#layout-examples-html)
+    - [Header with title and buttons](#header-with-title-and-buttons)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
+<a id="markdown-inline-modal" name="inline-modal"></a>
 
-<a id="inline-modal"></a>
 ## Inline Modal
 
 ```html
@@ -37,7 +39,8 @@
 </ion-content>
 ```
 
-<a id="controller-modal"></a>
+<a id="markdown-controller-modal" name="controller-modal"></a>
+
 ## Controller Modal
 
 Create the modal page and remove the automatically created route. For this example, we are going
@@ -47,7 +50,8 @@ to create a user-profile modal.
 ionic generate page user-profile
 ```
 
-<a id="1-import-the-newly-crated-userprofilepage-and-modalcontroller"></a>
+<a id="markdown-1-import-the-newly-crated-userprofilepage-and-modalcontroller" name="1-import-the-newly-crated-userprofilepage-and-modalcontroller"></a>
+
 ##### 1. Import the newly crated `UserProfilePage` and `ModalController`
 
 ```js
@@ -55,13 +59,15 @@ import { ModalController } from '@ionic/angular';
 import { UserPage } from './user/user.page';
 ```
 
-<a id="2-inject-the-modalcontroller-into-the-constructor"></a>
+<a id="markdown-2-inject-the-modalcontroller-into-the-constructor" name="2-inject-the-modalcontroller-into-the-constructor"></a>
+
 ##### 2. Inject the `ModalController` into the constructor
 
 Injecting the ModalController into the `page.ts` constructor gives us access to the
 `ModalController` within the class.
 
-<a id="3-create-an-async-method-to-display-the-modal-passing-in-the-component-and-componentprops"></a>
+<a id="markdown-3-create-an-async-method-to-display-the-modal-passing-in-the-component-and-componentprops" name="3-create-an-async-method-to-display-the-modal-passing-in-the-component-and-componentprops"></a>
+
 ##### 3. Create an async method to display the modal passing in the `component` and `componentProps`
 
 The `component` parameter defines the page/component that will be displayed in the modal
@@ -89,7 +95,8 @@ async editProfile() {
 ```
 
 
-<a id="call-the-modal-with-a-click-event"></a>
+<a id="markdown-call-the-modal-with-a-click-event" name="call-the-modal-with-a-click-event"></a>
+
 ##### Call the modal with a click event
 
 ```html
@@ -99,7 +106,8 @@ async editProfile() {
 ```
 
 
-<a id="closing-the-modal"></a>
+<a id="markdown-closing-the-modal" name="closing-the-modal"></a>
+
 ## Closing the modal
 
 `*.ts`
@@ -114,4 +122,49 @@ cancel() {
 
 ```html
 <ion-button (click)="cancel()" >Cancel</ion-button>
+```
+
+
+<a id="markdown-layout-examples-html" name="layout-examples-html"></a>
+
+## Layout Examples (HTML)
+
+There is some quirky behaviour with the styling so you may need to play around to get the look and
+feel you want.
+
+`ion-content` is intended to be used in full-page modals, cards, and sheets. If your custom dialog
+has a dynamic or unknown size, ion-content should not be used.
+
+`.ion-page` uses `display: flex; justify-content: space-between;`
+
+<a id="markdown-header-with-title-and-buttons" name="header-with-title-and-buttons"></a>
+
+### Header with title and buttons
+
+```html
+<ion-content class="ion-padding">
+
+    <ion-button id="open-modal" expand="block">Open</ion-button>
+
+    <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
+        <ng-template>
+            <ion-header>
+                <ion-toolbar>
+                    <ion-buttons slot="start">
+                        <ion-button (click)="cancel()">Cancel</ion-button>
+                    </ion-buttons>
+                    <ion-title>Title</ion-title>
+                    <ion-buttons slot="end">
+                        <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+                    </ion-buttons>
+                </ion-toolbar>
+            </ion-header>
+
+            <!-- only wrap in ion-content for full page modal -->
+            <ion-card class="ion-padding"> ... </ion-card>
+
+        </ng-template>
+    </ion-modal>
+
+</ion-content>
 ```

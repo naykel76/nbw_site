@@ -21,6 +21,11 @@ Route::get('/', function () {
 (new RouteBuilder('nav-laravel', 'layouts.docs-default'))->create();
 (new RouteBuilder('nav-programming', 'layouts.docs-default'))->create();
 
+// (new RouteBuilder('nav-naykel'))->create();
+// (new RouteBuilder('nav-alpine', 'layouts.docs-default'))->create();
+// (new RouteBuilder('nav-laravel', 'layouts.docs-default'))->create();
+// (new RouteBuilder('nav-linux', 'layouts.docs-default'))->create();
+
 Route::get('/2701', [Uni2701Controller::class, 'show'])->name('uni.2701');
 /*
 |--------------------------------------------------------------------------
