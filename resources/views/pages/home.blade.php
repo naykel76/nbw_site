@@ -1,4 +1,4 @@
-<x-gotime-app-layout layout="{{ config('naykel.template') }}" class="py-5-3-2 container maxw-lg">
+<x-gotime-app-layout layout="{{ config('naykel.template') }}" class="py-5-3-2-2 container maxw-lg">
 
     <h1>{{ $title ?? null }}</h1>
 
@@ -9,24 +9,24 @@
     {{-- <a href="{{ route('linux.things-you-should-know') }}">Things You Should Know about Linux to Have a Fighting Chance</a> --}}
 
     <section class="px">
-        <x-gt-menu filename="nav-programming" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
+        <x-gt-menu filename="nav-programming" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons />
     </section>
     <hr>
     <section class="px">
         <h2>Ionic</h2>
-        <x-gt-menu filename="nav-programming" menuname="Ionic" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
+        <x-gt-menu filename="nav-programming" menuname="Ionic" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons />
     </section>
     <hr>
     <section class="px space-y">
         <h2>Laravel</h2>
-        <x-gt-menu filename="nav-laravel" menuname="General" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
+        <x-gt-menu filename="nav-laravel" menuname="General" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons />
         <h4>Tips, Techniques and Code Examples</h4>
-        <x-gt-menu filename="nav-laravel" menuname="Cheatsheets" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
+        <x-gt-menu filename="nav-laravel" menuname="Cheatsheets" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons />
     </section>
     <hr>
     <section class="px">
         <h2>Misc</h2>
-        <x-gt-menu filename="nav-programming" menuname="other" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons iconClass="h-2" />
+        <x-gt-menu filename="nav-programming" menuname="other" class="flex wrap gg" itemClass="btn secondary outline px-2" withIcons />
     </section>
 
 

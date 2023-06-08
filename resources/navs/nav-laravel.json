@@ -3,7 +3,8 @@
         "links": [
             {
                 "name": "Cheatsheet",
-                "route_name": "docs.laravel.laravel"
+                "route_name": "docs.laravel.laravel",
+                "icon": "laravel"
             }
         ]
     },
@@ -11,15 +12,38 @@
         "links": [
             {
                 "name": "Collections",
-                "route_name": "docs.laravel.collections"
+                "route_name": "docs.laravel.collections",
+                "icon": "laravel"
             },
             {
                 "name": "Date Time",
-                "route_name": "docs.laravel.date-and-time"
+                "route_name": "docs.laravel.date-and-time",
+                "icon": "laravel"
             },
             {
                 "name": "Eloquent and Query Builder",
-                "route_name": "docs.laravel.eloquent-query-builder"
+                "route_name": "docs.laravel.eloquent-query-builder",
+                "icon": "laravel"
+            },
+            {
+                "name": "Eloquent and Query Examples",
+                "route_name": "docs.laravel.eloquent-query-builder-examples",
+                "icon": "laravel"
+            },
+            {
+                "name": "Eloquent Relationships",
+                "route_name": "docs.laravel.eloquent-save-insert-relationships",
+                "icon": "laravel"
+            },
+            {
+                "name": "Mail",
+                "route_name": "docs.laravel.mail",
+                "icon": "laravel"
+            },
+            {
+                "name": "Model and Migrations",
+                "route_name": "docs.laravel.migrations",
+                "icon": "laravel"
             }
         ]
     }

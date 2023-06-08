@@ -54,7 +54,7 @@
         </div>
     </section>
 
-    <section class="py-5-3-2">
+    <section class="py-5-3-2-2">
         <div class="container">
             <h2 class="title tac">Page Layout and Design Examples</h2>
             <div class="grid cols-3-2-1 tac">

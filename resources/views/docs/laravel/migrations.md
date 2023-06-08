@@ -1,27 +1,29 @@
 # Laravel Migrations
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
 - [Quick Reference](#quick-reference)
 - [Foreign Key Constraints](#foreign-key-constraints)
 - [Cascade Actions](#cascade-actions)
 - [Check for Table Existence](#check-for-table-existence)
 
-<!-- /MarkdownTOC -->
-<a id="quick-reference"></a>
+<!-- /TOC -->
+
+<a id="markdown-quick-reference" name="quick-reference"></a>
+
 ## Quick Reference
 
-| Command                            | Notes                                          |
-| :--------------------------------- | :--------------------------------------------- |
-| `php artisan migrate:fresh`        | Drop all table the execute migrate             |
-| `php artisan migrate:fresh --seed` | Drop all table the execute migrate and seeders |
-| `php artisan migrate:reset`        | Rollback migrations                            |
+| Command                                 | Notes                                          |
+| :-------------------------------------- | :--------------------------------------------- |
+| `php artisan migrate:fresh`             | Drop all table the execute migrate             |
+| `php artisan migrate:fresh --seed`      | Drop all table the execute migrate and seeders |
+| `php artisan migrate:reset`             | Rollback migrations                            |
+| `php artisan migrate:rollback --step=5` |                                                |
 
+<a id="markdown-foreign-key-constraints" name="foreign-key-constraints"></a>
 
-<a id="foreign-key-constraints"></a>
 ## Foreign Key Constraints
 
-https://laravel.com/docs/9.x/migrations#foreign-key-constraints
 
 ```php
 // verbose syntax
@@ -32,7 +34,8 @@ $table->foreign('user_id')->references('id')->on('users');
 $table->foreignId('user_id')->constrained();
 ```
 
-<a id="cascade-actions"></a>
+<a id="markdown-cascade-actions" name="cascade-actions"></a>
+
 ## Cascade Actions
 
 ```php
@@ -43,6 +46,8 @@ $table->cascadeOnDelete();      // Deletes should cascade.
 $table->restrictOnDelete();     // Deletes should be restricted.
 $table->nullOnDelete();         // Deletes should set the foreign key value to null.
 ```
+
+<a id="markdown-check-for-table-existence" name="check-for-table-existence"></a>
 
 ## Check for Table Existence
 

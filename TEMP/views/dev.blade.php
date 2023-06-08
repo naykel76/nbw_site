@@ -1,4 +1,4 @@
-<x-gotime-app-layout layout="base" class="markdown py-5-3-2">
+<x-gotime-app-layout layout="base" class="markdown py-5-3-2-2">
 
     <div class="container">
         <nav class="apple">

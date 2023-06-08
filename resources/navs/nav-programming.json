@@ -82,6 +82,11 @@
                 "route_name": "docs.php.conditionals"
             },
             {
+                "name": "SCSS",
+                "route_name": "docs.scss-cheatsheet",
+                "icon": "sass"
+            },
+            {
                 "name": "SQL",
                 "route_name": "docs.sql.sql-cheatsheet",
                 "icon": "mysql"

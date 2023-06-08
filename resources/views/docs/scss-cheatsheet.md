@@ -1,6 +1,6 @@
 # SASS Cheatsheet
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
 - [Conditionals](#conditionals)
     - [Ternary Example](#ternary-example)
@@ -14,26 +14,33 @@
     - [List Functions](#list-functions)
         - [How can I use a forwarded scss variable in the same file?](#how-can-i-use-a-forwarded-scss-variable-in-the-same-file)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
 
 
+<a id="markdown-conditionals" name="conditionals"></a>
 
-<a id="conditionals"></a>
 ## Conditionals
 
 ```scss
 @if $condition { } @else { }
 ```
-<a id="ternary-example"></a>
+
+<a id="markdown-ternary-example" name="ternary-example"></a>
+
 ### Ternary Example
 ```scss
 $var: if($condition, 'this', 'that');
+
 ```
-<a id="strings"></a>
+
+<a id="markdown-strings" name="strings"></a>
+
 ## Strings
 
-<a id="check-if-last-character-is-a-dash-and-remove"></a>
+
+<a id="markdown-check-if-last-character-is-a-dash-and-remove" name="check-if-last-character-is-a-dash-and-remove"></a>
+
 ### Check if last character is a dash and remove
 ```scss
 $class: "bdr-";
@@ -45,7 +52,9 @@ $class: "bdr-";
 @debug $class;
 ```
 
-<a id="maps"></a>
+
+<a id="markdown-maps" name="maps"></a>
+
 ## Maps
 
     @use "sass:map";
@@ -57,7 +66,9 @@ $class: "bdr-";
     map.set($map, $key, $value)
     map.values($map)
 
-<a id="add-or-merge-maps"></a>
+
+<a id="markdown-add-or-merge-maps" name="add-or-merge-maps"></a>
+
 ### Add or Merge Maps
 
     map.merge($map1, $map2, ..., $map{n})
@@ -75,7 +86,9 @@ $map3: ( "secondary": ( "base": green, ) );
     @debug map.set($map, $add-this-map)
 
 
-<a id="map-keys"></a>
+
+<a id="markdown-map-keys" name="map-keys"></a>
+
 ### Map Keys
 
     map.keys($map)                          <!-- get map key -->
@@ -83,7 +96,9 @@ $map3: ( "secondary": ( "base": green, ) );
     map.has-key($map, $key, $keys...)       <!-- check key exists -->
 
 
-<a id="remove-items-from-map"></a>
+
+<a id="markdown-remove-items-from-map" name="remove-items-from-map"></a>
+
 ### Remove items from map
 
 ```scss
@@ -91,10 +106,14 @@ $map3: ( "secondary": ( "base": green, ) );
 @debug "Updated map:" map.remove($breakpoints, 'sm');
 ```
 
-<a id="lists"></a>
+
+<a id="markdown-lists" name="lists"></a>
+
 ## Lists
 
-<a id="list-functions"></a>
+
+<a id="markdown-list-functions" name="list-functions"></a>
+
 ### List Functions
 
 | Command                            | Example                                                     |
@@ -114,6 +133,9 @@ $map3: ( "secondary": ( "base": green, ) );
 
 
 ---
+
+
+<a id="markdown-how-can-i-use-a-forwarded-scss-variable-in-the-same-file" name="how-can-i-use-a-forwarded-scss-variable-in-the-same-file"></a>
 
 #### How can I use a forwarded scss variable in the same file?
 

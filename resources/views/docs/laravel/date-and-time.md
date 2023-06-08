@@ -9,7 +9,6 @@ $today = Carbon::today();
 $yesterday = Carbon::yesterday();
 $tomorrow = Carbon::tomorrow();
 
-
 Carbon::create($year, $month, $day, $hour, $minute, $second, $tz);
 Carbon::create(2012, 1, 31, 0);
 
