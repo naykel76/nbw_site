@@ -7,8 +7,8 @@
                 "exclude_route": true
             },
             {
-                "name": "2701",
-                "route_name": "uni.2701",
+                "name": "Dev",
+                "route_name": "dev",
                 "exclude_route": true
             },
             {

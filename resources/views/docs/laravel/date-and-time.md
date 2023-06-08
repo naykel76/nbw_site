@@ -1,6 +1,31 @@
 # Date and Time Cheat Sheet
 
+<!-- TOC -->
+
+- [Set timezone](#set-timezone)
+- [Carbon](#carbon)
+    - [Set Date](#set-date)
+
+<!-- /TOC -->
+
+<a id="markdown-set-timezone" name="set-timezone"></a>
+
+## Set timezone
+
+Option 1
+
+Edit the `config/app.php` and set the `timezone` value from UTC to the desired timezone from the
+list of available timezones.
+
+```php
+'timezone' => 'Australia/Brisbane',
+```
+
+<a id="markdown-carbon" name="carbon"></a>
+
 ## Carbon
+
+<a id="markdown-set-date" name="set-date"></a>
 
 ### Set Date
 ```php
