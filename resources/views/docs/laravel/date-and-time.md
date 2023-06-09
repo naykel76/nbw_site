@@ -2,11 +2,29 @@
 
 <!-- TOC -->
 
+- [String Formatting](#string-formatting)
 - [Set timezone](#set-timezone)
 - [Carbon](#carbon)
     - [Set Date](#set-date)
+- [Create a timer with Laravel and Alpine](#create-a-timer-with-laravel-and-alpine)
 
 <!-- /TOC -->
+
+<a id="markdown-string-formatting" name="string-formatting"></a>
+
+## String Formatting
+
+https://carbon.nesbot.com/docs/#api-formatting
+
+```php
+$dt->toDateString();                          // 1975-12-25
+$dt->toTimeString();                          // 14:15:16
+$dt->toDateTimeString();                      // 1975-12-25 14:15:16
+```
+
+<!-- You can also set the default __toString() format (which defaults to Y-m-d H:i:s) thats used when type juggling occurs.
+
+$dt = Carbon::createFromFormat('Y-m-d H:i:s.u', '2019-02-01 03:45:27.612584'); -->
 
 <a id="markdown-set-timezone" name="set-timezone"></a>
 
@@ -39,10 +57,7 @@ Carbon::create(2012, 1, 31, 0);
 
 // add 30 days to the current time
 $trialExpires = $current->addDays(30);
-
 ```
-
-
 
     echo $dt->addYear(); 	2012-01-31 00:00:00
     echo $dt->addYears(5); 	2017-01-31 00:00:00
@@ -107,3 +122,7 @@ $trialExpires = $current->addDays(30);
 
 
 
+
+<a id="markdown-create-a-timer-with-laravel-and-alpine" name="create-a-timer-with-laravel-and-alpine"></a>
+
+## Create a timer with Laravel and Alpine

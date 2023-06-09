@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ddcc29c7763b06e888f8a6d478f99639",
+    "content-hash": "f91afe4a07116b0de7fa854bcc5e2f9b",
     "packages": [
         {
             "name": "brick/math",
@@ -1026,16 +1026,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.13.2",
+            "version": "v10.13.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5"
+                "reference": "03106ae9ba2ec4b36dc973b7bdca6fad81e032b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5",
-                "reference": "fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/03106ae9ba2ec4b36dc973b7bdca6fad81e032b4",
+                "reference": "03106ae9ba2ec4b36dc973b7bdca6fad81e032b4",
                 "shasum": ""
             },
             "require": {
@@ -1222,7 +1222,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-06-05T15:48:15+00:00"
+            "time": "2023-06-08T20:25:36+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -1986,17 +1986,11 @@
         },
         {
             "name": "naykel/gotime",
-            "version": "v0.12.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/naykel76/gotime.git",
-                "reference": "5393324c8b8a37374c5270ce7b2213f01bbb04cb"
-            },
+            "version": "dev-master",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/naykel76/gotime/zipball/5393324c8b8a37374c5270ce7b2213f01bbb04cb",
-                "reference": "5393324c8b8a37374c5270ce7b2213f01bbb04cb",
-                "shasum": ""
+                "type": "path",
+                "url": "C:/Users/nayke/sites/nk_packages/gotime",
+                "reference": "b0bf4711b6e93d422695f333b942f7a09e78e8d3"
             },
             "require": {
                 "livewire/livewire": "^2.10.3",
@@ -2019,11 +2013,10 @@
                     "src/helpers.php"
                 ],
                 "psr-4": {
-                    "Routebuilder\\": "Naykel\\Gotime\\Routebuilder",
-                    "Naykel\\Gotime\\": "src/"
+                    "Naykel\\Gotime\\": "src/",
+                    "Routebuilder\\": "Naykel\\Gotime\\Routebuilder"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2037,14 +2030,13 @@
             "description": "Starter package for NayKel Laravel applications",
             "homepage": "https://naykel.com.au",
             "keywords": [
-                "Naykel",
-                "laravel"
+                "Laravel",
+                "Naykel"
             ],
-            "support": {
-                "issues": "https://github.com/naykel76/gotime/issues",
-                "source": "https://github.com/naykel76/gotime/tree/v0.12.3"
-            },
-            "time": "2023-06-07T21:16:20+00:00"
+            "transport-options": {
+                "symlink": true,
+                "relative": false
+            }
         },
         {
             "name": "nesbot/carbon",
@@ -8180,7 +8172,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "naykel/gotime": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

@@ -47,6 +47,11 @@
                 "icon": "javascript"
             },
             {
+                "name": "Javascript Date and Time",
+                "route_name": "docs.javascript.date-and-time",
+                "icon": "javascript"
+            },
+            {
                 "name": "Code Snippets - Numbers",
                 "route_name": "docs.javascript.code-snippets-numbers",
                 "icon": "javascript"

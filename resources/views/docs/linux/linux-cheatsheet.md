@@ -1,12 +1,12 @@
-# Command Line Cheatsheet
+# Linux Cheatsheet
 
-
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
 - [linux](#linux)
-  - [Install Software Updates and Settings](#install-software-updates-and-settings)
+    - [Install Software Updates and Settings](#install-software-updates-and-settings)
+    - [System Settings](#system-settings)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
 `~` home directory <br>
 `/` root directory
@@ -19,17 +19,17 @@
  | :----- | :---------------------------- |
  | du -sh | Get size of current directory |
 
-
-
 | Extract zip file                            | `unzip archive.zip`      |                                                    |
 | Copy directory contents to another location | `cp -a /source/. /dest/` |                                                    |
 | Create symlink                              | `ln -s /source /dest`    |                                                    |
 | View file contents                          | `cat file.txt`           |                                                    |
 
-<a id="linux"></a>
+<a id="markdown-linux" name="linux"></a>
+
 ## linux
 
-<a id="install-software-updates-and-settings"></a>
+<a id="markdown-install-software-updates-and-settings" name="install-software-updates-and-settings"></a>
+
 ### Install Software Updates and Settings
 
 ```bash
@@ -42,8 +42,18 @@
   #list time zone
   timedatectl list-timezones
   #set timezone
-  timedatectl set-timezone 'Australia/Brisbane'
+
 ```
+
+<a id="markdown-system-settings" name="system-settings"></a>
+
+### System Settings
+<div class="code-first-col"></div>
+ | Syntax                                        | Action         |
+ | :-------------------------------------------- | :------------- |
+ | timedatectl                                   | list time zone |
+ | timedatectl set-timezone 'Australia/Brisbane' | set timezone   |
+
 
 
 

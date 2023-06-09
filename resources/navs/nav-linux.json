@@ -2,24 +2,24 @@
     "main": {
         "links": [
             {
-                "name": "General File and Directory Actions",
-                "route_name": "docs.linux.file-and-directory-actions",
-                "icon": "terminal"
+                "name": "Cheatsheet",
+                "route_name": "docs.linux.linux-cheatsheet",
+                "icon": "linux"
             },
             {
-                "name": "Linux Common",
-                "route_name": "docs.linux.common-commands",
-                "icon": "terminal"
+                "name": "General File and Directory Actions",
+                "route_name": "docs.linux.file-and-directory-actions",
+                "icon": "linux"
             },
             {
                 "name": "Linux Web Dev",
                 "route_name": "docs.linux.web-development-setup",
-                "icon": "terminal"
+                "icon": "linux"
             },
             {
                 "name": "SSH, Permissions and Security",
                 "route_name": "docs.linux.ssh-permissions-and-security",
-                "icon": "terminal"
+                "icon": "linux"
             }
         ]
     }

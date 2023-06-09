@@ -70,6 +70,7 @@ return [
     */
 
     'timezone' => 'Australia/Brisbane',
+    // 'timezone' => 'America/New_York',
 
     /*
     |--------------------------------------------------------------------------
