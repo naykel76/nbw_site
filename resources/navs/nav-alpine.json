@@ -1,0 +1,21 @@
+{
+    "main": {
+        "links": [
+            {
+                "name": "AlpineJs",
+                "route_name": "docs.alpine.alpine",
+                "icon": "alpinejs"
+            },
+            {
+                "name": "Things That Open and Close",
+                "route_name": "docs.alpine.things-that-open-and-close",
+                "icon": "alpinejs"
+            },
+            {
+                "name": "Events",
+                "route_name": "docs.alpine.events",
+                "icon": "alpinejs"
+            }
+        ]
+    }
+}

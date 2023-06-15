@@ -1,18 +1,37 @@
 # Xampp Cheat Sheet
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
+- [Generate a self-signed certificate for testing purposes](#generate-a-self-signed-certificate-for-testing-purposes)
 - [Change htdocs location](#change-htdocs-location)
 - [How to Setup a Virtual Host](#how-to-setup-a-virtual-host)
 - [SSL Configuration](#ssl-configuration)
-    - [Configure `httpd-vhosts.conf`](#configure-httpd-vhostsconf)
-    - [Make SSL Keys](#make-ssl-keys)
-    - [Configure `httpd.conf`](#configure-httpdconf)
+        - [Configure `httpd-vhosts.conf`](#configure-httpd-vhostsconf)
+        - [Make SSL Keys](#make-ssl-keys)
+        - [Configure `httpd.conf`](#configure-httpdconf)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
 
-<a id="change-htdocs-location"></a>
+<a id="markdown-generate-a-self-signed-certificate-for-testing-purposes" name="generate-a-self-signed-certificate-for-testing-purposes"></a>
+
+## Generate a self-signed certificate for testing purposes
+
+**Requires OpenSSL ** which comes with git bash
+
+    Step 1: Generating a CSR and Private Key.
+    Step 2: Order and Configure the SSL Certificate.
+    Step 3: Download the SSL Certificate files and move them to the XAMPP.
+    Step 4: Add the site in Windows Hosts.
+    Step 5: Edit the SSL Configuration file for Apache.
+
+```bash
+# generate the private key
+openssl genpkey -algorithm RSA -out private.key
+```
+
+<a id="markdown-change-htdocs-location" name="change-htdocs-location"></a>
+
 ## Change htdocs location
 
 
@@ -24,7 +43,8 @@
 6. Restart Your Apache
 
 
-<a id="how-to-setup-a-virtual-host"></a>
+<a id="markdown-how-to-setup-a-virtual-host" name="how-to-setup-a-virtual-host"></a>
+
 ## How to Setup a Virtual Host
 
 https://www.youtube.com/watch?v=H3uRXvwXz1o&index=2&list=PLillGF-RfqbYhQsN5WMXy6VsDMKGadrJ-
@@ -54,12 +74,14 @@ A virtual host allows a URL to be typed directly into the address bar when devel
 127.0.0.1 mysite.test
 ```
 
-<a id="ssl-configuration"></a>
+<a id="markdown-ssl-configuration" name="ssl-configuration"></a>
+
 ## SSL Configuration
 
 https://stackoverflow.com/questions/64800565/how-to-create-valid-ssl-in-localhost-for-xampp
 
-<a id="configure-httpd-vhostsconf"></a>
+<a id="markdown-configure-httpd-vhostsconf" name="configure-httpd-vhostsconf"></a>
+
 #### Configure `httpd-vhosts.conf`
 
 ```bash
@@ -87,10 +109,12 @@ https://stackoverflow.com/questions/64800565/how-to-create-valid-ssl-in-localhos
     </Directory>
 </VirtualHost>
  ```
-<a id="make-ssl-keys"></a>
+<a id="markdown-make-ssl-keys" name="make-ssl-keys"></a>
+
 #### Make SSL Keys
 
-<a id="configure-httpdconf"></a>
+<a id="markdown-configure-httpdconf" name="configure-httpdconf"></a>
+
 #### Configure `httpd.conf`
 
 ```bash

@@ -115,6 +115,11 @@
                 "name": "SQL UPDATE",
                 "route_name": "docs.sql.update",
                 "icon": "mysql"
+            },
+            {
+                "name": "XAMPP",
+                "route_name": "docs.xampp-cheatsheet",
+                "icon": "xampp"
             }
         ]
     },

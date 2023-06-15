@@ -21,6 +21,7 @@ Route::get('/dev', [TestingController::class, 'timer'])->name('dev');
 // must run first
 (new RouteBuilder('nav-main'))->create();
 
+(new RouteBuilder('nav-alpine', 'layouts.docs-default'))->create();
 (new RouteBuilder('nav-laravel', 'layouts.docs-default'))->create();
 (new RouteBuilder('nav-linux', 'layouts.docs-default'))->create();
 (new RouteBuilder('nav-programming', 'layouts.docs-default'))->create();

@@ -4,9 +4,12 @@
 
 - [Date object](#date-object)
 - [Get the system date as a string](#get-the-system-date-as-a-string)
-- [Getting the current time](#getting-the-current-time)
+- [Get the current UTC time](#get-the-current-utc-time)
+- [Convert timestamp to human readable date or time](#convert-timestamp-to-human-readable-date-or-time)
 
 <!-- /TOC -->
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 
 <a id="markdown-date-object" name="date-object"></a>
 
@@ -21,6 +24,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 ```js
 new Date({ null | value | dateString | dateObject })
+new Date(year, monthIndex, day, hours, minutes, seconds, milliseconds)
 ```
 
 ```js
@@ -46,53 +50,31 @@ const systemDateObjectToString = new Date().toString(); //string
 // Fri Jun 09 2023 13:51:34 GMT+1000 (Australian Eastern Standard Time)
 ```
 
+<a id="markdown-get-the-current-utc-time" name="get-the-current-utc-time"></a>
 
-<!-- for testing -->
-<script>
-
-    const systemDateObject = new Date();
-    console.log(systemDateObject);
-    // Date Fri Jun 09 2023 08:30:32 GMT-0930 (Marquesas Time)
-
-    const systemDateObjectToString = new Date().toString(); //string
-    console.log(systemDateObjectToString);
-    // Fri Jun 09 2023 08:33:00 GMT-0930 (Marquesas Time)
-
-    const systemDateAsString = Date(); //string
-    console.log(systemDateAsString);
-    // Fri Jun 09 2023 08:33:00 GMT-0930 (Marquesas Time)
-
-    // const dateGetTime = new Date().getTime(); // Output: 1686256888210
-    // console.log('dateGetTime:_____ ' + dateGetTime);
-
-    // const utcTimestamp = Date.now(); // Output: 1686256888210
-    // console.log('utcTimestamp: ' + utcTimestamp);
-
-    // const localFromTimestamp = new Date(utcTimestamp);
-    // console.log('localFromTimestamp (local time zone): ' + localFromTimestamp);
-
-    // const utcString = localFromTimestamp.toISOString();
-    // console.log('utcFromTimestamp (UTC): ' + utcString);
-
-</script>
-
-<a id="markdown-getting-the-current-time" name="getting-the-current-time"></a>
-
-## Getting the current time
+## Get the current UTC time
 
 The JavaScript `Date.now()` function returns a `timestamp` that is based on `UTC` Time and is
 independent of the time zone of the user or the device executing the code.
 
-<div class="bx info-light"><strong><code>Date.now()</code> is not affected</strong> by the local time or device running the JavaScript code.</div>
+<div class="bx info"><strong><code>Date.now()</code> is not affected</strong> by the local time or device running the JavaScript code.</div>
 
 To convert the value returned by `Date.now()` into a human-readable date and time, you can use the
 `Date()` object, and adjust it according to the desired time zone if necessary.
 
 ```js
-const utcTimestamp = Date.now();                // Output: 1686256888210
-// conversion is based on local time zone of the environment where the JavaScript code is executed.
-const utcFromTimestamp = Date(utcTimestamp);    // Output: Fri Jun 09 2023 16:44:57 GMT+1000
-// to make sure you get the UTC date time
+const utcTimestamp = Date.now();
+// Output UTC timestamp: 1686256888210
+```
+
+**NOTE:** even though the timestamp is based on the `UTC` time, When converting the timestamp to a
+human readable format, the conversion is based on local time zone of the environment where the
+JavaScript code is executed.
+
+
+```js
+const utcFromTimestamp = Date(utcTimestamp);
+// Output: Fri Jun 09 2023 16:44:57 GMT+1000
 ```
 
 
@@ -104,26 +86,66 @@ If you want to display the utcFromTimestamp in UTC, you can use the toISOString(
 returns a string representation of the Date object in UTC format. Here's an updated version of
 your code:
 
+<a id="markdown-convert-timestamp-to-human-readable-date-or-time" name="convert-timestamp-to-human-readable-date-or-time"></a>
+
+## Convert timestamp to human readable date or time
+
+To convert a `timestamp` to human readable data you can ues the `Date` getter methods
+
+First, convert the `timestamp` to a `Date` object, the add the selected method.
+
+```js
+const timestamp = 1686256888210;
+const dateObject = new Date(timestamp);
+
+dateObject.getDate()
+dateObject.getDay()
+dateObject.getFullYear()
+dateObject.getHours()
+dateObject.getMilliseconds()
+dateObject.getMinutes()
+dateObject.getMonth()
+dateObject.getSeconds()
+dateObject.getTime()
+dateObject.getTimezoneOffset()
+dateObject.getUTCDate()
+dateObject.getUTCDay()
+dateObject.getUTCFullYear()
+dateObject.getUTCHours()
+```
+You can interact with the timestamp value directly using `getter` and `setter` methods.
 
 
 
-?? All static methods (`Date.now()`, `Date.parse()`, and `Date.UTC()`) return timestamps instead of Date objects.
 
-?? You can interact with the timestamp value directly using the `getTime()` and `setTime()` methods.
+<!-- code for testing -->
+<script>
 
+    const systemDateObject = new Date();
+    console.log(systemDateObject);
+    // Date Sat Jun 10 2023 05:41:28 GMT+1000 (Australian Eastern Standard Time)
 
+    const systemDateObjectToString = new Date().toString(); //string
+    console.log(systemDateObjectToString);
+    // Sat Jun 10 2023 05:41:28 GMT+1000 (Australian Eastern Standard Time)
 
-    // console.log('localFromTimestamp (local time zone): ' + localFromTimestamp);
-    // console.log('utcFromTimestamp (UTC): ' + utcString);
+    const systemDateAsString = Date(); //string
+    console.log(systemDateAsString);
+    // Sat Jun 10 2023 05:41:28 GMT+1000 (Australian Eastern Standard Time)
 
-    // const utcString = utcFromTimestamp.toISOString();
-    // console.log('utcFromTimestamp (UTC): ' + utcString);
+    const utcTimestamp = Date.now();
+    console.log(utcTimestamp);
+    // 1686338928412
 
+    const localFromTimestamp = new Date(1686339688229);
+    console.log(localFromTimestamp);
+    // Date Sat Jun 10 2023 05:41:28 GMT+1000 (Australian Eastern Standard Time)
 
-    // const fish = Date(utcTimestamp);
-    // const aa = fish.toISOString();
+    const utcString = localFromTimestamp.toISOString();
+    console.log(utcString);
+    // 2023-06-09T19:41:28.229Z
 
-    // console.log(aa);
+    const timestamp = 1686256888210;
+    const dateObject = new Date(timestamp);
 
-    // const diff = this.start - current;
-    // this.remaining = parseInt(diff / 1000);
+</script>

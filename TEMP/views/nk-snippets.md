@@ -14,14 +14,14 @@
 "repositories": {
     "naykel/authit": {
         "type": "path",
-        "url": "C:\\Users\\nayke\\Desktop\\htdocs\\nk_packages\\authit",
+        "url": "C:\\Users\\nayke\\sites\\nk_packages\\authit",
         "options": {
             "symlink": true
         }
     },
     "naykel/gotime": {
         "type": "path",
-        "url": "C:\\Users\\nayke\\Desktop\\htdocs\\nk_packages\\gotime",
+        "url": "C:\\Users\\nayke\\sites\\nk_packages\\gotime",
         "options": {
             "symlink": true
         }

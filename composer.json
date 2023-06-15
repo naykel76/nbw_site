@@ -13,7 +13,7 @@
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
-        "naykel/gotime": "dev-master"
+        "naykel/gotime": "^0.12.6"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -66,14 +66,5 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true,
-    "repositories": {
-        "naykel/gotime": {
-            "type": "path",
-            "url": "C:\\Users\\nayke\\sites\\nk_packages\\gotime",
-            "options": {
-                "symlink": true
-            }
-        }
-    }
+    "prefer-stable": true
 }

@@ -8,12 +8,9 @@
         </div>
     </div>
 
-    <div class="txt-red"></div>
     <div class="dark flex items-center justify-center space-x"
         x-data="countDown(
             new Date('{{ $startDate->toISOString() }}')
-            {{-- new Date('{{ $currentDate->toDateString() }}'), --}}
-            {{-- new Date('{{ $startDate->toDateString() }}') --}}
             )"
         x-init="init();">
         <div class="flex flex-col items-center">
@@ -40,22 +37,29 @@
                 start: start,
                 remaining: null,
                 init() {
+
+                    const dateFromObject = new Date('2023-9-23');
+                    const dateToObject = new Date('2023-9-25');
+                    console.log(dateFromObject); // object
+                    console.log(dateToObject); // object
+                    console.log(dateToObject - dateFromObject); // returns timestamp
+                    console.log(65369106 / 86400); // returns timestamp
+
+
                     this.setRemaining()
                     setInterval(() => {
                         this.setRemaining();
                     }, 1000);
                 },
                 setRemaining() {
-
                     const utcTimestamp = Date.now(); // Output: 1686256888210
                     const localFromTimestamp = new Date(utcTimestamp);
                     const utcString = localFromTimestamp.toISOString();
-
-                    // console.log('utcTimestamp: ' + utcTimestamp);
-
-                    const diff = this.start - utcTimestamp + 1000000000;
+                    const diff = this.start - utcTimestamp; // 65369106
+                    // convert to seconds
                     this.remaining = parseInt(diff / 1000);
                 },
+
                 days() {
                     return {
                         value: this.remaining / 86400,

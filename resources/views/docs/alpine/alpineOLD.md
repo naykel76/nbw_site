@@ -1,32 +1,30 @@
 # Alpine Tips, Tricks and Techniques
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
 - [x-for](#x-for)
         - [Iterate through hard coded array with single values](#iterate-through-hard-coded-array-with-single-values)
         - [Iterate through livewire multi-dimension array](#iterate-through-livewire-multi-dimension-array)
         - [Iterate through livewire multi-dimension array and access indexes](#iterate-through-livewire-multi-dimension-array-and-access-indexes)
-- [x-ref](#x-ref)
 - [x-text](#x-text)
         - [`x-ref` with single object](#x-ref-with-single-object)
         - [`x-ref` with single object defined in `script`](#x-ref-with-single-object-defined-in-script)
         - [`x-ref` with array of multiple objects and loop using `x-for`](#x-ref-with-array-of-multiple-objects-and-loop-using-x-for)
         - [`x-ref` with array of multiple objects and loop using `x-for` defined in `script`](#x-ref-with-array-of-multiple-objects-and-loop-using-x-for-defined-in-script)
 - [Data Binding](#data-binding)
-- [x-on DOM Events](#x-on-dom-events)
-- [Things That Open and Close](#things-that-open-and-close)
-    - [Accordion \(Single Item\)](#accordion-single-item)
-    - [Accordion \(Multiple Items\)](#accordion-multiple-items)
+    - [Accordion (Single Item)](#accordion-single-item)
+    - [Accordion (Multiple Items)](#accordion-multiple-items)
 - [Trouble Shooting](#trouble-shooting)
-- [Sample Data](#sample-data)
     - [Multi-dimension Array](#multi-dimension-array)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
-<a id="x-for"></a>
+<a id="markdown-x-for" name="x-for"></a>
+
 ## x-for
 
-<a id="iterate-through-hard-coded-array-with-single-values"></a>
+<a id="markdown-iterate-through-hard-coded-array-with-single-values" name="iterate-through-hard-coded-array-with-single-values"></a>
+
 #### Iterate through hard coded array with single values
 
 ```html
@@ -37,7 +35,8 @@
 </ul>
 ```
 
-<a id="iterate-through-livewire-multi-dimension-array"></a>
+<a id="markdown-iterate-through-livewire-multi-dimension-array" name="iterate-through-livewire-multi-dimension-array"></a>
+
 #### Iterate through livewire multi-dimension array
 
     <div x-data="{ items: @entangle('items') }">
@@ -49,7 +48,8 @@
         </template>
     </div>
 
-<a id="iterate-through-livewire-multi-dimension-array-and-access-indexes"></a>
+<a id="markdown-iterate-through-livewire-multi-dimension-array-and-access-indexes" name="iterate-through-livewire-multi-dimension-array-and-access-indexes"></a>
+
 #### Iterate through livewire multi-dimension array and access indexes
 
 If you need to access the index of each item in the iteration, you can do so using the `([item], [index]) in [items]` syntax like so:
@@ -64,10 +64,12 @@ If you need to access the index of each item in the iteration, you can do so usi
     </div>
 
 
-<a id="x-text"></a>
+<a id="markdown-x-text" name="x-text"></a>
+
 ## x-text
 
-<a id="x-ref-with-single-object"></a>
+<a id="markdown-x-ref-with-single-object" name="x-ref-with-single-object"></a>
+
 #### `x-ref` with single object
 
     <div x-data="{
@@ -82,7 +84,8 @@ If you need to access the index of each item in the iteration, you can do so usi
         <p x-text="employee.age"></p>
     </div>
 
-<a id="x-ref-with-single-object-defined-in-script"></a>
+<a id="markdown-x-ref-with-single-object-defined-in-script" name="x-ref-with-single-object-defined-in-script"></a>
+
 #### `x-ref` with single object defined in `script`
 
     <div x-data="employee" class="space-y-0 my">
@@ -101,7 +104,8 @@ If you need to access the index of each item in the iteration, you can do so usi
         });
     </script>
 
-<a id="x-ref-with-array-of-multiple-objects-and-loop-using-x-for"></a>
+<a id="markdown-x-ref-with-array-of-multiple-objects-and-loop-using-x-for" name="x-ref-with-array-of-multiple-objects-and-loop-using-x-for"></a>
+
 #### `x-ref` with array of multiple objects and loop using `x-for`
 
     <ul x-data="employee">
@@ -122,10 +126,12 @@ If you need to access the index of each item in the iteration, you can do so usi
         });
     </script>
 
-<a id="x-ref-with-array-of-multiple-objects-and-loop-using-x-for-defined-in-script"></a>
+<a id="markdown-x-ref-with-array-of-multiple-objects-and-loop-using-x-for-defined-in-script" name="x-ref-with-array-of-multiple-objects-and-loop-using-x-for-defined-in-script"></a>
+
 #### `x-ref` with array of multiple objects and loop using `x-for` defined in `script`
 
-<a id="data-binding"></a>
+<a id="markdown-data-binding" name="data-binding"></a>
+
 ## Data Binding
 
 ```html
@@ -155,37 +161,11 @@ If you need to access the index of each item in the iteration, you can do so usi
 ```
 
 
-<a id="x-on-dom-events"></a>
-## x-on DOM Events
-
-`x-on:click.window` listening for a click event anywhere in the window then set `show = true`
-
-```html
-<div x-data="{ show: false }" x-on:click.window="show = true;" x-show="show">
-    ...
-</div>
-```
-
-`x-on:my-event.window` listining for an emitted event called 'my-event' then set `show = true`
-
-<div x-data="{ show: false }" x-on:my-event.window="show = true" x-show="show">
-    ...
-</div>
-
-
-Livewire allows you to fire browser window events using `dispatchBrowserEvent()` function.
-
-```php
-$this->dispatchBrowserEvent('my-event', 'Notification message!');
-```
-
-**Q. how can an event be dispatched using vanilla javascript?**
-
----
 
 
 
-<a id="accordion-single-item"></a>
+<a id="markdown-accordion-single-item" name="accordion-single-item"></a>
+
 ### Accordion (Single Item)
 
 https://vimeo.com/617233130/3f5a355c0b
@@ -207,7 +187,8 @@ https://vimeo.com/617233130/3f5a355c0b
 </div>
 ```
 
-<a id="accordion-multiple-items"></a>
+<a id="markdown-accordion-multiple-items" name="accordion-multiple-items"></a>
+
 ### Accordion (Multiple Items)
 
 **Tip:** bind the `aria-expanded` attribute to the `expanded` property to toggle true and false.
@@ -259,7 +240,8 @@ The js way
 
 
 
-<a id="trouble-shooting"></a>
+<a id="markdown-trouble-shooting" name="trouble-shooting"></a>
+
 ## Trouble Shooting
 
 **Problem:** `x-for` not displaying all the elements <br>
@@ -268,7 +250,8 @@ Make sure the `<template>` has a root element.
 
 
 
-<a id="multi-dimension-array"></a>
+<a id="markdown-multi-dimension-array" name="multi-dimension-array"></a>
+
 ### Multi-dimension Array
 
 ```php

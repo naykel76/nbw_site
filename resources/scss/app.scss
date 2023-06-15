@@ -4,6 +4,17 @@
 @use "node_modules/nk_jtb/scss/mixins/media" as *;
 @use "node_modules/nk_jtb/scss/jtb";
 
+$header-bg: #074464 !default;
+
+$main-bg: transparent !default;
+
+$footer-bg: #1D1D1C !default;
+$footer-text-color: rgb(204, 204, 204) !default;
+
+$copyright-bg: darken($footer-bg, 2%) !default;
+$copyright-text-color: $footer-text-color !default;
+
+
 // $img-path: "../../public/images";
 
 // make the first column in the table body code font
@@ -22,3 +33,11 @@ question {
 answer + p {
     margin-top: 0.5rem;
 }
+
+$background: #0b101d;
+
+// $text: #f0f2f9;
+// $background: #0b101d;
+// $primary-button: #5593b9;
+// $secondary-button: #f4f8fa;
+// $accent: #213d4f;
