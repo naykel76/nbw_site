@@ -1,6 +1,6 @@
 # Github Cheat Sheet
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
 - [Global Config (global, system and local)](#global-config-global-system-and-local)
 - [GIT Branches](#git-branches)
@@ -15,7 +15,7 @@
 - [Creating Alias](#creating-alias)
     - [Create Alias to Clone Repo](#create-alias-to-clone-repo)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
 ```bash
 git log --oneline
@@ -28,7 +28,8 @@ git reset --hard && git clean -df
 
 
 
-<a id="global-config-global-system-and-local"></a>
+<a id="markdown-global-config-global-system-and-local" name="global-config-global-system-and-local"></a>
+
 ## Global Config (global, system and local)
 
 Can change `local|global|system` flag to display different configuration settings.
@@ -44,7 +45,8 @@ git config --global github.user myusername      # change username
 
 
 
-<a id="git-branches"></a>
+<a id="markdown-git-branches" name="git-branches"></a>
+
 ## GIT Branches
 
 ```bash
@@ -58,7 +60,8 @@ git push --delete origin [branch]         # Delete remote branch
 git push --set-upstream origin [branch]   # Push branch to remote
 ```
 
-<a id="repositories"></a>
+<a id="markdown-repositories" name="repositories"></a>
+
 ## Repositories
 
 ```bash
@@ -66,7 +69,8 @@ git reset --soft HEAD~1         # Restore last commit but keep changes
 git reset --hard HEAD~1         # Restore last commit and delete changes
 ```
 
-<a id="commit-and-push"></a>
+<a id="markdown-commit-and-push" name="commit-and-push"></a>
+
 ## Commit and Push
 
 
@@ -82,14 +86,16 @@ git push origin [branch]        # Push branch to server
 ```
 
 
-<a id="how-to-change-commit-message"></a>
+<a id="markdown-how-to-change-commit-message" name="how-to-change-commit-message"></a>
+
 ### How to change commit message
 
 Run the following command to amend (change) the message of the latest commit:
 
     git commit --amend -m "New commit message."
 
-<a id="git-merge-squash-rebase-and-conflicts"></a>
+<a id="markdown-git-merge-squash-rebase-and-conflicts" name="git-merge-squash-rebase-and-conflicts"></a>
+
 ## Git Merge, Squash, Rebase and Conflicts
 
 ```bash
@@ -101,14 +107,16 @@ git merge --abort               # Cancel merge
 ```
 
 
-<a id="merge-changes-and-into-a-single-commit---squash"></a>
+<a id="markdown-merge-changes-and-into-a-single-commit---squash" name="merge-changes-and-into-a-single-commit---squash"></a>
+
 ### Merge changes and into a single commit. `--squash`
 
 ``` bash
 git merge --squash [branch]
 ```
 
-<a id="create-and-modify-repositories"></a>
+<a id="markdown-create-and-modify-repositories" name="create-and-modify-repositories"></a>
+
 ## Create and Modify Repositories
 
 ```bash
@@ -121,7 +129,8 @@ git remote add origin new-URL                       # change repo location
 git remote -v                                       # Check repo location
 ```
 
-<a id="git-stash"></a>
+<a id="markdown-git-stash" name="git-stash"></a>
+
 ## GIT Stash
 
 
@@ -135,7 +144,8 @@ git remote -v                                       # Check repo location
 | git stash clear |                        |
 
 
-<a id="releases--version-tags"></a>
+<a id="markdown-releases--version-tags" name="releases--version-tags"></a>
+
 ## Releases & Version Tags
 
 | Action                                   | Command                           | Notes          |
@@ -151,7 +161,8 @@ git remote -v                                       # Check repo location
 
 
 
-<a id="creating-alias"></a>
+<a id="markdown-creating-alias" name="creating-alias"></a>
+
 ## Creating Alias
 
 git config --global alias.nk branch clone https://github.com/naykel76/laravel-starter"
@@ -162,7 +173,8 @@ git config --global alias.naykel 'clone https://github.com/naykel76/argument1 ar
 git config --global alias.naykel '!'"git clone https://github.com/naykel76/\$1 argument2"
 
 
-<a id="create-alias-to-clone-naykel-repo"></a>
+<a id="markdown-create-alias-to-clone-repo" name="create-alias-to-clone-repo"></a>
+
 ### Create Alias to Clone Repo
 
   git nk <repository> <target-directory>

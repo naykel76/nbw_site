@@ -1,3 +1,13 @@
+    use Illuminate\Support\Facades\Storage;
+    Storage::copyDirectory($sourcePath, $destinationPath);
+
+
+    use Illuminate\Support\Facades\File;
+    File::copyDirectory($sourcePath, $destinationPath);
+
+(new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/js', resource_path('js'));
+
+
 How do I turn of errors for a single gotime input?
 
 

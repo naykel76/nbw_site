@@ -1,18 +1,32 @@
-@use "node_modules/nk_jtb/scss/base/vars_colors" as *; // with ( $primary: #6233cd,);
-@use "node_modules/nk_jtb/scss/base/vars_base" as *; // with ($base-font-size: 0.875rem);
-// @use "node_modules/nk_jtb/scss/base/vars_components" as *; // with ($navbar-bg: $primary,);
+// @use "node_modules/nk_jtb/scss/base/vars_colors" as *; // with ( $primary: #6233cd,);
+$x-text: rgb(228, 232, 236);
+$x-background: #0b101d;
+$x-primary-button: #2876dc;
+$x-secondary-button: #e1e1df;
+$x-accent: #e6c637;
+$f: Poppins, Helvetica, Arial, sans-serif;
+
+// $x-text: #070604;
+// $x-background: #f8f6f2;
+// $x-primary-button: #424f76;
+// $x-secondary-button: #d3e5e8;
+// $x-accent: #424f76;
+
+@use "node_modules/nk_jtb/scss/base/vars_base" as * with (
+    $base-color: $x-text,
+    $background: $x-background,
+    $primary: $x-primary-button,
+    $secondary: $x-secondary-button,
+    $accent: $x-accent,
+    $font-family: $f,
+);
+
+
+@use "node_modules/nk_jtb/scss/base/vars_components" as * with ($navbar-bg: $background,);
 @use "node_modules/nk_jtb/scss/mixins/media" as *;
 @use "node_modules/nk_jtb/scss/jtb";
 
-$header-bg: #074464 !default;
 
-$main-bg: transparent !default;
-
-$footer-bg: #1D1D1C !default;
-$footer-text-color: rgb(204, 204, 204) !default;
-
-$copyright-bg: darken($footer-bg, 2%) !default;
-$copyright-text-color: $footer-text-color !default;
 
 
 // $img-path: "../../public/images";

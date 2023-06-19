@@ -8,13 +8,11 @@
 
         @else
 
-            @foreach($data['menus'] as $menu)
-
-                <h2>{{ $menu }}</h2>
-
-                <x-gt-menu menuname="{{ $menu }}" filename="{{ $data['navFileName'] }}" class="menu" />
-
-            @endforeach
+            <div class="space-y-2">
+                @foreach($data['menus'] as $menu)
+                    <x-gt-menu menuname="{{ $menu }}" filename="{{ $data['navFileName'] }}" class="menu txt-sm" title="{{ $menu }}" />
+                @endforeach
+            </div>
 
         @endif
 
