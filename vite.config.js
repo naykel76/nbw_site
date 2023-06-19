@@ -1,9 +1,11 @@
 import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
+import purge from '@erbelion/vite-plugin-laravel-purgecss'
 
 export default defineConfig({
     plugins: [
-        laravel({
+        // if there are issues, try with laravel.default
+        laravel.default({
             input: [
                 'resources/scss/app.scss',
                 'resources/js/app.js',
@@ -13,14 +15,29 @@ export default defineConfig({
         {
             name: 'blade',
             handleHotUpdate({ file, server }) {
-                // if (file.endsWith('.blade.php')) {
-                if (file.endsWith('.php')) {
+                if (file.endsWith('.blade.php')) {
                     server.ws.send({
                         type: 'full-reload',
                         path: '*',
                     });
                 }
             },
-        }
+        },
+        purge({
+            paths: [
+                'resources/views/**/*.blade.php',
+                'vendor/naykel/**/resources/views/**/*.blade.php'
+            ],
+            // safelist: ['nice-button'],
+            // blocklist: ['usedClass', /^nav-/],
+            extractors: [
+                {
+                    extractor: (content) => {
+                        return content.match(/[A-Za-z0-9-_:\/]+/g) || []
+                    },
+                    extensions: ['css', 'html', 'vue', 'php'],
+                },
+            ],
+        })
     ],
 });
