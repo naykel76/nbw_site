@@ -2,7 +2,7 @@
 
     {{-- this is just a lazy way to make the docs readable --}}
     <div class="maxw-800 mx-auto">
-        <x-gotime-parsedown dir="views/" path="{{ $data['path'] }}" />
+        <x-gt-parsedown dir="views/" path="{{ $data['path'] }}" />
     </div>
 
 </x-gotime-app-layout>

@@ -13,7 +13,7 @@
         </div>
     </section>
 
-    <x-markdown class="-ml-3">
+    <x-gt-markdown class="-ml-3">
         @verbatim
             ```
             <section class="banner dark" style="background-image: url(http://pf.site/storage/content/agribusiness-finance.jpg);">
@@ -22,7 +22,7 @@
                 </div>
             </section>
         @endverbatim
-    </x-markdown>
+    </x-gt-markdown>
     <hr>
 
     <div class="banner blue flex va-c" style="background-image: url(/images/colour-smoke-870x400.jpg)">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\TestingController;
 use App\Http\Controllers\Uni\Uni2701Controller;
+use App\Http\Livewire\Dev\{Choices, Select};
 use Illuminate\Support\Facades\Route;
 use Naykel\Gotime\RouteBuilder;
 
@@ -18,8 +19,9 @@ Route::get('/', function () {
 
 Route::get('/dev', [TestingController::class, 'timer'])->name('dev');
 
-// must run first
 (new RouteBuilder('nav-main'))->create();
+
+(new RouteBuilder('nav-concepts', 'layouts.docs-blog-style'))->create();
 
 (new RouteBuilder('nav-alpine', 'layouts.docs-default'))->create();
 (new RouteBuilder('nav-laravel', 'layouts.docs-default'))->create();
@@ -28,3 +30,10 @@ Route::get('/dev', [TestingController::class, 'timer'])->name('dev');
 
 Route::get('/2701', [Uni2701Controller::class, 'show'])->name('uni.2701');
 
+
+
+// Route::get('/docs/laravel/components-and-integrations', Choices::class)
+//     ->name('docs.laravel.choices');
+
+// Route::get('/docs/laravel/select', Select::class)
+//     ->name('docs.laravel.select');

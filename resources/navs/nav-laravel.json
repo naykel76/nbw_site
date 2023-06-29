@@ -36,6 +36,11 @@
                 "icon": "laravel"
             },
             {
+                "name": "Factories and Seeders",
+                "route_name": "docs.laravel.factories-and-seeders",
+                "icon": "laravel"
+            },
+            {
                 "name": "Mail",
                 "route_name": "docs.laravel.mail",
                 "icon": "laravel"
@@ -43,6 +48,11 @@
             {
                 "name": "Model and Migrations",
                 "route_name": "docs.laravel.migrations",
+                "icon": "laravel"
+            },
+            {
+                "name": "Packages",
+                "route_name": "docs.laravel.packages",
                 "icon": "laravel"
             }
         ]

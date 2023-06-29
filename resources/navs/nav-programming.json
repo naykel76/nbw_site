@@ -167,6 +167,10 @@
             {
                 "name": "Google Maps",
                 "route_name": "docs.google-maps"
+            },
+            {
+                "name": "ChoicesJS",
+                "route_name": "docs.choices_js"
             }
         ]
     }

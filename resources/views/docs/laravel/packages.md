@@ -1,34 +1,55 @@
 
 # Laravel Packages
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
-- [Loading Resources](#loading-resources)
+- [Loading and Merging Resources](#loading-and-merging-resources)
+- [Publishing](#publishing)
 - [Register Package Components](#register-package-components)
     - [Blade Component](#blade-component)
     - [Livewire Component](#livewire-component)
 - [Seeding From Package](#seeding-from-package)
 - [Livewire Trouble Shooting](#livewire-trouble-shooting)
     - [Error: Unable to find component](#error-unable-to-find-component)
-- [How To's](#how-tos)
-        - [How do I copy and rename a stub?](#how-do-i-copy-and-rename-a-stub)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
-<a id="loading-resources"></a>
-## Loading Resources
+<a id="markdown-loading-and-merging-resources" name="loading-and-merging-resources"></a>
+
+## Loading and Merging Resources
+
+Paths may vary depending on directory set up.
 
 ```php
-$this->loadRoutesFrom(__DIR__.'/routes/web.php');
-$this->loadMigrationsFrom(__DIR__.'/database/migrations');
-$this->loadViewsFrom(__DIR__.'/resources/views', 'package');
+public function boot(): void
+{
+    $this->mergeConfigFrom( __DIR__ . '/config/gotime.php', 'gotime' );
+    $this->loadViewsFrom(__DIR__ . '/../resources/views', 'gotime');
+    $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+    $this->loadRoutesFrom(__DIR__.'/routes.php');
+}
+
 ```
 
+<a id="markdown-publishing" name="publishing"></a>
 
-<a id="register-package-components"></a>
+## Publishing
+
+```php
+public function boot(): void
+{
+    $this->publishes([
+        __DIR__.'/../config/naykel.php' => config_path('naykel.php'),
+    ]);
+}
+```
+
+<a id="markdown-register-package-components" name="register-package-components"></a>
+
 ## Register Package Components
 
-<a id="blade-component"></a>
+<a id="markdown-blade-component" name="blade-component"></a>
+
 ### Blade Component
 
 ```php
@@ -38,12 +59,12 @@ use MyPackage\View\Components\Alert;
 
 class MyPackageServiceProvider extends ServiceProvider{
     public function boot() {
-        // 'my-package- is a prefix and can be left off
-        Blade::component('my-package-alert', Alert::class);
+        Blade::component('my-alert', Alert::class);
     }
 }
 ```
-<a id="livewire-component"></a>
+<a id="markdown-livewire-component" name="livewire-component"></a>
+
 ### Livewire Component
 
 Manually register components in the `boot` method of the package service provider using the `Livewire::component` method.
@@ -69,7 +90,8 @@ public function register(){
 
 
 
-<a id="seeding-from-package"></a>
+<a id="markdown-seeding-from-package" name="seeding-from-package"></a>
+
 ## Seeding From Package
 
 ```bash
@@ -83,11 +105,13 @@ php artisan db:seed --class=Naykel\\Payit\\Database\\Seeders\\PaymentPlatformSee
 
 
 
-<a id="livewire-trouble-shooting"></a>
+<a id="markdown-livewire-trouble-shooting" name="livewire-trouble-shooting"></a>
+
 ## Livewire Trouble Shooting
 
 
-<a id="error-unable-to-find-component"></a>
+<a id="markdown-error-unable-to-find-component" name="error-unable-to-find-component"></a>
+
 ### Error: Unable to find component
 
 Make sure the component has been correctly added to the `boot` method of the `ServiceProvider`
@@ -120,7 +144,3 @@ public function boot() {
 }
 ```
 
-
-## How To's
-
-#### How do I copy and rename a stub?

@@ -19,7 +19,7 @@
 
 
 
-<x-markdown class="-ml-3">
+<x-gt-markdown class="-ml-3">
 
 
     @verbatim
@@ -36,6 +36,6 @@
             {title: 'Accordion two', body 'This body for accordion two'},
         ]
     @endverbatim
-</x-markdown>
+</x-gt-markdown>
 
 <pre>{{ $json }}</pre>

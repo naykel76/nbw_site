@@ -17,14 +17,14 @@
 
             <p>There are no special requirements for this layout, to control the width simply add JTB <code>width</code> utility classes and <code>mx-auto</code> to align in the middle.</p>
 
-            <x-markdown class="-ml-7">
+            <x-gt-markdown class="-ml-7">
                 @verbatim
                     ```
                     <article class="mx-auto maxw-md">
                         ...
                     </article>
                 @endverbatim
-            </x-markdown>
+            </x-gt-markdown>
         </div>
 
     </article>
