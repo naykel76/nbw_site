@@ -8,14 +8,11 @@
             {
                 "name": "Cleaner Code Examples",
                 "route_name": "pages.programming-concepts.cleaner-code-examples"
-            }
-        ]
-    },
-    "Laravel": {
-        "links": [
+            },
             {
                 "name": "How To Use Interfaces In a Laravel Project",
-                "route_name": "pages.laravel.how-to-use-interfaces-in-a-Laravel-project"
+                "route_name": "pages.laravel.how-to-use-interfaces-in-a-Laravel-project",
+                "icon": "laravel"
             }
         ]
     }

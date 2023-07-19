@@ -1,8 +1,3 @@
-
-How can I inject menu links from the default menu to a dropdown menu?
-
-## These are notes that need a home
-
 # Create a full page livewire component form Naykel Gotime
 
 #### Create livewire component
@@ -83,19 +78,12 @@ rm -rf vendor
 composer install
 ```
 
-
-    // use a ternary operator to check if the layout is defined
-    $view = $this->layout ? $this->layouts[$this->layout]($view) : $view;
-
-
-
 ```php
 // Checks if the object or class has a property
 property_exists($object_or_class, string $property): bool
 ```
 
-
-#### How can I count the section in a php path?
+#### How to count the sections in a php path?
 
 ```php
 $path = "section1/section2";

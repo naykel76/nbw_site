@@ -22,5 +22,13 @@
                 "icon": "linux"
             }
         ]
+    },
+    "other": {
+        "links": [
+            {
+                "name": "Things You Should Know",
+                "route_name": "linux.things-you-should-know"
+            }
+        ]
     }
 }

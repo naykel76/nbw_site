@@ -13,7 +13,8 @@
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
-        "naykel/gotime": "^0.13.2"
+        "naykel/contactit": "^1.3",
+        "naykel/gotime": "^0.14"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",

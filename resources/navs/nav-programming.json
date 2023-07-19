@@ -23,7 +23,7 @@
             },
             {
                 "name": "CSS",
-                "route_name": "docs.css-cheatsheet",
+                "route_name": "docs.css.css-cheatsheet",
                 "icon": "css"
             },
             {
@@ -68,7 +68,7 @@
             },
             {
                 "name": "Laravel",
-                "route_name": "docs.laravel.laravel",
+                "route_name": "docs.laravel.cheatsheet",
                 "icon": "laravel",
                 "exclude_route": true
             },

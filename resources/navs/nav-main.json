@@ -13,20 +13,13 @@
             },
             {
                 "name": "Laravel",
-                "route_name": "docs.laravel.laravel",
+                "route_name": "docs.laravel.cheatsheet",
                 "type": "md",
                 "exclude_route": true
             },
             {
-                "name": "Linux",
-                "route_name": "linux.things-you-should-know",
-                "type": "md"
-            },
-            {
-                "name": "SQL",
-                "route_name": "docs.sql.sql-cheatsheet",
-                "type": "md",
-                "exclude_route": true
+                "name": "About Me",
+                "route_name": "pages.about"
             }
         ]
     },

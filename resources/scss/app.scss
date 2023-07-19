@@ -1,9 +1,8 @@
-// $x-text: #070604;
 $x-text: #333;
 $x-background: #f8f6f2;
 $x-primary-button: #424f76;
 $x-secondary-button: #f3f2f2;
-$x-accent: #514e4d;
+$x-accent: #ffbb1c;
 
 @use "node_modules/nk_jtb/src/base/vars_base" as * with (
     $text: $x-text,
@@ -11,18 +10,27 @@ $x-accent: #514e4d;
     $primary: $x-primary-button,
     $secondary: $x-secondary-button,
     $accent: $x-accent,
-    $font-family: (Poppins, Helvetica, Arial, sans-serif)
+    $font-family: (
+        Poppins,
+        Helvetica,
+        Arial,
+        sans-serif
+    )
 );
 
+@use "node_modules/nk_jtb/src/scss/base/vars_components" as * with (
+    $navbar-bg: $primary,
+    $navbar-nav-hover-bg: transparent,
+    $navbar-nav-hover-color: #ffbb1c,
+    $navbar-nav-active-color: #ffbb1c
+);
 
-@use "node_modules/nk_jtb/src/scss/base/vars_components" as * with ($navbar-bg: $primary,);
 @use "node_modules/nk_jtb/src/mixins/media" as *;
-// @use "./play";
 @use "node_modules/nk_jtb/src/jtb";
-
+// @use "./play";
 
 // home screen nav buttons
-.nav-buttons nav ul{
+.nav-buttons nav ul {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;

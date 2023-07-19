@@ -3,7 +3,7 @@
         "links": [
             {
                 "name": "Cheatsheet",
-                "route_name": "docs.laravel.laravel",
+                "route_name": "docs.laravel.cheatsheet",
                 "icon": "laravel"
             }
         ]

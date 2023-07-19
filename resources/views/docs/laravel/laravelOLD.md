@@ -1,18 +1,6 @@
 # Laravel Cheatsheet
 
-<!-- MarkdownTOC -->
 
-- [Check Existence](#check-existence)
-- [Config and Environment](#config-and-environment)
-    - [Determining The Current Environment](#determining-the-current-environment)
-- [Maintenance Mode](#maintenance-mode)
-- [Auth and User](#auth-and-user)
-- [Path Helper Functions](#path-helper-functions)
-- [Views](#views)
-    - [Display view if exists](#display-view-if-exists)
-- [How to Make Menu Item Active](#how-to-make-menu-item-active)
-
-<!-- /MarkdownTOC -->
 
 How can I convert dot notation or a route name to a url?
 
@@ -34,7 +22,6 @@ $item->url = service/bookkeeping
 
 
 
-<a id="config-and-environment"></a>
 ## Config and Environment
 
 | Command                   | Action                               |
@@ -43,7 +30,6 @@ $item->url = service/bookkeeping
 | `config('app.timezone');` | Accessing Configuration Values       |
 
 
-<a id="determining-the-current-environment"></a>
 ### Determining The Current Environment
 
 ```php
@@ -62,7 +48,6 @@ if (App::environment(['local', 'staging'])) {
 }
 ```
 
-<a id="maintenance-mode"></a>
 ## Maintenance Mode
 
 ```bash
@@ -80,7 +65,6 @@ php artisan down --redirect=/
 
 <hr>
 
-<a id="auth-and-user"></a>
 ## Auth and User
 
 | Command                                              | Action                                                             |
@@ -92,8 +76,6 @@ php artisan down --redirect=/
 | `@if (Auth::user()->hasRole('supplier')) ... @endif` | Check if user has role in view                                     |
 
 
-<a id="markdown-helper-functions" name="helper-functions"></a>
-<a id="path-helper-functions"></a>
 ## Path Helper Functions
 
 
@@ -108,21 +90,8 @@ php artisan down --redirect=/
 | `storage_path()`  | `\storage`   |
 
 
-<a id="views"></a>
-## Views
-
-<a id="display-view-if-exists"></a>
-### Display view if exists
-```php
-if (view()->exists('user.dashboard-layout')) {
-    return view('user.dashboard-layout');
-} else {
-    return view('authit::user.dashboard-layout');
-}
-```
 
 
-<a id="how-to-make-menu-item-active"></a>
 ## How to Make Menu Item Active
 
 ```php

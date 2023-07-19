@@ -5,11 +5,9 @@
 - [Retrieving values](#retrieving-values)
     - [Get array object by value](#get-array-object-by-value)
     - [Return a random value from an array by index](#return-a-random-value-from-an-array-by-index)
-    - [Get the lowest value](#get-the-lowest-value)
 - [Removing Items](#removing-items)
     - [Basic Methods `splice()`, `pop()` and `shift()`](#basic-methods-splice-pop-and-shift)
     - [Remove items by value `filter()`](#remove-items-by-value-filter)
-    - [Create a new array without the specified items: `slice()`](#create-a-new-array-without-the-specified-items-slice)
 - [Count duplicate values `reduce()`](#count-duplicate-values-reduce)
     - [Simple array](#simple-array)
     - [Key value pairs](#key-value-pairs)
@@ -24,7 +22,6 @@
 <a id="markdown-retrieving-values" name="retrieving-values"></a>
 
 ## Retrieving values
-
 
 <a id="markdown-get-array-object-by-value" name="get-array-object-by-value"></a>
 
@@ -51,19 +48,9 @@ const randomIndex = Math.floor(Math.random() * array.length);
 const randomElement = array[randomIndex];
 ```
 
-
-<a id="markdown-get-the-lowest-value" name="get-the-lowest-value"></a>
-
-### Get the lowest value
-
- how can i get the lowest value in an array of objects?
-
-
-
 <a id="markdown-removing-items" name="removing-items"></a>
 
 ## Removing Items
-
 
 <a id="markdown-basic-methods-splice-pop-and-shift" name="basic-methods-splice-pop-and-shift"></a>
 
@@ -112,10 +99,6 @@ a new array (newArray) using the filter() method.
 You should note a new array containing matching values is returned. The original array is left
 untouched.
 
-
-<a id="markdown-create-a-new-array-without-the-specified-items-slice" name="create-a-new-array-without-the-specified-items-slice"></a>
-
-### Create a new array without the specified items: `slice()`
 
 <a id="markdown-count-duplicate-values-reduce" name="count-duplicate-values-reduce"></a>
 

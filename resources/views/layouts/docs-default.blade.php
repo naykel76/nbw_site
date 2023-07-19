@@ -1,4 +1,4 @@
-<x-gotime-app-layout layout="docs" hasContainer class="markdown withH2Separator py-5-3-2-2">
+<x-gotime-app-layout layout="docs" hasContainer class="markdown py-5-3-2-2">
 
     <x-slot name="navigation">
 
