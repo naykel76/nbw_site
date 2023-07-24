@@ -1,10 +1,71 @@
 # CSS Cheatsheet
 <!-- TOC -->
 
+- [Grid](#grid)
+    - [Grid Two Column Layouts](#grid-two-column-layouts)
+        - [Grid with fluid column and fixed column (non-responsive)](#grid-with-fluid-column-and-fixed-column-non-responsive)
+    - [Auto Grid](#auto-grid)
+    - [Change between row and column with `grid-auto-flow`](#change-between-row-and-column-with-grid-auto-flow)
 - [Transition](#transition)
     - [Transition element from left to right](#transition-element-from-left-to-right)
 
 <!-- /TOC -->
+
+<a id="markdown-grid" name="grid"></a>
+
+## Grid
+<a id="markdown-grid-two-column-layouts" name="grid-two-column-layouts"></a>
+
+### Grid Two Column Layouts
+
+<a id="markdown-grid-with-fluid-column-and-fixed-column-non-responsive" name="grid-with-fluid-column-and-fixed-column-non-responsive"></a>
+
+#### Grid with fluid column and fixed column (non-responsive)
+
+```css
+grid-template-columns: 3rem 1fr;
+```
+<div class="grid">
+    <div class="grid-0.5 bx pxy-05" style="grid-template-columns: 5rem 1fr;">
+        <div class="bx red" style="grid-column: 2"></div>
+        <div class="bx blue"></div>
+        <div class="bx blue"></div>
+    </div>
+</div>
+
+``` css
+/* 3 columns equal widths */
+grid-template-columns: repeat(3, 1fr);
+```
+
+<a id="markdown-auto-grid" name="auto-grid"></a>
+
+### Auto Grid
+
+The smallest we can get is {n}rem and the 1fr says get as big as you can get until you can get until you can fit another item in at the smallest
+
+``` css
+/* 3 columns equal widths */
+grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+
+grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
+grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+```
+
+<a id="markdown-change-between-row-and-column-with-grid-auto-flow" name="change-between-row-and-column-with-grid-auto-flow"></a>
+
+### Change between row and column with `grid-auto-flow`
+
+```css
+.columns { grid-auto-flow: column; }
+
+@media (min-width:40rem){
+    .columns { grid-auto-flow: row; }
+}
+```
+
+
+
 
 <a id="markdown-transition" name="transition"></a>
 

@@ -18,6 +18,10 @@ $x-accent: #ffbb1c;
     )
 );
 
+@use "node_modules/nk_jtb/src/base/vars_components" as * with (
+    $zebra-alt-bg: #ffffff,
+);
+
 @use "node_modules/nk_jtb/src/scss/base/vars_components" as * with (
     $navbar-bg: $primary,
     $navbar-nav-hover-bg: transparent,
@@ -28,6 +32,16 @@ $x-accent: #ffbb1c;
 @use "node_modules/nk_jtb/src/mixins/media" as *;
 @use "node_modules/nk_jtb/src/jtb";
 // @use "./play";
+
+th {
+    background: #dadada;
+    border: 1px solid;
+    font-weight: 900;
+}
+
+td {
+    border: 1px solid #333;
+}
 
 // home screen nav buttons
 .nav-buttons nav ul {

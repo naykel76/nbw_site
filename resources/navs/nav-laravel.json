@@ -11,6 +11,11 @@
     "Cheatsheets": {
         "links": [
             {
+                "name": "Components",
+                "route_name": "docs.laravel.components",
+                "icon": "laravel"
+            },
+            {
                 "name": "Collections",
                 "route_name": "docs.laravel.collections",
                 "icon": "laravel"

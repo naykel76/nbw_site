@@ -2,24 +2,10 @@
     "main": {
         "links": [
             {
-                "name": "Angular Cheatsheet",
+                "name": "Angular",
                 "route_name": "docs.angular.angular-cheatsheet",
-                "icon": "angular"
-            },
-            {
-                "name": "Angular Components",
-                "route_name": "docs.angular.components",
-                "icon": "angular"
-            },
-            {
-                "name": "Angular Routing",
-                "route_name": "docs.angular.routing",
-                "icon": "angular"
-            },
-            {
-                "name": "Observable Example",
-                "route_name": "docs.angular.user-observable-example",
-                "icon": "angular"
+                "icon": "angular",
+                "exclude_route": true
             },
             {
                 "name": "CSS",
@@ -37,9 +23,20 @@
                 "icon": "css"
             },
             {
+                "name": "ExpressJS",
+                "route_name": "docs.express-cheatsheet",
+                "icon": "expressjs"
+            },
+            {
                 "name": "Github",
-                "route_name": "docs.github",
+                "route_name": "docs.github-cheatsheet",
                 "icon": "github"
+            },
+            {
+                "name": "Ionic",
+                "route_name": "docs.ionic.ionic-cheatsheet",
+                "icon": "ionic",
+                "exclude_route": true
             },
             {
                 "name": "Javascript Arrays",
@@ -70,6 +67,12 @@
                 "name": "Laravel",
                 "route_name": "docs.laravel.cheatsheet",
                 "icon": "laravel",
+                "exclude_route": true
+            },
+            {
+                "name": "Linux",
+                "route_name": "docs.linux.linux-cheatsheet",
+                "icon": "linux",
                 "exclude_route": true
             },
             {
@@ -123,45 +126,6 @@
             }
         ]
     },
-    "Ionic": {
-        "links": [
-            {
-                "name": "Components",
-                "route_name": "docs.ionic.components",
-                "icon": "ionic"
-            },
-            {
-                "name": "Date and Time",
-                "route_name": "docs.ionic.date-time",
-                "icon": "ionic"
-            },
-            {
-                "name": "Form Controls",
-                "route_name": "docs.ionic.form-controls",
-                "icon": "ionic"
-            },
-            {
-                "name": "Modal",
-                "route_name": "docs.ionic.modal",
-                "icon": "ionic"
-            },
-            {
-                "name": "Storage",
-                "route_name": "docs.ionic.storage",
-                "icon": "ionic"
-            },
-            {
-                "name": "Custom Component - Confirmation Modal ",
-                "route_name": "docs.ionic.custom-modal-confirmation-component",
-                "icon": "ionic"
-            },
-            {
-                "name": "Switch To Standalone Components",
-                "route_name": "docs.ionic.switch-to-standalone-approach",
-                "icon": "ionic"
-            }
-        ]
-    },
     "other": {
         "links": [
             {
@@ -171,6 +135,30 @@
             {
                 "name": "ChoicesJS",
                 "route_name": "docs.choices_js"
+            }
+        ]
+    },
+    "Angular": {
+        "links": [
+            {
+                "name": "Cheatsheet",
+                "route_name": "docs.angular.angular-cheatsheet",
+                "icon": "angular"
+            },
+            {
+                "name": "Components",
+                "route_name": "docs.angular.components",
+                "icon": "angular"
+            },
+            {
+                "name": "Routing",
+                "route_name": "docs.angular.routing",
+                "icon": "angular"
+            },
+            {
+                "name": "Observable Example",
+                "route_name": "docs.angular.user-observable-example",
+                "icon": "angular"
             }
         ]
     }

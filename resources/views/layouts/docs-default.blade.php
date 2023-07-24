@@ -10,7 +10,7 @@
 
             <div class="space-y-2">
                 @foreach($data['menus'] as $menu)
-                    <x-gt-menu menuname="{{ $menu }}" filename="{{ $data['navFileName'] }}" class="menu txt-sm" title="{{ $menu }}" />
+                    <x-gt-menu menuname="{{ $menu }}" filename="{{ $data['filename'] }}" class="menu txt-sm" title="{{ $menu }}" />
                 @endforeach
             </div>
 

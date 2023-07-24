@@ -1,26 +1,16 @@
-<!-- MarkdownTOC -->
+# Linux File and Directory Actions
 
-- [Common Commands](#common-commands)
-- [Copy files with `scp`](#copy-files-with-scp)
+<!-- TOC -->
+
+- [Securely Copy files with `scp`](#securely-copy-files-with-scp)
 - [Renaming Multiple Files (script)](#renaming-multiple-files-script)
 - [Change File Extensions (script)](#change-file-extensions-script)
-- [Find Different Between File and Folders](#find-different-between-file-and-folders)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
-<a id="common-commands"></a>
-## Common Commands
-<div class="code-first-col"></div>
- | Syntax              | Action                       |
- | :------------------ | :--------------------------- |
- | cp -r source/ dest/ | Copy directory and contents  |
- | mv src dest         | Move file/folder             |
- | rm -r dir           | Remove files and directories |
- | rm fileName         | Delete file                  |
- | rmdir dir           | Remove empty directory       |
+<a id="markdown-securely-copy-files-with-scp" name="securely-copy-files-with-scp"></a>
 
-<a id="copy-files-and-folders-with-scp"></a>
-## Copy files with `scp`
+## Securely Copy files with `scp`
 
 ```bash
 # copy file to server
@@ -44,7 +34,6 @@ The `-avz` options with rsync enable archive mode, which preserves file permissi
 
 The rsync command also supports resuming interrupted transfers, which can be useful if the transfer is interrupted due to network issues or other problems.
 
-
 ```bash
 # copy directory from server
 rsync -avz -e ssh user@remote:/path/to/directory /path/to/local/directory/
@@ -64,7 +53,9 @@ rsync -avz -e ssh forge@45.79.239.101:/home/forge/staging.factsoflife.com.au/pub
 `rsync` uses a smart algorithm to only copy files that have changed, so subsequent uploads and downloads will be much faster than the initial transfer.
 
 
-<a id="renaming-multiple-files-script"></a>
+
+<a id="markdown-renaming-multiple-files-script" name="renaming-multiple-files-script"></a>
+
 ## Renaming Multiple Files (script)
 
 https://linuxconfig.org/how-to-rename-multiple-files-on-linux
@@ -92,7 +83,9 @@ find . -maxdepth 2 -type f -name "my_file*" | while read FNAME; do mv "$FNAME" "
 
 ```
 
-<a id="change-file-extensions-script"></a>
+
+<a id="markdown-change-file-extensions-script" name="change-file-extensions-script"></a>
+
 ## Change File Extensions (script)
 
 ```bash
@@ -103,16 +96,3 @@ for i in $( ls *.txt ); do mv $i ${i%.*}; done
 # change extension from .log to .txt.
 for i in *.log; do mv -- "$i" "${i%.log}.txt"; done
 ```
-
-
-## Find Different Between File and Folders
-
-```bash
-diff [OPTION]… FILES
-diff options dir1 dir2
-```
-
--q only display when different
--r to read subdirectories
-
-what is meld?

@@ -2,18 +2,18 @@
     "main": {
         "links": [
             {
-                "name": "Cheatsheet",
+                "name": "Command-Line Cheatsheet",
                 "route_name": "docs.linux.linux-cheatsheet",
                 "icon": "linux"
             },
             {
-                "name": "General File and Directory Actions",
+                "name": "File and Directory Actions",
                 "route_name": "docs.linux.file-and-directory-actions",
                 "icon": "linux"
             },
             {
-                "name": "Linux Web Dev",
-                "route_name": "docs.linux.web-development-setup",
+                "name": "Ubuntu Web Server Setup",
+                "route_name": "docs.linux.ubuntu-server-setup",
                 "icon": "linux"
             },
             {

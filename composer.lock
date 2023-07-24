@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ec03bba570571bbfac27197d3621398",
+    "content-hash": "e95b6c600d07ad4ca40f52019f5e4bf5",
     "packages": [
         {
             "name": "brick/math",
@@ -2042,16 +2042,16 @@
         },
         {
             "name": "naykel/gotime",
-            "version": "v0.14.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/naykel76/gotime.git",
-                "reference": "ccfb593771a88c5925d55a52d4af756aa10727c5"
+                "reference": "11ff921a6d047472f6febbe0c2f558d5cf0258ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/naykel76/gotime/zipball/ccfb593771a88c5925d55a52d4af756aa10727c5",
-                "reference": "ccfb593771a88c5925d55a52d4af756aa10727c5",
+                "url": "https://api.github.com/repos/naykel76/gotime/zipball/11ff921a6d047472f6febbe0c2f558d5cf0258ef",
+                "reference": "11ff921a6d047472f6febbe0c2f558d5cf0258ef",
                 "shasum": ""
             },
             "require": {
@@ -2062,6 +2062,7 @@
             "require-dev": {
                 "phpunit/phpunit": "^10"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -2098,9 +2099,9 @@
             ],
             "support": {
                 "issues": "https://github.com/naykel76/gotime/issues",
-                "source": "https://github.com/naykel76/gotime/tree/v0.14.2"
+                "source": "https://github.com/naykel76/gotime/tree/master"
             },
-            "time": "2023-07-19T19:52:14+00:00"
+            "time": "2023-07-24T00:31:13+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -8381,7 +8382,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "naykel/gotime": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
