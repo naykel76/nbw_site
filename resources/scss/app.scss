@@ -1,8 +1,16 @@
-$x-text: #333;
-$x-background: #f8f6f2;
-$x-primary-button: #424f76;
-$x-secondary-button: #f3f2f2;
-$x-accent: #ffbb1c;
+// $x-text: #333;
+// $x-background: #f8f6f2;
+// $x-primary-button: #424f76;
+// $x-secondary-button: #f3f2f2;
+// $x-accent: #ffbb1c;
+
+$x-text: rgb(228, 232, 236) !default;
+$x-background: #0b101d;
+$x-primary-button: #d9558c;
+// $x-primary-button: #2876dc;
+$x-secondary-button: #e1e1df;
+$x-accent: #e6c637;
+$f: Poppins, Helvetica, Arial, sans-serif;
 
 @use "node_modules/nk_jtb/src/base/vars_base" as * with (
     $text: $x-text,
@@ -10,28 +18,29 @@ $x-accent: #ffbb1c;
     $primary: $x-primary-button,
     $secondary: $x-secondary-button,
     $accent: $x-accent,
-    $font-family: (
-        Poppins,
-        Helvetica,
-        Arial,
-        sans-serif
-    )
+    $font-family: $f
 );
 
 @use "node_modules/nk_jtb/src/base/vars_components" as * with (
-    $zebra-alt-bg: #ffffff,
+    $zebra-alt-bg: #ffffff
 );
 
 @use "node_modules/nk_jtb/src/scss/base/vars_components" as * with (
-    $navbar-bg: $primary,
-    $navbar-nav-hover-bg: transparent,
+    $navbar-bg: transparent,
+    // $navbar-bg: $primary,
+    // $navbar-nav-hover-bg: transparent,
     $navbar-nav-hover-color: #ffbb1c,
     $navbar-nav-active-color: #ffbb1c
 );
 
 @use "node_modules/nk_jtb/src/mixins/media" as *;
 @use "node_modules/nk_jtb/src/jtb";
-// @use "./play";
+@use "./play";
+
+body {
+    background-image: linear-gradient(to right bottom, #0b101d, #0d1220, #0e1424, #0f1627, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
+    font-size: 1.15rem;
+}
 
 th {
     background: #dadada;
@@ -65,4 +74,22 @@ question {
 
 answer + p {
     margin-top: 0.5rem;
+}
+
+.diagonal {
+    position: relative;
+    // make sure the pseudo element is isolated (contained) in this class
+    isolation: isolate;
+
+    &::after {
+        content: "";
+        position: absolute;
+        // background-image: linear-gradient(135deg, #0b101d, #d9558c, #e6c637);
+        // background-image: linear-gradient(135deg, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f, #1b4276);
+        background-image: linear-gradient(135deg, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
+
+        inset: 0;
+        z-index: -1;
+        transform: skewY(-3deg);
+    }
 }

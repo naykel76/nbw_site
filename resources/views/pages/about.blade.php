@@ -1,6 +1,6 @@
 <x-gotime-app-layout layout="{{ config('naykel.template') }}" class="py-5-3-2-2">
 
-    <div class="container maxw-lg">
+    <div class="container maxw-lg diagonal">
 
         <h1>About Me</h1>
 
@@ -14,7 +14,7 @@
 
             <p> Throughout my career, I have spent the majority of my time working in blue-collar industries, where I honed my skills and expanded my knowledge. Fueled by my passion for personal growth, I have always been committed to acquiring new skills and expanding my knowledge from playing guitar and drums to mastering AutoCAD, exploring 3D printing, coding, and delving into programming to name a few.</p>
 
-            <p> Currently, I am in my second year of pursuing a Bachelor of Information Technology degree at Griffith University. Alongside my studies, I run my own business, offering services in bookkeeping, web development, and consulting. Drawing on my trade background and vast experience in administration, production management, and general management, I bring a well-rounded skill set to deliver comprehensive solutions to my clients </p>
+            <p> Currently, I am in my second year of pursuing a Bachelor of Information Technology at Griffith University. Alongside my studies, I run my own business, offering services in bookkeeping, web development, and consulting. Drawing on my trade background and vast experience in administration, production management, and general management, I bring a well-rounded skill set to deliver comprehensive solutions to my clients </p>
 
             <p> Working with others to bring ideas to life is where I truly thrive. I am passionate about small business development, empowering managers and business owners to enhance their enterprises and market position through innovation, technology, and training, thereby reducing reliance on high-cost professionals. </p>
 
