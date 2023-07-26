@@ -9,6 +9,7 @@
 - [Maps](#maps)
     - [Add or Merge Maps](#add-or-merge-maps)
     - [Map Keys](#map-keys)
+        - [Check if key exists](#check-if-key-exists)
     - [Remove items from map](#remove-items-from-map)
 - [Lists](#lists)
     - [List Functions](#list-functions)
@@ -93,9 +94,21 @@ $map3: ( "secondary": ( "base": green, ) );
 
     map.keys($map)                          <!-- get map key -->
     map.keys(map.merge($map1, $map2));      <!-- merge maps and get keys -->
-    map.has-key($map, $key, $keys...)       <!-- check key exists -->
 
+<a id="markdown-check-if-key-exists" name="check-if-key-exists"></a>
 
+#### Check if key exists
+
+```scss
+map.has-key($map, $key, $keys...)
+```
+
+**Examples**
+
+```scss
+@if (map-has-key($map, $key)) { }
+@if (not map-has-key($map, $key)) { }
+```
 
 <a id="markdown-remove-items-from-map" name="remove-items-from-map"></a>
 

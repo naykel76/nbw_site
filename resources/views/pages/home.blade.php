@@ -6,14 +6,21 @@
         </div>
     </section> --}}
 
-    {{-- <section class="diagonal">
+    <section class="relative overflow-x-clip">
+        <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-10%; bottom: -240px; ">
+        <img src="/svg/blur-pink.svg" class="absolute z-bottom" style="left: 10%; bottom: -440px; ">
+        <img src="/svg/blur-yellow.svg" class="absolute z-bottom" style="right: -20%; top: -120%; ">
 
-        <div class="maxw-lg mx-auto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio possimus quaerat nostrum voluptatum, illum ex temporibus architecto consequuntur sint. Voluptatem eos molestias ullam, fugit vero nesciunt, provident velit dolorum rerum in ad sit sapiente voluptatibus deserunt eveniet doloribus incidunt facere asperiores aliquid? Delectus error a atque, earum dolore iure, nam rem sint
+        <div class="container">
+            <div class="txt-xl">Hi, my name is</div>
+            <div class="txt-4">Nathan Watts</div>
+            <div class="maxw-sm">
+                I design and develop Laravel web applications, dabble in server management and am training to become a full stack developer.
+            </div>
+        </div>
+    </section>
 
-    </section> --}}
-
-    <section class="relative">
+    <section class="relative overflow-x-clip">
 
         <img src="/svg/blur-pink.svg" class="absolute z-bottom" style=" right:-5%; bottom: -340px; ">
 

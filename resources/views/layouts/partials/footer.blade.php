@@ -1,14 +1,16 @@
 <footer id="nk-footer">
 
-    <div class="container py">
+    <div class="container py flex space-between va-c">
         <small>© <?php echo date('Y'); ?>, Nathan Watts. All rights reserved. </small>
 
-        <a href="https://www.linkedin.com/in/nathan-watts-97470b150" target="_blank">
-            <x-gt-icon-linkedin class="icon txt-muted" />
-        </a>
-        <a href="https://github.com/naykel76/" target="_blank">
-            <x-gt-icon-github class="icon txt-muted" />
-        </a>
+        <div class="space-x">
+            <a href="https://www.linkedin.com/in/nathan-watts-97470b150" target="_blank">
+                <x-gt-icon-linkedin class="icon txt-muted" />
+            </a>
+            <a href="https://github.com/naykel76/" target="_blank">
+                <x-gt-icon-github class="icon txt-muted" />
+            </a>
+        </div>
     </div>
 
 

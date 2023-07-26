@@ -20,6 +20,11 @@
             {
                 "name": "About Me",
                 "route_name": "pages.about"
+            },
+            {
+                "name": "Contact",
+                "route_name": "contact",
+                "exclude_route": true
             }
         ]
     },
