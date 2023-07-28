@@ -1,12 +1,12 @@
 <x-gotime-app-layout layout="{{ config('naykel.template') }}" class="py-5-3-2-2">
 
-    <div class="container maxw-lg bx">
+    <div class="container maxw-lg bx light">
 
         <h1>About Me</h1>
 
         <section>
 
-            <div class="pull-right to-md:hide pl-2 w-24">
+            <div class="pull-right to-md:hide pl-2 pb-2 w-24">
                 <img src="/images/about.png" alt="about nathan watts">
             </div>
 

@@ -8,7 +8,8 @@ $x-text: rgb(228, 232, 236) !default;
 $x-background: #0b101d;
 $x-primary-button: #d9558c;
 // $x-primary-button: #2876dc;
-$x-secondary-button: #e1e1df;
+// $x-secondary-button: #e1e1df; // light
+$x-secondary-button: #031a37;
 $x-accent: #e6c637;
 $f: Poppins, Helvetica, Arial, sans-serif;
 
@@ -37,19 +38,24 @@ $f: Poppins, Helvetica, Arial, sans-serif;
 @use "node_modules/nk_jtb/src/jtb";
 @use "./play";
 
+// this is only for icons util I find a better way
+.max-icon-width{
+    max-width: 6rem;
+    width: auto;
+}
+
 body {
     background-image: linear-gradient(to right bottom, #0b101d, #0d1220, #0e1424, #0f1627, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
     font-size: 1.15rem;
 }
 
 th {
-    background: #dadada;
-    border: 1px solid;
+    background: #19233c;
     font-weight: 900;
 }
-
-td {
-    border: 1px solid #333;
+td, th {
+    border: 1px solid #1e273e;
+    padding: 0.375rem;
 }
 
 // home screen nav buttons

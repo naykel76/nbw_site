@@ -10,17 +10,8 @@
             {
                 "name": "CSS",
                 "route_name": "docs.css.css-cheatsheet",
-                "icon": "css"
-            },
-            {
-                "name": "CSS Position and Alignment Tips",
-                "route_name": "docs.css.position-and-alignment-tips",
-                "icon": "css"
-            },
-            {
-                "name": "CSS FAQ's",
-                "route_name": "docs.css-faqs",
-                "icon": "css"
+                "icon": "css",
+                "exclude_route": true
             },
             {
                 "name": "ExpressJS",
@@ -39,29 +30,10 @@
                 "exclude_route": true
             },
             {
-                "name": "Javascript Arrays",
-                "route_name": "docs.javascript.arrays",
-                "icon": "javascript"
-            },
-            {
-                "name": "Javascript Date and Time",
-                "route_name": "docs.javascript.date-and-time",
-                "icon": "javascript"
-            },
-            {
-                "name": "Code Snippets - Numbers",
-                "route_name": "docs.javascript.code-snippets-numbers",
-                "icon": "javascript"
-            },
-            {
-                "name": "Boolean Promise",
-                "route_name": "docs.javascript.promise",
-                "icon": "javascript"
-            },
-            {
-                "name": "Javascript Operators",
-                "route_name": "docs.javascript.operators",
-                "icon": "javascript"
+                "name": "Javascript",
+                "route_name": "docs.javascript.javascript-cheatsheet",
+                "icon": "javascript",
+                "exclude_route": true
             },
             {
                 "name": "Laravel",
@@ -81,13 +53,10 @@
                 "icon": "npm"
             },
             {
-                "name": "PHP Array",
-                "route_name": "docs.php.array",
-                "icon": "php"
-            },
-            {
-                "name": "PHP Conditionals",
-                "route_name": "docs.php.conditionals"
+                "name": "PHP",
+                "route_name": "docs.php.php-cheatsheet",
+                "icon": "php",
+                "exclude_route": true
             },
             {
                 "name": "SCSS",
@@ -97,27 +66,8 @@
             {
                 "name": "SQL",
                 "route_name": "docs.sql.sql-cheatsheet",
-                "icon": "mysql"
-            },
-            {
-                "name": "SQL DELETE",
-                "route_name": "docs.sql.delete",
-                "icon": "mysql"
-            },
-            {
-                "name": "SQL JOIN",
-                "route_name": "docs.sql.join",
-                "icon": "mysql"
-            },
-            {
-                "name": "SQL SELECT",
-                "route_name": "docs.sql.select",
-                "icon": "mysql"
-            },
-            {
-                "name": "SQL UPDATE",
-                "route_name": "docs.sql.update",
-                "icon": "mysql"
+                "icon": "mysql",
+                "exclude_route": true
             },
             {
                 "name": "XAMPP",
@@ -141,7 +91,7 @@
     "Angular": {
         "links": [
             {
-                "name": "Cheatsheet",
+                "name": "Quick Reference",
                 "route_name": "docs.angular.angular-cheatsheet",
                 "icon": "angular"
             },
@@ -159,6 +109,107 @@
                 "name": "Observable Example",
                 "route_name": "docs.angular.user-observable-example",
                 "icon": "angular"
+            }
+        ]
+    },
+    "CSS": {
+        "links": [
+            {
+                "name": "Quick Reference",
+                "route_name": "docs.css.css-cheatsheet",
+                "icon": "css"
+            },
+            {
+                "name": "CSS Position and Alignment Tips",
+                "route_name": "docs.css.position-and-alignment-tips",
+                "icon": "css"
+            },
+            {
+                "name": "CSS FAQ's",
+                "route_name": "docs.css-faqs",
+                "icon": "css"
+            }
+        ]
+    },
+    "Javascript": {
+        "links": [
+            {
+                "name": "Quick Reference",
+                "route_name": "docs.javascript.javascript-cheatsheet",
+                "icon": "javascript"
+            },
+            {
+                "name": "Arrays",
+                "route_name": "docs.javascript.arrays",
+                "icon": "javascript"
+            },
+            {
+                "name": "Date and Time",
+                "route_name": "docs.javascript.date-and-time",
+                "icon": "javascript"
+            },
+            {
+                "name": "Code Snippets - Numbers",
+                "route_name": "docs.javascript.code-snippets-numbers",
+                "icon": "javascript"
+            },
+            {
+                "name": "Boolean Promise",
+                "route_name": "docs.javascript.promise",
+                "icon": "javascript"
+            },
+            {
+                "name": "Operators",
+                "route_name": "docs.javascript.operators",
+                "icon": "javascript"
+            }
+        ]
+    },
+    "PHP": {
+        "links": [
+            {
+                "name": "Cheatsheet",
+                "route_name": "docs.php.php-cheatsheet",
+                "icon": "php"
+            },
+            {
+                "name": "Array",
+                "route_name": "docs.php.array",
+                "icon": "php"
+            },
+            {
+                "name": "Conditionals",
+                "route_name": "docs.php.conditionals",
+                "icon": "php"
+            }
+        ]
+    },
+    "SQL": {
+        "links": [
+            {
+                "name": "Cheatsheet",
+                "route_name": "docs.sql.sql-cheatsheet",
+                "icon": "mysql"
+            },
+            {
+                "name": "DELETE",
+                "route_name": "docs.sql.delete",
+                "icon": "mysql"
+            },
+            {
+                "name": "JOIN",
+                "route_name": "docs.sql.join",
+                "icon": "mysql"
+            },
+            {
+                "name": "SELECT",
+                "route_name": "docs.sql.select",
+                "icon": "mysql"
+            },
+            {
+                "name": "UPDATE",
+                "route_name": "docs.sql.update",
+                "icon": "mysql"
             }
         ]
     }

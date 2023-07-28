@@ -1026,16 +1026,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.16.0",
+            "version": "v10.16.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7589f09fe0e8735615cf25f0f1807682aac124c1"
+                "reference": "5c93d2795c393b462481179ce42dedfb30cc19b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7589f09fe0e8735615cf25f0f1807682aac124c1",
-                "reference": "7589f09fe0e8735615cf25f0f1807682aac124c1",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/5c93d2795c393b462481179ce42dedfb30cc19b5",
+                "reference": "5c93d2795c393b462481179ce42dedfb30cc19b5",
                 "shasum": ""
             },
             "require": {
@@ -1222,7 +1222,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-07-25T14:31:32+00:00"
+            "time": "2023-07-26T03:30:46+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -2046,12 +2046,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/naykel76/gotime.git",
-                "reference": "4479ba75d654bbf8ccccb7bb24524a701f2767ae"
+                "reference": "968fbce66a70dbac137e9792f63f5605916ec969"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/naykel76/gotime/zipball/4479ba75d654bbf8ccccb7bb24524a701f2767ae",
-                "reference": "4479ba75d654bbf8ccccb7bb24524a701f2767ae",
+                "url": "https://api.github.com/repos/naykel76/gotime/zipball/968fbce66a70dbac137e9792f63f5605916ec969",
+                "reference": "968fbce66a70dbac137e9792f63f5605916ec969",
                 "shasum": ""
             },
             "require": {
@@ -2101,7 +2101,7 @@
                 "issues": "https://github.com/naykel76/gotime/issues",
                 "source": "https://github.com/naykel76/gotime/tree/master"
             },
-            "time": "2023-07-25T21:12:37+00:00"
+            "time": "2023-07-27T22:28:16+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -6621,16 +6621,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "10.1.2",
+            "version": "10.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "db1497ec8dd382e82c962f7abbe0320e4882ee4e"
+                "reference": "be1fe461fdc917de2a29a452ccf2657d325b443d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/db1497ec8dd382e82c962f7abbe0320e4882ee4e",
-                "reference": "db1497ec8dd382e82c962f7abbe0320e4882ee4e",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/be1fe461fdc917de2a29a452ccf2657d325b443d",
+                "reference": "be1fe461fdc917de2a29a452ccf2657d325b443d",
                 "shasum": ""
             },
             "require": {
@@ -6687,7 +6687,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/10.1.2"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/10.1.3"
             },
             "funding": [
                 {
@@ -6695,7 +6695,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-05-22T09:04:27+00:00"
+            "time": "2023-07-26T13:45:28+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",

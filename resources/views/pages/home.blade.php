@@ -1,11 +1,5 @@
 <x-gotime-app-layout layout="{{ config('naykel.template') }}" class="c-py-5-3-2">
 
-    {{-- <section>
-        <div class="container maxw-lg">
-            <p class="bx warning-light lead"><strong>Disclaimer:</strong> All content on this website is my interpretation of the concepts we are taught at university, (as well as many we are not). As much as I would like to think I have everything right I can not guarantee it, so do yourself a favour and research for yourself.</p>
-        </div>
-    </section> --}}
-
     <section class="relative overflow-x-clip">
         <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-10%; bottom: -240px; ">
         <img src="/svg/blur-pink.svg" class="absolute z-bottom" style="left: 10%; bottom: -440px; ">
@@ -13,7 +7,7 @@
 
         <div class="container">
             <div class="txt-xl">Hi, my name is</div>
-            <div class="txt-4">Nathan Watts</div>
+            <div class="txt-4 fw7">Nathan Watts</div>
             <div class="maxw-sm">
                 I design and develop Laravel web applications, dabble in server management and am training to become a full stack developer.
             </div>
@@ -25,8 +19,10 @@
         <img src="/svg/blur-pink.svg" class="absolute z-bottom" style=" right:-5%; bottom: -340px; ">
 
         <div class="container">
-            <h2>General Cheatsheets and Quick Reference</h2>
-            <x-gt-menu filename="nav-programming" class="flex wrap gg-1" itemClass="btn secondary" withIcons />
+            <h2>Cheatsheets and Quick Reference</h2>
+            <x-gt-menu filename="nav-programming" class="flex wrap gg"
+                itemClass="btn py-1 secondary w-10 flex-col txt-lg"
+                withIcons iconClass="h-3 mb-05 max-icon-width" />
         </div>
 
     </section>
@@ -38,10 +34,19 @@
             </x-gt-menu>
         </div>
     </section>
+    <section>
+        <div class="container">
+            <h2>Additional Resources</h2>
+            <x-gt-menu menuname="resources" class="flex wrap gg-1"
+                itemClass="btn light flex-col txt-lg"
+                iconClass="wh-3" withIcons newWindow>
+            </x-gt-menu>
+        </div>
+    </section>
 
     <section class="relative diagonal py-10">
 
-        <img src="/svg/blur-red.svg" class="absolute z-bottom" style=" left:-5%; bottom: -240px; ">
+        <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-5%; bottom: -240px; ">
 
         <div class="container maxw-lg grid-5 cols-2 va-c">
 
@@ -56,8 +61,10 @@
 
     </section>
 
+    <section> </section>
+    <section> </section>
 
-
+    {{--
     <section>
         <div class="container">
             <h2>Linux</h2>
@@ -72,7 +79,7 @@
             <h2>Misc</h2>
             <x-gt-menu filename="nav-programming" menuname="other" class="bx flex wrap gg-1" itemClass="btn secondary" withIcons />
         </div>
-    </section>
+    </section> --}}
 
     {{-- <section>
         <div class="container maxw-md mt-5">

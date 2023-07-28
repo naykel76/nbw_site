@@ -28,11 +28,24 @@
             }
         ]
     },
-    "footer": {
+    "resources": {
         "links": [
             {
-                "name": "Home",
-                "route_name": "home",
+                "name": "ClickUp",
+                "url": "https://app.clickup.com/login",
+                "icon": "clickup",
+                "exclude_route": true
+            },
+            {
+                "name": "ChatGPT",
+                "url": "https://chat.openai.com/",
+                "icon": "chatgpt",
+                "exclude_route": true
+            },
+            {
+                "name": "Lucidchart",
+                "url": "https://lucid.app/users/login",
+                "icon": "lucidchart",
                 "exclude_route": true
             }
         ]
