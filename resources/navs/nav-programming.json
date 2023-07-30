@@ -15,7 +15,7 @@
             },
             {
                 "name": "ExpressJS",
-                "route_name": "docs.express-cheatsheet",
+                "route_name": "docs.expressjs-cheatsheet",
                 "icon": "expressjs"
             },
             {
@@ -141,6 +141,16 @@
             {
                 "name": "Arrays",
                 "route_name": "docs.javascript.arrays",
+                "icon": "javascript"
+            },
+            {
+                "name": "Events",
+                "route_name": "docs.javascript.events",
+                "icon": "javascript"
+            },
+            {
+                "name": "Fetch",
+                "route_name": "docs.javascript.fetch",
                 "icon": "javascript"
             },
             {

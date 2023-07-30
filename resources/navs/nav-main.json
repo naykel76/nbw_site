@@ -47,6 +47,12 @@
                 "url": "https://lucid.app/users/login",
                 "icon": "lucidchart",
                 "exclude_route": true
+            },
+            {
+                "name": "Regexr",
+                "url": "https://regexr.com/",
+                "icon_logo": "regex",
+                "exclude_route": true
             }
         ]
     }

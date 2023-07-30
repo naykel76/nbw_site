@@ -1,5 +1,8 @@
 <x-gotime-app-layout layout="{{ config('naykel.template') }}" class="c-py-5-3-2">
 
+    <x-gt-menu menuname="main" filename="nav-main" withIcons/>
+    <hr>
+    <x-gt-menu menuname="main" filename="nav-main" layout="hover" withIcons/>
     <section class="relative overflow-x-clip">
         <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-10%; bottom: -240px; ">
         <img src="/svg/blur-pink.svg" class="absolute z-bottom" style="left: 10%; bottom: -440px; ">
@@ -20,7 +23,7 @@
 
         <div class="container">
             <h2>Cheatsheets and Quick Reference</h2>
-            <x-gt-menu filename="nav-programming" class="flex wrap gg"
+            <x-gt-menu filename="nav-programming" class="grid icon-grid"
                 itemClass="btn py-1 secondary w-10 flex-col txt-lg"
                 withIcons iconClass="h-3 mb-05 max-icon-width" />
         </div>
@@ -34,11 +37,12 @@
             </x-gt-menu>
         </div>
     </section>
+
     <section>
         <div class="container">
             <h2>Additional Resources</h2>
             <x-gt-menu menuname="resources" class="flex wrap gg-1"
-                itemClass="btn light flex-col txt-lg"
+                itemClass="btn flex-col txt-lg"
                 iconClass="wh-3" withIcons newWindow>
             </x-gt-menu>
         </div>
@@ -53,7 +57,7 @@
             <img src="/images/wooden-sports-car1.jpg" class="bdrr" alt="wooden sports car">
 
             <blockquote>
-                <p class="txt-2.5">"Without reinventing the wheel we wouldn't have fast cars."</p>
+                <p class="txt-2">"Without reinventing the wheel we wouldn't have fast cars."</p>
                 <p class="lead">-- <em>Nathan Watts</em></p>
             </blockquote>
 
@@ -61,8 +65,31 @@
 
     </section>
 
-    <section> </section>
-    <section> </section>
+
+    {{-- <section class="flex wrap py-1 va-c ha-c">
+        <img src="/svg/blur-red.svg" class="wh-2 animate-pulse-slow">
+        <img style="animation-duration: 4s" src="/svg/blur-pink.svg" class="wh-4 animate-pulse-slow">
+        <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-6 animate-pulse-slow">
+        <img style="animation-duration: 6s" src="/svg/blur-blue.svg" class="wh-8 animate-pulse-slow">
+        <img style="animation-duration: 7s" src="/svg/blur-yellow.svg" class="wh-10 animate-pulse-slow">
+        <img style="animation-duration: 7s" src="/svg/blur-red.svg" class="wh-10 animate-pulse-slow">
+        <img style="animation-duration: 6s" src="/svg/blur-pink.svg" class="wh-8 animate-pulse-slow">
+        <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-6 animate-pulse-slow">
+        <img style="animation-duration: 4s" src="/svg/blur-blue.svg" class="wh-4 animate-pulse-slow">
+        <img  src="/svg/blur-yellow.svg" class="wh-2 animate-pulse-slow">
+    </section> --}}
+    <section class="flex space-between wrap px py-3 va-c ha-c">
+        <img src="/svg/blur-red.svg" class="wh-2 animate-pulse-slow">
+        <img style="animation-duration: 4s" src="/svg/blur-pink.svg" class="wh-3 animate-pulse-slow">
+        <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-4 animate-pulse-slow">
+        <img style="animation-duration: 6s" src="/svg/blur-blue.svg" class="wh-5 animate-pulse-slow">
+        <img style="animation-duration: 7s" src="/svg/blur-yellow.svg" class="wh-6 animate-pulse-slow">
+        <img style="animation-duration: 7s" src="/svg/blur-red.svg" class="wh-6 animate-pulse-slow">
+        <img style="animation-duration: 6s" src="/svg/blur-pink.svg" class="wh-5 animate-pulse-slow">
+        <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-4 animate-pulse-slow">
+        <img style="animation-duration: 4s" src="/svg/blur-blue.svg" class="wh-3 animate-pulse-slow">
+        <img src="/svg/blur-yellow.svg" class="wh-2 animate-pulse-slow">
+    </section>
 
     {{--
     <section>
@@ -81,12 +108,12 @@
         </div>
     </section> --}}
 
-    {{-- <section>
+    <section>
         <div class="container maxw-md mt-5">
             <h2 class="title">Notes that need a home</h2>
             <x-gt-parsedown path="{{ 'notes-to-put-somewhere' }}" />
-    </div>
-    </section> --}}
+        </div>
+    </section>
 
 
 </x-gotime-app-layout>

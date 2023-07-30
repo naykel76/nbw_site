@@ -12,6 +12,11 @@
                 "icon": "angular"
             },
             {
+                "name": "Events",
+                "route_name": "docs.angular.events",
+                "icon": "angular"
+            },
+            {
                 "name": "Routing",
                 "route_name": "docs.angular.routing",
                 "icon": "angular"

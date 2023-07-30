@@ -1,6 +1,8 @@
 # CSS Cheatsheet
 <!-- TOC -->
 
+- [Pulse Animation](#pulse-animation)
+- [`clamp(min, val, max)`](#clampmin-val-max)
 - [Grid](#grid)
     - [Grid Two Column Layouts](#grid-two-column-layouts)
         - [Grid with fluid column and fixed column (non-responsive)](#grid-with-fluid-column-and-fixed-column-non-responsive)
@@ -10,6 +12,60 @@
     - [Transition element from left to right](#transition-element-from-left-to-right)
 
 <!-- /TOC -->
+
+<a id="markdown-pulse-animation" name="pulse-animation"></a>
+
+## Pulse Animation
+
+Pulses the opacity
+
+<style>
+    @keyframes pulse {
+        50% {
+            opacity: .1
+        }
+    }
+    .animate-pulse-slow {
+        animation: pulse 3s ease-in-out infinite;
+    }
+</style>
+
+<div class="flex">
+    <img style="animation-duration: 1s" src="/svg/blur-red.svg" class="wh-10 animate-pulse-slow">
+    <img style="animation-duration: 2s" src="/svg/blur-pink.svg" class="wh-10 animate-pulse-slow">
+    <img src="/svg/blur-yellow.svg" class="wh-10 animate-pulse-slow">
+</div>
+
+```css
+<style>
+    @keyframes pulse {
+        50% {
+            opacity: .1
+        }
+    }
+    .animate-pulse-slow {
+        animation: pulse 3s ease-in-out infinite;
+    }
+</style>
+```
+
+```html
+<div class="flex">
+    <img style="animation-duration: 1s" src="/svg/blur-red.svg" class="wh-10 animate-pulse-slow">
+    <img style="animation-duration: 2s" src="/svg/blur-pink.svg" class="wh-10 animate-pulse-slow">
+    <img src="/svg/blur-yellow.svg" class="wh-10 animate-pulse-slow">
+</div>
+```
+
+<a id="markdown-clampmin-val-max" name="clampmin-val-max"></a>
+
+## `clamp(min, val, max)`
+
+`min` The minimum value is the smallest (most negative) value. This is the lower bound in the range of allowed values. If the preferred value is less than this value, the minimum value will be used.
+
+`val` The preferred value is the expression whose value will be used as long as the result is between the minimum and maximum values.
+
+`max` The maximum value is the largest (most positive) expression value to which the value of the property will be assigned if the preferred value is greater than this upper bound.
 
 <a id="markdown-grid" name="grid"></a>
 

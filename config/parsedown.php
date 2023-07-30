@@ -34,5 +34,5 @@ return [
      *
      * @see https://github.com/erusev/parsedown/wiki/Usage
      */
-    'urls_linked' => true,
+    'urls_linked' => false,
 ];

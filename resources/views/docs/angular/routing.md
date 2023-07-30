@@ -1,85 +1,50 @@
-Navigation to route
+# Angular Routing
+<!-- TOC -->
 
-## Navigate between components using routes from code
+- [Create Route(s)](#create-routes)
+- [Add Router Links](#add-router-links)
+- [Additional Resources](#additional-resources)
 
-```js
-import { Router } from '@angular/router';
+<!-- /TOC -->
 
-export class MyComponent {
+<a id="markdown-create-routes" name="create-routes"></a>
 
-    constructor(private router: Router) { }
-
-    navigateToFirst() {
-        this.router.navigate(['first'])
-    }
-
-    navigateToSecond() {
-        this.router.navigateByUrl('/second')
-    }
-
-}
-```
-
----
----
----
----
----
----
----
----
----
----
----
-
-
-# Routing
-
-- [Navigate between components using routes from code](#navigate-between-components-using-routes-from-code)
-- [Simple route and navigation with `RouterLink`](#simple-route-and-navigation-with-routerlink)
-    - [Navigate programmatically with `Router` API](#navigate-programmatically-with-router-api)
-
-## Simple route and navigation with `RouterLink`
-
-Create routes in `app/app.routes.ts`
+## Create Route(s)
 
 ```js
+// app/app.routes.ts
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full', },
-  { path: 'home', loadComponent: () => import('./home/home.page').then((m) => m.HomePage), },
-  { path: 'login', loadComponent: () => import('./pages/login/login.page').then(m => m.LoginPage) },
+    {
+        path: 'login', loadComponent: () => import('./login/login.component')
+            .then(mod => mod.LoginComponent)
+    }
 ];
 ```
 
-In the `component.ts` file where you want to create the link import the `routerLink` module and include in the `imports` array.
+<a id="markdown-add-router-links" name="add-router-links"></a>
+
+## Add Router Links
+
+To navigate as a result of an action such as the click of an anchor tag, use `RouterLink`.
+
+Make sure you import `RouterLink` into `app/app.component.ts`
 
 ```js
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { IonicModule } from '@ionic/angular';
-
-@Component({
-  ...
-  imports: [IonicModule, RouterLink],
-})
+// app/app.component.ts
+import { RouterLink, RouterOutlet } from '@angular/router';
 ```
-
-Then add the link to the `component.html`.
-```html
-  <ion-button [routerLink]="['/login']">Login</ion-button>
-```
-
-### Navigate programmatically with `Router` API
 
 ```html
-<!-- import the router -->
-import { Router } from '@angular/router';
-<!-- inject the router into the class constructor -->
-constructor(private router: Router){}
-<!-- add the route to your method -->
-login(){
-  this.router.navigate(['/login'])
-}
+<!-- app/app.component.html -->
+<a routerLink="/login"> Login </a>
 ```
+
+<a id="markdown-additional-resources" name="additional-resources"></a>
+
+## Additional Resources
+
+- <a href="https://angular.io/guide/routing-overview" target="blank">Routing Overview</a>
+- <a href="https://angular.io/guide/router-reference" target="blank">Router Reference</a>
+

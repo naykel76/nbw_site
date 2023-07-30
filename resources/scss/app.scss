@@ -39,9 +39,14 @@ $f: Poppins, Helvetica, Arial, sans-serif;
 @use "./play";
 
 // this is only for icons util I find a better way
-.max-icon-width{
+.max-icon-width {
     max-width: 6rem;
     width: auto;
+}
+
+.icon-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    // grid-template-columns: repeat(auto-fit, 150px);
 }
 
 body {
@@ -50,12 +55,14 @@ body {
 }
 
 th {
-    background: #19233c;
+    background: #1a233c;;
     font-weight: 900;
 }
-td, th {
-    border: 1px solid #1e273e;
+td,
+th {
+    border: 1px solid #d9d9d9;
     padding: 0.375rem;
+    font-size: 1rem;
 }
 
 // home screen nav buttons
@@ -82,6 +89,10 @@ answer + p {
     margin-top: 0.5rem;
 }
 
+// ------------------------------------------------------------------
+// -- SPECIAL BACKGROUNDS --
+// ------------------------------------------------------------------
+
 .diagonal {
     position: relative;
     // make sure the pseudo element is isolated (contained) in this class
@@ -90,12 +101,25 @@ answer + p {
     &::after {
         content: "";
         position: absolute;
-        // background-image: linear-gradient(135deg, #0b101d, #d9558c, #e6c637);
-        // background-image: linear-gradient(135deg, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f, #1b4276);
-        background-image: linear-gradient(135deg, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
+        background-image: linear-gradient(135deg, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f, #1b4276);
+        // background-image: linear-gradient(135deg, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
 
         inset: 0;
         z-index: -1;
         transform: skewY(-3deg);
     }
+}
+
+
+// ------------------------------------------------------------------
+// -- ANIMATIONS --
+// ------------------------------------------------------------------
+
+@keyframes pulse {
+    50% {
+        opacity: .1
+    }
+}
+.animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
 }
