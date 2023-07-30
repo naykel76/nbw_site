@@ -1,8 +1,5 @@
 <x-gotime-app-layout layout="{{ config('naykel.template') }}" class="c-py-5-3-2">
 
-    <x-gt-menu menuname="main" filename="nav-main" withIcons/>
-    <hr>
-    <x-gt-menu menuname="main" filename="nav-main" layout="hover" withIcons/>
     <section class="relative overflow-x-clip">
         <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-10%; bottom: -240px; ">
         <img src="/svg/blur-pink.svg" class="absolute z-bottom" style="left: 10%; bottom: -440px; ">
