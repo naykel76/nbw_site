@@ -2,11 +2,31 @@
 
 <!-- TOC -->
 
+- [Requirements](#requirements)
+    - [Functional Requirements](#functional-requirements)
+    - [Non-functional Requirements](#non-functional-requirements)
 - [Use Case](#use-case)
     - [Use Case Description](#use-case-description)
     - [Use Case Diagrams](#use-case-diagrams)
 
 <!-- /TOC -->
+
+<a id="markdown-requirements" name="requirements"></a>
+
+## Requirements
+
+<a id="markdown-functional-requirements" name="functional-requirements"></a>
+
+### Functional Requirements
+Functional requirements: These define what the system should do and specify the functionalities and features the software or system must have. They describe the system's behaviour and the actions it should perform when given certain inputs.
+
+<a id="markdown-non-functional-requirements" name="non-functional-requirements"></a>
+
+### Non-functional Requirements
+
+Non-functional requirements: These specify how well the system should perform its functions rather than what those functions are. Non-functional requirements focus on qualities such as performance, usability, security, scalability, maintainability, and reliability.
+
+
 
 <a id="markdown-use-case" name="use-case"></a>
 
