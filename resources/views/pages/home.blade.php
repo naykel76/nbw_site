@@ -21,7 +21,7 @@
         <div class="container">
             <h2>Cheatsheets and Quick Reference</h2>
             <x-gt-menu filename="nav-programming" class="grid icon-grid"
-                itemClass="btn py-1 secondary w-10 flex-col txt-lg"
+                itemClass="btn py-1 secondary flex-col txt-lg"
                 withIcons iconClass="h-3 mb-05 max-icon-width" />
         </div>
 
@@ -49,12 +49,12 @@
 
         <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-5%; bottom: -240px; ">
 
-        <div class="container maxw-lg grid-5 cols-2 va-c">
+        <div class="fp-x container maxw-lg grid va-c">
 
             <img src="/images/wooden-sports-car1.jpg" class="bdrr" alt="wooden sports car">
 
             <blockquote>
-                <p class="txt-2">"Without reinventing the wheel we wouldn't have fast cars."</p>
+                <p class="txt- x">"Without reinventing the wheel we wouldn't have fast cars."</p>
                 <p class="lead">-- <em>Nathan Watts</em></p>
             </blockquote>
 

@@ -2,6 +2,10 @@
     "main": {
         "links": [
             {
+                "name": "Software Development Design Concepts",
+                "route_name": "pages.software-development-design-concepts"
+            },
+            {
                 "name": "What is an Interface?",
                 "route_name": "pages.programming-concepts.what-is-an-interface"
             },

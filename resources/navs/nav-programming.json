@@ -4,75 +4,80 @@
             {
                 "name": "Angular",
                 "route_name": "docs.angular.angular-cheatsheet",
-                "icon": "angular",
+                "icon_logo": "angular",
                 "exclude_route": true
             },
             {
                 "name": "CSS",
                 "route_name": "docs.css.css-cheatsheet",
-                "icon": "css",
+                "icon_logo": "css",
                 "exclude_route": true
             },
             {
                 "name": "ExpressJS",
                 "route_name": "docs.expressjs-cheatsheet",
-                "icon": "expressjs"
+                "icon_logo": "expressjs"
             },
             {
                 "name": "Github",
                 "route_name": "docs.github-cheatsheet",
-                "icon": "github"
+                "icon_logo": "github"
             },
             {
                 "name": "Ionic",
                 "route_name": "docs.ionic.ionic-cheatsheet",
-                "icon": "ionic",
+                "icon_logo": "ionic",
                 "exclude_route": true
             },
             {
                 "name": "Javascript",
                 "route_name": "docs.javascript.javascript-cheatsheet",
-                "icon": "javascript",
+                "icon_logo": "javascript",
                 "exclude_route": true
             },
             {
                 "name": "Laravel",
                 "route_name": "docs.laravel.cheatsheet",
-                "icon": "laravel",
+                "icon_logo": "laravel",
                 "exclude_route": true
             },
             {
                 "name": "Linux",
                 "route_name": "docs.linux.linux-cheatsheet",
-                "icon": "linux",
+                "icon_logo": "linux",
                 "exclude_route": true
             },
             {
                 "name": "NPM",
                 "route_name": "docs.npm-cheatsheet",
-                "icon": "npm"
+                "icon_logo": "npm"
             },
             {
                 "name": "PHP",
                 "route_name": "docs.php.php-cheatsheet",
-                "icon": "php",
+                "icon_logo": "php",
                 "exclude_route": true
             },
             {
                 "name": "SCSS",
                 "route_name": "docs.scss-cheatsheet",
-                "icon": "sass"
+                "icon_logo": "sass"
             },
             {
                 "name": "SQL",
                 "route_name": "docs.sql.sql-cheatsheet",
-                "icon": "mysql",
+                "icon_logo": "mysql",
                 "exclude_route": true
+            },
+            {
+                "name": "Vite",
+                "route_name": "docs.vite-cheatsheet",
+                "icon": "help"
             },
             {
                 "name": "XAMPP",
                 "route_name": "docs.xampp-cheatsheet",
-                "icon": "xampp"
+                "icon_logo": "xampp"
             }
         ]
     },
@@ -89,6 +94,8 @@
         ]
     },
     "Angular": {
+        "standalone_menu": true,
+        "include_menus": ["main"],
         "links": [
             {
                 "name": "Quick Reference",
@@ -113,6 +120,8 @@
         ]
     },
     "CSS": {
+        "standalone_menu": true,
+        "include_menus": ["main"],
         "links": [
             {
                 "name": "Quick Reference",
@@ -132,6 +141,8 @@
         ]
     },
     "Javascript": {
+        "standalone_menu": true,
+        "include_menus": ["main"],
         "links": [
             {
                 "name": "Quick Reference",
@@ -169,13 +180,25 @@
                 "icon": "javascript"
             },
             {
+                "name": "Modules",
+                "route_name": "docs.javascript.modules",
+                "icon": "javascript"
+            },
+            {
                 "name": "Operators",
                 "route_name": "docs.javascript.operators",
+                "icon": "javascript"
+            },
+            {
+                "name": "Graphics and Animations",
+                "route_name": "docs.javascript.graphics-and-animations",
                 "icon": "javascript"
             }
         ]
     },
     "PHP": {
+        "standalone_menu": true,
+        "include_menus": ["main"],
         "links": [
             {
                 "name": "Cheatsheet",
@@ -195,6 +218,8 @@
         ]
     },
     "SQL": {
+        "standalone_menu": true,
+        "include_menus": ["main"],
         "links": [
             {
                 "name": "Cheatsheet",

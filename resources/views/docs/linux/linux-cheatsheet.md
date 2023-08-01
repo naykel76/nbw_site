@@ -146,8 +146,6 @@
   hostnamectl set-hostname example-hostname
   #list time zone
   timedatectl list-timezones
-  #set timezone
-
 ```
 
 

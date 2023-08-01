@@ -33,25 +33,43 @@
             {
                 "name": "ClickUp",
                 "url": "https://app.clickup.com/login",
-                "icon": "clickup",
+                "icon_logo": "clickup",
                 "exclude_route": true
             },
             {
                 "name": "ChatGPT",
                 "url": "https://chat.openai.com/",
-                "icon": "chatgpt",
+                "icon_logo": "chatgpt",
                 "exclude_route": true
             },
             {
                 "name": "Lucidchart",
                 "url": "https://lucid.app/users/login",
-                "icon": "lucidchart",
+                "icon_logo": "lucidchart",
+                "exclude_route": true
+            },
+            {
+                "name": "MYOB",
+                "url": "https://app.myob.com",
+                "icon_logo": "myob",
                 "exclude_route": true
             },
             {
                 "name": "Regexr",
                 "url": "https://regexr.com/",
                 "icon_logo": "regex",
+                "exclude_route": true
+            },
+            {
+                "name": "SVG Sprit",
+                "url": "https://svgsprit.es/",
+                "icon_logo": "svgsprit",
+                "exclude_route": true
+            },
+            {
+                "name": "SVGOMG",
+                "url": "https://jakearchibald.github.io/svgomg/",
+                "icon_logo": "svgomg",
                 "exclude_route": true
             }
         ]

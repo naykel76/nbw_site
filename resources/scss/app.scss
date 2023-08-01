@@ -38,6 +38,17 @@ $f: Poppins, Helvetica, Arial, sans-serif;
 @use "node_modules/nk_jtb/src/jtb";
 @use "./play";
 
+.fp-x {
+    // grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+}
+
+@include from-md {
+    .x {
+        font-size: 2rem !important;
+    }
+}
+
 // this is only for icons util I find a better way
 .max-icon-width {
     max-width: 6rem;
@@ -55,7 +66,7 @@ body {
 }
 
 th {
-    background: #1a233c;;
+    background: #1a233c;
     font-weight: 900;
 }
 td,
@@ -110,14 +121,13 @@ answer + p {
     }
 }
 
-
 // ------------------------------------------------------------------
 // -- ANIMATIONS --
 // ------------------------------------------------------------------
 
 @keyframes pulse {
     50% {
-        opacity: .1
+        opacity: 0.1;
     }
 }
 .animate-pulse-slow {

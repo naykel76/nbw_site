@@ -1,7 +1,9 @@
 # PHP Arrays
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
+- [Add item to an array](#add-item-to-an-array)
+- [Removing item from an array](#removing-item-from-an-array)
 - [Compare the values of two php arrays to identify differences? `array_diff`](#compare-the-values-of-two-php-arrays-to-identify-differences-array_diff)
 - [Reindex array key after unset key? `array_values`](#reindex-array-key-after-unset-key-array_values)
 - [Other Array Methods](#other-array-methods)
@@ -10,11 +12,33 @@
     - [Check if the given key exists in an array `array_key_exists` or `key_exists`](#check-if-the-given-key-exists-in-an-array-array_key_exists-or-key_exists)
 - [Validation Techniques](#validation-techniques)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
+<a href="https://www.php.net/manual/en/ref.array.php" target="blank">PHP Array Functions</a>
 
-https://www.php.net/manual/en/ref.array.php
 
-<a id="compare-the-values-of-two-php-arrays-to-identify-differences-array_diff"></a>
+<a id="markdown-add-item-to-an-array" name="add-item-to-an-array"></a>
+
+## Add item to an array
+
+```php
+array_push(array &$array, mixed ...$values): int
+```
+
+<a id="markdown-removing-item-from-an-array" name="removing-item-from-an-array"></a>
+
+## Removing item from an array
+
+```php
+array_pop(array &$array): mixed
+```
+
+
+
+
+
+
+<a id="markdown-compare-the-values-of-two-php-arrays-to-identify-differences-arraydiff" name="compare-the-values-of-two-php-arrays-to-identify-differences-arraydiff"></a>
+
 ## Compare the values of two php arrays to identify differences? `array_diff`
 
 ```php
@@ -31,7 +55,9 @@ var_dump($difference1);
 
 This method only looks for the values, if you want to check for keys as well (key AND value exists) you need to use `array_diff_assoc()`
 
-<a id="reindex-array-key-after-unset-key-array_values"></a>
+
+<a id="markdown-reindex-array-key-after-unset-key-arrayvalues" name="reindex-array-key-after-unset-key-arrayvalues"></a>
+
 ## Reindex array key after unset key? `array_values`
 
 ```php
@@ -42,7 +68,9 @@ How does this work?
 
 `array_values()` returns all the values from the array indexed numerically.
 
-<a id="other-array-methods"></a>
+
+<a id="markdown-other-array-methods" name="other-array-methods"></a>
+
 ## Other Array Methods
 
 ```php
@@ -51,10 +79,14 @@ $merged = array_merge()
 ```
 
 
-<a id="existence"></a>
+
+<a id="markdown-existence" name="existence"></a>
+
 ## Existence
 
-<a id="check-if-value-exists-in-an-array-in_array"></a>
+
+<a id="markdown-check-if-value-exists-in-an-array-inarray" name="check-if-value-exists-in-an-array-inarray"></a>
+
 ### Check if value exists in an array `in_array`
 
  ```php
@@ -70,7 +102,9 @@ if (in_array($currentRoutePrefix, $routePrefixes)) {
 }
 ```
 
-<a id="check-if-the-given-key-exists-in-an-array-array_key_exists-or-key_exists"></a>
+
+<a id="markdown-check-if-the-given-key-exists-in-an-array-arraykeyexists-or-keyexists" name="check-if-the-given-key-exists-in-an-array-arraykeyexists-or-keyexists"></a>
+
 ### Check if the given key exists in an array `array_key_exists` or `key_exists`
 
  ```php
@@ -119,8 +153,13 @@ if (in_array($currentRoutePrefix, $routePrefixes)) {
 
 
 
-<a id="validation-techniques"></a>
+
+<a id="markdown-validation-techniques" name="validation-techniques"></a>
+
 ## Validation Techniques
+
+
+<a id="markdown-check-if-key-exists-in-an-associative-array" name="check-if-key-exists-in-an-associative-array"></a>
 
 ##### Check if Key Exists in an Associative Array
 
@@ -133,6 +172,9 @@ if (in_array($currentRoutePrefix, $routePrefixes)) {
     if (array_key_exists('ITEM_01', $cart)) {
         print_r('The key exists'); // returns true
     }
+
+
+<a id="markdown-check-if-key-exists-in-a-multidimensional-associative-array" name="check-if-key-exists-in-a-multidimensional-associative-array"></a>
 
 ##### Check if Key Exists in a Multidimensional, Associative Array
 
@@ -184,9 +226,7 @@ Table of Contents ¶
 - array_merge — Merge one or more arrays
 - array_multisort — Sort multiple or multi-dimensional arrays
 - array_pad — Pad array to the specified length with a value
-- array_pop — Pop the element off the end of array
 - array_product — Calculate the product of values in an array
-- array_push — Push one or more elements onto the end of array
 - array_rand — Pick one or more random keys out of an array
 - array_reduce — Iteratively reduce the array to a single value using a callback function
 - array_replace_recursive — Replaces elements from passed arrays into the first array recursively

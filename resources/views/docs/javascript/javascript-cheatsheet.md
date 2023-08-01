@@ -4,6 +4,9 @@
 - [Events](#events)
 - [Get Element](#get-element)
 - [ES Modules](#es-modules)
+- [Spread vs Rest](#spread-vs-rest)
+    - [Spread Operator](#spread-operator)
+- [Destructuring Arrays](#destructuring-arrays)
 
 <!-- /TOC -->
 
@@ -56,4 +59,51 @@ import { square } from './utils.js';
 // Using the imported functions
 const number = 5;
 console.log(`The square of ${number} is ${square(number)}`);
+```
+
+
+<a id="markdown-spread-vs-rest" name="spread-vs-rest"></a>
+
+## Spread vs Rest
+
+```js
+function print(myArray) {
+  array.forEach(item => console.log(item));
+}
+
+print(['arg1', 'arg2']);
+// arg1
+// arg2
+```
+
+<a id="markdown-spread-operator" name="spread-operator"></a>
+
+### Spread Operator
+
+The spread operator unpacks iterables into individual elements. This comes in handy when a
+function expects a list of arguments and all you have is an array:
+
+```js
+const array = [1, 2, 3];
+console.log(...array);
+// 1 2 3
+```
+
+<a id="markdown-destructuring-arrays" name="destructuring-arrays"></a>
+
+## Destructuring Arrays
+
+```js
+// the old way
+var fruit = ['apple', 'banana', 'kiwi'];
+
+var apple = fruit[0];
+var banana = fruit[1];
+var kiwi = fruit[2];
+
+// es6
+const [apple, banana, kiwi] = fruit;
+
+const [apple, ...rest] = ['apple', 'banana', 'kiwi'];
+console.log(rest); // -> ["banana", "kiwi"]
 ```
