@@ -17,8 +17,8 @@
                 <div class="bx warning-light">
                     <small>
                         <div class="bx-title">Disclaimer:</div>
-                        <p class="" style="opacity: 0.9">
-                            Everything you find on this website is my take on concepts we are taught at university, a seemingly endless supply of YouTube tutorials with a sprinkle of the wild ideas that invade my brain. While I'd love to claim infallibility, I can't promise that. So, do yourself a favour and check for yourself. Trust me, Google is your friend!</p>
+                        <p style="opacity: 0.9"> Everything you find on this website is my take on concepts we are taught at university, a seemingly endless supply of YouTube tutorials with a sprinkle of the wild ideas that invade my brain. While I'd love to claim infallibility, I can't promise that. So, do yourself a favour and check for yourself. Trust me, Google is your friend! </p>
+                        <p> Oh, and fair warning, don't be surprised if you encounter a bit of chaos and missing pieces here and there - after all, it's all part of the journey.</p>
                     </small>
                 </div>
             </div>
