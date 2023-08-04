@@ -2,11 +2,14 @@
 <!-- TOC -->
 
 - [Events](#events)
-- [Get Element](#get-element)
+- [Get DOM Element](#get-dom-element)
 - [ES Modules](#es-modules)
 - [Spread vs Rest](#spread-vs-rest)
     - [Spread Operator](#spread-operator)
 - [Destructuring Arrays](#destructuring-arrays)
+- [Questions](#questions)
+        - [How can I run a function when the screen first loads?](#how-can-i-run-a-function-when-the-screen-first-loads)
+        - [What selectors can I use to select the next instance of an element or class?](#what-selectors-can-i-use-to-select-the-next-instance-of-an-element-or-class)
 
 <!-- /TOC -->
 
@@ -15,16 +18,17 @@
 ## Events
 
 ```js
-element.addEventListener('event', eventHandler);
+element.addEventListener('event', callback);
+element.addEventListener('event', functionName);
 ```
 
 - `element`: is the HTML element to which you want to attach the click event listener.
 - `event`: is the name of the event to listen for. (`'click'`, `'submit'`, `'keydown'`, etc)
 - `eventHandler`: is the function that will be executed when the click event occurs.
 
-<a id="markdown-get-element" name="get-element"></a>
+<a id="markdown-get-dom-element" name="get-dom-element"></a>
 
-## Get Element
+## Get DOM Element
 ```js
 const elementById = document.getElementById('elementId');
 const elementsByTagName = document.getElementsByTagName('tagname');
@@ -107,3 +111,92 @@ const [apple, banana, kiwi] = fruit;
 const [apple, ...rest] = ['apple', 'banana', 'kiwi'];
 console.log(rest); // -> ["banana", "kiwi"]
 ```
+
+
+<a id="markdown-questions" name="questions"></a>
+
+## Questions
+
+<a id="markdown-how-can-i-run-a-function-when-the-screen-first-loads" name="how-can-i-run-a-function-when-the-screen-first-loads"></a>
+
+#### How can I run a function when the screen first loads?
+
+To run a function when the screen first loads, you can use the `window.onload` event or the modern
+`DOMContentLoaded` event. These events ensure that your JavaScript code is executed after the HTML
+content has been fully loaded and is ready to be manipulated.
+
+```js
+// `window.onload` event
+window.onload = () => {
+    myFunc();
+};
+
+// `DOMContentLoaded` event
+document.addEventListener('DOMContentLoaded', () => {
+    myFunc();
+});
+```
+
+<a id="markdown-what-selectors-can-i-use-to-select-the-next-instance-of-an-element-or-class" name="what-selectors-can-i-use-to-select-the-next-instance-of-an-element-or-class"></a>
+
+#### What selectors can I use to select the next instance of an element or class?
+
+```html
+<script> // select next canvas </script>
+<canvas></canvas>
+
+<script> // select next canvas </script>
+<canvas></canvas>
+
+```
+
+<!--
+
+<script>
+    const scripts = document.querySelectorAll('script');
+    scripts.forEach(script => {
+        const nextCanvas = script.nextElementSibling;
+        if (nextCanvas && nextCanvas.tagName.toLowerCase() === 'canvas') {
+            // Do something with the next canvas element
+            // For example, you can add a class to it
+            nextCanvas.classList.add('selected');
+        }
+    });
+</script>
+<canvas></canvas>
+<script>
+    const scripts = document.querySelectorAll('script');
+    scripts.forEach(script => {
+        const nextCanvas = script.nextElementSibling;
+        if (nextCanvas && nextCanvas.tagName.toLowerCase() === 'canvas') {
+            // Do something with the next canvas element
+            // For example, you can add a class to it
+            nextCanvas.classList.add('selected');
+        }
+    });
+</script>
+<canvas></canvas>
+<script>
+    const scripts = document.querySelectorAll('script');
+    scripts.forEach(script => {
+        const nextCanvas = script.nextElementSibling;
+        if (nextCanvas && nextCanvas.tagName.toLowerCase() === 'canvas') {
+            // Do something with the next canvas element
+            // For example, you can add a class to it
+            nextCanvas.classList.add('selected');
+        }
+    });
+</script>
+<canvas></canvas>
+<script>
+    const scripts = document.querySelectorAll('script');
+    scripts.forEach(script => {
+        const nextCanvas = script.nextElementSibling;
+        if (nextCanvas && nextCanvas.tagName.toLowerCase() === 'canvas') {
+            // Do something with the next canvas element
+            // For example, you can add a class to it
+            nextCanvas.classList.add('selected');
+        }
+    });
+</script>
+<canvas></canvas> -->

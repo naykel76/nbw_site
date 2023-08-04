@@ -1,0 +1,12 @@
+{
+    "tetris": {
+        "links": [
+            {
+                "name": "Tetrominoes",
+                "route_name": "x",
+                "view": "pages.tetris.tetromino-blocks",
+                "type": "blade"
+            }
+        ]
+    }
+}

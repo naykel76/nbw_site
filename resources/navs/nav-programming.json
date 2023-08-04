@@ -8,6 +8,12 @@
                 "exclude_route": true
             },
             {
+                "name": "AlpineJS",
+                "route_name": "docs.alpine.alpine-cheatsheet",
+                "icon_logo": "alpinejs",
+                "exclude_route": true
+            },
+            {
                 "name": "CSS",
                 "route_name": "docs.css.css-cheatsheet",
                 "icon_logo": "css",
@@ -44,7 +50,7 @@
             {
                 "name": "Linux",
                 "route_name": "docs.linux.linux-cheatsheet",
-                "icon_logo": "linux",
+                "icon": "linux",
                 "exclude_route": true
             },
             {
@@ -93,7 +99,7 @@
             }
         ]
     },
-    "Angular": {
+    "angular": {
         "standalone_menu": true,
         "include_menus": ["main"],
         "links": [
@@ -140,7 +146,28 @@
             }
         ]
     },
-    "Javascript": {
+    "alpine": {
+        "standalone_menu": true,
+        "include_menus": ["javascript", "main"],
+        "links": [
+            {
+                "name": "AlpineJs",
+                "route_name": "docs.alpine.alpine-cheatsheet",
+                "icon": "alpinejs"
+            },
+            {
+                "name": "Things That Open and Close",
+                "route_name": "docs.alpine.things-that-open-and-close",
+                "icon": "alpinejs"
+            },
+            {
+                "name": "Events",
+                "route_name": "docs.alpine.events",
+                "icon": "alpinejs"
+            }
+        ]
+    },
+    "javascript": {
         "standalone_menu": true,
         "include_menus": ["main"],
         "links": [
@@ -155,8 +182,13 @@
                 "icon": "javascript"
             },
             {
-                "name": "Events",
-                "route_name": "docs.javascript.events",
+                "name": "Arrays - Two Dimensional",
+                "route_name": "docs.javascript.array-two-dimensional",
+                "icon": "javascript"
+            },
+            {
+                "name": "Event Listeners",
+                "route_name": "docs.javascript.event-listeners",
                 "icon": "javascript"
             },
             {
@@ -196,7 +228,7 @@
             }
         ]
     },
-    "PHP": {
+    "php": {
         "standalone_menu": true,
         "include_menus": ["main"],
         "links": [

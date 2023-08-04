@@ -43,6 +43,15 @@ $f: Poppins, Helvetica, Arial, sans-serif;
     grid-template-columns: repeat(2, minmax(200px, 1fr));
 }
 
+// allow the grid to do it's job
+.remove-pre-margins pre {
+    margin: 0;
+}
+
+// .next4 ~ pre:nth-of-type(-n+4) {
+//     background: #000;
+// }
+
 @include from-md {
     .x {
         font-size: 2rem !important;
