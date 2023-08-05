@@ -25,6 +25,13 @@ class Piece {
         this.render(); // Render the piece on initialization
     }
 
+    move(piece) {
+        this.x = this.x + piece.x;
+        this.y = this.y + piece.y;
+        this.ctx.clearRect(0, 0, canvas.width, canvas.height)
+        this.render(); // Render the piece on initialization
+    }
+
     // Render the piece on the canvas
     render() {
         this.ctx.fillStyle = this.color;
@@ -34,3 +41,5 @@ class Piece {
 
 // Initialize the canvas and create a new piece
 let board = new Canvas(ctx);
+
+document.addEventListener('keydown', handleKeyPress);

@@ -69,7 +69,7 @@ class Piece {
 ### Initialise the canvas and pass in the context
 
 ```js
-new Canvas(ctx);
+let board = new Canvas(ctx);
 ```
 
 <canvas id="canvas" class="bdr-3 bdr-red"></canvas>
