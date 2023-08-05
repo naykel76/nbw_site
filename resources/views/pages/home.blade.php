@@ -50,9 +50,9 @@
     <section>
         <div class="container">
             <h2>Additional Resources</h2>
-            <x-gt-menu menuname="resources" class="flex wrap gg-1"
+            <x-gt-menu menuname="resources" class="grid icon-grid"
                 itemClass="btn flex-col txt-lg"
-                iconClass="wh-3" withIcons newWindow>
+                iconClass="h-3 mb-05 max-icon-width" withIcons newWindow>
             </x-gt-menu>
         </div>
     </section>
@@ -74,19 +74,6 @@
 
     </section>
 
-
-    {{-- <section class="flex wrap py-1 va-c ha-c">
-        <img src="/svg/blur-red.svg" class="wh-2 animate-pulse-slow">
-        <img style="animation-duration: 4s" src="/svg/blur-pink.svg" class="wh-4 animate-pulse-slow">
-        <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-6 animate-pulse-slow">
-        <img style="animation-duration: 6s" src="/svg/blur-blue.svg" class="wh-8 animate-pulse-slow">
-        <img style="animation-duration: 7s" src="/svg/blur-yellow.svg" class="wh-10 animate-pulse-slow">
-        <img style="animation-duration: 7s" src="/svg/blur-red.svg" class="wh-10 animate-pulse-slow">
-        <img style="animation-duration: 6s" src="/svg/blur-pink.svg" class="wh-8 animate-pulse-slow">
-        <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-6 animate-pulse-slow">
-        <img style="animation-duration: 4s" src="/svg/blur-blue.svg" class="wh-4 animate-pulse-slow">
-        <img  src="/svg/blur-yellow.svg" class="wh-2 animate-pulse-slow">
-    </section> --}}
     <section class="flex space-between wrap px py-3 va-c ha-c">
         <img src="/svg/blur-red.svg" class="wh-2 animate-pulse-slow">
         <img style="animation-duration: 4s" src="/svg/blur-pink.svg" class="wh-3 animate-pulse-slow">
@@ -99,23 +86,6 @@
         <img style="animation-duration: 4s" src="/svg/blur-blue.svg" class="wh-3 animate-pulse-slow">
         <img src="/svg/blur-yellow.svg" class="wh-2 animate-pulse-slow">
     </section>
-
-    {{--
-    <section>
-        <div class="container">
-            <h2>Linux</h2>
-            <x-gt-menu filename="nav-linux" menuname="main" class="flex wrap gg-1" itemClass="btn secondary" withIcons />
-            <div class="grid md:cols-2 mt">
-                <div class="bx flex va-c">
-                    <x-gt-icon-linux class="icon wh-5 mr" />
-                    <x-gt-menu filename="nav-linux" menuname="other" class="flex wrap gg-1" itemClass="btn secondary" />
-                </div>
-            </div>
-            <hr>
-            <h2>Misc</h2>
-            <x-gt-menu filename="nav-programming" menuname="other" class="bx flex wrap gg-1" itemClass="btn secondary" withIcons />
-        </div>
-    </section> --}}
 
     <section>
         <div class="container maxw-md mt-5">

@@ -101,7 +101,9 @@
     },
     "angular": {
         "standalone_menu": true,
-        "include_menus": ["main"],
+        "include_menus": [
+            "main"
+        ],
         "links": [
             {
                 "name": "Quick Reference",
@@ -127,7 +129,9 @@
     },
     "CSS": {
         "standalone_menu": true,
-        "include_menus": ["main"],
+        "include_menus": [
+            "main"
+        ],
         "links": [
             {
                 "name": "Quick Reference",
@@ -148,7 +152,10 @@
     },
     "alpine": {
         "standalone_menu": true,
-        "include_menus": ["javascript", "main"],
+        "include_menus": [
+            "javascript",
+            "main"
+        ],
         "links": [
             {
                 "name": "AlpineJs",
@@ -167,70 +174,11 @@
             }
         ]
     },
-    "javascript": {
-        "standalone_menu": true,
-        "include_menus": ["main"],
-        "links": [
-            {
-                "name": "Quick Reference",
-                "route_name": "docs.javascript.javascript-cheatsheet",
-                "icon": "javascript"
-            },
-            {
-                "name": "Arrays",
-                "route_name": "docs.javascript.arrays",
-                "icon": "javascript"
-            },
-            {
-                "name": "Arrays - Two Dimensional",
-                "route_name": "docs.javascript.array-two-dimensional",
-                "icon": "javascript"
-            },
-            {
-                "name": "Event Listeners",
-                "route_name": "docs.javascript.event-listeners",
-                "icon": "javascript"
-            },
-            {
-                "name": "Fetch",
-                "route_name": "docs.javascript.fetch",
-                "icon": "javascript"
-            },
-            {
-                "name": "Date and Time",
-                "route_name": "docs.javascript.date-and-time",
-                "icon": "javascript"
-            },
-            {
-                "name": "Code Snippets - Numbers",
-                "route_name": "docs.javascript.code-snippets-numbers",
-                "icon": "javascript"
-            },
-            {
-                "name": "Boolean Promise",
-                "route_name": "docs.javascript.promise",
-                "icon": "javascript"
-            },
-            {
-                "name": "Modules",
-                "route_name": "docs.javascript.modules",
-                "icon": "javascript"
-            },
-            {
-                "name": "Operators",
-                "route_name": "docs.javascript.operators",
-                "icon": "javascript"
-            },
-            {
-                "name": "Graphics and Animations",
-                "route_name": "docs.javascript.graphics-and-animations",
-                "icon": "javascript"
-            }
-        ]
-    },
     "php": {
         "standalone_menu": true,
-        "include_menus": ["main"],
+        "include_menus": [
+            "main"
+        ],
         "links": [
             {
                 "name": "Cheatsheet",
@@ -251,7 +199,9 @@
     },
     "SQL": {
         "standalone_menu": true,
-        "include_menus": ["main"],
+        "include_menus": [
+            "main"
+        ],
         "links": [
             {
                 "name": "Cheatsheet",

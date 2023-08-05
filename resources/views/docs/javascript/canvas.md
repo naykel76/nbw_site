@@ -1,23 +1,21 @@
-# Javascript Graphics and Animations
+# Drawing Environment (Canvas)
 
 <!-- TOC -->
 
-- [Quick Reference](#quick-reference)
+- [Quick Reference (WIP)](#quick-reference-wip)
 - [Setup the Canvas](#setup-the-canvas)
-    - [Get the canvas element](#get-the-canvas-element)
-    - [Get the context](#get-the-context)
+    - [Get the drawing context](#get-the-drawing-context)
+    - [Setting the Scale](#setting-the-scale)
 - [Drawing on the canvas](#drawing-on-the-canvas)
     - [Context Methods](#context-methods)
-- [Animations](#animations)
 - [Examples](#examples)
 - [Other Resources](#other-resources)
-- [The Basket](#the-basket)
 
 <!-- /TOC -->
 
-<a id="markdown-quick-reference" name="quick-reference"></a>
+<a id="markdown-quick-reference-wip" name="quick-reference-wip"></a>
 
-## Quick Reference
+## Quick Reference (WIP)
 
 If you want to cut through all the technical jargon, there are the important things to know.
 
@@ -36,21 +34,21 @@ dynamically. The `canvas` element itself does not have drawing capabilities; ins
 a container for a graphics context. To draw on the canvas, you need to get the 2D rendering
 context of the canvas, which is obtained using the `getContext()` method.
 
-<a id="markdown-get-the-canvas-element" name="get-the-canvas-element"></a>
-
-### Get the canvas element
+Create a canvas element where graphics will be drawn
 
 ```html
 <canvas id="canvas"></canvas>
 ```
 
+Get the canvas element by id or one of the may other selectors.
+
 ```js
 const canvas = document.getElementById('canvas');
 ```
 
-<a id="markdown-get-the-context" name="get-the-context"></a>
+<a id="markdown-get-the-drawing-context" name="get-the-drawing-context"></a>
 
-### Get the context
+### Get the drawing context
 ```js
 const ctx = canvas.getContext('2d');
 ```
@@ -62,6 +60,30 @@ for drawing shapes, text, images, and manipulating graphics within the canvas.
 For example, to draw a rectangle on the canvas, you would use methods like `ctx.fillRect()` or
 `ctx.strokeRect()`.
 
+<a id="markdown-setting-the-scale" name="setting-the-scale"></a>
+
+### Setting the Scale
+
+Scaling objects involves resizing visual elements while maintaining their proportions. In HTML
+canvas this can be achieve using the `scale()` method in the rendering context. By applying
+scaling factors to dimensions like X, Y, width (w), and height (h), you can adjust object sizes
+proportionally.
+
+```js
+ctx.scale(20, 20);
+```
+
+This code scales the objects by a factor of `20` in both the `X` and `Y` making it more convenient
+to work with sizes.
+
+```js
+// not scaled
+ctx.fillRect(10, 10, 50, 50);
+
+// scaled
+ctx.fillRect(1, 1, 5, 5);
+```
+
 <a id="markdown-drawing-on-the-canvas" name="drawing-on-the-canvas"></a>
 
 ## Drawing on the canvas
@@ -72,13 +94,16 @@ Once you have created the context, you can draw shapes on the canvas using the `
 <script>
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
+    ctx.canvas.height = 60
+    ctx.scale(50, 50)
     ctx.fillStyle = 'green';
-    ctx.fillRect(10, 10, 50, 50);
+    ctx.fillRect(0, 0, 1, 1);
+    ctx.fillRect(2, 0, 1, 1);
 </script>
 
 ```js
-ctx.fillStyle = 'green'; // Set the fill color
-ctx.fillRect(10, 10, 50, 50); // Draw rectangle at (10, 10) with width 50 and height 50
+ctx.fillRect(0, 0, 1, 1);
+ctx.fillRect(2, 0, 1, 1);
 ```
 
 <a id="markdown-context-methods" name="context-methods"></a>
@@ -86,8 +111,8 @@ ctx.fillRect(10, 10, 50, 50); // Draw rectangle at (10, 10) with width 50 and he
 ### Context Methods
 
 <code-first-col></code-first-col>
-| Method                                         | Description                                   |
-| ---------------------------------------------- | --------------------------------------------- |
+| Method                                       | Description                                   |
+| -------------------------------------------- | --------------------------------------------- |
 | fillRect(x, y, width, height)                | Draws a filled rectangle.                     |
 | strokeRect(x, y, width, height)              | Draws the outline of a rectangle.             |
 | clearRect(x, y, width, height)               | Clears a rectangular area.                    |
@@ -107,28 +132,6 @@ ctx.fillRect(10, 10, 50, 50); // Draw rectangle at (10, 10) with width 50 and he
 | createLinearGradient(x0, y0, x1, y1)         | Creates a linear gradient object.             |
 | createRadialGradient(x0, y0, r0, x1, y1, r1) | Creates a radial gradient object.             |
 | createPattern(image, repetition)             | Creates a pattern from an image.              |
-
-<a id="markdown-animations" name="animations"></a>
-
-## Animations
-
-Canvas uses immediate rendering meaning that when we draw, it immediately renders on the screen.
-After we paint something, the canvas forgets about the object and only knows it as pixels. So,
-there is no object that we can move. Instead, we have to draw it again.
-
-Doing animations on Canvas is like making a stop-motion movie. In every frame, we need to move the
-objects a little bit to animate them.
-
-We can use clearRect() to clean up the previous cell once we move onto the next. Using the width
-and height of the canvas, we can clean it between consecutive paints.
-
-```js
-const {width, height} = this.ctx.canvas;
-ctx.fillStyle = 'blue';
-ctx.fillRect(0, 0, 10, 10);
-ctx.clearRect(0, 0, width, height);
-ctx.fillRect(1, 1, 10, 10);
-```
 
 <a id="markdown-examples" name="examples"></a>
 
@@ -150,16 +153,7 @@ ctx.fillRect(10, 10, 50, 50); // Draw rectangle at (10, 10) with width 50 and he
 
 ## Other Resources
 
-[Two dimensional array](/docs/javascript/array-two-dimensional)
-<a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D" target="blank">MDN CanvasRenderingContext2D</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" target="blank">Canvas API</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D" target="blank">MDN CanvasRenderingContext2D</a>
+- [Two dimensional array](/docs/javascript/array-two-dimensional)
 
-
-<a id="markdown-the-basket" name="the-basket"></a>
-
-## The Basket
-
-How can I add sound?
-
-How do i movie objects?
-
-How do i rotate objects?

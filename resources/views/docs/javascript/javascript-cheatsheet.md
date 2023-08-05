@@ -26,6 +26,11 @@ element.addEventListener('event', functionName);
 - `event`: is the name of the event to listen for. (`'click'`, `'submit'`, `'keydown'`, etc)
 - `eventHandler`: is the function that will be executed when the click event occurs.
 
+
+```js
+document.addEventListener('keydown', event => { });
+```
+
 <a id="markdown-get-dom-element" name="get-dom-element"></a>
 
 ## Get DOM Element

@@ -2,6 +2,21 @@
     "main": {
         "links": [
             {
+                "name": "JS",
+                "route_name": "docs.javascript.javascript-cheatsheet",
+                "exclude_route": true
+            },
+            {
+                "name": "Draw",
+                "route_name": "pages.tetris.draw-tetrominos",
+                "exclude_route": true
+            },
+            {
+                "name": "Move",
+                "route_name": "pages.tetris.move-tetrominos",
+                "exclude_route": true
+            },
+            {
                 "name": "Home",
                 "route_name": "home",
                 "exclude_route": true
@@ -40,6 +55,18 @@
                 "name": "ChatGPT",
                 "url": "https://chat.openai.com/",
                 "icon_logo": "chatgpt",
+                "exclude_route": true
+            },
+            {
+                "name": "Codewars",
+                "url": "https://www.codewars.com/dashboard",
+                "icon_logo": "code-wars",
+                "exclude_route": true
+            },
+            {
+                "name": "Program 4 Fun",
+                "url": "https://prog4fun.csse.canterbury.ac.nz/enrol/index.php?id=2",
+                "icon_logo": "moodle",
                 "exclude_route": true
             },
             {
