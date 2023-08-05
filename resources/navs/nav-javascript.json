@@ -76,8 +76,12 @@
         "links": [
             {
                 "name": "01 Initial Setup",
-                "route_name": "docs.javascript.animation-exercise",
-                "__route_name": "docs.javascript.animation-exercise#canvas-setup-and-draw-basic-shape",
+                "route_name": "docs.javascript.animation-exercise.01-initial-setup",
+                "icon": "javascript"
+            },
+            {
+                "name": "02 Move Basic Shape",
+                "route_name": "docs.javascript.animation-exercise.02-move-basic-shape",
                 "icon": "javascript"
             }
         ]

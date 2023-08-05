@@ -11,7 +11,7 @@ class Canvas {
         this.ctx = ctx;
 
         // Create a new piece when the canvas is initialized
-        new Piece(this.ctx);
+        this.piece = new Piece(this.ctx);
     }
 }
 

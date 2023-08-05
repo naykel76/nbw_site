@@ -37,7 +37,7 @@ class Canvas {
         this.ctx = ctx;
 
         // Create a new piece when the canvas is initialized
-        new Piece(this.ctx);
+        this.piece = new Piece(this.ctx);
     }
 }
 ```
@@ -74,4 +74,4 @@ new Canvas(ctx);
 
 <canvas id="canvas" class="bdr-3 bdr-red"></canvas>
 
-<script src="/js/animation-exercise/01-initial-canvas-setup.js"></script>
+<script src="/js/animation-exercise/01-initial-setup.js"></script>
