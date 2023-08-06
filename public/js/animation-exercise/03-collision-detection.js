@@ -1,9 +1,10 @@
 // Set up the canvas
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+const scale = 20; // makes it easier dealing with collisions
 ctx.canvas.width = 400;
 ctx.canvas.height = 100;
-ctx.scale(20, 20);
+ctx.scale(scale, scale);
 
 // ==========================================================================
 
@@ -65,23 +66,20 @@ function handleKeyPress(event) {
     if (KEYS.hasOwnProperty(key)) {
         event.preventDefault();
 
-        const keyCode = KEYS[key];
-
-        switch (keyCode) {
-            case KEYS.ArrowLeft:
-                board.piece.move({ x: -1, y: 0 });
-                break;
-            case KEYS.ArrowRight:
-                board.piece.move({ x: 1, y: 0 });
-                break;
-            case KEYS.ArrowUp:
-                board.piece.move({ x: 0, y: -1 });
-                break;
-            case KEYS.ArrowDown:
-                board.piece.move({ x: 0, y: 1 });
-                break;
+        let piece = board.piece;
+        if (event.key == 'ArrowLeft' && piece.x > 0) {
+            piece.move({ x: -1, y: 0 });
+        } else if (event.key == 'ArrowRight' && piece.x < canvas.width / scale - 1) {
+            piece.move({ x: 1, y: 0 });
+        } else if (event.key == 'ArrowUp' && piece.y > 0) {
+            piece.move({ x: 0, y: -1 });
+        } else if (event.key == 'ArrowDown' && piece.y < canvas.height / scale - 1) {
+            piece.move({ x: 0, y: 1 });
         }
     }
 }
 
 // ==========================================================================
+
+
+

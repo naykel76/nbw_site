@@ -55,7 +55,8 @@
             },
             {
                 "name": "NPM",
-                "route_name": "docs.npm-cheatsheet",
+                "route_name": "npm.npm-cheatsheet",
+                "view": "pages.npm-cheatsheet",
                 "icon_logo": "npm"
             },
             {
@@ -76,9 +77,21 @@
                 "exclude_route": true
             },
             {
-                "name": "Vite",
+                "name": "TypeDoc",
+                "route_name": "typedoc.typedoc-cheatsheet",
+                "view": "pages.typedoc-cheatsheet",
+                "icon_logo": "typedoc"
+            },
+            {
+                "name": "Typescript",
+                "route_name": "typescript.typescript-cheatsheet",
+                "view": "pages.typescript-cheatsheet",
+                "icon_logo": "typescript"
+            },
+            {
+                "name": "ViteJS",
                 "route_name": "docs.vite-cheatsheet",
-                "icon": "help"
+                "icon_logo": "vitejs"
             },
             {
                 "name": "XAMPP",

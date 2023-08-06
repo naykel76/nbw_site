@@ -3,6 +3,8 @@
 
 - [Create Route(s)](#create-routes)
 - [Add Router Links](#add-router-links)
+- [Redirecting `Router.navigate()`](#redirecting-routernavigate)
+    - [Passing Parameters](#passing-parameters)
 - [Additional Resources](#additional-resources)
 
 <!-- /TOC -->
@@ -40,6 +42,27 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 <!-- app/app.component.html -->
 <a routerLink="/login"> Login </a>
 ```
+
+<a id="markdown-redirecting-routernavigate" name="redirecting-routernavigate"></a>
+
+## Redirecting `Router.navigate()`
+
+```js
+constructor(private router: Router) { }
+
+redirectHome(url) {
+  this.router.navigate(['/home']);
+}
+```
+
+<a id="markdown-passing-parameters" name="passing-parameters"></a>
+
+### Passing Parameters
+
+```js
+this.router.navigate(['/user', { id: userId }]);
+```
+
 
 <a id="markdown-additional-resources" name="additional-resources"></a>
 

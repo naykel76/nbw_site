@@ -2,6 +2,7 @@
 <!-- TOC -->
 
 - [Create the move() method to the Piece class](#create-the-move-method-to-the-piece-class)
+    - [Calculate the new position](#calculate-the-new-position)
 - [Define the movement keys](#define-the-movement-keys)
 - [Create the keypress handler function](#create-the-keypress-handler-function)
 - [Add event to listen for the key press](#add-event-to-listen-for-the-key-press)
@@ -13,6 +14,8 @@
 
 ## Create the move() method to the Piece class
 
+The piece class accepts an object that will define the current piece `x` and `y` position.
+
 ```js
 move(piece) {
     this.x = this.x + piece.x;
@@ -21,6 +24,15 @@ move(piece) {
     this.render();
 }
 ```
+
+<a id="markdown-calculate-the-new-position" name="calculate-the-new-position"></a>
+
+### Calculate the new position
+
+move left:  `piece.x + -1` <br>
+move right: `piece.x + 1` <br>
+move up:    `piece.y + -1` <br>
+move down:  `piece.y + 1` <br>
 
 <a id="markdown-define-the-movement-keys" name="define-the-movement-keys"></a>
 
@@ -81,5 +93,4 @@ Use the arrow keys on your keyboard to move the square. You'll notice that the s
 board, as collision detection hasn't been implemented to limit its motion.
 
 <canvas id="canvas" class="bdr-3 bdr-red"></canvas>
-<script src="/js/animation-exercise/controls.js"></script>
 <script src="/js/animation-exercise/02-move-basic-shape.js"></script>

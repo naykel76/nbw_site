@@ -1,10 +1,15 @@
-# Making Thinks Move
+# Making Things Move
 
 <!-- TOC -->
 
 - [Overview](#overview)
 - [Moving](#moving)
-- [Context Methods](#context-methods)
+- [requestAnimationFrame vs setInterval](#requestanimationframe-vs-setinterval)
+    - [`window.requestAnimationFrame()`](#windowrequestanimationframe)
+    - [`setInterval()`](#setinterval)
+- [Questions](#questions)
+        - [How do I stop an interval?](#how-do-i-stop-an-interval)
+- [Addition Resources](#addition-resources)
 
 <!-- /TOC -->
 
@@ -44,48 +49,59 @@ ctx.clearRect(0, 0, canvas.height, canvas.width);
 
 ## Moving
 
-<canvas id="canvas"></canvas>
-<script>
-    canvas = document.getElementById('canvas');
-    ctx = canvas.getContext('2d');
-    ctx.canvas.width = 200;
-    ctx.canvas.height = 100;
-    ctx.fillStyle = 'green';
-    ctx.scale(20,20)
-    ctx.fillRect(1, 0, 2, 2);
-    // ctx.clearRect(1, 0, canvas.height, canvas.width);
-    ctx.fillRect(4, 0, 2, 2);
-</script>
+<a id="markdown-requestanimationframe-vs-setinterval" name="requestanimationframe-vs-setinterval"></a>
 
-----------
+## requestAnimationFrame vs setInterval
+
+Both `requestAnimationFrame` and `setInterval` are used for creating animations or executing
+repetitive tasks, but they have some key differences that make `requestAnimationFrame` more
+suitable for animations and smoother visual effects.
+
+<a id="markdown-windowrequestanimationframe" name="windowrequestanimationframe"></a>
+
+### `window.requestAnimationFrame()`
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame#examples" target="blank">MDN Examples</a>
+```js
+requestAnimationFrame(callback)
+```
+
+<div class="bx info flex">
+    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#info"></use></svg>
+    <div>Note: Your callback routine must itself call requestAnimationFrame() again if you want to animate another frame at the next repaint. requestAnimationFrame() is 1 shot</div>
+</div>
 
 
+<a id="markdown-setinterval" name="setinterval"></a>
+
+### `setInterval()`
+
+```js
+setInterval(func, delay)
+```
+
+`setInterval` executes a given function at a fixed time interval, regardless of the screen refresh
+rate. It might result in uneven frame rates and less-smooth animations, especially if the interval
+is too short or if the device is under load.
+
+<a id="markdown-questions" name="questions"></a>
+
+## Questions
+
+<a id="markdown-how-do-i-stop-an-interval" name="how-do-i-stop-an-interval"></a>
+
+#### How do I stop an interval?
 
 
+function drop() {
+    let piece = canvas.piece;
+    setInterval(() => piece.move({ x: 1, y: 0 }), 1000)
+}
 
-<a id="markdown-context-methods" name="context-methods"></a>
 
-## Context Methods
+<a id="markdown-addition-resources" name="addition-resources"></a>
 
-<code-first-col></code-first-col>
-| Method                                       | Description                                   |
-| -------------------------------------------- | --------------------------------------------- |
-| fillRect(x, y, width, height)                | Draws a filled rectangle.                     |
-| strokeRect(x, y, width, height)              | Draws the outline of a rectangle.             |
-| clearRect(x, y, width, height)               | Clears a rectangular area.                    |
-| fillText(text, x, y)                         | Draws filled text.                            |
-| strokeText(text, x, y)                       | Draws the outline of text.                    |
-| beginPath()                                  | Starts a new path or resets the current path. |
-| moveTo(x, y)                                 | Moves the pen to specified coordinates.       |
-| lineTo(x, y)                                 | Draws a line to specified coordinates.        |
-| arc(x, y, radius, start, end)                | Draws an arc or part of a circle.             |
-| arcTo(x1, y1, x2, y2, radius)                | Draws an arc between two tangents.            |
-| quadraticCurveTo(cpx, cpy, x, y)             | Draws a quadratic Bezier curve.               |
-| bezierCurveTo(cp1x, cp1y, cp2x, cp2y, x, y)  | Draws a cubic Bezier curve.                   |
-| rect(x, y, width, height)                    | Draws a rectangle path.                       |
-| fill()                                       | Fills the current path with fill style.       |
-| stroke()                                     | Strokes the current path with stroke style.   |
-| drawImage(image, x, y, width, height)        | Draws an image on the canvas.                 |
-| createLinearGradient(x0, y0, x1, y1)         | Creates a linear gradient object.             |
-| createRadialGradient(x0, y0, r0, x1, y1, r1) | Creates a radial gradient object.             |
-| createPattern(image, repetition)             | Creates a pattern from an image.              |
+## Addition Resources
+
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame" target="blank">MDN requestAnimationFrame()</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/API/setInterval" target="blank">MDN setInterval()</a>

@@ -1,3 +1,15 @@
+
+
+## Creating a Vite project
+
+```bash
+npm create vite@latest
+```
+
+```bash
+npm install -D autoprefixer nk_jtb postcss postcss-cli sass
+```
+
 # How to deal with decoded JSON
 
 The difference is how you access the properties
