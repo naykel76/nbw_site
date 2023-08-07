@@ -66,7 +66,7 @@
     "Drawing and Animations": {
         "links": [
             {
-                "name": "Drawing Environment",
+                "name": "Drawing Environment (canvas)",
                 "route_name": "docs.javascript.canvas",
                 "icon": "javascript"
             },
@@ -77,7 +77,7 @@
             }
         ]
     },
-    "Animation Exercise": {
+    "Canvas and Animation Exercise": {
         "links": [
             {
                 "name": "01 Initial Setup",
@@ -90,13 +90,13 @@
                 "icon": "javascript"
             },
             {
-                "name": "03 Collision Detection",
-                "route_name": "docs.javascript.animation-exercise.03-collision-detection",
+                "name": "03 Animation",
+                "route_name": "docs.javascript.animation-exercise.03-animate-basic-shape",
                 "icon": "javascript"
             },
             {
-                "name": "04 Animation",
-                "route_name": "docs.javascript.animation-exercise.04-animate-basic-shape",
+                "name": "04 Collision Detection",
+                "route_name": "docs.javascript.animation-exercise.04-collision-detection",
                 "icon": "javascript"
             }
         ]

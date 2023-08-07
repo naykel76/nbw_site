@@ -8,6 +8,7 @@
 - [Use Case](#use-case)
     - [Use Case Description](#use-case-description)
     - [Use Case Diagrams](#use-case-diagrams)
+- [Class Diagrams](#class-diagrams)
 
 <!-- /TOC -->
 
@@ -71,3 +72,10 @@ It represents a common set of steps that occur in multiple use cases. By using "
 avoid duplicating the same steps in different use cases, making the diagram more modular and
 easier to understand.
 
+
+
+<a id="markdown-class-diagrams" name="class-diagrams"></a>
+
+## Class Diagrams
+
+<a href="https://www.youtube.com/watch?v=UI6lqHOVHic" target="blank">UML Class Diagram Tutorial</a>

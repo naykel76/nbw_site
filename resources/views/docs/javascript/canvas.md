@@ -2,57 +2,44 @@
 
 <!-- TOC -->
 
-- [Quick Reference (WIP)](#quick-reference-wip)
-- [Setup the Canvas](#setup-the-canvas)
-    - [Get the drawing context](#get-the-drawing-context)
-    - [Setting the Scale](#setting-the-scale)
-- [Drawing on the canvas](#drawing-on-the-canvas)
-    - [Context Methods](#context-methods)
+- [Canvas](#canvas)
+- [Getting the canvas context](#getting-the-canvas-context)
+- [Basic drawing methods](#basic-drawing-methods)
+- [Scaling Objects](#scaling-objects)
+- [Context Methods](#context-methods)
 - [Examples](#examples)
 - [Other Resources](#other-resources)
 
 <!-- /TOC -->
 
-<a id="markdown-quick-reference-wip" name="quick-reference-wip"></a>
+<a id="markdown-canvas" name="canvas"></a>
 
-## Quick Reference (WIP)
-
-If you want to cut through all the technical jargon, there are the important things to know.
-
-`ctx` is the canvas object which provides access the the context methods. <br> For example,
-`ctx.fillRect()`, `ctx.clearRect()`
-
-`ctx.canvas` represents the actual HTML `<canvas>` element. It's used to access and modify
-properties related to the canvas element itself, such as its width and height.
-
-<a id="markdown-setup-the-canvas" name="setup-the-canvas"></a>
-
-## Setup the Canvas
+## Canvas
 
 HTML `canvas` is a rectangular area on a web page where you can use JavaScript to draw graphics
 dynamically. The `canvas` element itself does not have drawing capabilities; instead, it serves as
 a container for a graphics context. To draw on the canvas, you need to get the 2D rendering
-context of the canvas, which is obtained using the `getContext()` method.
+context as shown below.
 
-Create a canvas element where graphics will be drawn
 
 ```html
 <canvas id="canvas"></canvas>
 ```
 
-Get the canvas element by id or one of the may other selectors.
+<a id="markdown-getting-the-canvas-context" name="getting-the-canvas-context"></a>
+
+## Getting the canvas context
+
+To draw on the canvas, you need to get the 2D rendering context of the canvas, which is obtained
+using the `getContext()` method.
+
+First, get the canvas element using a javascript selector, then get the drawing context.
 
 ```js
 const canvas = document.getElementById('canvas');
-```
-
-<a id="markdown-get-the-drawing-context" name="get-the-drawing-context"></a>
-
-### Get the drawing context
-```js
 const ctx = canvas.getContext('2d');
 ```
-
+<!-- review -->
 In this example, `getContext()` method is called on the `canvas` element with the argument `2d`,
 which requests a 2D rendering context. The returned `ctx` object provides methods and properties
 for drawing shapes, text, images, and manipulating graphics within the canvas.
@@ -60,9 +47,34 @@ for drawing shapes, text, images, and manipulating graphics within the canvas.
 For example, to draw a rectangle on the canvas, you would use methods like `ctx.fillRect()` or
 `ctx.strokeRect()`.
 
-<a id="markdown-setting-the-scale" name="setting-the-scale"></a>
+<a id="markdown-basic-drawing-methods" name="basic-drawing-methods"></a>
 
-### Setting the Scale
+## Basic drawing methods
+
+The 2D rendering context provides various methods for drawing on the canvas:
+
+```js
+// Fill a rectangle with color
+ctx.fillRect(x, y, width, height);
+
+// Draw the outline of a rectangle
+ctx.strokeRect(x, y, width, height);
+
+// Clear a rectangular area
+ctx.clearRect(x, y, width, height);
+
+// Draw filled text
+ctx.fillText(text, x, y);
+
+// Draw the outline of text
+ctx.strokeText(text, x, y);
+
+// And more...
+```
+
+<a id="markdown-scaling-objects" name="scaling-objects"></a>
+
+## Scaling Objects
 
 Scaling objects involves resizing visual elements while maintaining their proportions. In HTML
 canvas this can be achieve using the `scale()` method in the rendering context. By applying
@@ -70,45 +82,22 @@ scaling factors to dimensions like X, Y, width (w), and height (h), you can adju
 proportionally.
 
 ```js
-ctx.scale(20, 20);
+ctx.scale(scaleX, scaleY);
 ```
 
 This code scales the objects by a factor of `20` in both the `X` and `Y` making it more convenient
 to work with sizes.
 
 ```js
-// not scaled
-ctx.fillRect(10, 10, 50, 50);
+ctx.scale(20, 20);
+ctx.fillRect(10, 10, 50, 50); // Unscaled rectangle
+ctx.fillRect(1, 1, 5, 5);     // Scaled rectangle
 
-// scaled
-ctx.fillRect(1, 1, 5, 5);
-```
-
-<a id="markdown-drawing-on-the-canvas" name="drawing-on-the-canvas"></a>
-
-## Drawing on the canvas
-
-Once you have created the context, you can draw shapes on the canvas using the `context` methods.
-
-<canvas id="canvas"></canvas>
-<script>
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-    ctx.canvas.height = 60
-    ctx.scale(50, 50)
-    ctx.fillStyle = 'green';
-    ctx.fillRect(0, 0, 1, 1);
-    ctx.fillRect(2, 0, 1, 1);
-</script>
-
-```js
-ctx.fillRect(0, 0, 1, 1);
-ctx.fillRect(2, 0, 1, 1);
 ```
 
 <a id="markdown-context-methods" name="context-methods"></a>
 
-### Context Methods
+## Context Methods
 
 <code-first-col></code-first-col>
 | Method                                       | Description                                   |
@@ -137,6 +126,18 @@ ctx.fillRect(2, 0, 1, 1);
 
 ## Examples
 
+<canvas id="canvas"></canvas>
+<script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    ctx.canvas.height = 60
+    ctx.scale(50, 50)
+    ctx.fillStyle = 'green';
+    ctx.fillRect(0, 0, 1, 1);
+    ctx.fillStyle = 'orange';
+    ctx.fillRect(2, 0, 1, 1);
+</script>
+
 
 ```html
 <canvas id="canvas"></canvas>
@@ -145,8 +146,12 @@ ctx.fillRect(2, 0, 1, 1);
 ```js
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
-ctx.fillStyle = 'green'; // Set the fill color
-ctx.fillRect(10, 10, 50, 50); // Draw rectangle at (10, 10) with width 50 and height 50
+ctx.canvas.height = 60
+ctx.scale(50, 50)
+ctx.fillStyle = 'green';
+ctx.fillRect(0, 0, 1, 1);
+ctx.fillStyle = 'orange';
+ctx.fillRect(2, 0, 1, 1);
 ```
 
 <a id="markdown-other-resources" name="other-resources"></a>

@@ -7,16 +7,6 @@
                 "exclude_route": true
             },
             {
-                "name": "Draw",
-                "route_name": "pages.tetris.draw-tetrominos",
-                "exclude_route": true
-            },
-            {
-                "name": "Move",
-                "route_name": "pages.tetris.move-tetrominos",
-                "exclude_route": true
-            },
-            {
                 "name": "Home",
                 "route_name": "home",
                 "exclude_route": true
