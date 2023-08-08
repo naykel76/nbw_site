@@ -8,14 +8,7 @@
 
     <p>The <code>ctx.scale</code> has been defined which allows us to 1 unit instead of having to calculate the block size everywhere. For example, 1 = 10px or 1 = 20px</p>
 
-    <p>Refer to <a href="/docs/javascript/graphics-and-animations#setup-the-canvas">set up canvas</a> for information on preparing the <code>ctx</code> and <code>canvas</code></p>
-
-    <x-gt-markdown class="-ml-6">
-        @verbatim
-            ```js
-            ctx.fillRect(x, y, w, h);
-        @endverbatim
-    </x-gt-markdown>
+    <p>Refer to the <a href="/docs/javascript/canvas">drawing environment</a> page for information on preparing the <code>ctx</code> and <code>canvas</code></p>
 
     <div class="grid cols-2 remove-pre-margins">
         <x-gt-markdown class="-ml-8">
@@ -90,7 +83,7 @@
 
     <h2 id="matrix-shapes">Draw Shapes from a two-dimensional array</h2>
 
-    <p>Using a two-dimensional array (matrix) to represent the shapes is a more organised and effective approach. This makes it easier to define, visualize, and manipulate the shapes.</p>
+    <p>Using a two-dimensional array (matrix) to represent the shapes is a more organised and effective approach. This makes it easier to define, visualise, and manipulate the shapes.</p>
 
     <div class="grid cols-2 remove-pre-margins">
         <x-gt-markdown class="-ml-8">
@@ -189,7 +182,6 @@
     <ul>
         <li>Each array represents a row on the grid or <code>y[i]</code></li>
         <li>Each value in an array (row) represents the <code>x[i]</code> position</li>
-        <li>Each item in the grid correlates to a <code>x</code> or <code>y</code> index.</li>
         <li>Any grid value that is greater than 0 indicates the square is visible</li>
     </ul>
     <div>

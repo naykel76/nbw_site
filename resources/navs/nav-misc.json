@@ -5,10 +5,6 @@
                 "name": "Draw Tetrominoes",
                 "route_name": "pages.tetris.draw-tetrominos",
                 "type": "blade"
-            },
-            {
-                "name": "Move Tetrominoes",
-                "route_name": "pages.tetris.move-tetrominos"
             }
         ]
     }

@@ -17,6 +17,8 @@
 
 <!-- /TOC -->
 
+The `git prune` command is used to remove unreferenced objects from the Git object database.
+
 ```bash
 git log --oneline
 git diff             # Show the difference between branches (merge conflicts)
@@ -24,6 +26,10 @@ git diff             # Show the difference between branches (merge conflicts)
 
 git rm -rf --cached . # refresh git cache
 git reset --hard && git clean -df
+
+git prune -v
+git remote prune origin
+git push origin --delete branch
 ```
 
 

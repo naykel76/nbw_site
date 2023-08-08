@@ -5,6 +5,7 @@
     - [If statement](#if-statement)
     - [Logical OR operator](#logical-or-operator)
     - [More Examples](#more-examples)
+- [Ternary Examples](#ternary-examples)
 - [Optional Chaining](#optional-chaining)
 
 <!-- /TOC -->
@@ -50,6 +51,23 @@ lastTimestamp = lastTimestamp || timestamp;
 
 ```
 
+<a id="markdown-ternary-examples" name="ternary-examples"></a>
+
+## Ternary Examples
+
+```js
+element ? (element.value = value) : console.error(`Element with ID "${id}" not found.`);
+```
+
+Instead of
+
+```js
+if (element) {
+    element.value = value;
+} else {
+    console.error(`Element with ID "${id}" not found.`);
+}
+```
 
 <a id="markdown-optional-chaining" name="optional-chaining"></a>
 
