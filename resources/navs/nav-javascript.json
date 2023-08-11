@@ -7,11 +7,6 @@
                 "icon": "javascript"
             },
             {
-                "name": "Cleaner Code Examples",
-                "route_name": "docs.javascript.cleaner-code",
-                "icon": "javascript"
-            },
-            {
                 "name": "Arrays",
                 "route_name": "docs.javascript.arrays",
                 "icon": "javascript"
@@ -19,6 +14,11 @@
             {
                 "name": "Arrays - Two Dimensional",
                 "route_name": "docs.javascript.array-two-dimensional",
+                "icon": "javascript"
+            },
+            {
+                "name": "Cleaner Code Examples",
+                "route_name": "docs.javascript.cleaner-code",
                 "icon": "javascript"
             },
             {
@@ -60,6 +60,11 @@
                 "name": "Operators",
                 "route_name": "docs.javascript.operators",
                 "icon": "javascript"
+            },
+            {
+                "name": "Objects",
+                "route_name": "docs.javascript.objects",
+                "icon": "javascript"
             }
         ]
     },
@@ -90,13 +95,24 @@
                 "icon": "javascript"
             },
             {
-                "name": "03 Animation",
+                "name": "03 Animation TBD",
                 "route_name": "docs.javascript.animation-exercise.03-animate-basic-shape",
                 "icon": "javascript"
             },
             {
-                "name": "04 Collision Detection",
-                "route_name": "docs.javascript.animation-exercise.04-collision-detection",
+                "name": "04 Boundary Detection",
+                "route_name": "docs.javascript.animation-exercise.04-boundary-detection",
+                "icon": "javascript"
+            },
+            {
+                "name": "05 Drawing Complex Shapes",
+                "route_name": "docs.javascript.animation-exercise.05-complex-shapes",
+                "icon": "javascript",
+                "type": "blade"
+            },
+            {
+                "name": "06 Rotation Matrix",
+                "route_name": "docs.javascript.animation-exercise.06-rotation-matrix",
                 "icon": "javascript"
             }
         ]

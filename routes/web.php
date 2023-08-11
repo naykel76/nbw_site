@@ -27,7 +27,7 @@ Route::get('/dev', [TestingController::class, 'timer'])->name('dev');
 (new RouteBuilder('nav-javascript', 'layouts.docs-default'))->create();
 (new RouteBuilder('nav-laravel', 'layouts.docs-default'))->create();
 (new RouteBuilder('nav-linux', 'layouts.docs-default'))->create();
-(new RouteBuilder('nav-misc', 'layouts.docs-default'))->create();
+// (new RouteBuilder('nav-misc', 'layouts.docs-default'))->create();
 (new RouteBuilder('nav-programming', 'layouts.docs-default'))->create();
 
 Route::get('/2701', [Uni2701Controller::class, 'show'])->name('uni.2701');

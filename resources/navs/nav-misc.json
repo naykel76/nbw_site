@@ -1,11 +1,11 @@
 {
-    "tetris": {
-        "links": [
-            {
-                "name": "Draw Tetrominoes",
-                "route_name": "pages.tetris.draw-tetrominos",
-                "type": "blade"
-            }
-        ]
-    }
+    // "tetris": {
+    //     "links": [
+    //         {
+    //             "name": "Draw Tetrominoes",
+    //             "route_name": "pages.tetris.draw-tetrominos",
+    //             "type": "blade"
+    //         }
+    //     ]
+    // }
 }

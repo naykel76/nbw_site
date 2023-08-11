@@ -7,10 +7,6 @@
                 "exclude_route": true
             },
             {
-                "name": "T",
-                "route_name": "pages.tetris.draw-tetrominos"
-            },
-            {
                 "name": "Home",
                 "route_name": "home",
                 "exclude_route": true

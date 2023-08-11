@@ -62,7 +62,7 @@ Use the arrow keys on your keyboard to move the square. Boundary detection has b
 preventing the box moving outside of the canvas.
 
 <canvas id="canvas" class="bdr-3 bdr-red"></canvas>
-<script src="/js/animation-exercise/04-collision-detection.js"></script>
+<script src="/js/animation-exercise/04-boundary-detection.js"></script>
 
 <a id="markdown-complete-code" name="complete-code"></a>
 
