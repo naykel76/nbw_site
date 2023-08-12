@@ -1,25 +1,11 @@
-// $x-text: #333;
-// $x-background: #f8f6f2;
-// $x-primary-button: #424f76;
-// $x-secondary-button: #f3f2f2;
-// $x-accent: #ffbb1c;
-
-$x-text: rgb(228, 232, 236) !default;
-$x-background: #0b101d;
-$x-primary-button: #d9558c;
-// $x-primary-button: #2876dc;
-// $x-secondary-button: #e1e1df; // light
-$x-secondary-button: #031a37;
-$x-accent: #e6c637;
 $f: Poppins, Helvetica, Arial, sans-serif;
-
 @use "node_modules/nk_jtb/src/base/vars_base" as * with (
-    $text: $x-text,
-    $background: $x-background,
-    $primary: $x-primary-button,
-    $secondary: $x-secondary-button,
-    $accent: $x-accent,
-    $font-family: $f
+    $accent: #e6c637,
+    $primary: #d9558c,
+    $secondary: #031a37,
+    $background: #0b101d,
+    $font-family: $f,
+    $text: rgb(228, 232, 236)
 );
 
 @use "node_modules/nk_jtb/src/base/vars_components" as * with (
@@ -41,6 +27,16 @@ $f: Poppins, Helvetica, Arial, sans-serif;
 .fp-x {
     // grid-template-columns: repeat(2, 1fr);
     grid-template-columns: repeat(2, minmax(200px, 1fr));
+}
+
+.menu-title{
+    color: burlywood;
+}
+
+@include from-md {
+    p {
+        font-size: 1.15rem;
+    }
 }
 
 // allow the grid to do it's job
@@ -67,7 +63,7 @@ $f: Poppins, Helvetica, Arial, sans-serif;
 
 body {
     background-image: linear-gradient(to right bottom, #0b101d, #0d1220, #0e1424, #0f1627, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
-    font-size: 1.15rem;
+    // font-size: 1.15rem;
 }
 
 th {

@@ -1,6 +1,6 @@
 <x-gotime-app-layout layout="docs" hasContainer class="markdown py-5-3-2-2">
 
-    <x-slot name="navigation" class="maxw-300">
+    <x-slot name="navigation" class="maxw-250">
 
         @if(empty($data['menus']))
 

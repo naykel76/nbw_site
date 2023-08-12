@@ -7,6 +7,11 @@
                 "exclude_route": true
             },
             {
+                "name": "JTB",
+                "route_name": "docs.jtb.introduction",
+                "exclude_route": true
+            },
+            {
                 "name": "Home",
                 "route_name": "home",
                 "exclude_route": true
