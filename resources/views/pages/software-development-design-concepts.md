@@ -1,7 +1,8 @@
-# Software Development Design Concepts
+# Software Engineering
 
 <!-- TOC -->
 
+- [Important Software Engineering Principles](#important-software-engineering-principles)
 - [Requirements](#requirements)
     - [Functional Requirements](#functional-requirements)
     - [Non-functional Requirements](#non-functional-requirements)
@@ -12,7 +13,9 @@
 
 <!-- /TOC -->
 
-Software Engineering Principles
+<a id="markdown-important-software-engineering-principles" name="important-software-engineering-principles"></a>
+
+## Important Software Engineering Principles
 
 **Modularity:** Breaking down a software system into smaller, manageable modules to promote
 reusability, maintainability, and easier collaboration.
@@ -28,11 +31,11 @@ specific aspect or functionality, to enhance maintainability and comprehensibili
 
 **SOLID Principles:** A set of five design principles that promote clean and maintainable code:
 
-   - Single Responsibility Principle (SRP)
-   - Open/Closed Principle (OCP)
-   - Liskov Substitution Principle (LSP)
-   - Interface Segregation Principle (ISP)
-   - Dependency Inversion Principle (DIP)
+- Single Responsibility Principle (SRP)
+- Open/Closed Principle (OCP)
+- Liskov Substitution Principle (LSP)
+- Interface Segregation Principle (ISP)
+- Dependency Inversion Principle (DIP)
 
 
 <a id="markdown-requirements" name="requirements"></a>
