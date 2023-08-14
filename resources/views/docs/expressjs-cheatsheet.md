@@ -2,7 +2,7 @@
 
 <!-- TOC -->
 
-- [Initial Server Setup](#initial-server-setup)
+- [Server Setup](#server-setup)
 - [Cors support (WIP)](#cors-support-wip)
 - [Routes](#routes)
     - [Route Parameters](#route-parameters)
@@ -14,51 +14,43 @@ Express Docs
 - <a href="https://expressjs.com/" target="_blank">ExpressJS</a>
 - <a href="https://expressjs.com/en/guide/routing.html" target="blank">Routing</a>
 
+<a id="markdown-server-setup" name="server-setup"></a>
 
-
-<a id="markdown-initial-server-setup" name="initial-server-setup"></a>
-
-## Initial Server Setup
+## Server Setup
 
 ```bash
-npm install express
-npm install nodemon--save-dev
+npm install express dotenv
+npm install nodemon --save-dev
 ```
 
-```js
-const express = require('express');
-const app = express(); // Create an Express instance
+`server.js`
 
-// Middleware
-// ================================================================
-// You can add middleware here, such as body parsing for JSON data,
-// authentication, error handling middleware, etc.
+```js
+const express = require('express')
+const app = express()
+
+const PORT = process.env.PORT || 5000
+
+require('dotenv').config(); // load environment variables
+
+/**
+ * Middleware
+ * ================================================================
+ * You can add middleware here, such as body parsing for JSON data,
+ * authentication, error handling middleware, etc.
+ */
 
 app.use(express.json()); // Middleware to parse JSON requests
 
-// Routes
-// ================================================================
+/**
+ * Start the server
+ * ================================================================
+ * Listen on the port specified in the .env file or default to 5000
+ */
 
-// Define a route for the root URL
-app.get('/', (req, res) => {
-    res.send('Hey there!');
-});
-
-// Define a route for '/about' URL
-app.get('/about', (req, res) => {
-    res.send('This is the about page.');
-});
-
-// Run
-// ================================================================
-// Start the server and listen on a specific port
-
-const port = 3008;
-
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
-
+app.listen(PORT, () => {
+  console.log(`Server Running on Port ${PORT}`)
+})
 ```
 
 You can either start the server using the regular `Node.js` command or use `nodemon` for automatic
@@ -122,3 +114,43 @@ app.get('/users/:id/books/:bookId', (req, res) => {
 
 
     curl -X POST -H "Content-Type: application/json" -d '{"id": 3, "text": "Complete the project"}' http://localhost:3008/todos
+
+
+
+
+Express vs Node
+
+Using basic `http` module
+
+```js
+const http = require('http');
+const PORT_HTTP = process.env.PORT || 5000;
+
+const server = http.createServer((req, res) => {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/html');
+    res.end('<h2>Hello there!</h2>');
+});
+
+server.listen(PORT_HTTP, () => {
+    console.log(`HTTP Server Running on Port ${PORT_HTTP}`);
+    console.log('http://localhost:' + PORT_HTTP);
+});
+```
+
+Using Express.js
+
+```js
+const express = require('express');
+const app = express();
+const PORT_EXPRESS = process.env.PORT || 5000;
+
+app.get('/', (req, res) => {
+    res.send('<h2>Hello there!</h2>');
+});
+
+app.listen(PORT_EXPRESS, () => {
+    console.log(`Express Server Running on Port ${PORT_EXPRESS}`);
+    console.log('http://localhost:' + PORT_EXPRESS);
+});
+```

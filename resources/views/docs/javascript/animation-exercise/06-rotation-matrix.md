@@ -18,50 +18,19 @@ Make sure you understand how the [matrix drawing loop](docs/javascript/animation
 There is a whole bunch of math behind a <a href="https://en.wikipedia.org/wiki/Rotation_matrix" target="blank">rotation matrix</a> that was created by some math nerds much smarter than me, but bottom line: use this function to rotate a matrix.
 
 ```js
-function transposeMatrix(matrix) {
+transposeMatrix(matrix: number[][]): number[][] {
     const numRows = matrix.length;
     const numCols = matrix[0].length;
-    console.log(numRows);
 
-    // Create a new matrix for the transposed values
-    const transposedMatrix = new Array(numCols).fill(null).map(() => new Array(numRows));
-    // Loop through rows and columns to perform transposition
+    // Create a new matrix for the rotated values
+    const rotatedMatrix = new Array(numCols).fill(null).map(() => new Array(numRows));
+
+    // Loop through rows and columns to perform rotation
     for (let row = 0; row < numRows; row++) {
         for (let col = 0; col < numCols; col++) {
-            transposedMatrix[col][row] = matrix[row][col];
+            // Rotate the values by swapping rows and columns
+            rotatedMatrix[col][numRows - 1 - row] = matrix[row][col];
         }
     }
-
-    return transposedMatrix;
 }
 ```
-
-The function takes a matrix like this.
-
-```js
-const smiley = [
-    [0, 0, 1, 0, 1, 0, 0],
-    [1, 0, 0, 0, 0, 0, 1],
-    [1, 0, 0, 0, 0, 0, 1],
-    [0, 1, 0, 0, 0, 1, 0],
-    [0, 0, 1, 1, 1, 0, 0]
-];
-```
-
-<canvas id="canvas" class="bdr-3 bdr-red my"></canvas>
-
-And turns it into this.
-
-```js
-const transposedSmiley = [
-    [0, 1, 1, 0, 0],
-    [0, 0, 0, 1, 0],
-    [1, 0, 0, 0, 1],
-    [0, 0, 0, 0, 1],
-    [1, 0, 0, 1, 0],
-    [0, 0, 0, 0, 0],
-    [0, 1, 1, 0, 0]
-];
-```
-<canvas id="canvas1" class="bdr-3 bdr-red my"></canvas>
-<script src="/js/animation-exercise/06-rotation-matrix.js"></script>

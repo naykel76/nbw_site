@@ -1,11 +1,17 @@
-$f: Poppins, Helvetica, Arial, sans-serif;
+$x-primary: #d9558c;
+$x-secondary: #031a37;
+$x-accent: #e6c637;
+$x-background: #0b101d;
+$x-font-family: Poppins, Helvetica, Arial, sans-serif;
+$x-text: rgb(228, 232, 236);
+
 @use "node_modules/nk_jtb/src/base/vars_base" as * with (
-    $accent: #e6c637,
-    $primary: #d9558c,
-    $secondary: #031a37,
-    $background: #0b101d,
-    $font-family: $f,
-    $text: rgb(228, 232, 236)
+    $primary: $x-primary,
+    $secondary: $x-secondary,
+    $accent: $x-accent,
+    $background: $x-background,
+    $font-family: $x-font-family,
+    $text: $x-text
 );
 
 @use "node_modules/nk_jtb/src/base/vars_components" as * with (
@@ -14,8 +20,6 @@ $f: Poppins, Helvetica, Arial, sans-serif;
 
 @use "node_modules/nk_jtb/src/scss/base/vars_components" as * with (
     $navbar-bg: transparent,
-    // $navbar-bg: $primary,
-    // $navbar-nav-hover-bg: transparent,
     $navbar-nav-hover-color: #ffbb1c,
     $navbar-nav-active-color: #ffbb1c
 );
@@ -24,12 +28,19 @@ $f: Poppins, Helvetica, Arial, sans-serif;
 @use "node_modules/nk_jtb/src/jtb";
 @use "./play";
 
+.navbar:not(.markdown .navbar) {
+    background-color: $background;
+    border-bottom: 1px solid #14213f;
+    box-shadow: 1px 5px 20px #142c56;
+    box-shadow: 1px 1px 70px #142c56;
+}
+
 .fp-x {
     // grid-template-columns: repeat(2, 1fr);
     grid-template-columns: repeat(2, minmax(200px, 1fr));
 }
 
-.menu-title{
+.menu-title {
     color: burlywood;
 }
 

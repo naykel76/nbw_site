@@ -12,6 +12,29 @@
 
 <!-- /TOC -->
 
+Software Engineering Principles
+
+**Modularity:** Breaking down a software system into smaller, manageable modules to promote
+reusability, maintainability, and easier collaboration.
+
+**Abstraction:** Hiding complex implementation details while exposing only necessary features,
+making the system easier to understand and use.
+
+**Encapsulation:** Bundling data and methods that operate on that data within a single unit (class
+or object), preventing direct access to internal details and promoting data integrity.
+
+**Separation of Concerns:** Dividing a software system into distinct components, each addressing a
+specific aspect or functionality, to enhance maintainability and comprehensibility.
+
+**SOLID Principles:** A set of five design principles that promote clean and maintainable code:
+
+   - Single Responsibility Principle (SRP)
+   - Open/Closed Principle (OCP)
+   - Liskov Substitution Principle (LSP)
+   - Interface Segregation Principle (ISP)
+   - Dependency Inversion Principle (DIP)
+
+
 <a id="markdown-requirements" name="requirements"></a>
 
 ## Requirements

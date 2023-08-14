@@ -2,34 +2,36 @@
 
 <!-- TOC -->
 
-- [Styling Forms and Controls](#styling-forms-and-controls)
+- [Base Controls](#base-controls)
 - [Control Groups](#control-groups)
-- [Horizontal control group](#horizontal-control-group)
-- [Inline control group](#inline-control-group)
+    - [Horizontal control group](#horizontal-control-group)
+    - [Inline control group](#inline-control-group)
+- [Control Sizes](#control-sizes)
 - [Theme Examples](#theme-examples)
 - [Trouble Shooting](#trouble-shooting)
-- [Inconsistent control and button height](#inconsistent-control-and-button-height)
+    - [Inconsistent control and button height](#inconsistent-control-and-button-height)
 
 <!-- /TOC -->
 
+<a id="markdown-base-controls" name="base-controls"></a>
 
-<a id="markdown-styling-forms-and-controls" name="styling-forms-and-controls"></a>
-
-## Styling Forms and Controls
+## Base Controls
 
 All form controls by default are `inline-flex`.
 
-
-<div class="grid md:cols-3">
-    <input id="input" name="input" type="text" placeholder="Text Input">
-    <input id="password" name="password" type="password" placeholder="Password Input">
-    <input id="number" name="number" type="number" placeholder="Number Input">
-</div>
-
-<div>
-    <button type="button" class="btn">Button</button>
-    <button type="reset" class="btn">Reset</button>
-    <button type="submit" class="btn">Submit</button>
+<div class="grid gg-1 md:cols-2">
+    <div class="flex">
+        <input id="input" name="input" type="text" placeholder="Text Input">
+        <button type="button" class="btn w-6 ml-025">Button</button>
+    </div>
+    <div class="flex">
+        <input id="password" name="password" type="password" placeholder="Password Input">
+        <button type="reset" class="btn w-6 ml-025">Reset</button>
+    </div>
+    <div class="flex">
+        <input id="number" name="number" type="number" placeholder="Number Input">
+        <button type="submit" class="btn w-6 ml-025">Submit</button>
+    </div>
 </div>
 
 <a id="markdown-control-groups" name="control-groups"></a>
@@ -97,6 +99,33 @@ By default, controls are inline-flex so the control will shrink. Add the `w-full
     </div>
 </div>
 ```
+
+<a id="markdown-control-sizes" name="control-sizes"></a>
+
+## Control Sizes
+
+<div class="flex-col gg-1">
+    <div>
+        <input type="text" class="xs" placeholder="x-Small">
+        <button class="ml-05 btn xs"> x-Small </button>
+    </div>
+    <div>
+        <input type="text" class="sm" placeholder="Small">
+        <button class="ml-05 btn sm"> Small </button>
+    </div>
+    <div>
+        <input type="text" placeholder="Normal">
+        <button class="ml-05 btn"> Normal </button>
+    </div>
+    <div>
+        <input type="text" class="md" placeholder="Medium">
+        <button class="ml-05 btn md"> Medium </button>
+    </div>
+    <div>
+        <input type="text" class="lg" placeholder="Large">
+        <button class="ml-05 btn lg"> Large </button>
+    </div>
+</div>
 
 <a id="markdown-theme-examples" name="theme-examples"></a>
 

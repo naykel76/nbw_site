@@ -2,7 +2,7 @@
 DO NOT remove the container from this layout. If you don't want
 the container then publish the layout locally and override. --}}
 
-<div class="navbar">
+<div class="navbar sticky bdrb">
 
     <div class="container">
 
