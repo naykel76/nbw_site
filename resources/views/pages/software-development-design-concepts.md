@@ -32,7 +32,11 @@ specific aspect or functionality, to enhance maintainability and comprehensibili
 **SOLID Principles:** A set of five design principles that promote clean and maintainable code:
 
 - Single Responsibility Principle (SRP)
-- Open/Closed Principle (OCP)
+- The **Open-Closed Principle** is a design guideline that suggests that software entities, like
+classes, modules, and functions, should be open for extension but closed for modification. This
+means that you can add new functionality or behavior to a software entity without altering its
+existing code. By adhering to this principle, the software's stability and compatibility are
+maintained over time.
 - Liskov Substitution Principle (LSP)
 - Interface Segregation Principle (ISP)
 - Dependency Inversion Principle (DIP)
