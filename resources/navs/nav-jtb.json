@@ -64,6 +64,10 @@
             {
                 "name": "Leadin or Trailing Addons",
                 "route_name": "docs.jtb.forms.inputs-with-addons"
+            },
+            {
+                "name": "Radio Button and Checkbox",
+                "route_name": "docs.jtb.forms.radio-checkbox"
             }
         ]
     },
@@ -184,10 +188,6 @@
                 "route_name": "docs.jtb.forms.input-file"
             },
             {
-                "name": "Radio Button and Checkbox",
-                "route_name": "docs.jtb.forms.radio-checkbox"
-            },
-            {
                 "name": "Border",
                 "route_name": "docs.jtb.utilities.border"
             },
@@ -221,7 +221,6 @@
             }
         ]
     },
-
     "Examples and Testing": {
         "links": [
             {

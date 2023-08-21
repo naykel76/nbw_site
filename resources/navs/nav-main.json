@@ -2,6 +2,11 @@
     "main": {
         "links": [
             {
+                "name": "Angular",
+                "route_name": "docs.angular.angular-cheatsheet",
+                "exclude_route": true
+            },
+            {
                 "name": "JS",
                 "route_name": "docs.javascript.javascript-cheatsheet",
                 "exclude_route": true

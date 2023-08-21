@@ -4,13 +4,12 @@
 
 - [New Project](#new-project)
 - [Generate Command](#generate-command)
-- [Data binding](#data-binding)
 - [`ngIf`](#ngif)
 - [`ngFor`](#ngfor)
+- [General](#general)
+- [Additional Resources](#additional-resources)
 
 <!-- /TOC -->
-
-<a href="https://angular.io/docs" target="blank">Angular Docs</a>
 
 <code-first-col></code-first-col>
 | Command                            | Action                   |
@@ -52,27 +51,8 @@ ng my-app --standalone --style=scss --routing
 | ng generate service <service-name>     | Generate a new service     |
 
 ```bash
-ng generate component account --skip-tests --inline-style
-```
-
-<a id="markdown-data-binding" name="data-binding"></a>
-
-## Data binding
-
-To use data binding import the angular `FormsModule` and add to the `imports` array.
-
-```js
-// my.component.ts
-import { FormsModule } from '@angular/forms';
-
-@Component({
-    imports: [FormsModule],
-    ...
-})
-```
-
-```html
-<input type="text" name="username" [(ngModel)]="username">
+ng generate component myComponent --skip-tests --inline-style
+ng generate component myComponent --skip-tests --inline-style --inline-template --flat
 ```
 
 <a id="markdown-ngif" name="ngif"></a>
@@ -100,3 +80,18 @@ import { FormsModule } from '@angular/forms';
     {{item.name}}
 </ion-list>
 ```
+
+
+<a id="markdown-general" name="general"></a>
+
+## General
+
+How can I get a HTML element in angular?
+
+    @ViewChild('boardCanvas', { static: false }) canvasRef!: ElementRef<HTMLCanvasElement>;
+
+<a id="markdown-additional-resources" name="additional-resources"></a>
+
+## Additional Resources
+
+<a href="https://angular.io/docs" target="blank">Angular Docs</a>

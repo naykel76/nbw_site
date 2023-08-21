@@ -112,34 +112,6 @@
             }
         ]
     },
-    "angular": {
-        "standalone_menu": true,
-        "include_menus": [
-            "main"
-        ],
-        "links": [
-            {
-                "name": "Quick Reference",
-                "route_name": "docs.angular.angular-cheatsheet",
-                "icon": "angular"
-            },
-            {
-                "name": "Components",
-                "route_name": "docs.angular.components",
-                "icon": "angular"
-            },
-            {
-                "name": "Routing",
-                "route_name": "docs.angular.routing",
-                "icon": "angular"
-            },
-            {
-                "name": "Observable Example",
-                "route_name": "docs.angular.user-observable-example",
-                "icon": "angular"
-            }
-        ]
-    },
     "CSS": {
         "standalone_menu": true,
         "include_menus": [

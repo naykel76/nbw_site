@@ -1,16 +1,65 @@
-# Angular Components
+# Angular Components (WIP)
 
 <!-- TOC -->
 
+- [Sharing data between directives and components](#sharing-data-between-directives-and-components)
+    - [Sending data to a Child Component with `@Input()`](#sending-data-to-a-child-component-with-input)
 - [Sending data to the component `@input()`](#sending-data-to-the-component-input)
 - [Emit event to sending data back from component `@output`](#emit-event-to-sending-data-back-from-component-output)
 - [Add an event listener to the component's selector](#add-an-event-listener-to-the-components-selector)
+- [Additional Resources](#additional-resources)
 
 <!-- /TOC -->
 
-You can share data between component using Angular's `@Input()` and `@Output()` decorators.
+<a id="markdown-sharing-data-between-directives-and-components" name="sharing-data-between-directives-and-components"></a>
 
-https://angular.io/guide/inputs-outputs
+## Sharing data between directives and components
+
+You can share data between components using Angular's `@Input()` and `@Output()` decorators.
+
+`@Input()` lets a parent component update data in the child component. Conversely, `@Output()`
+lets the child send data to a parent component.
+
+<a id="markdown-sending-data-to-a-child-component-with-input" name="sending-data-to-a-child-component-with-input"></a>
+
+### Sending data to a Child Component with `@Input()`
+
+**Parent Component**
+
+
+
+
+**Child Component**
+
+
+```js
+import { Component, Input } from '@angular/core';
+
+@Component({
+    selector: 'app-child',
+    standalone: true,
+    template: '<p>{{ dataFromParent }}</p>'
+})
+export class ChildComponent {
+
+    @Input() dataFromParent: any;
+
+    constructor() {
+        // You can use this.dataFromParent here for initialization
+        console.log(this.dataFromParent);
+    }
+}
+
+
+```
+---
+---
+---
+---
+---
+---
+
+
 
 <a id="markdown-sending-data-to-the-component-input" name="sending-data-to-the-component-input"></a>
 
@@ -64,3 +113,8 @@ addNewItem(value: string) {
 
 
 
+<a id="markdown-additional-resources" name="additional-resources"></a>
+
+## Additional Resources
+
+<a href="https://angular.io/guide/inputs-outputs" target="blank">https://angular.io/guide/inputs-outputs</a>

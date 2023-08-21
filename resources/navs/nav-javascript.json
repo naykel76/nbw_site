@@ -57,6 +57,11 @@
                 "icon": "javascript"
             },
             {
+                "name": "Sorting Techniques",
+                "route_name": "docs.javascript.sorting-techniques",
+                "icon": "javascript"
+            },
+            {
                 "name": "Operators",
                 "route_name": "docs.javascript.operators",
                 "icon": "javascript"

@@ -2,7 +2,7 @@
     "main": {
         "links": [
             {
-                "name": "Cheatsheet",
+                "name": "Quick Reference",
                 "route_name": "docs.angular.angular-cheatsheet",
                 "icon": "angular"
             },
@@ -12,8 +12,18 @@
                 "icon": "angular"
             },
             {
+                "name": "Data Binding",
+                "route_name": "docs.angular.data-binding",
+                "icon": "angular"
+            },
+            {
                 "name": "Events",
                 "route_name": "docs.angular.events",
+                "icon": "angular"
+            },
+            {
+                "name": "Forms",
+                "route_name": "docs.angular.forms",
                 "icon": "angular"
             },
             {
@@ -22,8 +32,22 @@
                 "icon": "angular"
             },
             {
-                "name": "Observable Example",
-                "route_name": "docs.angular.user-observable-example",
+                "name": "Understanding Observables",
+                "route_name": "docs.angular.understanding-observables",
+                "icon": "angular"
+            },
+            {
+                "name": "Trouble Shooting",
+                "route_name": "docs.angular.troubleshooting",
+                "icon": "angular"
+            }
+        ]
+    },
+    "custom components": {
+        "links": [
+            {
+                "name": "Modal",
+                "route_name": "docs.angular.component-modal",
                 "icon": "angular"
             }
         ]

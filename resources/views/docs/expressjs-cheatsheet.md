@@ -3,27 +3,40 @@
 <!-- TOC -->
 
 - [Server Setup](#server-setup)
-- [Cors support (WIP)](#cors-support-wip)
-- [Routes](#routes)
+    - [Install Dependencies](#install-dependencies)
+    - [`server.js`](#serverjs)
+- [Routing](#routing)
+    - [Defining routes](#defining-routes)
     - [Route Parameters](#route-parameters)
+    - [Response method quick reference](#response-method-quick-reference)
+- [Additional Resources](#additional-resources)
 
 <!-- /TOC -->
 
-Express Docs
 
-- <a href="https://expressjs.com/" target="_blank">ExpressJS</a>
-- <a href="https://expressjs.com/en/guide/routing.html" target="blank">Routing</a>
 
 <a id="markdown-server-setup" name="server-setup"></a>
 
 ## Server Setup
 
+<a id="markdown-install-dependencies" name="install-dependencies"></a>
+
+### Install Dependencies
+
 ```bash
-npm install express dotenv
+npm install express cors dotenv
+```
+
+Install the `nodemon` package which automatically detects code changes and restarts the server
+whenever we make a code change.
+
+```bash
 npm install nodemon --save-dev
 ```
 
-`server.js`
+<a id="markdown-serverjs" name="serverjs"></a>
+
+### `server.js`
 
 ```js
 const express = require('express')
@@ -64,17 +77,25 @@ node server.js
 nodmon server.js
 ```
 
-<a id="markdown-cors-support-wip" name="cors-support-wip"></a>
+<a id="markdown-routing" name="routing"></a>
 
-## Cors support (WIP)
+## Routing
 
-<a id="markdown-routes" name="routes"></a>
-
-## Routes
-
+**Routing** involves defining routes on the server to handle incoming requests from clients
+(usually browsers or other applications) and deciding how the server should respond to a
+particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and
+so on).
 
 - Route paths, in combination with a request method, define the endpoints for a requests
 - Route paths can be strings, string patterns, or regular expressions
+
+
+<a id="markdown-defining-routes" name="defining-routes"></a>
+
+### Defining routes
+
+Routes are defined using various HTTP methods (GET, POST, PUT, DELETE, etc.) and URL patterns.
+Each route corresponds to a specific endpoint on your server.
 
 <a id="markdown-route-parameters" name="route-parameters"></a>
 
@@ -90,6 +111,9 @@ app.get('/users/:id/books/:bookId', (req, res) => {
 })
 ```
 
+<a id="markdown-response-method-quick-reference" name="response-method-quick-reference"></a>
+
+### Response method quick reference
 
 | Method              | Description                                               |
 | ------------------- | --------------------------------------------------------- |
@@ -154,3 +178,13 @@ app.listen(PORT_EXPRESS, () => {
     console.log('http://localhost:' + PORT_EXPRESS);
 });
 ```
+
+
+<a id="markdown-additional-resources" name="additional-resources"></a>
+
+## Additional Resources
+
+Express Docs
+
+- <a href="https://expressjs.com/" target="_blank">ExpressJS</a>
+- <a href="https://expressjs.com/en/guide/routing.html" target="blank">Routing</a>
