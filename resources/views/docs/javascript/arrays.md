@@ -16,6 +16,7 @@
     - [Maps to another key](#maps-to-another-key)
     - [Map between arrays](#map-between-arrays)
 - [Get {n} highest values in an array `sort()` and `slice()`](#get-n-highest-values-in-an-array-sort-and-slice)
+- [Reverse an array](#reverse-an-array)
 
 <!-- /TOC -->
 
@@ -223,45 +224,12 @@ const highestValues = sortedData.slice(0, 5);
 console.log(highestValues);
 ```
 
+<a id="markdown-reverse-an-array" name="reverse-an-array"></a>
 
+## Reverse an array
 
+```js
+const someArray = [1, 2, 3, 4, 5];
+const reversedArray = someArray.reverse();
+```
 
-
-<!--
-
-
-
-Working with the array instance
-
-What is the difference between the `Array` object and a normal array `[]`?
-
-
-When you use `Array` to create an array, you get the benefit of working with an array instance
-that inherits the standard array methods, which can make your code cleaner and more expressive.
-
-
-
-
-here isn't really a difference between the "array object" and a "normal array." In fact, when people refer to an "array object," they're usually talking about the built-in Array object that JavaScript provides for creating and manipulating arrays.
-
-Here's a breakdown of the concepts:
-
-1. **Array Object**: is a specialised type of object that provides methods and properties
-   specifically tailored for working with ordered collections of values. The Array object provides
-   methods like `push`, `pop`, `shift`, `unshift`, `splice`, and more, which make it easier to
-   manage and manipulate the elements within an array.
-
-2. **Normal Array**: When people talk about a "normal array," they're essentially referring to an
-   instance of the Array object. For example:
-
-   ```javascript
-   // Creating an array using array literal notation
-   const normalArray = [1, 2, 3, 4, 5];
-
-   // Creating an array using the Array constructor
-   const anotherArray = new Array(1, 2, 3, 4, 5);
-   ```
-
-Both `normalArray` and `anotherArray` are instances of the Array object. They both have access to the same set of methods and properties provided by the Array object.
-
-In summary, the terms "array object" and "normal array" are often used interchangeably to refer to instances of the Array object in JavaScript. The Array object is designed to handle collections of values in an ordered manner and provides various methods and properties to make array manipulation easier. -->

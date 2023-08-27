@@ -2,6 +2,8 @@
 
 <!-- TOC -->
 
+- [House Keeping](#house-keeping)
+- [Fetch, Pull, Clone](#fetch-pull-clone)
 - [Global Config (global, system and local)](#global-config-global-system-and-local)
 - [GIT Branches](#git-branches)
 - [Repositories](#repositories)
@@ -17,20 +19,28 @@
 
 <!-- /TOC -->
 
-The `git prune` command is used to remove unreferenced objects from the Git object database.
+<a id="markdown-house-keeping" name="house-keeping"></a>
 
-```bash
-git log --oneline
-git diff             # Show the difference between branches (merge conflicts)
+## House Keeping
 
+<div class="code-first-col"></div>
+| Command                           | Action            |
+| :-------------------------------- | :---------------- |
+| git remote prune origin           |                   |
+| git prune                         |                   |
+| git rm -rf --cached .             | refresh git cache |
+| git push origin --delete branch   |                   |
+| git prune -v                      |                   |
+| git reset --hard && git clean -df |                   |
 
-git rm -rf --cached . # refresh git cache
-git reset --hard && git clean -df
+<a id="markdown-fetch-pull-clone" name="fetch-pull-clone"></a>
 
-git prune -v
-git remote prune origin
-git push origin --delete branch
-```
+## Fetch, Pull, Clone
+
+<div class="code-first-col"></div>
+| Command          | Action            |
+| :--------------- | :---------------- |
+| git fetch origin | Fetch entire repo |
 
 
 
@@ -104,14 +114,11 @@ Run the following command to amend (change) the message of the latest commit:
 
 ## Git Merge, Squash, Rebase and Conflicts
 
-```bash
-git rebase -i head~N            # Squash commits by number
-git rebase -i [hash]            # Squash commits by hash
-git merge [branchToMerge]       # Merge branch
-
-git merge --abort               # Cancel merge
-```
-
+| Command                   | Action                   |
+| :------------------------ | :----------------------- |
+| git merge [branchToMerge] |                          |
+| git rebase -i head~N      | Squash commits by number |
+| git merge --abort         | Cancel merge             |
 
 <a id="markdown-merge-changes-and-into-a-single-commit---squash" name="merge-changes-and-into-a-single-commit---squash"></a>
 

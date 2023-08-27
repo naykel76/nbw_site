@@ -43,6 +43,15 @@
             }
         ]
     },
+    "Guides": {
+        "links": [
+            {
+                "name": "Communicate using HTTP",
+                "route_name": "docs.angular.comminicate-using-http",
+                "icon": "angular"
+            }
+        ]
+    },
     "custom components": {
         "links": [
             {

@@ -71,6 +71,11 @@
                 "icon_logo": "sass"
             },
             {
+                "name": "Socket.IO",
+                "route_name": "docs.socket-cheatsheet",
+                "icon_logo": "socket"
+            },
+            {
                 "name": "SQL",
                 "route_name": "docs.sql.sql-cheatsheet",
                 "icon_logo": "mysql",

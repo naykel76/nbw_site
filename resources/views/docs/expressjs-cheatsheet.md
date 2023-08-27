@@ -5,10 +5,18 @@
 - [Server Setup](#server-setup)
     - [Install Dependencies](#install-dependencies)
     - [`server.js`](#serverjs)
+    - [path](#path)
 - [Routing](#routing)
     - [Defining routes](#defining-routes)
     - [Route Parameters](#route-parameters)
-    - [Response method quick reference](#response-method-quick-reference)
+- [Response method quick reference and examples](#response-method-quick-reference-and-examples)
+    - [Send a JSON response `res.json()`](#send-a-json-response-resjson)
+    - [Send a HTML (file) response `res.sendFile()`](#send-a-html-file-response-ressendfile)
+        - [Using static (TBD)](#using-static-tbd)
+        - [Using path](#using-path)
+- [Trouble shooting](#trouble-shooting)
+    - [Endpoint not working as expected](#endpoint-not-working-as-expected)
+    - [ReferenceError: \_\_dirname is not defined](#referenceerror-__dirname-is-not-defined)
 - [Additional Resources](#additional-resources)
 
 <!-- /TOC -->
@@ -77,6 +85,17 @@ node server.js
 nodmon server.js
 ```
 
+
+<a id="markdown-path" name="path"></a>
+
+### path
+
+```js
+import * as url from 'url';
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+```
+
 <a id="markdown-routing" name="routing"></a>
 
 ## Routing
@@ -111,15 +130,50 @@ app.get('/users/:id/books/:bookId', (req, res) => {
 })
 ```
 
-<a id="markdown-response-method-quick-reference" name="response-method-quick-reference"></a>
+<a id="markdown-response-method-quick-reference-and-examples" name="response-method-quick-reference-and-examples"></a>
 
-### Response method quick reference
+## Response method quick reference and examples
+
+<a id="markdown-send-a-json-response-resjson" name="send-a-json-response-resjson"></a>
+
+### Send a JSON response `res.json()`
+
+``` js
+// http://localhost:3232/api/json-response
+
+app.get('/api/json-response', (req, res) => {
+    res.json({ message: 'Hey there!' })
+})
+```
+
+<a id="markdown-send-a-html-file-response-ressendfile" name="send-a-html-file-response-ressendfile"></a>
+
+### Send a HTML (file) response `res.sendFile()`
+
+<a id="markdown-using-static-tbd" name="using-static-tbd"></a>
+
+#### Using static (TBD)
+```js
+express.static(root, [options])
+
+app.use(express.static('public'))
+```
+
+<a id="markdown-using-path" name="using-path"></a>
+
+#### Using path
+```js
+import path from 'path';
+
+app.get('/my-html', (req, res) => {
+    const path = path.join(__dirname, 'path', 'to', 'your', 'file.html');
+    res.sendFile(path);
+});
+```
 
 | Method              | Description                                               |
 | ------------------- | --------------------------------------------------------- |
 | `res.send()`        | Send a response of various data types (e.g., JSON, HTML). |
-| `res.json()`        | Send a JSON response.                                     |
-| `res.sendFile()`    | Send a file as an octet stream.                           |
 | `res.sendStatus()`  | Set the response status code and send its string version. |
 | `res.redirect()`    | Redirect to a specified URL.                              |
 | `res.render()`      | Render a view template with optional data.                |
@@ -136,55 +190,27 @@ app.get('/users/:id/books/:bookId', (req, res) => {
 | `res.append()`      | Append additional headers to the response.                |
 | `res.redirect()`    | Redirect the request to another URL.                      |
 
+<a id="markdown-trouble-shooting" name="trouble-shooting"></a>
 
-    curl -X POST -H "Content-Type: application/json" -d '{"id": 3, "text": "Complete the project"}' http://localhost:3008/todos
+## Trouble shooting
 
+<a id="markdown-endpoint-not-working-as-expected" name="endpoint-not-working-as-expected"></a>
 
+### Endpoint not working as expected
 
+Make sure you have the correct `HTTP` method (`GET`, `POST`, `PUT`, `DELETE`, etc.)
 
-Express vs Node
+<a id="markdown-referenceerror-dirname-is-not-defined" name="referenceerror-dirname-is-not-defined"></a>
 
-Using basic `http` module
+### ReferenceError: __dirname is not defined
 
-```js
-const http = require('http');
-const PORT_HTTP = process.env.PORT || 5000;
-
-const server = http.createServer((req, res) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    res.end('<h2>Hello there!</h2>');
-});
-
-server.listen(PORT_HTTP, () => {
-    console.log(`HTTP Server Running on Port ${PORT_HTTP}`);
-    console.log('http://localhost:' + PORT_HTTP);
-});
-```
-
-Using Express.js
-
-```js
-const express = require('express');
-const app = express();
-const PORT_EXPRESS = process.env.PORT || 5000;
-
-app.get('/', (req, res) => {
-    res.send('<h2>Hello there!</h2>');
-});
-
-app.listen(PORT_EXPRESS, () => {
-    console.log(`Express Server Running on Port ${PORT_EXPRESS}`);
-    console.log('http://localhost:' + PORT_EXPRESS);
-});
-```
-
+The `__dirname` variable is not available in ES6 modules like it is in CommonJS modules. Instead,
+you can use the `import.meta.url` property to get the current module's URL and then extract the
+directory path from it.
 
 <a id="markdown-additional-resources" name="additional-resources"></a>
 
 ## Additional Resources
-
-Express Docs
 
 - <a href="https://expressjs.com/" target="_blank">ExpressJS</a>
 - <a href="https://expressjs.com/en/guide/routing.html" target="blank">Routing</a>

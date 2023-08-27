@@ -3,8 +3,8 @@
 <!-- TOC -->
 
 - [Sharing data between directives and components](#sharing-data-between-directives-and-components)
-    - [Sending data to a Child Component with `@Input()`](#sending-data-to-a-child-component-with-input)
-- [Sending data to the component `@input()`](#sending-data-to-the-component-input)
+    - [Sending data from the HTML](#sending-data-from-the-html)
+    - [Fetching data with @Input()](#fetching-data-with-input)
 - [Emit event to sending data back from component `@output`](#emit-event-to-sending-data-back-from-component-output)
 - [Add an event listener to the component's selector](#add-an-event-listener-to-the-components-selector)
 - [Additional Resources](#additional-resources)
@@ -20,18 +20,22 @@ You can share data between components using Angular's `@Input()` and `@Output()`
 `@Input()` lets a parent component update data in the child component. Conversely, `@Output()`
 lets the child send data to a parent component.
 
-<a id="markdown-sending-data-to-a-child-component-with-input" name="sending-data-to-a-child-component-with-input"></a>
+<a id="markdown-sending-data-from-the-html" name="sending-data-from-the-html"></a>
 
-### Sending data to a Child Component with `@Input()`
+### Sending data from the HTML
 
-**Parent Component**
+```html
+<!-- pass primitive value -->
+<app-child dataFromParent="some value"/>
+<!-- bind to a value -->
+<app-child [dataFromParent]="parentValue"/>
+<!-- pass nested items -->
+<app-child [dataFromParent]="object.item"/>
+```
 
+<a id="markdown-fetching-data-with-input" name="fetching-data-with-input"></a>
 
-
-
-**Child Component**
-
-
+### Fetching data with @Input()
 ```js
 import { Component, Input } from '@angular/core';
 
@@ -42,7 +46,7 @@ import { Component, Input } from '@angular/core';
 })
 export class ChildComponent {
 
-    @Input() dataFromParent: any;
+    @Input() dataFromParent: string;
 
     constructor() {
         // You can use this.dataFromParent here for initialization
@@ -60,24 +64,6 @@ export class ChildComponent {
 ---
 
 
-
-<a id="markdown-sending-data-to-the-component-input" name="sending-data-to-the-component-input"></a>
-
-## Sending data to the component `@input()`
-```js
-import { Component, Input } from '@angular/core';
-
-@Input() myProperty?: string;
-```
-
-```html
-<!-- pass primitive value -->
-<app-some-component childProperty="some value"/>
-<!-- bind to a value -->
-<app-some-component [childProperty]="parentValue"/>
-<!-- pass nested items -->
-<app-some-component [childProperty]="object.item"/>
-```
 
 <a id="markdown-emit-event-to-sending-data-back-from-component-output" name="emit-event-to-sending-data-back-from-component-output"></a>
 
