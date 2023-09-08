@@ -2,6 +2,10 @@
     "main": {
         "links": [
             {
+                "name": "Class Diagrams",
+                "route_name": "docs.software-engineering.class-diagrams"
+            },
+            {
                 "name": "Software Development Design Concepts",
                 "route_name": "pages.software-development-design-concepts"
             },

@@ -1,4 +1,4 @@
-# Ubuntu Web Development Setup
+# Ubuntu PHP Setup
 
 <!-- MarkdownTOC -->
 

@@ -5,8 +5,10 @@
 - [Define the observable/subject/publisher](#define-the-observablesubjectpublisher)
 - [Subscribe to the observable](#subscribe-to-the-observable)
 - [Emit a new value](#emit-a-new-value)
-- [Full Example](#full-example)
+- [Examples](#examples)
     - [Basic Example](#basic-example)
+    - [Separate Observable Property (Example 1)](#separate-observable-property-example-1)
+    - [Observable as a Property with Direct Access (Example 2)](#observable-as-a-property-with-direct-access-example-2)
 - [Additional Resources](#additional-resources)
 
 <!-- /TOC -->
@@ -96,9 +98,9 @@ export class ScoreService {
 ```
 
 
-<a id="markdown-full-example" name="full-example"></a>
+<a id="markdown-examples" name="examples"></a>
 
-## Full Example
+## Examples
 
 ```js
 // score.component.ts
@@ -133,7 +135,6 @@ export class ScoreService {
 }
 ```
 
-
 <a id="markdown-basic-example" name="basic-example"></a>
 
 ### Basic Example
@@ -154,6 +155,62 @@ subscription = this.observable.subscribe({
     complete: () => console.log('Observable completed')
 });
 ```
+
+<a id="markdown-separate-observable-property-example-1" name="separate-observable-property-example-1"></a>
+
+### Separate Observable Property (Example 1)
+
+```typescript
+gameStats: GameStats = { score: 0, lines: 0, level: 1, levelUp: 10 };
+
+private scoreSubject = new BehaviorSubject<GameStats>(this.gameStats);
+
+getScoreObservable(): Observable<GameStats> {
+    return this.scoreSubject.asObservable();
+}
+```
+
+In this approach, you have a private `scoreSubject` property that holds the BehaviorSubject, and
+you expose the observable using the `getScoreObservable()` method.
+
+**Advantages:**
+
+- Encapsulation: The observable and its subject are encapsulated within the class. External
+  components can only access the observable through the method.
+- Control: You have more control over how the observable is exposed and can apply additional logic
+  if needed before providing access.
+
+<a id="markdown-observable-as-a-property-with-direct-access-example-2" name="observable-as-a-property-with-direct-access-example-2"></a>
+
+### Observable as a Property with Direct Access (Example 2)
+
+```typescript
+private _isLoggedIn$ = new BehaviorSubject<boolean>(false);
+isLoggedIn$ = this._isLoggedIn$.asObservable();
+```
+
+```typescript
+// access the value with:
+const isLoggedIn$ = inject(AuthService).isLoggedIn$;
+```
+
+In this approach, the observable is directly exposed as a public property of the class. There is
+no need for a separate method to access it.
+
+By exposing it as an observable using `asObservable()`, you allow external components or services
+to subscribe to changes but they cannot directly modify the `BehaviorSubject`. This pattern is
+commonly used in Angular services to provide controlled access to internal state while keeping it
+private.
+
+**Advantages:**
+- Simplicity: It's a more concise way to provide access to the observable.
+- Less Boilerplate: It reduces the amount of code needed to access the observable.
+
+The choice between these two approaches depends on your specific requirements and design
+preferences. If you want to encapsulate the observable and provide a clear interface for accessing
+it, the first approach (using a separate method) is more suitable. If simplicity and direct access
+are sufficient for your use case, the second approach is a valid option. Both approaches are
+valid, and you can choose the one that best fits your coding style and project needs.
 
 <a id="markdown-additional-resources" name="additional-resources"></a>
 

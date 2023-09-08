@@ -78,6 +78,7 @@ scp ~/.ssh/id_rsa.pub example_user@203.0.113.10:~/.ssh/authorized_keys
 # disable passwords in sshd_config
 sudo nano /etc/ssh/sshd_config
 # update to
+PubkeyAuthentication yes
 PermitRootLogin no
 PasswordAuthentication no
 # restart ssh service

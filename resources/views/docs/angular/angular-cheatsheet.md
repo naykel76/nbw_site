@@ -71,6 +71,35 @@ ng generate component myComponent --skip-tests --inline-style --inline-template 
 <ng-template #elseBlock>Content to render when condition is false.</ng-template>
 ```
 
+```html
+<ng-container *ngIf="endGame; else elseBlock">
+    <div class="space-x">
+        <button class="btn btn-primary danger" (click)="closeRedirect()">Yes</button>
+        <button class="btn btn-primary success" (click)="closeModal()">No</button>
+    </div>
+</ng-container>
+<ng-template #elseBlock>
+    <button class="btn btn-primary danger" (click)="closeModal()">Close</button>
+</ng-template>
+```
+
+To add an else if condition in Angular using `*ngIf`, you can nest another `*ngIf` within the
+elseBlock template.
+
+```html
+<div *ngIf="condition1; then thenBlock1 else elseBlock1"></div>
+<ng-template #thenBlock1>Content to render when condition1 is true.</ng-template>
+
+<ng-template #elseBlock1>
+  <div *ngIf="condition2; then thenBlock2 else elseBlock2"></div>
+  <ng-template #thenBlock2>Content to render when condition2 is true.</ng-template>
+  <ng-template #elseBlock2>Content to render when condition2 is false.</ng-template>
+</ng-template>
+```
+
+    <div *ngIf="isLoggedIn; else loggedOut"> Welcome back, friend. </div>
+    <ng-template #loggedOut> Please friend, login. </ng-template>
+
 <a id="markdown-ngfor" name="ngfor"></a>
 
 ## `ngFor`
@@ -80,7 +109,6 @@ ng generate component myComponent --skip-tests --inline-style --inline-template 
     {{item.name}}
 </ion-list>
 ```
-
 
 <a id="markdown-general" name="general"></a>
 

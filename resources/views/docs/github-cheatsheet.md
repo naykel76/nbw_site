@@ -23,24 +23,25 @@
 
 ## House Keeping
 
-<div class="code-first-col"></div>
-| Command                           | Action            |
-| :-------------------------------- | :---------------- |
-| git remote prune origin           |                   |
-| git prune                         |                   |
-| git rm -rf --cached .             | refresh git cache |
-| git push origin --delete branch   |                   |
-| git prune -v                      |                   |
-| git reset --hard && git clean -df |                   |
+<code-first-second-col></code-first-second-col>
+|  Type  | Command                              | Action                               |
+| :----: | :----------------------------------- | :----------------------------------- |
+|        | git prune                            |                                      |
+|        | git remote prune origin              |                                      |
+|        | git reset --hard && git clean -df    |                                      |
+|        | git rm -rf --cached .                | refresh git cache                    |
+| CLEAR  | git prune -v                         |                                      |
+| DELETE | git push origin --delete branch-name | Delete remote branch  (local & repo) |
 
 <a id="markdown-fetch-pull-clone" name="fetch-pull-clone"></a>
 
 ## Fetch, Pull, Clone
 
 <div class="code-first-col"></div>
-| Command          | Action            |
-| :--------------- | :---------------- |
-| git fetch origin | Fetch entire repo |
+| Command                      | Action            |
+| :--------------------------- | :---------------- |
+| git fetch origin             | Fetch entire repo |
+| git fetch origin branch-name | Fetch entire repo |
 
 
 

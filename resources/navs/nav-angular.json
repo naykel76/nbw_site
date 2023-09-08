@@ -27,13 +27,13 @@
                 "icon": "angular"
             },
             {
-                "name": "Routing",
-                "route_name": "docs.angular.routing",
+                "name": "Layouts and Templates",
+                "route_name": "docs.angular.layouts-and-templates",
                 "icon": "angular"
             },
             {
-                "name": "Understanding Observables",
-                "route_name": "docs.angular.understanding-observables",
+                "name": "Routing",
+                "route_name": "docs.angular.routing",
                 "icon": "angular"
             },
             {
@@ -48,6 +48,16 @@
             {
                 "name": "Communicate using HTTP",
                 "route_name": "docs.angular.comminicate-using-http",
+                "icon": "angular"
+            },
+            {
+                "name": "Understanding Observables",
+                "route_name": "docs.angular.understanding-observables",
+                "icon": "angular"
+            },
+            {
+                "name": "HTTP Observable Example",
+                "route_name": "docs.angular.observable-http-example",
                 "icon": "angular"
             }
         ]

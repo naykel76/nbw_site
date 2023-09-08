@@ -12,8 +12,13 @@
                 "icon": "linux"
             },
             {
-                "name": "Ubuntu Web Server Setup",
-                "route_name": "docs.linux.ubuntu-server-setup",
+                "name": "Ubuntu Server Setup - Node",
+                "route_name": "docs.linux.ubuntu-server-node",
+                "icon": "linux"
+            },
+            {
+                "name": "Ubuntu Server Setup - PHP",
+                "route_name": "docs.linux.ubuntu-server-php",
                 "icon": "linux"
             },
             {

@@ -2,7 +2,7 @@
 
 <!-- TOC -->
 
-- [Array Object](#array-object)
+- [Check existence](#check-existence)
 - [Retrieving values](#retrieving-values)
     - [Get array object by value](#get-array-object-by-value)
     - [Return a random value from an array by index](#return-a-random-value-from-an-array-by-index)
@@ -21,13 +21,17 @@
 <!-- /TOC -->
 
 
-<a id="markdown-array-object" name="array-object"></a>
+<a id="markdown-check-existence" name="check-existence"></a>
 
-## Array Object
+## Check existence
 
 ```js
-new Array
+const array = ['apple', 'banana', 'orange'];
+const hasApple = array.includes('apple');
 ```
+
+
+
 
 <a id="markdown-retrieving-values" name="retrieving-values"></a>
 
