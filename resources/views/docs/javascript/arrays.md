@@ -42,7 +42,12 @@ const hasApple = array.includes('apple');
 ### Get array object by value
 
 ```js
-const people = [{person_id: 1, name: 'John'}, {person_id: 2, name: 'Jane'}, {person_id: 3, name: 'Bob'}];
+const people = [
+    {person_id: 1, name: 'John'},
+    {person_id: 2, name: 'Jane'},
+    {person_id: 3, name: 'Bob'}
+];
+
 const jane = people.find(person => person.name === 'Jane');
 ```
 

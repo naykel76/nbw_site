@@ -5,6 +5,9 @@
 - [Securely Copy files with `scp`](#securely-copy-files-with-scp)
 - [Renaming Multiple Files (script)](#renaming-multiple-files-script)
 - [Change File Extensions (script)](#change-file-extensions-script)
+- [Counting Files and Directories](#counting-files-and-directories)
+    - [Excluding Files and Directories](#excluding-files-and-directories)
+    - [Excluding Hidden Files and Directories](#excluding-hidden-files-and-directories)
 
 <!-- /TOC -->
 
@@ -95,4 +98,90 @@ for i in $( ls ); do mv $i $i.txt; done
 for i in $( ls *.txt ); do mv $i ${i%.*}; done
 # change extension from .log to .txt.
 for i in *.log; do mv -- "$i" "${i%.log}.txt"; done
+```
+
+
+<a id="markdown-counting-files-and-directories" name="counting-files-and-directories"></a>
+
+## Counting Files and Directories
+
+```bash
+# Count the number of line in a file
+wc -l file.txt
+# Count the number of files in a directory
+ls -1 | wc -l
+# Count the number of files in a directory (including subdirectories)
+find . -type f | wc -l
+```
+
+<a id="markdown-excluding-files-and-directories" name="excluding-files-and-directories"></a>
+
+### Excluding Files and Directories
+
+```bash
+# Count the number of files in a directory (excluding files with a specific extension)
+find . -type f -not -name '*.txt' | wc -l
+# Count the number of files in a directory (excluding files with a specific name)
+find . -type f -not -name 'file.txt' | wc -l
+# Count excluding directory
+find . -type d -not -path "./node_modules/*"  wc -l
+# Count excluding multiple directories
+find . -type d -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./.vscode/*"| wc -l
+```
+
+
+<a id="markdown-excluding-hidden-files-and-directories" name="excluding-hidden-files-and-directories"></a>
+
+### Excluding Hidden Files and Directories
+
+```bash
+
+find . -type d \( -path ./folder_to_exclude -o -path ./another_folder_to_exclude \) -prune -o -name '*.ts' -exec wc -l {} \;
+
+
+# Count the number of files in a directory (excluding hidden files)
+ls -1 | grep -v '^\.' | wc -l
+# Count the number of directories in a directory (excluding hidden directories)
+ls -1 | grep -v '^\.' | wc -l
+
+```
+
+
+
+
+
+Count the number of directories in a directory (including subdirectories)
+```bash
+find . -type d | wc -l
+```
+
+Count the number of files in a directory (including subdirectories) (excluding hidden files)
+```bash
+find . -type f -not -path '*/\.*' | wc -l
+```
+
+Count the number of directories in a directory (including subdirectories) (excluding hidden directories)
+```bash
+find . -type d -not -path '*/\.*' | wc -l
+```
+
+Count the number of files in a directory (including subdirectories) (excluding hidden files) (excluding files with a specific extension)
+```bash
+find . -type f -not -path '*/\.*' -not -name '*.txt' | wc -l
+```
+
+Count the number of directories in a directory (including subdirectories) (excluding hidden directories) (excluding directories with a specific name)
+```bash
+find . -type d -not -path '*/\.*' -not -name 'node_modules' | wc -l
+```
+
+Count the number of files in a directory (including subdirectories) (excluding hidden files) (excluding files with a specific extension) (excluding files with a specific name)
+```bash
+
+find . -type f -not -path '*/\.*' -not -name '*.txt' -not -name 'file.txt' | wc -l
+```
+
+Count the number of directories in a directory (including subdirectories) (excluding hidden directories) (excluding directories with a specific name) (excluding directories with a specific name)
+```bash
+find . -type d -not -path '*/\.*' -not -name 'node_modules' -not -name 'vendor' | wc -l
 ```

@@ -1,15 +1,15 @@
 # NPM Cheatsheet
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
 - [Common Commands](#common-commands)
 - [Version Control and Publishing](#version-control-and-publishing)
 
-<!-- /MarkdownTOC -->
-
+<!-- /TOC -->
 https://docs.npmjs.com/cli/v9/commands
 
-<a id="common-commands"></a>
+<a id="markdown-common-commands" name="common-commands"></a>
+
 ## Common Commands
 <div class="code-first-col"></div>
 | Syntax                    | Action                                               |
@@ -23,16 +23,19 @@ https://docs.npmjs.com/cli/v9/commands
 | npm update <package>      | Update a package                                     |
 | npm rm                    | Remove a package                                     |
 
-<a id="version-control"></a>
+<a id="markdown-version-control-and-publishing" name="version-control-and-publishing"></a>
+
 ## Version Control and Publishing
 <div class="code-first-col"></div>
-| Syntax             | Action                                           |
-| :----------------- | :----------------------------------------------- |
-| npm publish        | Publish a package                                |
-| npm uninstall      | Remove a package                                 |
-| npm unpublish      | Remove a package from the registry               |
-| npm version        | See version details                              |
-| npm version [type] | Bump version \| `major` \| `minor` \| `patch` \| |
+| Syntax                     | Action                                           |
+| :------------------------- | :----------------------------------------------- |
+| npm publish                | Publish a package                                |
+| npm uninstall              | Remove a package                                 |
+| npm unpublish              | Remove a package from the registry               |
+| npm version                | See version details                              |
+| npm version [type]         | Bump version \| `major` \| `minor` \| `patch` \| |
+| npm show [package] version | See package version details                              |
+|                            |
 
 
 npm version [<newversion> |  premajor \| preminor \| prepatch \| prerelease \| from-git]
