@@ -9,6 +9,7 @@
 - [Maps](#maps)
     - [Add or Merge Maps](#add-or-merge-maps)
     - [Map Keys](#map-keys)
+    - [Override map value](#override-map-value)
         - [Check if key exists](#check-if-key-exists)
     - [Remove items from map](#remove-items-from-map)
 - [Lists](#lists)
@@ -94,6 +95,19 @@ $map3: ( "secondary": ( "base": green, ) );
 
     map.keys($map)                          <!-- get map key -->
     map.keys(map.merge($map1, $map2));      <!-- merge maps and get keys -->
+
+<a id="markdown-override-map-value" name="override-map-value"></a>
+
+### Override map value
+
+```scss
+map.set($map, $key, $value)
+$map: ( "primary": ( "base": red, ) );
+```
+
+```scss
+$color-map: map-merge( $color-map, ( "blue": $primary ) );
+```
 
 <a id="markdown-check-if-key-exists" name="check-if-key-exists"></a>
 

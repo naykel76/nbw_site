@@ -46,6 +46,11 @@
                 "icon": "laravel"
             },
             {
+                "name": "File, Disk and Storage",
+                "route_name": "docs.laravel.file-disk-storage",
+                "icon": "laravel"
+            },
+            {
                 "name": "Mail",
                 "route_name": "docs.laravel.mail",
                 "icon": "laravel"

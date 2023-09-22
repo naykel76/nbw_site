@@ -54,6 +54,11 @@
                 "exclude_route": true
             },
             {
+                "name": "MongoDB",
+                "route_name": "docs.mongo-cheatsheet",
+                "icon_logo": "mongodb"
+            },
+            {
                 "name": "NPM",
                 "route_name": "npm.npm-cheatsheet",
                 "view": "pages.npm-cheatsheet",

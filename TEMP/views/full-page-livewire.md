@@ -46,12 +46,7 @@ return view('livewire.dev.choices')
 ```
 
 
-use Illuminate\Support\Facades\Storage;
-Storage::copyDirectory($sourcePath, $destinationPath);
 
-
-use Illuminate\Support\Facades\File;
-File::copyDirectory($sourcePath, $destinationPath);
 
 (new Filesystem)->copyDirectory(__DIR__ . '/../../stubs/resources/js', resource_path('js'));
 
