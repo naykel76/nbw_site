@@ -44,11 +44,17 @@
 <a id="harden-access"></a>
 ## Harden Access
 
-It is generally recommended to add authorized_keys to a specific user rather than the root user. Adding authorized_keys to a regular user account allows that user to log in to the server using SSH without requiring a password. This is a more secure approach because it limits the exposure of the server to potential attacks.
+It is generally recommended to add authorized_keys to a specific user rather than the root user.
+Adding authorized_keys to a regular user account allows that user to log in to the server using
+SSH without requiring a password. This is a more secure approach because it limits the exposure of
+the server to potential attacks.
 
-By contrast, giving root access to SSH is not considered good security practice as it can increase the risk of a successful attack on the server. If an attacker were to gain access to the root user account, they would have full control over the system, which could result in serious consequences.
+By contrast, giving root access to SSH is not considered good security practice as it can increase
+the risk of a successful attack on the server. If an attacker were to gain access to the root user
+account, they would have full control over the system, which could result in serious consequences.
 
-In summary, it is best to create a regular user account with SSH access and add the SSH key to that user's authorized_keys file, rather than allowing root access via SSH.
+In summary, it is best to create a regular user account with SSH access and add the SSH key to
+that user's authorized_keys file, rather than allowing root access via SSH.
 
 <a id="create-ssh-key"></a>
 ### Create SSH Key
@@ -56,7 +62,7 @@ In summary, it is best to create a regular user account with SSH access and add 
 ```bash
 # Lists the files in your .ssh directory, if they exist
 ls -al ~/.ssh
-# generate ssh key
+# generate ssh key (-b 4096 is the key length)
 ssh-keygen -b 4096
 # view key
 cat ~/.ssh/id_rsa.pub

@@ -25,6 +25,11 @@
                 "name": "SSH, Permissions and Security",
                 "route_name": "docs.linux.ssh-permissions-and-security",
                 "icon": "linux"
+            },
+            {
+                "name": "Web Server Setup",
+                "route_name": "docs.linux.web-server",
+                "icon": "linux"
             }
         ]
     },

@@ -5,11 +5,14 @@
 - [Sharing data between directives and components](#sharing-data-between-directives-and-components)
     - [Sending data from the HTML](#sending-data-from-the-html)
     - [Fetching data with @Input()](#fetching-data-with-input)
+- [Trigger a method in another component](#trigger-a-method-in-another-component)
 - [Emit event to sending data back from component `@output`](#emit-event-to-sending-data-back-from-component-output)
 - [Add an event listener to the component's selector](#add-an-event-listener-to-the-components-selector)
 - [Additional Resources](#additional-resources)
 
 <!-- /TOC -->
+
+`@ViewChild(ComponentType) propertyName!: ComponentType;`
 
 <a id="markdown-sharing-data-between-directives-and-components" name="sharing-data-between-directives-and-components"></a>
 
@@ -53,15 +56,52 @@ export class ChildComponent {
         console.log(this.dataFromParent);
     }
 }
-
-
 ```
----
----
----
----
----
----
+
+<a id="markdown-trigger-a-method-in-another-component" name="trigger-a-method-in-another-component"></a>
+
+## Trigger a method in another component
+
+From the parent component, get a reference to the child component using `@ViewChild()`. Then call the method in the child component.
+
+`@ViewChild()` is a decorator that takes the component class as an argument. <br>
+`ChildComponent` is the class of the child component. <br>
+`child` is the name of the property that will hold the reference to the child component. <br>
+`ChildComponent` is the type of the property. <br>
+
+```js
+import { Component, ViewChild } from '@angular/core';
+import { ChildComponent } from './child.component';
+
+@Component({
+    selector: 'app-parent',
+    template: '<app-child></app-child>'
+})
+export class ParentComponent {
+    // Get a reference to the child component
+    @ViewChild(ChildComponent) child: ChildComponent;
+    // Call this method to trigger the method in the child component
+    triggerMethod() {
+        this.child.triggerMethod();
+    }
+}
+```
+
+Add a method to the child component that you want to trigger.
+
+```js
+triggerMethod() {
+    console.log('Method triggered');
+}
+```
+
+Add a button to the parent component's template that calls the `triggerMethod()` method.
+
+```html
+<button (click)="triggerMethod()">Trigger method</button>
+```
+
+
 
 
 
