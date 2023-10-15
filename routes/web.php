@@ -23,7 +23,6 @@ Route::get('/dev', [TestingController::class, 'timer'])->name('dev');
 (new RouteBuilder('nav-concepts', 'layouts.docs-blog-style'))->create();
 (new RouteBuilder('nav-ionic', 'layouts.docs-default'))->create();
 (new RouteBuilder('nav-javascript', 'layouts.docs-default'))->create();
-(new RouteBuilder('nav-jtb', 'layouts.docs-default'))->create();
 (new RouteBuilder('nav-laravel', 'layouts.docs-default'))->create();
 (new RouteBuilder('nav-linux', 'layouts.docs-default'))->create();
 (new RouteBuilder('nav-main'))->create();
