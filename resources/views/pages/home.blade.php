@@ -61,7 +61,7 @@
 
         <div class="fp-x container maxw-lg grid va-c">
 
-            <img src="/images/wooden-sports-car1.jpg" class="bdrr" alt="wooden sports car">
+            <img src="/images/wooden-sports-car1.jpg" class="rounded" alt="wooden sports car">
 
             <blockquote>
                 <p class="txt- x">"Without reinventing the wheel we wouldn't have fast cars."</p>

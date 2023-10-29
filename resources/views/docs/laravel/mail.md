@@ -1,33 +1,28 @@
 # Sending Mail with Laravel
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
-- [Testing](#testing)
 - [Create New Email](#create-new-email)
     - [Configure The Sender (Envelope)](#configure-the-sender-envelope)
 - [Sending Mail](#sending-mail)
+- [Testing](#testing)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
-https://laravel.com/docs/10.x/mail#markdown-mailables
+<a href="https://laravel.com/docs/10.x/mail#markdown-mailables" target="blank">https://laravel.com/docs/10.x/mail#markdown-mailables</a>
 
-<a id="testing"></a>
-## Testing
 
-A handy way to develop and test your mailable is to directly display the template file in the browser. In the `web.php` routes file add the `mail` facade, `mailable` class and create a route to display in the browser.
 
-```php
-Route::get('/test-email', function () {
-    Mail::raw('Hello World!', function ($msg) {
-        $msg->to('myemail@gmail.com')->subject('Test Email');
-    });
-});
-```
+<a id="markdown-create-new-email" name="create-new-email"></a>
 
-<a id="create-new-email"></a>
 ## Create New Email
 
-<a id="configure-the-sender-envelope"></a>
+```bash
+php artisan make:mail TestEmail
+```
+
+<a id="markdown-configure-the-sender-envelope" name="configure-the-sender-envelope"></a>
+
 ### Configure The Sender (Envelope)
 
 Or, in other words, who the email is going to be "from". There are two ways to configure the sender. First, you may specify the "from" address on your message's envelope:
@@ -74,7 +69,8 @@ public function content(): Content
 }
 ```
 
-<a id="sending-mail"></a>
+<a id="markdown-sending-mail" name="sending-mail"></a>
+
 ## Sending Mail
 
 To send a message, use the to method on the Mail facade. The to method accepts an email address, a
@@ -108,3 +104,18 @@ public function testEmail(Request $request): RedirectResponse
     Thanks,<br>
     {{ config('app.name') }}
     </x-mail::message>
+
+
+<a id="markdown-testing" name="testing"></a>
+
+## Testing
+
+A handy way to develop and test your mailable is to directly display the template file in the browser. In the `web.php` routes file add the `mail` facade, `mailable` class and create a route to display in the browser.
+
+```php
+Route::get('/test-email', function () {
+    Mail::raw('Hello World!', function ($msg) {
+        $msg->to('myemail@gmail.com')->subject('Test Email');
+    });
+});
+```

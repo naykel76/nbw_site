@@ -5,7 +5,7 @@ $x-background: #0b101d;
 $x-font-family: Poppins, Helvetica, Arial, sans-serif;
 $x-text: rgb(228, 232, 236);
 
-@use "node_modules/nk_jtb/src/base/vars_base" as * with (
+@use "node_modules/nk_jtb/src/variables/base" as * with (
     $primary: $x-primary,
     $secondary: $x-secondary,
     $accent: $x-accent,
@@ -14,7 +14,7 @@ $x-text: rgb(228, 232, 236);
     $text: $x-text
 );
 
-@use "node_modules/nk_jtb/src/base/vars_components" as * with (
+@use "node_modules/nk_jtb/src/variables/base" as * with (
     $zebra-alt-bg: #ffffff
 );
 

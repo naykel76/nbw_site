@@ -10,11 +10,12 @@
     - [Add or Merge Maps](#add-or-merge-maps)
     - [Map Keys](#map-keys)
     - [Override map value](#override-map-value)
-        - [Check if key exists](#check-if-key-exists)
     - [Remove items from map](#remove-items-from-map)
 - [Lists](#lists)
     - [List Functions](#list-functions)
         - [How can I use a forwarded scss variable in the same file?](#how-can-i-use-a-forwarded-scss-variable-in-the-same-file)
+- [Check Existence](#check-existence)
+    - [Check if key exists](#check-if-key-exists)
 
 <!-- /TOC -->
 
@@ -109,20 +110,7 @@ $map: ( "primary": ( "base": red, ) );
 $color-map: map-merge( $color-map, ( "blue": $primary ) );
 ```
 
-<a id="markdown-check-if-key-exists" name="check-if-key-exists"></a>
 
-#### Check if key exists
-
-```scss
-map.has-key($map, $key, $keys...)
-```
-
-**Examples**
-
-```scss
-@if (map-has-key($map, $key)) { }
-@if (not map-has-key($map, $key)) { }
-```
 
 <a id="markdown-remove-items-from-map" name="remove-items-from-map"></a>
 
@@ -209,4 +197,24 @@ forwarded. To fix this error you need to include the `@use` statement as well.
 @forward "components" with (
     $navbar-bg: $primary,
 );
+```
+
+
+<a id="markdown-check-existence" name="check-existence"></a>
+
+## Check Existence
+
+<a id="markdown-check-if-key-exists" name="check-if-key-exists"></a>
+
+### Check if key exists
+
+```scss
+map.has-key($map, $key, $keys...)
+```
+
+**Examples**
+
+```scss
+@if (map-has-key($map, $key)) { }
+@if (not map-has-key($map, $key)) { }
 ```

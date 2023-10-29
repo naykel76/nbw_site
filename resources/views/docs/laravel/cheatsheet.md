@@ -1,11 +1,43 @@
 # Laravel Cheatsheet
 <!-- TOC -->
 
+- [Installation and Configuration](#installation-and-configuration)
+- [Maintenance Mode](#maintenance-mode)
 - [Blade and Views](#blade-and-views)
     - [Determining If A View Exists](#determining-if-a-view-exists)
         - [Choose between local or package view](#choose-between-local-or-package-view)
 
 <!-- /TOC -->
+
+<a id="markdown-installation-and-configuration" name="installation-and-configuration"></a>
+
+## Installation and Configuration
+
+```bash
+composer create-project laravel/laravel example-app
+```
+
+<a id="markdown-maintenance-mode" name="maintenance-mode"></a>
+
+## Maintenance Mode
+
+```bash
+# Enable maintenance mode
+php artisan down
+# Disable maintenance mode
+php artisan up
+```
+
+```bash
+# Display a message when in maintenance mode
+php artisan down --secret="apple" --render="errors::coming-soon"
+# Bypassing Maintenance Mode
+php artisan down --secret="apple"
+# Pre-Rendering The Maintenance Mode View
+php artisan down --render="errors::503"
+# Redirect Maintenance Mode Requests
+php artisan down --redirect=/
+```
 
 <a id="markdown-blade-and-views" name="blade-and-views"></a>
 
