@@ -1,6 +1,6 @@
 <div>
 
-    <div class="grid gg-3 cols-2-2-1">
+    <div class="grid gap-3 cols-2-2-1">
         <div class="flex">
             <svg class="fs0 icon wh-4 mr-2">
                 <use xlink:href="#002-statistics"></use>

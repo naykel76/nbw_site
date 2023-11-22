@@ -1,8 +1,8 @@
-<x-gotime-app-layout layout="{{ config('naykel.template') }}" hasContainer class="markdown py-5-3-2-2">
+<x-gotime-app-layout layout="{{ config('naykel.template') }}" hasContainer class="markdown">
 
     {{-- this is just a lazy way to make the docs readable --}}
-    <div class="maxw-800 mx-auto">
-        <x-gt-parsedown dir="views/" path="{{ $data['path'] }}" />
+    <div class="maxw-md mx-auto">
+        <x-gt-parsedown path="{{ $data['path'] }}" />
     </div>
 
 </x-gotime-app-layout>

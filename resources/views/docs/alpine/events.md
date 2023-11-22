@@ -75,10 +75,10 @@
 </div>
 
 
-Livewire allows you to fire browser window events using `dispatchBrowserEvent()` function.
+Livewire allows you to fire browser window events using `dispatch()` function.
 
 ```php
-$this->dispatchBrowserEvent('my-event', 'Notification message!');
+$this->dispatch('my-event', 'Notification message!');
 ```
 
 **Q. how can an event be dispatched using vanilla javascript?**

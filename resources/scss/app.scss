@@ -5,20 +5,14 @@ $x-background: #0b101d;
 $x-font-family: Poppins, Helvetica, Arial, sans-serif;
 $x-text: rgb(228, 232, 236);
 
-@use "node_modules/nk_jtb/src/variables/base" as * with (
+@use "node_modules/nk_jtb/src/variables" as * with (
     $primary: $x-primary,
     $secondary: $x-secondary,
     $accent: $x-accent,
     $background: $x-background,
     $font-family: $x-font-family,
-    $text: $x-text
-);
-
-@use "node_modules/nk_jtb/src/variables/base" as * with (
-    $zebra-alt-bg: #ffffff
-);
-
-@use "node_modules/nk_jtb/src/scss/base/vars_components" as * with (
+    $text: $x-text,
+    $zebra-alt-bg: #ffffff,
     $navbar-bg: transparent,
     $navbar-nav-hover-color: #ffbb1c,
     $navbar-nav-active-color: #ffbb1c

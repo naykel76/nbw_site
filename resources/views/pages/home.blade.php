@@ -40,7 +40,7 @@
     <section>
         <div class="container">
             <h2>Concepts, Tips, and Techniques</h2>
-            <x-gt-menu filename="nav-concepts" class="flex wrap gg-1" itemClass="btn secondary" withIcons>
+            <x-gt-menu filename="nav-concepts" class="flex wrap gap-1" itemClass="btn secondary" withIcons>
             </x-gt-menu>
         </div>
     </section>

@@ -14,6 +14,7 @@
 - [Lists](#lists)
     - [List Functions](#list-functions)
         - [How can I use a forwarded scss variable in the same file?](#how-can-i-use-a-forwarded-scss-variable-in-the-same-file)
+- [Check Type](#check-type)
 - [Check Existence](#check-existence)
     - [Check if key exists](#check-if-key-exists)
 
@@ -199,6 +200,19 @@ forwarded. To fix this error you need to include the `@use` statement as well.
 );
 ```
 
+<a id="markdown-check-type" name="check-type"></a>
+
+## Check Type
+
+```scss
+@if type-of($value) == map { }
+@if type-of($value) == list { }
+@if type-of($value) == string { }
+@if type-of($value) == number { }
+@if type-of($value) == color { }
+@if type-of($value) == bool { }
+@if type-of($value) == null { }
+```
 
 <a id="markdown-check-existence" name="check-existence"></a>
 

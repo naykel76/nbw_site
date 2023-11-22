@@ -49,28 +49,6 @@ https://laravel-livewire.com/docs/2.x/properties#data-binding
 ## Components
 
 
-<a id="full-page-components"></a>
-### Full Page Components
-
-```php
-// web.php
-Route::get('/post', EditCreateUser::class);
-
-// component.php
-public function render() {
-    return view('livewire.edit-create-user')
-        ->layout('layouts.base')->slot('main');
-}
-```
-
-If your layout has an associated class file, you will need to reference that for any custom logic or properties.
-
-```php
-public function render() {
-    return view('livewire.edit-create-user')
-        ->layout(\Naykel\Gotime\View\Layouts\AppLayout::class, ['title' => $this->title]);
-}
-```
 
 
 <a id="sibling-components-in-a-loop"></a>

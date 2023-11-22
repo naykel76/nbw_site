@@ -6,7 +6,7 @@
 
         <section>
 
-            <div class="pull-right to-md:hide pl-2 pb-2 w-24">
+            <div class="float-right to-md:hide pl-2 pb-2 w-24">
                 <img src="/images/about.png" alt="about nathan watts">
             </div>
 

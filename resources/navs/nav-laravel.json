@@ -5,6 +5,11 @@
                 "name": "Cheatsheet",
                 "route_name": "docs.laravel.cheatsheet",
                 "icon": "laravel"
+            },
+            {
+                "name": "Livewire",
+                "route_name": "docs.laravel.livewire",
+                "icon": "laravel"
             }
         ]
     },

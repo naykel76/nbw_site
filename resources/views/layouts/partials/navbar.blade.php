@@ -12,14 +12,14 @@ the container then publish the layout locally and override. --}}
         </div>
 
         <div class="flex va-c to-md:hide">
-            {{-- <x-gt-menu layout="hover" class="gg-1" itemClass="nav-item rounded-05">
+            {{-- <x-gt-menu layout="hover" class="gap-1" itemClass="nav-item rounded-05">
                 <li>
                     <a href="https://github.com/naykel76/" target="_blank">
                         <x-gt-icon-github class="icon txt-muted" />
                     </a>
                 </li>
             </x-gt-menu> --}}
-            <x-gt-menu layout="hover" class="gg-1" itemClass="nav-item rounded-05" />
+            <x-gt-menu layout="hover" class="gap-1" itemClass="nav-item rounded-05" />
             <div class="ml">
 
                 <a href="https://github.com/naykel76/" target="_blank">
