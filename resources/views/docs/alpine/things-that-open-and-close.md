@@ -101,7 +101,7 @@ document.addEventListener("alpine:init", () => {
 ```html
 <span x-data="{open:false}" x-on:mouseenter="open=true" x-on:mouseleave="open=false">
     <x-gt-icon-info class="txt-blue" />
-    <div class="absolute mt-05 flex maxw-400px z-100 bx info pxy-05 " x-show="open" x-transition.duration style="display: none;">
+    <div class="absolute mt-05 flex maxw-xs z-100 bx info pxy-05 " x-show="open" x-transition.duration style="display: none;">
         ...
     </div>
 </span>

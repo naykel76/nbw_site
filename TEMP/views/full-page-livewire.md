@@ -61,7 +61,6 @@ return view('livewire.dev.choices')
 'pageTitle' => $this->pageTitle,
 'layout' => 'app',
 'hasTitle' => true,
-'mainClasses' => 'container maxw-md py-5-3-2-2',
 ]);
 
 ```

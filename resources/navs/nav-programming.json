@@ -43,7 +43,7 @@
             },
             {
                 "name": "Laravel",
-                "route_name": "docs.laravel.cheatsheet",
+                "route_name": "docs.laravel.quick-reference",
                 "icon_logo": "laravel",
                 "exclude_route": true
             },
@@ -59,6 +59,11 @@
                 "icon_logo": "mongodb"
             },
             {
+                "name": "Mermaid",
+                "route_name": "pages.mermaid-cheatsheet",
+                "icon_logo": "mermaidjs"
+            },
+            {
                 "name": "NPM",
                 "route_name": "npm.npm-cheatsheet",
                 "view": "pages.npm-cheatsheet",
@@ -69,6 +74,11 @@
                 "route_name": "docs.php.php-cheatsheet",
                 "icon_logo": "php",
                 "exclude_route": true
+            },
+            {
+                "name": "Regex",
+                "route_name": "pages.regex-cheatsheet",
+                "icon_logo": "regex"
             },
             {
                 "name": "SCSS",

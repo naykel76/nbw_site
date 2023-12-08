@@ -2,28 +2,13 @@
     "main": {
         "links": [
             {
-                "name": "Angular",
-                "route_name": "docs.angular.angular-cheatsheet",
-                "exclude_route": true
-            },
-            {
-                "name": "JS",
-                "route_name": "docs.javascript.javascript-cheatsheet",
-                "exclude_route": true
-            },
-            {
-                "name": "Home",
-                "route_name": "home",
-                "exclude_route": true
-            },
-            {
                 "name": "Dev",
                 "route_name": "dev",
                 "exclude_route": true
             },
             {
                 "name": "Laravel",
-                "route_name": "docs.laravel.cheatsheet",
+                "route_name": "docs.laravel.quick-reference",
                 "type": "md",
                 "exclude_route": true
             },
@@ -43,7 +28,7 @@
             {
                 "name": "ClickUp",
                 "url": "https://app.clickup.com/login",
-                "icon_logo": "clickup",
+                "icon_logo": "clickup-solid",
                 "exclude_route": true
             },
             {
@@ -73,7 +58,7 @@
             {
                 "name": "MYOB",
                 "url": "https://app.myob.com",
-                "icon_logo": "myob",
+                "icon_logo": "myob-solid",
                 "exclude_route": true
             },
             {

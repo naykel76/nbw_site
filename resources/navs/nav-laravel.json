@@ -2,19 +2,33 @@
     "General": {
         "links": [
             {
-                "name": "Cheatsheet",
-                "route_name": "docs.laravel.cheatsheet",
+                "name": "Quick Reference",
+                "route_name": "docs.laravel.quick-reference",
                 "icon": "laravel"
+            }
+        ]
+    },
+    "Livewire": {
+        "links": [
+            {
+                "name": "Quick Reference",
+                "route_name": "docs.livewire.quick-reference",
+                "icon": "livewire"
             },
             {
-                "name": "Livewire",
-                "route_name": "docs.laravel.livewire",
-                "icon": "laravel"
+                "name": "Events",
+                "route_name": "docs.livewire.events",
+                "icon": "livewire"
             }
         ]
     },
     "Cheatsheets": {
         "links": [
+            {
+                "name": "Blade",
+                "route_name": "docs.laravel.blade",
+                "icon": "laravel"
+            },
             {
                 "name": "Components",
                 "route_name": "docs.laravel.components",
@@ -28,6 +42,11 @@
             {
                 "name": "Date Time",
                 "route_name": "docs.laravel.date-and-time",
+                "icon": "laravel"
+            },
+            {
+                "name": "CRUD",
+                "route_name": "docs.laravel.crud",
                 "icon": "laravel"
             },
             {

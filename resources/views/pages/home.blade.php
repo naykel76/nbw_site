@@ -1,6 +1,6 @@
-<x-gotime-app-layout layout="{{ config('naykel.template') }}" class="c-py-5-3-2">
+<x-gotime-app-layout layout="{{ config('naykel.template') }}">
 
-    <section class="relative overflow-x-clip">
+    <section class="relative overflow-x-clip py-2 md:py-4">
         <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-10%; bottom: -240px; ">
         <img src="/svg/blur-pink.svg" class="absolute z-bottom" style="left: 10%; bottom: -440px; ">
         <img src="/svg/blur-yellow.svg" class="absolute z-bottom" style="right: -20%; top: -120%; ">
@@ -24,7 +24,7 @@
         </div>
     </section>
 
-    <section class="relative overflow-x-clip">
+    <section class="relative overflow-x-clip py-2 md:py-4">
 
         <img src="/svg/blur-pink.svg" class="absolute z-bottom" style=" right:-5%; bottom: -340px; ">
 
@@ -37,7 +37,7 @@
 
     </section>
 
-    <section>
+    <section class="py-2 md:py-4">
         <div class="container">
             <h2>Concepts, Tips, and Techniques</h2>
             <x-gt-menu filename="nav-concepts" class="flex wrap gap-1" itemClass="btn secondary" withIcons>
@@ -45,7 +45,7 @@
         </div>
     </section>
 
-    <section>
+    <section class="py-2 md:py-4">
         <div class="container">
             <h2>Additional Resources</h2>
             <x-gt-menu menuname="resources" class="grid icon-grid"
@@ -55,11 +55,11 @@
         </div>
     </section>
 
-    <section class="relative diagonal py-10">
+    <section class="relative diagonal z-bottom">
 
         <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-5%; bottom: -240px; ">
 
-        <div class="fp-x container maxw-lg grid va-c">
+        <div class="fp-x container maxw-lg grid va-c py-2 md:py-4">
 
             <img src="/images/wooden-sports-car1.jpg" class="rounded" alt="wooden sports car">
 
@@ -85,12 +85,11 @@
         <img src="/svg/blur-yellow.svg" class="wh-2 animate-pulse-slow">
     </section>
 
-    <section>
-        <div class="container maxw-md mt-5">
+    <section class="py-2 md:py-4">
+        <div class="container mt-5">
             <h2 class="title">Notes that need a home</h2>
             <x-gt-parsedown path="{{ 'notes-to-put-somewhere' }}" />
         </div>
     </section>
-
 
 </x-gotime-app-layout>

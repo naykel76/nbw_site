@@ -1,6 +1,6 @@
 <x-gotime-app-layout layout="{{ config('naykel.template') }}" class="py-5-3-2-2">
 
-    <div class="container maxw-lg bx light">
+    <div class="container-lg bx light">
 
         <h1>About Me</h1>
 
