@@ -37,7 +37,7 @@
 
 ## Fetch, Pull, Clone
 
-<div class="code-first-col"></div>
+<code-first-col></code-first-col>
 | Command                      | Action            |
 | :--------------------------- | :---------------- |
 | git fetch origin             | Fetch entire repo |
@@ -148,7 +148,7 @@ git remote -v                                       # Check repo location
 ## GIT Stash
 
 
-<div class="code-first-col"></div>
+<code-first-col></code-first-col>
 | Command         | Action                 |
 | :-------------- | :--------------------- |
 | git stash       | Stash changes          |

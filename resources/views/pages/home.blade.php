@@ -87,6 +87,9 @@
 
     <section class="py-2 md:py-4">
         <div class="container mt-5">
+            <h2>https://www.cockos.com/licecap/</h2>
+            <p>Gif screen capture</p>
+
             <h2 class="title">Notes that need a home</h2>
             <x-gt-parsedown path="{{ 'notes-to-put-somewhere' }}" />
         </div>

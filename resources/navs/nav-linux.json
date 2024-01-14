@@ -7,6 +7,11 @@
                 "icon": "linux"
             },
             {
+                "name": "Users, Permissions and Groups",
+                "route_name": "docs.linux.users-permissions-and-groups",
+                "icon": "linux"
+            },
+            {
                 "name": "File and Directory Actions",
                 "route_name": "docs.linux.file-and-directory-actions",
                 "icon": "linux"
@@ -22,8 +27,8 @@
                 "icon": "linux"
             },
             {
-                "name": "SSH, Permissions and Security",
-                "route_name": "docs.linux.ssh-permissions-and-security",
+                "name": "SSH and Security",
+                "route_name": "docs.linux.ssh-and-security",
                 "icon": "linux"
             },
             {

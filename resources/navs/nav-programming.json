@@ -35,12 +35,7 @@
                 "icon_logo": "ionic",
                 "exclude_route": true
             },
-            {
-                "name": "Javascript",
-                "route_name": "docs.javascript.javascript-cheatsheet",
-                "icon_logo": "javascript",
-                "exclude_route": true
-            },
+
             {
                 "name": "Laravel",
                 "route_name": "docs.laravel.quick-reference",
@@ -158,7 +153,6 @@
     "alpine": {
         "standalone_menu": true,
         "include_menus": [
-            "javascript",
             "main"
         ],
         "links": [

@@ -1,47 +1,24 @@
 # SSH, Permissions and Security
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
-- [Users and Groups](#users-and-groups)
-- [Permissions](#permissions)
 - [Harden Access](#harden-access)
     - [Create SSH Key](#create-ssh-key)
         - [Upload the public key to server](#upload-the-public-key-to-server)
     - [Disable Root Access and Password Access](#disable-root-access-and-password-access)
 - [Setup SSH Authentication for Git Bash on Windows](#setup-ssh-authentication-for-git-bash-on-windows)
         - [Configure SSH for Git Hosting Server.](#configure-ssh-for-git-hosting-server)
+- [Trouble Shooting](#trouble-shooting)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
-<div class="code-first-col"></div>
- | Syntax                 | Action                  |
- | :--------------------- | :---------------------- |
- | source ~/.bash_aliases | reload the Bash aliases |
+<code-second-col></code-second-col>
+| Syntax                 | Action                  |
+| :--------------------- | :---------------------- |
+| source ~/.bash_aliases | reload the Bash aliases |
 
+<a id="markdown-harden-access" name="harden-access"></a>
 
-<a id="users-and-groups"></a>
-## Users and Groups
-<div class="code-first-col"></div>
- | Syntax                         | Action                                             |
- | :----------------------------- | :------------------------------------------------- |
- | adduser {name}                 | Create user (You’ll be asked to assign a password) |
- | adduser {name} sudo            | Add user to sudo group                             |
- | cat /etc/passwd                | display list of users                              |
- | cat /etc/passwd \| grep {name} | search for user                                    |
-
-<a id="permissions"></a>
-## Permissions
-<div class="code-first-col"></div>
- | Syntax                           | Action                 |
- | :------------------------------- | :--------------------- |
- | chgrp new_group file             | Change group           |
- | chmod ### file                   | Change permissions     |
- | chown -R new_owner:new_group dir | Change owner and group |
- | chown new_owner dir              | Change owner           |
- | passwd                           | Change password        |
-
-
-<a id="harden-access"></a>
 ## Harden Access
 
 It is generally recommended to add authorized_keys to a specific user rather than the root user.
@@ -56,7 +33,8 @@ account, they would have full control over the system, which could result in ser
 In summary, it is best to create a regular user account with SSH access and add the SSH key to
 that user's authorized_keys file, rather than allowing root access via SSH.
 
-<a id="create-ssh-key"></a>
+<a id="markdown-create-ssh-key" name="create-ssh-key"></a>
+
 ### Create SSH Key
 
 ```bash
@@ -68,7 +46,8 @@ ssh-keygen -b 4096
 cat ~/.ssh/id_rsa.pub
 ```
 
-<a id="upload-the-public-key-to-server"></a>
+<a id="markdown-upload-the-public-key-to-server" name="upload-the-public-key-to-server"></a>
+
 #### Upload the public key to server
 
 ```bash
@@ -77,7 +56,8 @@ mkdir -p ~/.ssh && sudo chmod -R 700 ~/.ssh/
 # copy key from local computer
 scp ~/.ssh/id_rsa.pub example_user@203.0.113.10:~/.ssh/authorized_keys
 ```
-<a id="disable-root-access-and-password-access"></a>
+<a id="markdown-disable-root-access-and-password-access" name="disable-root-access-and-password-access"></a>
+
 ### Disable Root Access and Password Access
 
 ```bash
@@ -91,7 +71,8 @@ PasswordAuthentication no
 sudo service sshd restart
 ```
 
-<a id="setup-ssh-authentication-for-git-bash-on-windows"></a>
+<a id="markdown-setup-ssh-authentication-for-git-bash-on-windows" name="setup-ssh-authentication-for-git-bash-on-windows"></a>
+
 ## Setup SSH Authentication for Git Bash on Windows
 
 https://gist.github.com/bsara/5c4d90db3016814a3d2fe38d314f9c23
@@ -101,7 +82,8 @@ In the `.ssh` directory, Create the following files if they do not already exist
 - .bash_profile
 - .bashrc
 
-<a id="configure-ssh-for-git-hosting-server"></a>
+<a id="markdown-configure-ssh-for-git-hosting-server" name="configure-ssh-for-git-hosting-server"></a>
+
 #### Configure SSH for Git Hosting Server.
 
 Add the following text to `.ssh/config`
@@ -112,5 +94,16 @@ Host 114.142.160.30
     IdentityFile ~/.ssh/id_rsa_nbw
 ```
 
+<a id="markdown-trouble-shooting" name="trouble-shooting"></a>
 
+## Trouble Shooting
+
+<a id="markdown-cant-add-to-knownhosts" name="cant-add-to-knownhosts"></a>
+
+##### Can't add to `known_hosts`
+Manually add the 'host' to the `known_hosts` file
+
+```bash
+ssh-keyscan -t ed25519 170.187.240.29 >> ~/.ssh/known_hosts
+```
 

@@ -2,58 +2,100 @@
 
 <!-- TOC -->
 
-- [Securely Copy files with `scp`](#securely-copy-files-with-scp)
+- [File paths](#file-paths)
+- [Copy with `scp`](#copy-with-scp)
+- [Copying with `rsync`](#copying-with-rsync)
 - [Renaming Multiple Files (script)](#renaming-multiple-files-script)
 - [Change File Extensions (script)](#change-file-extensions-script)
 - [Counting Files and Directories](#counting-files-and-directories)
     - [Excluding Files and Directories](#excluding-files-and-directories)
     - [Excluding Hidden Files and Directories](#excluding-hidden-files-and-directories)
+- [Trouble Shooting](#trouble-shooting)
+    - [Add rsync to Git Bash](#add-rsync-to-git-bash)
+    - [Install MSYS2 with rsync and openssh (includes scp)](#install-msys2-with-rsync-and-openssh-includes-scp)
 
 <!-- /TOC -->
 
-<a id="markdown-securely-copy-files-with-scp" name="securely-copy-files-with-scp"></a>
+<div class="bx warning flex va-c">
+    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#warning-round"></use></svg>
+    <div>Windows powershell and Git Bash require additional programs such as <code>rsnyc</code> and <code>scp</code> for many of these actions to work.</div>
+</div>
 
-## Securely Copy files with `scp`
+<code-first-col></code-first-col>
+| Command                   | Description                            |
+| ------------------------- | -------------------------------------- |
+| touch [file]              | Create an empty file                   |
+| cp [source] [destination] | Copy files/directories                 |
+| mv [source] [destination] | Move/rename files/directories          |
+| rm [file]                 | Remove files                           |
+| rm -r [directory]         | Remove directories (recursively)       |
+| rm -rf [directory]        | Remove directories (skip confirmation) |
+| cat [file]                | Concatenate and display file content   |
+| head [file]               | Display the beginning of a file        |
+| tail [file]               | Display the end of a file              |
 
-```bash
-# copy file to server
-scp C:/path/to/example.txt user@server:/path/on/server/
-# copy file from server
-scp user@server:/path/on/example.txt C:/path/on/local/
-```
+<a id="markdown-file-paths" name="file-paths"></a>
 
-You can add `-r` recursive flag to copy the entire directory, however, the scp command can be slow and inefficient when copying large directories. In addition, it does not support resuming interrupted transfers.
+## File paths
 
-**You can use the `rsync` command instead.**
+**Windows** uses backslashes `\` to separate file paths, while **Linux** uses forward slashes `/`. This means that when you are working with file paths in the command line, you need to use forward slashes even if you are using Windows.
 
-```bash
-# copy directory to server
-scp -r C:/path/to/example.txt user@server:/path/on/server/
-# copy directory from server
-scp -r user@server:/path/on/example.txt C:/path/on/local/
-```
-
-The `-avz` options with rsync enable archive mode, which preserves file permissions, timestamps, and ownership, and compresses the data to speed up the transfer. The `-e` ssh option tells rsync to use SSH as the transport.
-
-The rsync command also supports resuming interrupted transfers, which can be useful if the transfer is interrupted due to network issues or other problems.
-
-```bash
-# copy directory from server
-rsync -avz -e ssh user@remote:/path/to/directory /path/to/local/directory/
-# copy directory to server
-
-
-rsync [OPTIONS] --exclude 'file_or_directory' source/ destination/
-```
+Git bash can use either the Windows or Linux path format, but Powershell requires the Windows path format.
 
 ```bash
-# single file from server (confirmed with message)
-scp scp forge@45.79.239.101:/home/forge/staging.factsoflife.com.au/public/images/404.jpg C:/Users/nayke/Desktop/htdocs/nk_lms/public/images/content
-# directory from server (?)
-rsync -avz -e ssh forge@45.79.239.101:/home/forge/staging.factsoflife.com.au/public/build /mnt/c/Users/nayke/Desktop/htdocs/nk_lms/public/images/content
+# Windows path
+C:/Users/username/Desktop
+# Linux (WSL) path
+/c/Users/username/Desktop
 ```
+
+<a id="markdown-copy-with-scp" name="copy-with-scp"></a>
+
+## Copy with `scp`
+
+**Syntax:** `scp [options] source destination`
+
+**Note:** when using `scp` you can add `-r` recursive flag to copy the entire directory, however,
+the scp command can be slow and inefficient when copying large directories. **You can use the
+`rsync` command instead.**
+
+```bash
+# Copy file from the server
+scp user@45.79.239.101:/home/username/abc.txt /c/Users/username
+
+# Copy file to the server
+scp /c/Users/username user@45.79.239.101:/home/username/abc.txt
+```
+
+<a id="markdown-copying-with-rsync" name="copying-with-rsync"></a>
+
+## Copying with `rsync`
+
+**Syntax** `rsync [options] source destination`
 
 `rsync` uses a smart algorithm to only copy files that have changed, so subsequent uploads and downloads will be much faster than the initial transfer.
+
+https://www.youtube.com/watch?v=Pygr_TpZRpM&ab_channel=TonyTeachesTech
+
+```bash
+# copy directory from server
+rsync -avz user@45.79.239.101:/home/username /c/Users/username
+
+
+```
+
+`-a` Archive mode, which preserves various attributes of the files such as permissions, ownership, timestamps, etc. <br>
+`-v` Verbose mode, providing detailed information about the files being transferred. <br>
+`-z` Enables compression during the transfer, reducing the amount of data sent over the network. <br>
+
+`--delete-excluded` also delete excluded files from destination dirs <br>
+`--delete` delete extraneous files from destination dirs <br>
+`--dry-run` overview of what will be copied <br>
+`--exclude` exclude files or directories from the transfer <br>
+
+`--partial` keep partially transferred files <br>
+`--progress` show progress during transfer <br>
+`-P` is the same as `--partial --progress` <br>
 
 
 
@@ -185,3 +227,38 @@ Count the number of directories in a directory (including subdirectories) (exclu
 ```bash
 find . -type d -not -path '*/\.*' -not -name 'node_modules' -not -name 'vendor' | wc -l
 ```
+
+
+<a id="markdown-trouble-shooting" name="trouble-shooting"></a>
+
+## Trouble Shooting
+
+
+<a id="markdown-add-rsync-to-git-bash" name="add-rsync-to-git-bash"></a>
+
+### Add rsync to Git Bash
+
+1. Download *rsync* from the [MSYS2 package repository](https://repo.msys2.org/msys/x86_64/rsync-3.2.7-2-x86_64.pkg.tar.zst)
+
+
+<a id="markdown-install-msys2-with-rsync-and-openssh-includes-scp" name="install-msys2-with-rsync-and-openssh-includes-scp"></a>
+
+### Install MSYS2 with rsync and openssh (includes scp)
+
+
+
+
+**MSYS2** is a collection of tools and libraries providing you with an easy-to-use environment for
+building, installing and running native Windows software.
+
+1. Download and Install [MSYS2](https://www.msys2.org/):
+2. Open the MSYS2 shell and update the Package Database:
+```bash
+pacman -Syu
+```
+3. Install rsync and openssh (which includes `scp`):
+```bash
+pacman -S rsync openssh
+```
+
+

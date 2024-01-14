@@ -32,15 +32,15 @@ Useful Docker Commands
 
 <a id="common-commands-container-image-volume"></a>
 ## Common Commands (Container, Image, Volume)
-<div class="code-first-col"></div>
-<div class="code-first-col"></div>
+<code-first-col></code-first-col>
+<code-first-col></code-first-col>
 | Syntax                                  | Action                                             |
 | :-------------------------------------- | :------------------------------------------------- |
 | docker {container\|image\|volume} ls    | List containers, images or volumes                 |
 | docker {container\|image\|volume} prune | Remove stopped containers, unused image or volumes |
 | docker {container\|image\|volume} rm    | Remove one or more containers, images or volumes   |
 
-<div class="code-first-col"></div>
+<code-first-col></code-first-col>
 | Syntax                 | Action                                                       |
 | :--------------------- | :----------------------------------------------------------- |
 | docker ps -a           | List all processes                                           |
@@ -53,14 +53,14 @@ Useful Docker Commands
 <a id="docker-container"></a>
 ## Docker Container
 https://docs.docker.com/engine/reference/commandline/container/
-<div class="code-first-col"></div>
+<code-first-col></code-first-col>
 | Syntax                | Action                              |
 | :-------------------- | :---------------------------------- |
 | docker container kill | Kill one or more running containers |
 
 <a id="docker-image-commands"></a>
 ## Docker Image Commands
-<div class="code-first-col"></div>
+<code-first-col></code-first-col>
 | Syntax                                     | Action                           |
 | :----------------------------------------- | :------------------------------- |
 | docker image rm [OPTIONS] IMAGE [IMAGE...] | Remove image from disk           |
@@ -69,7 +69,7 @@ https://docs.docker.com/engine/reference/commandline/container/
 
 <a id="docker-volume-commands"></a>
 ## Docker Volume Commands
-<div class="code-first-col"></div>
+<code-first-col></code-first-col>
 | Command                                 | Description                                         |
 | :-------------------------------------- | :-------------------------------------------------- |
 | docker volume create [OPTIONS] [VOLUME] | Create a volume                                     |
@@ -78,7 +78,7 @@ https://docs.docker.com/engine/reference/commandline/container/
 
 <a id="laravel-sail"></a>
 ## Laravel Sail
-<div class="code-first-col"></div>
+<code-first-col></code-first-col>
 | Syntax     | Action                      |
 | :--------- | :-------------------------- |
 | sail stop  | Stop Sail                   |

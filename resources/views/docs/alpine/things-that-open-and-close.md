@@ -2,6 +2,9 @@
 
 <!-- TOC -->
 
+- [x-show](#x-show)
+    - [Hover](#hover)
+    - [Click](#click)
 - [Toggle onclick using x-show](#toggle-onclick-using-x-show)
 - [How to manage the closing](#how-to-manage-the-closing)
     - [`click.outside`](#clickoutside)
@@ -10,6 +13,20 @@
     - [Toggle using css classes](#toggle-using-css-classes)
 
 <!-- /TOC -->
+
+<a id="markdown-x-show" name="x-show"></a>
+
+## x-show
+
+<a id="markdown-hover" name="hover"></a>
+
+### Hover
+
+<a id="markdown-click" name="click"></a>
+
+### Click
+
+
 
 <a id="markdown-toggle-onclick-using-x-show" name="toggle-onclick-using-x-show"></a>
 

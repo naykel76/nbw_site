@@ -4,6 +4,7 @@
 
 - [Common Commands](#common-commands)
 - [Version Control and Publishing](#version-control-and-publishing)
+- [Update all packages including package.json](#update-all-packages-including-packagejson)
 
 <!-- /TOC -->
 https://docs.npmjs.com/cli/v9/commands
@@ -11,7 +12,7 @@ https://docs.npmjs.com/cli/v9/commands
 <a id="markdown-common-commands" name="common-commands"></a>
 
 ## Common Commands
-<div class="code-first-col"></div>
+<code-first-col></code-first-col>
 | Syntax                    | Action                                               |
 | :------------------------ | :--------------------------------------------------- |
 | npm audit                 | Scan and list all the vulnerabilities in the project |
@@ -26,7 +27,7 @@ https://docs.npmjs.com/cli/v9/commands
 <a id="markdown-version-control-and-publishing" name="version-control-and-publishing"></a>
 
 ## Version Control and Publishing
-<div class="code-first-col"></div>
+<code-first-col></code-first-col>
 | Syntax                     | Action                                           |
 | :------------------------- | :----------------------------------------------- |
 | npm publish                | Publish a package                                |
@@ -34,10 +35,27 @@ https://docs.npmjs.com/cli/v9/commands
 | npm unpublish              | Remove a package from the registry               |
 | npm version                | See version details                              |
 | npm version [type]         | Bump version \| `major` \| `minor` \| `patch` \| |
-| npm show [package] version | See package version details                              |
+| npm show [package] version | See package version details                      |
 |                            |
 
+<a id="markdown-update-all-packages-including-packagejson" name="update-all-packages-including-packagejson"></a>
 
+## Update all packages including package.json
+
+```bash
+npm outdated # check for outdated packages
+npm update # update all packages
+npm install -g npm-check-updates # install npm-check-updates globally
+ncu -u # update package.json
+npm install # install new packages
+```
+
+
+
+
+---
+---
+---
 npm version [<newversion> |  premajor \| preminor \| prepatch \| prerelease \| from-git]
 
 

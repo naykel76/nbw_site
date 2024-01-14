@@ -3,8 +3,6 @@
 <!-- TOC -->
 
 - [Navigation](#navigation)
-- [File Operations](#file-operations)
-- [File Permissions](#file-permissions)
 - [Process Management](#process-management)
 - [Searching](#searching)
 - [Networking](#networking)
@@ -30,40 +28,12 @@
 | ls -a          | List all files, including hidden ones                     |
 | du -sh         | Get size of current directory                             |
 
-<a id="markdown-file-operations" name="file-operations"></a>
-
-## File Operations
-
-<code-first-col></code-first-col>
-| Command                   | Description                          |
-| ------------------------- | ------------------------------------ |
-| touch [file]              | Create an empty file                 |
-| cp [source] [destination] | Copy files/directories               |
-| mv [source] [destination] | Move/rename files/directories        |
-| rm [file]                 | Remove files                         |
-| rm -r [directory]         | Remove directories (recursively)     |
-| cat [file]                | Concatenate and display file content |
-| head [file]               | Display the beginning of a file      |
-| tail [file]               | Display the end of a file            |
-
-
-<a id="markdown-file-permissions" name="file-permissions"></a>
-
-## File Permissions
-
-<code-first-col></code-first-col>
-| Command                    | Description                                          |
-| -------------------------- | ---------------------------------------------------- |
-| chmod [permissions] [file] | Change file permissions (e.g., `chmod 644 file.txt`) |
-| chown [user] [file]        | Change file owner                                    |
-| chgrp [group] [file]       | Change file group                                    |
-
 <a id="markdown-process-management" name="process-management"></a>
 
 ## Process Management
 
 <code-first-col></code-first-col>
-| Command           | Description                               |
+| Command           | Description.                               |
 | ----------------- | ----------------------------------------- |
 | ps                | Display running processes                 |
 | top               | Monitor system processes in real-time     |
@@ -152,7 +122,7 @@
 <a id="markdown-system-settings" name="system-settings"></a>
 
 ### System Settings
-<div class="code-first-col"></div>
+<code-first-col></code-first-col>
  | Syntax                                        | Action         |
  | :-------------------------------------------- | :------------- |
  | timedatectl                                   | list time zone |
