@@ -2,20 +2,21 @@
 
 <!-- TOC -->
 
-- [House Keeping](#house-keeping)
-- [Fetch, Pull, Clone](#fetch-pull-clone)
-- [Global Config (global, system and local)](#global-config-global-system-and-local)
-- [GIT Branches](#git-branches)
-- [Repositories](#repositories)
-- [Commit and Push](#commit-and-push)
-    - [How to change commit message](#how-to-change-commit-message)
-- [Git Merge, Squash, Rebase and Conflicts](#git-merge-squash-rebase-and-conflicts)
-    - [Merge changes and into a single commit. `--squash`](#merge-changes-and-into-a-single-commit---squash)
-- [Create and Modify Repositories](#create-and-modify-repositories)
-- [GIT Stash](#git-stash)
-- [Releases \& Version Tags](#releases--version-tags)
-- [Creating Alias](#creating-alias)
-    - [Create Alias to Clone Repo](#create-alias-to-clone-repo)
+- [Github Cheat Sheet](#github-cheat-sheet)
+    - [House Keeping](#house-keeping)
+    - [Fetch, Pull, Clone](#fetch-pull-clone)
+    - [Global Config (global, system and local)](#global-config-global-system-and-local)
+    - [GIT Branches](#git-branches)
+    - [Repositories](#repositories)
+    - [Commit and Push](#commit-and-push)
+        - [How to change commit message](#how-to-change-commit-message)
+    - [Git Merge, Squash, Rebase and Conflicts](#git-merge-squash-rebase-and-conflicts)
+        - [Merge changes and into a single commit. `--squash`](#merge-changes-and-into-a-single-commit---squash)
+    - [Create and Modify Repositories](#create-and-modify-repositories)
+    - [GIT Stash](#git-stash)
+    - [Releases \& Version Tags](#releases--version-tags)
+    - [Creating Alias](#creating-alias)
+        - [Create Alias to Clone Repo](#create-alias-to-clone-repo)
 
 <!-- /TOC -->
 

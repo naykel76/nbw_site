@@ -3,6 +3,8 @@
 
 - [Conditionally add classes](#conditionally-add-classes)
     - [When a slot is set](#when-a-slot-is-set)
+- [Slots](#slots)
+    - [Slot attributes](#slot-attributes)
 
 <!-- /TOC -->
 
@@ -19,3 +21,27 @@
     {{ $main }}
 </div>
 ```
+
+<a id="markdown-slots" name="slots"></a>
+
+## Slots
+
+
+<a id="markdown-slot-attributes" name="slot-attributes"></a>
+
+### Slot attributes
+
+```php
+<div {{ $attributes->class(['border']) }}>
+
+    <h1 {{ $heading->attributes->class(['text-lg']) }}>
+        {{ $heading }}
+    </h1>
+
+    {{ $slot }}
+
+</div>
+```
+
+
+

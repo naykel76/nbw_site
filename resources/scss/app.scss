@@ -38,12 +38,6 @@ $x-text: rgb(228, 232, 236);
     color: burlywood;
 }
 
-@include from-md {
-    p {
-        font-size: 1.15rem;
-    }
-}
-
 // allow the grid to do it's job
 .remove-pre-margins pre {
     margin: 0;

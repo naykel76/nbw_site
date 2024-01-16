@@ -1,66 +1,66 @@
 # Livewire Quick Reference
+
 <!-- TOC -->
 
-- [Accessing parent methods and properties](#accessing-parent-methods-and-properties)
-- [Refreshing techniques](#refreshing-techniques)
-    - [Refresh a component](#refresh-a-component)
-    - [Refresh parent on event](#refresh-parent-on-event)
-- [Properties](#properties)
-    - [Manipulating properties](#manipulating-properties)
+- [Make a child component "reactive" based on parent changes.](#make-a-child-component-reactive-based-on-parent-changes)
+- [HTML Directives](#html-directives)
+- [Entangle](#entangle)
 
 <!-- /TOC -->
 
-<a id="markdown-accessing-parent-methods-and-properties" name="accessing-parent-methods-and-properties"></a>
+<a id="markdown-make-a-child-component-reactive-based-on-parent-changes" name="make-a-child-component-reactive-based-on-parent-changes"></a>
 
-## Accessing parent methods and properties
+## Make a child component "reactive" based on parent changes.
+
+This technique forces the child to mount each time the parent is updated. Read more [here](https://github.com/livewire/livewire/discussions/2097)
 
 ```html
-<button wire:click="$parent.method()">...</button>
-<button wire:click="$parent.property = 'value'">...</button>
+<livewire:create-question-answers key="{{ Str::random()}}" :quiz-id="$editing->id" />
 ```
 
-<a id="markdown-refreshing-techniques" name="refreshing-techniques"></a>
+<a id="markdown-html-directives" name="html-directives"></a>
 
-## Refreshing techniques
-
-<a id="markdown-refresh-a-component" name="refresh-a-component"></a>
-
-### Refresh a component
+## HTML Directives
 
 ```html
-<!-- livewire -->
-<button type="button" wire:click="$refresh">...</button>
-<!-- alpine -->
-<button type="button" x-on:click="$wire.$refresh()">...</button>
+<!-- display element when sending a request -->
+<div wire:loading> Saving post... </div>
+<!-- remove element when sending a request -->
+<div wire:loading.remove>...</div>
+<!-- toggle class during request -->
+<button wire:loading.class="txt-muted">Save</button>
+```
+
+Target specific elements with `wire:target` and `wire:loading.class` or `wire:loading.attr`
+
+```html
+<button wire:click="save" wire:loading.attr="disabled" wire:target="save">Save</button>
 ```
 
 
-<a id="markdown-refresh-parent-on-event" name="refresh-parent-on-event"></a>
+<a id="markdown-entangle" name="entangle"></a>
 
-### Refresh parent on event
+## Entangle
 
-```html
-<livewire:nested-child-component @eventName="$refresh"/>
-```
+Livewire's `@entangle` directive is used to create a two-way data binding between a Livewire
+component's property and an AlpineJs component's data. This means that when the Livewire property
+changes, the AlpineJs data will automatically update to reflect the change, and vice versa.
 
-<a id="markdown-properties" name="properties"></a>
-
-## Properties
-
-<a id="markdown-manipulating-properties" name="manipulating-properties"></a>
-
-### Manipulating properties
+In the following example, AlpineJs binds the `content` property to the Livewire component's `editor1` property.
 
 ```html
-<div>
-    <input type="text" wire:model="todo">
-
-    <button x-on:click="$wire.todo = ''">Clear</button>
+<div x-data="{content: @entangle('editor1')}">
+    <div x-text="content"></div>
 </div>
 ```
 
-or you can use the `set` method
+It may not always be practical to bind directly to a Livewire component's property. In the
+following example, AlpineJs binds the content property to a dynamic Livewire component's
+property. The property name is determined by the model attribute passed to the component.
 
 ```html
-<button x-on:click="$wire.set('todo', '')">Clear</button>
+<div x-data="{content: @entangle($attributes->wire('model'))}">
+    <div x-text="content"></div>
+</div>
 ```
+

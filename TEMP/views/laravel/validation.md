@@ -108,16 +108,7 @@ required_without_all:foo,bar,...
 <a id="unique"></a>
 ## Unique
 
-`unique:table,column,except,idColumn`
 
-**Make sure you specify the column name when working with nested properties.**
-
-```php
-// specify the column name when working with nested properties
-'editing.part_number' => 'unique:products,part_number',
-// ignore a given id
-'editing.part_number' => 'unique:products,part_number,' . $this->editing->id,
-```
 
 <a id="unique-based-on-multiple-conditions"></a>
 ### Unique Based on Multiple Conditions

@@ -4,6 +4,7 @@
 
 - [x-ref](#x-ref)
 - [x-model](#x-model)
+    - [How to use AlpineJS in a script instead of inline `Alpine.data()`](#how-to-use-alpinejs-in-a-script-instead-of-inline-alpinedata)
 
 <!-- /MarkdownTOC -->
 
@@ -44,3 +45,42 @@ https://alpinejs.dev/directives/model
     <button x-on:click="message = 'changed'">Change Message</button>
 </div>
 ```
+
+
+### How to use AlpineJS in a script instead of inline `Alpine.data()`
+
+[Re-usable data in script (extract x-data)](https://alpinejs.dev/directives/data#re-usable-data)
+
+https://alpinejs.dev/globals/alpine-data
+
+```html
+<div x-data="{message: '', someMethod: function() { console.log('Button has been clicked'); }}"
+    x-init="message = 'This is the message'">
+    <div x-text="message"></div>
+    <button class="btn" x-on:click="someMethod()">Trigger Method</button>
+</div>
+```
+
+```html
+<div x-data="myComponent">
+    <div x-text="message"></div>
+    <button class="btn" x-on:click="someMethod()">Trigger Method</button>
+</div>
+
+<script>
+    window.addEventListener('alpine:init', () => {
+        Alpine.data('myComponent', () => ({
+            message: '',
+            init() {
+                this.message = 'This is the message';
+            },
+            someMethod() {
+                console.log('someMethod has been called')
+            }
+        }))
+    })
+</script>
+```
+
+
+

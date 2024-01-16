@@ -8,20 +8,6 @@
             }
         ]
     },
-    "Livewire": {
-        "links": [
-            {
-                "name": "Quick Reference",
-                "route_name": "docs.livewire.quick-reference",
-                "icon": "livewire"
-            },
-            {
-                "name": "Events",
-                "route_name": "docs.livewire.events",
-                "icon": "livewire"
-            }
-        ]
-    },
     "Cheatsheets": {
         "links": [
             {
@@ -87,6 +73,11 @@
             {
                 "name": "Packages",
                 "route_name": "docs.laravel.packages",
+                "icon": "laravel"
+            },
+            {
+                "name": "Validation",
+                "route_name": "docs.laravel.validation",
                 "icon": "laravel"
             }
         ]

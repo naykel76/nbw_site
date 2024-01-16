@@ -1,0 +1,30 @@
+{
+    "General": {
+        "links": [
+            {
+                "name": "Quick Reference",
+                "route_name": "docs.livewire.quick-reference",
+                "icon": "livewire"
+            }
+        ]
+    },
+    "Livewire": {
+        "links": [
+            {
+                "name": "Components",
+                "route_name": "docs.livewire.components",
+                "icon": "livewire"
+            },
+            {
+                "name": "Events",
+                "route_name": "docs.livewire.events",
+                "icon": "livewire"
+            },
+            {
+                "name": "Forms",
+                "route_name": "docs.livewire.forms",
+                "icon": "livewire"
+            }
+        ]
+    }
+}

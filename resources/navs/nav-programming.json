@@ -35,7 +35,6 @@
                 "icon_logo": "ionic",
                 "exclude_route": true
             },
-
             {
                 "name": "Laravel",
                 "route_name": "docs.laravel.quick-reference",
@@ -46,6 +45,12 @@
                 "name": "Linux",
                 "route_name": "docs.linux.linux-cheatsheet",
                 "icon": "linux",
+                "exclude_route": true
+            },
+            {
+                "name": "Livewire",
+                "route_name": "docs.livewire.quick-reference",
+                "icon": "livewire",
                 "exclude_route": true
             },
             {
