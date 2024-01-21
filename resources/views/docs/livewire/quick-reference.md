@@ -5,6 +5,7 @@
 - [Make a child component "reactive" based on parent changes.](#make-a-child-component-reactive-based-on-parent-changes)
 - [HTML Directives](#html-directives)
 - [Entangle](#entangle)
+- [Tips and Tricks](#tips-and-tricks)
 
 <!-- /TOC -->
 
@@ -63,4 +64,8 @@ property. The property name is determined by the model attribute passed to the c
     <div x-text="content"></div>
 </div>
 ```
+
+<a id="markdown-tips-and-tricks" name="tips-and-tricks"></a>
+
+## Tips and Tricks
 

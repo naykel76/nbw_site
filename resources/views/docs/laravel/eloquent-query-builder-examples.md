@@ -2,11 +2,22 @@
 
 <!-- TOC -->
 
-- [Subquery using regex](#subquery-using-regex)
-- [Group with nesting loops](#group-with-nesting-loops)
-- [Group with groupBy()](#group-with-groupby)
+- [Eloquent Builder Tips and Techniques](#eloquent-builder-tips-and-techniques)
+    - [Quick Reference](#quick-reference)
+    - [Subquery using regex](#subquery-using-regex)
+    - [Group with nesting loops](#group-with-nesting-loops)
+    - [Group with groupBy()](#group-with-groupby)
 
 <!-- /TOC -->
+
+<a id="markdown-quick-reference" name="quick-reference"></a>
+
+## Quick Reference
+
+```php
+$course = Course::first();
+```
+
 
 <a id="markdown-subquery-using-regex" name="subquery-using-regex"></a>
 

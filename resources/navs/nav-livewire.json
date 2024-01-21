@@ -12,18 +12,27 @@
         "links": [
             {
                 "name": "Components",
-                "route_name": "docs.livewire.components",
-                "icon": "livewire"
+                "route_name": "docs.livewire.components"
             },
             {
                 "name": "Events",
-                "route_name": "docs.livewire.events",
-                "icon": "livewire"
+                "route_name": "docs.livewire.events"
+            }
+        ]
+    },
+    "Tutorials": {
+        "links": [
+            {
+                "name": "Form Object",
+                "route_name": "docs.livewire.tutorials.form-essentials-01-form-object"
             },
             {
-                "name": "Forms",
-                "route_name": "docs.livewire.forms",
-                "icon": "livewire"
+                "name": "CreateEdit Component",
+                "route_name": "docs.livewire.tutorials.form-essentials-02-create-edit-component"
+            },
+            {
+                "name": "Data Table",
+                "route_name": "docs.livewire.tutorials.form-essentials-03-data-table"
             }
         ]
     }
