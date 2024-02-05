@@ -21,7 +21,7 @@ In this example, we will walk through the steps of creating a Livewire form obje
 and editing a course.
 
 <div class="bx info flex va-c">
-    <svg class="icon wh-3 fs0 mr"><use xlink:href="/svg/naykel-ui.svg#info"></use></svg>
+    <svg class="icon wh-3 fs0 mr"><use xlink:href="/svg/naykel-ui.svg#question-mark-circlermation-circle"></use></svg>
     <div>User feedback such as notifications are handled in the Livewire component, not the form object.</div>
 </div>
 

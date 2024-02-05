@@ -13,7 +13,7 @@
                         I design and develop Laravel web applications, dabble in server management and am training to become a full stack developer.
                     </div>
                 </div>
-                <div class="bx warning-light">
+                <div class="bx warning-light bdr-3 rounded-1">
                     <small>
                         <div class="bx-title">Disclaimer:</div>
                         <p class="txt-sm" style="opacity: 0.9"> Everything you find on this website is my take on concepts we are taught at university, a seemingly endless supply of YouTube tutorials with a sprinkle of the wild ideas that invade my brain. While I'd love to claim infallibility, I can't promise that. So, do yourself a favour and check for yourself. Trust me, Google is your friend! </p>

@@ -1,21 +1,21 @@
 # Alpine Quick Reference
 
-<!-- MarkdownTOC -->
+<!-- TOC -->
 
-- [x-ref](#x-ref)
+- [x-ref and $x-refs](#x-ref-and-x-refs)
 - [x-model](#x-model)
     - [How to use AlpineJS in a script instead of inline `Alpine.data()`](#how-to-use-alpinejs-in-a-script-instead-of-inline-alpinedata)
 
-<!-- /MarkdownTOC -->
+<!-- /TOC -->
 
+<a id="markdown-x-ref-and-x-refs" name="x-ref-and-x-refs"></a>
 
-<a id="x-ref"></a>
-## x-ref
+## x-ref and $x-refs
 
-`x-ref` in combination with `$refs` is a utility for accessing DOM elements directly like `getElementById` and `querySelector`.
-
-- **`$refs`** is used to replace `document.getElementById` and `document.querySelector`
-- **`x-ref`** is assigned instead of `id`
+In Alpine.js, `$refs` is used as a replacement for `document.getElementById` and
+`document.querySelector`. It allows you to access DOM elements directly from Alpine data. The
+`x-ref` attribute is used to assign a reference name to a DOM element, and `$refs` is used to
+access that element.
 
 ```html
 <!-- instead of assigning an id, you add x-ref -->
@@ -29,7 +29,8 @@
 </div>
 ```
 
-<a id="x-model"></a>
+<a id="markdown-x-model" name="x-model"></a>
+
 ## x-model
 
 https://alpinejs.dev/directives/model
@@ -46,6 +47,8 @@ https://alpinejs.dev/directives/model
 </div>
 ```
 
+
+<a id="markdown-how-to-use-alpinejs-in-a-script-instead-of-inline-alpinedata" name="how-to-use-alpinejs-in-a-script-instead-of-inline-alpinedata"></a>
 
 ### How to use AlpineJS in a script instead of inline `Alpine.data()`
 

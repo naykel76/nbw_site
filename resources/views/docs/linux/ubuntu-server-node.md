@@ -19,7 +19,7 @@ sudo apt install npm
 Installing NPM will also install node but it will not be the latest version! To resolve this issue install node version manager, then install latest stable node version, and switch to it.
 
 <div class="bx warning flex va-c">
-    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#info"></use></svg>
+    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#question-mark-circlermation-circle"></use></svg>
     <div>Installing NPM will also install node but it will not be the latest version! To resolve this issue install node version manager, then install latest stable node version, and switch to it.</div>
 </div>
 
@@ -36,7 +36,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 
 <div class="bx warning flex va-c">
-    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#warning-round"></use></svg>
+    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#exclamation-circle"></use></svg>
     <div>Once the installation is complete, you may need to close and reopen your terminal or run <code>source ~/.bashrc</code> to make NVM available in your current terminal session.</div>
 </div>
 

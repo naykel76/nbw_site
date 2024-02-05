@@ -34,6 +34,12 @@ public function render() {
 }
 ```
 
+```php
+    ->layout(\Naykel\Gotime\View\Layouts\AppLayout::class, [
+            'pageTitle' => $this->title,
+            'layout' => 'admin'
+        ]);
+```
 <a id="markdown-package-layout" name="package-layout"></a>
 
 ### Package layout

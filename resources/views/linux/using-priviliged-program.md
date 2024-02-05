@@ -2,7 +2,7 @@
 
 The objective is to read `/etc/shadow` as a normal user.
 
-<div class="bx info-light pxy-1">TIP: It is always a good idea to check the permissions of a file or directory before you change it, that way you will understand what you are comparing too!</div>
+<div class="bx info-light bdr-3 rounded-1pxy-1">TIP: It is always a good idea to check the permissions of a file or directory before you change it, that way you will understand what you are comparing too!</div>
 
 #### Copy the 'cat' program, change owner then attempt to access `/etc/shadow`
 

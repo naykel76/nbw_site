@@ -2,9 +2,10 @@
 
 <!-- TOC -->
 
-- [x-show](#x-show)
-    - [Hover](#hover)
-    - [Click](#click)
+- [x-collapse](#x-collapse)
+- [Accordion using `x-show`](#accordion-using-x-show)
+    - [Single item accordion](#single-item-accordion)
+    - [Multiple item accordion (single open)](#multiple-item-accordion-single-open)
 - [Toggle onclick using x-show](#toggle-onclick-using-x-show)
 - [How to manage the closing](#how-to-manage-the-closing)
     - [`click.outside`](#clickoutside)
@@ -14,26 +15,98 @@
 
 <!-- /TOC -->
 
-<a id="markdown-x-show" name="x-show"></a>
+<a id="markdown-x-collapse" name="x-collapse"></a>
 
-## x-show
+## x-collapse
 
-<a id="markdown-hover" name="hover"></a>
+This is similar to `x-show` but it allows you to expand and collapse elements using smooth
+animations.
 
-### Hover
+<div x-data="{ expanded: false }">
+    <button class="btn" x-on:click.prevent="expanded = ! expanded">Toggle Content</button>
+    <p class="my" x-show="expanded" x-collapse>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odio eligendi error. Voluptate repellendus, omnis dicta, assumenda quisquam illo aperiam amet laboriosam excepturi quo tenetur, vero ducimus accusantium aliquid sed? </p>
+</div>
 
-<a id="markdown-click" name="click"></a>
+```html
+<div x-data="{ expanded: false }">
+    <button class="btn" x-on:click.prevent="expanded = ! expanded">Toggle Content</button>
+    <p class="my" x-show="expanded" x-collapse> ... </p>
+</div>
+```
 
-### Click
+<a id="markdown-accordion-using-x-show" name="accordion-using-x-show"></a>
 
+## Accordion using `x-show`
 
+<a id="markdown-single-item-accordion" name="single-item-accordion"></a>
+
+### Single item accordion
+
+<div x-data="{ expanded: false }">
+    <button x-on:click="expanded =! expanded" class="btn accent w-10 mb-05">
+        <span x-show="!expanded">Open</span>
+        <span x-show="expanded">Close</span>
+    </button>
+    <div x-show="expanded">
+        Hey there!
+    </div>
+</div>
+
+```html
+<div x-data="{ expanded: false }">
+    <button x-on:click="expanded =! expanded" class="btn">
+        <span x-show="!expanded">Open</span>
+        <span x-show="expanded">Close</span>
+    </button>
+    <div x-show="expanded">
+        Hey there!
+    </div>
+</div>
+```
+
+<a id="markdown-multiple-item-accordion-single-open" name="multiple-item-accordion-single-open"></a>
+
+### Multiple item accordion (single open)
+
+```html
+<div x-data="{ active: 0, }" class="space-y">
+    <div x-data="{
+        id: 1,
+        get expanded() { return this.active === this.id },
+        set expanded(value) { this.active = value ? this.id : null }
+    }">
+        <button x-on:click="expanded =! expanded"
+            :aria-expanded="expanded" class="btn primary">
+            <span x-show="!expanded">Open Item One</span>
+            <span x-show="expanded">Close Item One</span>
+        </button>
+        <div x-show="expanded">
+            Hey there!
+        </div>
+    </div>
+    <div x-data="{
+        id: 2,
+        get expanded() { return this.active === this.id },
+        set expanded(value) { this.active = value ? this.id : null }
+    }">
+        <button x-on:click="expanded =! expanded"
+            :aria-expanded="expanded" class="btn primary">
+            <span x-show="!expanded">Open Item Two</span>
+            <span x-show="expanded">Close Item Two</span>
+        </button>
+        <div x-show="expanded">
+            Hey there!
+        </div>
+    </div>
+</div>
+```
 
 <a id="markdown-toggle-onclick-using-x-show" name="toggle-onclick-using-x-show"></a>
 
 ## Toggle onclick using x-show
 
-<div x-data="{ open: false }">
-    <button class="btn" x-on:click="open = ! open">Toggle</button>
+<div x-data="{Open false }">
+    <button class="btn" x-on:click.prevent="open = ! open">Toggle</button>
     <div x-show="open" x-on:click.outside="open = false">
         Hey there!
     </div>
@@ -49,7 +122,7 @@
 ```
 
 <div class="bx info flex va-c">
-    <svg class="icon wh-4 fs0 mr-2"> <use xlink:href="/svg/naykel-ui.svg#info"></use> </svg>
+    <svg class="icon wh-4 fs0 mr-2"> <use xlink:href="/svg/naykel-ui.svg#question-mark-circlermation-circle"></use> </svg>
     <p>You can use a combination of events to open and close elements.</p>
 </div>
 

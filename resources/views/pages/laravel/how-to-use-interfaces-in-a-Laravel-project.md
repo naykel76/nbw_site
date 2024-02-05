@@ -90,7 +90,7 @@ class AppServiceProvider extends ServiceProvider {
 ```
 
 <div class="bx info flex">
-    <svg class="icon wh-3 fs0 mr-2"> <use xlink:href="/svg/naykel-ui.svg#info"></use> </svg>
+    <svg class="icon wh-3 fs0 mr-2"> <use xlink:href="/svg/naykel-ui.svg#question-mark-circlermation-circle"></use> </svg>
     <div> By registering the `CartService` as a singleton, means that all parts of your application will share the same cart instance. </div>
 </div>
 

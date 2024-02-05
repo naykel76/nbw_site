@@ -36,28 +36,13 @@
                 "icon": "laravel"
             },
             {
-                "name": "Eloquent and Query Builder",
-                "route_name": "docs.laravel.eloquent-query-builder",
+                "name": "Factories",
+                "route_name": "docs.laravel.factories",
                 "icon": "laravel"
             },
             {
-                "name": "Eloquent and Query Examples",
-                "route_name": "docs.laravel.eloquent-query-builder-examples",
-                "icon": "laravel"
-            },
-            {
-                "name": "Eloquent Relationships",
-                "route_name": "docs.laravel.eloquent-save-insert-relationships",
-                "icon": "laravel"
-            },
-            {
-                "name": "Factories and Seeders",
-                "route_name": "docs.laravel.factories-and-seeders",
-                "icon": "laravel"
-            },
-            {
-                "name": "File, Disk and Storage",
-                "route_name": "docs.laravel.file-disk-storage",
+                "name": "Seeder",
+                "route_name": "docs.laravel.seeders",
                 "icon": "laravel"
             },
             {
@@ -76,8 +61,41 @@
                 "icon": "laravel"
             },
             {
+                "name": "Routes",
+                "route_name": "docs.laravel.routes",
+                "icon": "laravel"
+            },
+            {
                 "name": "Validation",
                 "route_name": "docs.laravel.validation",
+                "icon": "laravel"
+            }
+        ]
+    },
+    "Storage": {
+        "links": [
+            {
+                "name": "File Storage",
+                "route_name": "docs.laravel.file-storage",
+                "icon": "laravel"
+            }
+        ]
+    },
+    "Database and Eloquent": {
+        "links": [
+            {
+                "name": "Query Builder",
+                "route_name": "docs.laravel.eloquent-query-builder",
+                "icon": "laravel"
+            },
+            {
+                "name": "Eloquent and Query Examples",
+                "route_name": "docs.laravel.eloquent-query-builder-examples",
+                "icon": "laravel"
+            },
+            {
+                "name": "Casting and Mutators",
+                "route_name": "docs.laravel.cast-and-mutators",
                 "icon": "laravel"
             }
         ]

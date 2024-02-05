@@ -9,7 +9,7 @@ $x-text: rgb(228, 232, 236);
     $primary: $x-primary,
     $secondary: $x-secondary,
     $accent: $x-accent,
-    $background: $x-background,
+    $body-bg: $x-background,
     $font-family: $x-font-family,
     $text: $x-text,
     $zebra-alt-bg: #ffffff,
@@ -23,7 +23,7 @@ $x-text: rgb(228, 232, 236);
 @use "./play";
 
 .navbar:not(.markdown .navbar) {
-    background-color: $background;
+    background-color: $body-bg;
     border-bottom: 1px solid #14213f;
     box-shadow: 1px 5px 20px #142c56;
     box-shadow: 1px 1px 70px #142c56;
@@ -90,8 +90,9 @@ question {
         font-weight: 400;
         font-style: italic;
         color: rgb(50, 114, 231);
+        font-size: 1.2rem;
         code {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
     }
 }

@@ -61,7 +61,7 @@ $this->dispatch('event-name')->to(MyComponent::class);
 ```
 
 <div class="bx danger flex va-c">
-    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#warning"></use></svg>
+    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#exclamation-circleg"></use></svg>
     <div>
         <p> When using the <code class="txt-white">$dispatchTo</code> method you must define the full path to the component path using dot notation.For example, to dispatch an event to the <code class="txt-white">courses/programming/edit</code> component you would use:</p>
     </div>

@@ -17,7 +17,7 @@
 <!-- /TOC -->
 
 <div class="bx warning flex va-c">
-    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#warning-round"></use></svg>
+    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#exclamation-circle"></use></svg>
     <div>Windows powershell and Git Bash require additional programs such as <code>rsnyc</code> and <code>scp</code> for many of these actions to work.</div>
 </div>
 

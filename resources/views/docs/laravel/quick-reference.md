@@ -6,6 +6,8 @@
 - [Blade and Views](#blade-and-views)
     - [Determining If A View Exists](#determining-if-a-view-exists)
         - [Choose between local or package view](#choose-between-local-or-package-view)
+- [Tips and Techniques](#tips-and-techniques)
+    - [Validate option is 'in' a dropdown or simulate control](#validate-option-is-in-a-dropdown-or-simulate-control)
 
 <!-- /TOC -->
 
@@ -78,4 +80,32 @@ if (view()->exists('user.dashboard-layout')) {
 ```
 
 
+<a id="markdown-tips-and-techniques" name="tips-and-techniques"></a>
+
+## Tips and Techniques
+
+<a id="markdown-validate-option-is-in-a-dropdown-or-simulate-control" name="validate-option-is-in-a-dropdown-or-simulate-control"></a>
+
+###   Validate option is 'in' a dropdown or simulate control
+
+```php
+const STATUSES = [
+    'success' => 'Success',
+    'failed' => 'Failed',
+    'processing' => 'Processing',
+];
+```
+
+```php
+'status' => 'required|in:'.collect(Model::STATUSES)->keys()->implode(',')
+```
+
+```html
+<x-gt-select wire:model.defer="editing.layout" for="editing.layout"
+    label="Layout" placeholder="Please Select...">
+    @foreach (App\Models\Model::STATUSES as $value => $label)
+        <option value="{{ $value }}">{{ $label }}</option>
+    @endforeach
+</x-gt-select>
+```
 

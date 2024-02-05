@@ -61,7 +61,8 @@
             {
                 "name": "Mermaid",
                 "route_name": "pages.mermaid-cheatsheet",
-                "icon_logo": "mermaidjs"
+                "icon_logo": "mermaidjs",
+                "type": "blade"
             },
             {
                 "name": "NPM",
@@ -144,6 +145,10 @@
                 "icon": "css"
             },
             {
+                "name": "Combinators",
+                "route_name": "docs.css.combinators"
+            },
+            {
                 "name": "CSS Position and Alignment Tips",
                 "route_name": "docs.css.position-and-alignment-tips",
                 "icon": "css"
@@ -197,6 +202,11 @@
             {
                 "name": "Conditionals",
                 "route_name": "docs.php.conditionals",
+                "icon": "php"
+            },
+            {
+                "name": "Enums",
+                "route_name": "docs.php.enums",
                 "icon": "php"
             }
         ]

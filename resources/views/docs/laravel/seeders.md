@@ -1,116 +1,31 @@
-# Migrations, Factories and Seeding
+# Seeding Data
 
 <!-- TOC -->
 
-- [Running Factories](#running-factories)
-    - [Has Many Relationships](#has-many-relationships)
-    - [Belongs To Relationship](#belongs-to-relationship)
-- [Seeding Techniques](#seeding-techniques)
-    - [Seed using records from an existing table](#seed-using-records-from-an-existing-table)
+- [Text and Paragraphs](#text-and-paragraphs)
+- [Seed using records from an existing table](#seed-using-records-from-an-existing-table)
 - [Seeding Data Examples](#seeding-data-examples)
-    - [Booleans](#booleans)
-    - [Text and Paragraphs](#text-and-paragraphs)
-    - [Arrays and Random Elements](#arrays-and-random-elements)
-    - [Numbers](#numbers)
-        - [`randomFloat`](#randomfloat)
-    - [Date and Time](#date-and-time)
-        - [Get 100 random dates within the last year](#get-100-random-dates-within-the-last-year)
+- [Booleans](#booleans)
+- [Arrays and Random Elements](#arrays-and-random-elements)
+- [Numbers](#numbers)
+    - [`randomFloat`](#randomfloat)
+- [Date and Time](#date-and-time)
+    - [Get 100 random dates within the last year](#get-100-random-dates-within-the-last-year)
 - [FAQ's and Trouble Shooting](#faqs-and-trouble-shooting)
-        - [How can I create and run a package seeder?](#how-can-i-create-and-run-a-package-seeder)
-        - [Error: Array to string conversion](#error-array-to-string-conversion)
+    - [How can I create and run a package seeder?](#how-can-i-create-and-run-a-package-seeder)
+    - [Error: Array to string conversion](#error-array-to-string-conversion)
 
 <!-- /TOC -->
 
-<a id="markdown-running-factories" name="running-factories"></a>
-
-## Running Factories
-
-```php
-\App\Models\Course::factory(10)->create();
-```
-
-```php
-// A user has one profile
-User::factory(10)
-    ->has(UserProfile::factory())
-    ->create();
-```
-
-<a id="markdown-has-many-relationships" name="has-many-relationships"></a>
-
-### Has Many Relationships
-
-```php
-// verbose
-Course::factory(10)->has(Chapter::factory()->count(4))->create();
-// magic method
-Course::factory(10)->hasChapters(5)->create();
-```
-<a id="markdown-belongs-to-relationship" name="belongs-to-relationship"></a>
-
-### Belongs To Relationship
-
-```php
-// verbose
-Chapter::factory()->count(3)->for(Course::factory())->create();
-// magic method
-Chapter::factory(3)->forCourse()->create();
-
-```
-
-
-Create the parent record and seed children
-
-```php
-Chapter::factory(3)->for(Course::create([
-    'code' => 'COU_PR27',
-    'title' => 'Sample Course',
-]))->create();
-```
-
-<a id="markdown-seeding-techniques" name="seeding-techniques"></a>
-
-## Seeding Techniques
-
-<a id="markdown-seed-using-records-from-an-existing-table" name="seed-using-records-from-an-existing-table"></a>
-
-### Seed using records from an existing table
-
-For example, lets say you want to make a `playlist` of `songs` from an the 'songs table' where the
-songs are not created using a seeder.
-
-
-```php
-return [
-    'song_id' => Arr::random(Song::all()->pluck('id')->toArray()),
-];
-```
-
-
-
-<a id="markdown-seeding-data-examples" name="seeding-data-examples"></a>
-
-## Seeding Data Examples
-
-[Faker Docs](https://fakerphp.github.io/)
-
-<a id="markdown-booleans" name="booleans"></a>
-
-### Booleans
-
-```php
-'is_published' => (rand(1,9) > 7)
-```
 
 <a id="markdown-text-and-paragraphs" name="text-and-paragraphs"></a>
 
-### Text and Paragraphs
+## Text and Paragraphs
 
 ```php
 'name' => $this->faker->name();        // 'Vince Sporer'
 'email' => $this->faker->email();      // 'walter.sophia@hotmail.com'
 'status' => $this->faker->randomElement(['success', 'failed', 'processing']),
-$this->faker->address;☺
 
 // array of words ['praesentium', 'possimus', 'modi']
 '' => $this->faker->words(),
@@ -130,13 +45,56 @@ $this->faker->address;☺
 '' => $this->faker->paragraph(2);
 
 '' => $this->faker->paragraph(2, false);
-
-
 ```
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+<a id="markdown-seed-using-records-from-an-existing-table" name="seed-using-records-from-an-existing-table"></a>
+
+## Seed using records from an existing table
+
+For example, lets say you want to make a `playlist` of `songs` from an the 'songs table' where the
+songs are not created using a seeder.
+
+
+```php
+return [
+    'song_id' => Arr::random(Song::all()->pluck('id')->toArray()),
+];
+```
+
+
+
+
+<a id="markdown-seeding-data-examples" name="seeding-data-examples"></a>
+
+## Seeding Data Examples
+
+[Faker Docs](https://fakerphp.github.io/)
+
+
+<a id="markdown-booleans" name="booleans"></a>
+
+## Booleans
+
+```php
+'is_published' => (rand(1,9) > 7)
+```
+
+
+
 
 <a id="markdown-arrays-and-random-elements" name="arrays-and-random-elements"></a>
 
-### Arrays and Random Elements
+## Arrays and Random Elements
 
 ```php
 <!-- Select random value from array -->
@@ -144,9 +102,10 @@ $images = ['samples/sample001-600x338.jpg', 'samples/sample002-600x338.jpg', 'sa
 'image' => $this->faker->randomElement($images),
 ```
 
+
 <a id="markdown-numbers" name="numbers"></a>
 
-### Numbers
+## Numbers
 
 ```php
 random_int(5, 87),
@@ -161,9 +120,10 @@ random_int(5, 87),
 'price' => $this->faker->numberBetween(500, 100000);
 
 ```
+
 <a id="markdown-randomfloat" name="randomfloat"></a>
 
-#### `randomFloat`
+### `randomFloat`
 
 ```php
 'price' => $this->faker->randomFloat(2),
@@ -174,9 +134,10 @@ random_int(5, 87),
 
 ```
 
+
 <a id="markdown-date-and-time" name="date-and-time"></a>
 
-### Date and Time
+## Date and Time
 
 ```php
 'created_at' => now(),
@@ -190,9 +151,10 @@ random_int(5, 87),
 'payment_id' => Str::random(10)
 
 
+
 <a id="markdown-get-100-random-dates-within-the-last-year" name="get-100-random-dates-within-the-last-year"></a>
 
-#### Get 100 random dates within the last year
+### Get 100 random dates within the last year
 
 ```php
 $dates = [];
@@ -203,13 +165,15 @@ for ($i = 0; $i < 100; $i++) {
 }
 ```
 
+
 <a id="markdown-faqs-and-trouble-shooting" name="faqs-and-trouble-shooting"></a>
 
 ## FAQ's and Trouble Shooting
 
+
 <a id="markdown-how-can-i-create-and-run-a-package-seeder" name="how-can-i-create-and-run-a-package-seeder"></a>
 
-#### How can I create and run a package seeder?
+### How can I create and run a package seeder?
 
 Create the seeder as you would any other and be sure to update the namespace to your package namespace.
 
@@ -241,9 +205,10 @@ Add seeder to `DatabaseSeeder.php`
 $this->call(\Naykel\Pageit\Database\Seeders\PageSeeder::class);
 ```
 
+
 <a id="markdown-error-array-to-string-conversion" name="error-array-to-string-conversion"></a>
 
-#### Error: Array to string conversion
+### Error: Array to string conversion
 
 Make sure `$cast` is set in the model
 

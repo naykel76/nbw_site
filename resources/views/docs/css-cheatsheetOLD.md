@@ -6,13 +6,6 @@
 - [Selectors](#selectors)
 - [Setting Widths](#setting-widths)
         - [How do I make one flex-item 100%](#how-do-i-make-one-flex-item-100)
-- [Typography](#typography)
-    - [Responsive Type](#responsive-type)
-- [Combinators](#combinators)
-    - [Child Selectors](#child-selectors)
-        - [Exclude first:child](#exclude-firstchild)
-    - [Adjacent Sibling Combinator `+`](#adjacent-sibling-combinator-)
-    - [General Sibling Combinator `~`](#general-sibling-combinator-)
 - [Box Shadow](#box-shadow)
 
 <!-- /MarkdownTOC -->
@@ -61,8 +54,6 @@ https://www.w3schools.com/cssref/css_selectors.asp
 | [attribute*=value] | a[href*="w3schools"] | Selects every <a> element whose href attribute value contains the substring "w3schools" |
 
 
-
-
 <a id="setting-widths"></a>
 ## Setting Widths
 
@@ -74,78 +65,10 @@ Set a min and max width using clamp
 `clamp()`           // min, max, ideal size
 ```
 
-
-
 <a id="how-do-i-make-one-flex-item-100"></a>
 #### How do I make one flex-item 100%
 
 flex-basis is the initial starting width before flex-grow or flex shrink is applied
-
-<a id="typography"></a>
-## Typography
-
-Create CSS font size variables in the `:root` element so the can easily be overridden.
-
-    :root{
-        --fs-xl: 5rem;
-    }
-
-        <div class="danger bx">
-
-<a id="responsive-type"></a>
-### Responsive Type
-
-
-use clamp to specify a minimum and maximum text size
-
-<a id="combinators"></a>
-## Combinators
-
-
-<a id="child-selectors"></a>
-### Child Selectors
-
-The child selector selects all elements that are the children of a specified element.
-
-```css
-div > * { } /* Select any element where the parent is a <div> element */
-div > p { } /* Selects all <p> elements where the parent is a <div> element */
-```
-
-<a id="exclude-firstchild"></a>
-#### Exclude first:child
-
-This selector is good for adding properties such as `border-top` or `margin-top` as the property does not apply to the first-child
-
-```css
-.not-first-child > :not([hidden]) ~ :not([hidden]) { }
-```
-
-<a id="adjacent-sibling-combinator-"></a>
-### Adjacent Sibling Combinator `+`
-
-Allows you to select an element that is placed immediately after another element.
-
-    p + p { } /* Selects all paragraphs that follow another paragraph */
-
-
-<a id="general-sibling-combinator-~"></a>
-### General Sibling Combinator `~`
-
-The general sibling combinator is similar to the adjacent sibling combinator. The difference is that that the element being selected doesn’t need to immediately succeed the first element, but can appear anywhere after it.
-
-
-```css
-.abc ~ .xyz { color: red; } /* Select every .xyz class that follows the .abc class */
-```
-
-```html
-<div class="abc"> ... </div>
-<div class="xyz"> Pick Me! </div>
-<div class="abc">
-    <div class="xyz"> ... </div>
-</div>
-```
 
 
 
