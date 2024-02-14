@@ -1,6 +1,4 @@
-# JOIN Examples
-<a id="markdown-join-examples" name="join-examples"></a>
-
+pr# JOIN Examples
 <!-- TOC -->
 
 - [Examples](#examples)
@@ -27,9 +25,9 @@ CONSTRAINED ON `current_table.join_to_id`(FK)
 Model::join('join_to', 'join_to.id', 'current_table.join_to_id')->get();
 ```
 
-## Examples
 <a id="markdown-examples" name="examples"></a>
 
+## Examples
 ```sql
 SELECT * FROM chapters
 INNER JOIN media ON chapters.id = media.chapter_id;

@@ -44,13 +44,13 @@
             {
                 "name": "Linux",
                 "route_name": "docs.linux.linux-cheatsheet",
-                "icon": "linux",
+                "icon_logo": "linux",
                 "exclude_route": true
             },
             {
                 "name": "Livewire",
                 "route_name": "docs.livewire.quick-reference",
-                "icon": "livewire",
+                "icon_logo": "livewire",
                 "exclude_route": true
             },
             {
@@ -220,6 +220,11 @@
             {
                 "name": "Cheatsheet",
                 "route_name": "docs.sql.sql-cheatsheet",
+                "icon": "mysql"
+            },
+            {
+                "name": "ALTER",
+                "route_name": "docs.sql.alter",
                 "icon": "mysql"
             },
             {

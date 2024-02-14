@@ -19,7 +19,7 @@ sudo apt install npm
 Installing NPM will also install node but it will not be the latest version! To resolve this issue install node version manager, then install latest stable node version, and switch to it.
 
 <div class="bx warning flex va-c">
-    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#question-mark-circlermation-circle"></use></svg>
+    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#information-circle"></use></svg>
     <div>Installing NPM will also install node but it will not be the latest version! To resolve this issue install node version manager, then install latest stable node version, and switch to it.</div>
 </div>
 

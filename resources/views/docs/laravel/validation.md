@@ -3,7 +3,7 @@
 - [Numbers and Currency](#numbers-and-currency)
     - [Phone Number](#phone-number)
 - [Unique](#unique)
-    - [Ignore a given ID](#ignore-a-given-id)
+    - [Ignore a given ID or a specific record](#ignore-a-given-id-or-a-specific-record)
 - [Things worth noting](#things-worth-noting)
     - [Required (if | unless)](#required-if--unless)
     - [Conditionally Adding Rules (exclude\_if | exclude\_unless)](#conditionally-adding-rules-exclude_if--exclude_unless)
@@ -51,18 +51,24 @@ In this example, we're validating a phone number input called "phone_number" tha
 `unique:table,column,except,idColumn`
 
 
-<a id="markdown-ignore-a-given-id" name="ignore-a-given-id"></a>
+<a id="markdown-ignore-a-given-id-or-a-specific-record" name="ignore-a-given-id-or-a-specific-record"></a>
 
-### Ignore a given ID
+### Ignore a given ID or a specific record
 
 ```php
 'code' => 'required|min:3|unique:courses,code,' . $this->course->id,
+'email' => 'required|string|email|max:255|unique:users,email,' . auth()->user()->id,
 ```
 
 ```php
 use Illuminate\Validation\Rule;
+
 'code' => ['required', Rule::unique('courses')->ignore($this->course)],
 ```
+
+
+
+
 
 <a id="markdown-things-worth-noting" name="things-worth-noting"></a>
 

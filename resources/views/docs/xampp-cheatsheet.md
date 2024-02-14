@@ -2,6 +2,8 @@
 
 <!-- TOC -->
 
+- [x](#x)
+- [Setting up HTTPS on XAMPP](#setting-up-https-on-xampp)
 - [Generate a self-signed certificate for testing purposes](#generate-a-self-signed-certificate-for-testing-purposes)
 - [Change htdocs location](#change-htdocs-location)
 - [How to Setup a Virtual Host](#how-to-setup-a-virtual-host)
@@ -12,7 +14,54 @@
 
 <!-- /TOC -->
 
+<a id="markdown-x" name="x"></a>
 
+## x
+
+
+<a id="markdown-setting-up-https-on-xampp" name="setting-up-https-on-xampp"></a>
+
+## Setting up HTTPS on XAMPP
+
+1. Navigate to the Apache directory in your XAMPP installation:
+```bash
+cd /c/xampp/apache
+```
+2. Create a new directory to store your SSL keys with the `mkdir` command:
+```bash
+mkdir conf/ssl.crt
+```
+3. Use the `openssl` command to generate a new self-signed SSL certificate:
+```
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout conf/ssl.key/server.key -out conf/ssl.crt/server.crt
+```
+You will be prompted to enter some information for the certificate. Enter whatever you like, or leave the fields blank.
+
+4. Open the Apache `httpd.conf` configuration file in a text editor. You can find this file in the `/xampp/apache/conf` directory.
+5. Uncomment the line that includes the SSL module:
+```
+LoadModule ssl_module modules/mod_ssl.so
+```
+6. Open the `httpd-ssl.conf` SSL configuration file in a text editor. You can find this file in the `/xampp/apache/conf/extra` directory.
+7. Find the lines that set the paths to the SSL certificate and key, and update them to point to the files you created earlier:
+```
+SSLCertificateFile "conf/ssl.crt/server.crt"
+SSLCertificateKeyFile "conf/ssl.key/server.key"
+```
+
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
 <a id="markdown-generate-a-self-signed-certificate-for-testing-purposes" name="generate-a-self-signed-certificate-for-testing-purposes"></a>
 
 ## Generate a self-signed certificate for testing purposes

@@ -51,7 +51,7 @@
                 "icon": "laravel"
             },
             {
-                "name": "Model and Migrations",
+                "name": "Migrations",
                 "route_name": "docs.laravel.migrations",
                 "icon": "laravel"
             },

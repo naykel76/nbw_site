@@ -2,7 +2,6 @@
 
 <!-- TOC -->
 
-- [x-collapse](#x-collapse)
 - [Accordion using `x-show`](#accordion-using-x-show)
     - [Single item accordion](#single-item-accordion)
     - [Multiple item accordion (single open)](#multiple-item-accordion-single-open)
@@ -15,28 +14,14 @@
 
 <!-- /TOC -->
 
-<a id="markdown-x-collapse" name="x-collapse"></a>
-
-## x-collapse
-
-This is similar to `x-show` but it allows you to expand and collapse elements using smooth
-animations.
-
-<div x-data="{ expanded: false }">
-    <button class="btn" x-on:click.prevent="expanded = ! expanded">Toggle Content</button>
-    <p class="my" x-show="expanded" x-collapse>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum odio eligendi error. Voluptate repellendus, omnis dicta, assumenda quisquam illo aperiam amet laboriosam excepturi quo tenetur, vero ducimus accusantium aliquid sed? </p>
-</div>
-
-```html
-<div x-data="{ expanded: false }">
-    <button class="btn" x-on:click.prevent="expanded = ! expanded">Toggle Content</button>
-    <p class="my" x-show="expanded" x-collapse> ... </p>
-</div>
-```
 
 <a id="markdown-accordion-using-x-show" name="accordion-using-x-show"></a>
 
 ## Accordion using `x-show`
+
+https://vimeo.com/653784397/617233130
+
+Add `x-collapse` to the `x-show` directive to animate the opening and closing of the accordion.
 
 <a id="markdown-single-item-accordion" name="single-item-accordion"></a>
 
@@ -122,7 +107,7 @@ animations.
 ```
 
 <div class="bx info flex va-c">
-    <svg class="icon wh-4 fs0 mr-2"> <use xlink:href="/svg/naykel-ui.svg#question-mark-circlermation-circle"></use> </svg>
+    <svg class="icon wh-4 fs0 mr-2"> <use xlink:href="/svg/naykel-ui.svg#question-mark-circle"></use> </svg>
     <p>You can use a combination of events to open and close elements.</p>
 </div>
 

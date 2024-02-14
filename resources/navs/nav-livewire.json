@@ -5,6 +5,11 @@
                 "name": "Quick Reference",
                 "route_name": "docs.livewire.quick-reference",
                 "icon": "livewire"
+            },
+            {
+                "name": "Troubleshooting",
+                "route_name": "docs.livewire.troubleshooting",
+                "icon": "livewire"
             }
         ]
     },
@@ -17,22 +22,19 @@
             {
                 "name": "Events",
                 "route_name": "docs.livewire.events"
+            },
+            {
+                "name": "Form Objects",
+                "route_name": "docs.livewire.form-objects"
             }
         ]
     },
-    "Tutorials": {
+    "Techniques": {
         "links": [
             {
-                "name": "Form Object",
-                "route_name": "docs.livewire.tutorials.form-essentials-01-form-object"
-            },
-            {
-                "name": "CreateEdit Component",
-                "route_name": "docs.livewire.tutorials.form-essentials-02-create-edit-component"
-            },
-            {
-                "name": "Data Table",
-                "route_name": "docs.livewire.tutorials.form-essentials-03-data-table"
+                "name": "Real-time form saving",
+                "route_name": "docs.livewire.real-time-form-saving",
+                "type": "blade"
             }
         ]
     }

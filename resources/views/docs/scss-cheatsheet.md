@@ -7,6 +7,8 @@
 - [Strings](#strings)
     - [Check if last character is a dash and remove](#check-if-last-character-is-a-dash-and-remove)
 - [Maps](#maps)
+    - [Get values](#get-values)
+    - [Get nested value](#get-nested-value)
     - [Add or Merge Maps](#add-or-merge-maps)
     - [Map Keys](#map-keys)
     - [Override map value](#override-map-value)
@@ -61,8 +63,6 @@ $class: "bdr-";
 
 ## Maps
 
-    @use "sass:map";
-    map-get($map, $key, $keys...)
     map.deep-merge($map1, $map2) //=> map
     map.deep-remove($map, $key, $keys...) //=> map
     map.merge($map1, $keys..., $map2)
@@ -70,6 +70,26 @@ $class: "bdr-";
     map.set($map, $key, $value)
     map.values($map)
 
+<a id="markdown-get-values" name="get-values"></a>
+
+### Get values
+
+    map-get($map, $key, $keys...)
+
+<a id="markdown-get-nested-value" name="get-nested-value"></a>
+
+### Get nested value
+
+```scss
+$color-maps: (
+    "blue": ( "100": #dbeafe, "200": #bfdbfe ),
+    "red": ( "100": #fee2e2, "200": #fecaca )
+);
+
+@debug map-get($color-maps, 'blue'); // ("100": #dbeafe, "200": #bfdbfe)
+@debug map-get($color-maps, 'blue', '100'); // #dbeafe
+
+```
 
 <a id="markdown-add-or-merge-maps" name="add-or-merge-maps"></a>
 

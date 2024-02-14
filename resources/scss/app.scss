@@ -11,7 +11,7 @@ $x-text: rgb(228, 232, 236);
     $accent: $x-accent,
     $body-bg: $x-background,
     $font-family: $x-font-family,
-    $text: $x-text,
+    $color: $x-text,
     $zebra-alt-bg: #ffffff,
     $navbar-bg: transparent,
     $navbar-nav-hover-color: #ffbb1c,
@@ -81,28 +81,6 @@ th {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
-}
-
-// make the first column in the table body code font
-question {
-    + * {
-        margin-top: 2rem;
-        font-weight: 400;
-        font-style: italic;
-        color: rgb(50, 114, 231);
-        font-size: 1.2rem;
-        code {
-            font-size: 1.1rem;
-        }
-    }
-}
-
-answer + p {
-    margin-top: 0.5rem;
-}
-answer + ul {
-    margin-top: 0.5rem;
-    margin-left: 1.5rem;
 }
 
 // ------------------------------------------------------------------

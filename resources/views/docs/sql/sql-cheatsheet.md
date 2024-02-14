@@ -1,14 +1,9 @@
 # SQL Cheatsheet
-<a id="markdown-sql-cheatsheet" name="sql-cheatsheet"></a>
-
 <!-- TOC -->
 
+- [Split a string into multiple columns](#split-a-string-into-multiple-columns)
 - [Date and Time](#date-and-time)
     - [Set current date `CURDATE()`](#set-current-date-curdate)
-- [ALTER](#alter)
-    - [ADD Column](#add-column)
-        - [AFTER](#after)
-    - [Rename Column](#rename-column)
 - [CREATE](#create)
     - [RENAME Table](#rename-table)
     - [DROP COLUMN](#drop-column)
@@ -29,53 +24,35 @@
 | SUM    | `SELECT SUM(Price * Quantity) FROM stock;` |       |
 | SUM    | `SELECT SUM(Price) FROM stock;`            |       |
 
-## Date and Time
+
+<a id="markdown-split-a-string-into-multiple-columns" name="split-a-string-into-multiple-columns"></a>
+
+## Split a string into multiple columns
+
+Splits a name into first and last name
+
+```sql
+UPDATE users
+SET lastname = SUBSTRING_INDEX(name, ' ', -1),
+    firstname = SUBSTRING_INDEX(name, ' ', 1);
+```
+
 <a id="markdown-date-and-time" name="date-and-time"></a>
 
+## Date and Time
 
-### Set current date `CURDATE()`
 <a id="markdown-set-current-date-curdate" name="set-current-date-curdate"></a>
 
+### Set current date `CURDATE()`
 ```sql
 UPDATE my_table
 SET date_column = CURDATE();
 ```
 
-## ALTER
-<a id="markdown-alter" name="alter"></a>
 
-The ALTER TABLE statement can be used to add, delete, or modify columns in an existing table as well as add and drop various constraints on an existing table.
-
-### ADD Column
-<a id="markdown-add-column" name="add-column"></a>
-
-```sql
-ALTER TABLE table_name
-ADD column_name datatype;
-```
-
-#### AFTER
-<a id="markdown-after" name="after"></a>
-
-Note, you can add multiple columns at the same time.
-
-```sql
-ALTER TABLE table_name
-ADD column_name datatype
-AFTER column_name;
-```
-
-
-### Rename Column
-<a id="markdown-rename-column" name="rename-column"></a>
-
-```sql
-ALTER TABLE table_name CHANGE old_column new_column datatype;
-```
-
-## CREATE
 <a id="markdown-create" name="create"></a>
 
+## CREATE
 ```sql
 CREATE TABLE IF NOT EXISTS table_name (
     column1 datatype,
@@ -83,37 +60,39 @@ CREATE TABLE IF NOT EXISTS table_name (
 );
 ```
 
-### RENAME Table
 <a id="markdown-rename-table" name="rename-table"></a>
 
+### RENAME Table
 ```sql
 ALTER TABLE table_name RENAME To new_table_name
 ```
 
-### DROP COLUMN
 <a id="markdown-drop-column" name="drop-column"></a>
 
+### DROP COLUMN
 ```sql
 ALTER TABLE table_name DROP column_name;
 ```
 
 ---
 
-## `DELETE` all records
 <a id="markdown-delete-all-records" name="delete-all-records"></a>
+
+## `DELETE` all records
 ```sql
 DELETE FROM my_table;
 ```
 
-## `DELETE` conditional records
 <a id="markdown-delete-conditional-records" name="delete-conditional-records"></a>
+
+## `DELETE` conditional records
 ```sql
 DELETE FROM my_table WHERE [condition];
 ```
 
-## INSERT
 <a id="markdown-insert" name="insert"></a>
 
+## INSERT
 FYI, both `VAULE` and `VAULES` are valid syntax.
 
 ```sql
@@ -127,9 +106,9 @@ INSERT INTO my_table(id, col1, col2) VALUES (null, val1, val2), (null, val1, val
 INSERT INTO my_table SELECT * FROM other_table;
 ```
 
-### Specify Columns
 <a id="markdown-specify-columns" name="specify-columns"></a>
 
+### Specify Columns
 ```sql
 INSERT INTO my_table(id, col1, col2) VALUES (null, val1, val2)
 -- seperate records with a comma to insert multiple records
@@ -139,9 +118,9 @@ INSERT INTO my_table(id, col1, col2) VALUES (null, val1, val2), (null, val1, val
 
 
 
-## Functions
 <a id="markdown-functions" name="functions"></a>
 
+## Functions
 
 
 ```sql
@@ -157,9 +136,9 @@ FROM chapters WHERE title LIKE '%Section%';
 
 
 
-#### Select by the number of segments in a path
 <a id="markdown-select-by-the-number-of-segments-in-a-path" name="select-by-the-number-of-segments-in-a-path"></a>
 
+#### Select by the number of segments in a path
 ```sql
 SELECT route_prefix
 FROM pages
@@ -172,9 +151,9 @@ AND LENGTH(route) - LENGTH(REPLACE(route, '/', '')) + 1 = 2 filters the results 
 
 This will only work with the exact number of slashes
 
-## Advance query examples
 <a id="markdown-advance-query-examples" name="advance-query-examples"></a>
 
+## Advance query examples
 | id  | type | title           | courses | main_category_id | sub_category_id |
 | --- | ---- | --------------- | ------- | ---------------- | --------------- |
 | 1   | main | Main Category 1 | null    | null             | null            |

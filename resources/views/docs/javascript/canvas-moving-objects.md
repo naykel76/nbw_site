@@ -76,7 +76,7 @@ requestAnimationFrame(callback)
 ```
 
 <div class="bx info flex">
-    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#question-mark-circlermation-circle"></use></svg>
+    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#information-circle"></use></svg>
     <div>Note: Your callback routine must itself call requestAnimationFrame() again if you want to animate another frame at the next repaint. requestAnimationFrame() is 1 shot</div>
 </div>
 

@@ -68,7 +68,7 @@ The short version
 - Capturing, also known as 'trickling' goes from the root down to the target element.
 
 <div class="bx purple flex va-c">
-    <svg class="icon wh-2 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#question-mark-circlermation-circle"></use></svg>
+    <svg class="icon wh-2 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#information-circle"></use></svg>
      <div>Remember, bubbles go up, water trickles down.</div>
 </div>
 

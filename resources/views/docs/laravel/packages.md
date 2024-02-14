@@ -3,8 +3,10 @@
 
 <!-- TOC -->
 
+- [Configuration](#configuration)
+    - [Publish Configuration](#publish-configuration)
+    - [Merge Configuration](#merge-configuration)
 - [Loading and Merging Resources](#loading-and-merging-resources)
-- [Publishing](#publishing)
 - [Register Package Components](#register-package-components)
     - [Blade Component](#blade-component)
     - [Livewire Component](#livewire-component)
@@ -13,6 +15,35 @@
     - [Error: Unable to find component](#error-unable-to-find-component)
 
 <!-- /TOC -->
+
+
+<a id="markdown-configuration" name="configuration"></a>
+
+## Configuration
+
+<a id="markdown-publish-configuration" name="publish-configuration"></a>
+
+### Publish Configuration
+
+```php
+public function boot(): void
+{
+    $this->publishes([
+        __DIR__.'/../config/naykel.php' => config_path('naykel.php'),
+    ]);
+}
+```
+
+<a id="markdown-merge-configuration" name="merge-configuration"></a>
+
+### Merge Configuration
+
+```php
+public function register(): void
+{
+    $this->mergeConfigFrom( __DIR__ . '/config/naykel.php', 'naykel' );
+}
+```
 
 <a id="markdown-loading-and-merging-resources" name="loading-and-merging-resources"></a>
 
@@ -28,21 +59,8 @@ public function boot(): void
     $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
     $this->loadRoutesFrom(__DIR__.'/routes.php');
 }
-
 ```
 
-<a id="markdown-publishing" name="publishing"></a>
-
-## Publishing
-
-```php
-public function boot(): void
-{
-    $this->publishes([
-        __DIR__.'/../config/naykel.php' => config_path('naykel.php'),
-    ]);
-}
-```
 
 <a id="markdown-register-package-components" name="register-package-components"></a>
 
@@ -96,9 +114,9 @@ public function register(){
 
 ```bash
 # include seeder in project
-$this->call(\Naykel\Payit\Database\Seeders\PaymentPlatformSeeder::class);
+$this->call(\Naykel\naykel\Database\Seeders\PaymentPlatformSeeder::class);
 # seed from command line
-php artisan db:seed --class=Naykel\\Payit\\Database\\Seeders\\PaymentPlatformSeeder
+php artisan db:seed --class=Naykel\\naykel\\Database\\Seeders\\PaymentPlatformSeeder
 ```
 
 

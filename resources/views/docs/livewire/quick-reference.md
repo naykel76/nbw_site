@@ -2,22 +2,11 @@
 
 <!-- TOC -->
 
-- [Make a child component "reactive" based on parent changes.](#make-a-child-component-reactive-based-on-parent-changes)
 - [HTML Directives](#html-directives)
 - [Entangle](#entangle)
 - [Tips and Tricks](#tips-and-tricks)
 
 <!-- /TOC -->
-
-<a id="markdown-make-a-child-component-reactive-based-on-parent-changes" name="make-a-child-component-reactive-based-on-parent-changes"></a>
-
-## Make a child component "reactive" based on parent changes.
-
-This technique forces the child to mount each time the parent is updated. Read more [here](https://github.com/livewire/livewire/discussions/2097)
-
-```html
-<livewire:create-question-answers key="{{ Str::random()}}" :quiz-id="$editing->id" />
-```
 
 <a id="markdown-html-directives" name="html-directives"></a>
 
@@ -37,7 +26,6 @@ Target specific elements with `wire:target` and `wire:loading.class` or `wire:lo
 ```html
 <button wire:click="save" wire:loading.attr="disabled" wire:target="save">Save</button>
 ```
-
 
 <a id="markdown-entangle" name="entangle"></a>
 
