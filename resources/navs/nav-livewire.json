@@ -32,8 +32,8 @@
     "Techniques": {
         "links": [
             {
-                "name": "Real-time form saving",
-                "route_name": "docs.livewire.real-time-form-saving",
+                "name": "Form Techniques",
+                "route_name": "docs.livewire.form-techniques",
                 "type": "blade"
             }
         ]

@@ -13,8 +13,9 @@
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
+        "naykel/authit": "^2.2",
         "naykel/contactit": "^1.3",
-        "naykel/gotime": "dev-update"
+        "naykel/gotime": "dev-master"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.9",

@@ -30,11 +30,3 @@ Route::get('/dev', [TestingController::class, 'timer'])->name('dev');
 (new RouteBuilder('nav-livewire', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-programming', 'components.layouts.docs-default')) ->create();
 (new RouteBuilder('nav-programming', 'components.layouts.docs-default'))->create();
-
-Route::get('/2701', [Uni2701Controller::class, 'show'])->name('uni.2701');
-
-// Route::get('/docs/laravel/components-and-integrations', Choices::class)
-//     ->name('docs.laravel.choices');
-
-// Route::get('/docs/laravel/select', Select::class)
-//     ->name('docs.laravel.select');
