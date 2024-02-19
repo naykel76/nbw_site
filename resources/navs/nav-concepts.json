@@ -20,7 +20,7 @@
             {
                 "name": "How To Use Interfaces In a Laravel Project",
                 "route_name": "pages.laravel.how-to-use-interfaces-in-a-Laravel-project",
-                "icon": "laravel"
+                "icon_logo": "laravel"
             }
         ]
     }

@@ -1,10 +1,10 @@
 <!-- TOC -->
 
+- [Things worth noting](#things-worth-noting)
 - [Numbers and Currency](#numbers-and-currency)
     - [Phone Number](#phone-number)
 - [Unique](#unique)
     - [Ignore a given ID or a specific record](#ignore-a-given-id-or-a-specific-record)
-- [Things worth noting](#things-worth-noting)
     - [Required (if | unless)](#required-if--unless)
     - [Conditionally Adding Rules (exclude\_if | exclude\_unless)](#conditionally-adding-rules-exclude_if--exclude_unless)
 - [Conditional Rules](#conditional-rules)
@@ -14,6 +14,15 @@
     - [Unique Based on Multiple Conditions](#unique-based-on-multiple-conditions)
 
 <!-- /TOC -->
+
+<a id="markdown-things-worth-noting" name="things-worth-noting"></a>
+
+## Things worth noting
+
+By default, Laravel includes the `TrimStrings` and `ConvertEmptyStringsToNull` middleware in your
+application's global middleware stack. Because of this, you will often need to mark your
+"optional" request fields as `nullable` if you do not want the validator to consider `null` values
+as invalid.
 
 <a id="markdown-numbers-and-currency" name="numbers-and-currency"></a>
 
@@ -70,14 +79,7 @@ use Illuminate\Validation\Rule;
 
 
 
-<a id="markdown-things-worth-noting" name="things-worth-noting"></a>
 
-## Things worth noting
-
-By default, Laravel includes the `TrimStrings` and `ConvertEmptyStringsToNull` middleware in your
-application's global middleware stack. Because of this, you will often need to mark your
-"optional" request fields as `nullable` if you do not want the validator to consider `null` values
-as invalid.
 
 -
 -

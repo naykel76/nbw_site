@@ -4,7 +4,7 @@
             {
                 "name": "Quick Reference",
                 "route_name": "docs.laravel.quick-reference",
-                "icon": "laravel"
+                "icon_logo": "laravel"
             }
         ]
     },
@@ -12,63 +12,51 @@
         "links": [
             {
                 "name": "Blade",
-                "route_name": "docs.laravel.blade",
-                "icon": "laravel"
+                "route_name": "docs.laravel.blade"
             },
             {
                 "name": "Components",
-                "route_name": "docs.laravel.components",
-                "icon": "laravel"
+                "route_name": "docs.laravel.components"
             },
             {
                 "name": "Collections",
-                "route_name": "docs.laravel.collections",
-                "icon": "laravel"
+                "route_name": "docs.laravel.collections"
             },
             {
                 "name": "Date Time",
-                "route_name": "docs.laravel.date-and-time",
-                "icon": "laravel"
+                "route_name": "docs.laravel.date-and-time"
             },
             {
                 "name": "CRUD",
-                "route_name": "docs.laravel.crud",
-                "icon": "laravel"
+                "route_name": "docs.laravel.crud"
             },
             {
                 "name": "Factories",
-                "route_name": "docs.laravel.factories",
-                "icon": "laravel"
+                "route_name": "docs.laravel.factories"
             },
             {
                 "name": "Seeder",
-                "route_name": "docs.laravel.seeders",
-                "icon": "laravel"
+                "route_name": "docs.laravel.seeders"
             },
             {
                 "name": "Mail",
-                "route_name": "docs.laravel.mail",
-                "icon": "laravel"
+                "route_name": "docs.laravel.mail"
             },
             {
                 "name": "Migrations",
-                "route_name": "docs.laravel.migrations",
-                "icon": "laravel"
+                "route_name": "docs.laravel.migrations"
             },
             {
                 "name": "Packages",
-                "route_name": "docs.laravel.packages",
-                "icon": "laravel"
+                "route_name": "docs.laravel.packages"
             },
             {
                 "name": "Routes",
-                "route_name": "docs.laravel.routes",
-                "icon": "laravel"
+                "route_name": "docs.laravel.routes"
             },
             {
                 "name": "Validation",
-                "route_name": "docs.laravel.validation",
-                "icon": "laravel"
+                "route_name": "docs.laravel.validation"
             }
         ]
     },
@@ -76,8 +64,7 @@
         "links": [
             {
                 "name": "File Storage",
-                "route_name": "docs.laravel.file-storage",
-                "icon": "laravel"
+                "route_name": "docs.laravel.file-storage"
             }
         ]
     },
@@ -85,18 +72,15 @@
         "links": [
             {
                 "name": "Query Builder",
-                "route_name": "docs.laravel.eloquent-query-builder",
-                "icon": "laravel"
+                "route_name": "docs.laravel.eloquent-query-builder"
             },
             {
                 "name": "Eloquent and Query Examples",
-                "route_name": "docs.laravel.eloquent-query-builder-examples",
-                "icon": "laravel"
+                "route_name": "docs.laravel.eloquent-query-builder-examples"
             },
             {
                 "name": "Casting and Mutators",
-                "route_name": "docs.laravel.cast-and-mutators",
-                "icon": "laravel"
+                "route_name": "docs.laravel.cast-and-mutators"
             }
         ]
     }

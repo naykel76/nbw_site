@@ -2122,16 +2122,16 @@
         },
         {
             "name": "naykel/authit",
-            "version": "v2.2.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/naykel76/authit.git",
-                "reference": "32336bb7036bc889cbe54908b007b6ec23b89767"
+                "reference": "40fb09f4eef400554c735254785ad1e54653fb58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/naykel76/authit/zipball/32336bb7036bc889cbe54908b007b6ec23b89767",
-                "reference": "32336bb7036bc889cbe54908b007b6ec23b89767",
+                "url": "https://api.github.com/repos/naykel76/authit/zipball/40fb09f4eef400554c735254785ad1e54653fb58",
+                "reference": "40fb09f4eef400554c735254785ad1e54653fb58",
                 "shasum": ""
             },
             "require": {
@@ -2173,9 +2173,9 @@
             ],
             "support": {
                 "issues": "https://github.com/naykel76/authit/issues",
-                "source": "https://github.com/naykel76/authit/tree/v2.2.0"
+                "source": "https://github.com/naykel76/authit/tree/v2.3.0"
             },
-            "time": "2024-02-12T00:39:33+00:00"
+            "time": "2024-02-14T21:18:15+00:00"
         },
         {
             "name": "naykel/contactit",

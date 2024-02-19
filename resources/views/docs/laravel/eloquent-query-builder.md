@@ -1,9 +1,9 @@
 # Eloquent and Query Builder
 <!-- TOC -->
 
-- [SELECT](#select)
 - [JOIN](#join)
     - [JOIN and SELECT specific columns](#join-and-select-specific-columns)
+    - [JOIN multiple related tables](#join-multiple-related-tables)
     - [JOIN and ORDER BY relationship attribute](#join-and-order-by-relationship-attribute)
     - [Create an alias for shorter code](#create-an-alias-for-shorter-code)
 - [where or Where](#where-or-where)
@@ -12,11 +12,6 @@
 - [Raw Expressions](#raw-expressions)
 
 <!-- /TOC -->
-
-<a id="markdown-select" name="select"></a>
-
-## SELECT
-
 
 <a id="markdown-join" name="join"></a>
 
@@ -33,10 +28,12 @@ the remaining arguments specify the column constraints for the join.
 
 ```php
 CurrentTable::join('some_table', 'current_table.pk', '=', 'some_table.fk')
-    ->select('current_table.*', 'some_table.title as title')
-    ->get();
+    ->select('current_table.*', 'some_table.title as title');
 ```
 
+<a id="markdown-join-multiple-related-tables" name="join-multiple-related-tables"></a>
+
+### JOIN multiple related tables
 
 <a id="markdown-join-and-order-by-relationship-attribute" name="join-and-order-by-relationship-attribute"></a>
 
@@ -47,8 +44,7 @@ Rename ambiguous fields and make sure search and sort attributes are updated to 
 ```php
 $query = Chapter::join('courses', 'courses.id', '=', 'chapters.course_id')
     ->select('chapters.*','chapters.title as chapterTitle', 'courses.title as courseTitle')
-    ->orderBy('courseTitle', 'asc')
-    ->get();
+    ->orderBy('courseTitle', 'asc');
 ```
 
 <a id="markdown-create-an-alias-for-shorter-code" name="create-an-alias-for-shorter-code"></a>
@@ -58,8 +54,7 @@ $query = Chapter::join('courses', 'courses.id', '=', 'chapters.course_id')
 ```php
 $courseOutline = ExamPrepOutline::from('exam_prep_outlines as t1')
     ->join('exam_prep_outlines as t2', 't1.parent_id', '=', 't2.id')
-    ->select('t1.id', 't1.type', 't1.title', 't1.parent_id', 't2.title AS parent_title')
-    ->get();
+    ->select('t1.id', 't1.type', 't1.title', 't1.parent_id', 't2.title AS parent_title');
 ```
 
 <a id="markdown-where-or-where" name="where-or-where"></a>
@@ -69,8 +64,7 @@ $courseOutline = ExamPrepOutline::from('exam_prep_outlines as t1')
 ```php
 $courses = DB::table('courses')
     ->where('type', 'ep')
-    ->orWhere('type', 'ep-prog')
-    ->get();
+    ->orWhere('type', 'ep-prog');
 ```
 
 
@@ -82,8 +76,7 @@ $courses = DB::table('courses')
 ```php
 $randomUser = \App\Models\User::select('id')->whereNotNull('id')
     ->inRandomOrder()
-    ->limit(1)
-    ->get();
+    ->limit(1);
 ```
 
 
@@ -96,8 +89,7 @@ all the columns in the SELECT statement.
 
 ```php
 $categories = Page::select('route_prefix')
-    ->distinct()
-    ->get();
+    ->distinct();
 ```
 
 As an alternative, you could try using a `groupBy()` instead of `distinct()`.  This would group
@@ -105,8 +97,7 @@ the rows based on the select column value, which would eliminate any duplicates 
 
 ```php
 $categories = Page::select('route_prefix')
-    ->groupBy('route_prefix')
-    ->get();
+    ->groupBy('route_prefix');
 ```
 
 

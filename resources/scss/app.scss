@@ -18,9 +18,16 @@ $x-text: rgb(228, 232, 236);
     $navbar-nav-active-color: #ffbb1c
 );
 
+@use "node_modules/nk_jtb/src/forms/control" as *;
 @use "node_modules/nk_jtb/src/mixins/media" as *;
 @use "node_modules/nk_jtb/src/jtb";
 @use "./play";
+
+.ctrl-padding {
+    padding-inline: $ctrl-padding-x;
+    padding-block: $ctrl-padding-y;
+    border: 1px solid transparent;
+}
 
 .navbar:not(.markdown .navbar) {
     background-color: $body-bg;
@@ -88,8 +95,6 @@ th {
 // ------------------------------------------------------------------
 
 .diagonal {
-    // margin-top: 5rem;
-    // padding-block: 3rem;
     position: relative;
     // make sure the pseudo element is isolated (contained) in this class
     isolation: isolate;

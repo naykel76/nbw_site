@@ -1,9 +1,7 @@
 # UPDATE Statement Examples
-<a id="markdown-update-statement-examples" name="update-statement-examples"></a>
-
 <!-- TOC -->
 
-- [`UPDATE` Syntax](#update-syntax)
+- [UPDATE (multiple)](#update-multiple)
 - [`UPDATE` value(s) using `CONCAT()`](#update-values-using-concat)
 - [REPLACE](#replace)
 - [Advanced](#advanced)
@@ -12,33 +10,28 @@
 <!-- /TOC -->
 
 
-## `UPDATE` Syntax
-<a id="markdown-update-syntax" name="update-syntax"></a>
+<a id="markdown-update-multiple" name="update-multiple"></a>
 
+## UPDATE (multiple)
 ```sql
 UPDATE table_name
 SET column1 = value1, column2 = value2, ...
 WHERE condition;
 ```
 
-## `UPDATE` value(s) using `CONCAT()`
+
 <a id="markdown-update-values-using-concat" name="update-values-using-concat"></a>
+
+## `UPDATE` value(s) using `CONCAT()`
 ```sql
 UPDATE table_name
 SET column1 = CONCAT(column2, '/', column3)
 WHERE condition;
 ```
 
----
----
----
----
----
----
----
-## REPLACE
 <a id="markdown-replace" name="replace"></a>
 
+## REPLACE
     UPDATE table SET column = REPLACE(column, 'find_string', 'replace_string');
 
 
@@ -47,12 +40,12 @@ UPDATE chapters SET title = REPLACE(title, 'Section', 'Module')
 WHERE title LIKE '%Section%';
 ```
 
-## Advanced
 <a id="markdown-advanced" name="advanced"></a>
 
-#### Search for a string inside a column and replace
+## Advanced
 <a id="markdown-search-for-a-string-inside-a-column-and-replace" name="search-for-a-string-inside-a-column-and-replace"></a>
 
+#### Search for a string inside a column and replace
 **UNTESTED**
 
     UPDATE `table_name`

@@ -3,14 +3,16 @@
 <!-- TOC -->
 
 - [Text and Paragraphs](#text-and-paragraphs)
+    - [Sentence](#sentence)
+    - [Real text](#real-text)
+- [Numbers](#numbers)
+    - [`randomFloat`](#randomfloat)
+- [Arrays and Random Elements](#arrays-and-random-elements)
+- [Date and Time](#date-and-time)
+    - [Get 100 random dates within the last year](#get-100-random-dates-within-the-last-year)
 - [Seed using records from an existing table](#seed-using-records-from-an-existing-table)
 - [Seeding Data Examples](#seeding-data-examples)
 - [Booleans](#booleans)
-- [Arrays and Random Elements](#arrays-and-random-elements)
-- [Numbers](#numbers)
-    - [`randomFloat`](#randomfloat)
-- [Date and Time](#date-and-time)
-    - [Get 100 random dates within the last year](#get-100-random-dates-within-the-last-year)
 - [FAQ's and Trouble Shooting](#faqs-and-trouble-shooting)
     - [How can I create and run a package seeder?](#how-can-i-create-and-run-a-package-seeder)
     - [Error: Array to string conversion](#error-array-to-string-conversion)
@@ -22,41 +24,111 @@
 
 ## Text and Paragraphs
 
+<a id="markdown-sentence" name="sentence"></a>
+
+### Sentence
+
+```php
+// random string of text, remove last period and title case
+'title' => str($this->faker->sentence)->beforeLast('.')->title(),
+
+'description' => $this->faker->sentence,         // default 6 words
+'description' => $this->faker->sentence(10),     // set num words
+'description' => $this->faker->sentence(random_int(15, 50)),
+```
+
 ```php
 'name' => $this->faker->name();        // 'Vince Sporer'
 'email' => $this->faker->email();      // 'walter.sophia@hotmail.com'
 'status' => $this->faker->randomElement(['success', 'failed', 'processing']),
 
-// array of words ['praesentium', 'possimus', 'modi']
-'' => $this->faker->words(),
-'' => $this->faker->words(5),
-// string of words 'placeat vero saepe'
-'' => $this->faker->words(3, true),
-
-'description' => $this->faker->sentence,         // default 6 words
-'description' => $this->faker->sentence(10),     // set num words
-'description' => $this->faker->sentence(random_int(15, 50)),
-
-
 // random string of text (default 200 characters)
 'title' => $this->faker->text(random_int(30, 100)),
+
+
 'body' => $this->faker->randomHtml(2, 3),
-
-'' => $this->faker->paragraph(2);
-
-'' => $this->faker->paragraph(2, false);
 ```
 
--
--
--
--
--
--
--
--
--
--
+<a id="markdown-real-text" name="real-text"></a>
+
+### Real text
+
+```php
+'body' => $this->faker->realText(500)
+'body' => fake()->realText(500)
+```
+
+
+<a id="markdown-numbers" name="numbers"></a>
+
+## Numbers
+
+```php
+random_int(5, 87),
+
+// an integer between 0 and 9
+'' => $this->faker->randomDigit();
+// random integer with UP TO n digits (123, 43, 19238, 5, or 1203)
+'' => $this->faker->randomNumber(5, false);
+// random integer with EXACTLY n digits (2643, 42931, or 32919)
+'' => $this->faker->randomNumber(5, true);
+// integer between
+'price' => $this->faker->numberBetween(500, 100000);
+```
+
+<a id="markdown-randomfloat" name="randomfloat"></a>
+
+### `randomFloat`
+
+```php
+'price' => $this->faker->randomFloat(2),
+// decimals, min, max
+'price' => $this->faker->randomFloat(2, 5, 30);
+
+'price' => ceil($this->faker->randomFloat(2, 5, 10.50)*10)/10,
+
+```
+
+<a id="markdown-arrays-and-random-elements" name="arrays-and-random-elements"></a>
+
+## Arrays and Random Elements
+
+```php
+<!-- Select random value from array -->
+$images = ['samples/sample001-600x338.jpg', 'samples/sample002-600x338.jpg', 'samples/sample003-600x338.jpg'];
+'image' => $this->faker->randomElement($images),
+```
+
+<a id="markdown-date-and-time" name="date-and-time"></a>
+
+## Date and Time
+
+```php
+'created_at' => now(),
+// create random date within 1 year past and future
+'created_at' => Carbon::today()->subDays(rand(-365, 365)),
+```
+
+'order_date' => \Carbon\Carbon::today()->subDays(rand(-365, 365)),
+
+'amount' => $this->faker->numberBetween(500, 9000),
+'payment_id' => Str::random(10)
+
+
+
+<a id="markdown-get-100-random-dates-within-the-last-year" name="get-100-random-dates-within-the-last-year"></a>
+
+### Get 100 random dates within the last year
+
+```php
+$dates = [];
+
+for ($i = 0; $i < 100; $i++) {
+
+    $dates[] = Carbon::today()->subDays(rand(-365, 0));
+}
+```
+
 <a id="markdown-seed-using-records-from-an-existing-table" name="seed-using-records-from-an-existing-table"></a>
 
 ## Seed using records from an existing table
@@ -92,78 +164,8 @@ return [
 
 
 
-<a id="markdown-arrays-and-random-elements" name="arrays-and-random-elements"></a>
-
-## Arrays and Random Elements
-
-```php
-<!-- Select random value from array -->
-$images = ['samples/sample001-600x338.jpg', 'samples/sample002-600x338.jpg', 'samples/sample003-600x338.jpg'];
-'image' => $this->faker->randomElement($images),
-```
 
 
-<a id="markdown-numbers" name="numbers"></a>
-
-## Numbers
-
-```php
-random_int(5, 87),
-
-// an integer between 0 and 9
-'' => $this->faker->randomDigit();
-// random integer with UP TO n digits (123, 43, 19238, 5, or 1203)
-'' => $this->faker->randomNumber(5, false);
-// random integer with EXACTLY n digits (2643, 42931, or 32919)
-'' => $this->faker->randomNumber(5, true);
-// integer between
-'price' => $this->faker->numberBetween(500, 100000);
-
-```
-
-<a id="markdown-randomfloat" name="randomfloat"></a>
-
-### `randomFloat`
-
-```php
-'price' => $this->faker->randomFloat(2),
-// decimals, min, max
-'price' => $this->faker->randomFloat(2, 5, 30);
-
-'price' => ceil($this->faker->randomFloat(2, 5, 10.50)*10)/10,
-
-```
-
-
-<a id="markdown-date-and-time" name="date-and-time"></a>
-
-## Date and Time
-
-```php
-'created_at' => now(),
-// create random date within 1 year past and future
-'created_at' => Carbon::today()->subDays(rand(-365, 365)),
-```
-
-'order_date' => \Carbon\Carbon::today()->subDays(rand(-365, 365)),
-
-'amount' => $this->faker->numberBetween(500, 9000),
-'payment_id' => Str::random(10)
-
-
-
-<a id="markdown-get-100-random-dates-within-the-last-year" name="get-100-random-dates-within-the-last-year"></a>
-
-### Get 100 random dates within the last year
-
-```php
-$dates = [];
-
-for ($i = 0; $i < 100; $i++) {
-
-    $dates[] = Carbon::today()->subDays(rand(-365, 0));
-}
-```
 
 
 <a id="markdown-faqs-and-trouble-shooting" name="faqs-and-trouble-shooting"></a>
