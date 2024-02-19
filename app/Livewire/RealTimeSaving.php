@@ -2,29 +2,29 @@
 
 namespace App\Livewire;
 
-use App\Models\User;
+use App\Models\Thing;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
 class RealTimeSaving extends Component
 {
-    public User $user;
+    public Thing $thing;
     public string $selected = '';
 
-    #[Validate('required|email')]
-    public string $email;
+    #[Validate('required|min:5')]
+    public string $name;
 
     public function mount()
     {
-        $this->user = auth()->user();
-        $this->email = $this->user->email;
+        $this->thing = Thing::first();
+        $this->name = $this->thing->name;
     }
 
     public function updated($name, $value)
     {
         $this->validate();
 
-        $this->user->update([
+        $this->thing->update([
             $name => $value
         ]);
 
@@ -48,12 +48,12 @@ class RealTimeSaving extends Component
         return <<<'HTML'
         <div class="bx">
             <div x-data="{ selected: '{{ $selected }}' }">
-                @if ($selected == 'email')
-                    <x-gt-input wire:model="email" wire:blur="resetSelected('email')"
-                        x-ref="email" x-init="$refs.email.focus()"
-                        for="email" autocomplete="off"/>
+                @if ($selected == 'name')
+                    <x-gt-input wire:model="name" wire:blur="resetSelected('name')"
+                        x-ref="name" x-init="$refs.name.focus()"
+                        for="name" autocomplete="off"/>
                 @else
-                    <div wire:click="setSelected('email')" class="txt-red ctrl-padding">{{ $email }}</div>
+                    <div wire:click="setSelected('name')" class="txt-red ctrl-padding">{{ $name }}</div>
                     <small class="ml-1">Select to edit</small>
                 @endif
             </div>

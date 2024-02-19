@@ -13,13 +13,13 @@
 
 namespace App\Livewire;
 
-use App\Models\User;
+use App\Models\Thing;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
 
-class UpdateUser extends Component
+class UpdateThing extends Component
 {
-    public User $user;
+    public Thing $thing;
     public string $selected = '';
 
     #[Validate('required|email')]
@@ -27,15 +27,14 @@ class UpdateUser extends Component
 
     public function mount()
     {
-        $this->user = auth()->user();
-        $this->email = $this->user->email;
+        $this->thing = Thing::find(1);
     }
 
     public function updated($name, $value)
     {
         $this->validate();
 
-        $this->user->update([
+        $this->thing->update([
             $name => $value
         ]);
 

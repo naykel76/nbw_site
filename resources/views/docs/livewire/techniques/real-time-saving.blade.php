@@ -12,5 +12,5 @@
 
 
 <x-docs.sections.layout title="Usage snippets">
-    <x-gt-parsedown path="{{ 'docs/livewire/snippets/real-time-saving' }}" />
+    <x-gt-parsedown path="{{ 'docs/livewire/techniques/real-time-saving-snippet' }}" />
 </x-docs.sections.layout>

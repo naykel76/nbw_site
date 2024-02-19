@@ -32,8 +32,13 @@
     "Techniques": {
         "links": [
             {
-                "name": "Form Techniques",
-                "route_name": "docs.livewire.form-techniques",
+                "name": "Drag & Drop Sorting",
+                "route_name": "docs.livewire.techniques.drag-and-drop-sorting",
+                "type": "blade"
+            },
+            {
+                "name": "Real-time Saving",
+                "route_name": "docs.livewire.techniques.real-time-saving",
                 "type": "blade"
             }
         ]

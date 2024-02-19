@@ -17,5 +17,30 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('1'),
             'email_verified_at' => now(),
         ]);
+
+        $tasks = [
+            'Buy groceries',
+            'Finish report',
+            'Call the bank',
+            'Clean the house',
+            'Prepare for the meeting',
+            'Pay utility bills',
+        ];
+
+        $tasks = [
+            'First Item',
+            'Second Item',
+            'Third Item',
+            'Fourth Item',
+            'Fifth Item',
+            'Sixth Item',
+        ];
+
+        foreach ($tasks as $index => $task) {
+            \App\Models\Thing::create([
+                'name' => $task,
+                'sort_order' => $index + 1,
+            ]);
+        }
     }
 }
