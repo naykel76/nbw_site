@@ -123,3 +123,38 @@ th {
 .animate-pulse-slow {
     animation: pulse 3s ease-in-out infinite;
 }
+
+// bg color for the body when a draggable is being dragged
+// .draggable--is-dragging { }
+
+// styles for the container when a draggable is being dragged
+.draggable-container--is-dragging { }
+
+
+// underlying style for the item being dragged
+.draggable-source--is-dragging {
+    background-color: yellow;
+}
+
+.draggable-source--placed {
+    background-color: greenyellow;
+}
+.draggable-container--placed {
+    background-color: orange;
+}
+.draggable--over {
+    background-color: gray;
+}
+
+// bg color for the container when a draggable is over it
+.draggable-container--over {
+    background-color: blue;
+}
+
+
+// .draggable--original {
+//     background-color: green;
+// }
+// .draggable-mirror {
+//     background-color: transparent;
+// }

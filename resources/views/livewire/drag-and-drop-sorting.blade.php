@@ -1,5 +1,5 @@
 <div class="w-20">
-    <div drag-root="reorder" class="space-y-05">
+    <div drag-root="reOrder" class="space-y-05">
         @foreach ($things as $item)
             <div drag-item="{{ $item['id'] }}" draggable="true" wire:key="{{ $item['id'] }}"
                 class="bx dark rounded-05 pxy-075">

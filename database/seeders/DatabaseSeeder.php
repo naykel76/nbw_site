@@ -27,15 +27,6 @@ class DatabaseSeeder extends Seeder
             'Pay utility bills',
         ];
 
-        $tasks = [
-            'First Item',
-            'Second Item',
-            'Third Item',
-            'Fourth Item',
-            'Fifth Item',
-            'Sixth Item',
-        ];
-
         foreach ($tasks as $index => $task) {
             \App\Models\Thing::create([
                 'name' => $task,
