@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::create([
             'name' => 'Billy McDoogle',
-            'email' => 'billy@example.com.',
+            'email' => 'billy@example.com',
             'password' => bcrypt('1'),
             'email_verified_at' => now(),
         ]);
@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
 
         foreach ($tasks as $index => $task) {
             \App\Models\Thing::create([
-                'name' => $task,
+                'title' => $task,
                 'sort_order' => $index + 1,
             ]);
         }
