@@ -41,7 +41,6 @@ class CourseSeeder extends Seeder
             'published_at' => now(),
         ]);
 
-        \App\Models\Course::factory(92)->create();
-    }
+        \App\Models\Course::factory(18)->create();
     }
 }

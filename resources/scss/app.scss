@@ -128,8 +128,8 @@ th {
 // .draggable--is-dragging { }
 
 // styles for the container when a draggable is being dragged
-.draggable-container--is-dragging { }
-
+.draggable-container--is-dragging {
+}
 
 // underlying style for the item being dragged
 .draggable-source--is-dragging {
@@ -151,7 +151,6 @@ th {
     background-color: blue;
 }
 
-
 // .draggable--original {
 //     background-color: green;
 // }
@@ -159,7 +158,17 @@ th {
 //     background-color: transparent;
 // }
 
-.cookbook th {
-    background: #eee;
-    font-weight: 900;
+// ------------------------------------------------------------------
+// -- COOKBOOK --
+// ------------------------------------------------------------------
+
+.cookbook {
+    th {
+        background: #eee;
+        font-weight: 900;
+    }
+    td,
+    th {
+        border: none;
+    }
 }

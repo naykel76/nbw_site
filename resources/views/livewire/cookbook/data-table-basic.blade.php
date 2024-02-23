@@ -8,11 +8,11 @@
             </tr>
         </thead>
         <tbody class="divide-y">
-            @foreach ($users as $user)
-                <tr wire:key="{{ $user->id }}">
-                    {{-- <td> {{ str($user->title)->limit(40) }} </td> --}}
+            @foreach ($courses as $course)
+                <tr wire:key="{{ $course->id }}">
+                    <td> {{ str($course->title)->limit(40) }} </td>
                     <td class="tar">
-                        <x-gt-button wire:click="$dispatch('set-editing-item', {id: {{ $user->id }}})"
+                        <x-gt-button wire:click="$dispatch('set-editing-item', {id: {{ $course->id }}})"
                             class="link txt-sky">
                             <x-gt-icon name="pencil-square" class="wh-1.25 opacity-06" />
                         </x-gt-button>
@@ -21,9 +21,5 @@
             @endforeach
         </tbody>
     </table>
-    {{ $users->links('gotime::pagination.livewire') }}
+    {{ $courses->links('gotime::pagination.livewire') }}
 </div>
-
-
-
-

@@ -2,7 +2,7 @@
 
 namespace App\Livewire\Cookbook;
 
-use App\Models\User;
+use App\Models\Course;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Naykel\Gotime\Traits\Sortable;
@@ -14,11 +14,11 @@ class DataTableBasic extends Component
 
     public function render()
     {
-        $query = User::query();
+        $query = Course::query();
         $query = $this->applySorting($query);
 
         return view('livewire.cookbook.data-table-basic', [
-            'users' => $query->paginate(3),
+            'courses' => $query->paginate(3),
         ]);
     }
 }

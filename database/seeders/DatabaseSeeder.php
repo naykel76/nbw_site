@@ -11,6 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+
+        $this->call(CourseSeeder::class);
+
         \App\Models\User::create([
             'name' => 'Billy McDoogle',
             'email' => 'billy@example.com',
