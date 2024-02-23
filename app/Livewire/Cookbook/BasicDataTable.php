@@ -7,7 +7,7 @@ use Livewire\Component;
 use Livewire\WithPagination;
 use Naykel\Gotime\Traits\Sortable;
 
-class DataTableBasic extends Component
+class BasicDataTable extends Component
 {
     use WithPagination;
     use Sortable;
@@ -17,7 +17,7 @@ class DataTableBasic extends Component
         $query = Course::query();
         $query = $this->applySorting($query);
 
-        return view('livewire.cookbook.data-table-basic', [
+        return view('livewire.cookbook.basic-data-table', [
             'courses' => $query->paginate(3),
         ]);
     }

@@ -23,7 +23,7 @@
                     method in the <code>Crudable</code> trait, which then sets the form object to the corresponding item
                     with the emitted <code>id</code>.
                 </p>
-                <livewire:cookbook.data-table-basic />
+                <livewire:cookbook.basic-data-table />
                 <div class="bx mt light">
                     <p>The form, or <code>CreateEdit</code> component, is a Livewire component that uses the
                         <code>Crudable</code> trait. This trait provides the <code>edit</code> method, which listens for
@@ -31,16 +31,10 @@
                         component catches this event, it uses the passed <code>id</code> to fetch the corresponding item
                         and set the <code>editing</code> model on the form object.
                     </p>
-                    {{-- <livewire:cookbook.create-edit-with-form-object /> --}}
-                    <div class="txt-red fw9">Need to add refresh table after update</div>
+                    <livewire:cookbook.basic-form-with-form-object />
+                    <div class="txt-red txt-xs fw9">Need to add refresh table after update</div>
                 </div>
             </div>
         </div>
     </section>
-
-
-    <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, dolorum atque facere dolore ad rerum consequuntur voluptatem reiciendis temporibus quis fuga cumque, recusandae voluptate architecto eos qui. Mollitia, saepe dicta.</section>
-    <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, dolorum atque facere dolore ad rerum consequuntur voluptatem reiciendis temporibus quis fuga cumque, recusandae voluptate architecto eos qui. Mollitia, saepe dicta.</section>
-    <section>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, dolorum atque facere dolore ad rerum consequuntur voluptatem reiciendis temporibus quis fuga cumque, recusandae voluptate architecto eos qui. Mollitia, saepe dicta.</section>
-
 </x-gotime-app-layout>
