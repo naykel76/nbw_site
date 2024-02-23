@@ -59,35 +59,27 @@ class RealTimeSavingWIthFormObject extends Component
         $this->selected = $name;
     }
 
+    public function resetSelected()
+    {
+        // the validation is required to prevent the code from breaking
+        $this->validate();
+        $this->reset('selected');
+    }
+
     public function render()
     {
         return <<<'HTML'
-            <div>
-                <input wire:model.blur="form.email" autocomplete="off" />
-                @error('form.email') <span class="error">{{ $message }}</span> @enderror
+            <div x-data>
+                @if ($selected == 'email')
+                    <x-gt-input wire:model.blur="form.email" for="form.email"
+                        x-ref="email"
+                        x-init="$refs.email.focus()"
+                        x-on:blur="$wire.resetSelected()"
+                        autocomplete="off" />
+                @else
+                    <div wire:click="setSelected('email')" class="ctrl-padding">{{ $form->email }}</div>
+                @endif
             </div>
         HTML;
     }
 }
-
-
-// <div class="bx pxy-025">
-//     <div x-data="{ selected: '{{ $selected }}' }">
-//         @if ($selected == 'email')
-//             <input wire:model.blur="form.email"
-//                 x-ref="email"
-//                 x-init="$refs.email.focus()"
-//                 x-on:blur="selected = '', $wire.selected=''"
-//                 for="form.email" autocomplete="off" class="txt-orange" />
-//         @else
-//             <div wire:click="setSelected('email')" class="ctrl-padding">{{ $form->email }}</div>
-//         @endif
-//     </div>
-// </div>
-
-
-// <x-gt-input wire:model.blur="form.email"
-// x-ref="email"
-// x-init="$refs.email.focus()"
-// x-on:blur="selected = '', $wire.selected=''"
-// for="form.email" autocomplete="off" class="txt-orange" />

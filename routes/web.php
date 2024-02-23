@@ -14,9 +14,13 @@ use Naykel\Gotime\RouteBuilder;
 */
 
 Route::get('/', function () {
-    Auth::loginUsingId(1);
+    // Auth::loginUsingId(1);
     return view('pages.home');
 })->name('home');
+
+Route::get('/cookbook', function () {
+    return view('pages.cookbook');
+})->name('cookbook');
 
 Route::get('/dev', [TestingController::class, 'timer'])->name('dev');
 

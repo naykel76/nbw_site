@@ -18,7 +18,7 @@ Make sure you are dispatching an event to listen for.
 ```php
 public function save()
 {
-    $this->dispatch('refresh-items');
+    $this->dispatch('item-saved');
 }
 ```
 
@@ -27,7 +27,7 @@ Listen for the event in the parent component.
 This seems to work when you updated an item in a list but it is failing to update when new items are created
 
 ```php
-#[On('refresh-items')]
+#[On('item-saved')]
 class CourseChapterModal extends Component { }
 ```
 
@@ -35,7 +35,7 @@ The only way to get the list to update is to attach the event listener to a dedi
 re-fetches the items.
 
 ```php
-#[On('refresh-items')]
+#[On('item-saved')]
 public function refreshItems() {
     // code to reload the items
 }
