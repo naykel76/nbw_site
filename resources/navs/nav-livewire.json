@@ -42,17 +42,5 @@
                 "type": "blade"
             }
         ]
-    },
-    "Snippets": {
-        "links": [
-            {
-                "name": "Real-time Saving (inline)",
-                "route_name": "docs.livewire.snippets.real-time-saving"
-            },
-            {
-                "name": "Real-time Saving (with form object)",
-                "route_name": "docs.livewire.snippets.real-time-saving-with-form-object"
-            }
-        ]
     }
 }

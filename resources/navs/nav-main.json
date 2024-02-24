@@ -23,6 +23,12 @@
                 "exclude_route": true
             },
             {
+                "name": "Livewire",
+                "route_name": "docs.livewire.quick-reference",
+                "type": "md",
+                "exclude_route": true
+            },
+            {
                 "name": "About Me",
                 "route_name": "pages.about"
             },

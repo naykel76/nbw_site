@@ -36,8 +36,10 @@ class RealTimeSavingWithErrorTrapping extends Component
         return <<<HTML
             <div x-data="{ selectedField: \$wire.entangle('selected') }">
                 <x-gt-input wire:model.blur="form.name" label="name"
+                    wire:dirty.class="bg-rose-50"
                     x-bind:disabled="\$wire.hasErrors && selectedField !== 'form.name'" />
                 <x-gt-input type="email" wire:model.blur="form.email" label="email"
+                    wire:dirty.class="bg-rose-50"
                     x-bind:disabled="\$wire.hasErrors && selectedField !== 'form.email'" />
             </div>
         HTML;

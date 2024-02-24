@@ -23,12 +23,6 @@ $x-text: rgb(228, 232, 236);
 @use "node_modules/nk_jtb/src/jtb";
 @use "./play";
 
-.ctrl-padding {
-    padding-inline: $ctrl-padding-x;
-    padding-block: $ctrl-padding-y;
-    border: 1px solid transparent;
-}
-
 .navbar:not(.markdown .navbar) {
     background-color: $body-bg;
     border-bottom: 1px solid #14213f;

@@ -2,6 +2,14 @@
     <section>
         <div class="container-md">
             <div class="bx">
+                <h2>Draggable List with Inline CRUD Functionality</h2>
+                <livewire:cookbook.draggable-list-with-inline-crud />
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container-md">
+            <div class="bx">
                 <h2>Real-Time Saving with Error Trapping</h2>
                 <p>This example demonstrates how to save data in real-time without needing a submit button. It does this
                     by using the <code>wire:model.blur</code> directive on the input fields which triggers when you
@@ -9,7 +17,12 @@
                     validated and saved. If there's an error in your input, it's caught immediately and all other fields
                     are disabled until you correct it. This ensures data integrity and provides immediate feedback.</p>
                 <livewire:cookbook.real-time-saving-with-error-trapping />
-                <p class="txt-xs mt-1"><a href="https://github.com/naykel76/nbw_site/blob/master/app/Livewire/Cookbook/RealTimeSavingWithErrorTrapping.php" target="_blank">Source code</a> /  <a href="https://github.com/naykel76/nbw_site/blob/master/resources/views/diagrams/real-time-saving-with-error-trapping.md" target="_blank">Sequence diagram</a></p>
+                <p class="txt-xs mt-1">
+                    <a href="https://github.com/naykel76/nbw_site/blob/master/app/Livewire/Cookbook/RealTimeSavingWithErrorTrapping.php"
+                        target="_blank">Source code</a> /
+                    <a href="https://github.com/naykel76/nbw_site/blob/master/resources/views/diagrams/real-time-saving-with-error-trapping.md"
+                        target="_blank">Sequence diagram</a>
+                </p>
             </div>
         </div>
     </section>
@@ -38,13 +51,4 @@
             </div>
         </div>
     </section>
-
-    @push('scripts')
-        <script type="module">
-            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-            mermaid.initialize({ startOnLoad: true });
-        </script>
-    @endpush
 </x-gotime-app-layout>
-
-
