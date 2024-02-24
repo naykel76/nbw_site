@@ -9,8 +9,7 @@
                     validated and saved. If there's an error in your input, it's caught immediately and all other fields
                     are disabled until you correct it. This ensures data integrity and provides immediate feedback.</p>
                 <livewire:cookbook.real-time-saving-with-error-trapping />
-
-                <p class="mt-05"><small>Mermaid Diagram: diagrams/real-time-saving-with-error-trapping</small></p>
+                <p class="txt-xs mt-1"><a href="https://github.com/naykel76/nbw_site/blob/master/app/Livewire/Cookbook/RealTimeSavingWithErrorTrapping.php" target="_blank">Source code</a> /  <a href="https://github.com/naykel76/nbw_site/blob/master/resources/views/diagrams/real-time-saving-with-error-trapping.md" target="_blank">Sequence diagram</a></p>
             </div>
         </div>
     </section>
