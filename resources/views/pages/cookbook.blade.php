@@ -1,19 +1,16 @@
 <x-gotime-app-layout layout="{{ config('naykel.template') }}" class="cookbook zebra c-py-3">
     <section>
-        <div class="container-sm">
+        <div class="container-md">
             <div class="bx">
-                <h2>Real-Time Saving With click to change to input</h2>
-                <livewire:cookbook.real-time-saving-with-selectable-inputs />
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="container-sm">
-            <div class="bx">
-                <h2>Real-Time Saving</h2>
-                <p>This example demonstrates how to save data in real-time without the need for a submit button. It
-                    includes real-time validation and uses the 'blur' event to trigger updates.</p>
-                <livewire:cookbook.real-time-saving-with-basic-inputs />
+                <h2>Real-Time Saving with Error Trapping</h2>
+                <p>This example demonstrates how to save data in real-time without needing a submit button. It does this
+                    by using the <code>wire:model.blur</code> directive on the input fields which triggers when you
+                    click away from an input field. As soon as you move away from a field, the data you entered is
+                    validated and saved. If there's an error in your input, it's caught immediately and all other fields
+                    are disabled until you correct it. This ensures data integrity and provides immediate feedback.</p>
+                <livewire:cookbook.real-time-saving-with-error-trapping />
+
+                <p class="mt-05"><small>Mermaid Diagram: diagrams/real-time-saving-with-error-trapping</small></p>
             </div>
         </div>
     </section>
@@ -42,4 +39,13 @@
             </div>
         </div>
     </section>
+
+    @push('scripts')
+        <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    @endpush
 </x-gotime-app-layout>
+
+

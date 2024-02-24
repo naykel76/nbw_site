@@ -12,3 +12,45 @@
 | `container:over`     | Class added on draggable container element you are dragging over    | `draggable-container--over`        |
 | `source:original`    | Class added on the original source element, which is hidden on drag | `draggable--original`              |
 | `mirror`             | Class added on the mirror element                                   | `draggable-mirror`                 |
+
+
+```mermaid
+flowchart TD
+    select(Select Field) --> set-selected(Set `selected` <br>and display input)
+    set-selected--> set-focus(Set focus)
+    set-focus --> changed{Value <br>changed?}
+
+    changed -->|Yes| update(Validate and update)
+    update --> reset(Reset `selected` <br>and hide input)
+
+    changed -->|No| blur(on blur)
+    blur --> reset
+```
+
+```mermaid
+sequenceDiagram
+    participant user
+    participant component as Livewire <br>Component
+    participant alpine as JavaScript <br>(AlpineJS)
+    participant form as Livewire <br>Form Object
+
+    user->>component: Enter data in form field
+    component->>component: Validate data on blur event
+
+    alt If validation fails
+        component->>user: Show validation error
+        component->>alpine: Dispatch 'field-has-error' event (fieldName)
+        alpine->>alpine: Set hasError to true and selectedField to field name
+
+        Note right of alpine: Other fields need to be disabled until error is resolved
+
+    else If validation passes
+        component->>user: Hide validation error
+        component->>alpine: Clear 'field-has-error' event if previously set
+        alpine->>alpine: Set hasError to false
+        component->>form: Run form->saveField($name, $value);
+        form->>form: Handle saving functionality
+        form->>form: Dispatch 'notify' event with success message
+        component->>user: Show success message
+    end
+```

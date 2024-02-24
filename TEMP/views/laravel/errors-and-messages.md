@@ -4,8 +4,8 @@
 <!-- MarkdownTOC -->
 
 - [Flash Messages](#flash-messages)
-  - [Redirecting With Flashed Session Data](#redirecting-with-flashed-session-data)
-  - [Displaying The Flash Message](#displaying-the-flash-message)
+    - [Redirecting With Flashed Session Data](#redirecting-with-flashed-session-data)
+    - [Displaying The Flash Message](#displaying-the-flash-message)
 - [Error Messages](#error-messages)
 
 <!-- /MarkdownTOC -->
@@ -52,6 +52,13 @@
     </div>
 @endif
 ```
+
+    <?php
+    // Determining if Messages Exist for a Field
+    $emailHasError = $errors->has('form.email');
+    // Retrieving the First Error Message for a Field
+    $getFirstError = $errors->first('form.email');
+    ?>
 
 
 
