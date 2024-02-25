@@ -1,35 +1,52 @@
-{{-- <x-gt-button wire:click="$toggle('hasErrors')" text="text" /> --}}
-
-{{-- how can a user cancel the update and revert back to the original value? --}}
-
-<div x-data="{ selectedField: $wire.entangle('selected') }">
-    <x-gt-input wire:model.blur="form.name"
-        x-bind:disabled="$wire.hasErrors && selectedField !== 'form.name'" />
-    <x-gt-input type="email" wire:model.blur="form.email"
-        x-bind:disabled="$wire.hasErrors && selectedField !== 'form.email'" />
+<div class="space-y-0">
+    @foreach ($courses as $course)
+        @if (isset($form->editing) && $form->editing->id == $course->id)
+            <div class="flex gap-05 va-t">
+                <x-gt-input wire:model="form.code" class="w-6" />
+                <x-gt-input wire:model="form.title" rowClass="fg1" />
+                <x-gt-button wire:click="save" text="save" class="pink" />
+                <x-gt-button wire:click="cancel" text="cancel" />
+            </div>
+        @else
+            <div class="control-padding">
+                <a wire:click="edit({{ $course->id }})">{{ $course->title }}</a>
+            </div>
+        @endif
+    @endforeach
 </div>
+{{-- <div class="divide-y">
+    @foreach ($courses as $course)
+        @if (isset($form->editing) && $form->editing->id == $course->id)
+            <div class="flex gap-05 va-c my-0 ">
+                <x-gt-input wire:model="form.code" rowClass="my-0 my-1" class="w-6" />
+                <x-gt-input wire:model="form.title" rowClass="my-0 fg1 my-1" />
+                <x-gt-button wire:click="save" text="save" class="pink" />
+                <x-gt-button wire:click="cancel" text="cancel" />
+            </div>
+        @else
+            <div class="frm-row my-0 control-padding">
+                <a wire:click="edit({{ $course->id }})">{{ $course->title }}</a>
+            </div>
+        @endif
+    @endforeach
+</div> --}}
 
-{{-- <div x-data>
-    @if ($errors->any())
-        <div x-data="{ selected: $wire.entangle('selected') }"
-            x-init="$nextTick(() => $refs[selected].focus())"></div>
-    @endif
 
-    <x-gt-button wire:click="play" text="text" />
-
-    <x-gt-input
-        wire:click="setSelected('form.name')"
-        wire:model.blur="form.name" wire:blur="play"
-        wire:dirty.class="bg-rose-50"
-        x-ref="form.name"
-        for="form.name" class="bdr-blue"
-        />
-
-    <x-gt-input
-        wire:click="setSelected('form.email')"
-        wire:model.blur="form.email" wire:blur="play"
-        wire:dirty.class="bg-rose-50"
-        x-ref="form.email"
-        for="form.email" class="bdr-blue"
-        />
+{{-- <div wire:sortable="updateSortOrder">
+@foreach ($mediaItems as $media)
+    <div wire:sortable.item="{{ $media->id }}" wire:key="media-{{ $media->id }}"
+        class="flex va-c pxy-05 mxy-0 hover:bg-gray-50">
+        <div wire:sortable.handle class="cursor-move pxy-025 mr-05 opacity-05">
+            <x-gt-icon name="drag-vertical" class="wh-1" />
+        </div>
+        <div class="flex space-between va-c fg1">
+            <div class="flex va-c fg1 gap-05">
+                <x-media-icon-selector type="{{ $media->type }}" />
+                {{ $media->title }}
+            </div>
+            <x-resource-action-button wire:click="setActionId({{ $media->id }})" action="delete" />
+        </div>
+    </div>
+@endforeach
+<x-gt-modal.delete wire:model="actionId" id="{{ $actionId }}" />
 </div> --}}

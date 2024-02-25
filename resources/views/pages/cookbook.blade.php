@@ -2,8 +2,13 @@
     <section>
         <div class="container-md">
             <div class="bx">
-                <h2>Draggable List with Inline CRUD Functionality</h2>
-                <livewire:cookbook.draggable-list-with-inline-crud />
+                <h2>List with Inline CRUD Functionality</h2>
+                <p>This example demonstrates how to display a list or items with inline CRUD functionality. This allows
+                    users to perform CRUD operations directly inline in the list, without needing to navigate away from
+                    the list. </p>
+                    <p>This can be easily adapted to include real-time saving and drag-and-drop sorting.</p>
+                    <livewire:cookbook.list-with-inline-crud />
+                    <p class="txt-sm fw9 txt-red mt">Currently supports editing only, create and delete functionality to be added.</p>
             </div>
         </div>
     </section>
