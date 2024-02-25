@@ -18,7 +18,7 @@ return new class extends Migration
             $table->longText('body')->nullable();
             $table->string('image')->nullable();
             $table->string('image_filepond')->nullable();
-            $table->string('status');
+            $table->string('status')->nullable();;
             $table->boolean('is_free')->nullable();
             $table->integer('price')->nullable();
             $table->dateTime('published_at')->nullable();

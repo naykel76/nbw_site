@@ -6,9 +6,14 @@
                 <p>This example demonstrates how to display a list or items with inline CRUD functionality. This allows
                     users to perform CRUD operations directly inline in the list, without needing to navigate away from
                     the list. </p>
-                    <p>This can be easily adapted to include real-time saving and drag-and-drop sorting.</p>
                     <livewire:cookbook.list-with-inline-crud />
-                    <p class="txt-sm fw9 txt-red mt">Currently supports editing only, create and delete functionality to be added.</p>
+                    <p class="txt-xs mt-1">
+                        Source Code
+                        <a href=""
+                            target="_blank">Livewire Component</a> /
+                        <a href=""
+                            target="_blank">View</a>
+                    </p>
             </div>
         </div>
     </section>

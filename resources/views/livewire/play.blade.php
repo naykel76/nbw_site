@@ -1,35 +1,4 @@
-<div class="space-y-0">
-    @foreach ($courses as $course)
-        @if (isset($form->editing) && $form->editing->id == $course->id)
-            <div class="flex gap-05 va-t">
-                <x-gt-input wire:model="form.code" class="w-6" />
-                <x-gt-input wire:model="form.title" rowClass="fg1" />
-                <x-gt-button wire:click="save" text="save" class="pink" />
-                <x-gt-button wire:click="cancel" text="cancel" />
-            </div>
-        @else
-            <div class="control-padding">
-                <a wire:click="edit({{ $course->id }})">{{ $course->title }}</a>
-            </div>
-        @endif
-    @endforeach
-</div>
-{{-- <div class="divide-y">
-    @foreach ($courses as $course)
-        @if (isset($form->editing) && $form->editing->id == $course->id)
-            <div class="flex gap-05 va-c my-0 ">
-                <x-gt-input wire:model="form.code" rowClass="my-0 my-1" class="w-6" />
-                <x-gt-input wire:model="form.title" rowClass="my-0 fg1 my-1" />
-                <x-gt-button wire:click="save" text="save" class="pink" />
-                <x-gt-button wire:click="cancel" text="cancel" />
-            </div>
-        @else
-            <div class="frm-row my-0 control-padding">
-                <a wire:click="edit({{ $course->id }})">{{ $course->title }}</a>
-            </div>
-        @endif
-    @endforeach
-</div> --}}
+
 
 
 {{-- <div wire:sortable="updateSortOrder">
