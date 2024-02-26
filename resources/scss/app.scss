@@ -17,8 +17,10 @@ $x-text: rgb(228, 232, 236);
     $navbar-nav-active-color: #ffbb1c
 );
 
+@use "node_modules/nk_jtb/src/variables/tailwind-colors" as *;
 @use "node_modules/nk_jtb/src/mixins/media" as *;
 @use "node_modules/nk_jtb/src/jtb";
+@use "sass:map";
 
 .navbar:not(.markdown .navbar) {
     background-color: $body-bg;
@@ -115,7 +117,7 @@ th {
     animation: pulse 3s ease-in-out infinite;
 }
 
-// bg color for the body when a draggable is being dragged
+// // bg color for the body when a draggable is being dragged
 // .draggable--is-dragging { }
 
 // // styles for the container when a draggable is being dragged
@@ -153,6 +155,13 @@ th {
 // -- COOKBOOK --
 // ------------------------------------------------------------------
 
+.draggable--over {
+    background-color: map.get($tailwind-colors, "rose", "50") !important;
+    .hide-when-dragging{
+        display: none;
+    }
+}
+
 .cookbook {
     th {
         background: #eee;
@@ -175,3 +184,13 @@ th {
         }
     }
 }
+
+// body:dragging	Classes added on the document body while dragging	draggable--is-dragging
+// container:dragging	Classes added on the container where the draggable was picked up from	draggable-container--is-dragging
+// source:dragging	Classes added on the draggable element that has been picked up	draggable-source--is-dragging
+// source:placed	Classes added on the draggable element on drag:stop	draggable-source--placed
+// container:placed	Classes added on the draggable container element on drag:stop	draggable-container--placed
+// draggable:over	Classes added on draggable element you are dragging over	draggable--over
+// container:over	Classes added on draggable container element you are dragging over	draggable-container--over
+// source:original	Classes added on the original source element, which is hidden on drag	draggable--original
+// mirror	Classes added on the mirror element	draggable-mirror

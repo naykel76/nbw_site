@@ -2,10 +2,29 @@
     <div class="container">
         <x-toc />
     </div>
+    <x-docs.sections.layout title="Basic Drag and Drop Sorting with Inline Editing" withContainer>
+        <div class="container-sm">
+            <div class="bx">
+                <p>This example demonstrates a simple drag and drop list. When the list order is rearranged, the
+                    database is updated to reflect the new sequence.</p>
+                <livewire:cookbook.drag-and-drop-sorting-with-inline-editing />
+                <p class="txt-xs mt-1">
+                    <a href="https://github.com/naykel76/nbw_site/blob/master/app/Livewire/DragAndDropSorting.php"
+                        target="_blank">Source code</a>
+                </p>
+            </div>
+        </div>
+    </x-docs.sections.layout>
     <x-docs.sections.layout title="Basic Drag and Drop Sorting" withContainer>
         <div class="container-sm">
             <div class="bx">
+                <p>This example demonstrates a simple drag and drop list. When the list order is rearranged, the
+                    database is updated to reflect the new sequence.</p>
                 <livewire:cookbook.drag-and-drop-sorting />
+                <p class="txt-xs mt-1">
+                    <a href="https://github.com/naykel76/nbw_site/blob/master/app/Livewire/DragAndDropSorting.php"
+                        target="_blank">Source code</a>
+                </p>
             </div>
         </div>
     </x-docs.sections.layout>

@@ -13,6 +13,7 @@ class CourseSeeder extends Seeder
         \App\Models\Course::create([
             'title' => 'Introduction to Computer Science',
             'code' => 'CS101',
+            'sort_order' => 8,
             'body' => 'This course will introduce you to the world of computer science. Topics include computational thinking, problem-solving, data representation, abstraction, procedures/algorithms, and more.',
             'status' => 'published',
             'price' => 1998.90,
@@ -22,6 +23,7 @@ class CourseSeeder extends Seeder
         \App\Models\Course::create([
             'title' => 'Data Structures and Algorithms',
             'code' => 'CS102',
+            'sort_order' => 3,
             'body' => 'This course will teach you about various data structures and algorithms used in computer science. Topics include arrays, linked lists, stacks, queues, trees, sorting, searching, and more.',
             'status' => 'draft',
             'price' => 0,
@@ -32,6 +34,7 @@ class CourseSeeder extends Seeder
         \App\Models\Course::create([
             'title' => 'Web Development',
             'code' => 'CS103',
+            'sort_order' => 89,
             'body' => 'This course will teach you how to build websites using HTML, CSS, and JavaScript. Topics include responsive design, front-end libraries, back-end servers, databases, and more.',
             'status' => 'pending_review',
             'price' => 187.50,
