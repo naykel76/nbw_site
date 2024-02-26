@@ -9,12 +9,10 @@ use Livewire\Component;
 
 class DragAndDropSortingWithInlineEditing extends Component
 {
-
     public CourseFormForInlineCrud $form;
     public Collection $courses;
 
     protected $model = Course::class;
-    public string $selected = '';
     public bool $isCreateMode = false;
 
     public function mount()
@@ -24,11 +22,7 @@ class DragAndDropSortingWithInlineEditing extends Component
 
     public function edit(int $id): void
     {
-        if (!isset($this->model)) {
-            throw new \Exception('Property $model is not set in ' . __CLASS__ . ". ---- Eg. protected \$model = Model::class;");
-        }
         $this->resetErrorBag();
-        $this->selected = 'title';
         $this->form->setModel($this->model::findOrFail($id));
     }
 
@@ -38,19 +32,8 @@ class DragAndDropSortingWithInlineEditing extends Component
         $this->model::updateOrCreate(['id' => $this->form->getEditingModel()->id], $validatedData);
         $this->dispatch('item-saved');
         $this->dispatch('notify', 'Course updated successfully!');
-        $this->resetActions();
+        $this->reset();
         $this->loadItems();
-    }
-
-    public function resetActions()
-    {
-        $this->reset('isCreateMode', 'selected');
-        $this->form->reset('editing');
-    }
-
-    public function loadItems()
-    {
-        $this->courses = $this->model::orderBy('sort_order')->get();
     }
 
     public function updateSortOrder(array $orderedIds): void
@@ -60,17 +43,36 @@ class DragAndDropSortingWithInlineEditing extends Component
             $this->model::find($id)->update(['sort_order' => $item['order']]);
         }
         $this->loadItems();
-        $this->dispatch('notify', 'Module order updated');
+        $this->dispatch('notify', 'Order updated');
+    }
+
+    public function loadItems()
+    {
+        $this->courses = $this->model::orderBy('sort_order')->get();
     }
 
     public function render()
     {
-        return view('livewire.play', [
-            'courses' => $this->courses,
-        ]);
-
         return <<<'HTML'
-
+            <div wire:sortable="updateSortOrder" class="space-y-0">
+                @foreach ($courses as $course)
+                    @if (isset($form->editing) && $form->editing->id == $course->id)
+                        @include('livewire.cookbook.list-with-inline-crud-row')
+                    @else
+                        <div wire:sortable.item="{{ $course->id }}" wire:key="course-{{ $course->id }}">
+                            <div class="flex va-c">
+                                <div wire:sortable.handle class="cursor-move pxy-025 mr-05 opacity-05">
+                                    <x-gt-icon name="drag-vertical" class="wh-1" />
+                                </div>
+                                <div class="flex space-between control-padding fg1">
+                                    {{ $course->title }}
+                                    <a class="transparent-on-drag" wire:click="edit({{ $course->id }})">Edit</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+                @endforeach
+            </div>
         HTML;
     }
 }

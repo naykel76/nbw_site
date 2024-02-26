@@ -157,8 +157,12 @@ th {
 
 .draggable--over {
     background-color: map.get($tailwind-colors, "rose", "50") !important;
-    .hide-when-dragging{
-        display: none;
+}
+
+// hide the button text while dragging
+.draggable-mirror {
+    .transparent-on-drag {
+        color: transparent;
     }
 }
 

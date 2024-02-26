@@ -5,11 +5,10 @@
     <x-docs.sections.layout title="Basic Drag and Drop Sorting with Inline Editing" withContainer>
         <div class="container-sm">
             <div class="bx">
-                <p>This example demonstrates a simple drag and drop list. When the list order is rearranged, the
-                    database is updated to reflect the new sequence.</p>
+                <p>Uses CSS to hide the button when dragging.</p>
                 <livewire:cookbook.drag-and-drop-sorting-with-inline-editing />
                 <p class="txt-xs mt-1">
-                    <a href="https://github.com/naykel76/nbw_site/blob/master/app/Livewire/DragAndDropSorting.php"
+                    <a href="https://github.com/naykel76/nbw_site/blob/master/app/Livewire/Cookbook/DragAndDropSortingWithInlineEditing.php"
                         target="_blank">Source code</a>
                 </p>
             </div>

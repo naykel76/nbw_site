@@ -10,7 +10,7 @@
                     </div>
                     <div class="flex space-between control-padding fg1">
                         {{ $course->title }}
-                        <a class="hide-when-dragging" wire:click="edit({{ $course->id }})">Edit</a>
+                        <a class="transparent-on-drag" wire:click="edit({{ $course->id }})">Edit</a>
                     </div>
                 </div>
             </div>
