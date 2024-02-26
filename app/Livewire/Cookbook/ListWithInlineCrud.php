@@ -14,7 +14,7 @@ class ListWithInlineCrud extends Component
     public CourseFormForInlineCrud $form;
     public Collection $courses;
 
-    protected $model = Course::class;
+    protected $modelClass = Course::class;
     public string $selected = '';
     public bool $isCreateMode = false;
 
@@ -36,13 +36,13 @@ class ListWithInlineCrud extends Component
         }
         $this->resetErrorBag();
         $this->selected = 'title';
-        $this->form->setModel($this->model::findOrFail($id));
+        $this->form->setModel($this->modelClass::findOrFail($id));
     }
 
     public function save()
     {
         $validatedData = $this->validate();
-        $this->model::updateOrCreate(['id' => $this->form->getEditingModel()->id], $validatedData);
+        $this->modelClass::updateOrCreate(['id' => $this->form->getEditingModel()->id], $validatedData);
         $this->dispatch('item-saved');
         $this->dispatch('notify', 'Course updated successfully!');
         $this->resetActions();

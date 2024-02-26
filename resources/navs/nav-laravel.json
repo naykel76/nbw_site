@@ -71,6 +71,11 @@
     "Database and Eloquent": {
         "links": [
             {
+                "name": "Things Worth Knowing",
+                "route_name": "docs.laravel.database-eloquent.things-worth-knowing",
+                "type": "blade"
+            },
+            {
                 "name": "Query Builder",
                 "route_name": "docs.laravel.eloquent-query-builder"
             },

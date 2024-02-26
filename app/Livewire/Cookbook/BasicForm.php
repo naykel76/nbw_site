@@ -9,7 +9,7 @@ use Livewire\Component;
 
 class BasicForm extends Component
 {
-    protected $model = Course::class;
+    protected $modelClass = Course::class;
     public Model $editing;
 
     #[Validate('required|max:255')]

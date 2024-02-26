@@ -6,14 +6,16 @@
                 <p>This example demonstrates how to display a list or items with inline CRUD functionality. This allows
                     users to perform CRUD operations directly inline in the list, without needing to navigate away from
                     the list. </p>
-                    <livewire:cookbook.list-with-inline-crud />
-                    <p class="txt-xs mt-1">
-                        Source Code
-                        <a href=""
-                            target="_blank">Livewire Component</a> /
-                        <a href=""
-                            target="_blank">View</a>
-                    </p>
+                <livewire:cookbook.list-with-inline-crud />
+                <p class="txt-xs mt-1">
+                    Source Code
+                    <a href="https://github.com/naykel76/nbw_site/blob/master/app/Livewire/Cookbook/ListWithInlineCrud.php"
+                        target="_blank">Livewire Component</a> /
+                    <a href="https://github.com/naykel76/nbw_site/blob/master/resources/views/livewire/cookbook/list-with-inline-crud.blade.php"
+                        target="_blank">View</a> /
+                    <a href="https://github.com/naykel76/nbw_site/blob/master/resources/views/livewire/cookbook/list-with-inline-crud-row.blade.php"
+                        target="_blank">List Row</a>
+                </p>
             </div>
         </div>
     </section>
