@@ -20,19 +20,6 @@ $x-text: rgb(228, 232, 236);
 @use "node_modules/nk_jtb/src/mixins/media" as *;
 @use "node_modules/nk_jtb/src/jtb";
 
-// this is for the cookbook!
-.zebra {
-    h2 {
-        text-align: center;
-    }
-    & > *:nth-child(2n + 2):not(.primary):not(.secondary) {
-        background: white;
-        h2 {
-            color: black;
-        }
-    }
-}
-
 .navbar:not(.markdown .navbar) {
     background-color: $body-bg;
     border-bottom: 1px solid #14213f;
@@ -131,29 +118,29 @@ th {
 // bg color for the body when a draggable is being dragged
 // .draggable--is-dragging { }
 
-// styles for the container when a draggable is being dragged
-.draggable-container--is-dragging {
-}
+// // styles for the container when a draggable is being dragged
+// .draggable-container--is-dragging {
+// }
 
-// underlying style for the item being dragged
-.draggable-source--is-dragging {
-    background-color: yellow;
-}
+// // underlying style for the item being dragged
+// .draggable-source--is-dragging {
+//     background-color: yellow;
+// }
 
-.draggable-source--placed {
-    background-color: greenyellow;
-}
-.draggable-container--placed {
-    background-color: orange;
-}
-.draggable--over {
-    background-color: gray;
-}
+// .draggable-source--placed {
+//     background-color: greenyellow;
+// }
+// .draggable-container--placed {
+//     background-color: orange;
+// }
+// .draggable--over {
+//     background-color: gray;
+// }
 
-// bg color for the container when a draggable is over it
-.draggable-container--over {
-    background-color: blue;
-}
+// // bg color for the container when a draggable is over it
+// .draggable-container--over {
+//     background-color: blue;
+// }
 
 // .draggable--original {
 //     background-color: green;
@@ -174,5 +161,17 @@ th {
     td,
     th {
         border: none;
+    }
+
+    &.zebra {
+        h2 {
+            text-align: center;
+        }
+        & > *:nth-child(2n + 2):not(.primary):not(.secondary) {
+            background: white;
+            h2 {
+                color: black;
+            }
+        }
     }
 }

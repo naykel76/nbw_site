@@ -2,8 +2,12 @@
     <div class="container">
         <x-toc />
     </div>
-    <x-docs.sections.layout title="Drag and Drop Sorting">
-
+    <x-docs.sections.layout title="Basic Drag and Drop Sorting" withContainer>
+        <div class="container-sm">
+            <div class="bx">
+                <livewire:cookbook.drag-and-drop-sorting />
+            </div>
+        </div>
     </x-docs.sections.layout>
     <x-docs.sections.layout title="List with Inline CRUD Functionality" withContainer>
         <div class="container-md">

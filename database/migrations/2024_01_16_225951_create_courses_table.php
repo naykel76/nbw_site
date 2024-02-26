@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('code')->unique();
             $table->longText('body')->nullable();
+            $table->integer('sort_order')->default(0);
             $table->string('image')->nullable();
             $table->string('image_filepond')->nullable();
             $table->string('status')->nullable();;

@@ -1,19 +1,19 @@
-@props(['title', 'withContainer' => false])
+ @props(['title', 'withContainer' => false])
 
-<section {{ $attributes->merge(['class' => 'my md:my-5']) }}>
+ <section {{ $attributes->merge(['class' => 'my md:my-5']) }}>
 
-    @if ($withContainer)
-        <div class="container">
-    @endif
+     @if ($withContainer)
+         <div class="container">
+     @endif
 
-    @isset($title)
-        <h2 id="{{ $snake = str()->snake($title) }}">{{ $title }}</h2>
-    @endisset
+     @isset($title)
+         <h2 id="{{ $snake = str()->snake($title) }}">{{ $title }}</h2>
+     @endisset
 
-    {{ $slot }}
+     {{ $slot }}
 
-    @if ($withContainer)
-        </div>
-    @endif
+     @if ($withContainer)
+         </div>
+     @endif
 
-</section>
+ </section>

@@ -23,6 +23,7 @@ class CourseFactory extends Factory
             'published_at' => $this->faker->dateTimeThisDecade($max = 'now', $timezone = null),
             'reviewed_at' => $this->faker->dateTimeThisYear($max = 'now', $timezone = null),
             'extra_data' => $this->faker->randomDigit,
+            'sort_order' => random_int(1, 100),
         ];
     }
 }
