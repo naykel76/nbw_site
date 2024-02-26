@@ -29,7 +29,7 @@ class BasicFormWithFormObject extends Component
 
     public CourseForm $form;
 
-    protected $modelClass = Course::class;
+    protected $model = Course::class;
 
     public function mount(Course $course)
     {

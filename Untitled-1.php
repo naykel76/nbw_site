@@ -37,7 +37,7 @@ trait WithCrud
     public function edit(int $id): void
     {
         $this->resetErrorBag(); // clear any previous error messages
-        $this->form->setModel($this->modelClass::findOrFail($id));
+        $this->form->setModel($this->model::findOrFail($id));
         $this->showModal = true;
     }
 
@@ -101,7 +101,7 @@ trait WithCrud
 
         // Create a new instance of the model with the provided data or with
         // initial data if no data is provided
-        $model = $this->modelClass::make($data ?? $this->initialData);
+        $model = $this->model::make($data ?? $this->initialData);
 
         // Get all column names for the model's table
         $columns = Schema::getColumnListing($model->getTable());

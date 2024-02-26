@@ -1,8 +1,13 @@
 <x-gotime-app-layout layout="{{ config('naykel.template') }}" class="cookbook zebra c-py-3">
-    <section>
+    <div class="container">
+        <x-toc />
+    </div>
+    <x-docs.sections.layout title="Drag and Drop Sorting">
+
+    </x-docs.sections.layout>
+    <x-docs.sections.layout title="List with Inline CRUD Functionality" withContainer>
         <div class="container-md">
             <div class="bx">
-                <h2>List with Inline CRUD Functionality</h2>
                 <p>This example demonstrates how to display a list or items with inline CRUD functionality. This allows
                     users to perform CRUD operations directly inline in the list, without needing to navigate away from
                     the list. </p>
@@ -18,11 +23,10 @@
                 </p>
             </div>
         </div>
-    </section>
-    <section>
+    </x-docs.sections.layout>
+    <x-docs.sections.layout title="Real-Time Saving with Error Trapping" withContainer>
         <div class="container-md">
             <div class="bx">
-                <h2>Real-Time Saving with Error Trapping</h2>
                 <p>This example demonstrates how to save data in real-time without needing a submit button. It does this
                     by using the <code>wire:model.blur</code> directive on the input fields which triggers when you
                     click away from an input field. As soon as you move away from a field, the data you entered is
@@ -37,11 +41,10 @@
                 </p>
             </div>
         </div>
-    </section>
-    <section>
+    </x-docs.sections.layout>
+    <x-docs.sections.layout title="DataTable with In-Page Editing">
         <div class="container-md">
             <div class="bx">
-                <h2>DataTable with In-Page Editing</h2>
                 <p>There are two separate, unrelated components here: a form and a table. These components can be placed
                     on the same page, either side by side or with the form nested inside the table component.</p>
                 <p>The table component uses the <code>$dispatch</code> method to emit a <code>set-item-event</code>,
@@ -62,5 +65,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </x-docs.sections.layout>
 </x-gotime-app-layout>

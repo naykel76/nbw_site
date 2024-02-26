@@ -12,7 +12,6 @@ $x-text: rgb(228, 232, 236);
     $body-bg: $x-background,
     $font-family: $x-font-family,
     $color: $x-text,
-    $zebra-alt-bg: #ffffff,
     $navbar-bg: transparent,
     $navbar-nav-hover-color: #ffbb1c,
     $navbar-nav-active-color: #ffbb1c
@@ -20,6 +19,19 @@ $x-text: rgb(228, 232, 236);
 
 @use "node_modules/nk_jtb/src/mixins/media" as *;
 @use "node_modules/nk_jtb/src/jtb";
+
+// this is for the cookbook!
+.zebra {
+    h2 {
+        text-align: center;
+    }
+    & > *:nth-child(2n + 2):not(.primary):not(.secondary) {
+        background: white;
+        h2 {
+            color: black;
+        }
+    }
+}
 
 .navbar:not(.markdown .navbar) {
     background-color: $body-bg;
