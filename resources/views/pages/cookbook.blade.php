@@ -35,7 +35,7 @@
                     the list. </p>
                 <livewire:cookbook.list-with-inline-crud />
                 <p class="txt-xs mt-1">
-                    Source Code
+                    Source Code:
                     <a href="https://github.com/naykel76/nbw_site/blob/master/app/Livewire/Cookbook/ListWithInlineCrud.php"
                         target="_blank">Livewire Component</a> /
                     <a href="https://github.com/naykel76/nbw_site/blob/master/resources/views/livewire/cookbook/list-with-inline-crud.blade.php"
@@ -84,6 +84,14 @@
                     </p>
                     <livewire:cookbook.basic-form-with-form-object />
                     <div class="txt-red txt-xs fw9">Need to add refresh table after update</div>
+                    <p class="txt-xs mt-1">
+                        Source Code:
+                        <a href="https://github.com/naykel76/nbw_site/blob/master/app/Livewire/Cookbook/BasicDataTable.php"
+                            target="_blank">Livewire Component</a> /
+                        <a href="https://github.com/naykel76/nbw_site/blob/master/resources/views/livewire/cookbook/basic-data-table.blade.php"
+                            target="_blank">View</a>
+
+                    </p>
                 </div>
             </div>
         </div>

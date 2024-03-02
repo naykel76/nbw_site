@@ -2,16 +2,19 @@
 
 <!-- TOC -->
 
-- [ADD Column](#add-column)
-    - [AFTER](#after)
-- [CHANGE (rename column)](#change-rename-column)
+- [`ADD` Column](#add-column)
+    - [`AFTER`](#after)
+- [Rename Column](#rename-column)
+    - [`CHANGE`](#change)
+- [`DROP` Column](#drop-column)
+- [`RENAME` Table](#rename-table)
 - [Examples](#examples)
 
 <!-- /TOC -->
 
 <a id="markdown-add-column" name="add-column"></a>
 
-## ADD Column
+## `ADD` Column
 ```sql
 ALTER TABLE table_name
 ADD column_name datatype;
@@ -19,7 +22,7 @@ ADD column_name datatype;
 
 <a id="markdown-after" name="after"></a>
 
-### AFTER
+### `AFTER`
 Note, you can add multiple columns at the same time.
 
 ```sql
@@ -28,13 +31,31 @@ ADD column_name datatype
 AFTER column_name;
 ```
 
+<a id="markdown-rename-column" name="rename-column"></a>
 
-<a id="markdown-change-rename-column" name="change-rename-column"></a>
+## Rename Column
 
-## CHANGE (rename column)
+<a id="markdown-change" name="change"></a>
+
+### `CHANGE`
+
 ```sql
 ALTER TABLE table_name
-CHANGE old_column new_column datatype;
+CHANGE old_column new_column DATATYPE;
+```
+
+<a id="markdown-drop-column" name="drop-column"></a>
+
+## `DROP` Column
+```sql
+ALTER TABLE table_name DROP column_name;
+```
+
+<a id="markdown-rename-table" name="rename-table"></a>
+
+## `RENAME` Table
+```sql
+ALTER TABLE table_name RENAME To new_table_name
 ```
 
 
@@ -51,3 +72,7 @@ ALTER TABLE users ADD email varchar(128) AFTER lastname;
 -- Rename a column
 ALTER TABLE users CHANGE name firstname varchar(128);
 ```
+
+
+
+

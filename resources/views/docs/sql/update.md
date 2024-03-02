@@ -2,6 +2,7 @@
 <!-- TOC -->
 
 - [UPDATE (multiple)](#update-multiple)
+- [`UPDATE` values based on another column in the same table](#update-values-based-on-another-column-in-the-same-table)
 - [`UPDATE` value(s) using `CONCAT()`](#update-values-using-concat)
 - [REPLACE](#replace)
 - [Advanced](#advanced)
@@ -19,6 +20,15 @@ SET column1 = value1, column2 = value2, ...
 WHERE condition;
 ```
 
+<a id="markdown-update-values-based-on-another-column-in-the-same-table" name="update-values-based-on-another-column-in-the-same-table"></a>
+
+## `UPDATE` values based on another column in the same table
+
+```sql
+UPDATE table_name
+SET column1 = column2
+WHERE condition;
+```
 
 <a id="markdown-update-values-using-concat" name="update-values-using-concat"></a>
 
@@ -50,3 +60,5 @@ WHERE title LIKE '%Section%';
 
     UPDATE `table_name`
     SET `field_name` = replace(same_field_name, 'unwanted_text', 'wanted_text')
+
+

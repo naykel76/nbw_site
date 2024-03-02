@@ -5,8 +5,6 @@
 - [Date and Time](#date-and-time)
     - [Set current date `CURDATE()`](#set-current-date-curdate)
 - [CREATE](#create)
-    - [RENAME Table](#rename-table)
-    - [DROP COLUMN](#drop-column)
 - [`DELETE` all records](#delete-all-records)
 - [`DELETE` conditional records](#delete-conditional-records)
 - [INSERT](#insert)
@@ -60,21 +58,7 @@ CREATE TABLE IF NOT EXISTS table_name (
 );
 ```
 
-<a id="markdown-rename-table" name="rename-table"></a>
 
-### RENAME Table
-```sql
-ALTER TABLE table_name RENAME To new_table_name
-```
-
-<a id="markdown-drop-column" name="drop-column"></a>
-
-### DROP COLUMN
-```sql
-ALTER TABLE table_name DROP column_name;
-```
-
----
 
 <a id="markdown-delete-all-records" name="delete-all-records"></a>
 

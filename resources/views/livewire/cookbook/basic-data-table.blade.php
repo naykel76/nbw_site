@@ -12,7 +12,8 @@
                 <tr wire:key="{{ $course->id }}">
                     <td> {{ str($course->title)->limit(40) }} </td>
                     <td class="tar">
-                        <x-gt-button wire:click="$dispatch('set-editing-item', {id: {{ $course->id }}})"
+                        {{-- <x-gt-button wire:click="$dispatch('set-editing-item', {id: {{ $course->id }}})" --}}
+                        <x-gt-button wire:click="$dispatchTo('cookbook.basic-form-with-form-object', 'set-editing-item', {id: {{ $course->id }}})"
                             class="link txt-sky">
                             <x-gt-icon name="pencil-square" class="wh-1.25 opacity-06" />
                         </x-gt-button>

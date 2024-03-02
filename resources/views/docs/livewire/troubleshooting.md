@@ -2,63 +2,52 @@
 
 <!-- TOC -->
 
-- [Child component not updating](#child-component-not-updating)
-- [Dispatch to component not working](#dispatch-to-component-not-working)
-- [Dispatching to a child component](#dispatching-to-a-child-component)
+- [Component Troubleshooting](#component-troubleshooting)
+    - [List not refreshing after an action has been performed (TBD)](#list-not-refreshing-after-an-action-has-been-performed-tbd)
+- [Event Troubleshooting](#event-troubleshooting)
+- [DispatchTo not working](#dispatchto-not-working)
+    - [Dispatch or DispatchTo not working or event not being caught](#dispatch-or-dispatchto-not-working-or-event-not-being-caught)
 
 <!-- /TOC -->
 
+<a id="markdown-component-troubleshooting" name="component-troubleshooting"></a>
 
-<a id="markdown-child-component-not-updating" name="child-component-not-updating"></a>
+## Component Troubleshooting
 
-## Child component not updating
+<a id="markdown-list-not-refreshing-after-an-action-has-been-performed-tbd" name="list-not-refreshing-after-an-action-has-been-performed-tbd"></a>
 
-Make sure you are dispatching an event to listen for.
+### List not refreshing after an action has been performed (TBD)
 
-```php
-public function save()
-{
-    $this->dispatch('item-saved');
-}
-```
+<a id="markdown-event-troubleshooting" name="event-troubleshooting"></a>
 
-Listen for the event in the parent component.
-
-This seems to work when you updated an item in a list but it is failing to update when new items are created
-
-```php
-#[On('item-saved')]
-class CourseChapterModal extends Component { }
-```
-
-The only way to get the list to update is to attach the event listener to a dedicated method that
-re-fetches the items.
-
-```php
-#[On('item-saved')]
-public function refreshItems() {
-    // code to reload the items
-}
-```
+## Event Troubleshooting
 
 
-<a id="markdown-dispatch-to-component-not-working" name="dispatch-to-component-not-working"></a>
+<a id="markdown-dispatchto-not-working" name="dispatchto-not-working"></a>
 
-## Dispatch to component not working
+## DispatchTo not working
 
-Make sure you are using `dispatchTo` and not just `dispatch`
+* Make sure you are using `$dispatchTo` and not just `$dispatch`
 
-<a id="markdown-dispatching-to-a-child-component" name="dispatching-to-a-child-component"></a>
+<a id="markdown-dispatch-or-dispatchto-not-working-or-event-not-being-caught" name="dispatch-or-dispatchto-not-working-or-event-not-being-caught"></a>
 
-## Dispatching to a child component
+### Dispatch or DispatchTo not working or event not being caught
 
-When using the `dispatchTo` method to invoke a method in a child component make sure you use
-`kebab-case` for the component name. Also make sure you wrap any parameters in culey braces `{}`.
-For example:
+If you are dispatching to a dynamic component, make sure the component is available to listen to
+the event. For example, the code below will fail because the `create-edit` component is not available
+to listen to the event.
 
 ```php
-$dispatchTo('child-component', 'method', { id: 427 })
+@foreach ($mediaItems as $media)
+    <button wire:click="$dispatchTo('create-edit', 'set-editing-item', {id: {{ $>id }}})"> </button>
+@endforeach
 
-$dispatchTo('user-create-edit', 'edit', {id: {{ $user->id }}})
+@isset($editing)
+    <livewire:admin.media.media-create-edit :media="$editing" />
+@endisset
 ```
 
+**What is the solution?**
+
+Good question! The solution is to dispatch the event to the parent component and then let the
+parent component handle the event.
