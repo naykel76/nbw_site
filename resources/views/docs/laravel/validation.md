@@ -1,3 +1,5 @@
+# Validation
+
 <!-- TOC -->
 
 - [Things worth noting](#things-worth-noting)
@@ -5,13 +7,14 @@
     - [Phone Number](#phone-number)
 - [Unique](#unique)
     - [Ignore a given ID or a specific record](#ignore-a-given-id-or-a-specific-record)
-    - [Required (if | unless)](#required-if--unless)
-    - [Conditionally Adding Rules (exclude\_if | exclude\_unless)](#conditionally-adding-rules-exclude_if--exclude_unless)
-- [Conditional Rules](#conditional-rules)
-    - [Nested Properties](#nested-properties)
-- [Required (if | when | unless | with | ...)](#required-if--when--unless--with--)
-- [Unique](#unique-1)
     - [Unique Based on Multiple Conditions](#unique-based-on-multiple-conditions)
+- [Conditional Validation](#conditional-validation)
+    - [Exclude](#exclude)
+        - [`exclude_if` and `exclude_unless`](#exclude_if-and-exclude_unless)
+    - [Required](#required)
+        - [`required_with` and `required_with_all`](#required_with-and-required_with_all)
+        - [`required_if` and `required_unless`](#required_if-and-required_unless)
+- [Validate Nested Properties (TBD)](#validate-nested-properties-tbd)
 
 <!-- /TOC -->
 
@@ -23,6 +26,7 @@ By default, Laravel includes the `TrimStrings` and `ConvertEmptyStringsToNull` m
 application's global middleware stack. Because of this, you will often need to mark your
 "optional" request fields as `nullable` if you do not want the validator to consider `null` values
 as invalid.
+
 
 <a id="markdown-numbers-and-currency" name="numbers-and-currency"></a>
 
@@ -42,6 +46,7 @@ with a dot followed by exactly two digits.
   at all.
 - `$` : This asserts the end of a line. The pattern must match at the end of the line.
 
+
 <a id="markdown-phone-number" name="phone-number"></a>
 
 ### Phone Number
@@ -50,14 +55,15 @@ with a dot followed by exactly two digits.
 'phone_number' => 'required|string|regex:/^[0-9+\s]+$/i|min:10',
 ```
 
-
 In this example, we're validating a phone number input called "phone_number" that must be required, a string, and match the regular expression pattern of "^[0-9+\s]+$", which allows only numbers, plus sign, and spaces. We're also setting a minimum length of 10 characters and a maximum length of 20 characters for the phone number.
+
 
 <a id="markdown-unique" name="unique"></a>
 
 ## Unique
 
 `unique:table,column,except,idColumn`
+
 
 
 <a id="markdown-ignore-a-given-id-or-a-specific-record" name="ignore-a-given-id-or-a-specific-record"></a>
@@ -74,129 +80,6 @@ use Illuminate\Validation\Rule;
 
 'code' => ['required', Rule::unique('courses')->ignore($this->course)],
 ```
-
-
-
-
-
-
-
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
--
-
-
-
-
-<a id="markdown-required-if--unless" name="required-if--unless"></a>
-
-### Required (if | unless)
-
-```php
-// you can check multiple comma separated values
-'field' => 'required_if:anotherField,value,anotherValue',
-'field' => 'required_unless:anotherField,value,anotherValue',
-// check nested values using dot notation
-'field' => 'required_if:nested.anotherField,value,anotherValue',
-'field' => 'required_unless:nested.anotherField,value,anotherValue',
-```
-
-The callback function in the `requiredIf` rule field is used to specify additional conditions for
-the field to be required.
-
-```php
-'editing.config.cerpsE' => Rule::requiredIf(
-    fn () => !$this->AllFieldsAreZeroOrEmpty() && $this->editing->isCerpsApproved()
-),
-```
-
-
-<a id="markdown-conditionally-adding-rules-excludeif--excludeunless" name="conditionally-adding-rules-excludeif--excludeunless"></a>
-
-### Conditionally Adding Rules (exclude_if | exclude_unless)
-
-```php
-'field' => 'exclude_if:published,false|required',
-'field' => 'exclude_unless:published,true|required',
-```
-
----
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-
-    'editing.order_date' => 'required|date',
-
-    // convert to comma separated list of keys
-    'editing.status' => 'required|in:' . collect(Order::STATUSES)->keys()->implode(','),
-
-
-<a id="markdown-conditional-rules" name="conditional-rules"></a>
-
-## Conditional Rules
-
-
-
-
-<a id="markdown-nested-properties" name="nested-properties"></a>
-
-### Nested Properties
-
-```php
-'blocks.*.title' => [
-    'exclude_if:blocks.*.type,apple,banana', 'required'
-],
-```
-
-
-<a id="markdown-required-if--when--unless--with--" name="required-if--when--unless--with--"></a>
-
-## Required (if | when | unless | with | ...)
-
-
-```php
-
-
-required_array_keys:foo,bar,...
-required_with:foo,bar,...
-required_with_all:foo,bar,...
-required_without:foo,bar,...
-required_without_all:foo,bar,...
-```
-
-
-<a id="markdown-validate-when-database-value-is" name="validate-when-database-value-is"></a>
-
-##### Validate when database value is:
-
-
-<a id="markdown-unique" name="unique"></a>
-
-## Unique
-
 
 
 
@@ -232,6 +115,69 @@ WHERE clause to work, and in this case, when the `is_category` field is
         ->ignore($this->editing->id)
 ],
 ```
+
+
+<a id="markdown-conditional-validation" name="conditional-validation"></a>
+
+## Conditional Validation
+
+
+<a id="markdown-exclude" name="exclude"></a>
+
+### Exclude
+
+<a id="markdown-excludeif-and-excludeunless" name="excludeif-and-excludeunless"></a>
+
+#### `exclude_if` and `exclude_unless`
+
+```php
+'field' => 'exclude_if:anotherField,value|required',
+'field' => 'exclude_unless:anotherField,value|required',
+```
+you can check multiple against values using comma separated values.
+
+<a id="markdown-required" name="required"></a>
+
+### Required
+
+
+<a id="markdown-requiredwith-and-requiredwithall" name="requiredwith-and-requiredwithall"></a>
+
+#### `required_with` and `required_with_all`
+
+```php
+'password' => 'required|confirmed|min:6',
+'password_confirmation' => 'required_with:password',
+```
+
+<a id="markdown-requiredif-and-requiredunless" name="requiredif-and-requiredunless"></a>
+
+#### `required_if` and `required_unless`
+```php
+'field' => 'required_if:anotherField,value,anotherValue',
+'field' => 'required_unless:anotherField,value,anotherValue',
+```
+
+<a id="markdown-validate-nested-properties-tbd" name="validate-nested-properties-tbd"></a>
+
+## Validate Nested Properties (TBD)
+
+```php
+'blocks.*.title' => [
+    'exclude_if:blocks.*.type,apple,banana', 'required'
+],
+// check nested values using dot notation
+'field' => 'required_if:nested.anotherField,value,anotherValue',
+'field' => 'required_unless:nested.anotherField,value,anotherValue',
+```
+
+
+
+
+    'editing.order_date' => 'required|date',
+
+    // convert to comma separated list of keys
+    'editing.status' => 'required|in:' . collect(Order::STATUSES)->keys()->implode(','),
 
 
 

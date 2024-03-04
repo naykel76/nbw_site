@@ -41,6 +41,12 @@
                 "exclude_route": true
             },
             {
+                "name": "JavaScript",
+                "route_name": "docs.javascript.javascript-cheatsheet",
+                "icon_logo": "javascript",
+                "exclude_route": true
+            },
+            {
                 "name": "Laravel",
                 "route_name": "docs.laravel.quick-reference",
                 "icon_logo": "laravel",

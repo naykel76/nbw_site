@@ -17,6 +17,8 @@
     - [Map between arrays](#map-between-arrays)
 - [Get {n} highest values in an array `sort()` and `slice()`](#get-n-highest-values-in-an-array-sort-and-slice)
 - [Reverse an array](#reverse-an-array)
+- [Array methods](#array-methods)
+    - [`reduce`](#reduce)
 
 <!-- /TOC -->
 
@@ -29,9 +31,6 @@
 const array = ['apple', 'banana', 'orange'];
 const hasApple = array.includes('apple');
 ```
-
-
-
 
 <a id="markdown-retrieving-values" name="retrieving-values"></a>
 
@@ -52,12 +51,16 @@ const jane = people.find(person => person.name === 'Jane');
 ```
 
 
+<a id="markdown-return-a-random-value-from-an-array-by-index"
+name="return-a-random-value-from-an-array-by-index"></a>
+
 <a id="markdown-return-a-random-value-from-an-array-by-index" name="return-a-random-value-from-an-array-by-index"></a>
 
 ### Return a random value from an array by index
 
-You can return a random element from a JavaScript array by generating a random index using the
-Math.random() function and using that index to access an element from the array.
+You can return a random element from a JavaScript array by generating a random index
+using the Math.random() function and using that index to access an element from the
+array.
 
 ```js
 const array = ['apple', 'banana', 'orange', 'pear'];
@@ -70,6 +73,9 @@ const randomElement = array[randomIndex];
 <a id="markdown-removing-items" name="removing-items"></a>
 
 ## Removing Items
+
+<a id="markdown-basic-methods-splice-pop-and-shift"
+name="basic-methods-splice-pop-and-shift"></a>
 
 <a id="markdown-basic-methods-splice-pop-and-shift" name="basic-methods-splice-pop-and-shift"></a>
 
@@ -110,13 +116,13 @@ const remove = {person_id: 2, name: 'Jane'};
 const newArray = people.filter(values => values.person_id !== id)
 ```
 
-In this example, we want to remove 'orange' from the array, so we use the `filter()` method and
-pass a function as an argument. This function tests each item in the array to see if it matches
-the value we want to remove (valueToRemove). If the item does not match the value, it is added to
-a new array (newArray) using the filter() method.
+In this example, we want to remove 'orange' from the array, so we use the `filter()`
+method and pass a function as an argument. This function tests each item in the array to
+see if it matches the value we want to remove (valueToRemove). If the item does not
+match the value, it is added to a new array (newArray) using the filter() method.
 
-You should note a new array containing matching values is returned. The original array is left
-untouched.
+You should note a new array containing matching values is returned. The original array
+is left untouched.
 
 
 <a id="markdown-count-duplicate-values-reduce" name="count-duplicate-values-reduce"></a>
@@ -135,20 +141,22 @@ const numElements = someArray.reduce((count, item) => {
 }, {});
 ```
 
-The `reduce()` method takes two arguments: a `callback` function and an `initial` value (in this
-case, an empty object {}). The callback function takes two parameters: count (the accumulator) and
-item (the current element being iterated over).
+The `reduce()` method takes two arguments: a `callback` function and an `initial` value
+(in this case, an empty object {}). The callback function takes two parameters: count
+(the accumulator) and item (the current element being iterated over).
 
 **Within the callback function, we perform the following steps:**
 
-1. `count[item] = count[item] + 1 || 1;`: We access the property in the count object corresponding to
-the item. If the property doesn't exist, we initialize it to 1. If the property already exists, we
-increment its value by 1.
+1. `count[item] = count[item] + 1 || 1;`: We access the property in the count object
+   corresponding to
+the item. If the property doesn't exist, we initialize it to 1. If the property already
+exists, we increment its value by 1.
 
-2. `return count;`: We return the updated `count` object to be used as the accumulator in the next iteration.
+2. `return count;`: We return the updated `count` object to be used as the accumulator
+   in the next iteration.
 
-After the `reduce()` method completes, the `numElements` object will contain the count of
-occurrences for each unique element in the someArray.
+After the `reduce()` method completes, the `numElements` object will contain the count
+of occurrences for each unique element in the someArray.
 
 <a id="markdown-key-value-pairs" name="key-value-pairs"></a>
 
@@ -174,8 +182,8 @@ console.log(elementCounts);
 someArray.map(callback)
 ```
 
-The `callback` is a function to execute for each element in the array. Its return value is added
-as a single element in the new array.
+The `callback` is a function to execute for each element in the array. Its return value
+is added as a single element in the new array.
 
 
 ```js
@@ -213,11 +221,15 @@ const data = checkInLog.map((item) => {
 });
 ```
 
+<a id="markdown-get-n-highest-values-in-an-array-sort-and-slice"
+name="get-n-highest-values-in-an-array-sort-and-slice"></a>
+
 <a id="markdown-get-n-highest-values-in-an-array-sort-and-slice" name="get-n-highest-values-in-an-array-sort-and-slice"></a>
 
 ## Get {n} highest values in an array `sort()` and `slice()`
 
-If you are working with an object of key-value pairs, the first step will be to convert the object to an array
+If you are working with an object of key-value pairs, the first step will be to convert
+the object to an array
 
 ```js
 const someArray = Object.entries(someObject);
@@ -242,3 +254,48 @@ const someArray = [1, 2, 3, 4, 5];
 const reversedArray = someArray.reverse();
 ```
 
+
+<a id="markdown-array-methods" name="array-methods"></a>
+
+## Array methods
+
+<a id="markdown-reduce" name="reduce"></a>
+
+### `reduce`
+
+The `reduce()` method in JavaScript is used to reduce the elements of an array into a
+single output value. It does this by applying a function to each element in the array,
+from left to right, so as to reduce it to a single output value.
+
+```js
+reduce(callback, initialValue);
+```
+
+The `callback` function you provide to the `reduce` method can take up to four parameters:
+
+1. `accumulator`: This is a running total of the values returned by your callback function.
+2. `currentValue`: This is the current element in the array that's being processed.
+3. `currentIndex` (optional): This is the index of the current element being processed in the array.
+4. `sourceArray` (optional): This is the array that reduce() was called upon.
+
+```js
+array.reduce((runningTotal, currentValue, currentIndex, sourceArray) => { }, initialValue);
+```
+
+
+
+
+An initial value for the accumulator. If this second argument is not provided, then the
+first element of the array is used as the initial accumulator value and the reducer
+function is not called for the first element.
+
+In the example I provided:
+
+The reducer function is (a, b) => a + b, which takes two arguments a and b, and returns
+their sum. The initial value for the accumulator is 0.
+
+So, the reduce() method starts with a as 0 and b as the first element in the array (1),
+and applies the reducer function to them, which returns their sum (1). This sum is then
+provided as the accumulator argument a in the next call to the reducer function, with b
+as the next element in the array (2), and so on for the rest of the array. The final
+result is the sum of all elements in the array.

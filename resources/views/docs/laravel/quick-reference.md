@@ -19,6 +19,19 @@
 composer create-project laravel/laravel example-app
 ```
 
+Alternatively you can install the Laravel installer and use it to create a new project:
+
+```bash
+composer global require laravel/installer
+laravel new example-app
+```
+
+Tack on the --pest flag to use Pest as the testing framework:
+
+```bash
+composer create-project laravel/laravel example-app --pest
+```
+
 <a id="markdown-maintenance-mode" name="maintenance-mode"></a>
 
 ## Maintenance Mode
