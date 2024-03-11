@@ -2,6 +2,10 @@
     "main": {
         "links": [
             {
+                "name": "Debugging",
+                "route_name": "docs.debugging"
+            },
+            {
                 "name": "Class Diagrams",
                 "route_name": "docs.software-engineering.class-diagrams"
             },

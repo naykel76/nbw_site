@@ -10,16 +10,12 @@
     - [Checkbox or Radio Input](#checkbox-or-radio-input)
     - [Image Source](#image-source)
 - [ES Modules](#es-modules)
-- [Spread vs Rest](#spread-vs-rest)
+- [Spread vs Rest Operators](#spread-vs-rest-operators)
     - [Spread Operator](#spread-operator)
-- [Destructuring Arrays](#destructuring-arrays)
-- [Questions](#questions)
-        - [How can I run a function when the screen first loads?](#how-can-i-run-a-function-when-the-screen-first-loads)
-        - [What selectors can I use to select the next instance of an element or class?](#what-selectors-can-i-use-to-select-the-next-instance-of-an-element-or-class)
+    - [Rest Operator](#rest-operator)
+- [Destructuring Objects and Arrays](#destructuring-objects-and-arrays)
 
 <!-- /TOC -->
-
-
 
 
 <a id="markdown-events" name="events"></a>
@@ -114,155 +110,109 @@ imageElement.src = 'new-image.jpg';
 ## ES Modules
 
 ```js
-// utilities.js
-export function square(number) {
-  return number * number;
-}
-// arrow function
 export const square = (number) => number * number;
 ```
 
 ```js
-// Importing functions from the utils module
 import { square } from './utils.js';
 
-// Using the imported functions
 const number = 5;
 console.log(`The square of ${number} is ${square(number)}`);
 ```
 
+<a id="markdown-spread-vs-rest-operators" name="spread-vs-rest-operators"></a>
 
-<a id="markdown-spread-vs-rest" name="spread-vs-rest"></a>
+## Spread vs Rest Operators
 
-## Spread vs Rest
+JavaScript uses three dots (...) for both the rest and spread operators. But these two
+operators are not the same.
 
-```js
-function print(myArray) {
-  array.forEach(item => console.log(item));
-}
 
-print(['arg1', 'arg2']);
-// arg1
-// arg2
-```
+The main difference between rest and spread is that the rest operator puts the rest of
+some specific values into a array. But the spread syntax expands iterables into
+individual elements.
 
 <a id="markdown-spread-operator" name="spread-operator"></a>
 
 ### Spread Operator
 
-The spread operator unpacks iterables into individual elements. This comes in handy when a
-function expects a list of arguments and all you have is an array:
+The spread operator (...) allows an iterable such as an `array` or `string` to be
+expanded in places where zero or more arguments (for function calls) or elements (for
+array literals) are expected.
 
 ```js
 const array = [1, 2, 3];
-console.log(...array);
-// 1 2 3
+console.log(...array); // 1 2 3
+const string = 'hello';
+console.log(...string); // h e l l o
 ```
 
-<a id="markdown-destructuring-arrays" name="destructuring-arrays"></a>
-
-## Destructuring Arrays
+The spread operator can also be used to spread the properties of an object into
+another object.
 
 ```js
-// the old way
+const object1 = { a: 1, b: 2 };
+const object2 = { ...object1, c: 3 };
+console.log(object2); // { a: 1, b: 2, c: 3 }
+```
+
+<a id="markdown-rest-operator" name="rest-operator"></a>
+
+### Rest Operator
+
+The rest operator is used to collect the remaining elements into an array. For example,
+you can use the rest operator to collect the remaining arguments into an array.
+
+```js
+function sum(...args) {
+  return args.reduce((a, b) => a + b, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10
+```
+
+The rest operator can also be used to collect the remaining properties into an object or
+array.
+
+```js
+const { a, ...rest } = { a: 1, b: 2, c: 3 };
+console.log(rest); // { b: 2, c: 3 }
+```
+
+```js
+const array = [1, 2, 3];
+const [first, ...rest] = array;
+console.log(rest); // [2, 3]
+```
+
+<a id="markdown-destructuring-objects-and-arrays" name="destructuring-objects-and-arrays"></a>
+
+## Destructuring Objects and Arrays
+
+```js
 var fruit = ['apple', 'banana', 'kiwi'];
 
-var apple = fruit[0];
-var banana = fruit[1];
-var kiwi = fruit[2];
-
-// es6
 const [apple, banana, kiwi] = fruit;
 
 const [apple, ...rest] = ['apple', 'banana', 'kiwi'];
 console.log(rest); // -> ["banana", "kiwi"]
 ```
 
-
-<a id="markdown-questions" name="questions"></a>
-
-## Questions
-
-<a id="markdown-how-can-i-run-a-function-when-the-screen-first-loads" name="how-can-i-run-a-function-when-the-screen-first-loads"></a>
-
-#### How can I run a function when the screen first loads?
-
-To run a function when the screen first loads, you can use the `window.onload` event or the modern
-`DOMContentLoaded` event. These events ensure that your JavaScript code is executed after the HTML
-content has been fully loaded and is ready to be manipulated.
+```js
+const [first, second, third] = [1, 2, 3];
+console.log(first, second, third);
+```
 
 ```js
-// `window.onload` event
-window.onload = () => {
-    myFunc();
+const person = {
+  name: 'John',
+  age: 30,
+  city: 'New York'
 };
 
-// `DOMContentLoaded` event
-document.addEventListener('DOMContentLoaded', () => {
-    myFunc();
-});
+const { name, age, city } = person;
+console.log(name, age, city);
 ```
 
-<a id="markdown-what-selectors-can-i-use-to-select-the-next-instance-of-an-element-or-class" name="what-selectors-can-i-use-to-select-the-next-instance-of-an-element-or-class"></a>
 
-#### What selectors can I use to select the next instance of an element or class?
 
-```html
-<script> // select next canvas </script>
-<canvas></canvas>
 
-<script> // select next canvas </script>
-<canvas></canvas>
-
-```
-
-<!--
-
-<script>
-    const scripts = document.querySelectorAll('script');
-    scripts.forEach(script => {
-        const nextCanvas = script.nextElementSibling;
-        if (nextCanvas && nextCanvas.tagName.toLowerCase() === 'canvas') {
-            // Do something with the next canvas element
-            // For example, you can add a class to it
-            nextCanvas.classList.add('selected');
-        }
-    });
-</script>
-<canvas></canvas>
-<script>
-    const scripts = document.querySelectorAll('script');
-    scripts.forEach(script => {
-        const nextCanvas = script.nextElementSibling;
-        if (nextCanvas && nextCanvas.tagName.toLowerCase() === 'canvas') {
-            // Do something with the next canvas element
-            // For example, you can add a class to it
-            nextCanvas.classList.add('selected');
-        }
-    });
-</script>
-<canvas></canvas>
-<script>
-    const scripts = document.querySelectorAll('script');
-    scripts.forEach(script => {
-        const nextCanvas = script.nextElementSibling;
-        if (nextCanvas && nextCanvas.tagName.toLowerCase() === 'canvas') {
-            // Do something with the next canvas element
-            // For example, you can add a class to it
-            nextCanvas.classList.add('selected');
-        }
-    });
-</script>
-<canvas></canvas>
-<script>
-    const scripts = document.querySelectorAll('script');
-    scripts.forEach(script => {
-        const nextCanvas = script.nextElementSibling;
-        if (nextCanvas && nextCanvas.tagName.toLowerCase() === 'canvas') {
-            // Do something with the next canvas element
-            // For example, you can add a class to it
-            nextCanvas.classList.add('selected');
-        }
-    });
-</script>
-<canvas></canvas> -->

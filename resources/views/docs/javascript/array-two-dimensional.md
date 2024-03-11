@@ -30,9 +30,10 @@ const matrix = [
     [7, 8, 9]
 ];
 
-console.log(matrix[1][2]);
-// outputs 6
+// logs the element at the second row and third column of the matrix.
+console.log(matrix[1][2]); // outputs 6
 ```
+
 
 <a id="markdown-creating-a-two-dimensional-array" name="creating-a-two-dimensional-array"></a>
 

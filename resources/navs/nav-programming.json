@@ -88,6 +88,11 @@
                 "exclude_route": true
             },
             {
+                "name": "React Native",
+                "route_name": "docs.react-native-cheatsheet",
+                "icon_logo": "react"
+            },
+            {
                 "name": "Regex",
                 "route_name": "pages.regex-cheatsheet",
                 "icon_logo": "regex"

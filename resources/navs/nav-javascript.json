@@ -1,9 +1,28 @@
 {
+    "Concepts": {
+        "links": [
+            {
+                "name": "Recursion",
+                "route_name": "docs.javascript.recursion",
+                "icon": "javascript"
+            },
+            {
+                "name": "Debugging",
+                "route_name": "docs.javascript.debugging",
+                "icon": "javascript"
+            }
+        ]
+    },
     "javascript": {
         "links": [
             {
                 "name": "Quick Reference",
                 "route_name": "docs.javascript.javascript-cheatsheet",
+                "icon": "javascript"
+            },
+            {
+                "name": "FAQ's",
+                "route_name": "docs.javascript.faqs",
                 "icon": "javascript"
             },
             {
