@@ -9,6 +9,7 @@
     - [`array.shift(): string | undefined` (remove and return first item)](#arrayshift-string--undefined-remove-and-return-first-item)
     - [`array.splice(startIndex, deleteCount?): string[]` (remove and add from index)](#arraysplicestartindex-deletecount-string-remove-and-add-from-index)
     - [`array.reverse()`](#arrayreverse)
+    - [`array.sort()`](#arraysort)
 - [Array methods (non-mutating)](#array-methods-non-mutating)
     - [`array.filter(item => condition)`](#arrayfilteritem--condition)
     - [`array.map(item => expression)`](#arraymapitem--expression)
@@ -33,7 +34,6 @@
 
 ## Array methods (mutating)
 
-- `sort()`: Sorts the elements of an array in place and returns the array.
 - `fill()`: Sets all array elements to a value, from start (default 0) to end (default array.length).
 
 <a id="markdown-arraypushitems-number-add-to-end-and-return-new-length" name="arraypushitems-number-add-to-end-and-return-new-length"></a>
@@ -134,6 +134,33 @@ Reverses the order of the elements of an array in place and returns the array.
 const someArray = [1, 2, 3, 4, 5];
 const reversedArray = someArray.reverse();
 ```
+
+<a id="markdown-arraysort" name="arraysort"></a>
+
+### `array.sort()`
+
+The `sort()` method sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+
+```js
+const someArray = [1, 2, 3, 4, 5];
+const sortedArray = someArray.sort();
+
+const people = [
+    {name: 'John', age: 25},
+    {name: 'Jane', age: 30},
+    {name: 'Bob', age: 20}
+];
+
+const sortedPeople = people.sort((a, b) => a.age - b.age);
+```
+<!-- This line sorts the people array by the age property of each object. The sort() method sorts the elements of an array in place and returns the array. The sort order is built by comparing two elements at a time (a and b in this case) using a compare function.
+
+The compare function (a, b) => a.age - b.age works as follows:
+
+If a.age - b.age is less than 0, sort a to an index lower than b (i.e., a comes first).
+If a.age - b.age is 0, leave a and b unchanged with respect to each other.
+If a.age - b.age is greater than 0, sort b to an index lower than a (i.e., b comes first).
+So, the sortedPeople array will contain the same objects as the people array, but sorted in ascending order by age. -->
 
 <a id="markdown-array-methods-non-mutating" name="array-methods-non-mutating"></a>
 
