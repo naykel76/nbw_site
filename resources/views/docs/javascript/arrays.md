@@ -9,13 +9,17 @@
     - [`array.shift(): string | undefined` (remove and return first item)](#arrayshift-string--undefined-remove-and-return-first-item)
     - [`array.splice(startIndex, deleteCount?): string[]` (remove and add from index)](#arraysplicestartindex-deletecount-string-remove-and-add-from-index)
     - [`array.reverse()`](#arrayreverse)
-    - [`array.sort()`](#arraysort)
+    - [`array.sort(): string[]` (returns sorted array)](#arraysort-string-returns-sorted-array)
+        - [Sort numbers in ascending order](#sort-numbers-in-ascending-order)
+        - [Sort numbers in descending order](#sort-numbers-in-descending-order)
+        - [Sorting strings](#sorting-strings)
+        - [Sorting objects and strings](#sorting-objects-and-strings)
 - [Array methods (non-mutating)](#array-methods-non-mutating)
-    - [`array.filter(item => condition)`](#arrayfilteritem--condition)
+    - [`array.filter(predicate: callback): any[]`](#arrayfilterpredicate-callback-any)
     - [`array.map(item => expression)`](#arraymapitem--expression)
     - [`array.find(item => condition)`](#arrayfinditem--condition)
     - [`array.join(separator)`](#arrayjoinseparator)
-    - [`array.reduce((a, b) => a + b)`](#arrayreducea-b--a--b)
+    - [`array.reduce((total, value) => total + value, 0)`](#arrayreducetotal-value--total--value-0)
     - [`array.forEach(item => expression): void`](#arrayforeachitem--expression-void)
 - [Useful array actions](#useful-array-actions)
     - [Check existence](#check-existence)
@@ -135,32 +139,69 @@ const someArray = [1, 2, 3, 4, 5];
 const reversedArray = someArray.reverse();
 ```
 
-<a id="markdown-arraysort" name="arraysort"></a>
+<a id="markdown-arraysort-string-returns-sorted-array" name="arraysort-string-returns-sorted-array"></a>
 
-### `array.sort()`
+### `array.sort(): string[]` (returns sorted array)
 
 The `sort()` method sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+
+<a id="markdown-sort-numbers-in-ascending-order" name="sort-numbers-in-ascending-order"></a>
+
+#### Sort numbers in ascending order
 
 ```js
 const someArray = [1, 2, 3, 4, 5];
 const sortedArray = someArray.sort();
+```
 
+<a id="markdown-sort-numbers-in-descending-order" name="sort-numbers-in-descending-order"></a>
+
+#### Sort numbers in descending order
+
+you can change the sort order of an array by passing a compare function to the `sort()`
+method. By default, `sort()` converts the elements to strings and sorts them in
+lexicographical (alphabetical) order, which may not work as expected with numbers or
+complex objects.
+
+```js
+const someArray = [1, 2, 3, 4, 5];
+const sortedArray = someArray.sort((a, b) => b - a);
+```
+
+In this code, the compare function `(a, b) => b - a` is passed to `sort()`. This
+function gets called with every pair of elements in the array. If the function returns a
+positive number, `b` is sorted before `a`. If it returns a negative number, `a` is
+sorted before `b`. If it returns 0, `a` and `b` remain in their original order.
+
+<a id="markdown-sorting-strings" name="sorting-strings"></a>
+
+#### Sorting strings
+
+```js
+const someArray = ['apple', 'banana', 'cherry', 'date'];
+const sortedArray = someArray.sort();
+```
+
+<a id="markdown-sorting-objects-and-strings" name="sorting-objects-and-strings"></a>
+
+#### Sorting objects and strings
+
+```js
 const people = [
     {name: 'John', age: 25},
     {name: 'Jane', age: 30},
     {name: 'Bob', age: 20}
 ];
 
-const sortedPeople = people.sort((a, b) => a.age - b.age);
+const sortedPeopleByName = people.sort((a, b) => a.name.localeCompare(b.name));
 ```
-<!-- This line sorts the people array by the age property of each object. The sort() method sorts the elements of an array in place and returns the array. The sort order is built by comparing two elements at a time (a and b in this case) using a compare function.
 
-The compare function (a, b) => a.age - b.age works as follows:
+To sort an array of objects by a specific property, such as name, you can use the sort()
+function with a custom sorting function. The sorting function should take two arguments,
+which represent two elements being compared. It should return a negative number, zero,
+or a positive number, depending on whether the first argument should be sorted before,
+at the same position, or after the second argument.
 
-If a.age - b.age is less than 0, sort a to an index lower than b (i.e., a comes first).
-If a.age - b.age is 0, leave a and b unchanged with respect to each other.
-If a.age - b.age is greater than 0, sort b to an index lower than a (i.e., b comes first).
-So, the sortedPeople array will contain the same objects as the people array, but sorted in ascending order by age. -->
 
 <a id="markdown-array-methods-non-mutating" name="array-methods-non-mutating"></a>
 
@@ -173,11 +214,16 @@ So, the sortedPeople array will contain the same objects as the people array, bu
 - `indexOf()`: Returns the first index of a value in the array, or -1.
 - `findIndex()`: Returns the index of the first element that satisfies a test, or -1.
 
-<a id="markdown-arrayfilteritem--condition" name="arrayfilteritem--condition"></a>
 
-### `array.filter(item => condition)`
+filter(callback: (element: ElementType, index: number, array: ElementType[]) => boolean): ElementType[]
 
-The `filter()` method accepts a callback function as an argument and returns the
+filter(predicate: (value: any, index: number, array: any[]) => unknown, thisArg?: any): any[]
+
+<a id="markdown-arrayfilterpredicate-callback-any" name="arrayfilterpredicate-callback-any"></a>
+
+### `array.filter(predicate: callback): any[]`
+
+The `filter()` method accepts a predicate callback as an argument and returns the
 elements of the array that meet the condition specified in a callback function.
 
 ```js
@@ -230,9 +276,9 @@ console.log(newSentence.join(' ');); // Outputs: "the quick brown fox"
 console.log(newSentence.join();); // Outputs: "the,quick,brown,fox"
 ```
 
-<a id="markdown-arrayreducea-b--a--b" name="arrayreducea-b--a--b"></a>
+<a id="markdown-arrayreducetotal-value--total--value-0" name="arrayreducetotal-value--total--value-0"></a>
 
-### `array.reduce((a, b) => a + b)`
+### `array.reduce((total, value) => total + value, 0)`
 
 The `reduce()` method in JavaScript is used to reduce the elements of an array into a
 single output value. It does this by applying a function to each element in the array,

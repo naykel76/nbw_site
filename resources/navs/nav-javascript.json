@@ -13,6 +13,19 @@
             }
         ]
     },
+    "Arrays and Objects": {
+        "links": [
+            {
+                "name": "Arrays (Complete)",
+                "route_name": "docs.javascript.arrays",
+                "type": "blade"
+            },
+            {
+                "name": "Sorting",
+                "route_name": "docs.javascript.array.sort"
+            }
+        ]
+    },
     "javascript": {
         "links": [
             {
@@ -26,7 +39,7 @@
                 "icon": "javascript"
             },
             {
-                "name": "Arrays",
+                "name": "Arrays (TBR)",
                 "route_name": "docs.javascript.arrays",
                 "icon": "javascript"
             },
@@ -73,11 +86,6 @@
             {
                 "name": "Modules",
                 "route_name": "docs.javascript.modules",
-                "icon": "javascript"
-            },
-            {
-                "name": "Sorting Techniques",
-                "route_name": "docs.javascript.sorting-techniques",
                 "icon": "javascript"
             },
             {

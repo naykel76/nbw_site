@@ -14,6 +14,7 @@
     - [Spread Operator](#spread-operator)
     - [Rest Operator](#rest-operator)
 - [Destructuring Objects and Arrays](#destructuring-objects-and-arrays)
+- [Numeric Conversions](#numeric-conversions)
 
 <!-- /TOC -->
 
@@ -189,30 +190,23 @@ console.log(rest); // [2, 3]
 ## Destructuring Objects and Arrays
 
 ```js
-var fruit = ['apple', 'banana', 'kiwi'];
-
-const [apple, banana, kiwi] = fruit;
-
-const [apple, ...rest] = ['apple', 'banana', 'kiwi'];
+const fruits = ['apple', 'banana', 'kiwi'];
+const [fruit, fruit2, fruit3] = fruits;
+const [fruit1, ...rest] = fruits;
 console.log(rest); // -> ["banana", "kiwi"]
 ```
 
 ```js
-const [first, second, third] = [1, 2, 3];
-console.log(first, second, third);
+const { name, city } = { name: 'Bill', city: 'Brisbane' };
+console.log(name, city);
 ```
+
+
+<a id="markdown-numeric-conversions" name="numeric-conversions"></a>
+
+## Numeric Conversions
 
 ```js
-const person = {
-  name: 'John',
-  age: 30,
-  city: 'New York'
-};
-
-const { name, age, city } = person;
-console.log(name, age, city);
+let numberToBinary = (num) => num.toString(2);
+console.log(numberToBinary(10)); // Output: "1010"
 ```
-
-
-
-

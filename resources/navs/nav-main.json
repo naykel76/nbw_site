@@ -66,6 +66,11 @@
                 "exclude_route": true
             },
             {
+                "name": "Realtime Colors",
+                "url": "https://www.realtimecolors.com/?colors=050315-fbfbfe-2f27ce-dedcff-433bff&fonts=Poppins-Poppins",
+                "exclude_route": true
+            },
+            {
                 "name": "Lucidchart",
                 "url": "https://lucid.app/users/login",
                 "icon_logo": "lucidchart",
