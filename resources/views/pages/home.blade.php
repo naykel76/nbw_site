@@ -10,15 +10,19 @@
                     <div class="txt-xl">Hi, my name is</div>
                     <div class="txt-4 fw7">Nathan Watts</div>
                     <div class="maxw-sm">
-                        I design and develop Laravel web applications, dabble in server management and am training to become a full stack developer.
+                        I design and develop Laravel web applications, dabble in server management and am training to
+                        become a full stack developer.
                     </div>
                 </div>
-                <div class="bx warning-light bdr-3 rounded-1">
-                    <small>
-                        <div class="bx-title">Disclaimer:</div>
-                        <p class="txt-sm" style="opacity: 0.9"> Everything you find on this website is my take on concepts we are taught at university, a seemingly endless supply of YouTube tutorials with a sprinkle of the wild ideas that invade my brain. While I'd love to claim infallibility, I can't promise that. So, do yourself a favour and check for yourself. Trust me, Google is your friend! </p>
-                        <p class="txt-sm"> Oh, and fair warning, don't be surprised if you encounter a bit of chaos and missing pieces here and there - after all, it's all part of the journey.</p>
-                    </small>
+                <div>
+                    <div class="bx warning-light bdr-3 rounded-1 txt-sm">
+                        <p><strong>Heads Up!</strong> This website is a mash up of notes from uni, a seemingly
+                            endless supply of YouTube tutorials, and a sprinkle of the wild ideas that invade my brain.
+                            While I'd love to claim perfection, I can't promise that. So, do yourself a favour and check
+                            for yourself. Trust me, Google is your friend!</p>
+                        <p> Oh, and fair warning, don't be surprised if you encounter a bit of chaos and missing pieces
+                            here and there - after all, it's all part of the journey.</p>
+                    </div>
                 </div>
             </div>
         </div>

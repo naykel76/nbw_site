@@ -14,13 +14,13 @@
 
             <p> Throughout my career, I have spent the majority of my time working in blue-collar industries, where I honed my skills and expanded my knowledge. Fueled by my passion for personal growth, I have always been committed to acquiring new skills and expanding my knowledge from playing guitar and drums to mastering AutoCAD, exploring 3D printing, coding, and delving into programming to name a few.</p>
 
-            <p> Currently, I am in my second year of pursuing a Bachelor of Information Technology at Griffith University. Alongside my studies, I run my own business, offering services in bookkeeping, web development, and consulting. Drawing on my trade background and vast experience in administration, production management, and general management, I bring a well-rounded skill set to deliver comprehensive solutions to my clients </p>
+            <p> Currently, I am in my third year of pursuing a Bachelor of Information Technology at Griffith University. Alongside my studies, I run my own business, offering services in bookkeeping, web development, and consulting. Drawing on my trade background and vast experience in administration, production management, and general management, I bring a well-rounded skill set to deliver comprehensive solutions to my clients </p>
 
             <p> Working with others to bring ideas to life is where I truly thrive. I am passionate about small business development, empowering managers and business owners to enhance their enterprises and market position through innovation, technology, and training, thereby reducing reliance on high-cost professionals. </p>
 
             <p>Looking ahead, I aim to refine my skills and expand into areas such as software development, mobile applications, and website design. Additionally, I aspire to collaborate with larger tech companies, either as a freelance worker, employee or subcontractor, to gain exposure to evolving business trends and cutting-edge technologies, further fueling my personal growth and learning journey.</p>
 
-            <p> For me, there is nothing greater than the feeling of achievement, and I will always push myself to new heights. If you'd like to collaborate or connect, feel free to <a href="/contact">get in touch</a>.</p>
+            <p> For me, there is nothing greater than the feeling of achievement, and I will always push myself to new heights. If you'd like to collaborate or connect, feel free to <a href="/contact">reach out</a>.</p>
 
         </section>
 
