@@ -46,6 +46,7 @@
             </div>
         </div>
     </x-docs.sections.layout>
+
     <x-docs.sections.layout title="Real-Time Saving with Error Trapping" withContainer>
         <div class="container-md">
             <div class="bx">
@@ -64,7 +65,7 @@
             </div>
         </div>
     </x-docs.sections.layout>
-    <x-docs.sections.layout title="DataTable with In-Page Editing">
+    {{-- <x-docs.sections.layout title="DataTable with In-Page Editing">
         <div class="container-md">
             <div class="bx">
                 <p>There are two separate, unrelated components here: a form and a table. These components can be placed
@@ -95,5 +96,5 @@
                 </div>
             </div>
         </div>
-    </x-docs.sections.layout>
+    </x-docs.sections.layout> --}}
 </x-gotime-app-layout>

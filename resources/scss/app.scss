@@ -2,7 +2,6 @@ $x-primary: #d9558c;
 $x-secondary: #031a37;
 $x-accent: #e6c637;
 $x-background: #0b101d;
-$x-font-family: Poppins, Helvetica, Arial, sans-serif;
 $x-text: rgb(228, 232, 236);
 
 @use "node_modules/nk_jtb/src/variables" as * with (
@@ -10,7 +9,7 @@ $x-text: rgb(228, 232, 236);
     $secondary: $x-secondary,
     $accent: $x-accent,
     $body-bg: $x-background,
-    $font-family: $x-font-family,
+    $preferred-fonts: Poppins,
     $color: $x-text,
     $navbar-bg: transparent,
     $navbar-nav-hover-color: #ffbb1c,
@@ -21,6 +20,12 @@ $x-text: rgb(228, 232, 236);
 @use "node_modules/nk_jtb/src/mixins/media" as *;
 @use "node_modules/nk_jtb/src/jtb";
 @use "sass:map";
+
+// make bold text stand out because white is hard to see
+strong {
+    // color: rgb(255, 255, 121);
+    color: rgb(255, 255, 150);
+}
 
 .navbar:not(.markdown .navbar) {
     background-color: $body-bg;
@@ -33,10 +38,43 @@ h1,
 h2,
 h3 {
     code:not(.hljs) {
-        font-size: inherit;
         color: inherit;
         background-color: transparent;
     }
+}
+
+:is(h1, h2, h3, h4, h5, h6) {
+    code:not(.hljs) {
+        font-size: inherit;
+    }
+}
+
+.markdown {
+    .compare + pre,
+    .compare + pre + pre {
+        float: left;
+        width: 49%;
+    }
+
+    .compare + pre {
+        margin-right: 1%;
+    }
+    .compare + pre + pre{
+        margin-left: 1%;
+        
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    hr {
+        border-color: #3d5ea5;
+    }
+}
+
+.regex + p code {
+    color: yellow;
 }
 
 .fp-x {

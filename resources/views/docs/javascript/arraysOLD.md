@@ -2,22 +2,9 @@
 
 <!-- TOC -->
 
-- [Array methods (mutating)](#array-methods-mutating)
-    - [`array.push(...items): number` (add to end and return new length)](#arraypushitems-number-add-to-end-and-return-new-length)
-    - [`array.unshift(...items): number` (add to start and return new length)](#arrayunshiftitems-number-add-to-start-and-return-new-length)
-    - [`array.pop(): string | undefined` (remove and return last item)](#arraypop-string--undefined-remove-and-return-last-item)
-    - [`array.shift(): string | undefined` (remove and return first item)](#arrayshift-string--undefined-remove-and-return-first-item)
-    - [`array.splice(startIndex, deleteCount?): string[]` (remove and add from index)](#arraysplicestartindex-deletecount-string-remove-and-add-from-index)
-    - [`array.reverse()`](#arrayreverse)
-    - [`array.sort(): string[]` (returns sorted array)](#arraysort-string-returns-sorted-array)
-        - [Sort numbers in ascending order](#sort-numbers-in-ascending-order)
-        - [Sort numbers in descending order](#sort-numbers-in-descending-order)
-        - [Sorting strings](#sorting-strings)
-        - [Sorting objects and strings](#sorting-objects-and-strings)
 - [Array methods (non-mutating)](#array-methods-non-mutating)
     - [`array.filter(predicate: callback): any[]`](#arrayfilterpredicate-callback-any)
     - [`array.map(item => expression)`](#arraymapitem--expression)
-    - [`array.find(item => condition)`](#arrayfinditem--condition)
     - [`array.join(separator)`](#arrayjoinseparator)
     - [`array.reduce((total, value) => total + value, 0)`](#arrayreducetotal-value--total--value-0)
     - [`array.forEach(item => expression): void`](#arrayforeachitem--expression-void)
@@ -34,173 +21,8 @@
 
 <!-- /TOC -->
 
-<a id="markdown-array-methods-mutating" name="array-methods-mutating"></a>
-
-## Array methods (mutating)
-
-- `fill()`: Sets all array elements to a value, from start (default 0) to end (default array.length).
-
-<a id="markdown-arraypushitems-number-add-to-end-and-return-new-length" name="arraypushitems-number-add-to-end-and-return-new-length"></a>
-
-### `array.push(...items): number` (add to end and return new length)
-
-The `push()` method adds one or more elements to the end of an array. It returns the new length of the array after the elements have been added.
-
-```js
-let fruits = ['apple', 'banana', 'cherry', 'date'];
-let newLength = fruits.push('orange', 'peach');
-console.log(newLength); // Outputs: 6
-console.log(fruits); // Outputs: ['apple', 'banana', 'cherry', 'date', 'orange', 'peach']
-```
-
-<a id="markdown-arrayunshiftitems-number-add-to-start-and-return-new-length" name="arrayunshiftitems-number-add-to-start-and-return-new-length"></a>
-
-### `array.unshift(...items): number` (add to start and return new length)
-
-The `unshift()` method adds one or more elements to the beginning of an array. It returns the new length of the array after the elements have been added.
-
-```js
-let fruits = ['apple', 'banana', 'cherry', 'date'];
-let newLength = fruits.unshift('orange', 'peach');
-console.log(fruits); // Outputs: ['orange', 'peach', 'apple', 'banana', 'cherry', 'date']
-console.log(newLength); // Outputs: 6
-```
-
-<a id="markdown-arraypop-string--undefined-remove-and-return-last-item" name="arraypop-string--undefined-remove-and-return-last-item"></a>
-
-### `array.pop(): string | undefined` (remove and return last item)
-
-The `pop()` method removes the last element from an array and returns that element. This method changes the length of the array.
-
-```js
-let fruits = ['apple', 'banana', 'cherry', 'date'];
-let removedItem = fruits.pop(); // returns last element
-console.log(fruits); // Outputs: ['apple', 'banana', 'cherry']
-console.log(removedItem); // Outputs: 'date'
-```
-
-<a id="markdown-arrayshift-string--undefined-remove-and-return-first-item" name="arrayshift-string--undefined-remove-and-return-first-item"></a>
-
-### `array.shift(): string | undefined` (remove and return first item)
-
-The `shift()` method removes the first element from an array and returns that element. This method changes the length of the array.
-
-```js
-let fruits = ['apple', 'banana', 'cherry', 'date'];
-let first = fruits.shift(); // returns first element
-console.log(fruits); // Outputs: ['banana', 'cherry', 'date']
-console.log(first); // Outputs: apple
-```
-
-<a id="markdown-arraysplicestartindex-deletecount-string-remove-and-add-from-index" name="arraysplicestartindex-deletecount-string-remove-and-add-from-index"></a>
-
-### `array.splice(startIndex, deleteCount?): string[]` (remove and add from index)
-
-The `splice()` method (not to be confused with `slice`) changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.
-
-The `slice()` method returns a shallow copy of a portion of an array into a new array object selected from `startIndex` to `endIndex` (endIndex not included). The original array will not be modified.
 
 
-```js
-let fruits = ['apple', 'banana', 'cherry', 'date'];
-
-let removed = fruits.splice(2, 2, 'citrus'); // Remove 'cherry' & 'date' and add 'citrus'
-console.log(fruits); // Outputs: ['apple', 'banana', 'citrus']
-console.log(removed); // Outputs: ['cherry', 'date]
-```
-
-You can also use the `splice()` method to remove elements from an array without adding new elements. To do this, you simply omit the third argument.
-
-```js
-let fruits = ['apple', 'banana', 'cherry', 'date'];
-
-let removed = fruits.splice(2, 2); // Remove 'cherry' & 'date'
-console.log(fruits); // Outputs: ['apple', 'banana']
-console.log(removed); // Outputs: ['cherry', 'date']
-```
-
-You can also use the `splice()` method to add elements to an array without removing any elements. To do this, you simply omit the second argument.
-
-```js
-let fruits = ['apple', 'banana', 'cherry', 'date'];
-
-let removed = fruits.splice(2, 0, 'citrus'); // Add 'citrus'
-console.log(fruits); // Outputs: ['apple', 'banana', 'citrus', 'cherry', 'date']
-console.log(removed); // Outputs: []
-```
-<a id="markdown-arrayreverse" name="arrayreverse"></a>
-
-### `array.reverse()`
-
-Reverses the order of the elements of an array in place and returns the array.
-
-```js
-const someArray = [1, 2, 3, 4, 5];
-const reversedArray = someArray.reverse();
-```
-
-<a id="markdown-arraysort-string-returns-sorted-array" name="arraysort-string-returns-sorted-array"></a>
-
-### `array.sort(): string[]` (returns sorted array)
-
-The `sort()` method sorts the elements of an array in place and returns the sorted array. The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
-
-<a id="markdown-sort-numbers-in-ascending-order" name="sort-numbers-in-ascending-order"></a>
-
-#### Sort numbers in ascending order
-
-```js
-const someArray = [1, 2, 3, 4, 5];
-const sortedArray = someArray.sort();
-```
-
-<a id="markdown-sort-numbers-in-descending-order" name="sort-numbers-in-descending-order"></a>
-
-#### Sort numbers in descending order
-
-you can change the sort order of an array by passing a compare function to the `sort()`
-method. By default, `sort()` converts the elements to strings and sorts them in
-lexicographical (alphabetical) order, which may not work as expected with numbers or
-complex objects.
-
-```js
-const someArray = [1, 2, 3, 4, 5];
-const sortedArray = someArray.sort((a, b) => b - a);
-```
-
-In this code, the compare function `(a, b) => b - a` is passed to `sort()`. This
-function gets called with every pair of elements in the array. If the function returns a
-positive number, `b` is sorted before `a`. If it returns a negative number, `a` is
-sorted before `b`. If it returns 0, `a` and `b` remain in their original order.
-
-<a id="markdown-sorting-strings" name="sorting-strings"></a>
-
-#### Sorting strings
-
-```js
-const someArray = ['apple', 'banana', 'cherry', 'date'];
-const sortedArray = someArray.sort();
-```
-
-<a id="markdown-sorting-objects-and-strings" name="sorting-objects-and-strings"></a>
-
-#### Sorting objects and strings
-
-```js
-const people = [
-    {name: 'John', age: 25},
-    {name: 'Jane', age: 30},
-    {name: 'Bob', age: 20}
-];
-
-const sortedPeopleByName = people.sort((a, b) => a.name.localeCompare(b.name));
-```
-
-To sort an array of objects by a specific property, such as name, you can use the sort()
-function with a custom sorting function. The sorting function should take two arguments,
-which represent two elements being compared. It should return a negative number, zero,
-or a positive number, depending on whether the first argument should be sorted before,
-at the same position, or after the second argument.
 
 
 <a id="markdown-array-methods-non-mutating" name="array-methods-non-mutating"></a>
@@ -213,7 +35,6 @@ at the same position, or after the second argument.
 - `some()`: Returns true if at least one element in this array satisfies the provided testing function.
 - `indexOf()`: Returns the first index of a value in the array, or -1.
 - `findIndex()`: Returns the index of the first element that satisfies a test, or -1.
-
 
 filter(callback: (element: ElementType, index: number, array: ElementType[]) => boolean): ElementType[]
 
@@ -248,19 +69,7 @@ const roots = numbers.map(Math.sqrt);
 console.log(roots); // Outputs: [1, 2, 3]
 ```
 
-<a id="markdown-arrayfinditem--condition" name="arrayfinditem--condition"></a>
 
-### `array.find(item => condition)`
-
-The `find()` accepts a callback function as an argument and returns the first element in
-an array that satisfies the provided condition. If no element satisfies the condition,
-it returns `undefined`.
-
-```js
-const array = [5, 12, 8, 130, 44];
-const found = array.find(element => element > 10);
-console.log(found); // Outputs: 12
-```
 
 <a id="markdown-arrayjoinseparator" name="arrayjoinseparator"></a>
 
@@ -335,7 +144,7 @@ array.forEach((item, index) => {
 ### Check existence
 
 ```js
-const array = ['apple', 'banana', 'orange'];
+const array = ['apple', 'pear', 'orange'];
 const hasApple = array.includes('apple');
 ```
 
@@ -370,7 +179,7 @@ using the Math.random() function and using that index to access an element from 
 array.
 
 ```js
-const array = ['apple', 'banana', 'orange', 'pear'];
+const array = ['apple', 'pear', 'orange', 'pear'];
 // generate a random index between 0 and the length of the array minus 1
 const randomIndex = Math.floor(Math.random() * array.length);
 // access the element at the random index
@@ -392,7 +201,7 @@ let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // Remove all even numbers
 let filteredNumbers = numbers.filter(num => num % 2 !== 0);
 
-let words = ['apple', 'banana', 'carrot', 'grape'];
+let words = ['apple', 'pear', 'carrot', 'grape'];
 // Remove the word "carrot"
 let filteredWords = words.filter(values => values !== 'carrot');
 ```

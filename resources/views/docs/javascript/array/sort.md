@@ -1,5 +1,5 @@
 
-# `array.sort(): string[]`
+# `sort(): string[]`
 
 
 <!-- TOC -->

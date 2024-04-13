@@ -3,27 +3,35 @@
         "links": [
             {
                 "name": "Recursion",
-                "route_name": "docs.javascript.recursion",
-                "icon": "javascript"
+                "route_name": "docs.javascript.recursion"
             },
             {
                 "name": "Debugging",
-                "route_name": "docs.javascript.debugging",
-                "icon": "javascript"
+                "route_name": "docs.javascript.debugging"
+            },
+            {
+                "name": "Constructor and Prototype",
+                "route_name": "docs.javascript.constructor_and_prototype"
             }
         ]
     },
     "Arrays and Objects": {
         "links": [
             {
-                "name": "Arrays (Complete)",
-                "route_name": "docs.javascript.arrays",
-                "type": "blade"
+                "name": "Array Quick Reference",
+                "route_name": "docs.javascript.array-cheatsheet",
+                "icon": "javascript"
             },
             {
-                "name": "Sorting",
+                "name": "Object Quick Reference",
+                "route_name": "docs.javascript.object-cheatsheet",
+                "icon": "javascript"
+            },
+            {
+                "name": "Sorting Techniques",
                 "route_name": "docs.javascript.array.sort"
             }
+
         ]
     },
     "javascript": {
@@ -38,11 +46,7 @@
                 "route_name": "docs.javascript.faqs",
                 "icon": "javascript"
             },
-            {
-                "name": "Arrays (TBR)",
-                "route_name": "docs.javascript.arrays",
-                "icon": "javascript"
-            },
+
             {
                 "name": "Arrays - Two Dimensional",
                 "route_name": "docs.javascript.array-two-dimensional",
@@ -92,12 +96,8 @@
                 "name": "Operators",
                 "route_name": "docs.javascript.operators",
                 "icon": "javascript"
-            },
-            {
-                "name": "Objects",
-                "route_name": "docs.javascript.objects",
-                "icon": "javascript"
             }
+
         ]
     },
     "Drawing and Animations": {

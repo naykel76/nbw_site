@@ -9,7 +9,7 @@
                 <div>
                     <div class="txt-xl">Hi, my name is</div>
                     <div class="txt-4 fw7">Nathan Watts</div>
-                    <div class="maxw-sm">
+                    <div class="maxw-md lead">
                         I design and develop Laravel web applications, dabble in server management and am training to
                         become a full stack developer.
                     </div>
@@ -59,13 +59,15 @@
         </div>
     </section>
 
-    <section class="relative diagonal z-bottom">
+    <section class="relative diagonal z-bottom md:py-4">
 
         <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-5%; bottom: -240px; ">
 
-        <div class="fp-x container maxw-lg grid va-c py-2 md:py-4">
+        <div class="fp-x container flex gap-4 va-c py-2 md:py-4">
 
-            <img src="/images/wooden-sports-car1.jpg" class="rounded" alt="wooden sports car">
+            <div class="maxw-ms">
+                <img src="/images/wooden-sports-car1.jpg" class="rounded" alt="wooden sports car">
+            </div>
 
             <blockquote>
                 <p class="txt- x">"Without reinventing the wheel we wouldn't have fast cars."</p>

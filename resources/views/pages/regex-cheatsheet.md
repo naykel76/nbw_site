@@ -1,27 +1,150 @@
 # Regex
+<!-- TOC -->
 
-| Regex Pattern | Description                                                          |
-| ------------- | -------------------------------------------------------------------- |
-| `^`           | Matches the start of a string.                                       |
-| `$`           | Matches the end of a string.                                         |
-| `.`           | Matches any single character except newline.                         |
-| `\d`          | Matches any digit (0-9).                                             |
-| `\D`          | Matches any non-digit character.                                     |
-| `\w`          | Matches any word character (alphanumeric + underscore).              |
-| `\W`          | Matches any non-word character.                                      |
-| `\s`          | Matches any whitespace character (space, tab, newline).              |
-| `\S`          | Matches any non-whitespace character.                                |
-| `[abc]`       | Matches any character within the brackets (a, b, or c).              |
-| `[^abc]`      | Matches any character NOT within the brackets.                       |
-| `[a-z]`       | Matches any lowercase letter (a to z).                               |
-| `[A-Z]`       | Matches any uppercase letter (A to Z).                               |
-| `[0-9]`       | Matches any digit (0 to 9).                                          |
-| `*`           | Matches zero or more occurrences of the previous pattern.            |
-| `+`           | Matches one or more occurrences of the previous pattern.             |
-| `?`           | Matches zero or one occurrence of the previous pattern.              |
-| `{n}`         | Matches exactly n occurrences of the previous pattern.               |
-| `{n,}`        | Matches n or more occurrences of the previous pattern.               |
-| `{n,m}`       | Matches between n and m occurrences of the previous pattern.         |
-| `(abc)`       | Groups patterns together.                                            |
-| `\|`          | Acts as an OR operator, matches either pattern on its left or right. |
-| `\`           | Escapes a special character to be treated as a literal.              |
+- [Special Characters](#special-characters)
+- [Repetitions](#repetitions)
+- [Character set or range `[]` and negated character set `[^]`](#character-set-or-range--and-negated-character-set)
+- [Assertions](#assertions)
+- [Flags](#flags)
+- [Examples](#examples)
+    - [Search for words or character in a string](#search-for-words-or-character-in-a-string)
+    - [Find all words except for. (Negated character set)](#find-all-words-except-for-negated-character-set)
+- [Additional Resources](#additional-resources)
+
+<!-- /TOC -->
+
+<!-- abcABC123 .:!? -->
+
+<span class="txt-green"></span>
+<a id="markdown-special-characters" name="special-characters"></a>
+
+## Special Characters
+
+- Dot `.` matches any character (except newline) <br>
+`\.\` - <span class='font-mono txt-yellow dark'>a</span><span class='font-mono txt-yellow dark'>b</span><span class='font-mono txt-yellow dark'>c</span><span class='font-mono txt-yellow dark'>A</span><span class='font-mono txt-yellow dark'>B</span><span class='font-mono txt-yellow dark'>C</span><span class='font-mono txt-yellow dark'>1</span><span class='font-mono txt-yellow dark'>2</span><span class='font-mono txt-yellow dark'>3</span><span class='font-mono txt-yellow dark'> </span><span class='font-mono txt-yellow dark'>.</span><span class='font-mono txt-yellow dark'>:</span><span class='font-mono txt-yellow dark'>!</span><span class='font-mono txt-yellow dark'>?</span>
+
+`\d` : Any digit (0-9) <br>
+`\D` : Any non-digit character <br>
+`\w` : Any word character (a-z, A-Z, 0-9, _) <br>
+`\W` : Any non-word character <br>
+`\s` : Any whitespace character (spaces, tabs, line breaks) <br>
+`\S` : Any non-whitespace character <br>
+`\b` : Word boundary <br>
+`\B` : Non-word boundary <br>
+`\\` : Escape special characters <br>
+
+<a id="markdown-repetitions" name="repetitions"></a>
+
+## Repetitions
+
+`*` : 0 or more of the preceding token
+
+
+
+
+- `+` : 1 or more
+- `?` : 0 or 1
+- `{n}` : Exactly n times
+- `{n,}` : n or more times
+- `{n,m}` : Between n and m times
+
+<a id="markdown-character-set-or-range--and-negated-character-set-^" name="character-set-or-range--and-negated-character-set-^"></a>
+
+## Character set or range `[]` and negated character set `[^]`
+
+Use the square brackets `[]` to specify a character set or range. Alternatively, use
+square brackets with a caret `[^]` to define a negated character set. This set will match
+any character except those listed inside the brackets.
+
+---
+
+`/b[aio]r/` - Finds all words that start with `b`, ends with `r` and has either `a`, `i` or `o` in between. <br>
+Output:  <span class='font-mono txt-yellow dark'>bar</span> ber <span class='font-mono txt-yellow dark'>bir</span> <span class='font-mono txt-yellow dark'>bor</span> bur
+
+`/b[^eu]r/` - Finds all words that start with `b`, ends with `r` and has any character except `a`, `i`, or `o` in the middle. <br>
+Negated Output: bar <span class='txt-yellow dark'>ber</span> bir bor <span class='txt-yellow dark'>bur</span>
+
+---
+
+`/[a-f]/` - Finds all characters from `a` to `f`. <br>
+Output: <span class='txt-yellow dark'>a</span><span class='txt-yellow dark'>b</span><span class='txt-yellow dark'>c</span><span class='txt-yellow dark'>d</span><span class='txt-yellow dark'>e</span><span class='txt-yellow dark'>f</span>ghijklmnopqrstuvwxyz
+
+`/[^a-f]/` - Finds all characters that are not from `a` to `f`. <br>
+Negated Output: abcdef<span class='txt-yellow dark'>g</span><span class='txt-yellow dark'>h</span><span class='txt-yellow dark'>i</span><span class='txt-yellow dark'>j</span><span class='txt-yellow dark'>k</span><span class='txt-yellow dark'>l</span><span class='txt-yellow dark'>m</span><span class='txt-yellow dark'>n</span><span class='txt-yellow dark'>o</span><span class='txt-yellow dark'>p</span><span class='txt-yellow dark'>q</span><span class='txt-yellow dark'>r</span><span class='txt-yellow dark'>s</span><span class='txt-yellow dark'>t</span><span class='txt-yellow dark'>u</span><span class='txt-yellow dark'>v</span><span class='txt-yellow dark'>w</span><span class='txt-yellow dark'>x</span><span class='txt-yellow dark'>y</span><span class='txt-yellow dark'>z</span>
+
+---
+
+`/[3-6]/` - Finds all numbers from `3` to `6`. <br>
+Output: 012<span class='txt-yellow dark'>3</span><span class='txt-yellow dark'>4</span><span class='txt-yellow dark'>5</span><span class='txt-yellow dark'>6</span>789
+
+`/[^3-6]/` - Finds all characters that are not numbers from `3` to `6`. <br>
+Negated Output: <span class='txt-yellow dark'>0</span><span class='txt-yellow dark'>1</span><span class='txt-yellow dark'>2</span>3456<span class='txt-yellow dark'>7</span><span class='txt-yellow dark'>8</span><span class='txt-yellow dark'>9</span>
+
+---
+
+`[bdf]eer` words that start with `b`, `d`, or `f` and end with `eer` <br>
+`[^bdf]eer` words that do not start with `b`, `d`, or `f` and end with `eer` <br>
+
+
+<!-- - `()` : Group -->
+<!-- - `|` : Either or -->
+<!-- - `(?:)` : Non-capturing group -->
+
+<a id="markdown-assertions" name="assertions"></a>
+
+## Assertions
+
+`$` : End of string or line <br>
+`\A` : Start of string <br>
+`\Z` : End of string <br>
+`\b` : Word boundary <br>
+`\B` : Non-word boundary <br>
+`^` : Start of string or line <br>
+`(?=)` : Positive lookahead <br>
+`(?!)` : Negative lookahead <br>
+`(?<=)` : Positive lookbehind. Matches a group after the main expression without including it in the result. <br>
+
+
+`(?<!)` : Negative lookbehind <br>
+
+<a id="markdown-flags" name="flags"></a>
+
+## Flags
+
+- `g` : Global. Searches the entire string. Without `g`, only the first match is returned.
+- `i` : Case Insensitive. Makes the entire regex case-insensitive.
+- `m` : Multiline. Causes `^` and `$` to match the start and end of lines, not just the start and end of the string.
+- `s` : Single line (DotAll). Causes `.` to match newline characters as well.
+- `u` : Unicode. Treats the pattern as a sequence of Unicode code points.
+- `y` : Sticky. Matches at the exact position in the string specified by the `lastIndex` property (useful with loops).
+
+<a id="markdown-examples" name="examples"></a>
+
+## Examples
+
+<a id="markdown-search-for-words-or-character-in-a-string" name="search-for-words-or-character-in-a-string"></a>
+
+### Search for words or character in a string
+
+`/e/g` - Th<span class="font-mono txt-yellow fw9">e</span> quick brown fox jumps ov<span class="font-mono txt-yellow fw9">e</span>r th<span class="font-mono txt-yellow fw9">e</span> lazy dog. <br>
+`/the/g` - The quick brown fox jumps over <span class="font-mono txt-yellow fw9">the</span> lazy dog. <br>
+`/the/gi` - <span class="font-mono txt-yellow fw9">The</span> quick brown fox jumps over <span class="font-mono txt-yellow fw9">the</span> lazy dog. <br>
+
+
+
+
+<a id="markdown-find-all-words-except-for-negated-character-set" name="find-all-words-except-for-negated-character-set"></a>
+
+### Find all words except for. (Negated character set)
+
+`/\b[^t]he\b/g` - The quick brown fox jumps over <span class="font-mono txt-yellow fw9">the</span> lazy dog. <br>
+`/\b[^t]he\b/gi` - <span class="font-mono txt-yellow fw9">The</span> quick brown fox jumps over <span class="font-mono txt-yellow fw9">the</span> lazy dog. <br>
+
+
+<a id="markdown-additional-resources" name="additional-resources"></a>
+
+## Additional Resources
+
+https://regexlearn.com/cheatsheet
+
+https://fireship.io/lessons/regex-cheat-sheet-js/
