@@ -1,5 +1,5 @@
 {{-- This is the same as docs-default but without the hs separator --}}
-<x-gotime-app-layout layout="docs" hasContainer class="markdown py-5-3-2-2">
+<x-gt-app-layout layout="docs" hasContainer class="markdown py-5-3-2-2">
 
     <x-slot name="navigation">
 
@@ -29,4 +29,4 @@
 
     @endif
 
-</x-gotime-app-layout>
+</x-gt-app-layout>

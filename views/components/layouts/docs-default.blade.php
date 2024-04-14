@@ -1,4 +1,4 @@
-<x-gotime-app-layout layout="docs" hasContainer class="markdown">
+<x-gt-app-layout layout="docs" hasContainer class="markdown">
 
     <x-slot name="navigation">
 
@@ -28,4 +28,4 @@
 
     @endif
 
-</x-gotime-app-layout>
+</x-gt-app-layout>

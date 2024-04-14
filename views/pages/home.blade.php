@@ -1,4 +1,4 @@
-<x-gotime-app-layout layout="{{ config('naykel.template') }}">
+<x-gt-app-layout layout="{{ config('naykel.template') }}">
 
     <section class="relative overflow-x-clip py-2 md:py-4">
         <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-10%; bottom: -240px; ">
@@ -101,4 +101,4 @@
         </div>
     </section>
 
-</x-gotime-app-layout>
+</x-gt-app-layout>

@@ -1,4 +1,4 @@
-<x-gotime-app-layout layout="{{ config('naykel.template') }}" class="cookbook zebra c-py-3">
+<x-gt-app-layout layout="{{ config('naykel.template') }}" class="cookbook zebra c-py-3">
     <div class="container">
         <x-toc />
     </div>
@@ -97,4 +97,4 @@
             </div>
         </div>
     </x-docs.sections.layout> --}}
-</x-gotime-app-layout>
+</x-gt-app-layout>

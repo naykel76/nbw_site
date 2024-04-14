@@ -1,4 +1,4 @@
-<x-gotime-app-layout layout="{{ config('naykel.template') }}" class="py-5-3-2-2">
+<x-gt-app-layout layout="{{ config('naykel.template') }}" class="py-5-3-2-2">
 
     <div class="container-lg bx light">
 
@@ -42,4 +42,4 @@
 
     </div>
 
-</x-gotime-app-layout>
+</x-gt-app-layout>
