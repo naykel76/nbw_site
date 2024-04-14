@@ -15,11 +15,18 @@
 @use "node_modules/nk_jtb/src/variables" as *;
 @use "node_modules/nk_jtb/src/mixins/media" as *;
 @use "node_modules/nk_jtb/src/jtb";
+@use "./markdown.scss" as *;
 // @use "sass:map";
 
 // make bold text stand out because white is hard to see
 strong {
     color: rgb(203, 211, 221);
+}
+
+ol li::before {
+    content: "";
+    display: inline-block;
+    width: .5rem;
 }
 
 .navbar:not(.markdown .navbar) {
@@ -44,38 +51,15 @@ strong {
 //     }
 // }
 
-// .markdown {
-//     .compare + pre,
-//     .compare + pre + pre {
-//         float: left;
-//         width: 49%;
-//     }
-
-//     .compare + pre {
-//         margin-right: 1%;
-//     }
-//     .compare + pre + pre{
-//         margin-left: 1%;
-
-//     }
-
-//     .clear {
-//         clear: both;
-//     }
-
-//     hr {
-//         border-color: #3d5ea5;
-//     }
-// }
 
 // .regex + p code {
 //     color: yellow;
 // }
 
-// .fp-x {
-//     // grid-template-columns: repeat(2, 1fr);
-//     grid-template-columns: repeat(2, minmax(200px, 1fr));
-// }
+.fp-x {
+    // grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+}
 
 // .menu-title {
 //     color: burlywood;
@@ -124,22 +108,33 @@ strong {
 // // -- SPECIAL BACKGROUNDS --
 // // ------------------------------------------------------------------
 
-// .diagonal {
-//     position: relative;
-//     // make sure the pseudo element is isolated (contained) in this class
-//     isolation: isolate;
+.diagonal {
+    position: relative;
+    // make sure the pseudo element is isolated (contained) in this class
+    isolation: isolate;
 
-//     &::after {
-//         content: "";
-//         position: absolute;
-//         background-image: linear-gradient(135deg, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f, #1b4276);
-//         // background-image: linear-gradient(135deg, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
+    &::after {
+        content: "";
+        position: absolute;
+        background-image: linear-gradient(
+            135deg,
+            #10182b,
+            #111b32,
+            #131e38,
+            #14213f,
+            #14274b,
+            #142c56,
+            #123263,
+            #0e386f,
+            #1b4276
+        );
+        // background-image: linear-gradient(135deg, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
 
-//         inset: 0;
-//         z-index: -1;
-//         transform: skewY(-3deg);
-//     }
-// }
+        inset: 0;
+        z-index: -1;
+        transform: skewY(-3deg);
+    }
+}
 
 // ------------------------------------------------------------------
 // -- ANIMATIONS --
@@ -153,7 +148,6 @@ strong {
 .animate-pulse-slow {
     animation: pulse 3s ease-in-out infinite;
 }
-
 
 // // ------------------------------------------------------------------
 // // -- COOKBOOK --
@@ -192,4 +186,3 @@ strong {
 //         }
 //     }
 // }
-

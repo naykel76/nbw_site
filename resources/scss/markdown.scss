@@ -1,0 +1,23 @@
+.markdown {
+
+    .compare + pre,
+    .compare + pre + pre {
+        float: left;
+        width: 49%;
+    }
+
+    .compare + pre {
+        margin-right: 1%;
+    }
+    .compare + pre + pre {
+        margin-left: 1%;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    hr {
+        border-color: #3d5ea5;
+    }
+}

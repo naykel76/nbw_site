@@ -1,4 +1,4 @@
-<x-gt-app-layout layout="{{ config('naykel.template') }}" hasContainer class="py-5-3-2-2">
+<x-gt-app-layout layout="{{ config('naykel.template') }}" class="py-5-3-2-2">
 
     <section class="relative overflow-x-clip py-2 md:py-4">
         <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-10%; bottom: -240px; ">
@@ -25,7 +25,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="relative overflow-x-clip py-2 md:py-4">
 
@@ -60,7 +59,7 @@
 
         <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-5%; bottom: -240px; ">
 
-        <div class="fp-x container flex gap-4 va-c py-2 md:py-4">
+        <div class="container flex gap-4 va-c py-2 md:py-4">
 
             <div class="maxw-ms">
                 <img src="/images/wooden-sports-car1.jpg" class="rounded" alt="wooden sports car">

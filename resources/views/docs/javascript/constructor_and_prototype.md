@@ -1,17 +1,19 @@
 # Constructor and Prototype
 
-<!-- TOC -->
-
 - [Core Concepts](#core-concepts)
-    - [Comparison of Constructor and Prototype](#comparison-of-constructor-and-prototype)
-
-<!-- /TOC -->
-
-
-
-<a id="markdown-core-concepts" name="core-concepts"></a>
+  - [Comparison of Constructor and Prototype](#comparison-of-constructor-and-prototype)
 
 ## Core Concepts
+
+- sdfdssdf
+- sdfdssdf
+- sdfdssdf
+- sdfdssdf
+
+ 1. sdfsdsdf
+ 2. dfgdgf
+ 3. dfgdfg
+ 4. dfgdfg
 
 In JavaScript, every object has a prototype. The prototype is also an object. When you
 create an object, JavaScript automatically assigns the prototype of the object to the
@@ -19,13 +21,10 @@ prototype of the constructor function that created the object.
 
 1. **Constructor**: This is the function that is used to construct or create
    (initialize) the object. You can access it via `object.constructor`.<br><br>
-
 2. **Prototype**: This is the object from which the object inherits properties and
    methods. You can access it via `Object.getPrototypeOf(object)`.<br><br>
-
 3. **Constructor Chain**: In class-based inheritance, constructors form a lineage
    reflecting the hierarchy of classes for inheritance.<br><br>
-
 4. **Prototype Chain**: JavaScript's inheritance mechanism. When accessing a property or
    method, JavaScript traverses the prototype chain until it finds the property or
    reaches null.

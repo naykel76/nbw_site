@@ -15,7 +15,7 @@ export default defineConfig({
         {
             name: 'blade',
             handleHotUpdate({ file, server }) {
-                if (file.endsWith('.blade.php')) {
+                if (file.endsWith('.blade.php') || file.endsWith('.md')) {
                     server.ws.send({
                         type: 'full-reload',
                         path: '*',

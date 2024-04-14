@@ -1,25 +1,20 @@
 # Javascript Cheatsheet
-<!-- TOC -->
-
 - [Events](#events)
 - [Get DOM Element](#get-dom-element)
 - [Setting Values](#setting-values)
-    - [Div or Element with Inner HTML](#div-or-element-with-inner-html)
-    - [Plain Text](#plain-text)
-    - [Form Controls](#form-controls)
-    - [Checkbox or Radio Input](#checkbox-or-radio-input)
-    - [Image Source](#image-source)
+  - [Div or Element with Inner HTML](#div-or-element-with-inner-html)
+  - [Plain Text](#plain-text)
+  - [Form Controls](#form-controls)
+  - [Checkbox or Radio Input](#checkbox-or-radio-input)
+  - [Image Source](#image-source)
 - [ES Modules](#es-modules)
 - [Spread vs Rest Operators](#spread-vs-rest-operators)
-    - [Spread Operator](#spread-operator)
-    - [Rest Operator](#rest-operator)
+  - [Spread Operator](#spread-operator)
+  - [Rest Operator](#rest-operator)
 - [Destructuring Objects and Arrays](#destructuring-objects-and-arrays)
 - [Numeric Conversions](#numeric-conversions)
 
-<!-- /TOC -->
 
-
-<a id="markdown-events" name="events"></a>
 
 ## Events
 
@@ -37,8 +32,6 @@ element.addEventListener('event', functionName);
 document.addEventListener('keydown', event => { });
 ```
 
-<a id="markdown-get-dom-element" name="get-dom-element"></a>
-
 ## Get DOM Element
 ```js
 const elementById = document.getElementById('elementId');
@@ -54,19 +47,13 @@ Make sure you add the dot before the class when using the query selector
 const firstMatchingElement = document.querySelector('.css-class');
 ```
 
-<a id="markdown-setting-values" name="setting-values"></a>
-
 ## Setting Values
-
-<a id="markdown-div-or-element-with-inner-html" name="div-or-element-with-inner-html"></a>
 
 ### Div or Element with Inner HTML
 
 ```js
 myElement.innerHTML = '<p>This is a new paragraph.</p>';
 ```
-
-<a id="markdown-plain-text" name="plain-text"></a>
 
 ### Plain Text
 
@@ -77,8 +64,6 @@ HTML, you can use the `textContent`:
 myElement.textContent = 'This is just text content.';
 ```
 
-<a id="markdown-form-controls" name="form-controls"></a>
-
 ### Form Controls
 
 ```javascript
@@ -87,15 +72,11 @@ textareaElement.value = 'New Text';
 selectElement.value = 'option2';
 ```
 
-<a id="markdown-checkbox-or-radio-input" name="checkbox-or-radio-input"></a>
-
 ### Checkbox or Radio Input
 
 ```javascript
 checkboxElement.checked = true; // or false
 ```
-
-<a id="markdown-image-source" name="image-source"></a>
 
 ### Image Source
 
@@ -105,8 +86,6 @@ imageElement.src = 'new-image.jpg';
 
 <!------- SETTING VALUES END ------->
 
-
-<a id="markdown-es-modules" name="es-modules"></a>
 
 ## ES Modules
 
@@ -121,8 +100,6 @@ const number = 5;
 console.log(`The square of ${number} is ${square(number)}`);
 ```
 
-<a id="markdown-spread-vs-rest-operators" name="spread-vs-rest-operators"></a>
-
 ## Spread vs Rest Operators
 
 JavaScript uses three dots (...) for both the rest and spread operators. But these two
@@ -132,8 +109,6 @@ operators are not the same.
 The main difference between rest and spread is that the rest operator puts the rest of
 some specific values into a array. But the spread syntax expands iterables into
 individual elements.
-
-<a id="markdown-spread-operator" name="spread-operator"></a>
 
 ### Spread Operator
 
@@ -156,8 +131,6 @@ const object1 = { a: 1, b: 2 };
 const object2 = { ...object1, c: 3 };
 console.log(object2); // { a: 1, b: 2, c: 3 }
 ```
-
-<a id="markdown-rest-operator" name="rest-operator"></a>
 
 ### Rest Operator
 
@@ -185,8 +158,6 @@ const [first, ...rest] = array;
 console.log(rest); // [2, 3]
 ```
 
-<a id="markdown-destructuring-objects-and-arrays" name="destructuring-objects-and-arrays"></a>
-
 ## Destructuring Objects and Arrays
 
 ```js
@@ -201,8 +172,6 @@ const { name, city } = { name: 'Bill', city: 'Brisbane' };
 console.log(name, city);
 ```
 
-
-<a id="markdown-numeric-conversions" name="numeric-conversions"></a>
 
 ## Numeric Conversions
 
