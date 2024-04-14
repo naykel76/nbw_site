@@ -3,28 +3,17 @@
 use Illuminate\Support\Facades\Route;
 use Naykel\Gotime\RouteBuilder;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-*/
+(new RouteBuilder('nav-main'))->create();
 
 Route::get('/', function () {
     return view('pages.home');
 })->name('home');
 
-(new RouteBuilder('nav-main'))->create();
+// Route::redirect('/', '/dev');
 
-/*
-|--------------------------------------------------------------------------
-| Admin Routes
-|--------------------------------------------------------------------------
-|
-*/
+// Route::get('/dev', function () {
+//     return view('dev');
+// })->name('dev');
 
-// (new RouteBuilder('nav-admin'))->create();
 
-// Route::middleware(['role:super|admin', 'auth'])->prefix('admin')->name('admin')->group(function () {
-//     Route::view('/', 'gotime::admin.dashboard'); // admin dashboard
-// });
+
