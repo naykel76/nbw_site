@@ -1,102 +1,21 @@
-<x-gotime-app-layout layout="app" hasContainer class="markdown py-5-3-2-2">
+<x-gotime-app-layout layout="docs" hasContainer class="markdown py-5-3-2-2">
 
-    <div class="bx my">
-        <div class="space-y-05">
-            <div> <span class="inline-flex w-5"><strong>Current:</strong></span>{{ $currentDate }}</div>
-            <div> <span class="inline-flex w-5"><strong>Start:</strong></span>{{ $startDate }}</div>
-            <div> <span class="inline-flex w-5"><strong>End:</strong></span>{{ $endDate }}</div>
-        </div>
-    </div>
+    <?php
+    $path = 'react-native-cheatsheet_copy';
+    $file = getFile(resource_path('views/docs/' . $path . '.md'));
+    ?>
 
-    <div class="dark flex items-center justify-center space-x"
-        x-data="countDown(
-            new Date('{{ $startDate->toISOString() }}')
-            )"
-        x-init="init();">
-        <div class="flex flex-col items-center">
-            <span x-text="time().days" class="txt-3"></span>
-            <span class="mt-2">Days</span>
-        </div>
-        <div class="flex flex-col items-center">
-            <span x-text="time().hours" class="txt-3"></span>
-            <span class="mt-2">Hours</span>
-        </div>
-        <div class="flex flex-col items-center">
-            <span x-text="time().minutes" class="txt-3">6</span>
-            <span class="mt-2">Minutes</span>
-        </div>
-        <div class="flex flex-col items-center">
-            <span x-text="time().seconds" class="txt-3"></span>
-            <span class="mt-2">Seconds</span>
-        </div>
-    </div>
+    @pushOnce('head')
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    @endPushOnce
 
-    <script>
-        function countDown(start) {
-            return {
-                start: start,
-                remaining: null,
-                init() {
+    @markdown($file)
 
-                    const dateFromObject = new Date('2023-9-23');
-                    const dateToObject = new Date('2023-9-25');
-                    console.log(dateFromObject); // object
-                    console.log(dateToObject); // object
-                    console.log(dateToObject - dateFromObject); // returns timestamp
-                    console.log(65369106 / 86400); // returns timestamp
-
-
-                    this.setRemaining()
-                    setInterval(() => {
-                        this.setRemaining();
-                    }, 1000);
-                },
-                setRemaining() {
-                    const utcTimestamp = Date.now(); // Output: 1686256888210
-                    const localFromTimestamp = new Date(utcTimestamp);
-                    const utcString = localFromTimestamp.toISOString();
-                    const diff = this.start - utcTimestamp; // 65369106
-                    // convert to seconds
-                    this.remaining = parseInt(diff / 1000);
-                },
-
-                days() {
-                    return {
-                        value: this.remaining / 86400,
-                        remaining: this.remaining % 86400
-                    };
-                },
-                hours() {
-                    return {
-                        value: this.days().remaining / 3600,
-                        remaining: this.days().remaining % 3600
-                    };
-                },
-                minutes() {
-                    return {
-                        value: this.hours().remaining / 60,
-                        remaining: this.hours().remaining % 60
-                    };
-                },
-                seconds() {
-                    return {
-                        value: this.minutes().remaining,
-                    };
-                },
-                format(value) {
-                    return ("0" + parseInt(value)).slice(-2)
-                },
-                time() {
-                    return {
-                        days: this.format(this.days().value),
-                        hours: this.format(this.hours().value),
-                        minutes: this.format(this.minutes().value),
-                        seconds: this.format(this.seconds().value),
-                    }
-                },
-            }
-        }
-
-    </script>
+    @markdown
+        # Bar
+    @endmarkdown
 
 </x-gotime-app-layout>

@@ -22,7 +22,9 @@ Route::get('/cookbook', function () {
     return view('pages.cookbook');
 })->name('cookbook');
 
-Route::get('/dev', [TestingController::class, 'timer'])->name('dev');
+Route::redirect('/', '/dev');
+Route::view('/dev', 'dev')->name('dev');
+// Route::get('/dev', [TestingController::class, 'timer'])->name('dev');
 
 (new RouteBuilder('nav-main'))->create();
 

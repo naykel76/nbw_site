@@ -56,4 +56,16 @@ console.log(pet.name);
 ```
 <div class="clear"></div>
 
-In the above example, both create objects with a `name` property. The difference is that `Person` is a class and `Animal` is a function.
+In the above example, both create objects with a `name` property. The difference is that
+`Person` is a class that uses a `constructor` method to initialize its `name` property.
+`Animal` is a function that uses the `this` keyword to assign its `name` property.
+
+```mermaid
+graph LR
+    Constru -->|has| Prototype[Prototype]
+    Prototype -->|has| BasePrototype[Base Prototype]
+    Constructor -->|creates| Instance
+    Instance -->|links| Prototype
+    BasePrototype -->|has| null
+```
+

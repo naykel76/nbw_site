@@ -68,35 +68,41 @@ const people = [
 ];
 ```
 
-
-<!--
-<a id="markdown-find-item-by-key" name="find-item-by-key"></a>
-
-### Find item by key
+Find item by key:
 
 ```js
-const data = {
-  item1: { id: 1, name: 'Sample Item 1' },
-  item2: { id: 2, name: 'Sample Item 2' },
-  item3: { id: 3, name: 'Sample Item 3' },
+const findPersonById = (people, id) => {
+    return people.find(person => person.id === id);
 };
 
-const key = 'item2';
-const item = data.hasOwnProperty(key) ? data[key] : null;
+const person = findPersonById(people, 2);
+console.log(person); 
+// Output: { id: 2, name: 'Jane', age: 25, hobbies: ['painting', 'running', 'cooking'] }
+```
+
+Find item by value:
+
+```js
+const findPersonByHobby = (people, hobby) => {
+    return people.find(person => person.hobbies.includes(hobby));
+};
+
+const person = findPersonByHobby(people, 'running');
+console.log(person); 
+// Output: { id: 2, name: 'Jane', age: 25, hobbies: ['painting', 'running', 'cooking'] }
+```
+
+Find all items by key:
+
+```js
+const findPeopleByAge = (people, age) => {
+    return people.filter(person => person.age === age);
+};
+
+const people = findPeopleByAge(people, 30);
+console.log(people); 
+// Output: [ { id: 1, name: 'John', age: 30, hobbies: ['reading', 'gaming', 'coding'] } ]
 ```
 
 
-<a id="markdown-find-item-by-value" name="find-item-by-value"></a>
 
-## Find item by value
-
-```js
-const data = {
-  item1: { id: 1, name: 'Sample Item 1' },
-  item2: { id: 2, name: 'Sample Item 2' },
-  item3: { id: 3, name: 'Sample Item 3' },
-};
-
-const value = 'Sample Item 2';
-const item = Object.values(data).find(item => item.name === value);
-``` -->
