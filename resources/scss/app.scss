@@ -1,8 +1,195 @@
-// @use "node_modules/nk_jtb/src/variables" as * with(
-//     $primary: #000000,
-//     $secondary: #13ad3a
-// );
+@use "node_modules/nk_jtb/src/variables" as * with (
+    $primary: #d9558c,
+    $secondary: #031a37,
+    $accent: #e6c637,
+    $body-bg: #0b101d,
+    $preferred-fonts: Poppins,
+    // $color: rgb(228, 232, 236),
+    $color: rgb(190, 200, 214),
+    $navbar-bg: transparent,
+    $navbar-nav-hover-color: #ffbb1c,
+    $navbar-nav-active-color: #ffbb1c
+);
 
+// @use "node_modules/nk_jtb/src/variables/tailwind-colors" as *;
 @use "node_modules/nk_jtb/src/variables" as *;
 @use "node_modules/nk_jtb/src/mixins/media" as *;
 @use "node_modules/nk_jtb/src/jtb";
+// @use "sass:map";
+
+// make bold text stand out because white is hard to see
+strong {
+    color: rgb(203, 211, 221);
+}
+
+.navbar:not(.markdown .navbar) {
+    background-color: $body-bg;
+    border-bottom: 1px solid #14213f;
+    box-shadow: 1px 5px 20px #142c56;
+    box-shadow: 1px 1px 70px #142c56;
+}
+
+// h1,
+// h2,
+// h3 {
+//     code:not(.hljs) {
+//         color: inherit;
+//         background-color: transparent;
+//     }
+// }
+
+// :is(h1, h2, h3, h4, h5, h6) {
+//     code:not(.hljs) {
+//         font-size: inherit;
+//     }
+// }
+
+// .markdown {
+//     .compare + pre,
+//     .compare + pre + pre {
+//         float: left;
+//         width: 49%;
+//     }
+
+//     .compare + pre {
+//         margin-right: 1%;
+//     }
+//     .compare + pre + pre{
+//         margin-left: 1%;
+
+//     }
+
+//     .clear {
+//         clear: both;
+//     }
+
+//     hr {
+//         border-color: #3d5ea5;
+//     }
+// }
+
+// .regex + p code {
+//     color: yellow;
+// }
+
+// .fp-x {
+//     // grid-template-columns: repeat(2, 1fr);
+//     grid-template-columns: repeat(2, minmax(200px, 1fr));
+// }
+
+// .menu-title {
+//     color: burlywood;
+// }
+
+// // allow the grid to do it's job
+// .remove-pre-margins pre {
+//     margin: 0;
+// }
+
+// @include from-md {
+//     .x {
+//         font-size: 2rem !important;
+//     }
+// }
+
+// front page link boxes
+.icon-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+// body {
+//     background-image: linear-gradient(to right bottom, #0b101d, #0d1220, #0e1424, #0f1627, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
+//     // font-size: 1.15rem;
+// }
+
+// th {
+//     background: #1a233c;
+//     font-weight: 900;
+// }
+// td,
+// th {
+//     border: 1px solid #d9d9d9;
+//     padding: 0.375rem;
+//     font-size: 1rem;
+// }
+
+// // home screen nav buttons
+// .nav-buttons nav ul {
+//     display: flex;
+//     gap: 1rem;
+//     flex-wrap: wrap;
+// }
+
+// // ------------------------------------------------------------------
+// // -- SPECIAL BACKGROUNDS --
+// // ------------------------------------------------------------------
+
+// .diagonal {
+//     position: relative;
+//     // make sure the pseudo element is isolated (contained) in this class
+//     isolation: isolate;
+
+//     &::after {
+//         content: "";
+//         position: absolute;
+//         background-image: linear-gradient(135deg, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f, #1b4276);
+//         // background-image: linear-gradient(135deg, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
+
+//         inset: 0;
+//         z-index: -1;
+//         transform: skewY(-3deg);
+//     }
+// }
+
+// ------------------------------------------------------------------
+// -- ANIMATIONS --
+// ------------------------------------------------------------------
+
+@keyframes pulse {
+    50% {
+        opacity: 0.1;
+    }
+}
+.animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+
+// // ------------------------------------------------------------------
+// // -- COOKBOOK --
+// // ------------------------------------------------------------------
+
+// .draggable--over {
+//     background-color: map.get($tailwind-colors, "rose", "50") !important;
+// }
+
+// // hide the button text while dragging
+// .draggable-mirror {
+//     .transparent-on-drag {
+//         color: transparent;
+//     }
+// }
+
+// .cookbook {
+//     th {
+//         background: #eee;
+//         font-weight: 900;
+//     }
+//     td,
+//     th {
+//         border: none;
+//     }
+
+//     &.zebra {
+//         h2 {
+//             text-align: center;
+//         }
+//         & > *:nth-child(2n + 2):not(.primary):not(.secondary) {
+//             background: white;
+//             h2 {
+//                 color: black;
+//             }
+//         }
+//     }
+// }
+

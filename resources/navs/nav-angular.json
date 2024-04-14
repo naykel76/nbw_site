@@ -1,0 +1,74 @@
+{
+    "main": {
+        "links": [
+            {
+                "name": "Quick Reference",
+                "route_name": "docs.angular.angular-cheatsheet",
+                "icon": "angular"
+            },
+            {
+                "name": "Components",
+                "route_name": "docs.angular.components",
+                "icon": "angular"
+            },
+            {
+                "name": "Data Binding",
+                "route_name": "docs.angular.data-binding",
+                "icon": "angular"
+            },
+            {
+                "name": "Events",
+                "route_name": "docs.angular.events",
+                "icon": "angular"
+            },
+            {
+                "name": "Forms",
+                "route_name": "docs.angular.forms",
+                "icon": "angular"
+            },
+            {
+                "name": "Layouts and Templates",
+                "route_name": "docs.angular.layouts-and-templates",
+                "icon": "angular"
+            },
+            {
+                "name": "Routing",
+                "route_name": "docs.angular.routing",
+                "icon": "angular"
+            },
+            {
+                "name": "Trouble Shooting",
+                "route_name": "docs.angular.troubleshooting",
+                "icon": "angular"
+            }
+        ]
+    },
+    "Guides": {
+        "links": [
+            {
+                "name": "Communicate using HTTP",
+                "route_name": "docs.angular.comminicate-using-http",
+                "icon": "angular"
+            },
+            {
+                "name": "Understanding Observables",
+                "route_name": "docs.angular.understanding-observables",
+                "icon": "angular"
+            },
+            {
+                "name": "HTTP Observable Example",
+                "route_name": "docs.angular.observable-http-example",
+                "icon": "angular"
+            }
+        ]
+    },
+    "custom components": {
+        "links": [
+            {
+                "name": "Modal",
+                "route_name": "docs.angular.component-modal",
+                "icon": "angular"
+            }
+        ]
+    }
+}

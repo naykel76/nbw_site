@@ -1,0 +1,152 @@
+{
+    "Concepts": {
+        "links": [
+            {
+                "name": "Recursion",
+                "route_name": "docs.javascript.recursion"
+            },
+            {
+                "name": "Debugging",
+                "route_name": "docs.javascript.debugging"
+            },
+            {
+                "name": "Constructor and Prototype",
+                "route_name": "docs.javascript.constructor_and_prototype"
+            }
+        ]
+    },
+    "Arrays and Objects": {
+        "links": [
+            {
+                "name": "Array Quick Reference",
+                "route_name": "docs.javascript.array-cheatsheet",
+                "icon": "javascript"
+            },
+            {
+                "name": "Object Quick Reference",
+                "route_name": "docs.javascript.object-cheatsheet",
+                "icon": "javascript"
+            },
+            {
+                "name": "Sorting Techniques",
+                "route_name": "docs.javascript.array.sort"
+            }
+
+        ]
+    },
+    "javascript": {
+        "links": [
+            {
+                "name": "Quick Reference",
+                "route_name": "docs.javascript.javascript-cheatsheet",
+                "icon": "javascript"
+            },
+            {
+                "name": "FAQ's",
+                "route_name": "docs.javascript.faqs",
+                "icon": "javascript"
+            },
+
+            {
+                "name": "Arrays - Two Dimensional",
+                "route_name": "docs.javascript.array-two-dimensional",
+                "icon": "javascript"
+            },
+            {
+                "name": "Cleaner Code Examples",
+                "route_name": "docs.javascript.cleaner-code",
+                "icon": "javascript"
+            },
+            {
+                "name": "Event Listeners",
+                "route_name": "docs.javascript.event-listeners",
+                "icon": "javascript"
+            },
+            {
+                "name": "Event Listener - Examples",
+                "route_name": "docs.javascript.event-listener-examples",
+                "icon": "javascript"
+            },
+            {
+                "name": "Fetch",
+                "route_name": "docs.javascript.fetch",
+                "icon": "javascript"
+            },
+            {
+                "name": "Date and Time",
+                "route_name": "docs.javascript.date-and-time",
+                "icon": "javascript"
+            },
+            {
+                "name": "Code Snippets - Numbers",
+                "route_name": "docs.javascript.code-snippets-numbers",
+                "icon": "javascript"
+            },
+            {
+                "name": "Boolean Promise",
+                "route_name": "docs.javascript.promise",
+                "icon": "javascript"
+            },
+            {
+                "name": "Modules",
+                "route_name": "docs.javascript.modules",
+                "icon": "javascript"
+            },
+            {
+                "name": "Operators",
+                "route_name": "docs.javascript.operators",
+                "icon": "javascript"
+            }
+
+        ]
+    },
+    "Drawing and Animations": {
+        "links": [
+            {
+                "name": "Drawing Environment (canvas)",
+                "route_name": "docs.javascript.canvas",
+                "icon": "javascript"
+            },
+            {
+                "name": "Making Things Move",
+                "route_name": "docs.javascript.canvas-moving-objects",
+                "icon": "javascript"
+            }
+        ]
+    },
+    "Canvas and Animation Exercise": {
+        "links": [
+            {
+                "name": "01 Initial Setup",
+                "route_name": "docs.javascript.animation-exercise.01-initial-setup",
+                "icon": "javascript"
+            },
+            {
+                "name": "02 Move Basic Shape",
+                "route_name": "docs.javascript.animation-exercise.02-move-basic-shape",
+                "icon": "javascript"
+            },
+            {
+                "name": "03 Animation TBD",
+                "route_name": "docs.javascript.animation-exercise.03-animate-basic-shape",
+                "icon": "javascript"
+            },
+            {
+                "name": "04 Boundary Detection",
+                "route_name": "docs.javascript.animation-exercise.04-boundary-detection",
+                "icon": "javascript"
+            },
+            {
+                "name": "05 Drawing Complex Shapes",
+                "route_name": "docs.javascript.animation-exercise.05-complex-shapes",
+                "icon": "javascript",
+                "type": "blade"
+            },
+            {
+                "name": "06 Rotation Matrix",
+                "route_name": "docs.javascript.animation-exercise.06-rotation-matrix",
+                "icon": "javascript"
+            }
+        ]
+    }
+}

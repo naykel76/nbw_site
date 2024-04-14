@@ -1,20 +1,101 @@
 {
-  "main": {
-    "links": [
-      {
-        "name": "Home",
-        "route_name": "home",
-        "exclude_route": true
-      }
-    ]
-  },
-  "footer": {
-    "links": [
-      {
-        "name": "Home",
-        "route_name": "home",
-        "exclude_route": true
-      }
-    ]
-  }
+    "main": {
+        "links": [
+            {
+                "name": "Dev",
+                "route_name": "dev",
+                "exclude_route": true
+            },
+            {
+                "name": "Cookbook",
+                "route_name": "cookbook",
+                "exclude_route": true
+            },
+            {
+                "name": "Quick Reference",
+                "route_name": "docs.general-cheatsheet",
+                "exclude_route": true
+            },
+            {
+                "name": "Laravel",
+                "route_name": "docs.laravel.quick-reference",
+                "type": "md",
+                "exclude_route": true
+            },
+            {
+                "name": "Livewire",
+                "route_name": "docs.livewire.quick-reference",
+                "type": "md",
+                "exclude_route": true
+            },
+            {
+                "name": "About Me",
+                "route_name": "pages.about"
+            }
+           
+        ]
+    },
+    "resources": {
+        "links": [
+            {
+                "name": "ClickUp",
+                "url": "https://app.clickup.com/login",
+                "icon_logo": "clickup-solid",
+                "exclude_route": true
+            },
+            {
+                "name": "ChatGPT",
+                "url": "https://chat.openai.com/",
+                "icon_logo": "chatgpt",
+                "exclude_route": true
+            },
+            {
+                "name": "Codewars",
+                "url": "https://www.codewars.com/dashboard",
+                "icon_logo": "code-wars",
+                "exclude_route": true
+            },
+            {
+                "name": "Program 4 Fun",
+                "url": "https://prog4fun.csse.canterbury.ac.nz/enrol/index.php?id=2",
+                "icon_logo": "moodle",
+                "exclude_route": true
+            },
+            {
+                "name": "Realtime Colors",
+                "url": "https://www.realtimecolors.com/?colors=050315-fbfbfe-2f27ce-dedcff-433bff&fonts=Poppins-Poppins",
+                "exclude_route": true
+            },
+            {
+                "name": "Lucidchart",
+                "url": "https://lucid.app/users/login",
+                "icon_logo": "lucidchart",
+                "exclude_route": true
+            },
+            {
+                "name": "MYOB",
+                "url": "https://app.myob.com",
+                "icon_logo": "myob-solid",
+                "exclude_route": true
+            },
+            {
+                "name": "Regexr",
+                "url": "https://regexr.com/",
+                "icon_logo": "regex",
+                "exclude_route": true
+            },
+            {
+                "name": "SVG Sprit",
+                "url": "https://svgsprit.es/",
+                "icon_logo": "svgsprit",
+                "exclude_route": true
+            },
+            {
+                "name": "SVGOMG",
+                "url": "https://jakearchibald.github.io/svgomg/",
+                "icon_logo": "svgomg",
+                "exclude_route": true
+            }
+        ]
+    }
 }
