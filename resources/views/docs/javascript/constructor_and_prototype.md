@@ -20,10 +20,16 @@ prototype of the constructor function that created the object.
    reaches null.
 
 
-```blade +parse
-<x-test/>
+```mermaid +parse
+<x-mermaid>
+    graph LR
+        Constructor -->|has| Prototype[Prototype]
+        Prototype -->|has| BasePrototype[Base Prototype]
+        Constructor -->|creates| Instance
+        Instance -->|links| Prototype
+        BasePrototype -->|has| null
+</x-mermaid>
 ```
-
 ### Comparison of Constructor and Prototype
 
 The following example demonstrates the difference between a constructor and a prototype.
@@ -54,12 +60,4 @@ In the above example, both create objects with a `name` property. The difference
 `Person` is a class that uses a `constructor` method to initialize its `name` property.
 `Animal` is a function that uses the `this` keyword to assign its `name` property.
 
-```mermaid
-graph LR
-    Constru -->|has| Prototype[Prototype]
-    Prototype -->|has| BasePrototype[Base Prototype]
-    Constructor -->|creates| Instance
-    Instance -->|links| Prototype
-    BasePrototype -->|has| null
-```
 
