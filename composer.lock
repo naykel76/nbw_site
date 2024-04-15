@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f8e60eb5c7f210568429fdfd73bafaa3",
+    "content-hash": "860688881fc37b6590844448e1ba363d",
     "packages": [
         {
             "name": "brick/math",
@@ -2086,12 +2086,19 @@
         {
             "name": "naykel/gotime",
             "version": "dev-v1-rebuild",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/naykel76/gotime.git",
+                "reference": "cc8ff52"
+            },
             "dist": {
-                "type": "path",
-                "url": "C:/Users/nayke/sites/nk_packages/gotime",
-                "reference": "1f91c3cd6a29369b970317580b5fe775ef9bfc4d"
+                "type": "zip",
+                "url": "https://api.github.com/repos/naykel76/gotime/zipball/cc8ff52",
+                "reference": "cc8ff52",
+                "shasum": ""
             },
             "require": {
+                "graham-campbell/markdown": "^15.2",
                 "illuminate/contracts": "^10.0||^11.0",
                 "livewire/livewire": "^3.4",
                 "php": "^8.2"
@@ -2123,12 +2130,7 @@
                     "Naykel\\Gotime\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Naykel\\Gotime\\Tests\\": "tests/",
-                    "Workbench\\App\\": "workbench/app/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2142,14 +2144,15 @@
             "description": "Starter package for NayKel Laravel applications",
             "homepage": "https://naykel.com.au",
             "keywords": [
-                "Laravel",
                 "Naykel",
+                "laravel",
                 "starter"
             ],
-            "transport-options": {
-                "symlink": true,
-                "relative": false
-            }
+            "support": {
+                "issues": "https://github.com/naykel76/gotime/issues",
+                "source": "https://github.com/naykel76/gotime/tree/v1-rebuild"
+            },
+            "time": "2024-04-14T22:54:30+00:00"
         },
         {
             "name": "nesbot/carbon",
