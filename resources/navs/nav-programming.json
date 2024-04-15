@@ -77,8 +77,7 @@
             },
             {
                 "name": "NPM",
-                "route_name": "npm.npm-cheatsheet",
-                "view": "pages.npm-cheatsheet",
+                "route_name": "docs.npm-cheatsheet",
                 "icon_logo": "npm"
             },
             {
@@ -99,7 +98,7 @@
             },
             {
                 "name": "Regex",
-                "route_name": "pages.regex-cheatsheet",
+                "route_name": "docs.regex-cheatsheet",
                 "icon_logo": "regex"
             },
             {

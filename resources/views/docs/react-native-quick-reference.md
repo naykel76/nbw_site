@@ -6,8 +6,9 @@
   - [Other dependencies](#other-dependencies)
   - [ESLint](#eslint)
 - [Navigation](#navigation)
+  - [Accessing route parameters](#accessing-route-parameters)
+  - [Passing parameters to a previous screen](#passing-parameters-to-a-previous-screen)
   - [Stack Navigation](#stack-navigation)
-  - [Passing Additional Props](#passing-additional-props)
 - [Components](#components)
   - [FlatList](#flatlist)
 - [State Management](#state-management)
@@ -57,6 +58,59 @@ npm init @eslint/config
 
 ## Navigation
 
+Note, you can pass multiple parameters to a route by passing an object with multiple key-value pairs.
+
+```js
+navigation.navigate('route_name') // navigate to a new screen
+navigation.goBack() // programmatically go back
+navigation.popToTop() // go to the first screen in the stack
+
+// passing parameters
+navigation.navigate('route_name', { key: value });
+// Accessing route parameters
+const { param, otherParam } = route.params;
+```
+### Accessing route parameters
+
+```js
+function Details({ route, navigation }) {
+    const { param, otherParam } = route.params;
+
+   // component code here...
+}
+```
+
+### Passing parameters to a previous screen
+
+```js
+// Home.js (previous screen)
+function Home({ navigation, route }) {
+    const { param, otherParam } = route.params;
+   
+   useEffect(() => {
+        if (route.params?.myParam) {
+            // do something with `route.params.myParam`
+        }
+    }, [route.params?.myParam]);
+   
+    // component code here...
+}
+
+// Details.js (current screen)
+function Details({ route, navigation }) {
+    onPress={() => {
+        navigation.navigate(
+            // Pass and merge params back to home screen
+            { name: 'Home', params: { key: 'value' }, merge: true, }
+        );
+    }}
+    // component code here...
+}
+```
+
+- <a href="https://reactnavigation.org/docs/hello-react-navigation#passing-additional-props" target="blank">Passing Additional Props</a>
+- <a href="https://reactnavigation.org/docs/navigating" target="blank">Moving Between screens</a>
+
 ### Stack Navigation
 
 ```bash
@@ -87,38 +141,6 @@ export default function App() {
     );
 }
 ```
-
-```js
-navigation.navigate('route_name') // navigate to a new screen
-navigation.goBack() // programmatically go back
-navigation.popToTop() // go to the first screen in the stack
-```
-
-### Passing Additional Props
-
-```js
-navigation.navigate('route_name', { key: value });
-```
-
-```js
-function Home({ navigation }) {
-    return (
-        <Button
-            title="Go to Details"
-            onPress={() => {
-                navigation.navigate('Details', {
-                    itemId: 86,
-                    otherParam: 'anything you want here',
-                });
-            }}
-        />
-    );
-}
-```
-
-- <a href="https://reactnavigation.org/docs/hello-react-navigation#passing-additional-props" target="blank">Passing Additional Props</a>
-- <a href="https://reactnavigation.org/docs/navigating" target="blank">Moving Between screens</a>
-
 
 ## Components
 
