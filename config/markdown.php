@@ -2,6 +2,9 @@
 
 declare(strict_types=1);
 
+use Illuminate\Support\Facades\App;
+use League\CommonMark\Extension\CommonMark\Renderer\Inline\CodeRenderer;
+
 /*
  * This file is part of Laravel Markdown.
  *
@@ -48,12 +51,16 @@ return [
         League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension::class,
         League\CommonMark\Extension\Table\TableExtension::class,
         League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension::class,
+        \App\Markdown\CodeRendererExtension::class,
     ],
+
+    // CodeRendererExtension::$allowBladeForNextDocument = true
 
     'heading_permalink' => [
         'id_prefix' => '', // NK: removes 'content-' prefix from the id
         'symbol' => '# ',
     ],
+
 
     /*
     |--------------------------------------------------------------------------

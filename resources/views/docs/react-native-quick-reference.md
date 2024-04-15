@@ -1,21 +1,21 @@
 # React Native Quick Reference
 
-- [React Native Quick Reference](#react-native-quick-reference)
-  - [Installation](#installation)
-    - [Run the app](#run-the-app)
-    - [Install dependencies for web (with HMR)](#install-dependencies-for-web-with-hmr)
-    - [Other dependencies](#other-dependencies)
-    - [ESLint](#eslint)
-  - [Navigation](#navigation)
-  - [Components](#components)
-    - [FlatList](#flatlist)
-  - [State Management](#state-management)
-  - [Lifting State Up](#lifting-state-up)
-  - [Storage](#storage)
-    - [Async Storage](#async-storage)
-  - [Additional Resources](#additional-resources)
-    - [Expo](#expo)
-
+- [Installation](#installation)
+  - [Run the app](#run-the-app)
+  - [Install dependencies for web (with HMR)](#install-dependencies-for-web-with-hmr)
+  - [Other dependencies](#other-dependencies)
+  - [ESLint](#eslint)
+- [Navigation](#navigation)
+  - [Stack Navigation](#stack-navigation)
+  - [Passing Additional Props](#passing-additional-props)
+- [Components](#components)
+  - [FlatList](#flatlist)
+- [State Management](#state-management)
+- [Lifting State Up](#lifting-state-up)
+- [Storage](#storage)
+  - [Async Storage](#async-storage)
+- [Additional Resources](#additional-resources)
+  - [Expo](#expo)
 
 
 ## Installation
@@ -25,7 +25,6 @@ npx create-expo-app AwesomeProject
 npx create-expo-app --template
 ```
 
-
 ### Run the app
 
 ```
@@ -33,7 +32,6 @@ npm start
 npm run android
 npm run web
 ```
-
 
 ### Install dependencies for web (with HMR)
 
@@ -43,13 +41,11 @@ npx expo install react-native-web react-dom @expo/metro-runtime @expo/webpack-co
 
 
 
-
 ### Other dependencies
 
 ```
 npm install react-native-svg
 ```
-
 
 ### ESLint
 
@@ -59,8 +55,9 @@ npm install --save-dev eslint eslint-plugin-react
 npm init @eslint/config
 ```
 
-
 ## Navigation
+
+### Stack Navigation
 
 ```bash
 # First, install the required packages using npm
@@ -97,13 +94,33 @@ navigation.goBack() // programmatically go back
 navigation.popToTop() // go to the first screen in the stack
 ```
 
+### Passing Additional Props
+
+```js
+navigation.navigate('route_name', { key: value });
+```
+
+```js
+function Home({ navigation }) {
+    return (
+        <Button
+            title="Go to Details"
+            onPress={() => {
+                navigation.navigate('Details', {
+                    itemId: 86,
+                    otherParam: 'anything you want here',
+                });
+            }}
+        />
+    );
+}
+```
+
 - <a href="https://reactnavigation.org/docs/hello-react-navigation#passing-additional-props" target="blank">Passing Additional Props</a>
 - <a href="https://reactnavigation.org/docs/navigating" target="blank">Moving Between screens</a>
 
 
-
 ## Components
-
 
 ### FlatList
 
@@ -126,9 +143,7 @@ import { SafeAreaView, FlatList, Text } from 'react-native';
 <!--  -->
 <!--  -->
 
-
 ## State Management
-
 
 ## Lifting State Up
 
@@ -165,9 +180,7 @@ export default Parent;
 
 
 
-
 ## Storage
-
 
 ### Async Storage
 
@@ -194,7 +207,6 @@ const storeData = async (key, value) => {
 };
 ```
 
-
 ## Additional Resources
 
 - <a href="https://reactnative.dev/docs/components-and-apis" target="blank">Core Components and APIs</a>
@@ -202,7 +214,6 @@ const storeData = async (key, value) => {
 - <a href="https://icons.expo.fyi/Index" target="blank">Icons</a>
 - <a href="https://reactnative.dev/docs/colors" target="blank">Color Reference</a>
 - <a href="https://reactnative.dev/docs/pressable" target="blank">Pressable</a>
-
 ### Expo
 
 - <a href="https://docs.expo.dev/versions/latest/sdk/linear-gradient/" target="blank">LinearGradient</a>

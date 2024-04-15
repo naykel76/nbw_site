@@ -38,7 +38,7 @@
         "links": [
             {
                 "name": "Quick Reference",
-                "route_name": "docs.javascript.javascript-cheatsheet",
+                "route_name": "docs.javascript.javascript-quick-reference",
                 "icon": "javascript"
             },
             {

@@ -1,4 +1,4 @@
-# Javascript Cheatsheet
+# Javascript Quick Reference
 - [Events](#events)
 - [Get DOM Element](#get-dom-element)
 - [Setting Values](#setting-values)
@@ -13,8 +13,6 @@
   - [Rest Operator](#rest-operator)
 - [Destructuring Objects and Arrays](#destructuring-objects-and-arrays)
 - [Numeric Conversions](#numeric-conversions)
-
-
 
 ## Events
 

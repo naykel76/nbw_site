@@ -5,16 +5,6 @@
 
 ## Core Concepts
 
-- sdfdssdf
-- sdfdssdf
-- sdfdssdf
-- sdfdssdf
-
- 1. sdfsdsdf
- 2. dfgdgf
- 3. dfgdfg
- 4. dfgdfg
-
 In JavaScript, every object has a prototype. The prototype is also an object. When you
 create an object, JavaScript automatically assigns the prototype of the object to the
 prototype of the constructor function that created the object.
@@ -28,6 +18,11 @@ prototype of the constructor function that created the object.
 4. **Prototype Chain**: JavaScript's inheritance mechanism. When accessing a property or
    method, JavaScript traverses the prototype chain until it finds the property or
    reaches null.
+
+
+```blade +parse
+<x-test/>
+```
 
 ### Comparison of Constructor and Prototype
 

@@ -2,18 +2,15 @@
     "main": {
         "links": [
             {
-                "name": "Dev",
-                "route_name": "dev",
+                "name": "React Native",
+                "route_name": "docs.react-native-quick-reference",
+                "type": "md",
                 "exclude_route": true
             },
             {
-                "name": "Cookbook",
-                "route_name": "cookbook",
-                "exclude_route": true
-            },
-            {
-                "name": "Quick Reference",
-                "route_name": "docs.general-cheatsheet",
+                "name": "JavaScript",
+                "route_name": "docs.javascript.javascript-quick-reference",
+                "type": "md",
                 "exclude_route": true
             },
             {
@@ -32,7 +29,6 @@
                 "name": "About Me",
                 "route_name": "pages.about"
             }
-           
         ]
     },
     "resources": {

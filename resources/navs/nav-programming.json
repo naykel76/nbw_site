@@ -42,7 +42,7 @@
             },
             {
                 "name": "JavaScript",
-                "route_name": "docs.javascript.javascript-cheatsheet",
+                "route_name": "docs.javascript.javascript-quick-reference",
                 "icon_logo": "javascript",
                 "exclude_route": true
             },
@@ -94,7 +94,7 @@
             },
             {
                 "name": "React Native",
-                "route_name": "docs.react-native-cheatsheet",
+                "route_name": "docs.react-native-quick-reference",
                 "icon_logo": "react"
             },
             {

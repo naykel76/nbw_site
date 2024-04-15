@@ -4,15 +4,15 @@
 - [Overview](#overview)
 - [Handling the event callback](#handling-the-event-callback)
 - [Event Bubbling and Capturing](#event-bubbling-and-capturing)
-    - [Bubbling](#bubbling)
-    - [Capturing](#capturing)
-    - [Stop propagation (TBD)](#stop-propagation-tbd)
-    - [Fire and event only once (TBD)](#fire-and-event-only-once-tbd)
+  - [Bubbling](#bubbling)
+  - [Capturing](#capturing)
+  - [Stop propagation (TBD)](#stop-propagation-tbd)
+  - [Fire and event only once (TBD)](#fire-and-event-only-once-tbd)
 - [Remove event listeners (TBD)](#remove-event-listeners-tbd)
 - [Delegate events (TBD)](#delegate-events-tbd)
 - [Examples](#examples)
-    - [Run a function on click](#run-a-function-on-click)
-    - [Add class on click](#add-class-on-click)
+  - [Run a function on click](#run-a-function-on-click)
+  - [Add class on click](#add-class-on-click)
 - [Additional Resources](#additional-resources)
 
 <!-- /TOC -->
@@ -26,7 +26,7 @@ element.addEventListener('event', eventHandler);
 
 - `element`: is the HTML element to which you want to attach the click event listener. The HTML
   element can be selected using one of the many [DOM selector
-  elements](/docs/javascript/javascript-cheatsheet#get-dom-element).
+  elements](/docs/javascript/javascript-quick-reference#get-dom-element).
 - `event`: is the name of the event to listen for. ('click', 'submit', 'keydown', etc)
 - `eventHandler`: is a callback function that will be executed when the click event occurs. The
   eventHandler takes a single parameter which is the event object commonly denoted as `e`.
