@@ -23,6 +23,12 @@ strong {
     color: rgb(203, 211, 221);
 }
 
+p code {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
 ol li::before {
     content: "";
     display: inline-block;
@@ -36,20 +42,20 @@ ol li::before {
     box-shadow: 1px 1px 70px #142c56;
 }
 
-// h1,
-// h2,
-// h3 {
-//     code:not(.hljs) {
-//         color: inherit;
-//         background-color: transparent;
-//     }
-// }
+h1,
+h2,
+h3 {
+    code:not(.hljs) {
+        color: inherit;
+        background-color: transparent;
+    }
+}
 
-// :is(h1, h2, h3, h4, h5, h6) {
-//     code:not(.hljs) {
-//         font-size: inherit;
-//     }
-// }
+:is(h1, h2, h3, h4, h5, h6) {
+    code:not(.hljs) {
+        font-size: inherit;
+    }
+}
 
 
 // .regex + p code {

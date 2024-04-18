@@ -9,10 +9,9 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "graham-campbell/markdown": "^15.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
-        "naykel/gotime": "dev-v1-rebuild#cc8ff52"
+        "naykel/gotime": "dev-v1-rebuild"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -68,5 +67,14 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "naykel/gotime": {
+            "type": "path",
+            "url": "C:\\Users\\nayke\\sites\\nk_packages\\gotime",
+            "options": {
+                "symlink": true
+            }
+        }
+    }
 }

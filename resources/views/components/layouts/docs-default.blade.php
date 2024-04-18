@@ -14,7 +14,9 @@
     </x-slot>
 
     @if (!empty($data['type']))
-        @dd('when you see this find out what it is doing!')
+    {{-- indicates a specified file type to the route builder --}}
+    {{-- @dd($data['type']) --}}
+        {{-- @dd('when you see this find out what it is doing!') --}}
         @include($data['path'])
     @elseif(!empty($data['path']))
         <x-gt-markdown path="{{ resource_path('views/' . $data['path']) }}" />

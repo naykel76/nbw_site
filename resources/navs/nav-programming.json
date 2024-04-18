@@ -35,6 +35,11 @@
                 "icon_logo": "github"
             },
             {
+                "name": "Google Maps",
+                "route_name": "docs.google-maps",
+                "icon_logo": "googlemaps"
+            },
+            {
                 "name": "Ionic",
                 "route_name": "docs.ionic.ionic-cheatsheet",
                 "icon_logo": "ionic",
@@ -71,9 +76,8 @@
             },
             {
                 "name": "Mermaid",
-                "route_name": "pages.mermaid-cheatsheet",
-                "icon_logo": "mermaidjs",
-                "type": "blade"
+                "route_name": "docs.mermaid-cheatsheet",
+                "icon_logo": "mermaidjs"
             },
             {
                 "name": "NPM",
@@ -109,7 +113,7 @@
             {
                 "name": "Socket.IO",
                 "route_name": "docs.socket-cheatsheet",
-                "icon_logo": "socket"
+                "icon_logo": "socketio"
             },
             {
                 "name": "SQL",

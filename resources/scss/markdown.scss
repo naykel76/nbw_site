@@ -1,5 +1,4 @@
 .markdown {
-
     .compare + pre,
     .compare + pre + pre {
         float: left;
@@ -20,9 +19,17 @@
     hr {
         border-color: #3d5ea5;
     }
+
+    .spaced-out + ul li{
+        margin-top: .5rem !important;
+    }
 }
 
 pre.mermaid {
     background: #fff;
     padding: 1rem;
+}
+
+.apples + p > code {
+    color: green;
 }
