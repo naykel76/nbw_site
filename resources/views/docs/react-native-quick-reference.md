@@ -6,6 +6,7 @@
   - [Other dependencies](#other-dependencies)
   - [ESLint](#eslint)
 - [Navigation](#navigation)
+  - [Installing navigators](#installing-navigators)
   - [Accessing route parameters](#accessing-route-parameters)
   - [Passing parameters to a previous screen](#passing-parameters-to-a-previous-screen)
   - [Stack Navigation](#stack-navigation)
@@ -17,7 +18,6 @@
   - [Async Storage](#async-storage)
 - [Additional Resources](#additional-resources)
   - [Expo](#expo)
-
 
 ## Installation
 
@@ -40,12 +40,12 @@ npm run web
 npx expo install react-native-web react-dom @expo/metro-runtime @expo/webpack-config
 ```
 
-
-
 ### Other dependencies
 
-```
+``` bash
 npm install react-native-svg
+
+npx expo install react-native-safe-area-context
 ```
 
 ### ESLint
@@ -58,6 +58,40 @@ npm init @eslint/config
 
 ## Navigation
 
+- <a href="https://reactnavigation.org/docs/hello-react-navigation#passing-additional-props" target="blank">Passing Additional Props</a>
+- <a href="https://reactnavigation.org/docs/navigating" target="blank">Moving Between screens</a>
+- 
+All screens have access to:
+
+- a `navigation` prop that allows us to move between screens.
+- a `route` prop that contains the current route's information. (`key`, `name`, `params`)
+
+- call the `navigate` function (on the navigation prop) with the name of the route that
+  we'd like to move the user to. ` onPress={() => navigation.navigate('route_name')}`
+
+### Installing navigators
+    
+```bash
+# First, install the required packages using npm
+npm install @react-navigation/native 
+
+# drawer navigator
+npm install @react-navigation/drawer
+npm install react-native-reanimated react-native-gesture-handler react-native-screens
+
+# stack navigator
+npm install @react-navigation/stack
+npx expo install react-native-screens react-native-safe-area-context
+
+# bottom tab navigator
+npm install @react-navigation/bottom-tabs
+npx expo install react-native-screens react-native-safe-area-context
+
+# install the works!
+npm install @react-navigation/drawer @react-navigation/stack @react-navigation/bottom-tabs
+npx expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
 Note, you can pass multiple parameters to a route by passing an object with multiple key-value pairs.
 
 ```js
@@ -68,14 +102,14 @@ navigation.popToTop() // go to the first screen in the stack
 // passing parameters
 navigation.navigate('route_name', { key: value });
 // Accessing route parameters
-const { param, otherParam } = route.params;
+const { params, otherParam } = route;
 ```
+
 ### Accessing route parameters
 
 ```js
-function Details({ route, navigation }) {
-    const { param, otherParam } = route.params;
-
+function Details({ route }) {
+    const { params, otherParam } = route;
    // component code here...
 }
 ```
@@ -85,17 +119,19 @@ function Details({ route, navigation }) {
 ```js
 // Home.js (previous screen)
 function Home({ navigation, route }) {
-    const { param, otherParam } = route.params;
+    const { params, otherParam } = route;
    
    useEffect(() => {
-        if (route.params?.myParam) {
+        if (params.myParam) {
             // do something with `route.params.myParam`
         }
-    }, [route.params?.myParam]);
+    }, []);
    
     // component code here...
 }
+```
 
+```js
 // Details.js (current screen)
 function Details({ route, navigation }) {
     onPress={() => {
@@ -108,21 +144,7 @@ function Details({ route, navigation }) {
 }
 ```
 
-- <a href="https://reactnavigation.org/docs/hello-react-navigation#passing-additional-props" target="blank">Passing Additional Props</a>
-- <a href="https://reactnavigation.org/docs/navigating" target="blank">Moving Between screens</a>
-
 ### Stack Navigation
-
-```bash
-# First, install the required packages using npm
-npm install @react-navigation/native @react-navigation/native-stack
-# If you are using Expo, install the required packages using expo
-npx expo install react-native-screens react-native-safe-area-context
-```
-
-- the `navigation` prop that is passed down to every screen component.
-- call the `navigate` function (on the navigation prop) with the name of the route that
-  we'd like to move the user to. ` onPress={() => navigation.navigate('route_name')}`
 
 ```js
 import { NavigationContainer } from '@react-navigation/native';
@@ -135,7 +157,7 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="Home">
-                <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="Home" component={HomeScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );
