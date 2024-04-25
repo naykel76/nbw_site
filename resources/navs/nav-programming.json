@@ -93,12 +93,14 @@
             {
                 "name": "React",
                 "route_name": "docs.react-cheatsheet",
-                "icon_logo": "react"
+                "icon_logo": "react",
+                "exclude_route": true
             },
             {
                 "name": "React Native",
                 "route_name": "docs.react-native-quick-reference",
-                "icon_logo": "react"
+                "icon_logo": "react",
+                "exclude_route": true
             },
             {
                 "name": "Regex",

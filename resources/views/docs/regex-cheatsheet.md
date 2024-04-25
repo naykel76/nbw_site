@@ -1,7 +1,7 @@
 # Regex
 
 - [Flags](#flags)
-- [Special Characters](#special-characters)
+- [Character Classes](#character-classes)
 - [Quantifiers (`*`, `+`, `?`, `{n}`, `{n,}`, `{n,m}`)](#quantifiers----n-n-nm)
 - [Assertions](#assertions)
 - [Character set or range `[]` and negated character set `[^]`](#character-set-or-range--and-negated-character-set-)
@@ -10,6 +10,7 @@
   - [Find words that start with ...](#find-words-that-start-with-)
   - [Find all words except for. (Negated character set)](#find-all-words-except-for-negated-character-set)
   - [Matching words that contain...](#matching-words-that-contain)
+- [JavaScript examples](#javascript-examples)
 - [Additional Resources](#additional-resources)
 
 ## Flags
@@ -21,7 +22,7 @@
 - `u` : Unicode. Treats the pattern as a sequence of Unicode code points.
 - `y` : Sticky. Matches at the exact position in the string specified by the `lastIndex` property (useful with loops).
 - 
-## Special Characters
+## Character Classes
 
 <div class="spaced-out"></div>
 
@@ -31,9 +32,10 @@
 
 - `\D` : Any non-digit character - <span class='font-mono txt-yellow dark'>a</span><span class='font-mono txt-yellow dark'>b</span><span class='font-mono txt-yellow dark'>c</span><span class='font-mono txt-yellow dark'>A</span><span class='font-mono txt-yellow dark'>B</span><span class='font-mono txt-yellow dark'>C</span><span class='font-mono txt-yellow dark'>_</span><span class='font-mono txt-yellow dark'>~</span><span class='font-mono txt-yellow dark'>!</span><span class='font-mono txt-yellow dark'>@</span><span class='font-mono txt-yellow dark'>#</span><span class='font-mono txt-yellow dark'>$</span><span class='font-mono txt-yellow dark'>%</span><span class='font-mono txt-yellow dark'>^</span><span class='font-mono txt-yellow dark'>&</span><span class='font-mono txt-yellow dark'>*</span><span class='font-mono txt-yellow dark'>(</span><span class='font-mono txt-yellow dark'>)</span><span class='font-mono txt-yellow dark'>-</span><span class='font-mono txt-yellow dark'>+</span><span class='font-mono txt-yellow dark'>=</span><span class='font-mono txt-yellow dark'>[</span><span class='font-mono txt-yellow dark'>]</span><span class='font-mono txt-yellow dark'>{</span><span class='font-mono txt-yellow dark'>}</span><span class='font-mono txt-yellow dark'>|</span><span class='font-mono txt-yellow dark'>;</span><span class='font-mono txt-yellow dark'>:</span><span class='font-mono txt-yellow dark'>'</span><span class='font-mono txt-yellow dark'>,</span><span class='font-mono txt-yellow dark'>.</span><span class='font-mono txt-yellow dark'>&lt;</span><span class='font-mono txt-yellow dark'>&gt;</span><span class='font-mono txt-yellow dark'>/</span><span class='font-mono txt-yellow dark'>?</span>
 
+
 - `\w` : Any word character - <span class='font-mono txt-yellow dark'>a</span><span class='font-mono txt-yellow dark'>b</span><span class='font-mono txt-yellow dark'>c</span><span class='font-mono txt-yellow dark'>A</span><span class='font-mono txt-yellow dark'>B</span><span class='font-mono txt-yellow dark'>C</span><span class='font-mono txt-yellow dark'>_</span><span class='font-mono txt-yellow dark'>1</span><span class='font-mono txt-yellow dark'>2</span><span class='font-mono txt-yellow dark'>3</span><span class='font-mono txt-yellow dark'>
 
-- `\W` : Any non-word character - <span class='font-mono txt-yellow dark'>~</span><span class='font-mono txt-yellow dark'>!</span><span class='font-mono txt-yellow dark'>@</span><span class='font-mono txt-yellow dark'>#</span><span class='font-mono txt-yellow dark'>$</span><span class='font-mono txt-yellow dark'>%</span><span class='font-mono txt-yellow dark'>^</span><span class='font-mono txt-yellow dark'>&</span><span class='font-mono txt-yellow dark'>*</span><span class='font-mono txt-yellow dark'>(</span><span class='font-mono txt-yellow dark'>)</span><span class='font-mono txt-yellow dark'>-</span><span class='font-mono txt-yellow dark'>+</span><span class='font-mono txt-yellow dark'>=</span><span class='font-mono txt-yellow dark'>[</span><span class='font-mono txt-yellow dark'>]</span><span class='font-mono txt-yellow dark'>{</span><span class='font-mono txt-yellow dark'>}</span><span class='font-mono txt-yellow dark'>|</span><span class='font-mono txt-yellow dark'>;</span><span class='font-mono txt-yellow dark'>:</span><span class='font-mono txt-yellow dark'>'</span><span class='font-mono txt-yellow dark'>,</span><span class='font-mono txt-yellow dark'>.</span><span class='font-mono txt-yellow dark'>&lt;</span><span class='font-mono txt-yellow dark'>&gt;</span>
+- `\W` : Any non-word character <span class='font-mono txt-yellow dark'>~</span><span class='font-mono txt-yellow dark'>!</span><span class='font-mono txt-yellow dark'>@</span>_<span class='font-mono txt-yellow dark'>#</span><span class='font-mono txt-yellow dark'>$</span><span class='font-mono txt-yellow dark'>%</span><span class='font-mono txt-yellow dark'>^</span><span class='font-mono txt-yellow dark'>&</span><span class='font-mono txt-yellow dark'>*</span><span class='font-mono txt-yellow dark'>(</span><span class='font-mono txt-yellow dark'>)</span><span class='font-mono txt-yellow dark'>-</span><span class='font-mono txt-yellow dark'>+</span><span class='font-mono txt-yellow dark'>=</span><span class='font-mono txt-yellow dark'>[</span><span class='font-mono txt-yellow dark'>]</span><span class='font-mono txt-yellow dark'>{</span><span class='font-mono txt-yellow dark'>}</span><span class='font-mono txt-yellow dark'>|</span><span class='font-mono txt-yellow dark'>;</span><span class='font-mono txt-yellow dark'>:</span><span class='font-mono txt-yellow dark'>'</span><span class='font-mono txt-yellow dark'>,</span><span class='font-mono txt-yellow dark'>.</span><span class='font-mono txt-yellow dark'>&lt;</span><span class='font-mono txt-yellow dark'>&gt;</span>
 
 - `\s` : Any whitespace character (spaces, tabs, line breaks) - Hey<span class='font-mono txt-yellow dark'> </span>there<span class='font-mono txt-yellow dark'> </span>you!
   
@@ -42,6 +44,11 @@
 - `\b` : Word boundary
 - `\B` : Non-word boundary
 - `\\` : Escape special characters
+
+
+
+A word character is defined as any alphanumeric character (a-z, A-Z, 0-9) **or an underscore** (\_).
+
 
 ## Quantifiers (`*`, `+`, `?`, `{n}`, `{n,}`, `{n,m}`) 
 
@@ -56,6 +63,8 @@
 - `{n,m}` : Between n and m times - `\be{1,2}\ ` matches <span class='font-mono txt-yellow dark'>be</span>&nbsp;&nbsp;<span class='font-mono txt-yellow dark'>bee</span> (no more 'b' or 'beee' as it requires between one and two 'e's)
 
 ## Assertions
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Assertions" target="blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Assertions</a>
 
 `$` : End of string or line <br>
 `\A` : Start of string <br>
@@ -112,20 +121,13 @@ Negated Output: <span class='txt-yellow dark'>0</span><span class='txt-yellow da
 `[^bdf]eer` words that do not start with `b`, `d`, or `f` and end with `eer` <br>
 
 
-
-
-
-
 ## Examples
-
 
 ### Search for words or character in a string
 
 `/e/g` - Th<span class="font-mono txt-yellow fw9">e</span> quick brown fox jumps ov<span class="font-mono txt-yellow fw9">e</span>r th<span class="font-mono txt-yellow fw9">e</span> lazy dog. <br>
 `/the/g` - The quick brown fox jumps over <span class="font-mono txt-yellow fw9">the</span> lazy dog. <br>
 `/the/gi` - <span class="font-mono txt-yellow fw9">The</span> quick brown fox jumps over <span class="font-mono txt-yellow fw9">the</span> lazy dog. <br>
-
-
 
 ### Find words that start with ...
 
@@ -134,12 +136,6 @@ Mike <span class='txt-yellow dark'>likes</span> to ride <span class='txt-yellow 
 
 `\b[bfla]\w*e` - words that start with `b`, `f`, `l`, or `a` and ends with `e`<br>
 Mike <span class='txt-yellow dark'>likes</span> to ride a <span class='txt-yellow dark'>bike</span> <span class='txt-yellow dark'>like</span> he is <span class='txt-yellow dark'>five</span> again, not fifty.
-
-<!-- Mike likes to ride a bike like he is five again, not fifty.
-
-Mike likes to ride a bike like he is five again, not fifty. -->
-
-
 
 `/\b[bdf]eer\b/g` - <span class="font-mono txt-yellow fw9">beer</span> <span class="font-mono txt-yellow fw9">deer</span> <span class="font-mono txt-yellow fw9">feer</span> <br>
 `/\b[^bdf]eer\b/g` - <span class="font-mono txt-yellow fw9">cheer</span> <span class="font-mono txt-yellow fw9">jeer</span> <span class="font-mono txt-yellow fw9">leer</span> <br>
@@ -170,9 +166,22 @@ Here's what each part of the regex does:
 \b matches another word boundary.
 So, \b\w*[aeiou]\w*\b will match any word that contains at least one vowel, like "apple", "orange", "banana", etc.
 
+## JavaScript examples
+
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions#using_regular_expressions_in_javascript" target="blank">Mozilla #using_regular_expressions_in_javascript</a>
+
+```js
+const text = "The quick brown fox jumps over the lazy dog.";
+const regex = /e/g;
+
+console.log(text.match(regex)); // ["e", "e", "e", "e", "e"]
+```
+
 
 ## Additional Resources
 
 - <a href="https://regexlearn.com/cheatsheet" target="blank">https://regexlearn.com/cheatsheet</a>
 - <a href="https://regexlearn.com/" target="blank">https://regexlearn.com/</a>
 - <a href="https://regexr.com/" target="blank">https://regexr.com/</a>
+
+<script src="/js/testing.js"></script>

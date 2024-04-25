@@ -12,6 +12,7 @@ use Naykel\Gotime\RouteBuilder;
 (new RouteBuilder('nav-linux', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-livewire', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-programming', 'components.layouts.docs-default'))->create();
+(new RouteBuilder('nav-react', 'components.layouts.docs-default'))->create();
 
 Route::get('/', function () {
     return view('pages.home');

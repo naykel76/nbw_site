@@ -1,0 +1,20 @@
+{
+    "main": {
+        "links": [
+            {
+                "name": "React",
+                "route_name": "docs.react-cheatsheet",
+                "icon_logo": "react"
+            },
+            {
+                "name": "React Native",
+                "route_name": "docs.react-native-quick-reference",
+                "icon_logo": "react"
+            },
+            {
+                "name": "Navigation Walkthrough",
+                "route_name": "docs.react.react-native-navigation-walkthrough"
+            }
+        ]
+    }
+}
