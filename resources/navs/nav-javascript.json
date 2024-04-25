@@ -12,6 +12,10 @@
             {
                 "name": "Constructor and Prototype",
                 "route_name": "docs.javascript.constructor_and_prototype"
+            },
+            {
+                "name": "Function Properties and Methods",
+                "route_name": "docs.javascript.function_properties_and_methods"
             }
         ]
     },

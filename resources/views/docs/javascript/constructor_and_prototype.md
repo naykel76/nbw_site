@@ -1,6 +1,8 @@
 # Constructor and Prototype
 
 - [Core Concepts](#core-concepts)
+- [Function, Prototype, and Instance Relationships](#function-prototype-and-instance-relationships)
+- [Prototype Chain](#prototype-chain)
   - [Comparison of Constructor and Prototype](#comparison-of-constructor-and-prototype)
 
 ## Core Concepts
@@ -20,6 +22,25 @@ prototype of the constructor function that created the object.
    reaches null.
 
 
+**FYI, I need to preface the following diagram with "I think"**
+
+## Function, Prototype, and Instance Relationships
+
+```mermaid +parse
+<x-mermaid>
+graph LR
+    myFunc[myFunc Function] -->|has| FunctionProperties[Function Properties]
+    myFunc -->|has| FunctionMethods[Function Methods]
+    myFunc -->|has| FunctionPrototype[myFunc.prototype]
+    FunctionPrototype -->|has| Constructor[constructor: myFunc]
+    FunctionPrototype -->|has| OtherProperties[Other properties and methods]
+    obj[obj Instance] -->|has| InstanceProto[obj.__proto__]
+    InstanceProto -->|points to| FunctionPrototype
+</x-mermaid>
+```
+
+## Prototype Chain 
+
 ```mermaid +parse
 <x-mermaid>
     graph LR
@@ -27,9 +48,11 @@ prototype of the constructor function that created the object.
         Prototype -->|has| BasePrototype[Base Prototype]
         Constructor -->|creates| Instance
         Instance -->|links| Prototype
-        BasePrototype -->|has| null
+        BasePrototype -->|__proto__ points to| Null[null]
 </x-mermaid>
 ```
+
+
 ### Comparison of Constructor and Prototype
 
 The following example demonstrates the difference between a constructor and a prototype.
