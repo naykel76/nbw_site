@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f8fbe61fac81baf011c8dc753d04a09e",
+    "content-hash": "101deab669c6f433bb42264f81ec306b",
     "packages": [
         {
             "name": "brick/math",
@@ -2089,12 +2089,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/naykel76/gotime.git",
-                "reference": "d938b90"
+                "reference": "1027620"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/naykel76/gotime/zipball/d938b90",
-                "reference": "d938b90",
+                "url": "https://api.github.com/repos/naykel76/gotime/zipball/1027620",
+                "reference": "1027620",
                 "shasum": ""
             },
             "require": {
