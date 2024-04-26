@@ -1,3 +1,7 @@
+code {
+    color: #e6c637;
+}
+
 .markdown {
     .compare + pre,
     .compare + pre + pre {
@@ -20,8 +24,8 @@
         border-color: #3d5ea5;
     }
 
-    .spaced-out + ul li{
-        margin-top: .5rem !important;
+    .spaced-out + ul li {
+        margin-top: 0.5rem !important;
     }
 }
 
