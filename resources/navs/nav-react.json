@@ -8,8 +8,13 @@
             },
             {
                 "name": "React Native",
-                "route_name": "docs.react-native-quick-reference",
+                "route_name": "docs.react.react-native-quick-reference",
                 "icon_logo": "react"
+            },
+            {
+                "name": "Redux Overview",
+                "route_name": "docs.redux-overview",
+                "ignore_route": true
             },
             {
                 "name": "Using Redux in React",

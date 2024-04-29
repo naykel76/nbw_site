@@ -1,14 +1,16 @@
-# Redux in React - The "Short" Version
+# Redux in React
 
 ```html +parse
 <x-alert type="warning">
-<p>Buckle up! The world of Redux can feel like a rabbit hole wonderland, with terms like Redux, React-Redux, and
-    Redux Toolkit swirling around. It's easy to get confused about what each does and how they work together to
-    manage your application's state.</p>
-<p>This is by no means a comprehensive guide to Redux, and the focus will be on using Redux
-    Toolkit, because that's what all the cool kids use!</p>
+<p>Buckle up! The world of Redux can feel like a rabbit hole wonderland, with terms like
+Redux, React-Redux, and Redux Toolkit swirling around. It's easy to get confused about
+what each does and how they work together to manage your application's state. This is by
+no means a comprehensive guide to Redux, and the focus will be on using Redux Toolkit,
+because that's what all the cool kids use!</p>
 </x-alert>
 ```
+
+
 
 - [Overview](#overview)
 - [Why Redux Toolkit?](#why-redux-toolkit)
@@ -18,13 +20,13 @@
 
 ## Overview
 
-Before we dig in, it's important to understand the basics. Redux is a state management
-library for JavaScript applications. It acts like a central container for your app's
-state, ensuring everything stays consistent and predictable. 
+Before we dig in, it's a good idea to learn the basics or redux. Redux is a state
+management library for JavaScript applications. It acts like a central container for
+your app's state, ensuring everything stays consistent and predictable. 
 
 If you're not familiar with the 3 core concepts and 3 principles of Redux, some of the
 example code in this guide may not make sense. In that case, you should [read this
-first](/docs/redux-the-nuts-and-bolts) to demystify some of the technical jargon before
+first](/docs/redux-overview) to demystify some of the technical jargon before
 continuing.
 
 

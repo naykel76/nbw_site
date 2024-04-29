@@ -10,6 +10,9 @@
 - [Store](#store)
   - [Creating a store](#creating-a-store)
 - [Bringing it all together](#bringing-it-all-together)
+  - [Sequence diagram](#sequence-diagram)
+  - [Implementation](#implementation)
+    - [Binding action creators](#binding-action-creators)
 - [Full example](#full-example)
 
 <!-- https://github.dev/gopinav/React-Redux-Tutorials/blob/master/react-redux-demo/src/redux/user/userActions.js -->
@@ -237,39 +240,24 @@ import counterReducer from './counterReducer';
 
 // first, create the store by passing the reducer to the createStore function
 const store = createStore(counterReducer);
-
-// next, subscribe to the store to listen for changes
-const unsubscribe = store.subscribe(() => {
-    console.log('State has changed:', store.getState());
-});
-
-// dispatch an action(s) to the store to update the state
-// these will be bound to some click event in the UI
-store.dispatch(increment());
-store.dispatch(increment());
-store.dispatch(increment());
-store.dispatch(decrement());
-
-// At some point in the future, you can stop listening for changes 
-// by calling the function returned by store.subscribe()
-unsubscribe();
 ```
-
+<!-- 
 ```html +parse
 <x-alert type="danger">
 This is a very basic example of creating a store. Dispatch and Subscribe have been included in the
 example I have not documented them here. Thats on Ron's list!
 </x-alert>
-```
+``` -->
 
 ## Bringing it all together
 
-Now that your head is spinning with all this new information, let's bring it all
-together to see how actions, reducers, and the store work together to manage your
-application's state in Redux.
+Now that your head is spinning, let's bring it all together to see how actions,
+reducers, and the store work together to manage your application's state in Redux.
 
-With our counter example, when a user clicks a button to increment the counter, here's
-what happens:
+### Sequence diagram
+
+Consider our counter example where a user clicks a button to increment or decrement the
+counter. Here's the sequence of events:
 
 ```mermaid +parse
 <x-mermaid>
@@ -307,24 +295,68 @@ the `count` value in the state object. If the action type is "DECREMENT", the
 changes in the store's state (using `store.subscribe()`), they will be notified and can
 re-render themselves with the updated state.
 
+### Implementation
+
+```js
+// Subscribe to the store to listen for changes
+const unsubscribe = store.subscribe(() => {
+    console.log('State has changed:', store.getState());
+});
+
+// Dispatch actions to the store to update the state
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(decrement());
+
+// Unsubscribe from the store when you no longer want to listen for changes
+unsubscribe();
+```
+
+#### Binding action creators
+
+In the example above, we are dispatching actions directly to the store. In a real
+application, you would bind the action creators to some click event in the UI. For
+example:
+
+```js
+import { bindActionCreators } from 'redux';
+import { increment, decrement } from './actionCreators';
+
+// Get a reference to the dispatch function
+const dispatch = store.dispatch;
+
+// Use bindActionCreators to bind dispatch to your action creators
+const boundActionCreators = bindActionCreators({ increment, decrement }, dispatch);
+
+document.getElementById('increment').addEventListener('click', () => {
+    boundActionCreators.increment();
+});
+
+document.getElementById('decrement').addEventListener('click', () => {
+    boundActionCreators.decrement();
+});
+```
 
 ## Full example
 
 Copy and paste the following code snippet into a file and run it with Node.js to see how
 actions, reducers, and the store work together in Redux.
 
-Spoiler, your output should be:
+Expected output:
 
 ```bash
 State has changed: { count: 1 }
 State has changed: { count: 2 }
-State has changed: { count: 3 }
+State has changed: { count: 1 }
 State has changed: { count: 2 }
 ```
 
+Note we are using the older CommonJS syntax for this example so you can run directly in
+Node.js.
 ```js
-
 const redux = require('redux');
+const bindActionCreators = redux.bindActionCreators;
 const createStore = redux.createStore;
 
 // ----- ACTION CREATORS ------------------------------------------
@@ -371,230 +403,15 @@ const unsubscribe = store.subscribe(() => {
     console.log('State has changed:', store.getState());
 });
 
-// dispatch an action(s) to the store to update the state
-// these will be bound to some click event in the UI
-store.dispatch(increment());
-store.dispatch(increment());
-store.dispatch(increment());
-store.dispatch(decrement());
+// ----- BIND ACTIONS ---------------------------------------------
+const actions = bindActionCreators({ increment, decrement }, store.dispatch);
+
+actions.increment();
+actions.increment();
+actions.decrement();
+actions.increment();
 
 // At some point in the future, you can stop listening for changes 
 // by calling the function returned by store.subscribe()
 unsubscribe();
 ```
-
-<!-- 
-### Action Creators
-
-As the name implies, action creators are functions that create actions. They are
-functions that return an action object (like the one shown above). 
-
-Here is a more concrete example:
-
-```javascript
-const INCREASE_QTY = 'INCREASE_QTY';
-const DECREASE_QTY = 'DECREASE_QTY';
-
-function increaseQty(id) {
-    return {
-        type: INCREASE_QTY,
-        payload: id
-    }
-}
-function decreaseQty(id) {
-    return {
-        type: DECREASE_QTY,
-        payload: id
-    }
-}
-```
-
-<span class="txt-pink">Confused?</span> Why are you passing the `id` to the action creator?
-
-This is a good question! The id argument is being passed to the action creator because
-it needs to specify which item's quantity needs to be increased.
-
-<span class="txt-pink">Still Confused?</span> Currently we have a chicken and egg
-situation where it can be difficult to understand what is going on in one part of the
-code without understanding the other parts. The action creator and the payload you send
-will make more sense when you see how the action is used in the reducer further down.
-
-## Reducers
-
-Reducers are the heart of state management in Redux. They are pure functions that
-receive the current application state and an action as arguments. Based on the action
-type and payload (if present), the reducer determines how to update the state and
-returns the new state object.
-
-**Key points to remember about Reducers include they:**
-
-- specify how the application's state changes in response to an action sent to the store.
-- are pure functions that accepts the previous state and an action, and return the next state.
-- must not mutate the state. Instead, they should return a new state object.
-- should be written in a way that they are easy to test.
-
-```javascript
-const previousState = {
-    data: [
-        { id: 1, title: 'Product 1', price: 19.99, quantity: 1 },
-        { id: 2, title: 'Product 2', price: 29.99, quantity: 2 }
-    ]
-};
-
-// in this example the payload is the id of the item to increase
-function cartReducer(state = previousState, action) {
-    switch (action.type) {
-        case INCREASE_QTY:
-            return {
-                ...state,
-                data: state.data.map(item =>
-                    item.id === action.payload ? { ...item, quantity: item.quantity + 1 } : item
-                )
-            };
-        case DECREASE_QTY:
-            return {
-                ...state,
-                data: state.data.map(item =>
-                    item.id === action.payload ? { ...item, quantity: item.quantity - 1 } : item
-                )
-            };
-        default:
-            return state;
-    }
-}
-```
-
-Whats happening here?
-
-1. The reducer receives the current state and an action.
-2. The reducer checks the action type and updates the state accordingly.
-3. The reducer returns a new state object.
-4. The new state object is then used to update the store.
-5. The store then notifies the UI that the state has changed.
-6. The UI re-renders with the new state.
-7. The user sees the updated UI.
-8. The user interacts with the UI and triggers another action.
-9. The cycle repeats.
-
-
-
-
-
-
-
-## Store
-
-The store is the object that holds the state of your application. The store is created
-by passing a reducer function to the `createStore` function from Redux. The store has
-three important methods:
-
-1. `getState()`: Returns the current state of the store
-2. `dispatch(action)`: Dispatches an action to update the state
-3. `subscribe(listener)`: Adds a change listener to the store
-
-```javascript
-import { createStore } from 'redux';
-
-const initialState = {
-    data: []
-};
-
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'NAME_OF_ACTION':
-            return {
-                ...state,
-                data: [...state.data, action.payload]
-            };
-        default: return state;
-    }
-};
-
-const store = createStore(reducer);
-```
-
-
-
-
-
-
-
-### Putting it all together
-
-So far, we have fragments of code that show how actions and reducers work. Let's put
-them together to see how they interact.
-
-<div class="bx danger-light bdr-3 rounded-1 flex va-c">
-    <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#exclamation-triangle"></use></svg>
-    <div>This needs to be confirmed for accuracy</div>
-</div>
-
-```javascript
-
-// Action creators
-const addToCart = (item) => ({
-    type: 'ADD_TO_CART',
-    payload: item
-});
-
-const increaseQty = (id) => ({
-    type: 'INCREASE_QTY',
-    payload: id
-});
-
-// Reducer
-const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'ADD_TO_CART':
-            return {
-                ...state,
-                data: [...state.data, action.payload]
-            };
-        case 'INCREASE_QTY':
-            return {
-                ...state,
-                data: state.data.map(item =>
-                    item.id === action.payload
-                        ? { ...item, quantity: item.quantity + 1 }
-                        : item
-                )
-            };
-        default: 
-            return state;
-    }
-};
-``` -->
-
-<!-- 
-```js
-const SHOPPING_CART = 'SHOPPING_CART';
-
-{
-    type: SHOPPING_CART,
-    totalItems: 5,
-    totalPrice: 100.00,
-    products: {
-        id: 1,
-        title: 'Some title',
-        // other data you want to send...
-    }
-}
-```
-
-const SHOPPING_CART = 'SHOPPING_CART';
-
-const shoppingCartAction = {
-    type: SHOPPING_CART,
-    payload: {
-        totalItems: 5,
-        totalPrice: 100.00,
-        products: [
-            {
-                id: 1,
-                title: 'Some title',
-                // other data you want to send...
-            },
-            // ...more products
-        ]
-    }
-}; -->

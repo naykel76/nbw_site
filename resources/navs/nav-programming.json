@@ -98,13 +98,13 @@
             },
             {
                 "name": "React Native",
-                "route_name": "docs.react-native-quick-reference",
+                "route_name": "docs.react.react-native-quick-reference",
                 "icon_logo": "react",
                 "exclude_route": true
             },
             {
                 "name": "Redux",
-                "route_name": "docs.redux-the-nuts-and-bolts",
+                "route_name": "docs.redux-overview",
                 "icon_logo": "redux"
             },
             {

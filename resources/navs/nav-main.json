@@ -3,7 +3,7 @@
         "links": [
             {
                 "name": "React Native",
-                "route_name": "docs.react-native-quick-reference",
+                "route_name": "docs.react.react-native-quick-reference",
                 "type": "md",
                 "exclude_route": true
             },
