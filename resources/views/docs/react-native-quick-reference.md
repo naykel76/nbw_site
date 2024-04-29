@@ -21,14 +21,14 @@
 
 ## Installation
 
-```
+``` bash
 npx create-expo-app AwesomeProject
 npx create-expo-app --template
 ```
 
 ### Run the app
 
-```
+``` bash
 npm start
 npm run android
 npm run web
@@ -36,15 +36,21 @@ npm run web
 
 ### Install dependencies for web (with HMR)
 
-```
+``` bash
 npx expo install react-native-web react-dom @expo/metro-runtime @expo/webpack-config
+
+# npm install crypto-browserify
 ```
 
 ### Other dependencies
 
 ``` bash
-npm install react-native-svg
+# SVG rendering library
+npx install react-native-svg
+# icons for React Native
+npm install @expo/vector-icons
 
+# Safe area insets management for React Native
 npx expo install react-native-safe-area-context
 ```
 
@@ -52,7 +58,7 @@ npx expo install react-native-safe-area-context
 
 ```bash
 npm install --save-dev eslint eslint-plugin-react
-# install the config
+# install the config (optional)
 npm init @eslint/config
 ```
 
@@ -91,6 +97,8 @@ npx expo install react-native-screens react-native-safe-area-context
 npm install @react-navigation/drawer @react-navigation/stack @react-navigation/bottom-tabs
 npx expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
 ```
+
+npx expo install react-native-gesture-handler react-native-reanimated
 
 Note, you can pass multiple parameters to a route by passing an object with multiple key-value pairs.
 

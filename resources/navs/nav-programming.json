@@ -103,6 +103,11 @@
                 "exclude_route": true
             },
             {
+                "name": "Redux",
+                "route_name": "docs.redux-the-nuts-and-bolts",
+                "icon_logo": "redux"
+            },
+            {
                 "name": "Regex",
                 "route_name": "docs.regex-cheatsheet",
                 "icon_logo": "regex"

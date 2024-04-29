@@ -1,12 +1,16 @@
-# React Native Navigation, The struggle is over!
+# Nested Navigation, The struggle is over!
 
-Navigating between screens in React Native can be puzzling. This is a basic guide on how
-to implement navigation in a React Native application using a combination of tab and
-stack navigators. It is not a comprehensive guide to React Native navigation, but rather
-a general walkthrough addressing common use cases.
+This guide provides a basic introduction on how to implement navigation using a
+combination of navigators. The aim is to assist you in handling common scenarios that
+you might encounter when first getting started with React Native navigation.
 
-**This does not cover fetching the data from an API. It is assumed that you have already
-fetched the data and are now trying to navigate to a new screen to display the data.**
+```html +parse
+<x-alert type="info">
+Please note that is not a comprehensive guide to React Native navigation. It assumes
+that you've already installed the necessary navigation packages and retrieved the data
+for your application. The goal is to simply demystify some common use cases.
+</x-alert>
+```
 
 - [How do I access routes through nested navigation?](#how-do-i-access-routes-through-nested-navigation)
 - [What does this all mean?](#what-does-this-all-mean)
@@ -14,20 +18,6 @@ fetched the data and are now trying to navigate to a new screen to display the d
 ## How do I access routes through nested navigation?
 
 Nesting navigators means rendering a navigator inside a screen of another navigator.
-
-```mermaid +parse
-<x-mermaid>
-graph LR
-    A[Tab Navigator] -->|"Categories" Route| B[CategoryStackNav]
-    A -->|"Profile" Route| K[ProfileScreen]
-    A -->|"Orders" Route| H[OrdersStackNav]
-    B --> C[CategoryListScreen]
-    B --> D[ProductsScreen]
-    D --> E[ProductDetailScreen]
-    H --> F[OrdersScreen]
-    H --> J[OrderHistoryScreen]
-</x-mermaid>
-```
 
 Consider you have a categories screen and a products screen. The categories screen
 displays a list of categories and when a category is selected, it should navigate to the
@@ -37,8 +27,22 @@ To achieve this, you can use a combination of tab and stack navigators. The tab
 navigator will be used to navigate to the categories screen and the stack navigator will
 be used to navigate to the products screen.
 
+Here is a visual representation of the navigation flow:
 
-Here is a basic example of how you can implement this:
+```mermaid +parse
+<x-mermaid>
+graph LR
+    A[Tab Navigator] -->|"Categories" Route| B[CategoryStackNav]
+    A -->|"Cart" Route| K[CartScreen]
+    subgraph CategoryStackNav
+        B --> C[CategoriesScreen]
+        B --> D[ProductsScreen]
+        D --> E[ProductDetailScreen]
+    end
+</x-mermaid>
+```
+
+Here is a the basic implementation:
 
 First, setup the stack navigator to navigate to both the categories and products
 screens. Then, setup the tab navigator to navigate to the stack navigator.
@@ -47,7 +51,7 @@ screens. Then, setup the tab navigator to navigate to the stack navigator.
 export default function App() {
     const CategoriesStackNav = () => (
         <Stack.Navigator>
-            <Stack.Screen name="Categories" component={CategoryListScreen} />
+            <Stack.Screen name="Categories" component={CategoriesScreen} />
             <Stack.Screen name="Products" component={ProductsScreen} />
             <Stack.Screen name="ProductDetails" component={ProductDetailScreen} />
         </Stack.Navigator>
@@ -57,6 +61,7 @@ export default function App() {
         <NavigationContainer>
             <Tab.Navigator>
                 <Tab.Screen name="Home" component={CategoriesStackNav} />
+                <Tab.Screen name="Cart" component={CartScreen} />
                 // other tab screens...
             </Tab.Navigator>
         </NavigationContainer>
@@ -109,11 +114,10 @@ export default function ProductsScreen({ route }) {
 }
 ```
 
-
 ## What does this all mean?
 
 The `ProductDetailScreen` is defined in the `CategoryStackNav` because it's part of the
-navigation flow that starts from the `CategoryListScreen`. When you select a product in the
+navigation flow that starts from the `CategoriesScreen`. When you select a product in the
 ProductsScreen, you navigate to the `ProductDetailScreen` to view more information about
 that product. This is a common pattern in apps that display lists of items where each
 item can be selected to view more details.
@@ -121,10 +125,10 @@ item can be selected to view more details.
 The `ProductDetailScreen` route is available anywhere within the `CategoryStackNav`. This
 means you can navigate to it from any screen that is part of the `CategoryStackNav`.
 However, you can't navigate to it directly from a screen that is not part of the
-`CategoryStackNav` (like the ProfileScreen or OrdersScreen).
+`CategoryStackNav` (like the CartScreen or OrdersScreen).
 
-Even though the `CategoryListScreen` and `ProductDetailScreen` are unrelated in terms of
-data, they are related in terms of navigation. The `CategoryListScreen` leads to the
+Even though the `CategoriesScreen` and `ProductDetailScreen` are unrelated in terms of
+data, they are related in terms of navigation. The `CategoriesScreen` leads to the
 ProductsScreen, which in turn leads to the `ProductDetailScreen`. This is why they are
 all part of the same Stack Navigator.
 

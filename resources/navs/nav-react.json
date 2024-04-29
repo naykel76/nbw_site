@@ -1,5 +1,5 @@
 {
-    "main": {
+    "General": {
         "links": [
             {
                 "name": "React",
@@ -12,8 +12,21 @@
                 "icon_logo": "react"
             },
             {
-                "name": "Navigation Walkthrough",
-                "route_name": "docs.react.react-native-navigation-walkthrough"
+                "name": "Using Redux in React",
+                "route_name": "docs.react.react-redux",
+                "icon_logo": "react"
+            }
+        ]
+    },
+    "Navigation": {
+        "links": [
+            {
+                "name": "Nested Navigation - Basic",
+                "route_name": "docs.react.react-nested-navigation-basic"
+            },
+            {
+                "name": "Nested Navigation - Advanced",
+                "route_name": "docs.react.react-nested-navigation-advanced"
             }
         ]
     }
