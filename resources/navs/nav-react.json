@@ -1,5 +1,5 @@
 {
-    "General": {
+    "Quick Reference": {
         "links": [
             {
                 "name": "React",
@@ -10,28 +10,32 @@
                 "name": "React Native",
                 "route_name": "docs.react.react-native-quick-reference",
                 "icon_logo": "react"
-            },
-            {
-                "name": "Redux Overview",
-                "route_name": "docs.redux-overview",
-                "ignore_route": true
-            },
-            {
-                "name": "Using Redux in React",
-                "route_name": "docs.react.react-redux",
-                "icon_logo": "react"
             }
         ]
     },
     "Navigation": {
         "links": [
             {
-                "name": "Nested Navigation - Basic",
+                "name": "Nested Navigation - The Basics",
                 "route_name": "docs.react.react-nested-navigation-basic"
             },
             {
                 "name": "Nested Navigation - Advanced",
                 "route_name": "docs.react.react-nested-navigation-advanced"
+            }
+        ]
+    },
+    "Redux": {
+        "links": [
+            {
+                "name": "Redux Overview",
+                "route_name": "docs.redux-overview",
+                "ignore_route": true
+            },
+            {
+                "name": "Redux Toolkit - The Basics",
+                "route_name": "docs.react.react-redux-toolkit-basic",
+                "icon_logo": "react"
             }
         ]
     }

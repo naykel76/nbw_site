@@ -38,8 +38,6 @@ npm run web
 
 ``` bash
 npx expo install react-native-web react-dom @expo/metro-runtime @expo/webpack-config
-
-# npm install crypto-browserify
 ```
 
 ### Other dependencies

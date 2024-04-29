@@ -11,6 +11,7 @@
   - [Find all words except for. (Negated character set)](#find-all-words-except-for-negated-character-set)
   - [Matching words that contain...](#matching-words-that-contain)
 - [JavaScript examples](#javascript-examples)
+  - [Test for a valid Australian phone number](#test-for-a-valid-australian-phone-number)
 - [Additional Resources](#additional-resources)
 
 ## Flags
@@ -176,6 +177,29 @@ const regex = /e/g;
 
 console.log(text.match(regex)); // ["e", "e", "e", "e", "e"]
 ```
+---
+
+### Test for a valid Australian phone number
+
+To pass the test, the phone number must start with `04` followed by 8 digits.
+
+```js
+function isValidAustralianMobile(number) {
+    const sanitizedNumber = number.replace(/\D/g, '');
+    return /^04\d{8}$/.test(sanitizedNumber);
+}
+```
+
+The `sanitizedNumber` variable strips non-digit characters from the input, allowing the
+function to accept phone numbers in various formats, provided they start with `04` and
+are followed by 8 digits.
+
+- `^04` asserts the start of a line begins with exactly 04.
+- `\d{8}` matches exactly eight digits.
+- `$` asserts the end of a line.
+
+---
+
 
 
 ## Additional Resources
