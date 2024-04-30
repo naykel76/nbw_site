@@ -17,11 +17,11 @@
         "links": [
             {
                 "name": "Nested Navigation - The Basics",
-                "route_name": "docs.react.react-nested-navigation-basic"
+                "route_name": "docs.react.rn-nested-navigation-basic"
             },
             {
                 "name": "Nested Navigation - Advanced",
-                "route_name": "docs.react.react-nested-navigation-advanced"
+                "route_name": "docs.react.rn-nested-navigation-advanced"
             }
         ]
     },
@@ -34,7 +34,12 @@
             },
             {
                 "name": "Redux Toolkit - The Basics",
-                "route_name": "docs.react.react-redux-toolkit-basic",
+                "route_name": "docs.react.rn-redux-toolkit-basic",
+                "icon_logo": "react"
+            },
+            {
+                "name": "Redux Toolkit - Thunk",
+                "route_name": "docs.react.rn-rtk-thunk",
                 "icon_logo": "react"
             }
         ]
