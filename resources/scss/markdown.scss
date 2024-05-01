@@ -33,3 +33,21 @@ pre.mermaid {
     background: #fff;
     padding: 1rem;
 }
+
+question {
+    color: #2299dd;
+    margin-top: 2rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    font-style: italic;
+    display: block;
+}
+
+answer {
+    margin-top: 0.5rem;
+    display: block;
+    + ul {
+        margin-top: 0.5rem;
+        margin-left: 1.5rem;
+    }
+}

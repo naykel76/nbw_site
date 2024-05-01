@@ -8,6 +8,7 @@ Redux Toolkit, and how they work together to manage your application's state. Th
 in this guide will be on using Redux Toolkit, the current go-to method for using Redux.</p>
 </x-alert>
 ```
+
 - [Overview](#overview)
 - [Why Redux Toolkit?](#why-redux-toolkit)
 - [Installation](#installation)
@@ -17,6 +18,8 @@ in this guide will be on using Redux Toolkit, the current go-to method for using
   - [Create a slice](#create-a-slice)
   - [Add the slice to the store](#add-the-slice-to-the-store)
   - [Usage in a component](#usage-in-a-component)
+  - [Summary](#summary)
+- [Whats next?](#whats-next)
 - [Additional resources](#additional-resources)
 
 
@@ -53,7 +56,8 @@ Note: `@reduxjs/toolkit` is a wrapper around Redux so there is no need to instal
 
 ## Getting started
 
-These step are somewhat in order, but you can jump around as needed.
+The following examples aim to offer an abstract overview, serving to help you understand
+the basic concepts of Redux Toolkit without getting bogged down in the details.
 
 ### Create the store
 
@@ -94,52 +98,56 @@ export default function App() {
 ### Create a slice
 
 A slice is a collection of Redux reducer logic and actions for a single feature of your
-application. A slice requires the `createSlice` function from `@reduxjs/toolkit`, the `name` of the
-slice, the `initialState` of the slice, and a `reducers` object that contains functions
-to update the state.
+application. A slice requires:
 
-The `createSlice` function automatically generates action creators with the same names
-as the reducer functions, and includes them in the slice object, so you can dispatch
-actions like `counterSlice.actions.increment()` to increment the counter in the
-following example.
+- the `createSlice` function from `@reduxjs/toolkit`
+- `name`: This is the name of the slice/feature. It's used to generate action type strings.
+- `initialState`: This is the initial state of the slice, typically an object.
+- `reducers`: An object containing functions to update the state based on dispatched actions.
+
+**Things to know:**
+
+- **Reducer Functions**: Each function inside the `reducers` object handles a specific
+  action and updates the state accordingly.
+- **Action Creators**: `createSlice` automatically generates action creators with the same
+  names as the `reducer` functions and includes them in the slice object. 
+
+Here's a general structure of a slice:
 
 ```js
-// src/features/counter/counterSlice.js
+// src/features/feature/featureSlice.js
 import { createSlice } from '@reduxjs/toolkit';
 
-const counterSlice = createSlice({
-    name: 'counter',
-    initialState: {
-        value: 0,
-    },
+const initialState = {};
+
+const featureSlice = createSlice({
+    name: 'feature',
+    initialState,
     reducers: {
-        increment: (state) => {
-            state.value += 1;
+        // These are named action1 and action2, but they serve as reducers that
+        // will automatically generate action creators with the same names. Each
+        // function will handle a specific action and update the state accordingly.
+        action1: (state) => {
+            // Handle action1
         },
-        decrement: (state) => {
-            state.value -= 1;
+        action2: (state, action) => {
+            // Handle action2
         },
     },
 });
 
-export const { increment, decrement } = counterSlice.actions;
-export default counterSlice.reducer;
+// Although named action1 and action2, these are essentially reducers 
+// that are being converted to action creators with the same names.
+export const { action1, action2 } = featureSlice.actions;
+export default featureSlice.reducer;
 ```
 
-**So what am I looking at here?**
+<question>Why doesn't the `action1` reducer function accept an `action` parameter?</question>
 
-- `createSlice` is a function that takes an object with the `name`, `initialState`, and
-  `reducers` properties.
-- `name` is a string that is used to generate action type strings.
-- `initialState` is the initial state of the slice.
-- `reducers` is an object where the keys are the action names and the values are the
-  functions that update the state.
-- `increment` and `decrement` are the action creators that are exported from the slice.
-- `counterSlice.reducer` is the reducer function that is exported from the slice.
-
-
-<!-- **Why is there no action passed to the reducer function?** -->
-
+<answer>In Redux, not all actions necessarily need to carry a payload. This is a valid
+scenario to demonstrate that concept. For example, if you had a counter that only needed
+to increment by 1, you wouldn't need to pass a payload to the action, however, if you
+needed to increment by a specific amount, you would pass a payload.</answer>
 
 ### Add the slice to the store
 
@@ -149,11 +157,11 @@ store is as simple as adding the slice to the `reducer` object.
 ```js
 // src/app/store.js
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import featureReducer from '../features/feature/featureSlice';
 
 const store = configureStore({
     reducer: {
-        counter: counterReducer,
+        feature: featureReducer,
     },
 });
 
@@ -165,33 +173,45 @@ export default store;
 Now that we have the store set up and a slice added to it, we can use the `useSelector`
 and `useDispatch` hooks from `react-redux` to interact with the store in a component.
 
+**Things to know:**
+
+- `useSelector`: This hook allows you to select data from the Redux store state. The
+  selector function you provide as an argument receives the entire state and returns the
+  specific data you need for your component. When the selected data changes, the
+  component will re-render to reflect the updated state.
+- `useDispatch`: This hook gives you access to the dispatch function from the Redux
+  store. You can use dispatch to trigger actions, such as updating state, fetching data
+  asynchronously, or handling user interactions within your component.
+
 ```js
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from '../features/counter/counterSlice';
+import { action1, action2 } from '../features/feature/featureSlice';
 
 export default function HomeScreen() {
-    // useSelector is a hook that allows you to extract data from the Redux
-    // store state using a selector function. The selector function receives
-    // the entire store state as its argument and returns the data that you
-    // need from the state. If the data changes, the component will re-render.
-    const count = useSelector((state) => state.counter.value);
-    
-    // useDispatch is a hook that returns a reference to the dispatch function
-    // from the Redux store. You can use it to dispatch actions to the store.
+    const someState = useSelector((state) => state.feature.value);
     const dispatch = useDispatch();
 
     return (
         <>
-            <Text>{count}</Text>
-            <Button title="increment" onPress={() => dispatch(increment())} />
-            <Button title="decrement" onPress={() => dispatch(decrement())} />
+            <Text>{someState}</Text>
+            <Button title="someAction1" onPress={() => dispatch(action1())} />
+            <Button title="someAction2" onPress={() => dispatch(action2())} />
         </>
     );
 }
-
-// styles here ...
 ```
+
+### Summary
+
+- **Store**: The store is the central place where your application state lives. It provides
+  access to the state via certain methods and allows the state to be updated through actions.
+- **Slice**: A slice is a collection of Redux reducer logic and actions for a single feature
+- **Reducer Functions**: Each function inside the `reducers` object handles a specific
+  action and updates the state accordingly.
+- **Action Creators**: `createSlice` automatically generates action creators with the same
+- **Usage in a component**: `useSelector` and `useDispatch` hooks from `react-redux` to
+  interact with the store in a component.
 
 ```html +parse
 <x-alert type="danger">
@@ -212,10 +232,21 @@ graph LR
 </x-mermaid>
 ```
 
+## Whats next?
 
+This guide is just the tip of the iceberg, in fact it's more like a water droplet on the
+tip of the iceberg. There's a lot more to Redux Toolkit, such as:
+
+- [Creating Async Thunks](/docs/react/rn-rtk-thunk)
+
+<!-- - [Creating Slices with Extra Reducers](/docs/react/rn-rtk-slice) -->
+<!-- - [Creating a Slice with Async Thunks](/docs/react/rn-rtk-slice-thunk) -->
 
 
 ## Additional resources
 
-- <a href="https://redux-toolkit.js.org/" target="blank">Redux Toolkit documentation</a>
+- <a href="https://redux-toolkit.js.org/" target="blank">RTK documentation</a>
 - <a href="https://redux-toolkit.js.org/tutorials/quick-start" target="blank">RTK Quick Start</a>
+- <a href="https://github.com/naykel76/react_native_cookbook/blob/master/rtk-react-native/src/features/counter/counterSlice.js
+" target="blank">Simple Counter Slice Example</a>
+
