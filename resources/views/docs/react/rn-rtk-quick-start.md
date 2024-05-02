@@ -1,5 +1,3 @@
-is this guide accurate? do you think i missed anything, keeping in mind it is a highlevel overview
-
 # React Native Redux Toolkit Quick Start
 
 <div class="small-headings"></div>
