@@ -44,6 +44,7 @@ ol li::before {
 
 h1,
 h2,
+h3:not(question)
 h3 {
     code:not(.hljs) {
         color: inherit;

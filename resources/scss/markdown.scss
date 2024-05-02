@@ -1,5 +1,5 @@
 code {
-    color: #e6c637;
+    color: hsl(49, 78%, 66%);
 }
 
 .markdown {
@@ -33,3 +33,32 @@ pre.mermaid {
     background: #fff;
     padding: 1rem;
 }
+
+question {
+    color: #2299dd;
+    margin-top: 2rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    font-style: italic;
+    // display: block;
+}
+
+answer {
+    margin-top: 0.5rem;
+    display: block;
+    + ul {
+        margin-top: 0.5rem;
+        margin-left: 1.5rem;
+    }
+}
+
+// this is good when making a list when you want to use the toc for an overview
+.small-headings {
+    ~ h3 {
+        font-size: 1.25rem;
+    }
+}
+// this is good when making a list when you want to use the toc for an overview
+// .small-headings ~ :is(h2, h3) {
+//     font-size: 1.25rem;
+// }
