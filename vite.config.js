@@ -30,7 +30,7 @@ export default defineConfig({
             ],
             safelist: {
                 standard: [/^\:has$/, /^\:is$/, /^\:not$/, /^\:where$/, /^\:disabled$/],
-                greedy: [/code$/, /hljs-/, /compare/, /clear/, /spaced-out/]
+                greedy: [/code$/, /hljs-/, /compare/, /clear/, /spaced-out/, /ol/]
             },
             extractors: [
                 {
