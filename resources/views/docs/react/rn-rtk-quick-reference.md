@@ -187,26 +187,26 @@ function MyComponent() {
 
 ### Update an existing item in an array of objects (TBD)
 
-```js
-// import { createSlice } from '@reduxjs/toolkit';
+<!-- ```js
+import { createSlice } from '@reduxjs/toolkit';
 
-// const peopleSlice = createSlice({
-//     name: 'people',
-//     initialState: [],
-//     reducers: {
-//         updatePersonById: (state, action) => {
-//             const { id, data } = action.payload;
-//             const itemIndex = state.findIndex(item => item.id === id);
-//             if (itemIndex !== -1) {
-//                 state[itemIndex] = { ...state[itemIndex], ...data };
-//             }
-//         },
-//     },
-// });
+const peopleSlice = createSlice({
+    name: 'people',
+    initialState: [],
+    reducers: {
+        updatePersonById: (state, action) => {
+            const { id, data } = action.payload;
+            const itemIndex = state.findIndex(item => item.id === id);
+            if (itemIndex !== -1) {
+                state[itemIndex] = { ...state[itemIndex], ...data };
+            }
+        },
+    },
+});
 
-// export const { updatePersonById } = peopleSlice.actions;
-// export default peopleSlice.reducer;
-```
+export const { updatePersonById } = peopleSlice.actions;
+export default peopleSlice.reducer;
+``` -->
 <hr>
 
 ### Delete an item from an array of objects (Immer)

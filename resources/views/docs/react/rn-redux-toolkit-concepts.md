@@ -234,8 +234,8 @@ graph LR
 
 ## Whats next?
 
-This guide is just the tip of the iceberg, in fact it's more like a water droplet on the
-tip of the iceberg. There's a lot more to Redux Toolkit, such as:
+This guide is just the tip of the iceberg, in fact it's more like the tip of the tip of
+the iceberg. There's a lot more to learn about Redux Toolkit, such as:
 
 - [Creating Async Thunks](/docs/react/rn-rtk-thunk)
 
