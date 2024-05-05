@@ -1,5 +1,5 @@
 code {
-    color: hsl(49, 78%, 66%);
+    color: hsl(49, 78%, 86%);
 }
 
 .markdown {
@@ -25,6 +25,10 @@ code {
     }
 
     .spaced-out + ul li {
+        margin-top: 0.5rem !important;
+    }
+
+    .spaced-out-all ~ ul li {
         margin-top: 0.5rem !important;
     }
 }
