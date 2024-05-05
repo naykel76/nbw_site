@@ -26,11 +26,12 @@ export default defineConfig({
         purge({
             paths: [
                 'resources/views/**/*.blade.php',
+                'resources/views/**/*.md',
                 'vendor/naykel/**/resources/views/**/*.blade.php'
             ],
             safelist: {
                 standard: [/^\:has$/, /^\:is$/, /^\:not$/, /^\:where$/, /^\:disabled$/],
-                greedy: [/code$/, /hljs-/, /compare/, /clear/, /spaced-out/, /ol/, /small-headings/]
+                greedy: [/code$/, /hljs-/, /ol/]
             },
             extractors: [
                 {

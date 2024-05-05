@@ -195,7 +195,7 @@ const peopleSlice = createSlice({
     initialState: [],
     reducers: {
         updatePersonById: (state, action) => {
-            const { id, data } = action.payload;
+            const { id, data } = action.payload;exit
             const itemIndex = state.findIndex(item => item.id === id);
             if (itemIndex !== -1) {
                 state[itemIndex] = { ...state[itemIndex], ...data };
