@@ -43,8 +43,8 @@
                 "icon_logo": "react"
             },
             {
-                "name": "Redux Toolkit - Quick Start",
-                "route_name": "docs.react.rn-rtk-quick-start",
+                "name": "Redux Toolkit - Quick Reference",
+                "route_name": "docs.react.rn-rtk-quick-reference",
                 "icon_logo": "react"
             }
         ]
