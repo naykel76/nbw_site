@@ -46,6 +46,11 @@
                 "name": "Redux Toolkit - Quick Reference",
                 "route_name": "docs.react.rn-rtk-quick-reference",
                 "icon_logo": "react"
+            },
+            {
+                "name": "Redux Toolkit - Trouble Shooting",
+                "route_name": "docs.react.rn-rtk-trouble-shooting",
+                "icon_logo": "react"
             }
         ]
     }
