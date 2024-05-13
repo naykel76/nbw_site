@@ -1,5 +1,6 @@
 # Function Properties and methods
 
+- ["This" Keyword](#this-keyword)
 - [Function Properties (`name`, `length`, `prototype`)](#function-properties-name-length-prototype)
 - [Function, prototype, and instance relationships](#function-prototype-and-instance-relationships)
 - [Prototype chain diagram](#prototype-chain-diagram)
@@ -10,6 +11,22 @@
   - [`Function.bind()`](#functionbind)
 - [Additional Resources](#additional-resources)
 
+
+## "This" Keyword
+
+In JavaScript, the keyword `this` refers to the object that a function is associated with. By default, `this` refers to the object that the function is a method of.
+
+However, with methods like `call`, `apply`, and `bind`, you can manually set
+what `this` refers to. This is known as setting the context of `this`.
+
+For instance, if you have a function `greet` and an object `person`, you can use
+`greet.call(person, 'Hello')`. This calls the `greet` function, but inside
+`greet`, `this` will refer to `person`, not the object `greet` was originally
+associated with.
+
+This ability to change the context of `this` is useful when you want a function
+to operate in the context of a different object than it was originally
+associated with.
 
 
 ## Function Properties (`name`, `length`, `prototype`)

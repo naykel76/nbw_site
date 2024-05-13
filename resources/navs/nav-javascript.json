@@ -1,8 +1,13 @@
 {
-    "Quick Reference": {
+    "Core Concepts": {
         "links": [
             {
-                "name": "Javascript Fundamentals",
+                "name": "Fundamentals Quick Reference",
+                "route_name": "docs.javascript.javascript-fundamentals-quick-reference",
+                "icon": "javascript"
+            },
+            {
+                "name": "Fundamentals",
                 "route_name": "docs.javascript.javascript-fundamentals"
             },
             {
@@ -20,16 +25,17 @@
             {
                 "name": "Function Properties and Methods",
                 "route_name": "docs.javascript.function_properties_and_methods"
+            },
+            {
+                "name": "Modules",
+                "route_name": "docs.javascript.modules",
+                "icon": "javascript"
             }
         ]
     },
     "Arrays and Objects": {
         "links": [
-            {
-                "name": "Array Quick Reference",
-                "route_name": "docs.javascript.array-cheatsheet",
-                "icon": "javascript"
-            },
+
             {
                 "name": "Object Quick Reference",
                 "route_name": "docs.javascript.object-cheatsheet",
@@ -95,11 +101,6 @@
             {
                 "name": "Boolean Promise",
                 "route_name": "docs.javascript.promise",
-                "icon": "javascript"
-            },
-            {
-                "name": "Modules",
-                "route_name": "docs.javascript.modules",
                 "icon": "javascript"
             }
         ]

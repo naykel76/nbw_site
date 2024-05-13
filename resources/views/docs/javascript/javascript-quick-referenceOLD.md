@@ -11,8 +11,6 @@
 - [Spread vs Rest Operators](#spread-vs-rest-operators)
   - [Spread Operator](#spread-operator)
   - [Rest Operator](#rest-operator)
-- [Destructuring Objects and Arrays](#destructuring-objects-and-arrays)
-- [Numeric Conversions](#numeric-conversions)
 
 ## Events
 
@@ -154,26 +152,4 @@ console.log(rest); // { b: 2, c: 3 }
 const array = [1, 2, 3];
 const [first, ...rest] = array;
 console.log(rest); // [2, 3]
-```
-
-## Destructuring Objects and Arrays
-
-```js
-const fruits = ['apple', 'banana', 'kiwi'];
-const [fruit, fruit2, fruit3] = fruits;
-const [fruit1, ...rest] = fruits;
-console.log(rest); // -> ["banana", "kiwi"]
-```
-
-```js
-const { name, city } = { name: 'Bill', city: 'Brisbane' };
-console.log(name, city);
-```
-
-
-## Numeric Conversions
-
-```js
-let numberToBinary = (num) => num.toString(2);
-console.log(numberToBinary(10)); // Output: "1010"
 ```
