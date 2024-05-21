@@ -35,7 +35,11 @@
     },
     "Arrays and Objects": {
         "links": [
-
+            {
+                "name": "Array Quick Reference",
+                "route_name": "docs.javascript.array-cheatsheet",
+                "icon": "javascript"
+            },
             {
                 "name": "Object Quick Reference",
                 "route_name": "docs.javascript.object-cheatsheet",
