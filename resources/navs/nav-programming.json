@@ -47,7 +47,7 @@
             },
             {
                 "name": "JavaScript",
-                "route_name": "docs.javascript.javascript-quick-reference",
+                "route_name": "docs.javascript.javascript-fundamentals-quick-reference",
                 "icon_logo": "javascript",
                 "exclude_route": true
             },
