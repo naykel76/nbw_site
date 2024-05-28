@@ -11,6 +11,8 @@
 - [Spread vs Rest Operators](#spread-vs-rest-operators)
   - [Spread Operator](#spread-operator)
   - [Rest Operator](#rest-operator)
+- [Control structures](#control-structures)
+  - [Things to remember](#things-to-remember)
 
 ## Events
 
@@ -153,3 +155,58 @@ const array = [1, 2, 3];
 const [first, ...rest] = array;
 console.log(rest); // [2, 3]
 ```
+
+
+
+
+
+
+
+
+# JavaScript Fundamentals Quick Reference
+
+- [Control structures](#control-structures)
+  - [Things to remember](#things-to-remember)
+
+<hr>
+
+```js
+const lettersArray = ['a', 'b', 'c', 'd', 'e'];
+for (const v in lettersArray) console.log(v); // 0, 1, 2, 3, 4
+for (const v of lettersArray) console.log(v); // a, b, c, d, e
+```
+
+```js
+const object = { a: 10, b: 20, c: 30 };
+for (let key in object) console.log(key); // Outputs: 'a', 'b', 'c'
+for (let value of Object.values(object)) console.log(value); // Outputs: 10, 20, 30
+```
+<hr>
+
+
+
+## Control structures
+
+- `if` - Executes a block of code if the condition is true.
+- `else` - Executes a block of code if the condition is false.
+- `else if` - Executes a block of code if the previous condition is false.
+- `switch` - Selects one of many code blocks to be executed.
+- `for` - Loops through a block of code a number of times.
+- `while` - Loops through a block of code while the condition is true.
+- `do while` - Loops through a block of code once, and then repeats the loop while the condition is true.
+- `break` - Exits a loop or a switch block.
+- `continue` - Jumps out of a loop and starts at the top.
+<hr>
+
+### Things to remember
+
+- `for...in` - Iterates over the keys (property names) of an object.
+- `for...of` - Iterates over the **values** of an iterable object.
+- `break` - Exits the loop immediately.
+- `continue` - Skips the current iteration and continues with the next one.
+
+
+
+
+
+

@@ -1,35 +1,51 @@
 # JavaScript Fundamentals Quick Reference
 
-JavaScript Fundamentals Quick Reference is a collection of JavaScript methods,
-data types, and operators that are commonly used in JavaScript programming. This
-quick reference is a handy to quickly look up the syntax and usage of JavaScript
-methods, data types, and operators.
+This quick reference provides an overview of essential JavaScript concepts and
+syntax. You will not find coded examples in this quick reference, you will only
+find method signatures, data types, and operator syntax. For examples refer to
+the links in the sidebar.
 
-- [Data Types](#data-types)
+<!-- Examples can be found -->
+
+- [Variable scope](#variable-scope)
+- [Data types](#data-types)
+  - [Primitive data types](#primitive-data-types)
+  - [Things to remember](#things-to-remember)
+    - [Falsy](#falsy)
+- [Operators](#operators)
+  - [Logical and Comparison Operators](#logical-and-comparison-operators)
+  - [Arithmetic and Assignment Operators](#arithmetic-and-assignment-operators)
+  - [Type Operators](#type-operators)
+  - [Operator Usage](#operator-usage)
+  - [Things to remember](#things-to-remember-1)
+- [Control structures](#control-structures)
+  - [Things to remember](#things-to-remember-2)
 - [Array Signatures](#array-signatures)
   - [Mutating Methods](#mutating-methods)
   - [Mutating Methods](#mutating-methods-1)
 - [Objects](#objects)
-- [Operators](#operators)
-  - [Logical Operators](#logical-operators)
-  - [Conditional Operator](#conditional-operator)
-  - [Type Operators](#type-operators)
-  - [Arithmetic Operators](#arithmetic-operators)
-  - [Assignment Operators](#assignment-operators)
-  - [Comparison Operators](#comparison-operators)
-  - [Operator Usage](#operator-usage)
 - [Destructuring Objects and Arrays](#destructuring-objects-and-arrays)
-- [Control structures](#control-structures)
 - [Conversions](#conversions)
 - [Functions](#functions)
   - [Function Methods](#function-methods)
   - [Function Properties](#function-properties)
 - [Regular Expressions](#regular-expressions)
-- [`String` Methods](#string-methods)
+- [String Methods](#string-methods)
 - [number Methods](#number-methods)
-- [Things to remember](#things-to-remember)
+- [Glossary](#glossary)
 
-## Data Types
+<div class="spaced-out-all"></div>
+
+## Variable scope
+
+- `var` - Function-scoped, can be re-declared and updated within its scope. Hoisted to top of its scope.
+- `let` - Block-scoped, can be updated but not re-declared within its block.
+- `const` - Block-scoped, cannot be updated or re-declared. Used for constants.
+<hr>
+
+## Data types
+
+### Primitive data types
 
 ```bash
 Number      # numeric values (1, 3.14, NaN)
@@ -40,6 +56,109 @@ null        # an intentional absence of any object value
 falsy       # false, 0, '', NaN, null, undefined
 nullish     # null or undefined
 ```
+
+### Things to remember
+
+- A `string` is an array of characters.
+- `null`, `undefined`, `NaN`, they are all `falsy`
+- `false`, `0`, `""`, and `document.all` are also `falsy`
+- `NaN` is also a number, and is not equal to any value, including itself.
+- `null` is an intentional absence of any object value.
+- `nullish` refers to two specific values: `null` and `undefined`. They are
+  considered "nullish" because they represent the absence of a value or no value
+  at all.
+- `undefined` is a variable that has been declared but not assigned a value.
+
+#### Falsy
+
+- `false` and `falsy` **are not exactly** the same thing. 
+- `falsy` refers to values that evaluate to `false` in a boolean context. These include
+  `0`, `""`, `null`, `undefined`, and `NaN`.
+- `false` is always `falsy`, but not everything that's `falsy` is `false`. 😜
+<hr>
+
+## Operators
+
+### Logical and Comparison Operators
+```bash
+# Logical Operators
+&& (AND)                     # First falsy or last truthy
+|| (OR)                      # First truthy or last falsy
+!  (NOT)                     # Opposite boolean
+?? (Nullish Coalescing)      # First non-nullish or last nullish
+# Comparison Operators
+==  (Equal)                  # Compares two values for equality
+=== (Strict Equal)           # Compares two values for equality and type
+!=  (Not Equal)              # Compares two values for inequality
+!== (Strict Not Equal)       # Compares two values for inequality and type
+>   (Greater Than)           # Compares two values if the left is greater than the right
+<   (Less Than)              # Compares two values if the left is less than the right
+>=  (Greater Than or Equal)  # Compares two values if the left is greater or equal to the right
+<=  (Less Than or Equal)     # Compares two values if the left is less or equal to the right
+```
+
+### Arithmetic and Assignment Operators
+```bash
+# Arithmetic Operators
++   (Addition)               # Adds two operands
+-   (Subtraction)            # Subtracts two operands
+*   (Multiplication)         # Multiplies two operands
+/   (Division)               # Divides two operands
+%   (Modulus)                # Returns the division remainder
+++  (Increment)              # Increases the value of a variable by 1
+--  (Decrement)              # Decreases the value of a variable by 1
+# Assignment Operators
+=   (Assignment)             # Assigns a value to a variable
++=  (Addition)               # Adds a value and assigns it to a variable
+-=  (Subtraction)            # Subtracts a value and assigns it to a variable
+*=  (Multiplication)         # Multiplies a value and assigns it to a variable
+/=  (Division)               # Divides a value and assigns it to a variable
+%=  (Modulus)                # Returns the division remainder and assigns it to a variable
+```
+
+### Type Operators
+```bash
+typeof                      # returns the type of a variable
+instanceof                  # returns true if an object is an instance of a class
+```
+
+### Operator Usage
+```bash
+||  # returns the first truthy value or the last if all are falsy
+??  # returns the first non-nullish value or the last if all are nullish
+```
+
+### Things to remember
+
+- `==` compares the values, `===` compares the values and types.
+- `&&` returns the first falsy value or the last value.
+- `||` returns the first truthy value or the last value.
+- `??` returns the first no nullish value or the last value.
+- `typeof` returns the type of a variable.
+- `instanceof` returns true if an object is an instance of a class.
+<hr>
+
+## Control structures
+
+```js
+if          // Executes a block of code if the condition is true.
+else        // Executes a block of code if the condition is false.
+else if     // Executes a block of code if the previous condition is false.
+switch      // Selects one of many code blocks to be executed.
+for         // Loops through a block of code a number of times.
+while       // Loops through a block of code while the condition is true.
+do while    // Loops through a block of code once, and then repeats the loop while the condition is true.
+break       // Exits a loop or a switch block.
+continue    // Jumps out of a loop and starts at the top.
+```
+
+### Things to remember
+
+- `for...in` - Iterates over the keys (property names) of an object.
+- `for...of` - Iterates over the **values** of an iterable object.
+- `break` - Exits the loop immediately.
+- `continue` - Skips the current iteration and continues with the next one.
+
 
 ## Array Signatures
 
@@ -76,84 +195,11 @@ Object.values(obj): any[]               // returns object's values
 Object.entries(obj): [string, any][]    // returns object's key-value pairs
 ```
 
-## Operators
-
-### Logical Operators
-```bash
-&& (AND)                    # First falsy or last truthy
-|| (OR)                     # First truthy or last falsy
-!  (NOT)                    # Opposite boolean
-?? (Nullish Coalescing)     # First non-nullish or last nullish
-```
-### Conditional Operator
-```bash
-?: (Ternary)                # condition ? exprIfTrue : exprIfFalse
-```
-
-### Type Operators
-```bash
-typeof                      # returns the type of a variable
-instanceof                  # returns true if an object is an instance of a class
-```
-
-### Arithmetic Operators
-```bash
-+   (Addition)               # Adds two operands
--   (Subtraction)            # Subtracts two operands
-*   (Multiplication)         # Multiplies two operands
-/   (Division)               # Divides two operands
-%   (Modulus)                # Returns the division remainder
-++  (Increment)              # Increases the value of a variable by 1
---  (Decrement)              # Decreases the value of a variable by 1
-```
-
-### Assignment Operators
-```bash
-=   (Assignment)             # Assigns a value to a variable
-+=  (Addition)               # Adds a value and assigns it to a variable
--=  (Subtraction)            # Subtracts a value and assigns it to a variable
-*=  (Multiplication)         # Multiplies a value and assigns it to a variable
-/=  (Division)               # Divides a value and assigns it to a variable
-%=  (Modulus)                # Returns the division remainder and assigns it to a variable
-```
-
-### Comparison Operators
-```bash
-==  (Equal)                  # Compares two values for equality
-=== (Strict Equal)           # Compares two values for equality and type
-!=  (Not Equal)              # Compares two values for inequality
-!== (Strict Not Equal)       # Compares two values for inequality and type
->   (Greater Than)           # Compares two values if the left is greater than the right
-<   (Less Than)              # Compares two values if the left is less than the right
->=  (Greater Than or Equal)  # Compares two values if the left is greater or equal to the right
-<=  (Less Than or Equal)     # Compares two values if the left is less or equal to the right
-```
-
-### Operator Usage
-```bash
-||  # returns the first truthy value or the last if all are falsy
-??  # returns the first non-nullish value or the last if all are nullish
-```
-
 ## Destructuring Objects and Arrays
 
 ```js
 const { key1, key2 } = obj;                 // extracts key1 and key2 from obj
 const { item1, item2 } = ['fish',  'cake']; // extracts item1 and item2 from array
-```
-
-## Control structures
-
-```js
-if          // Executes a block of code if the condition is true.
-else        // Executes a block of code if the condition is false.
-else if     // Executes a block of code if the previous condition is false.
-switch      // Selects one of many code blocks to be executed.
-for         // Loops through a block of code a number of times.
-while       // Loops through a block of code while the condition is true.
-do while    // Loops through a block of code once, and then repeats the loop while the condition is true.
-break       // Exits a loop or a switch block.
-continue    // Jumps out of a loop and starts at the top.
 ```
 
 ## Conversions
@@ -206,7 +252,7 @@ str.search(/regex/): number     // returns the index of the first match, or -1 i
 str.replace(/regex/, newSubstr): string  // replaces matched substrings with newSubstr
 ```
 
-## `String` Methods
+## String Methods
 
 ```js
 charAt(index): string           // returns the character at the specified index
@@ -223,24 +269,11 @@ toFixed(digits): string         // returns a string representing the number with
 toPrecision(precision): string  // returns a string representing the number to a specified precision
 ```
 
-## Things to remember
+## Glossary
 
-- A string is an array of characters.
-- `&&` returns the first falsy value or the last value.
-- `==` compares the values, `===` compares the values and types.
-- `??` returns the first no nullish value or the last value.
-- `??` returns the first non-nullish value or the last if all are nullish.
-- `NaN` is also a number.
-- `NaN` is not equal to any value, including itself.
-- `false`, `0`, `""`, and `document.all` are also `falsy`.
-- `falsy` refers to values that evaluate to `false` in a boolean context. These
-  include `0`, `""`, `null`, `undefined`, and `NaN`.
-- `instanceof` returns true if an object is an instance of a class.
-- `null` is an intentional absence of any object value.
-- `nullish` refers to two specific values: `null` and `undefined`. They are
-  considered "nullish" because they represent the absence of a value or no value
-  at all.
-- `typeof` returns the type of a variable.
-- `undefined` is a variable that has been declared but not assigned a value.
-- `||` returns the first truthy value or the last if all are falsy. - `||`
-returns the first truthy value or the last value.
+- **enumerable** - A property that can be iterated over using a `for...in` loop.
+- **event** **loop** - A mechanism that allows JavaScript to perform non-blocking I/O operations.
+- **hoisting** - The process of moving variable and function declarations to the top of their containing scope during the compilation phase.
+- **promise** - An object representing the eventual completion or failure of an asynchronous operation.
+- **prototype** - An object that is associated with every function and object by default in JavaScript.
+- **strict** **mode** - A way to opt into a restricted variant of JavaScript.

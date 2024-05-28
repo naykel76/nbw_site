@@ -7,10 +7,6 @@
                 "icon": "javascript"
             },
             {
-                "name": "Fundamentals",
-                "route_name": "docs.javascript.javascript-fundamentals"
-            },
-            {
                 "name": "Functions",
                 "route_name": "docs.javascript.functions-quick-reference"
             },
@@ -53,11 +49,6 @@
     },
     "javascript (in review)": {
         "links": [
-            {
-                "name": "Quick Reference",
-                "route_name": "docs.javascript.javascript-quick-reference",
-                "icon": "javascript"
-            },
             {
                 "name": "Debugging",
                 "route_name": "docs.javascript.debugging"
