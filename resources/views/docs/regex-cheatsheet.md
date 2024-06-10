@@ -4,6 +4,7 @@
 - [Character Classes](#character-classes)
 - [Quantifiers (`*`, `+`, `?`, `{n}`, `{n,}`, `{n,m}`)](#quantifiers----n-n-nm)
 - [Assertions](#assertions)
+- [Anchors](#anchors)
 - [Character set or range `[]` and negated character set `[^]`](#character-set-or-range--and-negated-character-set-)
 - [Examples](#examples)
   - [Search for words or character in a string](#search-for-words-or-character-in-a-string)
@@ -22,69 +23,69 @@
 - `s` : Single line (DotAll). Causes `.` to match newline characters as well.
 - `u` : Unicode. Treats the pattern as a sequence of Unicode code points.
 - `y` : Sticky. Matches at the exact position in the string specified by the `lastIndex` property (useful with loops).
-- 
+
 ## Character Classes
 
-<div class="spaced-out"></div>
+<!-- <div class="spaced-out"></div> -->
 
-- `\/.\` matches any character (except newline) - <span class='font-mono txt-yellow dark'>a</span><span class='font-mono txt-yellow dark'>b</span><span class='font-mono txt-yellow dark'>c</span><span class='font-mono txt-yellow dark'>A</span><span class='font-mono txt-yellow dark'>B</span><span class='font-mono txt-yellow dark'>C</span><span class='font-mono txt-yellow dark'>1</span><span class='font-mono txt-yellow dark'>2</span><span class='font-mono txt-yellow dark'>3</span><span class='font-mono txt-yellow dark'> </span><span class='font-mono txt-yellow dark'>.</span><span class='font-mono txt-yellow dark'>:</span><span class='font-mono txt-yellow dark'>!</span><span class='font-mono txt-yellow dark'>?</span>
+<div class="special-code"></div>
 
-- `\d` : Any digit (0-9) - <span class='font-mono txt-yellow dark'>1</span><span class='font-mono txt-yellow dark'>2</span><span class='font-mono txt-yellow dark'>3</span><span class='font-mono txt-yellow dark'>4</span><span class='font-mono txt-yellow dark'>5</span><span class='font-mono txt-yellow dark'>6</span><span class='font-mono txt-yellow dark'>7</span><span class='font-mono txt-yellow dark'>8</span><span class='font-mono txt-yellow dark'>9</span><span class='font-mono txt-yellow dark'>0</span>
-
-- `\D` : Any non-digit character - <span class='font-mono txt-yellow dark'>a</span><span class='font-mono txt-yellow dark'>b</span><span class='font-mono txt-yellow dark'>c</span><span class='font-mono txt-yellow dark'>A</span><span class='font-mono txt-yellow dark'>B</span><span class='font-mono txt-yellow dark'>C</span><span class='font-mono txt-yellow dark'>_</span><span class='font-mono txt-yellow dark'>~</span><span class='font-mono txt-yellow dark'>!</span><span class='font-mono txt-yellow dark'>@</span><span class='font-mono txt-yellow dark'>#</span><span class='font-mono txt-yellow dark'>$</span><span class='font-mono txt-yellow dark'>%</span><span class='font-mono txt-yellow dark'>^</span><span class='font-mono txt-yellow dark'>&</span><span class='font-mono txt-yellow dark'>*</span><span class='font-mono txt-yellow dark'>(</span><span class='font-mono txt-yellow dark'>)</span><span class='font-mono txt-yellow dark'>-</span><span class='font-mono txt-yellow dark'>+</span><span class='font-mono txt-yellow dark'>=</span><span class='font-mono txt-yellow dark'>[</span><span class='font-mono txt-yellow dark'>]</span><span class='font-mono txt-yellow dark'>{</span><span class='font-mono txt-yellow dark'>}</span><span class='font-mono txt-yellow dark'>|</span><span class='font-mono txt-yellow dark'>;</span><span class='font-mono txt-yellow dark'>:</span><span class='font-mono txt-yellow dark'>'</span><span class='font-mono txt-yellow dark'>,</span><span class='font-mono txt-yellow dark'>.</span><span class='font-mono txt-yellow dark'>&lt;</span><span class='font-mono txt-yellow dark'>&gt;</span><span class='font-mono txt-yellow dark'>/</span><span class='font-mono txt-yellow dark'>?</span>
-
-
-- `\w` : Any word character - <span class='font-mono txt-yellow dark'>a</span><span class='font-mono txt-yellow dark'>b</span><span class='font-mono txt-yellow dark'>c</span><span class='font-mono txt-yellow dark'>A</span><span class='font-mono txt-yellow dark'>B</span><span class='font-mono txt-yellow dark'>C</span><span class='font-mono txt-yellow dark'>_</span><span class='font-mono txt-yellow dark'>1</span><span class='font-mono txt-yellow dark'>2</span><span class='font-mono txt-yellow dark'>3</span><span class='font-mono txt-yellow dark'>
-
-- `\W` : Any non-word character <span class='font-mono txt-yellow dark'>~</span><span class='font-mono txt-yellow dark'>!</span><span class='font-mono txt-yellow dark'>@</span>_<span class='font-mono txt-yellow dark'>#</span><span class='font-mono txt-yellow dark'>$</span><span class='font-mono txt-yellow dark'>%</span><span class='font-mono txt-yellow dark'>^</span><span class='font-mono txt-yellow dark'>&</span><span class='font-mono txt-yellow dark'>*</span><span class='font-mono txt-yellow dark'>(</span><span class='font-mono txt-yellow dark'>)</span><span class='font-mono txt-yellow dark'>-</span><span class='font-mono txt-yellow dark'>+</span><span class='font-mono txt-yellow dark'>=</span><span class='font-mono txt-yellow dark'>[</span><span class='font-mono txt-yellow dark'>]</span><span class='font-mono txt-yellow dark'>{</span><span class='font-mono txt-yellow dark'>}</span><span class='font-mono txt-yellow dark'>|</span><span class='font-mono txt-yellow dark'>;</span><span class='font-mono txt-yellow dark'>:</span><span class='font-mono txt-yellow dark'>'</span><span class='font-mono txt-yellow dark'>,</span><span class='font-mono txt-yellow dark'>.</span><span class='font-mono txt-yellow dark'>&lt;</span><span class='font-mono txt-yellow dark'>&gt;</span>
-
-- `\s` : Any whitespace character (spaces, tabs, line breaks) - Hey<span class='font-mono txt-yellow dark'> </span>there<span class='font-mono txt-yellow dark'> </span>you!
-  
-- `\S` : Any non-whitespace character - <span class='font-mono txt-yellow dark'>H</span><span class='font-mono txt-yellow dark'>e</span><span class='font-mono txt-yellow dark'>y</span>&nbsp;&nbsp;<span class='font-mono txt-yellow dark'>t</span><span class='font-mono txt-yellow dark'>h</span><span class='font-mono txt-yellow dark'>e</span><span class='font-mono txt-yellow dark'>r</span><span class='font-mono txt-yellow dark'>e</span>&nbsp;&nbsp;<span class='font-mono txt-yellow dark'>y</span><span class='font-mono txt-yellow dark'>o</span><span class='font-mono txt-yellow dark'>u</span><span class='font-mono txt-yellow dark'>!</span>
-
-- `\b` : Word boundary
-- `\B` : Non-word boundary
-- `\\` : Escape special characters
-
-
+- `.` Matches any character (except newline) - `abcABC123 .:!?`
+- `\d` Matches any digit (0-9) - `1234567890`
+- `\D` Matches any non-digit character - `abcABC_~!@#$%^&*()-+=[]{}|;:',.<>/?`
+- `\w` Matches any word character (letters, numbers, underscore) - `abcABC_123`
+- `\W` Matches any non-word character - `~!@_#$%^&*()-+=[]{}|;:',.<>`
+- `\s` Matches any whitespace character (spaces, tabs, line breaks)
+- `\S` Matches any non-whitespace character (any visible character)
+- `\b` Matches a word boundary - `\bcat\b` matches `cat`
+- `\B` Matches a non-word boundary 
+- `\\` Escapes special characters
 
 A word character is defined as any alphanumeric character (a-z, A-Z, 0-9) **or an underscore** (\_).
 
-
 ## Quantifiers (`*`, `+`, `?`, `{n}`, `{n,}`, `{n,m}`) 
 
-<div class="spaced-out"></div>
+<!-- <div class="spaced-out"></div> -->
+<div class="special-code"></div>
 
-- `*` : 0 or more of the preceding token - `\be*\ ` matches <span class='font-mono txt-yellow dark'>b</span>&nbsp;&nbsp;<span class='font-mono txt-yellow dark'>be</span>&nbsp;&nbsp;<span class='font-mono txt-yellow dark'>bee</span>
-- `+` : 1 or more of the preceding token - `\be+\ ` matches <span class='font-mono txt-yellow dark'>be</span>&nbsp;&nbsp;<span class='font-mono txt-yellow dark'>bee</span> (no more 'b' as it requires at least one 'e')
-
-- `?` : 0 or 1 - `\be?\ ` matches <span class='font-mono txt-yellow dark'>b</span>&nbsp;&nbsp;<span class='font-mono txt-yellow dark'>be</span> (no more 'bee' as it allows for zero or one 'e')
-- `{n}` : Exactly n times - `\be{2}\ ` matches <span class='font-mono txt-yellow dark'>bee</span> (no more 'b' or 'be' as it requires exactly two 'e's)
-- `{n,}` : n or more times - `\be{2,}\ ` matches <span class='font-mono txt-yellow dark'>bee</span>&nbsp;&nbsp;<span class='font-mono txt-yellow dark'>beee</span> (no more 'b' or 'be' as it requires two or more 'e's)
-- `{n,m}` : Between n and m times - `\be{1,2}\ ` matches <span class='font-mono txt-yellow dark'>be</span>&nbsp;&nbsp;<span class='font-mono txt-yellow dark'>bee</span> (no more 'b' or 'beee' as it requires between one and two 'e's)
+- `*` Zero or more - `\be*\` matches `b` `be` `bee`
+- `+` One or more - `\be+\` matches `be` `bee`
+- `?` Zero or one - `\be*\` matches `b` `be`
+- `{n}` Exactly n times - `\be{2}\` matches `bee`
+- `{n,}` n or more times - `\be{2,}\` matches `bee` `beee`
+- `{n,m}` Between n and m times - `\be{1,2}\` matches `be` `bee`
 
 ## Assertions
 
+Assertions are conditions that do not consume characters in the string, but they assert whether a
+match is possible or not. They are used to test if a string contains a certain pattern without
+including the pattern in the result.
+
 <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Assertions" target="blank">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions/Assertions</a>
 
-`$` : End of string or line <br>
-`\A` : Start of string <br>
-`\Z` : End of string <br>
+All examples below are referring to the string as `abc123`
 
-- `\b` : Word boundary where a word starts or ends - `\b` matches the start and end <span class='font-mono txt-yellow dark'>|</span>Hey<span class='font-mono txt-yellow dark'>|</span>, there<span class='font-mono txt-yellow dark'>|</span>!
+<!-- <div class="spaced-out"></div> -->
+<div class="special-code"></div>
 
-`\B` : Non-word boundary <br>
-`^` : Start of string or line <br>
-`(?=)` : Positive lookahead <br>
-`(?!)` : Negative lookahead <br>
-`(?<=)` : Positive lookbehind. Matches a group after the main expression without including it in the result. <br>
+- `(?=)` Positive lookahead - `x(?=y)` matches `x` only when followed by `y`
+- `(?!)` Negative lookahead - `x(?!y)` matches `x` only when NOT followed by `y`
+- `(?<=)` Positive lookbehind - `(?<=y)x` matches `x` only when preceded by `y`
+- `(?<!)` Negative lookbehind - `(?<!y)x` matches `x` only when NOT preceded by `y`
 
+## Anchors
 
-`(?<!)` : Negative lookbehind <br>
+<!-- <div class="spaced-out"></div> -->
+<div class="special-code"></div>
 
+- `$` End of string or line - `cat$` matches `cat` at the end of a string
+- `\A` Start of string - `\Acat` matches `cat` at the start of a string
+- `\Z` End of string - `cat\Z` matches `cat` at the end of a string
+- `\b` Matches a word boundary - In "cat dog", `\bcat\b` matches `cat`
+- `\B` Matches a non-word boundary. In "concatenate", `\Bcat\B` matches `cat`.
+- `^` Start of string or line 
 
-
-
+---
 
 ## Character set or range `[]` and negated character set `[^]`
 
@@ -199,8 +200,6 @@ are followed by 8 digits.
 - `$` asserts the end of a line.
 
 ---
-
-
 
 ## Additional Resources
 

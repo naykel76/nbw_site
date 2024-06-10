@@ -164,13 +164,13 @@ continue    // Jumps out of a loop and starts at the top.
 
 ### Mutating Methods
 ```js
-push(...items): number                      // adds to end, returns new length
-pop(): any                                  // removes last item and returns it
-unshift(...items): number                   // adds items to start, returns new length
-shift(): any                                // removes first item and returns it
+push(...items): number    // adds to end, returns new length
+pop(): any                // removes last item and returns it
+unshift(...items): number // adds items to start, returns new length
+shift(): any              // removes first item and returns it
+reverse(): []             // reverse the array in place
+sort(compareFn ?)         // sorts in place
 splice(start, delCount ?, ...items): any[]  // removes and/or adds elements from/at index
-reverse(): []                               // reverse the array in place
-sort(compareFn ?)                           // sorts in place
 ```
 
 ### Mutating Methods
@@ -199,7 +199,7 @@ Object.entries(obj): [string, any][]    // returns object's key-value pairs
 
 ```js
 const { key1, key2 } = obj;                 // extracts key1 and key2 from obj
-const { item1, item2 } = ['fish',  'cake']; // extracts item1 and item2 from array
+const [first, second] = ['fish',  'cake'];  // extracts first and second from array
 ```
 
 ## Conversions

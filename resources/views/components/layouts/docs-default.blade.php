@@ -1,4 +1,4 @@
-<x-gt-app-layout layout="docs" class="container markdown">
+<x-gt-app-layout layout="docs" class="container nk-docs">
     <x-slot name="navigation">
         @if (empty($data['menus']))
             <p class="bx warning mr-1 tac">No Menus to display. <br> Maybe you should get onto that!</p>

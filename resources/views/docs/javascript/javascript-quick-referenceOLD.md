@@ -163,25 +163,6 @@ console.log(rest); // [2, 3]
 
 
 
-# JavaScript Fundamentals Quick Reference
-
-- [Control structures](#control-structures)
-  - [Things to remember](#things-to-remember)
-
-<hr>
-
-```js
-const lettersArray = ['a', 'b', 'c', 'd', 'e'];
-for (const v in lettersArray) console.log(v); // 0, 1, 2, 3, 4
-for (const v of lettersArray) console.log(v); // a, b, c, d, e
-```
-
-```js
-const object = { a: 10, b: 20, c: 30 };
-for (let key in object) console.log(key); // Outputs: 'a', 'b', 'c'
-for (let value of Object.values(object)) console.log(value); // Outputs: 10, 20, 30
-```
-<hr>
 
 
 

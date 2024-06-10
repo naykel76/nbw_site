@@ -11,13 +11,67 @@
     $navbar-nav-active-color: #ffbb1c
 );
 
-// @use "node_modules/nk_jtb/src/variables/tailwind-colors" as *;
+@use "node_modules/nk_jtb/src/variables/tailwind-colors" as *;
 @use "node_modules/nk_jtb/src/variables" as *;
 @use "node_modules/nk_jtb/src/mixins/media" as *;
 @use "node_modules/nk_jtb/src/jtb";
-@use "./markdown.scss" as *;
-// @use "sass:map";
+@use "sass:map";
 
+@use "node_modules/nk_jtb/src/extras/nk-docs" as * with (
+    $code-color: hsl(49, 78%, 86%),
+    $table-bg: #10182b,
+    $th-bdr-color: hsl(222, 46%, 20%),
+    $td-bdr-color: hsl(222, 46%, 15%)
+);
+
+// ------------------------------------------------------------------
+// -- MARKDOWN OVERRIDES --
+// ------------------------------------------------------------------
+code {
+    // color: $code-color;
+    // this may not work well everywhere but it is good for the regex examples
+    color: #ffda47;
+}
+
+// this is special style for MAD cheat sheet.
+.special-code + ul li code {
+    font-family: Consolas;
+    font-size: 1rem;
+    &:not(.hljs) {
+        background-color: rgba(240, 240, 240, 0.1);
+        border: none;
+        padding: 0 3px;
+    }
+}
+.special-code + ul li {
+    list-style: none;
+    margin-left: -1rem;
+    padding: 0;
+    line-height: 1;
+}
+// .special-code + ul {
+//     font-size: 0.8rem;
+// }
+
+// this is special style for MAD cheat sheet.
+// .special-code + p code {
+//     font-family: Consolas;
+//     font-size: .75rem;
+//     &:not(.hljs) {
+//         background-color: rgba(240, 240, 240, 0.1);
+//         padding: 0 3px;
+//     }
+// }
+// .special-code + ul li {
+//     line-height: 1.1;
+//     list-style: none;
+//     margin-left: -1rem;
+//     padding: 0;
+// }
+
+// ------------------------------------------------------------------
+// -- BASE OVERRIDES --
+// ------------------------------------------------------------------
 // make bold text stand out because white is hard to see
 strong {
     color: rgb(203, 211, 221);
@@ -32,7 +86,7 @@ p code {
 ol li::before {
     content: "";
     display: inline-block;
-    width: .5rem;
+    width: 0.5rem;
 }
 
 .navbar:not(.markdown .navbar) {
@@ -40,22 +94,6 @@ ol li::before {
     border-bottom: 1px solid #14213f;
     box-shadow: 1px 5px 20px #142c56;
     box-shadow: 1px 1px 70px #142c56;
-}
-
-h1,
-h2,
-h3:not(question)
-h3 {
-    code:not(.hljs) {
-        color: inherit;
-        background-color: transparent;
-    }
-}
-
-:is(h1, h2, h3, h4, h5, h6) {
-    code:not(.hljs) {
-        font-size: inherit;
-    }
 }
 
 .fp-x {
@@ -88,17 +126,6 @@ h3 {
 //     // font-size: 1.15rem;
 // }
 
-// th {
-//     background: #1a233c;
-//     font-weight: 900;
-// }
-// td,
-// th {
-//     border: 1px solid #d9d9d9;
-//     padding: 0.375rem;
-//     font-size: 1rem;
-// }
-
 // // home screen nav buttons
 // .nav-buttons nav ul {
 //     display: flex;
@@ -118,18 +145,7 @@ h3 {
     &::after {
         content: "";
         position: absolute;
-        background-image: linear-gradient(
-            135deg,
-            #10182b,
-            #111b32,
-            #131e38,
-            #14213f,
-            #14274b,
-            #142c56,
-            #123263,
-            #0e386f,
-            #1b4276
-        );
+        background-image: linear-gradient(135deg, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f, #1b4276);
         // background-image: linear-gradient(135deg, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
 
         inset: 0;
