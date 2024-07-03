@@ -19,11 +19,7 @@
 
 <!-- /TOC -->
 
-<a id="markdown-x-for" name="x-for"></a>
-
 ## x-for
-
-<a id="markdown-iterate-through-hard-coded-array-with-single-values" name="iterate-through-hard-coded-array-with-single-values"></a>
 
 #### Iterate through hard coded array with single values
 
@@ -35,8 +31,6 @@
 </ul>
 ```
 
-<a id="markdown-iterate-through-livewire-multi-dimension-array" name="iterate-through-livewire-multi-dimension-array"></a>
-
 #### Iterate through livewire multi-dimension array
 
     <div x-data="{ items: @entangle('items') }">
@@ -47,8 +41,6 @@
             </div>
         </template>
     </div>
-
-<a id="markdown-iterate-through-livewire-multi-dimension-array-and-access-indexes" name="iterate-through-livewire-multi-dimension-array-and-access-indexes"></a>
 
 #### Iterate through livewire multi-dimension array and access indexes
 
@@ -64,11 +56,7 @@ If you need to access the index of each item in the iteration, you can do so usi
     </div>
 
 
-<a id="markdown-x-text" name="x-text"></a>
-
 ## x-text
-
-<a id="markdown-x-ref-with-single-object" name="x-ref-with-single-object"></a>
 
 #### `x-ref` with single object
 
@@ -83,8 +71,6 @@ If you need to access the index of each item in the iteration, you can do so usi
         <p x-text="employee.email"></p>
         <p x-text="employee.age"></p>
     </div>
-
-<a id="markdown-x-ref-with-single-object-defined-in-script" name="x-ref-with-single-object-defined-in-script"></a>
 
 #### `x-ref` with single object defined in `script`
 
@@ -103,8 +89,6 @@ If you need to access the index of each item in the iteration, you can do so usi
             }));
         });
     </script>
-
-<a id="markdown-x-ref-with-array-of-multiple-objects-and-loop-using-x-for" name="x-ref-with-array-of-multiple-objects-and-loop-using-x-for"></a>
 
 #### `x-ref` with array of multiple objects and loop using `x-for`
 
@@ -126,11 +110,7 @@ If you need to access the index of each item in the iteration, you can do so usi
         });
     </script>
 
-<a id="markdown-x-ref-with-array-of-multiple-objects-and-loop-using-x-for-defined-in-script" name="x-ref-with-array-of-multiple-objects-and-loop-using-x-for-defined-in-script"></a>
-
 #### `x-ref` with array of multiple objects and loop using `x-for` defined in `script`
-
-<a id="markdown-data-binding" name="data-binding"></a>
 
 ## Data Binding
 
@@ -164,8 +144,6 @@ If you need to access the index of each item in the iteration, you can do so usi
 
 
 
-<a id="markdown-accordion-single-item" name="accordion-single-item"></a>
-
 ### Accordion (Single Item)
 
 https://vimeo.com/617233130/3f5a355c0b
@@ -186,8 +164,6 @@ https://vimeo.com/617233130/3f5a355c0b
     <div x-show="expanded"></div>
 </div>
 ```
-
-<a id="markdown-accordion-multiple-items" name="accordion-multiple-items"></a>
 
 ### Accordion (Multiple Items)
 
@@ -240,17 +216,9 @@ The js way
 
 
 
-<a id="markdown-trouble-shooting" name="trouble-shooting"></a>
-
-## Trouble Shooting
-
-**Problem:** `x-for` not displaying all the elements <br>
-Make sure the `<template>` has a root element.
 
 
 
-
-<a id="markdown-multi-dimension-array" name="multi-dimension-array"></a>
 
 ### Multi-dimension Array
 

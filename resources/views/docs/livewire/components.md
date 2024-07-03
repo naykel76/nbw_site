@@ -3,13 +3,11 @@
 <!-- TOC -->
 
 - [Full Page Components](#full-page-components)
-    - [Package layout](#package-layout)
+- [Pass data to layout (local)](#pass-data-to-layout-local)
+- [Pass data to layout (package)](#pass-data-to-layout-package)
+  - [Package layout](#package-layout)
 
 <!-- /TOC -->
-
-
-
-<a id="markdown-full-page-components" name="full-page-components"></a>
 
 ## Full Page Components
 
@@ -20,6 +18,23 @@ use App\Livewire\CreatePost;
 Route::get('/create-post', CreatePost::class);
 ```
 
+## Pass data to layout (local)
+
+```php
+return view($this->view)
+    ->layout('components.layouts.app', [
+        'pageTitle' => $this->pageTitle,
+    ]);
+```
+
+## Pass data to layout (package)
+```php
+return view($this->view, $this->prepareData())
+    ->layout(\Naykel\Gotime\View\Layouts\AppLayout::class, [
+        'pageTitle' => $this->pageTitle,
+    ]);
+```
+
 ```php
 #[Layout('layouts.app')]
 public function render() {
@@ -27,20 +42,8 @@ public function render() {
 }
 ```
 
-```php
-public function render() {
-    return view('livewire.create-post')
-        ->layout('layouts.base')->slot('main');
-}
-```
 
-```php
-    ->layout(\Naykel\Gotime\View\Layouts\AppLayout::class, [
-            'pageTitle' => $this->title,
-            'layout' => 'admin'
-        ]);
-```
-<a id="markdown-package-layout" name="package-layout"></a>
+
 
 ### Package layout
 

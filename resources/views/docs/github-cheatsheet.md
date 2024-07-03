@@ -16,6 +16,8 @@
 - [Releases \& Version Tags](#releases--version-tags)
 - [Creating Alias](#creating-alias)
   - [Create Alias to Clone Repo](#create-alias-to-clone-repo)
+- [FAQ's](#faqs)
+    - [How do I update the local repo name when it is changed on the remote repo?](#how-do-i-update-the-local-repo-name-when-it-is-changed-on-the-remote-repo)
 
 <!-- /TOC -->
 
@@ -211,3 +213,19 @@ An alias without ! is treated as a Git command; e.g. commit-all = commit -a.
 With the !, it's run as its own command in the shell, letting you use stronger magic like this.
 
 
+## FAQ's
+
+#### <question>How do I update the local repo name when it is changed on the remote repo?</question>
+
+If the repository's URL has also changed (which is common when the name changes), you need to update
+the URL for your remote. You can do this with:
+
+```bash
+git remote set-url origin https://github.com/yourusername/new-repo.git
+```
+
+Verify the changes with:
+
+```bash
+git remote -v
+```

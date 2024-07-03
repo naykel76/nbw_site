@@ -198,6 +198,11 @@
         ],
         "links": [
             {
+                "name": "Basics",
+                "route_name": "docs.alpine.basics",
+                "icon": "alpinejs"
+            },
+            {
                 "name": "AlpineJs",
                 "route_name": "docs.alpine.alpine-cheatsheet",
                 "icon": "alpinejs"

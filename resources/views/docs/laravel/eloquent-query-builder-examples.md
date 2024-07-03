@@ -2,11 +2,10 @@
 
 <!-- TOC -->
 
-- [Eloquent Builder Tips and Techniques](#eloquent-builder-tips-and-techniques)
-    - [Quick Reference](#quick-reference)
-    - [Subquery using regex](#subquery-using-regex)
-    - [Group with nesting loops](#group-with-nesting-loops)
-    - [Group with groupBy()](#group-with-groupby)
+- [Quick Reference](#quick-reference)
+- [Subquery using regex](#subquery-using-regex)
+- [Group with nesting loops](#group-with-nesting-loops)
+- [Group with groupBy()](#group-with-groupby)
 
 <!-- /TOC -->
 
@@ -69,7 +68,7 @@ Page::where(function ($query) {
 Using grouping allows you to avoid nested loops and achieve the desired result
 in a more efficient and concise way.
 
-Notice that `sortBy` and `groupBy` come after `get`
+
 
 ```php
 // controller

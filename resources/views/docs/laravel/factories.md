@@ -2,13 +2,23 @@
 
 <!-- TOC -->
 
+- [Create vs Make](#create-vs-make)
 - [Running Factories](#running-factories)
-    - [Has Many Relationships](#has-many-relationships)
-    - [Belongs To Relationship](#belongs-to-relationship)
+  - [Has Many Relationships](#has-many-relationships)
+  - [Belongs To Relationship](#belongs-to-relationship)
 
 <!-- /TOC -->
 
-<a id="markdown-running-factories" name="running-factories"></a>
+## Create vs Make
+
+```php
+User::factory()->create(); // persists to the database
+User::factory()->make();   // does not persist to the database
+```
+
+```php
+```
+
 
 ## Running Factories
 
@@ -23,8 +33,6 @@ User::factory(10)
     ->create();
 ```
 
-<a id="markdown-has-many-relationships" name="has-many-relationships"></a>
-
 ### Has Many Relationships
 
 ```php
@@ -33,8 +41,6 @@ Course::factory(10)->has(Chapter::factory()->count(4))->create();
 // magic method
 Course::factory(10)->hasChapters(5)->create();
 ```
-<a id="markdown-belongs-to-relationship" name="belongs-to-relationship"></a>
-
 ### Belongs To Relationship
 
 ```php

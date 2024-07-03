@@ -10,14 +10,9 @@
 
 <!-- /TOC -->
 
-<a id="markdown-what-is-an-enum" name="what-is-an-enum"></a>
-
 ## What is an enum?
 
 An enum is a special "class" that represents a group of constants (unchangeable variables, like final variables).
-
-
-<a id="markdown-why-use-enums" name="why-use-enums"></a>
 
 ## Why use enums?
 
@@ -70,8 +65,6 @@ PublishedStatus::Draft()->icon(); // 'icon.pencil'
 PublishedStatus::Draft()->color(); // 'purple'
 ```
 
-<a id="markdown-using-enums-in-laravel-models" name="using-enums-in-laravel-models"></a>
-
 ## Using enums in Laravel models
 
 Enums can be used in models as follows:
@@ -87,8 +80,6 @@ class Post extends Model
 }
 ```
 
-<a id="markdown-looping-over-enums" name="looping-over-enums"></a>
-
 ## Looping over enums
 
 You can loop over the values of an enum using the `::cases()` method:
@@ -99,8 +90,6 @@ foreach (PublishedStatus::cases() as $status) {
 }
 ```
 
-
-<a id="markdown-faqs" name="faqs"></a>
 
 ## FAQ's
 

@@ -41,11 +41,18 @@
     <section class="py-2 md:py-4">
         <div class="container">
             <h2>Concepts, Tips, and Techniques</h2>
-            <x-gt-menu filename="nav-concepts" class="flex wrap gap-1" itemClass="btn secondary" withIcons>
-            </x-gt-menu>
+            <x-gt-menu filename="nav-concepts" class="flex wrap gap-1" itemClass="btn secondary" withIcons />
+            <h2>Programming Fundamentals and Techniques</h2>
+            <div class="maxw-md my">
+                <p>Solutions to common programming challenges across various languages and frameworks.</p>
+                <p>Think of them as ultimate cheat sheets, with the task taking center stage and the code playing a supporting role to provide a quick reference for common programming tasks and techniques.</p>
+            </div>
+            <x-gt-menu filename="nav-fundamentals-and-techniques" class="flex wrap gap-1" itemClass="btn secondary" />
+            <h4>Database</h4>
+            <x-gt-menu filename="nav-fundamentals-and-techniques" menuname="database" class="flex wrap gap-1" itemClass="btn secondary" />
         </div>
     </section>
-
+    
     <section class="py-2 md:py-4">
         <div class="container">
             <h2>Additional Resources</h2>

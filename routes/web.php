@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Naykel\Gotime\RouteBuilder;
 
 (new RouteBuilder('nav-main'))->create();
+
 (new RouteBuilder('nav-angular', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-concepts', 'components.layouts.docs-blog-style'))->create();
 (new RouteBuilder('nav-ionic', 'components.layouts.docs-default'))->create();
@@ -12,6 +13,7 @@ use Naykel\Gotime\RouteBuilder;
 (new RouteBuilder('nav-linux', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-livewire', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-programming', 'components.layouts.docs-default'))->create();
+(new RouteBuilder('nav-fundamentals-and-techniques', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-react', 'components.layouts.docs-default'))->create();
 
 Route::get('/', function () {

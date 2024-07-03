@@ -2,34 +2,32 @@
 
 <!-- TOC -->
 
-- [Component Troubleshooting](#component-troubleshooting)
-    - [List not refreshing after an action has been performed (TBD)](#list-not-refreshing-after-an-action-has-been-performed-tbd)
+- [Form Object and Model Binding](#form-object-and-model-binding)
+  - [Can't set model as property if it hasn't been persisted yet](#cant-set-model-as-property-if-it-hasnt-been-persisted-yet)
 - [Event Troubleshooting](#event-troubleshooting)
 - [DispatchTo not working](#dispatchto-not-working)
-    - [Dispatch or DispatchTo not working or event not being caught](#dispatch-or-dispatchto-not-working-or-event-not-being-caught)
+  - [Dispatch or DispatchTo not working or event not being caught](#dispatch-or-dispatchto-not-working-or-event-not-being-caught)
 
 <!-- /TOC -->
 
-<a id="markdown-component-troubleshooting" name="component-troubleshooting"></a>
+## Form Object and Model Binding
 
-## Component Troubleshooting
+### <question>Can't set model as property if it hasn't been persisted yet</question>
 
-<a id="markdown-list-not-refreshing-after-an-action-has-been-performed-tbd" name="list-not-refreshing-after-an-action-has-been-performed-tbd"></a>
+Livewire cannot re-hydrate a model that does not exist in the database, so you can not create a new
+blank model and pass it to a Livewire component. You can only pass a model that has been persisted
+to the database.
 
-### List not refreshing after an action has been performed (TBD)
+<a href="https://laracasts.com/discuss/channels/livewire/livewire-3-cant-set-model-as-property-if-it-hasnt-been-persisted-yet" target="blank">
+    https://laracasts.com/discuss/channels/livewire/livewire-3-cant-set-model-as-property-if-it-hasnt-been-persisted-yet
+</a>
 
-<a id="markdown-event-troubleshooting" name="event-troubleshooting"></a>
 
 ## Event Troubleshooting
-
-
-<a id="markdown-dispatchto-not-working" name="dispatchto-not-working"></a>
 
 ## DispatchTo not working
 
 * Make sure you are using `$dispatchTo` and not just `$dispatch`
-
-<a id="markdown-dispatch-or-dispatchto-not-working-or-event-not-being-caught" name="dispatch-or-dispatchto-not-working-or-event-not-being-caught"></a>
 
 ### Dispatch or DispatchTo not working or event not being caught
 
