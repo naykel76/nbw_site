@@ -9,11 +9,7 @@
     "route_name": "cookbook",
     "exclude_route": true
 },
-{
-    "name": "Quick Reference",
-    "route_name": "docs.general-cheatsheet",
-    "exclude_route": true
-},
+
 
   "repositories": {
         "naykel/gotime": {

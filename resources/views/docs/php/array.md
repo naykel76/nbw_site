@@ -3,6 +3,7 @@
 - [Quick Reference](#quick-reference)
     - [`array_map($callback, $array, ...$arrays): array` - Apply the callback to the elements of the arrays](#array_mapcallback-array-arrays-array---apply-the-callback-to-the-elements-of-the-arrays)
     - [`array_merge(array ...$arrays): array` - Merge one or more arrays](#array_mergearray-arrays-array---merge-one-or-more-arrays)
+    - [`array_fill_keys(array $keys, mixed $value): array` - Fill an array with values, specifying keys](#array_fill_keysarray-keys-mixed-value-array---fill-an-array-with-values-specifying-keys)
 - [Common PHP Array Functions and Their Signatures](#common-php-array-functions-and-their-signatures)
 
 
@@ -14,6 +15,13 @@
 #### `array_map($callback, $array, ...$arrays): array` - Apply the callback to the elements of the arrays
 #### `array_merge(array ...$arrays): array` - Merge one or more arrays
 
+#### `array_fill_keys(array $keys, mixed $value): array` - Fill an array with values, specifying keys
+
+```php
+$keys = ['a', 'b', 'c'];
+$filled = array_fill_keys($keys, 'apple');
+// outputs: [ 'a' => 'apple' 'b' => 'apple' 'c' => 'apple' ];
+```
 
 ## Common PHP Array Functions and Their Signatures
 
@@ -54,7 +62,6 @@ array_diff_key — Computes the difference of arrays using keys for comparison
 array_diff_uassoc — Computes the difference of arrays with additional index check which is performed by a user supplied callback function
 array_diff_ukey — Computes the difference of arrays using a callback function on the keys for comparison
 array_diff — Computes the difference of arrays
-array_fill_keys — Fill an array with values, specifying keys
 array_fill — Fill an array with values
 array_filter — Filters elements of an array using a callback function
 array_flip — Exchanges all keys with their associated values in an array
