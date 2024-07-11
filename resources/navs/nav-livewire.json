@@ -1,9 +1,14 @@
 {
-    "General": {
+    "Getting Started": {
         "links": [
             {
                 "name": "Quick Reference",
                 "route_name": "docs.livewire.quick-reference",
+                "icon": "livewire"
+            },
+            {
+                "name": "Alpine",
+                "route_name": "docs.livewire.alpine",
                 "icon": "livewire"
             },
             {
@@ -13,7 +18,7 @@
             }
         ]
     },
-    "Livewire": {
+    "Essentials": {
         "links": [
             {
                 "name": "Components",

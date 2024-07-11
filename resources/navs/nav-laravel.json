@@ -11,6 +11,10 @@
     "Cheatsheets": {
         "links": [
             {
+                "name": "Authorization",
+                "route_name": "docs.laravel.authorization"
+            },
+            {
                 "name": "Blade",
                 "route_name": "docs.laravel.blade"
             },

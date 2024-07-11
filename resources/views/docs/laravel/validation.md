@@ -1,24 +1,18 @@
 # Validation
 
-<!-- TOC -->
-
 - [Things worth noting](#things-worth-noting)
 - [Numbers and Currency](#numbers-and-currency)
-    - [Phone Number](#phone-number)
+  - [Phone Number](#phone-number)
 - [Unique](#unique)
-    - [Ignore a given ID or a specific record](#ignore-a-given-id-or-a-specific-record)
-    - [Unique Based on Multiple Conditions](#unique-based-on-multiple-conditions)
+  - [Ignore a given ID or a specific record](#ignore-a-given-id-or-a-specific-record)
+  - [Unique Based on Multiple Conditions](#unique-based-on-multiple-conditions)
 - [Conditional Validation](#conditional-validation)
-    - [Exclude](#exclude)
-        - [`exclude_if` and `exclude_unless`](#exclude_if-and-exclude_unless)
-    - [Required](#required)
-        - [`required_with` and `required_with_all`](#required_with-and-required_with_all)
-        - [`required_if` and `required_unless`](#required_if-and-required_unless)
+  - [Exclude](#exclude)
+    - [`exclude_if` and `exclude_unless`](#exclude_if-and-exclude_unless)
+  - [Required](#required)
+    - [`required_with` and `required_with_all`](#required_with-and-required_with_all)
+    - [`required_if` and `required_unless`](#required_if-and-required_unless)
 - [Validate Nested Properties (TBD)](#validate-nested-properties-tbd)
-
-<!-- /TOC -->
-
-<a id="markdown-things-worth-noting" name="things-worth-noting"></a>
 
 ## Things worth noting
 
@@ -27,8 +21,6 @@ application's global middleware stack. Because of this, you will often need to m
 "optional" request fields as `nullable` if you do not want the validator to consider `null` values
 as invalid.
 
-
-<a id="markdown-numbers-and-currency" name="numbers-and-currency"></a>
 
 ## Numbers and Currency
 
@@ -47,8 +39,6 @@ with a dot followed by exactly two digits.
 - `$` : This asserts the end of a line. The pattern must match at the end of the line.
 
 
-<a id="markdown-phone-number" name="phone-number"></a>
-
 ### Phone Number
 
 ```php
@@ -58,15 +48,11 @@ with a dot followed by exactly two digits.
 In this example, we're validating a phone number input called "phone_number" that must be required, a string, and match the regular expression pattern of "^[0-9+\s]+$", which allows only numbers, plus sign, and spaces. We're also setting a minimum length of 10 characters and a maximum length of 20 characters for the phone number.
 
 
-<a id="markdown-unique" name="unique"></a>
-
 ## Unique
 
 `unique:table,column,except,idColumn`
 
 
-
-<a id="markdown-ignore-a-given-id-or-a-specific-record" name="ignore-a-given-id-or-a-specific-record"></a>
 
 ### Ignore a given ID or a specific record
 
@@ -82,8 +68,6 @@ use Illuminate\Validation\Rule;
 ```
 
 
-
-<a id="markdown-unique-based-on-multiple-conditions" name="unique-based-on-multiple-conditions"></a>
 
 ### Unique Based on Multiple Conditions
 
@@ -117,16 +101,10 @@ WHERE clause to work, and in this case, when the `is_category` field is
 ```
 
 
-<a id="markdown-conditional-validation" name="conditional-validation"></a>
-
 ## Conditional Validation
 
 
-<a id="markdown-exclude" name="exclude"></a>
-
 ### Exclude
-
-<a id="markdown-excludeif-and-excludeunless" name="excludeif-and-excludeunless"></a>
 
 #### `exclude_if` and `exclude_unless`
 
@@ -136,12 +114,8 @@ WHERE clause to work, and in this case, when the `is_category` field is
 ```
 you can check multiple against values using comma separated values.
 
-<a id="markdown-required" name="required"></a>
-
 ### Required
 
-
-<a id="markdown-requiredwith-and-requiredwithall" name="requiredwith-and-requiredwithall"></a>
 
 #### `required_with` and `required_with_all`
 
@@ -150,15 +124,11 @@ you can check multiple against values using comma separated values.
 'password_confirmation' => 'required_with:password',
 ```
 
-<a id="markdown-requiredif-and-requiredunless" name="requiredif-and-requiredunless"></a>
-
 #### `required_if` and `required_unless`
 ```php
 'field' => 'required_if:anotherField,value,anotherValue',
 'field' => 'required_unless:anotherField,value,anotherValue',
 ```
-
-<a id="markdown-validate-nested-properties-tbd" name="validate-nested-properties-tbd"></a>
 
 ## Validate Nested Properties (TBD)
 

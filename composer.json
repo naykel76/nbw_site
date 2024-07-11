@@ -11,7 +11,7 @@
         "php": "^8.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
-        "naykel/gotime": "dev-v1-rebuild#1027620",
+        "naykel/gotime": "dev-v1-rebuild",
         "torchlight/torchlight-laravel": "^0.6.0"
     },
     "require-dev": {
@@ -68,5 +68,14 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "naykel/gotime": {
+            "type": "path",
+            "url": "C:\\Users\\nayke\\sites\\nk_packages\\gotime",
+            "options": {
+                "symlink": true
+            }
+        }
+    }
 }

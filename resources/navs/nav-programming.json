@@ -4,146 +4,146 @@
             {
                 "name": "Angular",
                 "route_name": "docs.angular.angular-cheatsheet",
-                "icon_logo": "angular",
+                "icon": "angular",
                 "exclude_route": true
             },
             {
                 "name": "AlpineJS",
                 "route_name": "docs.alpine.alpine-cheatsheet",
-                "icon_logo": "alpinejs",
+                "icon": "alpinejs",
                 "exclude_route": true
             },
             {
                 "name": "CSS",
                 "route_name": "docs.css.css-cheatsheet",
-                "icon_logo": "css",
+                "icon": "css",
                 "exclude_route": true
             },
             {
                 "name": "ExpressJS",
                 "route_name": "docs.expressjs-cheatsheet",
-                "icon_logo": "expressjs"
+                "icon": "expressjs"
             },
             {
                 "name": "Github",
                 "route_name": "docs.github-cheatsheet",
-                "icon_logo": "github"
+                "icon": "github"
             },
             {
                 "name": "Google Maps",
                 "route_name": "docs.google-maps",
-                "icon_logo": "googlemaps"
+                "icon": "googlemaps"
             },
             {
                 "name": "Ionic",
                 "route_name": "docs.ionic.ionic-cheatsheet",
-                "icon_logo": "ionic",
+                "icon": "ionic",
                 "exclude_route": true
             },
             {
                 "name": "JavaScript",
                 "route_name": "docs.javascript.javascript-fundamentals-quick-reference",
-                "icon_logo": "javascript",
+                "icon": "javascript",
                 "exclude_route": true
             },
             {
                 "name": "Laravel",
                 "route_name": "docs.laravel.quick-reference",
-                "icon_logo": "laravel",
+                "icon": "laravel",
                 "exclude_route": true
             },
             {
                 "name": "Linux",
                 "route_name": "docs.linux.linux-cheatsheet",
-                "icon_logo": "linux",
+                "icon": "linux",
                 "exclude_route": true
             },
             {
                 "name": "Livewire",
                 "route_name": "docs.livewire.quick-reference",
-                "icon_logo": "livewire",
+                "icon": "livewire",
                 "exclude_route": true
             },
             {
                 "name": "MongoDB",
                 "route_name": "docs.mongo-cheatsheet",
-                "icon_logo": "mongodb"
+                "icon": "mongodb"
             },
             {
                 "name": "Mermaid",
                 "route_name": "docs.mermaid-cheatsheet",
-                "icon_logo": "mermaidjs"
+                "icon": "mermaidjs"
             },
             {
                 "name": "NPM",
                 "route_name": "docs.npm-cheatsheet",
-                "icon_logo": "npm"
+                "icon": "npm"
             },
             {
                 "name": "PHP",
                 "route_name": "docs.php.php-cheatsheet",
-                "icon_logo": "php",
+                "icon": "php",
                 "exclude_route": true
             },
             {
                 "name": "React",
                 "route_name": "docs.react-cheatsheet",
-                "icon_logo": "react",
+                "icon": "react",
                 "exclude_route": true
             },
             {
                 "name": "React Native",
                 "route_name": "docs.react.react-native-quick-reference",
-                "icon_logo": "react",
+                "icon": "react",
                 "exclude_route": true
             },
             {
                 "name": "Redux",
                 "route_name": "docs.redux-overview",
-                "icon_logo": "redux"
+                "icon": "redux"
             },
             {
                 "name": "Regex",
                 "route_name": "docs.regex-cheatsheet",
-                "icon_logo": "regex"
+                "icon": "regex"
             },
             {
                 "name": "SCSS",
                 "route_name": "docs.scss-cheatsheet",
-                "icon_logo": "sass"
+                "icon": "sass"
             },
             {
                 "name": "Socket.IO",
                 "route_name": "docs.socket-cheatsheet",
-                "icon_logo": "socketio"
+                "icon": "socketio"
             },
             {
                 "name": "SQL",
                 "route_name": "docs.sql.sql-cheatsheet",
-                "icon_logo": "mysql",
+                "icon": "mysql",
                 "exclude_route": true
             },
             {
                 "name": "TypeDoc",
                 "route_name": "typedoc.typedoc-cheatsheet",
                 "view": "pages.typedoc-cheatsheet",
-                "icon_logo": "typedoc"
+                "icon": "typedoc"
             },
             {
                 "name": "Typescript",
                 "route_name": "typescript.typescript-cheatsheet",
                 "view": "pages.typescript-cheatsheet",
-                "icon_logo": "typescript"
+                "icon": "typescript"
             },
             {
                 "name": "ViteJS",
                 "route_name": "docs.vite-cheatsheet",
-                "icon_logo": "vitejs"
+                "icon": "vitejs"
             },
             {
                 "name": "XAMPP",
                 "route_name": "docs.xampp-cheatsheet",
-                "icon_logo": "xampp"
+                "icon": "xampp"
             }
         ]
     },
@@ -159,34 +159,7 @@
             }
         ]
     },
-    "CSS": {
-        "standalone_menu": true,
-        "include_menus": [
-            "main"
-        ],
-        "links": [
-            {
-                "name": "Quick Reference",
-                "route_name": "docs.css.css-cheatsheet",
-                "icon": "css"
-            },
-            {
-                "name": "Combinators",
-                "route_name": "docs.css.combinators"
-            },
-            {
-                "name": "CSS Position and Alignment Tips",
-                "route_name": "docs.css.position-and-alignment-tips",
-                "icon": "css"
-            },
-            {
-                "name": "CSS FAQ's",
-                "route_name": "docs.css-faqs",
-                "icon": "css"
-            }
-        ]
-    },
-    "alpine": {
+      "alpine": {
         "standalone_menu": true,
         "include_menus": [
             "main"

@@ -1,4 +1,4 @@
-@use "node_modules/nk_jtb/src/variables" as * with (
+@use 'node_modules/nk_jtb/src/variables' as * with (
     $primary: #d9558c,
     $secondary: #031a37,
     $accent: #e6c637,
@@ -11,13 +11,13 @@
     $navbar-nav-active-color: #ffbb1c
 );
 
-@use "node_modules/nk_jtb/src/variables/tailwind-colors" as *;
-@use "node_modules/nk_jtb/src/variables" as *;
-@use "node_modules/nk_jtb/src/mixins/media" as *;
-@use "node_modules/nk_jtb/src/jtb";
-@use "sass:map";
+@use 'node_modules/nk_jtb/src/variables/tailwind-colors' as *;
+@use 'node_modules/nk_jtb/src/variables' as *;
+@use 'node_modules/nk_jtb/src/mixins/media' as *;
+@use 'node_modules/nk_jtb/src/jtb';
+@use 'sass:map';
 
-@use "node_modules/nk_jtb/src/extras/nk-docs" as * with (
+@use 'node_modules/nk_jtb/src/extras/nk-docs' as * with (
     $code-color: hsl(49, 78%, 86%),
     $table-bg: #10182b,
     $th-bdr-color: hsl(222, 46%, 20%),
@@ -84,7 +84,7 @@ p code {
 }
 
 ol li::before {
-    content: "";
+    content: '';
     display: inline-block;
     width: 0.5rem;
 }
@@ -116,6 +116,12 @@ ol li::before {
 //     }
 // }
 
+// for testing
+.flexible-grid-150 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
 // front page link boxes
 .icon-grid {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -133,9 +139,9 @@ ol li::before {
 //     flex-wrap: wrap;
 // }
 
-// // ------------------------------------------------------------------
-// // -- SPECIAL BACKGROUNDS --
-// // ------------------------------------------------------------------
+// ------------------------------------------------------------------
+// -- SPECIAL BACKGROUNDS --
+// ------------------------------------------------------------------
 
 .diagonal {
     position: relative;
@@ -143,7 +149,7 @@ ol li::before {
     isolation: isolate;
 
     &::after {
-        content: "";
+        content: '';
         position: absolute;
         background-image: linear-gradient(135deg, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f, #1b4276);
         // background-image: linear-gradient(135deg, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);

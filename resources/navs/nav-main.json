@@ -36,25 +36,25 @@
             {
                 "name": "ClickUp",
                 "url": "https://app.clickup.com/login",
-                "icon_logo": "clickup-solid",
+                "icon": "clickup-solid",
                 "exclude_route": true
             },
             {
                 "name": "ChatGPT",
                 "url": "https://chat.openai.com/",
-                "icon_logo": "chatgpt",
+                "icon": "chatgpt",
                 "exclude_route": true
             },
             {
                 "name": "Codewars",
                 "url": "https://www.codewars.com/dashboard",
-                "icon_logo": "code-wars",
+                "icon": "code-wars",
                 "exclude_route": true
             },
             {
                 "name": "Program 4 Fun",
                 "url": "https://prog4fun.csse.canterbury.ac.nz/enrol/index.php?id=2",
-                "icon_logo": "moodle",
+                "icon": "moodle",
                 "exclude_route": true
             },
             {
@@ -65,31 +65,31 @@
             {
                 "name": "Lucidchart",
                 "url": "https://lucid.app/users/login",
-                "icon_logo": "lucidchart",
+                "icon": "lucidchart",
                 "exclude_route": true
             },
             {
                 "name": "MYOB",
                 "url": "https://app.myob.com",
-                "icon_logo": "myob-solid",
+                "icon": "myob-solid",
                 "exclude_route": true
             },
             {
                 "name": "Regexr",
                 "url": "https://regexr.com/",
-                "icon_logo": "regex",
+                "icon": "regex",
                 "exclude_route": true
             },
             {
                 "name": "SVG Sprit",
                 "url": "https://svgsprit.es/",
-                "icon_logo": "svgsprit",
+                "icon": "svgsprit",
                 "exclude_route": true
             },
             {
                 "name": "SVGOMG",
                 "url": "https://jakearchibald.github.io/svgomg/",
-                "icon_logo": "svgomg",
+                "icon": "svgomg",
                 "exclude_route": true
             }
         ]

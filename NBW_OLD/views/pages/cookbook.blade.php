@@ -5,7 +5,7 @@
     <x-docs.sections.layout title="Basic Drag and Drop Sorting with Inline Editing" withContainer>
         <div class="container-sm">
             <div class="bx">
-                <p>Uses CSS to hide the button when dragging.</p>
+                <p>Uses CSS to hidden the button when dragging.</p>
                 <livewire:cookbook.drag-and-drop-sorting-with-inline-editing />
                 <p class="txt-xs mt-1">
                     <a href="https://github.com/naykel76/nbw_site/blob/master/app/Livewire/Cookbook/DragAndDropSortingWithInlineEditing.php"

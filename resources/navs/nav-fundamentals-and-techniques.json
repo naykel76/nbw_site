@@ -14,6 +14,10 @@
                 "route_name": "fundamentals-and-techniques.truncate-text"
             },
             {
+                "name": "Variable Assignment",
+                "route_name": "fundamentals-and-techniques.variable-assignment"
+            },
+            {
                 "name": "Variable Existance",
                 "route_name": "fundamentals-and-techniques.variable-existance"
             }
