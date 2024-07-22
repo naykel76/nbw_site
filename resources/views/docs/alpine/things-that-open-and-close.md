@@ -1,13 +1,8 @@
 # Things That Open and Close
 
-<!-- TOC -->
-
 - [Simple Toggle](#simple-toggle)
 - [Transition and Styles](#transition-and-styles)
   - [Multiple Items (single open)](#multiple-items-single-open)
-
-<!-- /TOC -->
-
 
 ## Simple Toggle
 
@@ -145,4 +140,3 @@ Add `x-collapse` to the `x-show` directive to animate the opening and closing of
     </div>
 </div>
 ```
-

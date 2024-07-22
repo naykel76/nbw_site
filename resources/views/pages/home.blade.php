@@ -17,6 +17,13 @@
             </div>
         </div>
     </section>
+    <section class="relative overflow-x-clip py-2 md:py-4" style="background-color: rgba(0,0,0,0.1)">
+        <img src="/svg/blur-pink.svg" class="absolute z-bottom" style=" right:-5%; bottom: -340px; ">
+        <div class="container">
+            <h2>Cheatsheets and Quick Reference</h2>
+            <x-gt-menu filename="nav-programming" layout="icon-grid" />
+        </div>
+    </section>
     <section class="py-3" style="background-color: rgba(0,0,0,0.2)">
         <div class="container">
             <div class="grid-3 md:cols-2">
@@ -39,13 +46,6 @@
             </div>
         </div>
     </section>
-    <section class="relative overflow-x-clip py-2 md:py-4">
-        <img src="/svg/blur-pink.svg" class="absolute z-bottom" style=" right:-5%; bottom: -340px; ">
-        <div class="container">
-            <h2>Cheatsheets and Quick Reference</h2>
-            <x-gt-menu filename="nav-programming" layout="icon-grid" />
-        </div>
-    </section>
     <section class="py-2 md:py-4">
         <div class="container">
             <h2>Concepts, Tips, and Techniques</h2>
@@ -58,6 +58,20 @@
             <x-gt-menu filename="nav-fundamentals-and-techniques" class="flex wrap gap-1" itemClass="btn secondary" />
             <h4>Database</h4>
             <x-gt-menu filename="nav-fundamentals-and-techniques" menuname="database" class="flex wrap gap-1" itemClass="btn secondary" />
+            <h2>Additional Resources</h2>
+            <x-gt-menu menuname="resources" layout="icon-grid" />
+        </div>
+    </section>
+    <section class="relative diagonal z-bottom md:py-4">
+        <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-5%; bottom: -240px; ">
+        <div class="container grid md:cols-2 md:gap-4 va-c py-2 md:py-4">
+            <div class="maxw-ms">
+                <img src="/images/wooden-sports-car1.jpg" class="rounded" alt="wooden sports car">
+            </div>
+            <blockquote>
+                <p class="txt-2 x">"Without reinventing the wheel we wouldn't have fast cars."</p>
+                <p class="lead">-- <em>Nathan Watts</em></p>
+            </blockquote>
         </div>
     </section>
     <section class="flex space-between wrap px py-3 va-c ha-c">

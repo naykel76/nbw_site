@@ -10,6 +10,7 @@
 ## Quick Reference
 
 ### Notes
+
 ```
 Note right of John: Text in note
 Note over Alice,John: A typical interaction
@@ -24,6 +25,7 @@ Note over Alice,John: A typical interaction<br/>But now in two lines
         Note over Alice,John: A typical interaction<br/>But now in two lines
 </x-mermaid>
 ```
+
 ## Class Diagram
 
 ```
@@ -117,7 +119,7 @@ flowchart TD
 
 ```
 sequenceDiagram
-    participant User
+    actor User
     participant System
     User->>System: Sends Request
 
@@ -131,9 +133,10 @@ sequenceDiagram
 ```mermaid +parse
 <x-mermaid>
     sequenceDiagram
-        participant User
+        actor User
         participant System
         User->>System: Sends Request
+        System-->>User: Process Request
         alt is valid?
             System-->>User: Process Request
         else is not valid?

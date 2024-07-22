@@ -59,6 +59,10 @@
                 "route_name": "docs.laravel.routes"
             },
             {
+                "name": "Sessions",
+                "route_name": "docs.laravel.sessions"
+            },
+            {
                 "name": "Validation",
                 "route_name": "docs.laravel.validation"
             }

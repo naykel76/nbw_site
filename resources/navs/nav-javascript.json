@@ -29,21 +29,25 @@
             }
         ]
     },
-    "Arrays and Objects": {
+    "Arrays": {
         "links": [
             {
                 "name": "Array Quick Reference",
                 "route_name": "docs.javascript.array-cheatsheet",
                 "icon": "javascript"
-            },
+            }
+        ]
+    },
+    "Objects": {
+        "links": [
             {
                 "name": "Object Quick Reference",
                 "route_name": "docs.javascript.object-cheatsheet",
                 "icon": "javascript"
             },
             {
-                "name": "Sorting Techniques",
-                "route_name": "docs.javascript.array.sort"
+                "name": "Object Literal",
+                "route_name": "docs.javascript.object-literal"
             }
         ]
     },

@@ -5,6 +5,7 @@ use Naykel\Gotime\RouteBuilder;
 
 (new RouteBuilder('nav-main'))->create();
 
+(new RouteBuilder('nav-alpine', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-angular', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-concepts', 'components.layouts.docs-blog-style'))->create();
 (new RouteBuilder('nav-css', 'components.layouts.docs-default'))->create();
@@ -16,6 +17,7 @@ use Naykel\Gotime\RouteBuilder;
 (new RouteBuilder('nav-livewire', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-programming', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-react', 'components.layouts.docs-default'))->create();
+(new RouteBuilder('nav-sql', 'components.layouts.docs-default'))->create();
 
 Route::get('/', function () {
     return view('pages.home');
