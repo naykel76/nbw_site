@@ -3,11 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use Naykel\Gotime\RouteBuilder;
 
+(new RouteBuilder('nav-software-engineering', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-main'))->create();
 
 (new RouteBuilder('nav-alpine', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-angular', 'components.layouts.docs-default'))->create();
-(new RouteBuilder('nav-concepts', 'components.layouts.docs-blog-style'))->create();
 (new RouteBuilder('nav-css', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-fundamentals-and-techniques', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-ionic', 'components.layouts.docs-default'))->create();

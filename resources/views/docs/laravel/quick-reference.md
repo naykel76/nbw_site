@@ -4,10 +4,12 @@
 - [Installation and Configuration](#installation-and-configuration)
 - [Maintenance Mode](#maintenance-mode)
 - [Blade and Views](#blade-and-views)
-    - [Determining If A View Exists](#determining-if-a-view-exists)
-        - [Choose between local or package view](#choose-between-local-or-package-view)
+  - [Determining If A View Exists](#determining-if-a-view-exists)
+    - [Choose between local or package view](#choose-between-local-or-package-view)
 - [Tips and Techniques](#tips-and-techniques)
-    - [Validate option is 'in' a dropdown or simulate control](#validate-option-is-in-a-dropdown-or-simulate-control)
+  - [Validate option is 'in' a dropdown or simulate control](#validate-option-is-in-a-dropdown-or-simulate-control)
+- [Routes](#routes)
+  - [Redirect](#redirect)
 
 <!-- /TOC -->
 
@@ -122,3 +124,20 @@ const STATUSES = [
 </x-gt-select>
 ```
 
+## Routes
+
+### Redirect
+
+```php
+Route::redirect('/here', '/there', 301);
+```
+
+```php
+return redirect()->route('login');
+```
+
+```php
+Route::get('/dashboard', function () {
+    return redirect('/home/dashboard');
+});
+```

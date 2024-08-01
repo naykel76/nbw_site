@@ -48,8 +48,8 @@
     </section>
     <section class="py-2 md:py-4">
         <div class="container">
-            <h2>Concepts, Tips, and Techniques</h2>
-            <x-gt-menu filename="nav-concepts" class="flex wrap gap-1" itemClass="btn secondary" />
+            <h2>Software Engineering Concepts, Tips, and Techniques</h2>
+            <x-gt-menu filename="nav-software-engineering" class="flex wrap gap-1" itemClass="btn secondary" />
             <h2>Programming Fundamentals and Techniques</h2>
             <div class="maxw-md my">
                 <p>Solutions to common programming challenges across various languages and frameworks.</p>

@@ -1,184 +1,154 @@
 # Github Cheat Sheet
 
-<!-- TOC -->
 
-- [House Keeping](#house-keeping)
-- [Fetch, Pull, Clone](#fetch-pull-clone)
-- [Global Config (global, system and local)](#global-config-global-system-and-local)
-- [GIT Branches](#git-branches)
-- [Repositories](#repositories)
-- [Commit and Push](#commit-and-push)
-  - [How to change commit message](#how-to-change-commit-message)
-- [Git Merge, Squash, Rebase and Conflicts](#git-merge-squash-rebase-and-conflicts)
-  - [Merge changes and into a single commit. `--squash`](#merge-changes-and-into-a-single-commit---squash)
-- [Create and Modify Repositories](#create-and-modify-repositories)
-- [GIT Stash](#git-stash)
-- [Releases \& Version Tags](#releases--version-tags)
+- [General Terminology](#general-terminology)
+- [Basic Commands](#basic-commands)
+- [Add, Commit and Push](#add-commit-and-push)
+- [Configurations](#configurations)
+- [Remote Repositories](#remote-repositories)
+- [Branching and Merging](#branching-and-merging)
+- [Merge, Rebase and Squash](#merge-rebase-and-squash)
+- [Housekeeping](#housekeeping)
+- [Resetting and Reverting](#resetting-and-reverting)
+- [Release and Version Tags](#release-and-version-tags)
+- [Stashing Changes](#stashing-changes)
 - [Creating Alias](#creating-alias)
   - [Create Alias to Clone Repo](#create-alias-to-clone-repo)
 - [FAQ's](#faqs)
     - [How do I update the local repo name when it is changed on the remote repo?](#how-do-i-update-the-local-repo-name-when-it-is-changed-on-the-remote-repo)
-
-<!-- /TOC -->
-
-<a id="markdown-house-keeping" name="house-keeping"></a>
-
-## House Keeping
-
-<div class="code-first-second-col"></div>
-
-|  Type  | Command                              | Action                               |
-| :----: | :----------------------------------- | :----------------------------------- |
-|        | git prune                            |                                      |
-|        | git remote prune origin              |                                      |
-|        | git reset --hard && git clean -df    |                                      |
-|        | git rm -rf --cached .                | refresh git cache                    |
-| CLEAR  | git prune -v                         |                                      |
-| DELETE | git push origin --delete branch-name | Delete remote branch  (local & repo) |
-
-<a id="markdown-fetch-pull-clone" name="fetch-pull-clone"></a>
-
-## Fetch, Pull, Clone
-
-<code-first-col></code-first-col>
-| Command                      | Action            |
-| :--------------------------- | :---------------- |
-| git fetch origin             | Fetch entire repo |
-| git fetch origin branch-name | Fetch entire repo |
+    - [How do I change the last commit message?](#how-do-i-change-the-last-commit-message)
 
 
+## General Terminology
 
-<a id="markdown-global-config-global-system-and-local" name="global-config-global-system-and-local"></a>
+`origin` is the default name given to the remote repository when you clone a repository. You can
+change it to any name you want.
 
-## Global Config (global, system and local)
+## Basic Commands
 
-Can change `local|global|system` flag to display different configuration settings.
+<div class="code-first-col"></div>
 
-```bash
-git config --list                               # display global settings
+| Command              | Action                       |
+| :------------------- | :--------------------------- |
+| git init             | Initialize a new repository  |
+| git clone <repo-url> | Clone a repository           |
+| git status           | Show the working tree status |
+| git log              | Show commit logs             |
+| git log --oneline    | Show commit logs one line    |
 
-git config --global user.name myusername        # change name
-git config --global user.email myemail          # change email
-git config --global github.user myusername      # change username
-```
+## Add, Commit and Push
+
+<div class="code-first-col"></div>
+
+| Command                     | Action                        |
+| :-------------------------- | :---------------------------- |
+| git add <file>              | Add file(s) to staging area   |
+| git add .                   | Add all files to staging      |
+| git commit -am 'message'    | Stage, add comment and commit |
+| git commit -m 'message'     | Commit files                  |
+| git push && git push --tags | Push with tags                |
+| git push origin [branch]    | Push branch to server         |
+| git push origin master      | Push to server                |
+
+## Configurations
+
+<div class="code-first-col"></div>
+
+| Command                                | Action                     |
+| :------------------------------------- | :------------------------- |
+| git config --global <key> <value>      | Set global config          |
+| git config --local <key> <value>       | Set local config           |
+| git config --global user.name <name>   | set global user name       |
+| git config --global user.email <email> | set global config email    |
+| git config --global github.user <name> | set global github username |
+| git config --list                      | List all configs           |
+
+## Remote Repositories
+
+<div class="code-first-col"></div>
+
+| Command                       | Action                    |
+| :---------------------------- | :------------------------ |
+| git remote add origin <url>   | Add a remote repository   |
+| git fetch origin              | Fetch changes from remote |
+| git pull origin <branch>      | Pull changes from remote  |
+| git push origin <branch>      | Push changes to remote    |
+| git remote rename <old> <new> | Rename remote repository  |
+| git remote remove <name>      | Remove remote repository  |
+
+## Branching and Merging
+
+<div class="code-first-col"></div>
+
+| Command                   | Action                             |
+| :------------------------ | :--------------------------------- |
+| git branch                | List all branches                  |
+| git branch -a             | List all branches (local & remote) |
+| git branch -d <branch>    | Delete a local branch              |
+| git branch -m <old> <new> | Rename branch                      |
+| git branch <branch>       | Create a new branch                |
+| git checkout -b <branch>  | Create branch and switch           |
+| git checkout <branch>     | Switch to a branch                 |
 
 
+## Merge, Rebase and Squash
 
+| Command                     | Action                                 |
+| :-------------------------- | :------------------------------------- |
+| git rebase -i head~N        | Squash commits by number               |
+| git merge --abort           | Cancel merge                           |
+| git merge <branch>          | Merge a branch                         |
+| git merge --squash <branch> | Merge changes and into a single commit |
 
-<a id="markdown-git-branches" name="git-branches"></a>
+## Housekeeping
 
-## GIT Branches
+<div class="code-first-col"></div>
 
-```bash
-git branch [branch]                       # Create new branch
-git checkout [branch]                     # Checkout branch
-git checkout -b [branch]                  # Create new branch and checkout
+| Command                              | Action                                             |
+| :----------------------------------- | :------------------------------------------------- |
+| git clean -df                        | Remove untracked files                             |
+| git gc                               | Garbage collection. Optimizes the local repository |
+| git prune                            | Prune unreachable objects                          |
+| git push origin --delete branch-name | Delete remote branch  (local & repo)               |
+| git reset --hard && git clean -df    | Reset to last commit and remove untracked files    |
+| git rm -rf --cached .                | refresh git cache                                  |
 
-git branch -d [branch]                    # Delete branch
-git push --delete origin [branch]         # Delete remote branch
-
-git push --set-upstream origin [branch]   # Push branch to remote
-```
-
-<a id="markdown-repositories" name="repositories"></a>
-
-## Repositories
+## Resetting and Reverting
+| Command                    | Action          |
+| :------------------------- | :-------------- |
+| git reset --soft <commit>  | Soft reset      |
+| git reset --mixed <commit> | Mixed reset     |
+| git reset --hard <commit>  | Hard reset      |
+| git revert <commit>        | Revert a commit |
 
 ```bash
 git reset --soft HEAD~1         # Restore last commit but keep changes
 git reset --hard HEAD~1         # Restore last commit and delete changes
 ```
 
-<a id="markdown-commit-and-push" name="commit-and-push"></a>
+## Release and Version Tags
 
-## Commit and Push
+<div class="code-first-col"></div>
 
+| Command          | Action       |
+| :--------------- | :----------- |
+| git tag <tag>    | Create a tag |
+| git tag          | List tags    |
+| git tag -d <tag> | Delete a tag |
 
-```bash
-git add .                       # Stage Files
+## Stashing Changes
 
-git commit -m 'commit message'  # Commit files
-git commit -am 'message'        # stage, add comment and commit
+<div class="code-first-col"></div>
 
-git push origin master          # Push to server
-git push && git push --tags     # Push with tags
-git push origin [branch]        # Push branch to server
-```
-
-
-<a id="markdown-how-to-change-commit-message" name="how-to-change-commit-message"></a>
-
-### How to change commit message
-
-Run the following command to amend (change) the message of the latest commit:
-
-    git commit --amend -m "New commit message."
-
-<a id="markdown-git-merge-squash-rebase-and-conflicts" name="git-merge-squash-rebase-and-conflicts"></a>
-
-## Git Merge, Squash, Rebase and Conflicts
-
-| Command                   | Action                   |
-| :------------------------ | :----------------------- |
-| git merge [branchToMerge] |                          |
-| git rebase -i head~N      | Squash commits by number |
-| git merge --abort         | Cancel merge             |
-
-<a id="markdown-merge-changes-and-into-a-single-commit---squash" name="merge-changes-and-into-a-single-commit---squash"></a>
-
-### Merge changes and into a single commit. `--squash`
-
-``` bash
-git merge --squash [branch]
-```
-
-<a id="markdown-create-and-modify-repositories" name="create-and-modify-repositories"></a>
-
-## Create and Modify Repositories
-
-```bash
-git init                                            # Initialise git
-git config --global user.name 'Your Name'           # set user name
-git config --global user.email 'you@email.com.au'   # set email
-git clone github-URL                                # Clone repo
-git remote set-url origin new-URL                   # change repo location
-git remote add origin new-URL                       # change repo location
-git remote -v                                       # Check repo location
-```
-
-<a id="markdown-git-stash" name="git-stash"></a>
-
-## GIT Stash
-
-
-<code-first-col></code-first-col>
 | Command         | Action                 |
 | :-------------- | :--------------------- |
 | git stash       | Stash changes          |
-| git stash pop   | Get changes from stash |
+| git stash clear | Clear all stashes      |
+| git stash drop  | Drop a stash           |
 | git stash list  | Show stash list        |
+| git stash pop   | Get changes from stash |
 | git stash show  | Show changes in stash  |
-| git stash clear |                        |
 
-
-<a id="markdown-releases--version-tags" name="releases--version-tags"></a>
-
-## Releases & Version Tags
-
-| Action                                   | Command                           | Notes          |
-| :--------------------------------------- | :-------------------------------- | :------------- |
-| Update tag                               | `git push -f --tags`              | Force push tag |
-| Show all released versions               | `git tag`                         |                |
-| Show all released versions with comments | `git tag -l -n1`                  |                |
-| Create release version                   | `git tag v1.0.0`                  |                |
-| Create release version with comment      | `git tag -a v1.0.0 -m 'Message'`  |                |
-| Checkout a specific release version      | `git checkout v1.0.0`             |                |
-| Delete remote tag                        | `git tag --delete origin tagname` |                |
-| Delete local tag                         | `git tag --delete tagname`        |                |
-
-
-
-<a id="markdown-creating-alias" name="creating-alias"></a>
 
 ## Creating Alias
 
@@ -189,8 +159,6 @@ git config --global alias.naykel 'clone https://github.com/naykel76/argument1 ar
 
 git config --global alias.naykel '!'"git clone https://github.com/naykel76/\$1 argument2"
 
-
-<a id="markdown-create-alias-to-clone-repo" name="create-alias-to-clone-repo"></a>
 
 ### Create Alias to Clone Repo
 
@@ -228,4 +196,10 @@ Verify the changes with:
 
 ```bash
 git remote -v
+```
+
+#### <question>How do I change the last commit message?</question>
+
+```bash
+git commit --amend -m "New commit message."
 ```

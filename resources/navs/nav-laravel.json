@@ -39,6 +39,10 @@
                 "route_name": "docs.laravel.factories"
             },
             {
+                "name": "Facades and Helpers",
+                "route_name": "docs.laravel.facades-and-helpers"
+            },
+            {
                 "name": "Seeder",
                 "route_name": "docs.laravel.seeders"
             },
@@ -94,6 +98,30 @@
             {
                 "name": "Casting and Mutators",
                 "route_name": "docs.laravel.cast-and-mutators"
+            }
+        ]
+    },
+    "Beyond The Basics": {
+        "links": [
+            {
+                "name": "Contracts (interfaces)",
+                "route_name": "docs.laravel.techniques.implementing-contracts-for-cleaner-code"
+            },
+            {
+                "name": "Testing",
+                "route_name": "docs.laravel.testing"
+            },
+            {
+                "name": "Testing Guide",
+                "route_name": "docs.laravel.testing-guide"
+            }
+        ]
+    },
+    "Packages": {
+        "links": [
+            {
+                "name": "Spatie Sluggable",
+                "route_name": "docs.laravel.packages.spatie-sluggable"
             }
         ]
     }
