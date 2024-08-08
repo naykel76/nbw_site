@@ -1,63 +1,89 @@
-# Migrations, Factories and Seeding
+# Factories
 
-<!-- TOC -->
-
-- [Create vs Make](#create-vs-make)
-- [Running Factories](#running-factories)
+- [Set Factory State](#set-factory-state)
+- [Factory Relationships](#factory-relationships)
   - [Has Many Relationships](#has-many-relationships)
-  - [Belongs To Relationship](#belongs-to-relationship)
+  - [Nested Relationships](#nested-relationships)
+    - [`randomFloat`](#randomfloat)
+  - [Unique Data](#unique-data)
+- [Additional Resources](#additional-resources)
 
-<!-- /TOC -->
-
-## Create vs Make
-
-```php
-User::factory()->create(); // persists to the database
-User::factory()->make();   // does not persist to the database
-```
+## Set Factory State
 
 ```php
+public function published(?Carbon $date = null): self
+{
+    return $this->state(
+        fn (array $attr) => ['published_at' => $date ?? Carbon::now()]
+    );
+}
 ```
 
-
-## Running Factories
-
-```php
-\App\Models\Course::factory(10)->create();
-```
-
-```php
-// A user has one profile
-User::factory(10)
-    ->has(UserProfile::factory())
-    ->create();
-```
+## Factory Relationships
 
 ### Has Many Relationships
 
 ```php
-// verbose
-Course::factory(10)->has(Chapter::factory()->count(4))->create();
-// magic method
-Course::factory(10)->hasChapters(5)->create();
+$course = Course::factory()
+            ->has(Chapter::factory()->count(3))
+            ->create();
 ```
-### Belongs To Relationship
+
+### Nested Relationships
 
 ```php
-// verbose
-Chapter::factory()->count(3)->for(Course::factory())->create();
-// magic method
-Chapter::factory(3)->forCourse()->create();
-
+$course = Course::factory()
+            ->has(Chapter::factory()
+                ->has(Media::factory()->count(3))
+                ->count(3)
+            )
+            ->create();
 ```
-
-
-Create the parent record and seed children
 
 ```php
-Chapter::factory(3)->for(Course::create([
-    'code' => 'COU_PR27',
-    'title' => 'Sample Course',
-]))->create();
+
+
+
+## Fake Data
+
+### Numbers
+
+#### `randomDigit`, `randomNumber`, `numberBetween` 
+
+```php
+// an integer between 0 and 9
+$this->faker->randomDigit();
+// random integer with UP TO n digits (123, 43, 19238, 5, or 1203)
+$this->faker->randomNumber(5, false);
+// random integer with EXACTLY n digits (2643, 42931, or 32919)
+$this->faker->randomNumber(5, true);
+// integer between
+'price' => $this->faker->numberBetween(500, 100000);
 ```
 
+#### `randomFloat`
+
+```php
+randomFloat($nbMaxDecimals = null, $min = 0, $max = null): 
+```
+
+```php
+'price' => $this->faker->randomFloat(2),
+'price' => $this->faker->randomFloat(2, 5, 30);
+'price' => ceil($this->faker->randomFloat(2, 5, 10.50)*10)/10,
+```
+
+### Unique Data
+
+You can generate unique data simply by using the `unique` method.
+
+```php
+'code' => $this->faker->unique()->numberBetween(1000000, 9000000),
+'code' => $this->faker->unique()->randomNumber()
+```
+
+
+
+## Additional Resources
+
+- <a href="https://fakerphp.org/" target="blank">FakerPHP Docs</a>

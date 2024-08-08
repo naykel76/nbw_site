@@ -4,7 +4,7 @@
 
 - [Storing Data](#storing-data)
   - [`push(string $key, mixed $value)` - add a value to an array](#pushstring-key-mixed-value---add-a-value-to-an-array)
-  - [`put(string|array $key, mixed $value = null)` - store data in the session](#putstringarray-key-mixed-value--null---store-data-in-the-session)
+  - [`put(string|array $key, mixed $value = null)` - store or update data in the session](#putstringarray-key-mixed-value--null---store-or-update-data-in-the-session)
 - [Retrieve Session Data](#retrieve-session-data)
   - [`all(): array` - get all session data](#all-array---get-all-session-data)
   - [`except(array $keys): array` - get all session data except for specific keys](#exceptarray-keys-array---get-all-session-data-except-for-specific-keys)
@@ -35,7 +35,7 @@ These examples are using the <code>Session</code> facade. You can also use the <
 Session::push('users', 'Sam Smith');
 ```
 
-### `put(string|array $key, mixed $value = null)` - store data in the session
+### `put(string|array $key, mixed $value = null)` - store or update data in the session
 
 ```php
 // Store a single key-value pair

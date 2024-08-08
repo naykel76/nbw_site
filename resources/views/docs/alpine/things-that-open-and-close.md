@@ -28,8 +28,7 @@
 </div>
 ```
 
-Optionally, you can add `x-on:mouseenter` and `x-on:mouseleave`  attributes in the parent element to
-switch the open state when hovering.
+
 
 ```html
 <div x-data="{ open: false }">
@@ -40,6 +39,20 @@ switch the open state when hovering.
 
     <div x-show="open">
        <!-- Content -->
+    </div>
+</div>
+```
+
+Optionally, you can add `x-on:mouseenter` and `x-on:mouseleave`  attributes in the parent element to
+switch the open state when hovering.
+
+```html
+<div x-data="{ open: false }" x-on:mouseenter="open=true" x-on:mouseleave="open=false">
+    <button class="btn mb-05 w-10" x-on:click="open = ! open">
+        <span x-text="open ? 'Move Away' : 'Hover to Open'"></span>
+    </button>
+    <div x-show="open">
+        Hey there!
     </div>
 </div>
 ```

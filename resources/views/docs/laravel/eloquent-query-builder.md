@@ -1,23 +1,17 @@
 # Eloquent and Query Builder
-<!-- TOC -->
 
 - [JOIN](#join)
-    - [JOIN and SELECT specific columns](#join-and-select-specific-columns)
-    - [JOIN multiple related tables](#join-multiple-related-tables)
-    - [JOIN and ORDER BY relationship attribute](#join-and-order-by-relationship-attribute)
-    - [Create an alias for shorter code](#create-an-alias-for-shorter-code)
+  - [JOIN and SELECT specific columns](#join-and-select-specific-columns)
+  - [JOIN multiple related tables](#join-multiple-related-tables)
+  - [JOIN and ORDER BY relationship attribute](#join-and-order-by-relationship-attribute)
+  - [Create an alias for shorter code](#create-an-alias-for-shorter-code)
 - [where or Where](#where-or-where)
 - [Get random record](#get-random-record)
 - [Get unique records `distinct()` or `groupBy()`](#get-unique-records-distinct-or-groupby)
 - [Raw Expressions](#raw-expressions)
 
-<!-- /TOC -->
-
-<a id="markdown-join" name="join"></a>
 
 ## JOIN
-
-<a id="markdown-join-and-select-specific-columns" name="join-and-select-specific-columns"></a>
 
 ### JOIN and SELECT specific columns
 
@@ -31,11 +25,7 @@ CurrentTable::join('some_table', 'current_table.pk', '=', 'some_table.fk')
     ->select('current_table.*', 'some_table.title as title');
 ```
 
-<a id="markdown-join-multiple-related-tables" name="join-multiple-related-tables"></a>
-
 ### JOIN multiple related tables
-
-<a id="markdown-join-and-order-by-relationship-attribute" name="join-and-order-by-relationship-attribute"></a>
 
 ### JOIN and ORDER BY relationship attribute
 
@@ -47,8 +37,6 @@ $query = Chapter::join('courses', 'courses.id', '=', 'chapters.course_id')
     ->orderBy('courseTitle', 'asc');
 ```
 
-<a id="markdown-create-an-alias-for-shorter-code" name="create-an-alias-for-shorter-code"></a>
-
 ### Create an alias for shorter code
 
 ```php
@@ -56,8 +44,6 @@ $courseOutline = ExamPrepOutline::from('exam_prep_outlines as t1')
     ->join('exam_prep_outlines as t2', 't1.parent_id', '=', 't2.id')
     ->select('t1.id', 't1.type', 't1.title', 't1.parent_id', 't2.title AS parent_title');
 ```
-
-<a id="markdown-where-or-where" name="where-or-where"></a>
 
 ## where or Where
 
@@ -67,10 +53,6 @@ $courses = DB::table('courses')
     ->orWhere('type', 'ep-prog');
 ```
 
-
-
-<a id="markdown-get-random-record" name="get-random-record"></a>
-
 ## Get random record
 
 ```php
@@ -78,9 +60,6 @@ $randomUser = \App\Models\User::select('id')->whereNotNull('id')
     ->inRandomOrder()
     ->limit(1);
 ```
-
-
-<a id="markdown-get-unique-records-distinct-or-groupby" name="get-unique-records-distinct-or-groupby"></a>
 
 ## Get unique records `distinct()` or `groupBy()`
 
@@ -99,9 +78,6 @@ the rows based on the select column value, which would eliminate any duplicates 
 $categories = Page::select('route_prefix')
     ->groupBy('route_prefix');
 ```
-
-
-<a id="markdown-raw-expressions" name="raw-expressions"></a>
 
 ## Raw Expressions
 

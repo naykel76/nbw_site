@@ -43,10 +43,6 @@
                 "route_name": "docs.laravel.facades-and-helpers"
             },
             {
-                "name": "Seeder",
-                "route_name": "docs.laravel.seeders"
-            },
-            {
                 "name": "Mail",
                 "route_name": "docs.laravel.mail"
             },

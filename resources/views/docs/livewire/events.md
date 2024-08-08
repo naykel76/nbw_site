@@ -1,21 +1,18 @@
 # Events
-<!-- TOC -->
 
 - [Dispatching events](#dispatching-events)
-    - [Dispatch events from blade template](#dispatch-events-from-blade-template)
-    - [Dispatching directly to another component](#dispatching-directly-to-another-component)
+  - [Dispatch events from blade template](#dispatch-events-from-blade-template)
+  - [Dispatching directly to another component](#dispatching-directly-to-another-component)
 - [DispatchTo events](#dispatchto-events)
-    - [DispatchTo from blade templates](#dispatchto-from-blade-templates)
+  - [DispatchTo from blade templates](#dispatchto-from-blade-templates)
 - [Registering event listeners](#registering-event-listeners)
-    - [Registering event listeners using the `$listeners` property](#registering-event-listeners-using-the-listeners-property)
-    - [Registering event listeners using the `On` attribute](#registering-event-listeners-using-the-on-attribute)
+  - [Registering event listeners using the `$listeners` property](#registering-event-listeners-using-the-listeners-property)
+  - [Registering event listeners using the `On` attribute](#registering-event-listeners-using-the-on-attribute)
 - [Refreshing Techniques](#refreshing-techniques)
-    - [Refreshing a list of items after an action has been performed](#refreshing-a-list-of-items-after-an-action-has-been-performed)
+  - [Refreshing a list of items after an action has been performed](#refreshing-a-list-of-items-after-an-action-has-been-performed)
+- [Trouble Shooting](#trouble-shooting)
+  - [Event listeners not working](#event-listeners-not-working)
 
-<!-- /TOC -->
-
-
-<a id="markdown-dispatching-events" name="dispatching-events"></a>
 
 ## Dispatching events
 
@@ -23,15 +20,11 @@
 $this->dispatch('eventName', key: value);
 ```
 
-<a id="markdown-dispatch-events-from-blade-template" name="dispatch-events-from-blade-template"></a>
-
 ### Dispatch events from blade template
 
 ```html
 <button wire:click="$dispatch('event-name', { key: value })"> ... </button>
 ```
-
-<a id="markdown-dispatching-directly-to-another-component" name="dispatching-directly-to-another-component"></a>
 
 ### Dispatching directly to another component
 
@@ -39,11 +32,7 @@ $this->dispatch('eventName', key: value);
 $this->dispatch('event-name')->to(MyComponent::class);
 ```
 
-<a id="markdown-dispatchto-events" name="dispatchto-events"></a>
-
 ## DispatchTo events
-
-<a id="markdown-dispatchto-from-blade-templates" name="dispatchto-from-blade-templates"></a>
 
 ### DispatchTo from blade templates
 
@@ -61,18 +50,12 @@ $this->dispatchTo('courses.programming.edit', 'some-event');
 ```
 
 
-<a id="markdown-registering-event-listeners" name="registering-event-listeners"></a>
-
 ## Registering event listeners
-
-<a id="markdown-registering-event-listeners-using-the-listeners-property" name="registering-event-listeners-using-the-listeners-property"></a>
 
 ### Registering event listeners using the `$listeners` property
 ```php
 protected $listeners = ['event-name' => 'method'];
 ```
-
-<a id="markdown-registering-event-listeners-using-the-on-attribute" name="registering-event-listeners-using-the-on-attribute"></a>
 
 ### Registering event listeners using the `On` attribute
 ```php
@@ -82,11 +65,7 @@ use Livewire\Attributes\On;
 public function doStuff() { }
 ```
 
-<a id="markdown-refreshing-techniques" name="refreshing-techniques"></a>
-
 ## Refreshing Techniques
-
-<a id="markdown-refreshing-a-list-of-items-after-an-action-has-been-performed" name="refreshing-a-list-of-items-after-an-action-has-been-performed"></a>
 
 ### Refreshing a list of items after an action has been performed
 
@@ -124,3 +103,10 @@ Add a listener to the main component and call the `$refresh` method.
 // MainComponent.php
 protected $listeners = ['refresh-list' => '$refresh'];
 ```
+
+
+## Trouble Shooting
+
+### Event listeners not working
+
+Make sure the Livewire component blade views are on the same page. 
