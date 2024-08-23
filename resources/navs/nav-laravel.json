@@ -104,12 +104,13 @@
                 "route_name": "docs.laravel.techniques.implementing-contracts-for-cleaner-code"
             },
             {
-                "name": "Testing",
+                "name": "Laravel Testing",
                 "route_name": "docs.laravel.testing"
             },
             {
-                "name": "Testing Guide",
-                "route_name": "docs.laravel.testing-guide"
+                "name": "Livewire Testing",
+                "route_name": "docs.livewire.testing",
+                "exclude_route": true
             }
         ]
     },

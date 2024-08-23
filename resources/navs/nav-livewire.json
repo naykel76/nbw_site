@@ -34,6 +34,19 @@
             }
         ]
     },
+    "Beyond The Basics": {
+        "links": [
+            {
+                "name": "Livewire Testing",
+                "route_name": "docs.livewire.testing"
+            },
+            {
+                "name": "Laravel Testing",
+                "route_name": "docs.laravel.testing",
+                "exclude_route": true
+            }
+        ]
+    },
     "Techniques": {
         "links": [
             {

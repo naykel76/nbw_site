@@ -2,6 +2,10 @@
     "main": {
         "links": [
             {
+                "name": "Array Techniques",
+                "route_name": "fundamentals-and-techniques.array-techniques"
+            },
+            {
                 "name": "Reading JSON Files",
                 "route_name": "fundamentals-and-techniques.reading-json-files"
             },

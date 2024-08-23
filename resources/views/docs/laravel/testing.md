@@ -12,7 +12,23 @@
 - [Trouble Shooting](#trouble-shooting)
   - [False Positive with `assertSeeText`](#false-positive-with-assertseetext)
 
-## Getting Started
+
+Authenticating a user before running tests.
+
+```php
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithFaker;
+use Tests\TestCase;
+
+uses(RefreshDatabase::class, WithFaker::class);
+
+beforeEach(function () {
+    $this->user = User::factory()->create();
+    $this->actingAs($this->user);
+});
+```
+
+<!-- ## Getting Started
 
 <div class="code-first-col"></div>
 
@@ -164,4 +180,4 @@ public static function test($name, $params = []) { }
 ```php
 Livewire::test(AddToCartButton::class, [$product])
     ->call('addToCart');
-```
+``` -->

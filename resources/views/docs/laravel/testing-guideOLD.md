@@ -3,13 +3,10 @@
 A list of all the things I like to test in my applications.
 
 
+- [Test a Route or URL](#test-a-route-or-url)
+  - [Test a route or url in a Livewire component](#test-a-route-or-url-in-a-livewire-component)
 - [Testing Views](#testing-views)
 - [Page Tests](#page-tests)
-- [Livewire Testing](#livewire-testing)
-  - [Component Existence](#component-existence)
-  - [Property Existence (TBD)](#property-existence-tbd)
-  - [Trouble Shooting](#trouble-shooting)
-    - [Smoke Test is Failing](#smoke-test-is-failing)
 - [Page Response Tests (Status)](#page-response-tests-status)
 - [Page Response Tests (Text)](#page-response-tests-text)
 - [Page Response Tests (View)](#page-response-tests-view)
@@ -22,6 +19,48 @@ A list of all the things I like to test in my applications.
 - [Database Seeder Tests](#database-seeder-tests)
 - [Livewire Component Tests](#livewire-component-tests)
 - [Additional Resources](#additional-resources)
+
+
+
+## Test a Route or URL
+
+```php
+it('shows the home page', function () {
+    $this->get(route('home'))->assertOk();
+});
+```
+
+Test a Route or URL with a parameter
+
+```php
+it('has a link to the product details page', function () {
+    $product = Product::factory()->create();
+    $this->get(route('products.show', $product))->assertOk();
+});
+```
+
+### Test a route or url in a Livewire component
+
+```php
+it('has a link to the checkout page', function () {
+    Livewire::test(ShoppingCart::class)
+        ->assertSee(route('checkout'));
+});
+```
+
+
+
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
+---
 
 
 
@@ -53,74 +92,6 @@ it('shows courses overview (index)', function () {
 });
 ```
 
-<!-- =============================== -->
-<!--        LIVEWIRE SECTION         -->
-<!-- =============================== -->
-## Livewire Testing
-
-<!-- https://laracasts.com/series/pest-driven-laravel/episodes/17 -->
-
-### Component Existence
-
-You can test if a Livewire component is present on a page using the `assertSeeLivewire` method.
-
-You can test by using the component class name,
-
-```php
-it('shows the add to cart component', function () {
-    $this->get(route('courses.index'))
-        ->assertSeeLivewire(AddToCartButton::class);
-});
-```
-
-or by using the component tag name.
-
-```php
-it('shows the add to cart component', function () {
-    $this->get(route('courses.index'))
-        ->assertSeeLivewire('cart.add-to-cart-button');
-});
-```
-
-Both of these examples will fail
-
-### Property Existence (TBD)
-
-
-
-### Trouble Shooting
-
-#### Smoke Test is Failing
-
-The test is failing because even though the component is included on the page, it is not being
-rendered because there are no courses to display.
-
-```php
-it('shows the add to cart component', function () {
-    $this->get(route('courses.index'))
-        ->assertSeeLivewire(AddToCartButton::class);
-});
-```
-
-```html
-@forelse($courses as $course)
-    <livewire:cart.add-to-cart-button />
-@endforelse
-```
-
-The solution is to create a course before the test.
-
-```php
-it('shows the add to cart component', function () {
-    Course::factory()->create();
-    $this->get(route('courses.index'))
-        ->assertSeeLivewire(AddToCartButton::class);
-});
-```
-
-<!-- =============================== -->
-<!--      END LIVEWIRE SECTION       -->
-<!-- =============================== -->
 
 ---
 ---
