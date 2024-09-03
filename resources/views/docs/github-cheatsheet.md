@@ -17,6 +17,7 @@
 - [FAQ's](#faqs)
     - [How do I update the local repo name when it is changed on the remote repo?](#how-do-i-update-the-local-repo-name-when-it-is-changed-on-the-remote-repo)
     - [How do I change the last commit message?](#how-do-i-change-the-last-commit-message)
+    - [How do i rename a local and remote git branch?](#how-do-i-rename-a-local-and-remote-git-branch)
 
 
 ## General Terminology
@@ -162,16 +163,11 @@ git config --global alias.naykel '!'"git clone https://github.com/naykel76/\$1 a
 
 ### Create Alias to Clone Repo
 
-  git nk <repository> <target-directory>
-  git nk laravel_starter <target-directory>
-
 ```bash
 git config --global alias.naykel '!'"f() { git clone https://github.com/naykel76/\$1 \$2; }; f"
 ```
 
 naykel = !git clone https://github.com/naykel/$1 $2
-
-
 
 [alias]
 files = "!f() { git diff --name-status \"$1^\" \"$1\"; }; f"
@@ -203,3 +199,20 @@ git remote -v
 ```bash
 git commit --amend -m "New commit message."
 ```
+
+#### <question>How do i rename a local and remote git branch?</question>
+
+```bash
+# Update local repo name
+git branch -m new-branch-name
+# Delete old branch
+git push origin --delete old-branch-name
+# Push renamed branch
+git push origin HEAD
+
+# Update remote repo name
+git branch --unset-upstream
+# Re-set upstream
+git push --set-upstream origin main
+```
+

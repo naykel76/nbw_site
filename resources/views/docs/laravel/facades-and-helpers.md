@@ -2,16 +2,18 @@
 
 - [Facades](#facades)
   - [Creating a Custom Facade](#creating-a-custom-facade)
-    - [Step 1: Create a helper class](#step-1-create-a-helper-class)
+    - [Step 1: Create the underlying class](#step-1-create-the-underlying-class)
     - [Step 2: Register helper in AppServiceProvider](#step-2-register-helper-in-appserviceprovider)
     - [Step 3: Create a facade class](#step-3-create-a-facade-class)
     - [Step 4: Register facade in config/app.php](#step-4-register-facade-in-configappphp)
     - [Step 5: Using the facade](#step-5-using-the-facade)
-- [Helper Files](#helper-files)
+- [Helper File](#helper-file)
   - [Creating a Helper File](#creating-a-helper-file)
-    - [Step 1: Create a helper class](#step-1-create-a-helper-class-1)
+    - [Step 1: Create a helper class](#step-1-create-a-helper-class)
     - [Step 2: Register helper in Composer autoload](#step-2-register-helper-in-composer-autoload)
     - [Step 3: Use the helper function in your code](#step-3-use-the-helper-function-in-your-code)
+- [Quick Reference](#quick-reference)
+- [Understanding Singleton Bindings in Laravel](#understanding-singleton-bindings-in-laravel)
 - [Additional Resources](#additional-resources)
 
 ## Facades
@@ -32,10 +34,12 @@ To create a facade in a Laravel project, you can create a new class that extends
 and define the `getFacadeAccessor` method to return the service container key of the class you want
 to access.
 
-#### Step 1: Create a helper class
+#### Step 1: Create the underlying class
 
 ```php
-class StringHelper {
+namespace App\Helpers;
+
+class StringHelpers {
     function toPath(string $input) {
         return str_replace('.', '/', ltrim($input, '/'));
     }
@@ -50,7 +54,7 @@ use App\Helpers\StringHelper;
 
 public function register() {
     $this->app->bind('stringHelper', function() {
-        return new StringHelper();
+        return new StringHelpers();
     });
 }
 ```
@@ -100,7 +104,7 @@ class ExampleController extends Controller {
 }
 ```
 
-## Helper Files
+## Helper File
 
 When working on a Laravel project, you may find yourself needing to create helper files to
 encapsulate common functionality. Helper files can be used to group related functions together,
@@ -161,6 +165,54 @@ class ExampleController extends Controller {
 }
 ```
 
+## Quick Reference
+
+```php
+// 1. The underlying class:
+class StringHelpers {
+    function toPath(string $input) { 
+        // Implementation
+    }
+}
+
+// 2. The facade class:
+class StringFacade extends Facade {
+	protected static function getFacadeAccessor(): string {
+		return 'apples';
+	}
+}
+
+// 3. Binding in the register method of AppServiceProvider:
+$this->app->singleton('apples', function($app) {
+	return $app->make(StringFacade::class);
+});
+```
+
+## Understanding Singleton Bindings in Laravel
+
+What is the difference in the following two ways of binding a class to the service container in
+Laravel? 
+
+```php
+// Method 1 - Using the service container
+$this->app->singleton('cart', function ($app) {
+    return $app->make(CartService::class);
+});
+
+// Method 2 - Directly creating a new instance
+$this->app->singleton('cart', function ($app) {
+    return new CartService();
+});
+```
+
+The first method uses the service container to resolve the `CartService` class, while the second
+method directly creates a new instance of the `CartService` class. The first method is preferred
+because it allows the service container to manage the dependencies of the `CartService` class and
+resolve them automatically.
+
 ## Additional Resources
 
 - [Laravel Facades Documentation](https://laravel.com/docs/11.x/facades)
+
+
+

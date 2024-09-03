@@ -1,27 +1,18 @@
 
 # Laravel Packages
 
-<!-- TOC -->
-
 - [Configuration](#configuration)
-    - [Publish Configuration](#publish-configuration)
-    - [Merge Configuration](#merge-configuration)
+  - [Publish Configuration](#publish-configuration)
+  - [Merge Configuration](#merge-configuration)
 - [Loading and Merging Resources](#loading-and-merging-resources)
 - [Register Package Components](#register-package-components)
-    - [Blade Component](#blade-component)
-    - [Livewire Component](#livewire-component)
+  - [Blade Component](#blade-component)
+  - [Livewire Component](#livewire-component)
 - [Seeding From Package](#seeding-from-package)
 - [Livewire Trouble Shooting](#livewire-trouble-shooting)
-    - [Error: Unable to find component](#error-unable-to-find-component)
-
-<!-- /TOC -->
-
-
-<a id="markdown-configuration" name="configuration"></a>
+  - [Error: Unable to find component](#error-unable-to-find-component)
 
 ## Configuration
-
-<a id="markdown-publish-configuration" name="publish-configuration"></a>
 
 ### Publish Configuration
 
@@ -34,8 +25,6 @@ public function boot(): void
 }
 ```
 
-<a id="markdown-merge-configuration" name="merge-configuration"></a>
-
 ### Merge Configuration
 
 ```php
@@ -44,8 +33,6 @@ public function register(): void
     $this->mergeConfigFrom( __DIR__ . '/config/naykel.php', 'naykel' );
 }
 ```
-
-<a id="markdown-loading-and-merging-resources" name="loading-and-merging-resources"></a>
 
 ## Loading and Merging Resources
 
@@ -61,12 +48,7 @@ public function boot(): void
 }
 ```
 
-
-<a id="markdown-register-package-components" name="register-package-components"></a>
-
 ## Register Package Components
-
-<a id="markdown-blade-component" name="blade-component"></a>
 
 ### Blade Component
 
@@ -81,7 +63,6 @@ class MyPackageServiceProvider extends ServiceProvider{
     }
 }
 ```
-<a id="markdown-livewire-component" name="livewire-component"></a>
 
 ### Livewire Component
 
@@ -106,29 +87,22 @@ public function register(){
 }
 ```
 
-
-
-<a id="markdown-seeding-from-package" name="seeding-from-package"></a>
-
 ## Seeding From Package
 
 ```bash
 # include seeder in project
-$this->call(\Naykel\naykel\Database\Seeders\PaymentPlatformSeeder::class);
+$this->call(\Vendor\Package\Database\Seeders\MySeeder::class);
+
 # seed from command line
-php artisan db:seed --class=Naykel\\naykel\\Database\\Seeders\\PaymentPlatformSeeder
+php artisan db:seed --class="Vendor\\PackageName\\seeders\\MySeeder"
 ```
 
 
 
 
 
-<a id="markdown-livewire-trouble-shooting" name="livewire-trouble-shooting"></a>
-
 ## Livewire Trouble Shooting
 
-
-<a id="markdown-error-unable-to-find-component" name="error-unable-to-find-component"></a>
 
 ### Error: Unable to find component
 
