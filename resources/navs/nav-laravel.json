@@ -5,6 +5,10 @@
                 "name": "Quick Reference",
                 "route_name": "docs.laravel.quick-reference",
                 "icon_logo": "laravel"
+            },
+            {
+                "name": "FAQ's and Trouble Shooting",
+                "route_name": "docs.laravel.faqs-trouble-shooting"
             }
         ]
     },
@@ -119,6 +123,14 @@
             {
                 "name": "Spatie Sluggable",
                 "route_name": "docs.laravel.packages.spatie-sluggable"
+            }
+        ]
+    },
+    "Blog Posts": {
+        "links": [
+            {
+                "name": "Drag and Drop Sorting in Laravel",
+                "route_name": "docs.laravel.blogs.drag-and-drop-sorting-in-laravel"
             }
         ]
     }

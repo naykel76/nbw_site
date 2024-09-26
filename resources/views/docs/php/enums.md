@@ -96,4 +96,6 @@ foreach (PublishedStatus::cases() as $status) {
 <question></question>
 Should I use `self` or `static` in my enum methods?
 
-In the context of PHP enums, you should use self instead of static. The static keyword is used for late static binding where the called class is resolved at runtime, but enums don't support inheritance, so there's no need for late static binding.
+In the context of PHP enums, you should use self instead of static. The static keyword is used for
+late static binding where the called class is resolved at runtime, but enums don't support
+inheritance, so there's no need for late static binding.

@@ -2,18 +2,6 @@
     "main": {
         "links": [
             {
-                "name": "React Native",
-                "route_name": "docs.react.react-native-quick-reference",
-                "type": "md",
-                "exclude_route": true
-            },
-            {
-                "name": "JavaScript",
-                "route_name": "docs.javascript.javascript-fundamentals-quick-reference",
-                "type": "md",
-                "exclude_route": true
-            },
-            {
                 "name": "Laravel",
                 "route_name": "docs.laravel.quick-reference",
                 "type": "md",

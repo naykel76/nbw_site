@@ -11,8 +11,7 @@
         "php": "^8.2",
         "laravel/framework": "^11.0",
         "laravel/tinker": "^2.9",
-        "naykel/gotime": "dev-main",
-        "torchlight/torchlight-laravel": "^0.6.0"
+        "naykel/gotime": "dev-main"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
