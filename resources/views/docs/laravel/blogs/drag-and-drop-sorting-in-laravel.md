@@ -13,6 +13,7 @@
   - [Add the `arrange` Method](#add-the-arrange-method)
 - [Update the Blade View](#update-the-blade-view)
   - [Add Sort Handle](#add-sort-handle)
+- [Trouble Shooting](#trouble-shooting)
 - [Additional Resources](#additional-resources)
 
 ## Introduction
@@ -290,6 +291,12 @@ reorder the list.
     @endforeach
 </div>
 ```
+
+## Trouble Shooting
+
+Drag and drop sorting is not holding the position.
+
+- Make sure you set `orderBy('position')` in the query method. (set global scope)
 
 ## Additional Resources
 

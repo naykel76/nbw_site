@@ -19,7 +19,7 @@
             },
             {
                 "name": "Cleaner Code Examples",
-                "route_name": "docs.programming-concepts.cleaner-code-examples"
+                "route_name": "docs.software-engineering.cleaner-code-examples"
             },
             {
                 "name": "How To Use Interfaces In a Laravel Project",

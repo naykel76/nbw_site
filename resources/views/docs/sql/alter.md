@@ -42,7 +42,9 @@ CHANGE old_column new_column DATATYPE;
 ### Column
 
 ```sql
-ALTER TABLE table_name DROP column_name;
+ALTER TABLE table_name 
+DROP column_name1,
+DROP column_name2;
 ```
 
 ### Table

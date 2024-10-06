@@ -13,13 +13,13 @@
     - [`required_with` and `required_with_all`](#required_with-and-required_with_all)
     - [`required_if` and `required_unless`](#required_if-and-required_unless)
 - [Validate Nested Properties (TBD)](#validate-nested-properties-tbd)
+- [`in`](#in)
 
 ## Things worth noting
 
 By default, Laravel includes the `TrimStrings` and `ConvertEmptyStringsToNull` middleware in your
-application's global middleware stack. Because of this, you will often need to mark your
-"optional" request fields as `nullable` if you do not want the validator to consider `null` values
-as invalid.
+application's global middleware stack. Because of this, you will often need to mark your "optional"
+request fields as `nullable` if you do not want the validator to consider `null` values as invalid.
 
 
 ## Numbers and Currency
@@ -38,7 +38,6 @@ with a dot followed by exactly two digits.
   at all.
 - `$` : This asserts the end of a line. The pattern must match at the end of the line.
 
-
 ### Phone Number
 
 ```php
@@ -47,12 +46,9 @@ with a dot followed by exactly two digits.
 
 In this example, we're validating a phone number input called "phone_number" that must be required, a string, and match the regular expression pattern of "^[0-9+\s]+$", which allows only numbers, plus sign, and spaces. We're also setting a minimum length of 10 characters and a maximum length of 20 characters for the phone number.
 
-
 ## Unique
 
 `unique:table,column,except,idColumn`
-
-
 
 ### Ignore a given ID or a specific record
 
@@ -66,8 +62,6 @@ use Illuminate\Validation\Rule;
 
 'code' => ['required', Rule::unique('courses')->ignore($this->course)],
 ```
-
-
 
 ### Unique Based on Multiple Conditions
 
@@ -87,7 +81,7 @@ WHERE clause to work, and in this case, when the `is_category` field is
 `false`, there is no need to apply any condition to the query.
 
 ```php
-'editing.route_prefix' => [
+'route_prefix' => [
     Rule::requiredIf($this->editing->is_category),
     Rule::unique('pages', 'route_prefix')
         ->where(function ($query) {
@@ -100,9 +94,7 @@ WHERE clause to work, and in this case, when the `is_category` field is
 ],
 ```
 
-
 ## Conditional Validation
-
 
 ### Exclude
 
@@ -115,7 +107,6 @@ WHERE clause to work, and in this case, when the `is_category` field is
 you can check multiple against values using comma separated values.
 
 ### Required
-
 
 #### `required_with` and `required_with_all`
 
@@ -142,12 +133,15 @@ you can check multiple against values using comma separated values.
 ```
 
 
+## `in`
 
+Is valid option for the `in` rule to use the `keys` method on a collection to get a comma separated list of keys.
 
-    'editing.order_date' => 'required|date',
+```php
+'status' => 'required|in:active,inactive,pending',
+```
 
-    // convert to comma separated list of keys
-    'editing.status' => 'required|in:' . collect(Order::STATUSES)->keys()->implode(','),
-
-
-
+```php
+// convert to comma separated list of keys
+'status' => 'required|in:' . collect(Order::STATUSES)->keys()->implode(','),
+```

@@ -95,7 +95,10 @@ erDiagram
 
 ## Flow Chart
 
-```
+``` bash
+---
+title: Diagram Title
+---
 flowchart TD
     A[Start] --> B{Is it?}
     B -->|Yes| C[OK]
@@ -106,6 +109,9 @@ flowchart TD
 
 ```mermaid +parse
 <x-mermaid>
+    ---
+    title: Diagram Title
+    ---
     flowchart LR
         A[Start] --> B{Is it?}
         B -->|Yes| C[OK]

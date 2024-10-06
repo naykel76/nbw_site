@@ -3,10 +3,24 @@
 Here are some common questions and issues that you may encounter while working with Laravel.
 
 - [Models](#models)
+  - [How can I set the default sort column on a model?](#how-can-i-set-the-default-sort-column-on-a-model)
   - [How can I populate Laravel models without DB data?](#how-can-i-populate-laravel-models-without-db-data)
 
-
 ## Models
+
+### <question>How can I set the default sort column on a model?</question>
+
+Eloquent orders records based on their primary key, you can change the default sorting column by
+adding a global scope to the model.
+
+
+```php
+protected static function booted() {
+    static::addGlobalScope('position', function (Builder $builder) {
+        $builder->orderBy('position');
+    });
+}
+```
 
 ### <question>How can I populate Laravel models without DB data?</question>
 

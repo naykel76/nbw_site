@@ -17,6 +17,11 @@
                 "icon": "mysql"
             },
             {
+                "name": "INSERT",
+                "route_name": "docs.sql.insert",
+                "icon": "mysql"
+            },
+            {
                 "name": "JOIN",
                 "route_name": "docs.sql.join",
                 "icon": "mysql"

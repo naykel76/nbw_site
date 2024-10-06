@@ -3,15 +3,14 @@
 
 - [Split a string into multiple columns](#split-a-string-into-multiple-columns)
 - [Date and Time](#date-and-time)
-    - [Set current date `CURDATE()`](#set-current-date-curdate)
+  - [Set current date `CURDATE()`](#set-current-date-curdate)
 - [CREATE](#create)
 - [`DELETE` all records](#delete-all-records)
 - [`DELETE` conditional records](#delete-conditional-records)
-- [INSERT](#insert)
-    - [Specify Columns](#specify-columns)
 - [Functions](#functions)
-        - [Select by the number of segments in a path](#select-by-the-number-of-segments-in-a-path)
+    - [Select by the number of segments in a path](#select-by-the-number-of-segments-in-a-path)
 - [Advance query examples](#advance-query-examples)
+- [Drop All Tables](#drop-all-tables)
 
 <!-- /TOC -->
 
@@ -75,30 +74,6 @@ DELETE FROM my_table WHERE [condition];
 ```
 
 <a id="markdown-insert" name="insert"></a>
-
-## INSERT
-FYI, both `VAULE` and `VAULES` are valid syntax.
-
-```sql
--- use null for AI values
-INSERT INTO my_table VALUES (val1, val2, ...);
--- specify columns
-INSERT INTO my_table(id, col1, col2) VALUES (null, val1, val2)
--- seperate records with a comma to insert multiple records
-INSERT INTO my_table(id, col1, col2) VALUES (null, val1, val2), (null, val1, val2)
--- copy all records from another table
-INSERT INTO my_table SELECT * FROM other_table;
-```
-
-<a id="markdown-specify-columns" name="specify-columns"></a>
-
-### Specify Columns
-```sql
-INSERT INTO my_table(id, col1, col2) VALUES (null, val1, val2)
--- seperate records with a comma to insert multiple records
-INSERT INTO my_table(id, col1, col2) VALUES (null, val1, val2), (null, val1, val2)
-```
-
 
 
 
@@ -197,3 +172,29 @@ $courseOutline = ExamPrepOutline::where('courses', 'like', "%$code%")
 |  94   | item  |   5   | Milk expression                                | EP04. EP06 |     89      |            |
 |  95   | item  |   6   | Position of the breastfeeding dyad (hands-off) |    EP04    |     89      |            |
 |  97   | item  |   8   | Skin-to-skin (kangaroo care)                   |    EP04    |     89      |            |
+
+
+## Drop All Tables
+
+This script first disables foreign key checks to avoid issues with foreign key constraints,
+generates the `DROP TABLE` statements, and then re-enables foreign key checks. Note that you need to
+manually execute the generated `DROP TABLE` statements after generating the initial script as shown
+below.
+
+```sql
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- Generate DROP TABLE statements for all tables
+SET @tables = NULL;
+SELECT GROUP_CONCAT('`', table_name, '`') INTO @tables
+FROM information_schema.tables
+WHERE table_schema = (SELECT DATABASE());
+
+-- Execute the DROP TABLE statements
+SET @tables = CONCAT('DROP TABLE IF EXISTS ', @tables);
+PREPARE stmt FROM @tables;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+
+SET FOREIGN_KEY_CHECKS = 1;
+```

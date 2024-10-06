@@ -15,6 +15,10 @@
                 "name": "Troubleshooting",
                 "route_name": "docs.livewire.troubleshooting",
                 "icon": "livewire"
+            },
+            {
+                "name": "FAQ's and Trouble Shooting",
+                "route_name": "docs.livewire.faqs-trouble-shooting"
             }
         ]
     },

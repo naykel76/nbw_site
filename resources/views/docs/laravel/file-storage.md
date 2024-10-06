@@ -5,8 +5,8 @@
 - [Difference between `Filesystem` and `Storage`](#difference-between-filesystem-and-storage)
 - [Quick Reference Table](#quick-reference-table)
 - [Storing Files](#storing-files)
-    - [Store vs Save](#store-vs-save)
-    - [Naming Files](#naming-files)
+  - [Store vs Save](#store-vs-save)
+  - [Naming Files](#naming-files)
 - [Getting Files](#getting-files)
 - [Deleting Files](#deleting-files)
 
@@ -47,7 +47,7 @@ In short;
 ## Quick Reference Table
 
 | Action                              | `Storage` Facade                                                 | Helper                                    |
-| ----------------------------------- | ---------------------------------------------------------------- | ----------------------------------------- |
+| :----------------------------------- | ---------------------------------------------------------------- | ----------------------------------------- |
 | Store a file                        | `Storage::disk('public')->put('path/to/file', $contents);`       | `$file->store('path/to/file', 'public');` |
 | Check if a file exists              | `$exists = Storage::disk('public')->exists('path/to/file');`     | `$exists = $file->isValid();`             |
 | Delete a file                       | `Storage::disk('public')->delete('path/to/file');`               | Not available                             |
