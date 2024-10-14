@@ -1,5 +1,5 @@
 {
-    "General": {
+    "Getting Started": {
         "links": [
             {
                 "name": "Quick Reference",
@@ -7,12 +7,16 @@
                 "icon_logo": "laravel"
             },
             {
-                "name": "FAQ's and Trouble Shooting",
-                "route_name": "docs.laravel.faqs-trouble-shooting"
+                "name": "FAQ's",
+                "route_name": "docs.laravel.faqs"
+            },
+            {
+                "name": "Troubleshooting",
+                "route_name": "docs.laravel.troubleshooting"
             }
         ]
     },
-    "Cheatsheets": {
+    "Essentuals": {
         "links": [
             {
                 "name": "Authorization",
@@ -83,11 +87,6 @@
     "Database and Eloquent": {
         "links": [
             {
-                "name": "Things Worth Knowing",
-                "route_name": "docs.laravel.database-eloquent.things-worth-knowing",
-                "type": "blade"
-            },
-            {
                 "name": "Query Builder",
                 "route_name": "docs.laravel.eloquent-query-builder"
             },
@@ -98,6 +97,18 @@
             {
                 "name": "Casting and Mutators",
                 "route_name": "docs.laravel.cast-and-mutators"
+            },
+            {
+                "name": "Eloquent: The Wrong Way",
+                "route_name": "docs.laravel.eloquent-the-wrong-way"
+            },
+            {
+                "name": "Dymistify Eager Loading",
+                "route_name": "docs.laravel.blogs.demystify-eager-loading"
+            },
+            {
+                "name": "Optomizing Eloquent Queries for Better Performance",
+                "route_name": "docs.laravel.blogs.optimizing-eloquent-queries-for-better-performance"
             }
         ]
     },

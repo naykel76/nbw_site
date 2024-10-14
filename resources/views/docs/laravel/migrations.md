@@ -1,15 +1,10 @@
 # Laravel Migrations
 
-<!-- TOC -->
-
 - [Quick Reference](#quick-reference)
 - [Foreign Key Constraints](#foreign-key-constraints)
 - [Cascade Actions](#cascade-actions)
 - [Check for Table Existence](#check-for-table-existence)
 
-<!-- /TOC -->
-
-<a id="markdown-quick-reference" name="quick-reference"></a>
 
 ## Quick Reference
 
@@ -20,10 +15,11 @@
 | `php artisan migrate:reset`             | Rollback migrations                            |
 | `php artisan migrate:rollback --step=5` |                                                |
 
-<a id="markdown-foreign-key-constraints" name="foreign-key-constraints"></a>
-
 ## Foreign Key Constraints
 
+<a href="https://laravel.com/docs/11.x/migrations#foreign-key-constraints" target="blank">Laravel Foreign Key Constraints</a>
+
+**When using the verbose syntax, you must define the column before defining the foreign key constraint.**
 
 ```php
 // verbose syntax
@@ -34,20 +30,26 @@ $table->foreign('user_id')->references('id')->on('users');
 $table->foreignId('user_id')->constrained();
 ```
 
-<a id="markdown-cascade-actions" name="cascade-actions"></a>
+To force referential integrity, you can add the `->constrained()` method to the column definition.
+This will create a foreign key constraint on the column.
+
+```php
+$table->foreignId('user_id')->constrained();
+```
 
 ## Cascade Actions
 
 ```php
-$table->foreignId('user_id')->constrained()->onUpdate('cascade')->onDelete('cascade');
+$table->foreignId('post_id')->constrained()->cascadeOnDelete();
+```
+
+```php
 $table->cascadeOnUpdate();      // Updates should cascade.
 $table->restrictOnUpdate();     // Updates should be restricted.
 $table->cascadeOnDelete();      // Deletes should cascade.
 $table->restrictOnDelete();     // Deletes should be restricted.
 $table->nullOnDelete();         // Deletes should set the foreign key value to null.
 ```
-
-<a id="markdown-check-for-table-existence" name="check-for-table-existence"></a>
 
 ## Check for Table Existence
 

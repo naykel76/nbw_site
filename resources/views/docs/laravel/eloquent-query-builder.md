@@ -1,31 +1,48 @@
 # Eloquent and Query Builder
 
-- [JOIN](#join)
-  - [JOIN and SELECT specific columns](#join-and-select-specific-columns)
-  - [JOIN multiple related tables](#join-multiple-related-tables)
+- [Joining Tables in Laravel](#joining-tables-in-laravel)
   - [JOIN and ORDER BY relationship attribute](#join-and-order-by-relationship-attribute)
   - [Create an alias for shorter code](#create-an-alias-for-shorter-code)
 - [where or Where](#where-or-where)
 - [Get random record](#get-random-record)
 - [Get unique records `distinct()` or `groupBy()`](#get-unique-records-distinct-or-groupby)
 - [Raw Expressions](#raw-expressions)
+- [Tips and Tricks](#tips-and-tricks)
+  - [Why use `->value('id')` over `self::select('id')`?](#why-use--valueid-over-selfselectid)
+  - [When to use `self::select('id')`:](#when-to-use-selfselectid)
+  - [Summary](#summary)
 
 
-## JOIN
 
-### JOIN and SELECT specific columns
 
-The first argument passed to the join method is the name of the table you need to join to, while
-the remaining arguments specify the column constraints for the join.
+## Joining Tables in Laravel 
 
-**Pseudo:** Join `some_table`, where the `current_table.pk` equals `some_table.fk`
+The first argument passed to the join method is the name of the table you need to join to, while the
+remaining arguments specify the column constraints for the join.
+
+**Pseudo:** Join `some_table`, where `this_table.id` (primary key) equals `some_table.id` (foreign key).
+
+Suppose you have a posts table and a users table. You want to join these tables to include the
+user_id and name columns from the users table in the posts table.
+
+Here’s how you can do it:
 
 ```php
-CurrentTable::join('some_table', 'current_table.pk', '=', 'some_table.fk')
-    ->select('current_table.*', 'some_table.title as title');
+$posts = Post::table('posts')
+    ->join('users', 'posts.user_id', '=', 'users.id')
+    ->select('posts.*', 'users.name as author_name')
+    ->get();
 ```
 
-### JOIN multiple related tables
+Or if you we in the `Post` model,  you can create a query scope:
+
+```php
+public function scopeOverview(Builder $query): Builder
+{
+    return $this->query->join('users', 'posts.user_id', '=', 'users.id')
+        ->select('posts.*', 'users.name as author_name');
+}
+```
 
 ### JOIN and ORDER BY relationship attribute
 
@@ -97,3 +114,48 @@ expression, you may use the raw method provided by the DB facade:
 ```php
  ->addSelect(DB::raw("IF(courses.published_at IS NOT NULL AND courses.tested_at IS NOT NULL, 'available', 'not available') AS status"))
 ```
+
+
+## Tips and Tricks
+
+### Why use `->value('id')` over `self::select('id')`?
+
+1. **`self::select('id')`:**
+   
+   - This returns an Eloquent builder, which will either return a model or a collection of models if
+     you call `->get()` or `->first()`. 
+   - It’s more suitable when you need to select multiple columns or want to work with the model
+     instance, allowing you to perform additional operations or load relationships.
+
+    ```php
+    return self::select('id')
+        ->where('student_course_id', $studentCourseId)
+        ->where('is_locked', true)
+        ->limit(1);
+    ```
+
+2. **`->value('id')`:**
+   
+   - This directly returns the value of a single column (`id` in this case) without creating a model instance.
+   - It automatically limits the query to one result, so you don’t need to add `->limit(1)`.
+
+    ```php
+    return self::where('student_course_id', $studentCourseId)
+        ->where('is_locked', true)
+        ->value('id');
+    ```
+
+- **Performance:** `->value('id')` skips the overhead of creating an Eloquent model, which is
+  unnecessary if you just want the `id` value.
+- **Simplicity:** It retrieves the first matching value automatically, so you don’t need to add
+  `->limit(1)` or perform further steps to get the actual value.
+- **Use case:** If you only need the `id` and not the entire model, `->value('id')` is more
+  efficient because it directly returns the column value.
+
+### When to use `self::select('id')`:
+- If you need to retrieve other columns alongside `id`.
+- If you need to work with the Eloquent model instance (e.g., to update it or load relationships).
+
+### Summary
+For your specific use case of retrieving the `id` value, `->value('id')` is the better choice. If
+you need more data or a model, then `self::select('id')` is more appropriate.

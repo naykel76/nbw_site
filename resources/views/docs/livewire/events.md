@@ -1,47 +1,69 @@
 # Events
 
-- [Dispatching Events](#dispatching-events)
-  - [Dispatching to a specific component](#dispatching-to-a-specific-component)
+- [Dispatching events from Livewire components](#dispatching-events-from-livewire-components)
+  - [Direct to another component](#direct-to-another-component)
+- [Dispatching events from blade templates](#dispatching-events-from-blade-templates)
+  - [Direct to another component](#direct-to-another-component-1)
 - [Registering event listeners](#registering-event-listeners)
+  - [Registering event listeners using the `$listeners` property](#registering-event-listeners-using-the-listeners-property)
+  - [Registering event listeners using the `On` attribute](#registering-event-listeners-using-the-on-attribute)
 - [Refreshing Techniques](#refreshing-techniques)
-  - [Refreshing a List of Items After an Action Has Been Performed](#refreshing-a-list-of-items-after-an-action-has-been-performed)
+  - [Refreshing a list of items after an action has been performed](#refreshing-a-list-of-items-after-an-action-has-been-performed)
+- [Trouble Shooting](#trouble-shooting)
+  - [Event listeners not working](#event-listeners-not-working)
 
 
-## Dispatching Events
+
+
+## Dispatching events from Livewire components
 
 ```php
-$this->dispatch('eventName', key: value);
+$this->dispatch('event-name', key: value);
 ```
-<!-- 
-### From blade template
+
+### Direct to another component
+
+```php
+$this->dispatch('event-name')->to(MyComponent::class);
+```
+
+## Dispatching events from blade templates
 
 ```html
 <button wire:click="$dispatch('event-name', { key: value })"> ... </button>
 ```
 
+### Direct to another component
+
 ```html
 <button wire:click="$dispatchTo('my-component', 'event-name', { key: value })"> ... </button>
 ```
 
-### Dispatching directly to another component
-
-```php
-$this->dispatch('event-name')->to(MyComponent::class);
-``` -->
-
-### Dispatching to a specific component
-
-```php
-$this->dispatch('open-modal')->to(NewUserModal::class);
+```html +parse
+<x-alert type="info">
+ <p> When using the <code>$dispatchTo</code> method you must define the full path to the component path using dot notation.For example, to dispatch an event to the <code>courses/programming/edit</code> component you would use:</p>
+</x-alert>
 ```
+
+```php
+$this->dispatchTo('courses.programming.edit', 'some-event');
+```
+
+
+
+
+
+
 
 
 ## Registering event listeners
 
+### Registering event listeners using the `$listeners` property
 ```php
 protected $listeners = ['event-name' => 'method'];
 ```
 
+### Registering event listeners using the `On` attribute
 ```php
 use Livewire\Attributes\On;
 
@@ -51,34 +73,46 @@ public function doStuff() { }
 
 ## Refreshing Techniques
 
-### Refreshing a List of Items After an Action Has Been Performed
+### Refreshing a list of items after an action has been performed
 
-https://livewire.laravel.com/docs/events#listening-for-events-from-specific-child-components
+**Scenario:** You're working with a main form that includes a list of items. Each item is a separate
+Livewire component, referred to as 'ListRow'. These items are iterated over within the main
+component. The goal is to refresh this list after an action has been performed.
 
-When using separate Livewire components, the parent component (which contains the list or table)
-won’t automatically know when a child component performs an action, like deleting an item. To notify
-the parent component and refresh the list, you need to dispatch an event from the child component
-and listen for it in the parent component.
-
-The listener can be registered in the parent component using the `$listeners` property or the `On`
-attribute or directly in the view using the `@event` directive.
+Dispatch an event from the 'ListRow' component after an action has been performed. For example,
+when an item is deleted, dispatch a 'refresh-list' event.
 
 ```php
-// Child Component
-public function delete($id) {
-    Item::find($id)->delete();
-    $this->dispatch('deleted');
+// ListRow.php
+public function deleteItem($itemId){
+    // Delete the item
+    Item::find($itemId)->delete();
+    // Dispatch a refresh event to the main component
+    $this->dispatch('refresh-list');
 }
 ```
 
+There are several approaches to achieve this:
+
+Add a listener to the main component and call the `$refresh` method.
+
 ```php
-// Parent Component View
-<livewire:child-component @deleted="$refresh"/>
+// main-component.blade.php
+
+// list in main component
+@foreach ($items as $item)
+    <livewire:list-row :item="$item" :key="$item->id" />
+@endforeach
 ```
 
-Steps to Refresh the List:
+```php
+// MainComponent.php
+protected $listeners = ['refresh-list' => '$refresh'];
+```
 
-1. In the child component, dispatch an event after performing the action (e.g., deleting an item).
-2. In the parent components view, register the event listener using the @event directive.
-3. When the event is dispatched, the parent component will automatically refresh the list.
 
+## Trouble Shooting
+
+### Event listeners not working
+
+Make sure the Livewire component blade views are on the same page. 

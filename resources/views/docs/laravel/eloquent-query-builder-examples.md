@@ -6,19 +6,19 @@
 - [Subquery using regex](#subquery-using-regex)
 - [Group with nesting loops](#group-with-nesting-loops)
 - [Group with groupBy()](#group-with-groupby)
+- [Additional Resources](#additional-resources)
 
 <!-- /TOC -->
 
-<a id="markdown-quick-reference" name="quick-reference"></a>
 
 ## Quick Reference
 
 ```php
-$course = Course::first();
+// Eager load related models when the model already exists
+$sc = $studentCourse->load('course.modules.media');
+// Eager load related models when the model already exists
+$sc = StudentCourse::first()->with('course.modules.media');
 ```
-
-
-<a id="markdown-subquery-using-regex" name="subquery-using-regex"></a>
 
 ## Subquery using regex
 
@@ -43,8 +43,6 @@ Page::where(function ($query) {
 // 'category/books' AND '/category/books'
 ```
 
-<a id="markdown-group-with-nesting-loops" name="group-with-nesting-loops"></a>
-
 ## Group with nesting loops
 
 ```php
@@ -60,8 +58,6 @@ Page::where(function ($query) {
 @endforeach
 ```
 
-
-<a id="markdown-group-with-groupby" name="group-with-groupby"></a>
 
 ## Group with groupBy()
 
@@ -86,3 +82,8 @@ $pages = \Naykel\Pageit\Models\Page::get()
     @endforeach
 @endforeach
 ```
+
+
+## Additional Resources
+
+<a href="/docs/laravel/blogs/demystify-eager-loading" target="blank">Demystify Eager Loading</a>

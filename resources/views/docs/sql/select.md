@@ -43,7 +43,3 @@ Return a limited number of results to improve performance by using the `LIMIT` c
 SELECT first_name FROM students LIMIT 0, 16
 SELECT first_name FROM students LIMIT 17, 16
 ```
-
-
-
-

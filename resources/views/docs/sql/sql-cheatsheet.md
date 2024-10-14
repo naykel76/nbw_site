@@ -11,6 +11,9 @@
     - [Select by the number of segments in a path](#select-by-the-number-of-segments-in-a-path)
 - [Advance query examples](#advance-query-examples)
 - [Drop All Tables](#drop-all-tables)
+- [Making Queries Readable](#making-queries-readable)
+- [FAQ's](#faqs)
+    - [Does it make sense to add foreign keys in deep relationships?](#does-it-make-sense-to-add-foreign-keys-in-deep-relationships)
 
 <!-- /TOC -->
 
@@ -198,3 +201,54 @@ DEALLOCATE PREPARE stmt;
 
 SET FOREIGN_KEY_CHECKS = 1;
 ```
+
+
+
+## Making Queries Readable
+
+To make queries more readable, you can use subqueries to break down the query into smaller parts.
+This can be useful when you have a complex query that is difficult to read.
+
+For example, the following query uses a subquery to get the `id` of a student's courses and then
+uses that `id` to get the lessons for those courses.
+
+```sql
+-- Subquery
+WITH StudentCourses AS ( 
+    SELECT id FROM student_courses 
+    WHERE user_id = 1
+)
+
+-- Main query
+SELECT * FROM student_lessons 
+WHERE student_course_id IN (
+    SELECT id FROM StudentCourses
+);
+```
+
+
+## FAQ's
+
+#### <question>Does it make sense to add foreign keys in deep relationships?</question>
+
+When structuring database tables, is it better to add foreign keys for deep relationships or rely on
+queries to navigate between related tables?
+
+For example:
+- A **user** has many **student courses**
+- A **student course** has many **lessons**
+- A **lesson** has one **answer**
+
+Should `user_id` be included in each table?
+- A **student course** belongs to one **user**
+- A **lesson** belongs to one **user**
+- A **question** belongs to one **user**
+
+In most cases, adding `user_id` to every table in a deep relationship is unnecessary. Use foreign
+keys and queries to navigate between related tables. 
+
+Only add `user_id` to deeper tables if direct access to user data is frequently needed for
+performance. Otherwise, rely on the existing relationships.
+
+
+

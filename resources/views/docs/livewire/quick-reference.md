@@ -1,14 +1,9 @@
 # Livewire Quick Reference
 
-<!-- TOC -->
-
 - [HTML Directives](#html-directives)
 - [Entangle](#entangle)
-- [Tips and Tricks](#tips-and-tricks)
+- [Livewire Security Tips](#livewire-security-tips)
 
-<!-- /TOC -->
-
-<a id="markdown-html-directives" name="html-directives"></a>
 
 ## HTML Directives
 
@@ -27,15 +22,14 @@ Target specific elements with `wire:target` and `wire:loading.class` or `wire:lo
 <button wire:click="save" wire:loading.attr="disabled" wire:target="save">Save</button>
 ```
 
-<a id="markdown-entangle" name="entangle"></a>
-
 ## Entangle
 
 Livewire's `@entangle` directive is used to create a two-way data binding between a Livewire
 component's property and an AlpineJs component's data. This means that when the Livewire property
 changes, the AlpineJs data will automatically update to reflect the change, and vice versa.
 
-In the following example, AlpineJs binds the `content` property to the Livewire component's `editor1` property.
+In the following example, AlpineJs binds the `content` property to the Livewire component's
+`editor1` property.
 
 ```html
 <div x-data="{content: @entangle('editor1')}">
@@ -43,9 +37,9 @@ In the following example, AlpineJs binds the `content` property to the Livewire 
 </div>
 ```
 
-It may not always be practical to bind directly to a Livewire component's property. In the
-following example, AlpineJs binds the content property to a dynamic Livewire component's
-property. The property name is determined by the model attribute passed to the component.
+It may not always be practical to bind directly to a Livewire component's property. In the following
+example, AlpineJs binds the content property to a dynamic Livewire component's property. The
+property name is determined by the model attribute passed to the component.
 
 ```html
 <div x-data="{content: @entangle($attributes->wire('model'))}">
@@ -53,7 +47,54 @@ property. The property name is determined by the model attribute passed to the c
 </div>
 ```
 
-<a id="markdown-tips-and-tricks" name="tips-and-tricks"></a>
 
-## Tips and Tricks
+## Livewire Security Tips
 
+https://livewire.laravel.com/docs/security
+
+
+- When setting public properties, Livewire treats models differently than plain values such as
+  strings and integers. Because of this, store the entire model as a property on the component
+  instead of individual id.
+
+```php
+class ShowPost extends Component
+{
+    public Post $post;
+ 
+    // ...
+}
+```
+
+- Locking properties is done by applying the #[Locked] attribute. Now if users attempt to tamper
+  with this value an error will be thrown.
+
+```php
+use Livewire\Attributes\Locked;
+
+class ShowPost extends Component
+{
+    #[Locked]
+    public $postId;
+ 
+    // ...
+}
+```
+
+
+
+```php
+class ShowPost extends Component
+{
+    public $postId;
+ 
+    public function delete()
+    {
+        $post = Post::find($this->postId);
+ 
+        $this->authorize('delete', $post); // ????
+ 
+        $post->delete();
+    }
+}
+```
