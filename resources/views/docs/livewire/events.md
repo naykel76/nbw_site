@@ -3,6 +3,7 @@
 - [Dispatching events from Livewire components](#dispatching-events-from-livewire-components)
   - [Direct to another component](#direct-to-another-component)
 - [Dispatching events from blade templates](#dispatching-events-from-blade-templates)
+- [Dispatching events from from objects](#dispatching-events-from-from-objects)
   - [Direct to another component](#direct-to-another-component-1)
 - [Registering event listeners](#registering-event-listeners)
   - [Registering event listeners using the `$listeners` property](#registering-event-listeners-using-the-listeners-property)
@@ -32,6 +33,11 @@ $this->dispatch('event-name')->to(MyComponent::class);
 ```html
 <button wire:click="$dispatch('event-name', { key: value })"> ... </button>
 ```
+## Dispatching events from from objects
+
+```php
+$this->component->dispatch('notify', 'Lesson form initialized');
+```
 
 ### Direct to another component
 
@@ -48,13 +54,6 @@ $this->dispatch('event-name')->to(MyComponent::class);
 ```php
 $this->dispatchTo('courses.programming.edit', 'some-event');
 ```
-
-
-
-
-
-
-
 
 ## Registering event listeners
 
@@ -109,7 +108,6 @@ Add a listener to the main component and call the `$refresh` method.
 // MainComponent.php
 protected $listeners = ['refresh-list' => '$refresh'];
 ```
-
 
 ## Trouble Shooting
 

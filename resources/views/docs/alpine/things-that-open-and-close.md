@@ -2,7 +2,6 @@
 
 - [Simple Toggle](#simple-toggle)
 - [Transition and Styles](#transition-and-styles)
-  - [Multiple Items (single open)](#multiple-items-single-open)
 
 ## Simple Toggle
 
@@ -81,73 +80,6 @@ Add `x-collapse` to the `x-show` directive to animate the opening and closing of
             <x-gt-icon name="chevron-up" class="wh-1" x-cloak x-show="open" />
         </button>
         <div x-show="open" x-transition class="pxy-1 bx">
-            Hey there!
-        </div>
-    </div>
-</div>
-```
-
-### Multiple Items (single open)
-
-```html +parse
-<div x-data="{ active: 0, }" class="space-y">
-    <div x-data="{
-        id: 1,
-        get expanded() { return this.active === this.id },
-        set expanded(value) { this.active = value ? this.id : null }
-    }">
-        <button x-on:click="expanded =! expanded"
-            :aria-expanded="expanded" class="btn primary">
-            <span x-show="!expanded">Open Item One</span>
-            <span x-show="expanded">Close Item One</span>
-        </button>
-        <div x-show="expanded">
-            Hey there!
-        </div>
-    </div>
-    <div x-data="{
-        id: 2,
-        get expanded() { return this.active === this.id },
-        set expanded(value) { this.active = value ? this.id : null }
-    }">
-        <button x-on:click="expanded =! expanded"
-            :aria-expanded="expanded" class="btn primary">
-            <span x-show="!expanded">Open Item Two</span>
-            <span x-show="expanded">Close Item Two</span>
-        </button>
-        <div x-show="expanded">
-            Hey there!
-        </div>
-    </div>
-</div>
-```
-```html 
-<div x-data="{ active: 0, }" class="space-y">
-    <div x-data="{
-        id: 1,
-        get expanded() { return this.active === this.id },
-        set expanded(value) { this.active = value ? this.id : null }
-    }">
-        <button x-on:click="expanded =! expanded"
-            :aria-expanded="expanded" class="btn primary">
-            <span x-show="!expanded">Open Item One</span>
-            <span x-show="expanded">Close Item One</span>
-        </button>
-        <div x-show="expanded">
-            Hey there!
-        </div>
-    </div>
-    <div x-data="{
-        id: 2,
-        get expanded() { return this.active === this.id },
-        set expanded(value) { this.active = value ? this.id : null }
-    }">
-        <button x-on:click="expanded =! expanded"
-            :aria-expanded="expanded" class="btn primary">
-            <span x-show="!expanded">Open Item Two</span>
-            <span x-show="expanded">Close Item Two</span>
-        </button>
-        <div x-show="expanded">
             Hey there!
         </div>
     </div>

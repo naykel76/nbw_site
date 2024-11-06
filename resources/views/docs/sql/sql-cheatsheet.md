@@ -1,12 +1,10 @@
 # SQL Cheatsheet
-<!-- TOC -->
 
+- [Group by example](#group-by-example)
 - [Split a string into multiple columns](#split-a-string-into-multiple-columns)
 - [Date and Time](#date-and-time)
   - [Set current date `CURDATE()`](#set-current-date-curdate)
 - [CREATE](#create)
-- [`DELETE` all records](#delete-all-records)
-- [`DELETE` conditional records](#delete-conditional-records)
 - [Functions](#functions)
     - [Select by the number of segments in a path](#select-by-the-number-of-segments-in-a-path)
 - [Advance query examples](#advance-query-examples)
@@ -15,17 +13,39 @@
 - [FAQ's](#faqs)
     - [Does it make sense to add foreign keys in deep relationships?](#does-it-make-sense-to-add-foreign-keys-in-deep-relationships)
 
-<!-- /TOC -->
-
-| Action | Command                                    | Notes |
-| :----- | :----------------------------------------- | :---- |
-| COUNT  | `SELECT COUNT(Id) FROM stock;`             |       |
-| MAX    | `SELECT MAX(Quantity) FROM stock;`         |       |
-| SUM    | `SELECT SUM(Price * Quantity) FROM stock;` |       |
-| SUM    | `SELECT SUM(Price) FROM stock;`            |       |
 
 
-<a id="markdown-split-a-string-into-multiple-columns" name="split-a-string-into-multiple-columns"></a>
+## Group by example
+
+
+```sql
+select id, module_id, title from lessons
+where id in (11, 13, 15, 22, 23, 24, 25, 26)
+group by module_id;
+```
+
+<div class="compare"></div>
+
+```sql
+11	7	Introduction
+13	7	Quiz 1 
+15	7	Quiz 2
+22	7	Learning Outcomes
+23	8	Learning Outcomes
+24	8	Introduction
+25	9	Introduction
+26	9	Learning Outcomes
+```
+
+```sql
+-- Grouped by module_id
+
+11	7	Introduction
+23	8	Learning Outcomes
+25	9	Introduction
+```
+
+
 
 ## Split a string into multiple columns
 
@@ -37,20 +57,13 @@ SET lastname = SUBSTRING_INDEX(name, ' ', -1),
     firstname = SUBSTRING_INDEX(name, ' ', 1);
 ```
 
-<a id="markdown-date-and-time" name="date-and-time"></a>
-
 ## Date and Time
-
-<a id="markdown-set-current-date-curdate" name="set-current-date-curdate"></a>
 
 ### Set current date `CURDATE()`
 ```sql
 UPDATE my_table
 SET date_column = CURDATE();
 ```
-
-
-<a id="markdown-create" name="create"></a>
 
 ## CREATE
 ```sql
@@ -60,27 +73,6 @@ CREATE TABLE IF NOT EXISTS table_name (
 );
 ```
 
-
-
-<a id="markdown-delete-all-records" name="delete-all-records"></a>
-
-## `DELETE` all records
-```sql
-DELETE FROM my_table;
-```
-
-<a id="markdown-delete-conditional-records" name="delete-conditional-records"></a>
-
-## `DELETE` conditional records
-```sql
-DELETE FROM my_table WHERE [condition];
-```
-
-<a id="markdown-insert" name="insert"></a>
-
-
-
-<a id="markdown-functions" name="functions"></a>
 
 ## Functions
 
@@ -93,12 +85,6 @@ REPLACE(str_or_field, find_string, replace_with)
 SELECT title, REPLACE(title, 'Section', 'Module')
 FROM chapters WHERE title LIKE '%Section%';
 ```
-
-
-
-
-
-<a id="markdown-select-by-the-number-of-segments-in-a-path" name="select-by-the-number-of-segments-in-a-path"></a>
 
 #### Select by the number of segments in a path
 ```sql
@@ -113,8 +99,6 @@ AND LENGTH(route) - LENGTH(REPLACE(route, '/', '')) + 1 = 2 filters the results 
 
 This will only work with the exact number of slashes
 
-<a id="markdown-advance-query-examples" name="advance-query-examples"></a>
-
 ## Advance query examples
 | id  | type | title           | courses | main_category_id | sub_category_id |
 | --- | ---- | --------------- | ------- | ---------------- | --------------- |
@@ -125,7 +109,6 @@ This will only work with the exact number of slashes
 | 5   | sub  | Sub Category 2  | null    | 1                | null            |
 | 6   | item | Item 3          |         | 1                | 5               |
 | 7   | item | Item 4          |         | 1                | 5               |
-
 
 
 

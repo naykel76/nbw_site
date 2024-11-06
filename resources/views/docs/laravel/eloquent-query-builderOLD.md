@@ -1,8 +1,5 @@
 # Eloquent and Query Builder
 
-- [Joining Tables in Laravel](#joining-tables-in-laravel)
-  - [JOIN and ORDER BY relationship attribute](#join-and-order-by-relationship-attribute)
-  - [Create an alias for shorter code](#create-an-alias-for-shorter-code)
 - [where or Where](#where-or-where)
 - [Get random record](#get-random-record)
 - [Get unique records `distinct()` or `groupBy()`](#get-unique-records-distinct-or-groupby)
@@ -13,36 +10,6 @@
   - [Summary](#summary)
 
 
-
-
-## Joining Tables in Laravel 
-
-The first argument passed to the join method is the name of the table you need to join to, while the
-remaining arguments specify the column constraints for the join.
-
-**Pseudo:** Join `some_table`, where `this_table.id` (primary key) equals `some_table.id` (foreign key).
-
-Suppose you have a posts table and a users table. You want to join these tables to include the
-user_id and name columns from the users table in the posts table.
-
-Here’s how you can do it:
-
-```php
-$posts = Post::table('posts')
-    ->join('users', 'posts.user_id', '=', 'users.id')
-    ->select('posts.*', 'users.name as author_name')
-    ->get();
-```
-
-Or if you we in the `Post` model,  you can create a query scope:
-
-```php
-public function scopeOverview(Builder $query): Builder
-{
-    return $this->query->join('users', 'posts.user_id', '=', 'users.id')
-        ->select('posts.*', 'users.name as author_name');
-}
-```
 
 ### JOIN and ORDER BY relationship attribute
 

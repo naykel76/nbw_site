@@ -1,5 +1,5 @@
 {
-    "masin": {
+    "main": {
         "links": [
             {
                 "name": "Basics",
@@ -19,6 +19,15 @@
             {
                 "name": "Events",
                 "route_name": "docs.alpine.events",
+                "icon": "alpinejs"
+            }
+        ]
+    },
+    "components": {
+        "links": [
+            {
+                "name": "Accordion",
+                "route_name": "docs.alpine.accordion",
                 "icon": "alpinejs"
             }
         ]

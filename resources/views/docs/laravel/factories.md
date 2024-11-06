@@ -1,5 +1,6 @@
 # Factories
 
+- [Using Factories to Generate Related Models](#using-factories-to-generate-related-models)
 - [Set Factory State](#set-factory-state)
 - [Factory Relationships](#factory-relationships)
   - [Has Many Relationships](#has-many-relationships)
@@ -7,6 +8,17 @@
     - [`randomFloat`](#randomfloat)
   - [Unique Data](#unique-data)
 - [Additional Resources](#additional-resources)
+
+## Using Factories to Generate Related Models
+
+When creating a model with relationships, you can use factories to generate related models.
+
+```php
+return [
+    'started_at' => now(),
+    'user_id' => User::factory(), // Use the User factory to generate a user_id
+];
+```
 
 ## Set Factory State
 

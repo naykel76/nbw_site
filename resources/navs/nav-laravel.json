@@ -87,12 +87,20 @@
     "Database and Eloquent": {
         "links": [
             {
-                "name": "Query Builder",
-                "route_name": "docs.laravel.eloquent-query-builder"
+                "name": "Quick Reference",
+                "route_name": "docs.laravel.eloquent-quick-reference"
             },
             {
-                "name": "Eloquent and Query Examples",
-                "route_name": "docs.laravel.eloquent-query-builder-examples"
+                "name": "Troubleshooting",
+                "route_name": "docs.laravel.eloquent-troubleshooting"
+            },
+            {
+                "name": "Grouping and Sorting",
+                "route_name": "docs.laravel.eloquent-grouping-and-sorting"
+            },
+            {
+                "name": "Joins and Subqueries",
+                "route_name": "docs.laravel.eloquent-joins-and-subqueries"
             },
             {
                 "name": "Casting and Mutators",
@@ -107,8 +115,12 @@
                 "route_name": "docs.laravel.blogs.demystify-eager-loading"
             },
             {
-                "name": "Optomizing Eloquent Queries for Better Performance",
-                "route_name": "docs.laravel.blogs.optimizing-eloquent-queries-for-better-performance"
+                "name": "Eloquent Optimisation Walkthrough",
+                "route_name": "docs.laravel.eloquent-optimisation-walkthrough"
+            },
+            {
+                "name": "Advanced Nesting and Optimisation Techniques",
+                "route_name": "docs.laravel.eloquent-advanced-techniques-and-optimisation"
             }
         ]
     },

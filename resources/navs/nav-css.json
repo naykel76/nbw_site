@@ -6,6 +6,10 @@
                 "route_name": "docs.css.css-cheatsheet"
             },
             {
+                "name": "FAQ's",
+                "route_name": "docs.css.faqs"
+            },
+            {
                 "name": "Combinators",
                 "route_name": "docs.css.combinators"
             },

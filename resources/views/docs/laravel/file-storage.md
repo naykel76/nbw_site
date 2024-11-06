@@ -1,7 +1,5 @@
 # File, Disks and Storage
 
-<!-- TOC -->
-
 - [Difference between `Filesystem` and `Storage`](#difference-between-filesystem-and-storage)
 - [Quick Reference Table](#quick-reference-table)
 - [Storing Files](#storing-files)
@@ -9,12 +7,8 @@
   - [Naming Files](#naming-files)
 - [Getting Files](#getting-files)
 - [Deleting Files](#deleting-files)
+- [Downloading Files](#downloading-files)
 
-<!-- /TOC -->
-
-<!-- if you don't specify a disk, the default disk will be used. -->
-
-<a id="markdown-difference-between-filesystem-and-storage" name="difference-between-filesystem-and-storage"></a>
 
 ## Difference between `Filesystem` and `Storage`
 
@@ -42,7 +36,6 @@ In short;
 - `Storage` facade is used to interact with any of your configured disks.
 
 
-<a id="markdown-quick-reference-table" name="quick-reference-table"></a>
 
 ## Quick Reference Table
 
@@ -54,12 +47,7 @@ In short;
 | Get a file's size                   | `$size = Storage::disk('public')->size('path/to/file');`         | `$size = $file->getSize();`               |
 | Get a file's last modification time | `$time = Storage::disk('public')->lastModified('path/to/file');` | `$time = $file->getATime();`              |
 
-
-<a id="markdown-storing-files" name="storing-files"></a>
-
 ## Storing Files
-
-<a id="markdown-store-vs-save" name="store-vs-save"></a>
 
 ### Store vs Save
 
@@ -91,9 +79,6 @@ Storage::disk('public')->put('path/to/file', $contents);
 $file->store('path/to/file', 'public');
 ```
 
-
-<a id="markdown-naming-files" name="naming-files"></a>
-
 ### Naming Files
 
 ```php
@@ -101,7 +86,6 @@ $originalName = $file->getClientOriginalName(); // Retrieve the original filenam
 $timestampName = time() . '.' . $image->getClientOriginalExtension();
 ```
 
-<a id="markdown-getting-files" name="getting-files"></a>
 
 ## Getting Files
 
@@ -110,7 +94,6 @@ Storage::disk('public')->get('path/to/file');
 ```
 
 
-<a id="markdown-deleting-files" name="deleting-files"></a>
 
 ## Deleting Files
 
@@ -119,4 +102,12 @@ use Illuminate\Support\Facades\Storage;
 
 Storage::disk('public')->delete('path/to/file');
 Storage::delete(['path/to/file1', 'path/to/file2']);
+```
+
+
+## Downloading Files
+
+```php  
+return Storage::disk('your_disk_name')->download('path/to/file');
+return Storage::download('path/to/file');
 ```

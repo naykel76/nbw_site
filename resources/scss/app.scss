@@ -24,6 +24,15 @@
     $td-bdr-color: hsl(222, 46%, 15%)
 );
 
+// increase the space between lists with nested lists.
+// yep thats a trunk load of ugly but it works!
+.increase-space-1 + ul li:not(ul li ul li) {
+    margin-top: 1rem !important;
+}
+.increase-space-05 + ul li:not(ul li ul li) {
+    margin-top: 0.5rem !important;
+}
+
 // ------------------------------------------------------------------
 // -- MARKDOWN OVERRIDES --
 // ------------------------------------------------------------------
@@ -211,5 +220,3 @@ ol li::before {
 //         }
 //     }
 // }
-
-

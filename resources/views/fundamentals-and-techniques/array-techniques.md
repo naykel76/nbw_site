@@ -5,6 +5,8 @@
 - [Sum the values of an array](#sum-the-values-of-an-array)
   - [PHP](#php-1)
     - [Multi-dimensional array](#multi-dimensional-array)
+- [Merge two arrays](#merge-two-arrays)
+  - [PHP](#php-2)
 
 ## Count the number of items in an array
 
@@ -43,3 +45,12 @@ $cart = [
 $totalQty = array_sum(array_column($cart['items'], 'qty'));
 ```
 
+## Merge two arrays
+
+### PHP
+
+```php
+$first = ['a', 'b', 'c'];
+$second = ['d', 'e', 'f'];
+$merged = array_merge($first, $second);
+```
