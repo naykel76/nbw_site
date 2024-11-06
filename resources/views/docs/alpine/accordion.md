@@ -40,6 +40,36 @@
 </div>
 ```
 
+## Individual Items
+```html +parse
+<div class="space-y-2">
+    <div x-data="{ expanded: false }">
+        <button x-on:click="expanded = !expanded" class="pxy-1 flex justify-between items-center bg-yellow-100 w-full">
+            <span x-show="!expanded">Open Item One</span>
+            <span x-show="expanded">Close Item One</span>
+            <x-gt-icon x-show="!expanded" name="chevron-right" />
+            <x-gt-icon x-show="expanded" name="chevron-down" />
+        </button>
+        <div x-show="expanded" class="mt-0 pxy bdr">
+            Item one content ...
+        </div>
+    </div>
+
+    <div x-data="{ expanded: false }">
+        <button x-on:click="expanded = !expanded" class="pxy-1 flex justify-between items-center bg-yellow-100 w-full">
+            <span x-show="!expanded">Open Item Two</span>
+            <span x-show="expanded">Close Item Two</span>
+            <x-gt-icon x-show="!expanded" name="chevron-right" />
+            <x-gt-icon x-show="expanded" name="chevron-down" />
+        </button>
+        <div x-show="expanded" class="mt-0 pxy bdr">
+            Item two content ...
+        </div>
+    </div>
+</div>
+
+```
+
 ```html
 <div x-data="{ active: 1, }" class="space-y">
     <div x-data="{
