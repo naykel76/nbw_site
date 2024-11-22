@@ -1,6 +1,9 @@
-# Laravel Cheatsheet
-<!-- TOC -->
+# Laravel Quick Reference
 
+- [Debugging Techniques](#debugging-techniques)
+  - [Dumping Variables](#dumping-variables)
+- [Auth](#auth)
+  - [Login Specific User](#login-specific-user)
 - [Installation and Configuration](#installation-and-configuration)
 - [Maintenance Mode](#maintenance-mode)
 - [Blade and Views](#blade-and-views)
@@ -11,9 +14,22 @@
 - [Routes](#routes)
   - [Redirect](#redirect)
 
-<!-- /TOC -->
+## Debugging Techniques
 
-<a id="markdown-installation-and-configuration" name="installation-and-configuration"></a>
+### Dumping Variables
+
+```php
+<pre>{{ json_encode($answers, JSON_PRETTY_PRINT) }}</pre>
+```
+
+## Auth 
+
+### Login Specific User
+
+```php
+Auth::loginUsingId(1);
+```
+
 
 ## Installation and Configuration
 
@@ -34,7 +50,6 @@ Tack on the --pest flag to use Pest as the testing framework:
 composer create-project laravel/laravel example-app --pest
 ```
 
-<a id="markdown-maintenance-mode" name="maintenance-mode"></a>
 
 ## Maintenance Mode
 
@@ -56,15 +71,12 @@ php artisan down --render="errors::503"
 php artisan down --redirect=/
 ```
 
-<a id="markdown-blade-and-views" name="blade-and-views"></a>
 
 ## Blade and Views
 
-<a id="markdown-determining-if-a-view-exists" name="determining-if-a-view-exists"></a>
 
 ### Determining If A View Exists
 
-<a id="markdown-choose-between-local-or-package-view" name="choose-between-local-or-package-view"></a>
 
 #### Choose between local or package view
 
@@ -95,11 +107,9 @@ if (view()->exists('user.dashboard-layout')) {
 ```
 
 
-<a id="markdown-tips-and-techniques" name="tips-and-techniques"></a>
 
 ## Tips and Techniques
 
-<a id="markdown-validate-option-is-in-a-dropdown-or-simulate-control" name="validate-option-is-in-a-dropdown-or-simulate-control"></a>
 
 ###   Validate option is 'in' a dropdown or simulate control
 

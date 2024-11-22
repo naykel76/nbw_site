@@ -1,20 +1,19 @@
 # Linux File and Directory Actions
 
-<!-- TOC -->
-
 - [File paths](#file-paths)
 - [Copy with `scp`](#copy-with-scp)
+  - [Server to Local](#server-to-local)
+  - [Server To Server](#server-to-server)
 - [Copying with `rsync`](#copying-with-rsync)
 - [Renaming Multiple Files (script)](#renaming-multiple-files-script)
 - [Change File Extensions (script)](#change-file-extensions-script)
 - [Counting Files and Directories](#counting-files-and-directories)
-    - [Excluding Files and Directories](#excluding-files-and-directories)
-    - [Excluding Hidden Files and Directories](#excluding-hidden-files-and-directories)
+  - [Excluding Files and Directories](#excluding-files-and-directories)
+  - [Excluding Hidden Files and Directories](#excluding-hidden-files-and-directories)
 - [Trouble Shooting](#trouble-shooting)
-    - [Add rsync to Git Bash](#add-rsync-to-git-bash)
-    - [Install MSYS2 with rsync and openssh (includes scp)](#install-msys2-with-rsync-and-openssh-includes-scp)
+  - [Add rsync to Git Bash](#add-rsync-to-git-bash)
+  - [Install MSYS2 with rsync and openssh (includes scp)](#install-msys2-with-rsync-and-openssh-includes-scp)
 
-<!-- /TOC -->
 
 <div class="bx warning flex va-c">
     <svg class="icon wh-4 fs0 mr-2"><use xlink:href="/svg/naykel-ui.svg#exclamation-circle"></use></svg>
@@ -34,8 +33,6 @@
 | head [file]               | Display the beginning of a file        |
 | tail [file]               | Display the end of a file              |
 
-<a id="markdown-file-paths" name="file-paths"></a>
-
 ## File paths
 
 **Windows** uses backslashes `\` to separate file paths, while **Linux** uses forward slashes `/`. This means that when you are working with file paths in the command line, you need to use forward slashes even if you are using Windows.
@@ -49,8 +46,6 @@ C:/Users/username/Desktop
 /c/Users/username/Desktop
 ```
 
-<a id="markdown-copy-with-scp" name="copy-with-scp"></a>
-
 ## Copy with `scp`
 
 **Syntax:** `scp [options] source destination`
@@ -58,6 +53,8 @@ C:/Users/username/Desktop
 **Note:** when using `scp` you can add `-r` recursive flag to copy the entire directory, however,
 the scp command can be slow and inefficient when copying large directories. **You can use the
 `rsync` command instead.**
+
+### Server to Local
 
 ```bash
 # Copy file from the server
@@ -67,7 +64,11 @@ scp user@45.79.239.101:/home/username/abc.txt /c/Users/username
 scp /c/Users/username user@45.79.239.101:/home/username/abc.txt
 ```
 
-<a id="markdown-copying-with-rsync" name="copying-with-rsync"></a>
+### Server To Server
+
+```bash
+scp user1@server1:/home/username/example.txt user2@server2:/home/username/
+```
 
 ## Copying with `rsync`
 
@@ -99,8 +100,6 @@ rsync -avz user@45.79.239.101:/home/username /c/Users/username
 
 
 
-<a id="markdown-renaming-multiple-files-script" name="renaming-multiple-files-script"></a>
-
 ## Renaming Multiple Files (script)
 
 https://linuxconfig.org/how-to-rename-multiple-files-on-linux
@@ -129,8 +128,6 @@ find . -maxdepth 2 -type f -name "my_file*" | while read FNAME; do mv "$FNAME" "
 ```
 
 
-<a id="markdown-change-file-extensions-script" name="change-file-extensions-script"></a>
-
 ## Change File Extensions (script)
 
 ```bash
@@ -143,8 +140,6 @@ for i in *.log; do mv -- "$i" "${i%.log}.txt"; done
 ```
 
 
-<a id="markdown-counting-files-and-directories" name="counting-files-and-directories"></a>
-
 ## Counting Files and Directories
 
 ```bash
@@ -155,8 +150,6 @@ ls -1 | wc -l
 # Count the number of files in a directory (including subdirectories)
 find . -type f | wc -l
 ```
-
-<a id="markdown-excluding-files-and-directories" name="excluding-files-and-directories"></a>
 
 ### Excluding Files and Directories
 
@@ -171,8 +164,6 @@ find . -type d -not -path "./node_modules/*"  wc -l
 find . -type d -not -path "./node_modules/*" -not -path "./.git/*" -not -path "./.vscode/*"| wc -l
 ```
 
-
-<a id="markdown-excluding-hidden-files-and-directories" name="excluding-hidden-files-and-directories"></a>
 
 ### Excluding Hidden Files and Directories
 
@@ -229,19 +220,13 @@ find . -type d -not -path '*/\.*' -not -name 'node_modules' -not -name 'vendor' 
 ```
 
 
-<a id="markdown-trouble-shooting" name="trouble-shooting"></a>
-
 ## Trouble Shooting
 
-
-<a id="markdown-add-rsync-to-git-bash" name="add-rsync-to-git-bash"></a>
 
 ### Add rsync to Git Bash
 
 1. Download *rsync* from the [MSYS2 package repository](https://repo.msys2.org/msys/x86_64/rsync-3.2.7-2-x86_64.pkg.tar.zst)
 
-
-<a id="markdown-install-msys2-with-rsync-and-openssh-includes-scp" name="install-msys2-with-rsync-and-openssh-includes-scp"></a>
 
 ### Install MSYS2 with rsync and openssh (includes scp)
 

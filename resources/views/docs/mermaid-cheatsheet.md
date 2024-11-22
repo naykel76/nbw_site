@@ -134,6 +134,10 @@ sequenceDiagram
     else is not valid?
     System-->>User: Show Error Message
     end
+
+    loop Every minute
+        John-->Alice: Great!
+    end
 ```
 
 ```mermaid +parse
@@ -147,6 +151,10 @@ sequenceDiagram
             System-->>User: Process Request
         else is not valid?
             System-->>User: Show Error Message
+        end
+
+        loop Every minute
+            John-->Alice: Great!
         end
 </x-mermaid>
 ```

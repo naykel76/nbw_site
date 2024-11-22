@@ -1,108 +1,108 @@
 # Routes
 
-<!-- MarkdownTOC -->
-
-- [Route Existence](#route-existence)
 - [Resource Routes](#resource-routes)
-    - [Named Resource Routes](#named-resource-routes)
+  - [Define a Resource Route](#define-a-resource-route)
+  - [Limit the Routes Created by a Resource Controller (Only)](#limit-the-routes-created-by-a-resource-controller-only)
+  - [Exclude Resource Routes (Except)](#exclude-resource-routes-except)
+  - [Assign Custom Names to Resource Routes](#assign-custom-names-to-resource-routes)
 - [Redirect Route](#redirect-route)
-- [Optional Parameters](#optional-parameters)
-    - [Exclude Resource Routes](#exclude-resource-routes)
+- [Define a Route With Optional Parameters](#define-a-route-with-optional-parameters)
 - [Prefix and Namespace](#prefix-and-namespace)
-- [How to fall back to route id when slug is not available.](#how-to-fall-back-to-route-id-when-slug-is-not-available)
+- [Middleware Groups](#middleware-groups)
+- [Route Existence](#route-existence)
+  - [Check If a Route Exists](#check-if-a-route-exists)
+- [Route-Based Conditional Checks](#route-based-conditional-checks)
+  - [Check the Current Route Name](#check-the-current-route-name)
+    - [Example: Conditional Content in Blade](#example-conditional-content-in-blade)
+  - [Example: Active State in Navigation Menus](#example-active-state-in-navigation-menus)
 
-<!-- /MarkdownTOC -->
-
-<a id="route-existence"></a>
-## Route Existence
-
-``` php
-Route::has('users.edit')
-```
-
-<a id="resource-routes"></a>
 ## Resource Routes
 
+### Define a Resource Route
+
 ```php
-Route::resource('photos', PhotoController::class);
-Route::resource('photos', PhotoController::class)->only(['index', 'show']);
-Route::resource('photos', PhotoController::class)->except(['create', 'store', 'update', 'destroy']);
+Route::resource('posts', PostController::class);
 ```
 
-<a id="named-resource-routes"></a>
-### Named Resource Routes
+### Limit the Routes Created by a Resource Controller (Only)
 
 ```php
-Route::resource('photos', PhotoController::class)->names([
-    'create' => 'photos.build'
+Route::resource('posts', PostController::class)->only(['index', 'show']);
+```
+
+### Exclude Resource Routes (Except)
+
+```php
+Route::resource('posts', PostController::class)->except(['destroy', 'update']);
+```
+
+### Assign Custom Names to Resource Routes
+
+```php
+Route::resource('posts', PostController::class)->names([
+    'create' => 'posts.build'
 ]);
 ```
 
-<a id="redirect-route"></a>
 ## Redirect Route
 
 ```php
 Route::redirect('/', 'dashboard');
 ```
 
-<a id="optional-parameters"></a>
-## Optional Parameters
-
-    user/{name?}
-
-
-
-
-<a id="markdown-exclude-resource-routes" name="exclude-resource-routes"></a>
-<a id="exclude-resource-routes"></a>
-### Exclude Resource Routes
+## Define a Route With Optional Parameters
 
 ```php
-Route::resource('/', 'MyController', ['except' => ['destroy', 'update']]);
+Route::get('user/{name?}', UserController::class);
 ```
 
-
-<a id="markdown-prefix-and-namespace" name="prefix-and-namespace"></a>
-<a id="prefix-and-namespace"></a>
 ## Prefix and Namespace
 
+Group routes with a common prefix and name:
+
 ```php
-Route::prefix('myNameGroup')->name('myNameGroup.')->group(function () {
-    Route::get('/', 'SuppliersController@ordersBySupplier')->name('create');
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('users', [UserController::class, 'index'])->name('users');
 });
 ```
 
-```php
-// protected supplier only routes
-Route::middleware(['auth', 'auth.supplier'])group(function () {
+## Middleware Groups
 
-    Route::get('/orders', 'SuppliersController@ordersBySupplier')->name('orders');
-    Route::get('/sales-history', 'OrdersController@salesHistory')->name('sales-history');
+```php
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile');
 });
 ```
 
+## Route Existence
 
-<a id="how-to-fall-back-to-route-id-when-slug-is-not-available"></a>
-## How to fall back to route id when slug is not available.
+### Check If a Route Exists
 
-```php
-$page = Page::when(
-    is_numeric($page),
-    fn ($query) => $query->where('id', $page),
-    fn ($query) => $query->where('slug', $page)
-)->firstOrFail();
+``` php
+Route::has('users.edit')
 ```
 
-    /**
-    * Retrieve the model for a bound value.
-    *
-    * @param  mixed  $value
-    * @param  string|null  $field
-    * @return \Illuminate\Database\Eloquent\Model|null
-    */
-    public function resolveRouteBinding($value, $field = null)
-    {
-        return is_numeric($value)
-            ? $this->where('id', $value)->firstOrFail()
-            : $this->where('slug', $value)->firstOrFail();
-    }
+## Route-Based Conditional Checks
+
+### Check the Current Route Name
+
+Use `request()->routeIs()` to check if the current route matches a specific name. This is useful for
+applying conditional logic in Blade templates, controllers, or global configurations.
+
+#### Example: Conditional Content in Blade
+
+```html
+@if (request()->routeIs('admin.course.show'))
+    <p>You are viewing the admin course page.</p>
+@endif
+```
+
+### Example: Active State in Navigation Menus
+
+```html
+<li class="{{ request()->routeIs('admin.course.show') ? 'active' : '' }}">
+    <a href="{{ route('admin.course.show', $course) }}">View Course</a>
+</li>
+```

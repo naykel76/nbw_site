@@ -59,17 +59,3 @@ if (App::environment(['local', 'staging'])) {
 
 
 
-## How to Make Menu Item Active
-
-```php
-    // Exact url
-    <li class="{{ (request()->is('admin/users')) ? 'active' : '' }}">
-    // Starts with url
-    <li class="{{ (request()->is('admin/users*')) ? 'active' : '' }}">  // admin/users/edit/5234
-    // Matching route name (will match all route admin.users.edit)
-    <li class="{{ (strpos(Route::currentRouteName(), 'admin.users') == 0) ? 'active' : '' }}">
-    //
-    routeIs('admin.cities*') ? 'active' : '' }}">
-    routeIs('admin.cities.index') ? 'active' : '' }}>
-    routeIs('admin.cities.create') ? 'active' : '' }}>
-```
