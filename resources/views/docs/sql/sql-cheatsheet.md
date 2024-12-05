@@ -3,15 +3,17 @@
 - [Group by example](#group-by-example)
 - [Split a string into multiple columns](#split-a-string-into-multiple-columns)
 - [Date and Time](#date-and-time)
-  - [Set current date `CURDATE()`](#set-current-date-curdate)
+    - [Set current date `CURDATE()`](#set-current-date-curdate)
 - [CREATE](#create)
 - [Functions](#functions)
-    - [Select by the number of segments in a path](#select-by-the-number-of-segments-in-a-path)
+        - [Select by the number of segments in a path](#select-by-the-number-of-segments-in-a-path)
 - [Advance query examples](#advance-query-examples)
 - [Drop All Tables](#drop-all-tables)
 - [Making Queries Readable](#making-queries-readable)
 - [FAQ's](#faqs)
-    - [Does it make sense to add foreign keys in deep relationships?](#does-it-make-sense-to-add-foreign-keys-in-deep-relationships)
+        - [Does it make sense to add foreign keys in deep relationships?](#does-it-make-sense-to-add-foreign-keys-in-deep-relationships)
+- [DISTINCT](#distinct)
+- [LIMIT](#limit)
 
 
 
@@ -235,3 +237,19 @@ performance. Otherwise, rely on the existing relationships.
 
 
 
+## DISTINCT
+
+```sql
+SELECT DISTINCT col_name FROM table_name;
+```
+
+## LIMIT
+
+Return a limited number of results to improve performance by using the `LIMIT` clause. This takes two parameters `ROWSTART` and `MAXRESULTS` where `ROWSTART` id the number of the first row and `MAXRESULTS` is how many records are to be returned. **This is useful for pagination**
+
+    SELECT * FROM table_name LIMIT ROWSTART, MAXRESULTS
+
+```sql
+SELECT first_name FROM students LIMIT 0, 16
+SELECT first_name FROM students LIMIT 17, 16
+```

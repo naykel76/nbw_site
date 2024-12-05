@@ -13,7 +13,7 @@
   - [Check If a Route Exists](#check-if-a-route-exists)
 - [Route-Based Conditional Checks](#route-based-conditional-checks)
   - [Check the Current Route Name](#check-the-current-route-name)
-    - [Example: Conditional Content in Blade](#example-conditional-content-in-blade)
+  - [Example: Conditional Content in Blade](#example-conditional-content-in-blade)
   - [Example: Active State in Navigation Menus](#example-active-state-in-navigation-menus)
 
 ## Resource Routes
@@ -91,7 +91,7 @@ Route::has('users.edit')
 Use `request()->routeIs()` to check if the current route matches a specific name. This is useful for
 applying conditional logic in Blade templates, controllers, or global configurations.
 
-#### Example: Conditional Content in Blade
+### Example: Conditional Content in Blade
 
 ```html
 @if (request()->routeIs('admin.course.show'))

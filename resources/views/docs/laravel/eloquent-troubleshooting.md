@@ -1,7 +1,35 @@
 # Eloquent: Trouble Shooting
 
+- [Column not found: 1054 Unknown column?](#column-not-found-1054-unknown-column)
+            - [Things to Consider](#things-to-consider)
 - [Why am I getting multiple results when using route model binding and query scopes?](#why-am-i-getting-multiple-results-when-using-route-model-binding-and-query-scopes)
 
+
+## <question>Column not found: 1054 Unknown column?</question>
+
+###### The Problem
+
+You are getting a `Column not found: 1054 Unknown column` error when running an Eloquent query
+indicating that the column you are trying to access does not exist in the database table.
+
+##### Things to Consider
+
+The obvious reason for this error is that the column does not exist in the table. However, there are
+other reasons why you might encounter this error, such as:
+
+- When eager loading relationships, make sure you do not have and spaces in the column name. For
+  example, if you have a column named `first_name`, you should use `first_name` instead of `first
+  name`.
+
+```php
+// incorrect
+$query = Lesson::with('module:id, title')->find(23);
+// SELECT `id`, ` title` FROM modules WHERE `id` IN (8)
+
+// correct
+$query = Lesson::with('module:id, title')->find(23);
+// SELECT `id`, `title` FROM modules WHERE `id` IN (8)
+```
 
 ## <question>Why am I getting multiple results when using route model binding and query scopes?</question>
 

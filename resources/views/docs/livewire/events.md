@@ -5,16 +5,13 @@
 - [Dispatching events from blade templates](#dispatching-events-from-blade-templates)
 - [Dispatching events from from objects](#dispatching-events-from-from-objects)
   - [Direct to another component](#direct-to-another-component-1)
-- [Registering event listeners](#registering-event-listeners)
+- [Listening for Events](#listening-for-events)
   - [Registering event listeners using the `$listeners` property](#registering-event-listeners-using-the-listeners-property)
   - [Registering event listeners using the `On` attribute](#registering-event-listeners-using-the-on-attribute)
 - [Refreshing Techniques](#refreshing-techniques)
   - [Refreshing a list of items after an action has been performed](#refreshing-a-list-of-items-after-an-action-has-been-performed)
 - [Trouble Shooting](#trouble-shooting)
   - [Event listeners not working](#event-listeners-not-working)
-
-
-
 
 ## Dispatching events from Livewire components
 
@@ -55,7 +52,17 @@ $this->component->dispatch('notify', 'Lesson form initialized');
 $this->dispatchTo('courses.programming.edit', 'some-event');
 ```
 
-## Registering event listeners
+## Listening for Events 
+
+https://livewire.laravel.com/docs/events#listening-for-events-from-specific-child-components
+
+1. Dispatch the event from the child component 
+2. Listen for the event on the parent component
+
+```php
+// where the child component is being used in the parent component
+<livewire:quiz :slid @refresh-parent="$refresh" />
+```
 
 ### Registering event listeners using the `$listeners` property
 ```php

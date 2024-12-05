@@ -1,13 +1,7 @@
 # Users, Permissions and Groups
-<!-- TOC -->
-
 - [Users](#users)
 - [Groups](#groups)
 - [Permissions](#permissions)
-
-<!-- /TOC -->
-
-<a id="markdown-users" name="users"></a>
 
 ## Users
 
@@ -28,8 +22,6 @@
 | visudo (Add: <username> ALL=(ALL:ALL) ALL) | Grant sudo privileges to a user        |
 | whoami                                     | View current username                  |
 
-<a id="markdown-groups" name="groups"></a>
-
 ## Groups
 
 <code-first-col></code-first-col>
@@ -38,8 +30,6 @@
 | grep '^sudo:' /etc/group | Display members of the `sudo` group |
 | groups <username>        | View groups a user belongs to       |
 
-
-<a id="markdown-permissions" name="permissions"></a>
 
 ## Permissions
 
@@ -53,3 +43,33 @@
 
 
 
+```bash
+groups forge
+```
+
+If forge is listed in the sudo group, then it has sudo privileges. The output might look something like this:
+
+```bash
+forge : forge sudo www-data
+```
+
+```bash
+
+```
+
+
+```bash
+
+```
+
+
+
+```bash
+
+```
+
+
+
+```bash
+
+```

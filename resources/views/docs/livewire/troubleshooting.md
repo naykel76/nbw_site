@@ -1,15 +1,11 @@
 # Troubleshooting
 
-<!-- TOC -->
-
 - [Form Object and Model Binding](#form-object-and-model-binding)
-  - [Can't set model as property if it hasn't been persisted yet](#cant-set-model-as-property-if-it-hasnt-been-persisted-yet)
+    - [Can't set model as property if it hasn't been persisted yet](#cant-set-model-as-property-if-it-hasnt-been-persisted-yet)
 - [Event Troubleshooting](#event-troubleshooting)
 - [DispatchTo not working](#dispatchto-not-working)
-  - [Dispatch or DispatchTo not working or event not being caught](#dispatch-or-dispatchto-not-working-or-event-not-being-caught)
+    - [Dispatch or DispatchTo not working or event not being caught](#dispatch-or-dispatchto-not-working-or-event-not-being-caught)
 - [Errors](#errors)
-
-<!-- /TOC -->
 
 ## Form Object and Model Binding
 

@@ -1,13 +1,15 @@
 # MermaidJs Cheatsheet
 
 - [Quick Reference](#quick-reference)
-  - [Notes](#notes)
+    - [Notes](#notes)
 - [Class Diagram](#class-diagram)
 - [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Flow Chart](#flow-chart)
 - [Sequence Diagram](#sequence-diagram)
 
 ## Quick Reference
+
+<a href="https://jojozhuang.github.io/tutorial/mermaid-cheat-sheet/" target="blank">https://jojozhuang.github.io/tutorial/mermaid-cheat-sheet/</a>
 
 ### Notes
 
