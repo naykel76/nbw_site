@@ -80,8 +80,8 @@ openssl genpkey -algorithm RSA -out private.key
 3. Change the paths to the new location of your htdocs folder. For example:
 
     ```bash
-   DocumentRoot "C:\Users\nayke\sites"
-   <Directory "C:\Users\nayke\sites">
+   DocumentRoot "C:\Users\natha\sites"
+   <Directory "C:\Users\natha\sites">
     ```
 
 4. Save and Restart Your Apache
@@ -106,8 +106,12 @@ A virtual host allows a URL to be typed directly into the address bar when devel
 **Step 2.** Edit `C:\Windows\System32\drivers\etc\hosts` **MUST open in notepad as administrator**
 
 ```
+
 127.0.0.1 localhost
-127.0.0.1 mysite.test
+127.0.0.1 naykel.site
+127.0.0.1 fol.site
+127.0.0.1 nbw.site
+127.0.0.1 zcc.site
 ```
 
 ## SSL Configuration

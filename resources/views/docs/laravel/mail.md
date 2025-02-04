@@ -1,27 +1,21 @@
 # Sending Mail with Laravel
 
-<!-- TOC -->
-
 - [Create New Email](#create-new-email)
     - [Configure The Sender (Envelope)](#configure-the-sender-envelope)
 - [Sending Mail](#sending-mail)
 - [Testing](#testing)
+    - [Preview Email in browser](#preview-email-in-browser)
 
-<!-- /TOC -->
 
 <a href="https://laravel.com/docs/10.x/mail#markdown-mailables" target="blank">https://laravel.com/docs/10.x/mail#markdown-mailables</a>
 
 
-
-<a id="markdown-create-new-email" name="create-new-email"></a>
 
 ## Create New Email
 
 ```bash
 php artisan make:mail TestEmail
 ```
-
-<a id="markdown-configure-the-sender-envelope" name="configure-the-sender-envelope"></a>
 
 ### Configure The Sender (Envelope)
 
@@ -69,8 +63,6 @@ public function content(): Content
 }
 ```
 
-<a id="markdown-sending-mail" name="sending-mail"></a>
-
 ## Sending Mail
 
 To send a message, use the to method on the Mail facade. The to method accepts an email address, a
@@ -106,8 +98,6 @@ public function testEmail(Request $request): RedirectResponse
     </x-mail::message>
 
 
-<a id="markdown-testing" name="testing"></a>
-
 ## Testing
 
 A handy way to develop and test your mailable is to directly display the template file in the browser. In the `web.php` routes file add the `mail` facade, `mailable` class and create a route to display in the browser.
@@ -118,4 +108,12 @@ Route::get('/test-email', function () {
         $msg->to('myemail@gmail.com')->subject('Test Email');
     });
 });
+```
+
+### Preview Email in browser
+
+Simply return it!
+
+```php
+return new EnrolmentSuccess($order, $cart);
 ```
