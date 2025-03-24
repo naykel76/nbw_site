@@ -7,8 +7,8 @@
                 "icon": "livewire"
             },
             {
-                "name": "Alpine",
-                "route_name": "docs.livewire.alpine",
+                "name": "Livewire Alpine Quick Reference",
+                "route_name": "docs.livewire.livewire-alpine-quick-reference",
                 "icon": "livewire"
             },
             {

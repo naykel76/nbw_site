@@ -23,12 +23,8 @@
                 "route_name": "docs.laravel.authorization"
             },
             {
-                "name": "Blade",
-                "route_name": "docs.laravel.blade"
-            },
-            {
-                "name": "Components",
-                "route_name": "docs.laravel.components"
+                "name": "Blade and Components",
+                "route_name": "docs.laravel.blade-and-components"
             },
             {
                 "name": "Collections",
@@ -137,6 +133,10 @@
             {
                 "name": "Laravel Testing",
                 "route_name": "docs.laravel.testing"
+            },
+            {
+                "name": "Writing Cleaner Tests",
+                "route_name": "docs.laravel.testing-writing-cleaner-tests"
             },
             {
                 "name": "Livewire Testing",

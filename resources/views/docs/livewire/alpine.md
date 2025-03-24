@@ -1,13 +1,12 @@
 # Alpine
 
 - [Controlling Livewire from Alpine using `$wire`](#controlling-livewire-from-alpine-using-wire)
-  - [Mutating Livewire properties](#mutating-livewire-properties)
-  - [Calling Livewire methods](#calling-livewire-methods)
-  - [Refreshing a component](#refreshing-a-component)
-- [Sharing state using `$wire.entangle`](#sharing-state-using-wireentangle)
+    - [Mutating Livewire properties](#mutating-livewire-properties)
+    - [Calling Livewire methods](#calling-livewire-methods)
+    - [Refreshing a component](#refreshing-a-component)
 - [Alpine Arrow Function Syntax and Object Literal Notation](#alpine-arrow-function-syntax-and-object-literal-notation)
-  - [Arrow Function with Implicit Return](#arrow-function-with-implicit-return)
-  - [Arrow Function with Explicit Return and Local Variables](#arrow-function-with-explicit-return-and-local-variables)
+    - [Arrow Function with Implicit Return](#arrow-function-with-implicit-return)
+    - [Arrow Function with Explicit Return and Local Variables](#arrow-function-with-explicit-return-and-local-variables)
 - [Additional Resources](#additional-resources)
 
 
@@ -45,13 +44,6 @@ Blade view) using `$wire.$refresh()`:
 ```html
 <button type="button" x-on:click="$wire.$refresh()">
 ```
-
-## Sharing state using `$wire.entangle`
-
-You can share state between Livewire and Alpine using `$wire.entangle`:
-
-This is particularly useful utility that can be used to keep values from Livewire in-sync with
-values in Alpine.
 
 ## Alpine Arrow Function Syntax and Object Literal Notation
 
@@ -113,9 +105,6 @@ Alpine.data('complexComponent', () => {
 - When you want to return an object directly without any additional logic.
 - When you want to keep the code clean and concise.
 
-```html
-<input type="text" x-model="$wire.entangle('title')">
-```
 ## Additional Resources
 
 - <a href="https://livewire.laravel.com/docs/alpine" target="blank">Official Documentation</a>

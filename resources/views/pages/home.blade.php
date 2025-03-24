@@ -1,4 +1,22 @@
 <x-gt-app-layout layout="{{ config('naykel.template') }}">
+
+    <div x-data="greet">
+        <span x-text="greeting"></span>
+    </div>
+    @push('scripts')
+        <script>
+            Alpine.data('greet', () => ({
+                name: '',
+                setName(name) {
+                    this.name = name
+                },
+                get greeting() {
+                    return `Hello, ${this.name}`
+                },
+            }));
+        </script>
+    @endpush
+
     <section class="relative overflow-x-clip py-2 md:py-5">
         <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-10%; bottom: -240px; ">
         <img src="/svg/blur-pink.svg" class="absolute z-bottom" style="left: 10%; bottom: -440px; ">
@@ -10,10 +28,10 @@
                     <div class="txt-4 fw7 lh-1">Nathan Watts</div>
                     <div class="maxw-md lead"> I design and develop Laravel web applications, dabble in server management and am training to become a full stack developer. </div>
                 </div>
-                <div class="bx warning-light bdr-3 rounded-1 txt-sm to-lg:hidden">
+                {{-- <div class="bx warning-light bdr-3 rounded-1 txt-sm to-lg:hidden">
                     <p><strong class="txt-red">Heads Up!</strong> This website is a mash up of notes from uni, a seemingly endless supply of YouTube tutorials, and a sprinkle of the wild ideas that invade my brain. While I'd love to claim perfection, I can't promise that. So, do yourself a favour and check for yourself.</p>
                     <p> Oh, and fair warning, don't be surprised if you encounter a bit of chaos and missing pieces here and there - after all, it's all part of the journey.</p>
-                </div>
+                </div> --}}
             </div>
         </div>
     </section>
@@ -41,7 +59,8 @@
                 </div>
                 <div>
                     <h2>Team "PacMan" wins 1st place at the Westpac Hackathon 2024!</h2>
-                    <p>Competing against hundreds of students from UQ, QUT, and Griffith University, our project "Gesture Recognition and VR Banking Application" secured the top spot for best idea and solution.</p>
+                    <p>Competing against hundreds of students from UQ, QUT, and Griffith University, our project "Gesture Recognition and VR Banking Application" secured the top spot for best idea and
+                        solution.</p>
                 </div>
             </div>
         </div>
@@ -53,7 +72,8 @@
             <h2>Programming Fundamentals and Techniques</h2>
             <div class="maxw-md my">
                 <p>Solutions to common programming challenges across various languages and frameworks.</p>
-                <p>Think of them as ultimate cheat sheets, with the task taking center stage and the code playing a supporting role to provide a quick reference for common programming tasks and techniques.</p>
+                <p>Think of them as ultimate cheat sheets, with the task taking center stage and the code playing a supporting role to provide a quick reference for common programming tasks and
+                    techniques.</p>
             </div>
             <x-gt-menu filename="nav-fundamentals-and-techniques" class="flex wrap gap-1" itemClass="btn secondary" />
             <h4>Database</h4>

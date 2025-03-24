@@ -51,9 +51,9 @@ ParentClass to the ChildClass.
 
 ### Inheritance
 
-<question></question>
-What is inheritance?
-<answer></answer>
+<question>What is inheritance?</question>
+
+
 Inheritance is a mechanism that allows a class to inherit the properties and methods of another
 class. The class that inherits the properties and methods is called the subclass, and the class
 whose properties and methods are inherited is called the superclass. Inheritance allows us to
@@ -78,9 +78,8 @@ where a direction arrow is added to the line).
 
 ![class-diagram-association](/images/docs/class-diagram-association.jpg)
 
-<question></question>
-When do you use arrow on association?
-<answer></answer>
+<question>When do you use arrow on association?</question>
+
 The correct notation depends on the nature of the relationship you want to represent between the
 "Library" and "Book" classes:
 

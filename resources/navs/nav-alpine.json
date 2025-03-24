@@ -2,8 +2,13 @@
     "main": {
         "links": [
             {
-                "name": "Basics",
-                "route_name": "docs.alpine.basics",
+                "name": "Alpine 101",
+                "route_name": "docs.alpine.alpine-101",
+                "icon": "alpinejs"
+            },
+            {
+                "name": "FAQ's",
+                "route_name": "docs.alpine.faqs",
                 "icon": "alpinejs"
             },
             {

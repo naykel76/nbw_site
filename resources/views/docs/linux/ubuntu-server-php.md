@@ -1,16 +1,21 @@
 # Ubuntu PHP Setup
 
-<!-- MarkdownTOC -->
-
 - [PHP and Required Extensions](#php-and-required-extensions)
     - [Node, Git and npm](#node-git-and-npm)
     - [Composer](#composer)
         - [Remove Composer](#remove-composer)
 - [How to Uninstall PHP on Ubuntu](#how-to-uninstall-php-on-ubuntu)
 
-<!-- /MarkdownTOC -->
+<!-- sudo apt install -y software-properties-common ca-certificates lsb-release apt-transport-https
+sudo add-apt-repository ppa:ondrej/php -y
+sudo apt update
+sudo apt install -y php8.4 php8.4-cli php8.4-dev php8.4-bcmath php8.4-bz2 php8.4-curl \
+    php8.4-gd php8.4-intl php8.4-mbstring php8.4-mysql php8.4-opcache php8.4-readline \
+    php8.4-soap php8.4-sqlite3 php8.4-xml php8.4-zip php8.4-ldap php8.4-msgpack \
+    php8.4-igbinary php8.4-redis php8.4-memcached php8.4-pcov php8.4-imagick php8.4-xdebug \
+    unzip curl git sqlite3 supervisor -->
 
-<a id="php-and-required-extensions"></a>
+
 ## PHP and Required Extensions
 
 `sudo apt install php` will install the latest stable version of PHP available in the default repositories for your distribution.
@@ -30,14 +35,12 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt-get install php8.2 php8.2-cli php8.2-common php8.2-imap php8.2-redis php8.2-snmp php8.2-xml php8.2-zip php8.2-mbstring php8.2-curl php8.2-mysql
 ```
 
-<a id="node-git-and-npm"></a>
 ### Node, Git and npm
 
 ```bash
 sudo apt install nodejs npm git
 ```
 
-<a id="composer"></a>
 ### Composer
 
 ```bash
@@ -53,7 +56,6 @@ php -r "if (hash_file('SHA384', '/tmp/composer-setup.php') === '$HASH') { echo '
 sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer
 ```
 
-<a id="remove-composer"></a>
 #### Remove Composer
 
 ```bash
@@ -70,7 +72,6 @@ If you do have Composer installed, but the `sudo apt-get remove composer` comman
 sudo rm -rf /usr/local/bin/composer
 ```
 
-<a id="how-to-uninstall-php-on-ubuntu"></a>
 ## How to Uninstall PHP on Ubuntu
 
 To uninstall PHP from Ubuntu, follow the instructions below:

@@ -144,10 +144,10 @@ export default featureSlice.reducer;
 
 <question>Why doesn't the `action1` reducer function accept an `action` parameter?</question>
 
-<answer>In Redux, not all actions necessarily need to carry a payload. This is a valid
-scenario to demonstrate that concept. For example, if you had a counter that only needed
-to increment by 1, you wouldn't need to pass a payload to the action, however, if you
-needed to increment by a specific amount, you would pass a payload.</answer>
+In Redux, not all actions necessarily need to carry a payload. This is a valid scenario to
+demonstrate that concept. For example, if you had a counter that only needed to increment
+by 1, you wouldn't need to pass a payload to the action, however, if you needed to
+increment by a specific amount, you would pass a payload.
 
 ### Add the slice to the store
 

@@ -1,51 +1,97 @@
-# Laravel Pest Testing
+# Laravel and Livewire Pest Testing
 
-- [Getting Started](#getting-started)
-  - [Grouping Tests](#grouping-tests)
-- [Resetting the Database](#resetting-the-database)
-  - [Lazily Refresh Database](#lazily-refresh-database)
-  - [In-Memory SQLite Database](#in-memory-sqlite-database)
-- [Expectations](#expectations)
-- [Examples](#examples)
-  - [Page Response Tests](#page-response-tests)
-- [FYI](#fyi)
-- [Trouble Shooting](#trouble-shooting)
-  - [False Positive with `assertSeeText`](#false-positive-with-assertseetext)
+- [Testing Structure](#testing-structure)
+    - [Testing Checklist](#testing-checklist)
+- [Defining Tests](#defining-tests)
+- [Running Tests](#running-tests)
+- [Laravel Assertions](#laravel-assertions)
+- [Testing Requests \& Responses](#testing-requests--responses)
+    - [Testing Page Response](#testing-page-response)
+    - [Testing Page Content](#testing-page-content)
+    - [`denies access to unauthorised users`](#denies-access-to-unauthorised-users)
+    - [`redirects unauthenticated users to login`](#redirects-unauthenticated-users-to-login)
+    - [Testing Role-Based Access Control (Spatie Permissions)](#testing-role-based-access-control-spatie-permissions)
+- [Additional Resources](#additional-resources)
+- [FAQ's](#faqs)
+    - [What is the difference between `assertSee` and `assertSeeText`?](#what-is-the-difference-between-assertsee-and-assertseetext)
 
+## Testing Structure
 
-Authenticating a user before running tests.
+Tests can become unmanageable without a clear structure. Similar to the Laravel directory
+structure, tests should be grouped by functionality (e.g., Livewire components, models,
+pages) and further organised by specific concerns.
 
-```php
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
+- **Simple features** (e.g., an About page) can have all tests in a single file, such as
+  `PageResponseTest.php`.
+- **Complex features** should use subdirectories. For example, within the `Pages`
+  directory, create a `Product` directory for product-related tests.
 
-uses(RefreshDatabase::class, WithFaker::class);
+Example directory structure:
 
-beforeEach(function () {
-    $this->user = User::factory()->create();
-    $this->actingAs($this->user);
-});
+```bash
+tests/
+└── Feature/
+    ├── Livewire/                     # Livewire component tests
+    │   ├── ProductManagerTest.php     
+    │   └── UserProfileTest.php        
+    ├── Models/                        # Model-related tests
+    │   ├── ModelProductTest.php       
+    │   └── ModelUserTest.php          
+    ├── Pages/                         # Page and route tests
+    │   ├── Product/                    
+    │   │   ├── PageProductDetailsTest.php
+    │   │   └── PageProductTest.php    
+    │   └── PageUserProfileTest.php    
+└── Unit/                               
 ```
 
-<!-- ## Getting Started
+### Testing Checklist
 
-<div class="code-first-col"></div>
+This checklist ensures comprehensive test coverage for a Laravel and Livewire application.
 
-| Command             | Action     |
-| :------------------ | :--------- |
-| assertStatus('200') | assertOk() |
+
+- ▢ **Test the page response** – Ensure the correct HTTP status (200, 404, etc.) and
+  that the page loads as expected.  
+- ▢ **Test access control**  
+    - ▢ **Authenticated users can access protected areas** – Confirm that users with
+      valid login credentials can access restricted pages (e.g., admin dashboard, user
+      profile).  
+    - ▢ **Unauthenticated users are denied access** – Verify that users who are not
+      logged in are redirected to the login page or denied access.  
+    - ▢ **Users with insufficient permissions are denied access** – Check that users
+      without the required permissions are blocked from accessing certain areas.  
+
+
+<!-- 
+- ▢ **Form validation** – Required fields, correct input types, error messages.
+- ▢ **Database interactions** – Ensure data is saved, updated, and deleted correctly.
+- ▢ **Edge cases** – Handle empty or invalid inputs gracefully.
+- ▢ **UI component behaviour** – Ensure buttons, forms, and links function properly.
+- ▢ **Session handling** – Verify login persistence and session expiration.
+- ▢ **Redirects** – Ensure correct redirection after actions (e.g., login, form submission).
+- ▢ **Role-based permissions** – Confirm user roles access only their designated areas.
+- ▢ **Performance checks** – Validate acceptable page load times. -->
+
+
+## Defining Tests
 
 Use the `it` or `test` function to define a test.
 
 ```php
-it('does some test', function () { });
-test('some test', function () { });
+it('returns a successful response', function () {
+    // test code here
+});
 ```
 
-### Grouping Tests
+```php
+test('something is accessible', function () {
+    // test code here
+});
+```
 
-Use the describe function to group related tests together.
+You can use the `describe` function to group related tests together. This does not affect
+the test results but can help to organise tests, especially when there are many of them in
+the same file.
 
 ```php
 describe('group of tests', function () {
@@ -53,131 +99,135 @@ describe('group of tests', function () {
 });
 ```
 
-## Resetting the Database 
+## Running Tests
 
-Add the `RefreshDatabase` trait to your test class to reset the database after each test.
+<a href="https://pestphp.com/docs/cli-api-reference" target="blank">PEST CLI API Reference</a>
 
-```php
-use Illuminate\Foundation\Testing\RefreshDatabase;
+| Command                      | Alias          | Action                        |
+| :--------------------------- | :------------- | :---------------------------- |
+| `php artisan test`           | `pt`           | Run all tests                 |
+| `php artisan test --compact` | `pt --compact` | Run all tests in compact mode |
+| `php artisan test --filter`  | `pt --filter`  | Run specific tests            |
 
-uses(RefreshDatabase::class);
-```
+Additional options:
 
-You can make this trait available to all tests by adding it to the `Pest.php` configuration file.
+- `--bail` – Stop execution on first failure.
+- `--todos` – Output a list of pending tests.
+- `--retry` – Rerun failing tests first.
+- `--exclude-testsuite <name>` – Exclude specific test suites.
+- `--group <name>` – Run only tests from specified group.
+- `--exclude-group <name>` – Exclude specific test groups.
+- `--test-suffix <suffix>` – Run tests in files with specific suffixes.
+  
+## Laravel Assertions
 
-```php
-// tests/Pest.php
-use Illuminate\Foundation\Testing\RefreshDatabase;
-
-uses(RefreshDatabase::class)->in('Feature');
-```
-
-### Lazily Refresh Database
-
-Not all tests require resetting the database. You can use the `LazilyRefreshDatabase` trait to reset
-the database only when necessary. This way, the database will be reset only when there are
-interactions with it rather than after each test.
-
-```php
-// tests/Pest.php
-use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
-
-uses(LazilyRefreshDatabase::class);
-```
-
-### In-Memory SQLite Database
-
-To run tests without affecting your actual database, you can use an in-memory SQLite database or a
-dedicated testing database. In your `phpunit.xml` file, you can configure the environment to use an
-in-memory SQLite database for testing.
-
-```xml
-<env name="DB_CONNECTION" value="sqlite"/>
-<env name="DB_DATABASE" value=":memory:"/>
-```
-
-## Expectations
-
-<a href="https://pestphp.com/docs/expectations" target="blank">Pest Expectation Documentation</a>
-
-
-
-## Examples
-
-### Page Response Tests
+Refer to <a href="https://laravel.com/docs/master/http-tests#response-assertions"
+target="blank">Response Assertions Docs</a>
 
 ```php
-it('gives successful response for home page', function () {
-    $this->get(route('home'))->assertOk();
+->assertSee(route('products.show', $product));
+```
+
+## Testing Requests & Responses
+
+### Testing Page Response
+
+```php
+it('gives back a successful response for home page', function () {
+    get(route('home'))->assertOk();
 });
 ```
 
-## FYI
+### Testing Page Content
 
-Arrays need to be cast in the model to be able to use `assertSee` with them.
-
+<!-- list of items -->
+<!-- displays item overview -->
+<!-- displays item details -->
 ```php
-protected $casts = [
-    'array_column' => 'array',
-];
-```
-
-## Trouble Shooting
-
-### False Positive with `assertSeeText`
-
-The `assertSeeText` method expects a single string or an array of strings to check for their presence in the response. The following test will give a false positive because we are passing two strings as separate arguments instead of an array.
-
-```php
-it('shows courses overview (index)', function () {
-    Course::factory()->create(['title' => 'Course A']);
-    $this->get(route('courses.index'))->assertSeeText('Course A', 'Course B');
+it('displays the product name', function () {
+    $product = Product::factory()->create();
+    get(route('products.show', $product))->assertSee($product->name);
 });
 ```
 
-There is no `thisDoesNotExist` column in the database, so the test should fail. Why is it passing?
 
 ```php
-it('shows courses overview (index)', function () {
-    $course = Course::factory()->create(['title' => 'Course A']);
 
-    $this->get(route('courses.index'))
-        ->assertOk()
-        ->assertSeeText([
-            $course->title,
-            $course->code,
-            $course->thisDoesNotExist,
-        ]);
+## Access Control
+
+Access control tests may not be strictly necessary when using middleware to protect  
+routes. Laravel’s authentication and authorization middleware automatically redirects  
+unauthenticated users to the login page and denies access to unauthorised users.  
+Instead of testing these behaviours on every route, you only need to ensure that  
+middleware is applied correctly.
+
+### `allows authorised users to access some-page`
+
+This is the one test I suggest you write for each protected page. It ensures that  
+authenticated users can access the page.
+
+```php
+it('allows authorised users to access some-page', function () {
+    $user = User::factory()->create();
+    actingAs($user)->get(route('some-page'))->assertOk();
 });
 ```
 
-The test is passing because `assertSeeText` is checking if the specified text is present in the
-response body, not if the columns exist in the database. Since the `thisDoesNotExist` column does
-not exist in the Course model, it will be `null`. The `assertSeeText` method will then check for the
-string representation of `null`, which is an empty string.
+The following tests however, are generally unnecessary when using middleware to protect
+routes, as Laravel already enforces these behaviours.
 
-To fix this, you can use the `assertSee` method to check for the presence of the column values in the
-response.
-
+### `denies access to unauthorised users`
 ```php
-it('shows courses overview (index)', function () {
-    $course = Course::factory()->create(['title' => 'Course A']);
-
-    $this->get(route('courses.index'))
-        ->assertOk()
-        ->assertSee($course->title)
-        ->assertSee($course->code)
-        ->assertSee($course->thisDoesNotExist);
+it('denies access to unauthorised users', function () {
+    $user = User::factory()->create();
+    actingAs($user)->get(route('my-page'))->assertForbidden();
 });
 ```
 
-Make sure to pass the `test` methods optional second argument (`params`) as an array.
-
+### `redirects unauthenticated users to login`
 ```php
-public static function test($name, $params = []) { }
+it('redirects unauthenticated users to login', function () {
+    get(route('my-page'))->assertRedirect(route('login'));
+});
 ```
 
+
+
+### Testing Role-Based Access Control (Spatie Permissions)
+
+To test role-based access control, simply create a role and assign it to a user. 
+
 ```php
-Livewire::test(AddToCartButton::class, [$product])
-    ->call('addToCart');
-``` -->
+use Spatie\Permission\Models\Role;
+
+it('allows admin users to access the admin dashboard', function () {
+    Role::create(['name' => 'admin']);
+    $admin = User::factory()->create()->assignRole('admin');
+
+    actingAs($admin)->get(route('admin.dashboard'))->assertOk();
+});
+```
+
+
+## Additional Resources
+
+- <a href="https://christoph-rumpel.com/2023/3/everything-you-can-test-in-your-laravel-application"
+  target="blank">Christoph Rumpel - Everything You Can Test In Your Laravel Application</a>
+- <a href="https://christoph-rumpel.com/2021/4/how-I-test-livewire-components"
+  target="blank">Christoph Rumpel - How I Test Livewire Components</a>
+- <a href="https://laravel.com/docs/11.x/http-tests#testing-views"
+  target="blank">https://laravel.com/docs/11.x/http-tests#testing-views</a>
+- <a href="https://pestphp.com/docs/writing-tests"
+  target="blank">https://pestphp.com/docs/writing-tests</a>
+
+## FAQ's
+
+### <question>What is the difference between `assertSee` and `assertSeeText`?</question>
+
+- `assertSee` **includes** HTML in the search.  
+- `assertSeeText` **ignores** HTML and checks only plain text.
+  
+```php
+$response->assertSee('<h1>Heading</h1>'); // Passes
+$response->assertSeeText('<h1>Heading</h1>'); // Fails
+```

@@ -31,31 +31,6 @@
 </ul>
 ```
 
-#### Iterate through livewire multi-dimension array
-
-    <div x-data="{ items: @entangle('items') }">
-        <template x-for="item in items">
-            <div class="my">
-                Colour: <span x-text="item.colour"></span><br />
-                Size: <span x-text="item.size"></span><br />
-            </div>
-        </template>
-    </div>
-
-#### Iterate through livewire multi-dimension array and access indexes
-
-If you need to access the index of each item in the iteration, you can do so using the `([item], [index]) in [items]` syntax like so:
-
-    <div x-data="{ items: @entangle('items') }">
-        <template x-for="(item, index) in items" :key="index">
-            <div class="my">
-                Colour: <span x-text="item.colour"></span><br />
-                Size: <span x-text="item.size"></span><br />
-            </div>
-        </template>
-    </div>
-
-
 ## x-text
 
 #### `x-ref` with single object

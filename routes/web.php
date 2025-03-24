@@ -18,10 +18,15 @@ use Naykel\Gotime\RouteBuilder;
 (new RouteBuilder('nav-programming', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-react', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-sql', 'components.layouts.docs-default'))->create();
+(new RouteBuilder('nav-tutorials', 'components.layouts.docs-default'))->create();
 
 Route::get('/', function () {
     return view('pages.home');
 })->name('home');
+
+Route::get('/wip', function () {
+    return view('components/layouts/docs-markdown', ['path' => 'wip']);
+})->name('wip');
 
 Route::get('/cookbook', function () {
     return view('pages.cookbook');

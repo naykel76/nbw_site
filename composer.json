@@ -67,5 +67,14 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": {
+        "naykel/gotime": {
+            "type": "path",
+            "url": "C:\\Users\\natha\\sites\\nk_packages\\gotime",
+            "options": {
+                "symlink": true
+            }
+        }
+    }
 }

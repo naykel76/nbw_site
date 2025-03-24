@@ -2,3 +2,18 @@
 
 # NAYKEL Web Application
 
+```json
+"repositories": {
+    "naykel/gotime": {
+        "type": "path",
+        "url": "C:\\Users\\natha\\sites\\nk_packages\\gotime",
+        "options": {
+            "symlink": true
+        }
+    }
+}
+```
+
+
+tutiorials-and-blogs.how-to-install-windows-subsystem-for-linux-on-windows
+tutorials-and-blogs/how-to-install-windows-subsystem-for-linux-on-windows

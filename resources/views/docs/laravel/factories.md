@@ -1,13 +1,41 @@
 # Factories
 
+- [Defining Factories](#defining-factories)
+    - [Create Factory States](#create-factory-states)
+    - [Using Factory States](#using-factory-states)
 - [Using Factories to Generate Related Models](#using-factories-to-generate-related-models)
-- [Set Factory State](#set-factory-state)
 - [Factory Relationships](#factory-relationships)
-  - [Has Many Relationships](#has-many-relationships)
-  - [Nested Relationships](#nested-relationships)
-    - [`randomFloat`](#randomfloat)
-  - [Unique Data](#unique-data)
+    - [Has Many Relationships](#has-many-relationships)
+    - [Nested Relationships](#nested-relationships)
+- [Fake Data](#fake-data)
+    - [Numbers](#numbers)
+        - [`randomDigit`, `randomNumber`, `numberBetween`](#randomdigit-randomnumber-numberbetween)
+        - [`randomFloat`](#randomfloat)
+    - [Unique Data](#unique-data)
 - [Additional Resources](#additional-resources)
+
+
+## Defining Factories
+
+### Create Factory States
+
+<a href="https://laravel.com/docs/11.x/eloquent-factories#factory-states"
+target="blank">https://laravel.com/docs/11.x/eloquent-factories#factory-states</a>
+
+```php
+public function published(?Carbon $date = null): self
+{
+    return $this->state(
+        fn (array $attr) => ['published_at' => $date ?? Carbon::now()]
+    );
+}
+```
+
+### Using Factory States
+
+```php
+$course = Course::factory()->published()->create();
+```
 
 ## Using Factories to Generate Related Models
 
@@ -20,16 +48,7 @@ return [
 ];
 ```
 
-## Set Factory State
 
-```php
-public function published(?Carbon $date = null): self
-{
-    return $this->state(
-        fn (array $attr) => ['published_at' => $date ?? Carbon::now()]
-    );
-}
-```
 
 ## Factory Relationships
 
@@ -52,7 +71,6 @@ $course = Course::factory()
             ->create();
 ```
 
-```php
 
 
 

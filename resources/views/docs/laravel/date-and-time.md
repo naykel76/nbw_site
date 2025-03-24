@@ -1,16 +1,49 @@
 # Date and Time Cheat Sheet
 
-<!-- TOC -->
-
+- [Date Format Conversion Table (Carbon, Pikaday, Flatpickr)](#date-format-conversion-table-carbon-pikaday-flatpickr)
+- [Carbon](#carbon)
 - [String Formatting](#string-formatting)
 - [Set timezone](#set-timezone)
-- [Carbon](#carbon)
+- [Carbon](#carbon-1)
     - [Set Date](#set-date)
-- [Create a timer with Laravel and Alpine](#create-a-timer-with-laravel-and-alpine)
+- [FAQ's](#faqs)
 
-<!-- /TOC -->
 
-<a id="markdown-string-formatting" name="string-formatting"></a>
+Database Value: `1995-09-18 08:27:16`
+
+- (un-cast) `$model->birthday` = '1995-09-18 08:27:16'; 
+- (cast as DateCast) `$model->birthday` = 'Sep 18, 1995'; `('M d, Y')`
+- (cast as datetime) `$model->birthday` = Carbon instance; 
+
+## Date Format Conversion Table (Carbon, Pikaday, Flatpickr)
+
+| Format        | Carbon   | Pikaday       | Flatpickr |
+| ------------- | -------- | ------------- | --------- |
+| 28-03-24      | `d-m-y`  | `DD-MM-YY`    | `d-m-y`   |
+| 28-03-2024    | `d-m-Y`  | `DD-MM-YYYY`  | `d-m-Y`   |
+| Mar, 28, 2024 | `M d, Y` | `MMM D, YYYY` | `m-d-Y`   |
+| 18 Mar, 2024  | `d M, Y` | `D MMM, YYYY` | `d-m-Y`   |
+
+<!-- | Year-Month-Day | `Y-m-d`       | `YYYY-MM-DD`       | `Y-m-d`     |
+| Full Date Time | `Y-m-d H:i:s` | `YYYY-MM-DD H:i:s` | `Y-m-d H:i` |
+| 24-Hour Time   | `H:i`         | `HH:mm`            | `H:i`       | -->
+
+## Carbon
+
+Create a new instance of Carbon from a string or a timestamp.
+
+```php
+Carbon::create(2012, 1, 31, 0)            // 2012-01-31 00:00:00
+Carbon::createFromDate(2012, 1, 31)       // 2012-01-31 22:43:06
+Carbon::createFromTime(14, 15, 16)        // 2025-02-11 14:15:16
+Carbon::createFromTimeString('14:15:16')  // 2025-02-11 14:15:16
+Carbon::createFromTimestamp(650937976)    // 1990-08-18 00:06:16
+Carbon::createFromTimestampUTC(650937976) // 1990-08-18 00:06:16
+Carbon::createFromFormat('Y-m-d H', '1975-05-21 22')           // 1975-05-21 22:00:00
+Carbon::createFromFormat('Y-m-d', '1975-05-21')                // 1975-05-21 22:43:06
+Carbon::createFromFormat('Y-m-d H:i:s', '1975-05-21 22:15:16') // 1975-05-21 22:15:16
+```
+
 
 ## String Formatting
 
@@ -26,7 +59,6 @@ $dt->toDateTimeString();                      // 1975-12-25 14:15:16
 
 $dt = Carbon::createFromFormat('Y-m-d H:i:s.u', '2019-02-01 03:45:27.612584'); -->
 
-<a id="markdown-set-timezone" name="set-timezone"></a>
 
 ## Set timezone
 
@@ -39,11 +71,9 @@ list of available timezones.
 'timezone' => 'Australia/Brisbane',
 ```
 
-<a id="markdown-carbon" name="carbon"></a>
 
 ## Carbon
 
-<a id="markdown-set-date" name="set-date"></a>
 
 ### Set Date
 ```php
@@ -122,7 +152,11 @@ $trialExpires = $current->addDays(30);
 
 
 
+## FAQ's
 
-<a id="markdown-create-a-timer-with-laravel-and-alpine" name="create-a-timer-with-laravel-and-alpine"></a>
+<question>Are dates retrieved from the database automatically cast to Carbon instances, or
+do they require manual casting?</question>
 
-## Create a timer with Laravel and Alpine
+If you use timestamps like `created_at` and `updated_at`, Laravel will automatically cast
+them to Carbon instances for you. However, for other date fields, you need to specify the
+cast manually.

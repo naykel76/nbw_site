@@ -5,6 +5,7 @@
 - [Class Diagram](#class-diagram)
 - [Entity Relationship Diagram](#entity-relationship-diagram)
 - [Flow Chart](#flow-chart)
+    - [Add Option Diamond](#add-option-diamond)
 - [Sequence Diagram](#sequence-diagram)
 
 ## Quick Reference
@@ -19,13 +20,11 @@ Note over Alice,John: A typical interaction
 Note over Alice,John: A typical interaction<br/>But now in two lines
 ```
 
-```mermaid +parse
-<x-mermaid>
+```mermaid +parse-mermaid
     sequenceDiagram
         Note right of John: Text in note
         Note over Alice,John: A typical interaction
         Note over Alice,John: A typical interaction<br/>But now in two lines
-</x-mermaid>
 ```
 
 ## Class Diagram
@@ -39,15 +38,13 @@ classDiagram
     }
 ```
     
-```mermaid +parse
-<x-mermaid>
+```mermaid +parse-mermaid
     classDiagram
         class Duck{
             +String beakColor
             +swim()
             +quack()
         }
-</x-mermaid>
 ```
 
 ## Entity Relationship Diagram
@@ -72,8 +69,7 @@ erDiagram
     }
 ```
     
-```mermaid +parse
-<x-mermaid>
+```mermaid +parse-mermaid
     erDiagram
         CAR {
             string registrationNumber PK
@@ -92,7 +88,6 @@ erDiagram
             string carRegistrationNumber PK, FK
             string driverLicence PK, FK
         }
-</x-mermaid>
 ```
 
 ## Flow Chart
@@ -102,26 +97,44 @@ erDiagram
 title: Diagram Title
 ---
 flowchart TD
-    A[Start] --> B{Is it?}
+    start((start)) --> B{Is it?}
     B -->|Yes| C[OK]
     C --> D[Rethink]
     D --> B
-    B ---->|No| E[End]
+    B ---->|No| END((End))
 ```
 
-```mermaid +parse
-<x-mermaid>
+```mermaid +parse-mermaid
     ---
     title: Diagram Title
     ---
     flowchart LR
-        A[Start] --> B{Is it?}
+        start((start)) --> B{Is it?}
         B -->|Yes| C[OK]
         C --> D[Rethink]
         D --> B
-        B ---->|No| E[End]
-</x-mermaid>
+        B ---->|No| END((End))
 ```  
+
+### Add Option Diamond
+
+``` bash
+flowchart LR
+    start((start)) --> option{Is it?}
+    option -->|Yes| process[process] --> END((End))
+    option ---->|No| END((End))
+```
+
+```mermaid +parse-mermaid
+flowchart LR
+    start((start)) --> option{Is it?}
+    option -->|Yes| process[process] --> END((End))
+    option ---->|No| END((End))
+```
+
+
+
+
 
 ## Sequence Diagram
 
@@ -142,8 +155,7 @@ sequenceDiagram
     end
 ```
 
-```mermaid +parse
-<x-mermaid>
+```mermaid +parse-mermaid
     sequenceDiagram
         actor User
         participant System
@@ -158,5 +170,4 @@ sequenceDiagram
         loop Every minute
             John-->Alice: Great!
         end
-</x-mermaid>
 ```

@@ -2,6 +2,16 @@
     "main": {
         "links": [
             {
+                "name": "WIP",
+                "route_name": "wip",
+                "exclude_route": true
+            },
+            {
+                "name": "Tutorials",
+                "route_name": "pages.tutorials",
+                "view": "pages.tutiorials-homepage"
+            },
+            {
                 "name": "SQL",
                 "route_name": "docs.sql.sql-cheatsheet",
                 "type": "md",

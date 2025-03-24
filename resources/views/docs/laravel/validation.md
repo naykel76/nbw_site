@@ -2,18 +2,19 @@
 
 - [Things worth noting](#things-worth-noting)
 - [Numbers and Currency](#numbers-and-currency)
-  - [Phone Number](#phone-number)
+    - [Phone Number](#phone-number)
 - [Unique](#unique)
-  - [Ignore a given ID or a specific record](#ignore-a-given-id-or-a-specific-record)
-  - [Unique Based on Multiple Conditions](#unique-based-on-multiple-conditions)
+    - [Ignore a given ID or a specific record](#ignore-a-given-id-or-a-specific-record)
+    - [Unique Based on Multiple Conditions](#unique-based-on-multiple-conditions)
 - [Conditional Validation](#conditional-validation)
-  - [Exclude](#exclude)
-    - [`exclude_if` and `exclude_unless`](#exclude_if-and-exclude_unless)
-  - [Required](#required)
-    - [`required_with` and `required_with_all`](#required_with-and-required_with_all)
-    - [`required_if` and `required_unless`](#required_if-and-required_unless)
+    - [Exclude](#exclude)
+        - [`exclude_if` and `exclude_unless`](#exclude_if-and-exclude_unless)
+    - [Required](#required)
+        - [`required_with` and `required_with_all`](#required_with-and-required_with_all)
+        - [`required_if` and `required_unless`](#required_if-and-required_unless)
 - [Validate Nested Properties (TBD)](#validate-nested-properties-tbd)
 - [`in`](#in)
+
 
 ## Things worth noting
 

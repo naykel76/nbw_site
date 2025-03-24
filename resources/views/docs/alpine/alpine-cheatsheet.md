@@ -4,17 +4,13 @@
 
 - [x-ref and $x-refs](#x-ref-and-x-refs)
 - [`x-model`](#x-model)
-    - [Entangle example](#entangle-example)
 - [`x-text`](#x-text)
     - [Get a value using the `$wire` property](#get-a-value-using-the-wire-property)
-    - [Entangle example](#entangle-example-1)
 - [How to use AlpineJS in a script instead of inline `Alpine.data()`](#how-to-use-alpinejs-in-a-script-instead-of-inline-alpinedata)
 - [FAQ's](#faqs)
         - [What's the difference between `x-text` and `x-model`?](#whats-the-difference-between-x-text-and-x-model)
 
 <!-- /TOC -->
-
-<a id="markdown-x-ref-and-x-refs" name="x-ref-and-x-refs"></a>
 
 ## x-ref and $x-refs
 
@@ -35,8 +31,6 @@ access that element.
 </div>
 ```
 
-<a id="markdown-x-model" name="x-model"></a>
-
 ## `x-model`
 
 https://alpinejs.dev/directives/model
@@ -53,21 +47,9 @@ https://alpinejs.dev/directives/model
 </div>
 ```
 
-<a id="markdown-entangle-example" name="entangle-example"></a>
 
-### Entangle example
-
-```html
-<div x-data="{ inputValue: $wire.$entangle('firstname') }">
-    <input id="firstname" x-model="inputValue">
-</div>
-```
-
-<a id="markdown-x-text" name="x-text"></a>
 
 ## `x-text`
-
-<a id="markdown-get-a-value-using-the-wire-property" name="get-a-value-using-the-wire-property"></a>
 
 ### Get a value using the `$wire` property
 
@@ -75,22 +57,12 @@ https://alpinejs.dev/directives/model
 <p>Firstname: <span x-text="$wire.firstname"></span></p>
 ```
 
-<a id="markdown-entangle-example" name="entangle-example"></a>
-
-### Entangle example
-
-```html
-<div x-data="{ message: $wire.entangle('message') }">
-    <span x-text="message"></span>
-</div>
-```
 
 
 
 
 
 
-<a id="markdown-how-to-use-alpinejs-in-a-script-instead-of-inline-alpinedata" name="how-to-use-alpinejs-in-a-script-instead-of-inline-alpinedata"></a>
 
 ## How to use AlpineJS in a script instead of inline `Alpine.data()`
 
@@ -127,11 +99,7 @@ https://alpinejs.dev/globals/alpine-data
 </script>
 ```
 
-<a id="markdown-faqs" name="faqs"></a>
-
 ## FAQ's
-
-<a id="markdown-whats-the-difference-between-x-text-and-x-model" name="whats-the-difference-between-x-text-and-x-model"></a>
 
 #### What's the difference between `x-text` and `x-model`?
 

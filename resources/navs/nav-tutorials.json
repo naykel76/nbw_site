@@ -1,0 +1,18 @@
+{
+    "main": {
+        "links": [
+            {
+                "name": "Date and Time Picker with Livewire v3, Alpine, and Flatpickr",
+                "route_name": "docs.tutorials.laravel-datetimepicker-livewire3-alpine-flatpickr"
+            }
+        ]
+    },
+    "Server and Environment Management": {
+        "links": [
+            {
+                "name": "How to Install Windows Subsystem for Linux (WSL) on Windows",
+                "route_name": "tutorials-and-blogs.how-to-install-windows-subsystem-for-linux-on-windows"
+            }
+        ]
+    }
+}
