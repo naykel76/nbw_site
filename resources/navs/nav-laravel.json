@@ -80,6 +80,14 @@
             }
         ]
     },
+    "Query Examples": {
+        "links": [
+            {
+                "name": "Query Examples",
+                "route_name": "docs.laravel.eloquent-query-examples"
+            }
+        ]
+    },
     "Database and Eloquent": {
         "links": [
             {

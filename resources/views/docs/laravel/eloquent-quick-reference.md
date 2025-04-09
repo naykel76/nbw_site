@@ -1,5 +1,7 @@
 # Eloquent: Quick Reference
 
+- [Inserting and Updating Models](#inserting-and-updating-models)
+- [Query time casting](#query-time-casting)
 - [Aggregates](#aggregates)
 - [Update vs Save Methods](#update-vs-save-methods)
     - [`save()` Method](#save-method)
@@ -7,7 +9,9 @@
 - [Update Using 'switch' Statement](#update-using-switch-statement)
 
 
-Query time casting
+## Inserting and Updating Models
+
+## Query time casting
 
 - Laravel allows you to cast dates direct in a query using query time casting which automatically
   casts the date to a Carbon instance. <a href="https://laravel.com/docs/11.x/eloquent-mutators#query-time-casting" target="blank">Docs</a>

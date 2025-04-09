@@ -14,6 +14,3 @@
 }
 ```
 
-
-tutiorials-and-blogs.how-to-install-windows-subsystem-for-linux-on-windows
-tutorials-and-blogs/how-to-install-windows-subsystem-for-linux-on-windows

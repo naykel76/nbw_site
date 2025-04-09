@@ -8,8 +8,8 @@
             },
             {
                 "name": "Tutorials",
-                "route_name": "pages.tutorials",
-                "view": "pages.tutiorials-homepage"
+                "route_name": "tutorials-and-guides",
+                "view": "pages.tutiorials-and-guides"
             },
             {
                 "name": "SQL",
