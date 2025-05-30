@@ -1,0 +1,36 @@
+{
+    "Quick Reference": {
+        "links": [
+            {
+                "name": "Quick Reference",
+                "route_name": "docs.css.css-cheatsheet"
+            },
+            {
+                "name": "FAQ's",
+                "route_name": "docs.css.faqs"
+            },
+            {
+                "name": "Combinators",
+                "route_name": "docs.css.combinators"
+            },
+            {
+                "name": "CSS Position and Alignment Tips",
+                "route_name": "docs.css.position-and-alignment-tips",
+                "icon": "css"
+            },
+            {
+                "name": "CSS FAQ's",
+                "route_name": "docs.css-faqs",
+                "icon": "css"
+            }
+        ]
+    },
+    "Responsive Tips": {
+        "links": [
+            {
+                "name": "CSS Grid Techniques",
+                "route_name": "docs.css.grid-techniques"
+            }
+        ]
+    }
+}

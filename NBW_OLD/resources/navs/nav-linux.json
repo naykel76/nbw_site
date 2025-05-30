@@ -1,0 +1,49 @@
+{
+    "main": {
+        "links": [
+            {
+                "name": "Command-Line Cheatsheet",
+                "route_name": "docs.linux.linux-cheatsheet",
+                "icon": "linux"
+            },
+            {
+                "name": "Users, Permissions and Groups",
+                "route_name": "docs.linux.users-permissions-and-groups",
+                "icon": "linux"
+            },
+            {
+                "name": "File and Directory Actions",
+                "route_name": "docs.linux.file-and-directory-actions",
+                "icon": "linux"
+            },
+            {
+                "name": "Ubuntu Server Setup - Node",
+                "route_name": "docs.linux.ubuntu-server-node",
+                "icon": "linux"
+            },
+            {
+                "name": "Ubuntu Server Setup - PHP",
+                "route_name": "docs.linux.ubuntu-server-php",
+                "icon": "linux"
+            },
+            {
+                "name": "SSH and Security",
+                "route_name": "docs.linux.ssh-and-security",
+                "icon": "linux"
+            },
+            {
+                "name": "Web Server Setup",
+                "route_name": "docs.linux.web-server",
+                "icon": "linux"
+            }
+        ]
+    },
+    "other": {
+        "links": [
+            {
+                "name": "Things You Should Know",
+                "route_name": "linux.things-you-should-know"
+            }
+        ]
+    }
+}
