@@ -18,12 +18,6 @@
                 "exclude_route": true
             },
             {
-                "name": "Laravel",
-                "route_name": "docs.laravel.quick-reference",
-                "type": "md",
-                "exclude_route": true
-            },
-            {
                 "name": "Livewire",
                 "route_name": "docs.livewire.quick-reference",
                 "type": "md",
