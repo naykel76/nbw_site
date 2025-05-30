@@ -1,0 +1,48 @@
+{
+    "Getting Started": {
+        "links": [
+            {
+                "name": "Quick Reference",
+                "route_name": "support.laravel.quick-reference",
+                "icon": "laravel"
+            },
+            {
+                "name": "Debugging Techniques",
+                "route_name": "support.laravel.debugging-techniques",
+                "icon": "laravel"
+            }
+        ]
+    },
+    "Essentials": {
+        "links": [
+            {
+                "name": "Validation",
+                "route_name": "support.laravel.validation"
+            }
+        ]
+    },
+    "Database": {
+        "links": [
+            {
+                "name": "Factories and Seeding",
+                "route_name": "support.laravel.database.factories-and-seeding"
+            }
+        ]
+    },
+    "Eloquent": {
+        "links": [
+            {
+                "name": "Mutators and Casting",
+                "route_name": "support.laravel.eloquent-mutators-and-casting"
+            }
+        ]
+    },
+    "Storage": {
+        "links": [
+            {
+                "name": "File Storage",
+                "route_name": "support.laravel.file-storage"
+            }
+        ]
+    }
+}

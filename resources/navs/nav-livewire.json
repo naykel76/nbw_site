@@ -1,0 +1,19 @@
+{
+    "Getting Started": {
+        "links": [
+            {
+                "name": "Quick Reference",
+                "route_name": "support.livewire.quick-reference",
+                "icon": "livewire"
+            }
+        ]
+    },
+    "Essentials": {
+        "links": [
+            {
+                "name": "Events",
+                "route_name": "support.livewire.events"
+            }
+        ]
+    }
+}

@@ -1,26 +1,34 @@
 <?php
 
+use App\Livewire\ExampleForm;
 use Illuminate\Support\Facades\Route;
 use Naykel\Gotime\RouteBuilder;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-*/
+use Naykel\Postit\Http\Controllers\ShowPostController;
 
 Route::get('/', function () {
     return view('pages.home');
 })->name('home');
 
+// Route::get('/livewire-examples', function () {
+//     return view('pages.livewire-examples', ['pageTitle' => 'Livewire Examples']);
+// })->name('lwe');
+
+// Route::get('/form-example', ExampleForm::class)->name('form-example');
+
+(new RouteBuilder('nav-alpine', 'components.layouts.docs-default'))->create();
+(new RouteBuilder('nav-gotime', 'components.layouts.docs-default'))->create();
+(new RouteBuilder('nav-jtb', 'components.layouts.docs-default'))->create();
+(new RouteBuilder('nav-laravel', 'components.layouts.docs-default'))->create();
+(new RouteBuilder('nav-livewire', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-main'))->create();
+(new RouteBuilder('nav-postit', 'components.layouts.docs-default'))->create();
 
-/*
-|--------------------------------------------------------------------------
-| Admin Routes
-|--------------------------------------------------------------------------
-|
-*/
-
-// (new RouteBuilder('nav-admin'))->create();
+// /** ---------------------------------------------------------------------------
+//  *  =!= MUST RUN LAST =!= MUST RUN LAST =!= MUST RUN LAST =!= MUST RUN LAST =!=
+//  * ------------------------------------------------------------------------- */
+// // /////////////////////////////////////////////////////////////////////////////
+// Route::get('/{post:slug}', ShowPostController::class)->name('posts.show');
+// // /////////////////////////////////////////////////////////////////////////////
+// /** ---------------------------------------------------------------------------
+//  *  =!= MUST RUN LAST =!= MUST RUN LAST =!= MUST RUN LAST =!= MUST RUN LAST =!=
+//  * ------------------------------------------------------------------------- */

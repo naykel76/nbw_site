@@ -1,0 +1,11 @@
+{
+    "Getting Started": {
+        "links": [
+            {
+                "name": "Quick Reference",
+                "route_name": "support.alpine.quick-reference",
+                "icon": "alpinejs"
+            }
+        ]
+    }
+}

@@ -1,0 +1,102 @@
+{
+    "Getting Started": {
+        "links": [
+            {
+                "name": "Installation",
+                "route_name": "docs.gotime.installation"
+            },
+            {
+                "name": "WIP",
+                "route_name": "docs.gotime.wip"
+            }
+        ]
+    },
+    "Casts, Traits and Enums": {
+        "links": [
+            {
+                "name": "Crudable",
+                "route_name": "docs.gotime.traits.crudable"
+            },
+            {
+                "name": "Renderable",
+                "route_name": "docs.gotime.traits.renderable"
+            },
+            {
+                "name": "Enums",
+                "route_name": "docs.gotime.enums"
+            }
+        ]
+    },
+    "Components": {
+        "links": [
+            {
+                "name": "Button",
+                "route_name": "docs.gotime.components.button"
+            },
+            {
+                "name": "Checkbox",
+                "route_name": "docs.gotime.components.checkbox"
+            },
+            {
+                "name": "Icon",
+                "route_name": "docs.gotime.components.icon"
+            },
+            {
+                "name": "Input",
+                "route_name": "docs.gotime.components.input"
+            },
+            {
+                "name": "Modal",
+                "route_name": "docs.gotime.components.modal"
+            },
+            {
+                "name": "Select",
+                "route_name": "docs.gotime.components.select"
+            },
+            {
+                "name": "Table",
+                "route_name": "docs.gotime.components.table"
+            }
+        ]
+    },
+    "Form Components": {
+        "links": [
+            {
+                "name": "Ckeditor",
+                "route_name": "docs.gotime.ckeditor"
+            },
+            {
+                "name": "Filepond",
+                "route_name": "docs.gotime.filepond"
+            }
+        ]
+    },
+    "Quick Start Guides and Tutorials": {
+        "links": [
+            {
+                "name": "Quick Start",
+                "route_name": "docs.gotime.guides.quick-start"
+            },
+            {
+                "name": "Table Component",
+                "route_name": "docs.gotime.guides.create-table-component"
+            },
+            {
+                "name": "Form Component",
+                "route_name": "docs.gotime.guides.create-form-component"
+            },
+            {
+                "name": "Form Object",
+                "route_name": "docs.gotime.guides.create-form-object"
+            },
+            {
+                "name": "Deleting a Record",
+                "route_name": "docs.gotime.guides.deleting-a-record"
+            },
+            {
+                "name": "Uploading Files",
+                "route_name": "docs.gotime.guides.uploading-files"
+            }
+        ]
+    }
+}

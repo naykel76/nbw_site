@@ -1,0 +1,54 @@
+{
+    "Getting Started": {
+        "links": [
+            {
+                "name": "Introduction",
+                "route_name": "docs.jtb.introduction"
+            },
+            {
+                "name": "FAQ's",
+                "route_name": "docs.jtb.faqs"
+            }
+        ]
+    },
+    "Core Concepts and Tools": {
+        "links": [
+            {
+                "name": "Build Tools: Class and Utility Generation",
+                "route_name": "docs.jtb.build-tools"
+            }
+        ]
+    },
+    "Utilities": {
+        "links": [
+            {
+                "name": "Alignment",
+                "route_name": "docs.jtb.utilities.alignment"
+            },
+            {
+                "name": "Border",
+                "route_name": "docs.jtb.utilities.border"
+            },
+            {
+                "name": "Color and Themes",
+                "route_name": "docs.jtb.utilities.color-and-themes"
+            },
+            {
+                "name": "Layout",
+                "route_name": "docs.jtb.utilities.layout"
+            }
+        ]
+    },
+    "Components": {
+        "links": [
+            {
+                "name": "Navbar",
+                "route_name": "docs.jtb.components.navbar"
+            },
+            {
+                "name": "Table",
+                "route_name": "docs.jtb.components.table"
+            }
+        ]
+    }
+}

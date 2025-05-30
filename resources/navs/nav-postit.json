@@ -1,0 +1,10 @@
+{
+    "Getting Started": {
+        "links": [
+            {
+                "name": "Installation",
+                "route_name": "docs.postit.installation"
+            }
+        ]
+    }
+}
