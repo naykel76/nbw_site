@@ -31,7 +31,7 @@
 <livewire:gotime.components.checkbox variant="control-only-closed-tag" />
 ```
 
-```html +parse-torchlight-blade
+```html +torchlight-blade
 @verbatim
 <x-gotime::v2.input.controls.checkbox wire:model="remember" label="Remember Me" />
 @endverbatim
@@ -39,7 +39,7 @@
 
 
 
-```html +parse-torchlight-blade
+```html +torchlight-blade
 @verbatim
 <x-gotime::v2.input.controls.checkbox wire:model="events">
     Event Invitations

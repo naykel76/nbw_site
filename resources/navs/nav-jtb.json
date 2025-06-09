@@ -3,11 +3,11 @@
         "links": [
             {
                 "name": "Introduction",
-                "route_name": "docs.jtb.introduction"
+                "route_name": "pages.jtb.introduction"
             },
             {
                 "name": "FAQ's",
-                "route_name": "docs.jtb.faqs"
+                "route_name": "pages.jtb.faqs"
             }
         ]
     },
@@ -15,7 +15,11 @@
         "links": [
             {
                 "name": "Build Tools: Class and Utility Generation",
-                "route_name": "docs.jtb.build-tools"
+                "route_name": "pages.jtb.build-tools"
+            },
+            {
+                "name": "Magic Classes",
+                "route_name": "pages.jtb.magic-classes"
             }
         ]
     },
@@ -23,19 +27,19 @@
         "links": [
             {
                 "name": "Alignment",
-                "route_name": "docs.jtb.utilities.alignment"
+                "route_name": "pages.jtb.utilities.alignment"
             },
             {
                 "name": "Border",
-                "route_name": "docs.jtb.utilities.border"
+                "route_name": "pages.jtb.utilities.border"
             },
             {
                 "name": "Color and Themes",
-                "route_name": "docs.jtb.utilities.color-and-themes"
+                "route_name": "pages.jtb.utilities.color-and-themes"
             },
             {
                 "name": "Layout",
-                "route_name": "docs.jtb.utilities.layout"
+                "route_name": "pages.jtb.utilities.layout"
             }
         ]
     },
@@ -43,11 +47,11 @@
         "links": [
             {
                 "name": "Navbar",
-                "route_name": "docs.jtb.components.navbar"
+                "route_name": "pages.jtb.components.navbar"
             },
             {
                 "name": "Table",
-                "route_name": "docs.jtb.components.table"
+                "route_name": "pages.jtb.components.table"
             }
         ]
     }

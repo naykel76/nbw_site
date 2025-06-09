@@ -13,7 +13,7 @@ Route::get('/', function () {
 //     return view('pages.livewire-examples', ['pageTitle' => 'Livewire Examples']);
 // })->name('lwe');
 
-// Route::get('/form-example', ExampleForm::class)->name('form-example');
+Route::get('/form-example', ExampleForm::class)->name('form-example');
 
 (new RouteBuilder('nav-alpine', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-gotime', 'components.layouts.docs-default'))->create();

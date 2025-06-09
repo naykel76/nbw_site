@@ -15,7 +15,8 @@ return [
     // 'theme' => env('TORCHLIGHT_THEME', 'material-theme-ocean'),
     // 'theme' => env('TORCHLIGHT_THEME', 'moonlight'),
     // 'theme' => env('TORCHLIGHT_THEME', 'fortnite'),
-    'theme' => env('TORCHLIGHT_THEME', 'liver-dark'),
+    // 'theme' => env('TORCHLIGHT_THEME', 'liver-dark'),
+    'theme' => env('TORCHLIGHT_THEME', 'cobalt2'),
     // 'theme' => env('TORCHLIGHT_THEME', 'one-dark-pro'),
     // 'theme' => env('TORCHLIGHT_THEME', 'serendipity-dark'),
 

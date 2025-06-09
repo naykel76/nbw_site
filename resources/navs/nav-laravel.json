@@ -10,6 +10,11 @@
                 "name": "Debugging Techniques",
                 "route_name": "support.laravel.debugging-techniques",
                 "icon": "laravel"
+            },
+            {
+                "name": "Working with JSON in Laravel",
+                "route_name": "support.laravel.working-with-json-in-laravel",
+                "icon": "laravel"
             }
         ]
     },

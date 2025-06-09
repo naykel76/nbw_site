@@ -1,0 +1,18 @@
+@use '../../node_modules/nk_jtb/src/maps_and_variables/base' as * with (
+    $text-color: #eee9e0,
+    $body-bg: #090705,
+
+    $primary: #d9558c,
+    $secondary: #031a37,
+    $accent: #e6c637
+);
+
+@use '../../node_modules/nk_jtb/src/maps_and_variables/components' as * with (
+    $navbar-bg: transparent,
+    $navbar-nav-hover-color: #ffbb1c,
+    $navbar-nav-active-color: #ffbb1c
+);
+
+// forward the files to make them available in the main scss file
+@forward '../../node_modules/nk_jtb/src/maps_and_variables/base';
+@forward '../../node_modules/nk_jtb/src/maps_and_variables/components';

@@ -3,11 +3,11 @@
         "links": [
             {
                 "name": "Installation",
-                "route_name": "docs.gotime.installation"
+                "route_name": "pages.gotime.installation"
             },
             {
                 "name": "WIP",
-                "route_name": "docs.gotime.wip"
+                "route_name": "pages.gotime.wip"
             }
         ]
     },
@@ -15,15 +15,15 @@
         "links": [
             {
                 "name": "Crudable",
-                "route_name": "docs.gotime.traits.crudable"
+                "route_name": "pages.gotime.traits.crudable"
             },
             {
                 "name": "Renderable",
-                "route_name": "docs.gotime.traits.renderable"
+                "route_name": "pages.gotime.traits.renderable"
             },
             {
                 "name": "Enums",
-                "route_name": "docs.gotime.enums"
+                "route_name": "pages.gotime.enums"
             }
         ]
     },
@@ -31,31 +31,35 @@
         "links": [
             {
                 "name": "Button",
-                "route_name": "docs.gotime.components.button"
+                "route_name": "pages.gotime.components.button"
             },
             {
                 "name": "Checkbox",
-                "route_name": "docs.gotime.components.checkbox"
+                "route_name": "pages.gotime.components.checkbox"
+            },
+            {
+                "name": "Choices",
+                "route_name": "pages.gotime.components.choices"
             },
             {
                 "name": "Icon",
-                "route_name": "docs.gotime.components.icon"
+                "route_name": "pages.gotime.components.icon"
             },
             {
                 "name": "Input",
-                "route_name": "docs.gotime.components.input"
+                "route_name": "pages.gotime.components.input"
             },
             {
                 "name": "Modal",
-                "route_name": "docs.gotime.components.modal"
+                "route_name": "pages.gotime.components.modal"
             },
             {
                 "name": "Select",
-                "route_name": "docs.gotime.components.select"
+                "route_name": "pages.gotime.components.select"
             },
             {
                 "name": "Table",
-                "route_name": "docs.gotime.components.table"
+                "route_name": "pages.gotime.components.table"
             }
         ]
     },
@@ -63,11 +67,11 @@
         "links": [
             {
                 "name": "Ckeditor",
-                "route_name": "docs.gotime.ckeditor"
+                "route_name": "pages.gotime.ckeditor"
             },
             {
                 "name": "Filepond",
-                "route_name": "docs.gotime.filepond"
+                "route_name": "pages.gotime.filepond"
             }
         ]
     },
@@ -75,27 +79,23 @@
         "links": [
             {
                 "name": "Quick Start",
-                "route_name": "docs.gotime.guides.quick-start"
+                "route_name": "pages.gotime.guides.quick-start"
+            },
+            {
+                "name": "Create and Edit Records",
+                "route_name": "pages.gotime.guides.create-and-edit-records"
             },
             {
                 "name": "Table Component",
-                "route_name": "docs.gotime.guides.create-table-component"
-            },
-            {
-                "name": "Form Component",
-                "route_name": "docs.gotime.guides.create-form-component"
-            },
-            {
-                "name": "Form Object",
-                "route_name": "docs.gotime.guides.create-form-object"
+                "route_name": "pages.gotime.guides.create-table-component"
             },
             {
                 "name": "Deleting a Record",
-                "route_name": "docs.gotime.guides.deleting-a-record"
+                "route_name": "pages.gotime.guides.deleting-a-record"
             },
             {
                 "name": "Uploading Files",
-                "route_name": "docs.gotime.guides.uploading-files"
+                "route_name": "pages.gotime.guides.uploading-files"
             }
         ]
     }

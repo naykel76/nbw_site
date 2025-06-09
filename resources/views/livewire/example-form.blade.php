@@ -15,6 +15,7 @@
                 <x-gt-checkbox for="agree" text="I agree to the terms and conditions" />
                 <hr class="bdr-purple">
 
+                <x-gt-choices wire:model="form.tags" label="Select Tags" :options="$tags"/>
 
                 <div class="bx-title">Editors</div>
                 <x-gt-ckeditor wire:model="form.bio" label="Bio" editorId="{{ '_' . Str::uuid() }}" />

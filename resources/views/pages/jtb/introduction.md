@@ -40,3 +40,27 @@ This structure ensures a predictable, clear order of precedence when overriding 
 * **Component styles** define specific UI elements.
 * **Utility classes** give you granular control over layout and design.
 * **Maps & mixins** drive the build process and allow for easy customization.
+
+
+## Naming Conventions
+
+## Maps and Variables
+
+<!-- the build map consists of one ore many other maps -->
+
+- `$values`: A default list of values representing different options or scales
+  (such as spacing, sizing, colors, etc.). 
+- `$variants`: A map that assigns semantic names (such as `xs`, `sm`, `md`,
+  `lg`, `xl`, `full`) to specific values, making it easier to use meaningful
+  names in your stylesheets.
+- `$map`: Combines the values and variants into a single map using
+  `smart-merge`, allowing for flexible and consistent access to settings
+  throughout your project.
+
+
+
+$values: (0, 1, 2, ...) !default; $variants: (sm: 0.25rem, md: 0.5rem, lg: 1rem)
+!default; $map: smart-merge($values, $variants) !default;
+
+These values can be used to generate
+  utility classes or referenced in other style definitions.

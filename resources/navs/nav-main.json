@@ -2,6 +2,11 @@
     "main": {
         "links": [
             {
+                "name": "Form Example",
+                "route_name": "form-example",
+                "exclude_route": true
+            },
+            {
                 "name": "Conventions",
                 "route_name": "naykel-naming-conventions",
                 "type": "md"
@@ -23,17 +28,17 @@
             },
             {
                 "name": "JTB",
-                "route_name": "docs.jtb.introduction",
+                "route_name": "pages.jtb.introduction",
                 "exclude_route": true
             },
             {
                 "name": "Gotime",
-                "route_name": "docs.gotime.installation",
+                "route_name": "pages.gotime.installation",
                 "exclude_route": true
             },
             {
                 "name": "Postit",
-                "route_name": "docs.postit.installation",
+                "route_name": "pages.postit.installation",
                 "exclude_route": true
             }
         ]

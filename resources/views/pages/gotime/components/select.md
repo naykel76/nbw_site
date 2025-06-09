@@ -40,7 +40,7 @@
 </div>
 ```
 
-```html +parse-torchlight-blade
+```html +torchlight-blade
 @verbatim
 <x-gotime::v2.input.controls.select wire:model="country" :options="$countries" />
 @endverbatim

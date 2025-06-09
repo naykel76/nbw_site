@@ -23,6 +23,18 @@ class ExampleForm extends Component
         'US' => 'United States',
     ];
 
+    public array $tags = [
+        1 => 'Artistic',
+        2 => 'Fashion',
+        3 => 'Fitness',
+        4 => 'Music',
+        5 => 'Photography',
+        6 => 'Technology',
+        7 => 'Travel',
+    ];
+
+    public $selectedTags = [2, 4, 5];
+    
     public function mount()
     {
         // no need to mount. used for testing

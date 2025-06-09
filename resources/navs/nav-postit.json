@@ -3,7 +3,7 @@
         "links": [
             {
                 "name": "Installation",
-                "route_name": "docs.postit.installation"
+                "route_name": "pages.postit.installation"
             }
         ]
     }
