@@ -36,8 +36,74 @@
 ```
 
 ----------
+### Frequently Asked Questions
 
-### Control Only
+#### How do I set the selected values?
+You can set the selected values by binding the component to a variable (e.g.,
+`wire:model="selectedTags"`) and assigning the desired values to that variable
+in your backend or JavaScript.
+
+How do I validate the selected values?
+<!-- You can validate the selected values by using Livewire validation rules in your Livewire
+component. For example, you can use `validate(['selectedTags' => 'required'])` to ensure that at least one tag is selected. -->
+
+#### How do I update the selected values?
+Update the bound variable (such as `selectedTags`) in your backend or via
+Livewire/Alpine.js. The component will automatically reflect the changes.
+
+#### How do I set the placeholder?
+Use the `placeholder` attribute on the component, for example:  
+`<x-gt-choices placeholder="Please Select..." />`
+
+
+
+### Frequently Asked Questions
+
+#### How do I set the selected values?
+
+Bind the component to a Livewire property using `wire:model="selectedValues"`
+and set that property in your Livewire component or Form Object. The selected
+options will reflect the values of that property.
+
+If using a form object, add a validation rule like this:
+
+```php +torchlight-php
+#[Validate('nullable|array')]
+public array $tags = [];
+```
+
+
+#### How do I update the selected values?
+
+Update the Livewire property bound to the component. The UI will automatically
+update to reflect the new values.
+
+#### How do I set the placeholder?
+
+Pass the `placeholder` attribute to the component, for example: `<x-form.choices
+placeholder="Please select..." />`
+
+#### Can I use multiple selections?
+
+Yes, pass the `multiple` attribute to the component. The bound Livewire property
+should be an array.
+
+#### How do I provide options to the component?
+
+Pass an array of options with `value` and `label` keys via the `:options`
+attribute, e.g.: `:options="[ ['value' => '1', 'label' => 'One'], ['value' =>
+'2', 'label' => 'Two'] ]"`
+
+#### Does the component support Livewire validation error messages?
+
+Yes, since the underlying select is standard HTML, you can show validation
+errors as usual with `@error('selectedValues') <span>{{ $message }}</span>
+@enderror`.
+
+
+
+
+
 
 
 <!-- 

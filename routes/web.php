@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\ExampleForm;
+use App\Livewire\UserProfileForm;
 use Illuminate\Support\Facades\Route;
 use Naykel\Gotime\RouteBuilder;
 use Naykel\Postit\Http\Controllers\ShowPostController;
@@ -13,6 +14,7 @@ Route::get('/', function () {
 //     return view('pages.livewire-examples', ['pageTitle' => 'Livewire Examples']);
 // })->name('lwe');
 
+Route::get('/form-example', UserProfileForm::class)->name('form-example');
 Route::get('/form-example', ExampleForm::class)->name('form-example');
 
 (new RouteBuilder('nav-alpine', 'components.layouts.docs-default'))->create();
@@ -22,6 +24,8 @@ Route::get('/form-example', ExampleForm::class)->name('form-example');
 (new RouteBuilder('nav-livewire', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-main'))->create();
 (new RouteBuilder('nav-postit', 'components.layouts.docs-default'))->create();
+(new RouteBuilder('nav-programming', 'components.layouts.docs-default'))->create();
+(new RouteBuilder('nav-tutorials', 'components.layouts.docs-default'))->create();
 
 // /** ---------------------------------------------------------------------------
 //  *  =!= MUST RUN LAST =!= MUST RUN LAST =!= MUST RUN LAST =!= MUST RUN LAST =!=

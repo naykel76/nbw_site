@@ -54,7 +54,7 @@ NK::TD Create a mixin for this where you can pass in the desired width.
     <div class="h-3 blue"></div>
 </div>
 
-```scss
+```scss +torchlight-scss
 .flexible-grid-150 {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }

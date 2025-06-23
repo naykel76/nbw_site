@@ -7,5 +7,14 @@
                 "icon": "alpinejs"
             }
         ]
+    },
+    "The Basics": {
+        "links": [
+            {
+                "name": "Initialize Components",
+                "route_name": "support.alpine.alpine101-initialize-components",
+                "icon": "alpinejs"
+            }
+        ]
     }
 }

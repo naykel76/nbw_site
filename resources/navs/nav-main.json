@@ -37,9 +37,8 @@
                 "exclude_route": true
             },
             {
-                "name": "Postit",
-                "route_name": "pages.postit.installation",
-                "exclude_route": true
+                "name": "Tutorials",
+                "route_name": "pages.tutorials-homepage"
             }
         ]
     },

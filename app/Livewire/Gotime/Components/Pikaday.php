@@ -19,7 +19,6 @@ class Pikaday extends Component
 
     public function mount()
     {
-        // dd(Carbon::parse('2021-10-10'));
         $this->user = User::first();
         $this->created_at = $this->user->created_at->format('d-m-Y');
     }

@@ -113,11 +113,7 @@
                 "route_name": "docs.regex-cheatsheet",
                 "icon": "regex"
             },
-            {
-                "name": "SCSS",
-                "route_name": "docs.scss-cheatsheet",
-                "icon": "sass"
-            },
+
             {
                 "name": "Socket.IO",
                 "route_name": "docs.socket-cheatsheet",

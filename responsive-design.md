@@ -23,7 +23,7 @@ Targets an element 'from' a specific screen size. This uses a media query that s
 to target a specific device and above. This is the default breakpoint and does not need to be
 prefixed. For example:
 
-```scss
+```scss +torchlight-scss
 @media (min-width: 768px)
 ```
 
@@ -32,7 +32,7 @@ prefixed. For example:
 Targets an element 'on' a specific screen size. This uses a media query that sets both `min-width`
 and `max-width` to target a specific viewport size. For example:
 
-```scss
+```scss +torchlight-scss
 @media (min-width: 768px) and (max-width: 991px)
 ```
 
@@ -41,7 +41,7 @@ and `max-width` to target a specific viewport size. For example:
 Targets an element 'up to' (not including) a specific screen size. This uses a media query that sets
 the `max-width` to target a specific device and below. For example:
 
-```scss
+```scss +torchlight-scss
 @media (max-width: 767px)
 ```
 

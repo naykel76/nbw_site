@@ -7,7 +7,6 @@
     - [How They Work Together](#how-they-work-together)
 - [Data Structures (review and move)](#data-structures-review-and-move)
     - [Property Map](#property-map)
-        - [Prefix](#prefix)
         - [Values](#values)
 - [Mixins](#mixins)
     - [`build-property-classes($properties-map, $responsive: false)`](#build-property-classesproperties-map-responsive-false)
@@ -65,16 +64,6 @@ class prefix, breakpoints, or positional variants.
 
 
 
-#### Prefix
-
-If specified, `prefix` is prepended to each generated class name. If omitted:
-
-* For single values, the class name matches the value.
-* For key-value pairs, the class name matches the key.
-
-<!-- ```scss
-.prefix-identifier-variant{}
-``` -->
 
 
 #### Values

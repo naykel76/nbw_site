@@ -1,5 +1,82 @@
 <x-gt-app-layout layout="{{ config('gotime.template') }}" hasContainer class="py-5-3-2-2">
 
+    <section class="relative overflow-x-clip py-2 md:py-4" style="background-color: rgba(0,0,0,0.1)">
+        <img src="/svg/blur-pink.svg" class="absolute z-bottom" style=" right:-5%; bottom: -340px; ">
+        <div class="container">
+            <h2>Quick Reference</h2>
+            <x-gt-menu filename="nav-programming" />
+        </div>
+    </section>
+
+    {{-- 
+    <section class="py-3" style="background-color: rgba(0,0,0,0.2)">
+        <div class="container">
+            <div class="grid-3 md:cols-2">
+                <div>
+                    <img src="/images/griffith-westpack-hackathon-2024-team-pacman.jpg" alt="griffith-westpack-hackathon-2024-team-pacman" class="rounded-2">
+                    <div class="txt-xs tac space-x-025">
+                        <span>From Left:</span>
+                        <span>Nathan Watts,</span>
+                        <span>Wangzhi (Owen) Xing,</span>
+                        <span>Prof Alan Wee-Chung Liew (Head of School), </span>
+                        <span>Derek Qui,</span>
+                        <span>Siqi (Percy) Wu,</span>
+                        <span>Maisi Hao</span>
+                    </div>
+                </div>
+                <div>
+                    <h2>Team "PacMan" wins 1st place at the Westpac Hackathon 2024!</h2>
+                    <p>Competing against hundreds of students from UQ, QUT, and Griffith University, our project "Gesture Recognition and VR Banking Application" secured the top spot for best idea and
+                        solution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-2 md:py-4">
+        <div class="container">
+            <h2>Software Engineering Concepts, Tips, and Techniques</h2>
+            <x-gt-menu filename="nav-software-engineering" class="flex wrap gap-1" itemClass="btn secondary" />
+            <h2>Programming Fundamentals and Techniques</h2>
+            <div class="maxw-md my">
+                <p>Solutions to common programming challenges across various languages and frameworks.</p>
+                <p>Think of them as ultimate cheat sheets, with the task taking center stage and the code playing a supporting role to provide a quick reference for common programming tasks and
+                    techniques.</p>
+            </div>
+            <x-gt-menu filename="nav-fundamentals-and-techniques" class="flex wrap gap-1" itemClass="btn secondary" />
+            <h4>Database</h4>
+            <x-gt-menu filename="nav-fundamentals-and-techniques" menuname="database" class="flex wrap gap-1" itemClass="btn secondary" />
+            <h2>Additional Resources</h2>
+            <x-gt-menu menuname="resources" layout="icon-grid" />
+        </div>
+    </section>
+    <section class="relative diagonal z-bottom md:py-4">
+        <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-5%; bottom: -240px; ">
+        <div class="container grid md:cols-2 md:gap-4 va-c py-2 md:py-4">
+            <div class="maxw-ms">
+                <img src="/images/wooden-sports-car1.jpg" class="rounded" alt="wooden sports car">
+            </div>
+            <blockquote>
+                <p class="txt-2 x">"Without reinventing the wheel we wouldn't have fast cars."</p>
+                <p class="lead">-- <em>Nathan Watts</em></p>
+            </blockquote>
+        </div>
+    </section>
+    <section class="flex space-between wrap px py-3 va-c ha-c">
+        <img src="/svg/blur-red.svg" class="wh-2 animate-pulse-slow">
+        <img style="animation-duration: 4s" src="/svg/blur-pink.svg" class="wh-3 animate-pulse-slow">
+        <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-4 animate-pulse-slow">
+        <img style="animation-duration: 6s" src="/svg/blur-blue.svg" class="wh-5 animate-pulse-slow">
+        <img style="animation-duration: 7s" src="/svg/blur-yellow.svg" class="wh-6 animate-pulse-slow">
+        <img style="animation-duration: 7s" src="/svg/blur-red.svg" class="wh-6 animate-pulse-slow">
+        <img style="animation-duration: 6s" src="/svg/blur-pink.svg" class="wh-5 animate-pulse-slow">
+        <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-4 animate-pulse-slow">
+        <img style="animation-duration: 4s" src="/svg/blur-blue.svg" class="wh-3 animate-pulse-slow">
+        <img src="/svg/blur-yellow.svg" class="wh-2 animate-pulse-slow">
+    </section> --}}
+
+    <hr>
+    <livewire:user-profile-form />
+
     <div class="container-sm">
         <livewire:gotime.components.choices />
     </div>
@@ -72,33 +149,11 @@
                 </div>
             </div>
         </div>
-
         <section>
             <div class="container-sm">
                 {{-- <x-payit-payment-options type="stripe-elements" /> --}}
                 {{-- <x-payit-stripe-elements /> --}}
             </div>
-        </section>
-
-
-        <section>
-            <div class="container">
-                <h2 class="mb-05 mt-2">Page Header</h2>
-            </div>
-            <header class="py">
-                <div class="container flex space-between gap-2">
-                    <div class="logo">
-                        <div class="to-md:hidden py-2 pink tac w-18">Large Logo</div>
-                        <div class="md:hidden py-1 blue tac w-12">Small Logo</div>
-                    </div>
-                    <div class="to-md:hidden py-2 pink tac fg1">
-                        <div>Button/Actions/Content</div>
-                    </div>
-                    <div class="md:hidden pxy-1 blue tac">
-                        <div>Menu</div>
-                    </div>
-                </div>
-            </header>
         </section>
     </div>
     </div>

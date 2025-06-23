@@ -4,7 +4,7 @@
 
 Override variables by loading the module directly with new values:
 
-```scss
+```scss +torchlight-scss
 @use 'nk_jtb/src/v1/maps_and_variables/colors' with (
   $primary: #7c0442,
   $secondary: #fff4e5
@@ -13,13 +13,13 @@ Override variables by loading the module directly with new values:
 
 Ensure your main framework is loaded *after* overrides:
 
-```scss
+```scss +torchlight-scss
 @use 'nk_jtb/src/jtb';
 ```
 
 Access overridden variables through their module namespace:
 
-```scss
+```scss +torchlight-scss
 .primary-bg {
     background-color: colors.$primary;
 }

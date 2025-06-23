@@ -14,8 +14,16 @@
     "Core Concepts and Tools": {
         "links": [
             {
+                "name": "Conventions",
+                "route_name": "pages.jtb.conventions"
+            },
+            {
                 "name": "Build Tools: Class and Utility Generation",
                 "route_name": "pages.jtb.build-tools"
+            },
+            {
+                "name": "Mixin: Build-Property-Classes",
+                "route_name": "pages.jtb.build-property-classes"
             },
             {
                 "name": "Magic Classes",

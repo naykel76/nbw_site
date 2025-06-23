@@ -1,2 +1,0 @@
-## Alpine JS Trouble Shooting
-

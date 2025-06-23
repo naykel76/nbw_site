@@ -2,8 +2,12 @@
     "main": {
         "links": [
             {
-                "name": "Date and Time Picker with Livewire v3, Alpine, and Flatpickr",
-                "route_name": "docs.tutorials.laravel-datetimepicker-livewire3-alpine-flatpickr"
+                "name": "Date and Time Picker with Livewire, AlpineJS, and Flatpickr",
+                "route_name": "pages.tutorials.laravel-datetimepicker-livewire3-alpine-flatpickr"
+            },
+            {
+                "name": "Slim Select with Livewire and AlpineJS",
+                "route_name": "pages.tutorials.slim-select-livewire-alpinejs"
             },
             {
                 "name": "CkEditor 5 for Laravel",

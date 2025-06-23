@@ -33,19 +33,16 @@ class ExampleForm extends Component
         7 => 'Travel',
     ];
 
-    public $selectedTags = [2, 4, 5];
-    
+    public array $hobbies = ['guitar', 'gaming', 'coding', 'cooking', 'traveling'];
+
     public function mount()
     {
         // no need to mount. used for testing
         $this->form->init(User::first());
     }
+
+    public function doStuff()
+    {
+        dd($this->form);
+    }
 }
-
-// get save to dispatch an event to tell the parent component (list) to update
-
-// #[on('create-item')]
-// public function callCreate()
-// {
-//     $this->create();
-// }

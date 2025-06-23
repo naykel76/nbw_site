@@ -3,8 +3,15 @@
         "links": [
             {
                 "name": "Quick Reference",
-                "route_name": "support.livewire.quick-reference",
-                "icon": "livewire"
+                "route_name": "support.livewire.quick-reference"
+            },
+            {
+                "name": "Alpine Basics",
+                "route_name": "support.livewire.livewire-alpine-basics"
+            },
+            {
+                "name": "Alpine Sharing State",
+                "route_name": "support.livewire.livewire-alpine-entangle"
             }
         ]
     },

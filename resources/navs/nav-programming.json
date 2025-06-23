@@ -1,0 +1,61 @@
+{
+    "main": {
+        "links": [
+            {
+                "name": "scss",
+                "route_name": "support.scss-quick-reference",
+                "icon": "scss"
+            },
+            {
+                "name": "Mermaid",
+                "route_name": "support.mermaid-cheatsheet",
+                "icon": "mermaidjs"
+            },
+            {
+                "name": "PHP",
+                "route_name": "support.php.php-cheatsheet",
+                "icon": "php"
+            }
+        ]
+    },
+    "other": {
+        "links": [
+            {
+                "name": "Google Maps",
+                "route_name": "support.google-maps"
+            },
+            {
+                "name": "ChoicesJS",
+                "route_name": "support.choices_js"
+            }
+        ]
+    },
+    "php": {
+        "standalone_menu": true,
+        "include_menus": [
+            "main"
+        ],
+        "links": [
+            {
+                "name": "Cheatsheet",
+                "route_name": "support.php.php-cheatsheet",
+                "icon": "php"
+            },
+            {
+                "name": "Array",
+                "route_name": "support.php.array",
+                "icon": "php"
+            },
+            {
+                "name": "Conditionals",
+                "route_name": "support.php.conditionals",
+                "icon": "php"
+            },
+            {
+                "name": "Enums",
+                "route_name": "support.php.enums",
+                "icon": "php"
+            }
+        ]
+    }
+}
