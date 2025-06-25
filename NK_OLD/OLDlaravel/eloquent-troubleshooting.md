@@ -21,7 +21,7 @@ other reasons why you might encounter this error, such as:
   example, if you have a column named `first_name`, you should use `first_name` instead of `first
   name`.
 
-```php
+```php +torchlight-php
 // incorrect
 $query = Lesson::with('module:id, title')->find(23);
 // SELECT `id`, ` title` FROM modules WHERE `id` IN (8)
@@ -41,7 +41,7 @@ scopes to filter results, you are getting multiple records instead of the expect
 For example, a route retrieves a single `StudentCourse` record using route model binding and query
 scopes to fetch additional data. Instead of one, you are getting two `StudentCourse` models.
 
-```php
+```php +torchlight-php
 // THIS IS INCORRECT CODE FOR DEMONSTRATION PURPOSES NO NOT USE
 
 public function __invoke(StudentCourse $studentCourse)
@@ -61,7 +61,7 @@ When using route model binding, the model instance is already loaded with the re
 **not** call query scopes directly on the model instance. Instead, use the query builder instance to
 apply the scopes.
 
-```php
+```php +torchlight-php
 public function __invoke($scid)
 {
     $studentCourseOverview = StudentCourse::query()
@@ -87,7 +87,7 @@ the logic that those query scopes contain manually on that single instance of `S
 
 For example, you could implement methods on your `StudentCourse` model to handle the logic directly:
 
-```php
+```php +torchlight-php
 public function getCurrentLessonId()
 {
     return StudentLesson::where('student_course_id', $this->id)

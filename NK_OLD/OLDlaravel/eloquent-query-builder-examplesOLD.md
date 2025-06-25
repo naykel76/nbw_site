@@ -11,7 +11,7 @@
 
 Case: Select all the pages where the route_prefix has two segments
 
-```php
+```php +torchlight-php
 // check for single segments with or without leading forward slash
 Page::where(function ($query) {
     $query->where('route_prefix', 'REGEXP', '^/?[^/]+$');

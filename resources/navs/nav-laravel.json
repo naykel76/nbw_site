@@ -29,6 +29,10 @@
     "Database": {
         "links": [
             {
+                "name": "Migrations",
+                "route_name": "support.laravel.database.migrations"
+            },
+            {
                 "name": "Factories and Seeding",
                 "route_name": "support.laravel.database.factories-and-seeding"
             }
@@ -49,5 +53,13 @@
                 "route_name": "support.laravel.file-storage"
             }
         ]
+    },
+    "testing": {
+        "links": [
+            {
+                "name": "Testing",
+                "route_name": "support.laravel.testing"
+            }
+        ]       
     }
 }

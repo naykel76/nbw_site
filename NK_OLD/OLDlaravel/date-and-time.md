@@ -32,7 +32,7 @@ Database Value: `1995-09-18 08:27:16`
 
 Create a new instance of Carbon from a string or a timestamp.
 
-```php
+```php +torchlight-php
 Carbon::create(2012, 1, 31, 0)            // 2012-01-31 00:00:00
 Carbon::createFromDate(2012, 1, 31)       // 2012-01-31 22:43:06
 Carbon::createFromTime(14, 15, 16)        // 2025-02-11 14:15:16
@@ -49,7 +49,7 @@ Carbon::createFromFormat('Y-m-d H:i:s', '1975-05-21 22:15:16') // 1975-05-21 22:
 
 https://carbon.nesbot.com/docs/#api-formatting
 
-```php
+```php +torchlight-php
 $dt->toDateString();                          // 1975-12-25
 $dt->toTimeString();                          // 14:15:16
 $dt->toDateTimeString();                      // 1975-12-25 14:15:16
@@ -67,7 +67,7 @@ Option 1
 Edit the `config/app.php` and set the `timezone` value from UTC to the desired timezone from the
 list of available timezones.
 
-```php
+```php +torchlight-php
 'timezone' => 'Australia/Brisbane',
 ```
 
@@ -76,7 +76,7 @@ list of available timezones.
 
 
 ### Set Date
-```php
+```php +torchlight-php
 $current = Carbon::now();
 $today = Carbon::today();
 $yesterday = Carbon::yesterday();

@@ -5,7 +5,7 @@
 Create new properties in the Form object to hold the boolean values for the checkboxes. Set these
 values in the `init` method.
 
-```php
+```php +torchlight-php
 public bool $published;
 
 public function init(Course $course): void
@@ -22,7 +22,7 @@ public function init(Course $course): void
 Use `beforePersistHook` from the `Crudable` trait to update the `validatedData` array before it is
 persisted to the database.
 
-```php
+```php +torchlight-php
 if ($this->published != $this->editing->isPublished()) {
     $validatedData['published_at'] = $this->published ? now() : null;
 }

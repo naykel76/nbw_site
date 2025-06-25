@@ -28,7 +28,7 @@ model resource via the `modelClass` property.
 This centralises model references, allowing the trait to handle model binding and CRUD
 operations, resulting in cleaner, more maintainable code and reducing errors.
 
-```php
+```php +torchlight-php
 use App\Models\Model;
 
 protected string $modelClass = Model::class;

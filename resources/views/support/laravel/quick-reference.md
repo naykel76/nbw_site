@@ -4,7 +4,7 @@
 
 ## Determining the Current Environment
 
-```php
+```php +torchlight-php
 if (App::environment('local')) {
     // The environment is local
 }

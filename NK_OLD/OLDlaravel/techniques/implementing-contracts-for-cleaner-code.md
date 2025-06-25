@@ -16,7 +16,7 @@ First, define the contract by creating an interface that defines the methods tha
 implement. This interface will serve as a blueprint for the class that will provide the
 functionality.
 
-```php
+```php +torchlight-php
 // app/Contracts/CartInterface.php
 namespace App\Contracts;
 
@@ -40,7 +40,7 @@ Next, create a concrete class that implements the contract interface. This class
 actual implementation for the methods declared in the contract. Place these classes in an
 appropriate directory, such as `app/Services`.
 
-```php
+```php +torchlight-php
 // app/Services/CartService.php
 namespace App\Services;
 
@@ -83,7 +83,7 @@ target="blank">Laravel Docs</a>
 </x-alert>
 ```
 
-```php
+```php +torchlight-php
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
@@ -122,7 +122,7 @@ There are several ways to use the interface in your controller.
 
 ### Inject the interface directly into the controller's constructor
 
-```php
+```php +torchlight-php
 // app/Http/Controllers/CartController.php
 namespace App\Http\Controllers;
 
@@ -156,7 +156,7 @@ Creating a facade is another way to make the singleton instance of `CartService`
 This approach can be useful when you need to access the cart functionality from anywhere in your
 application without having to inject the interface manually.
 
-```php
+```php +torchlight-php
 // app/Facades/CartFacade.php
 namespace App\Facades;
 
@@ -169,7 +169,7 @@ class CartFacade extends Facade {
 }
 ```
 
-```php
+```php +torchlight-php
 // app/Providers/AppServiceProvider.php
 namespace App\Providers;
 
@@ -195,7 +195,7 @@ Creating a helper function instead of a facade is another way to make the single
 `CartService` globally accessible. This approach can be simpler and more straightforward for some
 use cases.
 
-```php
+```php +torchlight-php
 // app\Helpers\CartHelper.php
 namespace App\Helpers;
 

@@ -16,7 +16,7 @@ that will generate a unique slug when saving any Eloquent model.
 
 Here's an example of how to implement the trait and customize the key:
 
-```php
+```php +torchlight-php
 namespace App;
 
 use Spatie\Sluggable\HasSlug;

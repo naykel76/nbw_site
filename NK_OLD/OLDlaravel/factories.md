@@ -22,7 +22,7 @@
 <a href="https://laravel.com/docs/11.x/eloquent-factories#factory-states"
 target="blank">https://laravel.com/docs/11.x/eloquent-factories#factory-states</a>
 
-```php
+```php +torchlight-php
 public function published(?Carbon $date = null): self
 {
     return $this->state(
@@ -33,7 +33,7 @@ public function published(?Carbon $date = null): self
 
 ### Using Factory States
 
-```php
+```php +torchlight-php
 $course = Course::factory()->published()->create();
 ```
 
@@ -41,7 +41,7 @@ $course = Course::factory()->published()->create();
 
 When creating a model with relationships, you can use factories to generate related models.
 
-```php
+```php +torchlight-php
 return [
     'started_at' => now(),
     'user_id' => User::factory(), // Use the User factory to generate a user_id
@@ -54,7 +54,7 @@ return [
 
 ### Has Many Relationships
 
-```php
+```php +torchlight-php
 $course = Course::factory()
             ->has(Chapter::factory()->count(3))
             ->create();
@@ -62,7 +62,7 @@ $course = Course::factory()
 
 ### Nested Relationships
 
-```php
+```php +torchlight-php
 $course = Course::factory()
             ->has(Chapter::factory()
                 ->has(Media::factory()->count(3))
@@ -80,7 +80,7 @@ $course = Course::factory()
 
 #### `randomDigit`, `randomNumber`, `numberBetween` 
 
-```php
+```php +torchlight-php
 // an integer between 0 and 9
 $this->faker->randomDigit();
 // random integer with UP TO n digits (123, 43, 19238, 5, or 1203)
@@ -93,11 +93,11 @@ $this->faker->randomNumber(5, true);
 
 #### `randomFloat`
 
-```php
+```php +torchlight-php
 randomFloat($nbMaxDecimals = null, $min = 0, $max = null): 
 ```
 
-```php
+```php +torchlight-php
 'price' => $this->faker->randomFloat(2),
 'price' => $this->faker->randomFloat(2, 5, 30);
 'price' => ceil($this->faker->randomFloat(2, 5, 10.50)*10)/10,
@@ -107,7 +107,7 @@ randomFloat($nbMaxDecimals = null, $min = 0, $max = null):
 
 You can generate unique data simply by using the `unique` method.
 
-```php
+```php +torchlight-php
 'code' => $this->faker->unique()->numberBetween(1000000, 9000000),
 'code' => $this->faker->unique()->randomNumber()
 ```

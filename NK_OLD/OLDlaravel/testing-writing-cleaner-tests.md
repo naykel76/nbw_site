@@ -16,7 +16,7 @@ repetition and keep your test suite organised.
 Create a reusable method to authenticate users before running tests. This method will
 create a new user if none is provided and return the authenticated user.
 
-```php
+```php +torchlight-php
 function loginAsUser($user = null): User
 {
     $user = $user ?? User::factory()->create();
@@ -27,7 +27,7 @@ function loginAsUser($user = null): User
 
 You can now use this method in your tests to authenticate users.
 
-```php
+```php +torchlight-php
 it('shows the dashboard when authenticated', function () {
     loginAsUser();
     get(route('dashboard'))->assertOk();
@@ -39,7 +39,7 @@ it('shows the dashboard when authenticated', function () {
 When testing role-based access control, create a role and assign it to a user. This will
 help you test different scenarios based on the user's role.
 
-```php
+```php +torchlight-php
 use App\Models\User;
 use Spatie\Permission\Models\Role;
 
@@ -67,7 +67,7 @@ When writing tests, you may encounter issues that require debugging. Here are so
 
 My simple test was failing and i had no idea why.
 
-```php
+```php +torchlight-php
 it('shows the checkout when authenticated', function () {
     $user = User::factory()->create();
 
@@ -78,7 +78,7 @@ it('shows the checkout when authenticated', function () {
 
 I added some debugging statements to identify the issue.
 
-```php
+```php +torchlight-php
 it('shows the checkout when authenticated', function () {
 
     $user = User::factory()->create();
@@ -103,7 +103,7 @@ In this case it turned out that middleware was blocking the request because the 
 not have a valid profile. I had to update the test to include a valid profile for the
 user.
 
-```php
+```php +torchlight-php
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::middleware(EnsureValidProfile::class)->group(function () {
         Route::get('checkout', [CheckoutController::class, 'show'])
@@ -119,7 +119,7 @@ method that is used in the `EnsureValidProfile` middleware to return true for th
 
 <!-- By adding a valid profile to the user, the test passed successfully.
 
-```php
+```php +torchlight-php
 it('shows the checkout when authenticated', function () {
     $user = User::factory()->create();
     $user->profile()->create(['name' => 'John Doe']);

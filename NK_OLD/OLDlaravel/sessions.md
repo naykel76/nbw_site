@@ -31,13 +31,13 @@ These examples are using the <code>Session</code> facade. You can also use the <
 
 ### `push(string $key, mixed $value)` - add a value to an array
 
-```php
+```php +torchlight-php
 Session::push('users', 'Sam Smith');
 ```
 
 ### `put(string|array $key, mixed $value = null)` - store or update data in the session
 
-```php
+```php +torchlight-php
 // Store a single key-value pair
 Session::put('name', 'Mike Dingle'); 
 
@@ -52,19 +52,19 @@ Session::put('name', ['Mike Dingle', 'Sue Mcallen']);
 
 ### `all(): array` - get all session data
 
-```php
+```php +torchlight-php
 $data = Session::all();
 ```
 
 ### `except(array $keys): array` - get all session data except for specific keys
 
-```php
+```php +torchlight-php
 $data = Session::except(['username', 'email']);
 ```
 
 ### `get(string $key, mixed $default = null)` - get a value from the session
 
-```php
+```php +torchlight-php
 // Get the value of a specific key
 $username = Session::get('username');
 
@@ -79,7 +79,7 @@ $username = Session::get('username', function () {
 
 ### `only(array $keys): array` - get a portion of the session data
 
-```php
+```php +torchlight-php
 $data = Session::only(['username', 'email']);
 ```
 
@@ -87,25 +87,25 @@ $data = Session::only(['username', 'email']);
 
 ### `flush(): void` - remove all session data
 
-```php
+```php +torchlight-php
 flush(): void
 ```
 
 ### `forget(string|array $keys): void` - remove multiple key-value pairs
 
-```php
+```php +torchlight-php
 Session::forget(['username', 'email']);
 ```
 
 ### `pull(string $key, mixed $default = null)` - remove a single key-value pair and return the value
     
-```php
+```php +torchlight-php
 $username = Session::pull('username');
 ```
 
 ### `remove(string $key)` - remove a single key-value pair
 
-```php
+```php +torchlight-php
 Session::remove('username');
 ```
 

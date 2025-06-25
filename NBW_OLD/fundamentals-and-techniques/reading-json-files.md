@@ -26,7 +26,7 @@ JSON file content used in the examples::
 
 Naykel helper function to read a JSON file and decode its content into a PHP object.
 
-```php
+```php +torchlight-php
 $file = getJsonFile($path);
 ```
 
@@ -41,7 +41,7 @@ The `json_decode` function optionally accepts a second parameter to specify the 
 set to `true`, the result is an associative array. If omitted or set to `false` (default), the
 result is an object (stdClass in PHP).
 
-```php
+```php +torchlight-php
 $path = 'path/to/file.json';
 $jsonString = file_get_contents($path); // Read JSON file as a string
 $jsonObject = json_decode($jsonString); // Decode JSON string into a PHP object
@@ -49,7 +49,7 @@ $jsonObject = json_decode($jsonString); // Decode JSON string into a PHP object
 
 Output the content of the JSON file:
 
-```php
+```php +torchlight-php
 Array
 (
     [0] => stdClass Object

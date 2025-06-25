@@ -26,7 +26,7 @@
 
 You can use the following methods to perform aggregate functions on the database.
 
-```php
+```php +torchlight-php
 $count = Flight::where('active', 1)->count();
 $max = Flight::where('active', 1)->max('price');
 ```
@@ -39,7 +39,7 @@ The `save()` method performs either an `INSERT` or an `UPDATE` based on the stat
 
 **INSERT**: When called on a new model instance, it creates a new record.
 
-```php
+```php +torchlight-php
 $flight = new Flight;
 $flight->name = $request->name;
 $flight->save(); // Performs INSERT
@@ -47,7 +47,7 @@ $flight->save(); // Performs INSERT
 
 **UPDATE**: When called on an existing model instance (fetched from the database), it updates the corresponding record.
 
-```php
+```php +torchlight-php
 $flight = App\Flight::find(1);
 $flight->name = 'New Flight Name';
 $flight->save(); // Performs UPDATE
@@ -59,7 +59,7 @@ The `update()` method works on a query and directly performs an update operation
 without retrieving model instances. It requires an array of column-value pairs for the columns to be
 updated.
 
-```php
+```php +torchlight-php
 App\Flight::where('active', 1)
             ->where('destination', 'San Diego')
             ->update(['delayed' => 1]); // Directly updates matching records
@@ -67,7 +67,7 @@ App\Flight::where('active', 1)
 
 ## Update Using 'switch' Statement
 
-```php
+```php +torchlight-php
 public function update(Course $course) {
 
     switch(request()->input('action')) {

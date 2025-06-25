@@ -16,7 +16,7 @@
 
 ### Publish Configuration
 
-```php
+```php +torchlight-php
 public function boot(): void
 {
     $this->publishes([
@@ -27,7 +27,7 @@ public function boot(): void
 
 ### Merge Configuration
 
-```php
+```php +torchlight-php
 public function register(): void
 {
     $this->mergeConfigFrom( __DIR__ . '/config/naykel.php', 'naykel' );
@@ -38,7 +38,7 @@ public function register(): void
 
 Paths may vary depending on directory set up.
 
-```php
+```php +torchlight-php
 public function boot(): void
 {
     $this->mergeConfigFrom( __DIR__ . '/config/gotime.php', 'gotime' );
@@ -52,7 +52,7 @@ public function boot(): void
 
 ### Blade Component
 
-```php
+```php +torchlight-php
 namespace MyPackage;
 
 use MyPackage\View\Components\Alert;
@@ -70,7 +70,7 @@ Manually register components in the `boot` method of the package service provide
 
 <div class="txt-red">Jet Stream registers in register method? Why?</div>
 
-```php
+```php +torchlight-php
 use Livewire\Livewire;
 use MyComponent\Http\Livewire\SomeComponent;
 
@@ -108,7 +108,7 @@ php artisan db:seed --class="Vendor\\PackageName\\seeders\\MySeeder"
 
 Make sure the component has been correctly added to the `boot` method of the `ServiceProvider`
 
-```php
+```php +torchlight-php
 use Naykel\Pageit\Http\Livewire\PageTable;
 
 $this->app->afterResolving(BladeCompiler::class, function () {
@@ -120,7 +120,7 @@ The component will not be found in the `boot` method when using `$this->app->aft
 
 What is the difference???
 
-```php
+```php +torchlight-php
 // This will work, but why?
 public function register() {
     $this->app->afterResolving(BladeCompiler::class, function () {

@@ -22,7 +22,7 @@ To display a page from the database without grouping it with a `route_prefix`, y
 wildcard route defined at the end of your `web.php` file. This catch-all route handles requests
 for URLs that don't match any other defined routes.
 
-```php
+```php +torchlight-php
 Route::get('/{page:slug}', [PageController::class, 'show'])->name('pages.show');
 ```
 
@@ -46,7 +46,7 @@ sub-category.
 In this example, 'books' is the main category, and the sub-categories, such as 'sci-fi' and
 'horror,' are the first segment of the wildcard route.
 
-```php
+```php +torchlight-php
 Route::prefix('books')->name('books')->group(function () {
     Route::get("/sci-fi/{page:slug}", [PageController::class, 'show']);
     Route::get("/horror/{page:slug}", [PageController::class, 'show']);
@@ -62,7 +62,7 @@ Route::prefix('books')->name('books')->group(function () {
 For more concise code, you can use the `Route::controller()` method to define the controller and
 method to use for each route. The following example uses the `show` method in the `PageController`.
 
-```php
+```php +torchlight-php
 Route::controller(PageController::class)->prefix('books')->name('books')->group(function () {
     Route::get("/sci-fi/{page:slug}", 'show');
     Route::get("/horror/{page:slug}", 'show');

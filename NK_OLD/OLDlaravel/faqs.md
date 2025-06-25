@@ -17,7 +17,7 @@ Eloquent orders records based on their primary key, you can change the default s
 adding a global scope to the model.
 
 
-```php
+```php +torchlight-php
 protected static function booted() {
     static::addGlobalScope('position', function (Builder $builder) {
         $builder->orderBy('position');
@@ -39,7 +39,7 @@ Add a `$rows` property to the model.
 composer require calebporzio/sushi
 ```
 
-```php
+```php +torchlight-php
 class State extends Model
 {
     use \Sushi\Sushi;
@@ -59,7 +59,7 @@ class State extends Model
 
 Now you can use the model as usual.
 
-```php
+```php +torchlight-php
 $states = State::all();
 $stateName = State::whereAbbr('NY')->first()->name;
 ```
@@ -82,7 +82,7 @@ To use the `$appends` property you;
    of the custom attribute. These methods must follow the naming convention of
    `get{AttributeName}Attribute`.
 
-    ```php
+    ```php +torchlight-php
     public function getFullNameAttribute()
     {
         return "{$this->first_name} {$this->last_name}";
@@ -93,7 +93,7 @@ To use the `$appends` property you;
    model. The attribute name should be in snake_case, matching how it would appear in the JSON
    output.
 
-    ```php
+    ```php +torchlight-php
     class User extends Model
     {
         protected $appends = ['full_name'];
@@ -110,7 +110,7 @@ To use the `$appends` property you;
 
 #### <question>What is the difference between the following two queries?</question>
 
-```php
+```php +torchlight-php
 $query = auth()->user()->studentCourses; // Collection
 $query = auth()->user()->studentCourses(); // Query Builder
 ```

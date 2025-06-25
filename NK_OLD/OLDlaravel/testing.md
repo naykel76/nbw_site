@@ -6,7 +6,6 @@
 - [Running Tests](#running-tests)
 - [Laravel Assertions](#laravel-assertions)
 - [Testing Requests \& Responses](#testing-requests--responses)
-    - [Testing Page Response](#testing-page-response)
     - [Testing Page Content](#testing-page-content)
     - [`denies access to unauthorised users`](#denies-access-to-unauthorised-users)
     - [`redirects unauthenticated users to login`](#redirects-unauthenticated-users-to-login)
@@ -77,13 +76,13 @@ This checklist ensures comprehensive test coverage for a Laravel and Livewire ap
 
 Use the `it` or `test` function to define a test.
 
-```php
+```php +torchlight-php
 it('returns a successful response', function () {
     // test code here
 });
 ```
 
-```php
+```php +torchlight-php
 test('something is accessible', function () {
     // test code here
 });
@@ -93,7 +92,7 @@ You can use the `describe` function to group related tests together. This does n
 the test results but can help to organise tests, especially when there are many of them in
 the same file.
 
-```php
+```php +torchlight-php
 describe('group of tests', function () {
     // group tests here
 });
@@ -124,26 +123,20 @@ Additional options:
 Refer to <a href="https://laravel.com/docs/master/http-tests#response-assertions"
 target="blank">Response Assertions Docs</a>
 
-```php
+```php +torchlight-php
 ->assertSee(route('products.show', $product));
 ```
 
 ## Testing Requests & Responses
 
-### Testing Page Response
 
-```php
-it('gives back a successful response for home page', function () {
-    get(route('home'))->assertOk();
-});
-```
 
 ### Testing Page Content
 
 <!-- list of items -->
 <!-- displays item overview -->
 <!-- displays item details -->
-```php
+```php +torchlight-php
 it('displays the product name', function () {
     $product = Product::factory()->create();
     get(route('products.show', $product))->assertSee($product->name);
@@ -151,7 +144,7 @@ it('displays the product name', function () {
 ```
 
 
-```php
+```php +torchlight-php
 
 ## Access Control
 
@@ -166,7 +159,7 @@ middleware is applied correctly.
 This is the one test I suggest you write for each protected page. It ensures that  
 authenticated users can access the page.
 
-```php
+```php +torchlight-php
 it('allows authorised users to access some-page', function () {
     $user = User::factory()->create();
     actingAs($user)->get(route('some-page'))->assertOk();
@@ -177,7 +170,7 @@ The following tests however, are generally unnecessary when using middleware to 
 routes, as Laravel already enforces these behaviours.
 
 ### `denies access to unauthorised users`
-```php
+```php +torchlight-php
 it('denies access to unauthorised users', function () {
     $user = User::factory()->create();
     actingAs($user)->get(route('my-page'))->assertForbidden();
@@ -185,7 +178,7 @@ it('denies access to unauthorised users', function () {
 ```
 
 ### `redirects unauthenticated users to login`
-```php
+```php +torchlight-php
 it('redirects unauthenticated users to login', function () {
     get(route('my-page'))->assertRedirect(route('login'));
 });
@@ -197,7 +190,7 @@ it('redirects unauthenticated users to login', function () {
 
 To test role-based access control, simply create a role and assign it to a user. 
 
-```php
+```php +torchlight-php
 use Spatie\Permission\Models\Role;
 
 it('allows admin users to access the admin dashboard', function () {
@@ -227,7 +220,7 @@ it('allows admin users to access the admin dashboard', function () {
 - `assertSee` **includes** HTML in the search.  
 - `assertSeeText` **ignores** HTML and checks only plain text.
   
-```php
+```php +torchlight-php
 $response->assertSee('<h1>Heading</h1>'); // Passes
 $response->assertSeeText('<h1>Heading</h1>'); // Fails
 ```

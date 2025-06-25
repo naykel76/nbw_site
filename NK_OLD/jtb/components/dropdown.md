@@ -51,22 +51,22 @@ fundamental structure of the dropdown.
 ## Dropdown Content Position
 
 By default the dropdown content aligns to the left main dropdown toggle, you can align to the right
-by adding the `pos-r` position utility classes.
+by adding the `right-0` position utility classes.
 
-**NOTE** Currently only supports left and right positioning (`pos-l` and `pos-r`)
+**NOTE** Currently only supports left and right positioning (`left-0` and `right-0`)
 
 <div class="flex gap">
     <div class="dd">
         <div class="btn">
-            Mouse me (POS-L)
+            Mouse me (left-0)
         </div>
-        <div class="dd-content bx pxy-1 pos-r">
+        <div class="dd-content bx pxy-1 right-0">
             <p>Dropdown Content</p>
         </div>
     </div>
     <div class="dd">
         <div class="btn">
-            Mouse me (POS-R)
+            Mouse me (right-0)
         </div>
         <div class="dd-content bx pxy-1">
             <p>Dropdown Content</p>
@@ -122,7 +122,7 @@ by adding the `pos-r` position utility classes.
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
             </svg>
         </div>
-        <div class="dd-content bx pos-r flex-col pxy-05">
+        <div class="dd-content bx right-0 flex-col pxy-05">
             <a href="">Dashboard</a>
             <a href="">Profile</a>
             <a href="">Account Security</a>

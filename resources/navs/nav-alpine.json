@@ -12,8 +12,11 @@
         "links": [
             {
                 "name": "Initialize Components",
-                "route_name": "support.alpine.alpine101-initialize-components",
-                "icon": "alpinejs"
+                "route_name": "support.alpine.alpine101-initialize-components"
+            },
+            {
+                "name": "Things That Open and Close",
+                "route_name": "support.alpine.things-that-open-and-close"
             }
         ]
     }

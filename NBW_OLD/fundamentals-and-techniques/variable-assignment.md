@@ -16,7 +16,7 @@ let z = x ?? y;
 
 ### PHP
 
-```php
+```php +torchlight-php
 $x = null;
 $y = 10;
 $z = $x ?? $y;
@@ -41,6 +41,6 @@ validatedData.has_profile ??= true;
 
 ### PHP
 
-```php
+```php +torchlight-php
 $validatedData['has_profile'] ??= true;
 ```

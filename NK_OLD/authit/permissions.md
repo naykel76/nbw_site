@@ -29,7 +29,7 @@ target="blank">Roles vs Permissions</a> for a deeper explanation.
 
 ### Assigning Permissions and Roles
 
-```php
+```php +torchlight-php
 $user->givePermissionTo('edit articles');
 $user->givePermissionTo('edit articles', 'delete articles');
 $user->givePermissionTo(['edit articles', 'delete articles']);
@@ -39,7 +39,7 @@ $user->syncPermissions(['edit articles', 'delete articles']);
 
 ### Checking Permissions
 
-```php
+```php +torchlight-php
 $user->hasAllPermissions(['edit articles', 'publish articles']);
 $user->hasAnyPermission(['edit articles', 'publish articles']);
 $user->hasAnyPermission(['edit articles', 1, 5]);
@@ -51,7 +51,7 @@ $user->hasPermissionTo(Permission::find(1)->id);
 ```
 
 
-```php
+```php +torchlight-php
 // you can also use laravel's can and cannot methods
 $user->can('edit articles');
 ```
@@ -61,13 +61,13 @@ $user->can('edit articles');
 
 ### Assign and Revoke Roles
 
-```php
+```php +torchlight-php
 $user->givePermissionTo('delete articles');
 ```
 
 ### Checking Roles
 
-```php
+```php +torchlight-php
 $user->hasRole('writer');
 $user->hasRole(['editor', 'moderator']); // at least one role from an array of roles
 ```
@@ -76,7 +76,7 @@ $user->hasRole(['editor', 'moderator']); // at least one role from an array of r
 
 ## Other Methods to Document
 
-```php
+```php +torchlight-php
 $role = Role::findByName('writer');
 $role->givePermissionTo('edit articles');
 $role->givePermissionTo('edit articles');

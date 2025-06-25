@@ -10,7 +10,7 @@ component. The goal is to refresh this list after an action has been performed.
 Dispatch an event from the 'ListRow' component after an action has been performed. For example,
 when an item is deleted, dispatch a 'refresh-list' event.
 
-```php
+```php +torchlight-php
 // ListRow.php
 public function deleteItem($itemId){
     // Delete the item
@@ -24,7 +24,7 @@ There are several approaches to achieve this:
 
 Add a listener to the main component and call the `$refresh` method.
 
-```php
+```php +torchlight-php
 // main-component.blade.php
 
 // list in main component
@@ -33,7 +33,7 @@ Add a listener to the main component and call the `$refresh` method.
 @endforeach
 ```
 
-```php
+```php +torchlight-php
 // MainComponent.php
 protected $listeners = ['refresh-list' => '$refresh'];
 ```

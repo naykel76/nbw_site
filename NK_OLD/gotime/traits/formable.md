@@ -67,7 +67,7 @@ mount method making it re-usable.
 
 You can override the default values by passing in an array of attributes to the `createNewModel`
 
-```php
+```php +torchlight-php
 public function createNewModel(array $data = []): ToDo
 {
     $model = ToDo::factory()->make(array_merge([

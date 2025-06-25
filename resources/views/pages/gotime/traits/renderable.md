@@ -14,7 +14,7 @@ reducing the need for manual definitions and boilerplate code.
 
 To use the `Renderable` trait, include it in your Livewire component class:
 
-```php
+```php +torchlight-php
 
 use Naykel\Gotime\Traits\Renderable;
 
@@ -31,7 +31,7 @@ data to the view. You can define this method to prepare any data required by you
 
 For example:
 
-```php
+```php +torchlight-php
 protected function prepareData(): array
 {
     return ['items' => $this->modelClass::all()];
@@ -55,7 +55,7 @@ By default, the layout is determined by the `livewire_layout` configuration valu
 To set a custom layout for a specific component, you can define the `$layout` property in
 your component class:
 
-```php  
+```php +torchlight-php  
 protected $layout = 'admin';
 ```
 
@@ -69,7 +69,7 @@ name.
 
 To define a custom view name, use the `$view` property in your component class:
 
-```php
+```php +torchlight-php
 protected $view = 'custom.view.name';
 ```
 
@@ -81,7 +81,7 @@ The `Renderable` trait provides a default `render` method. If you need to custom
 render behavior, you can override the `render` method in your component class, but this
 will override the trait's `render` method, not Livewire's default one.
 
-```php
+```php +torchlight-php
 public function render(): View
 {
     // Custom render logic
@@ -93,7 +93,7 @@ public function render(): View
 Here’s an example that demonstrates how to use the trait with a custom view and the
 `prepareData` method:
 
-```php
+```php +torchlight-php
 use Naykel\Gotime\Traits\Renderable;
 
 class MyComponent

@@ -20,25 +20,25 @@
 
 ### Define a Resource Route
 
-```php
+```php +torchlight-php
 Route::resource('posts', PostController::class);
 ```
 
 ### Limit the Routes Created by a Resource Controller (Only)
 
-```php
+```php +torchlight-php
 Route::resource('posts', PostController::class)->only(['index', 'show']);
 ```
 
 ### Exclude Resource Routes (Except)
 
-```php
+```php +torchlight-php
 Route::resource('posts', PostController::class)->except(['destroy', 'update']);
 ```
 
 ### Assign Custom Names to Resource Routes
 
-```php
+```php +torchlight-php
 Route::resource('posts', PostController::class)->names([
     'create' => 'posts.build'
 ]);
@@ -46,13 +46,13 @@ Route::resource('posts', PostController::class)->names([
 
 ## Redirect Route
 
-```php
+```php +torchlight-php
 Route::redirect('/', 'dashboard');
 ```
 
 ## Define a Route With Optional Parameters
 
-```php
+```php +torchlight-php
 Route::get('user/{name?}', UserController::class);
 ```
 
@@ -60,7 +60,7 @@ Route::get('user/{name?}', UserController::class);
 
 Group routes with a common prefix and name:
 
-```php
+```php +torchlight-php
 Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('users', [UserController::class, 'index'])->name('users');
@@ -69,7 +69,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
 
 ## Middleware Groups
 
-```php
+```php +torchlight-php
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile');

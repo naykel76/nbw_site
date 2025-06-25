@@ -11,7 +11,7 @@
 <a href="https://fakerphp.org/" target="blank">FakerPHP</a>
 
 
-```php
+```php +torchlight-php
 'title' => fake()->sentence(),
 'intro' => fake()->paragraph(),
 'headline' => fake()->paragraph(),
@@ -25,7 +25,7 @@
 <!-- 
 
 
-```php
+```php +torchlight-php
 // random string of text, remove last period and title case
 'title' => str($this->faker->sentence)->beforeLast('.')->title(),
 
@@ -34,7 +34,7 @@
 'description' => $this->faker->sentence(random_int(15, 50)),
 ```
 
-```php
+```php +torchlight-php
 'name' => $this->faker->name();        // 'Vince Sporer'
 'email' => $this->faker->email();      // 'walter.sophia@hotmail.com'
 'status' => $this->faker->randomElement(['success', 'failed', 'processing']),
@@ -48,7 +48,7 @@
 
 ### Real text
 
-```php
+```php +torchlight-php
 'body' => $this->faker->realText(500)
 'body' => fake()->realText(500)
 ```
@@ -58,7 +58,7 @@
 
 ## Arrays and Random Elements
 
-```php
+```php +torchlight-php
 <!-- Select random value from array -->
 $images = ['samples/sample001-600x338.jpg', 'samples/sample002-600x338.jpg', 'samples/sample003-600x338.jpg'];
 'image' => $this->faker->randomElement($images),
@@ -66,7 +66,7 @@ $images = ['samples/sample001-600x338.jpg', 'samples/sample002-600x338.jpg', 'sa
 
 ## Date and Time
 
-```php
+```php +torchlight-php
 'created_at' => now(),
 // create random date within 1 year past and future
 'created_at' => Carbon::today()->subDays(rand(-365, 365)),
@@ -81,7 +81,7 @@ $images = ['samples/sample001-600x338.jpg', 'samples/sample002-600x338.jpg', 'sa
 
 ### Get 100 random dates within the last year
 
-```php
+```php +torchlight-php
 $dates = [];
 
 for ($i = 0; $i < 100; $i++) {
@@ -96,7 +96,7 @@ For example, lets say you want to make a `playlist` of `songs` from an the 'song
 songs are not created using a seeder.
 
 
-```php
+```php +torchlight-php
 return [
     'song_id' => Arr::random(Song::all()->pluck('id')->toArray()),
 ];
@@ -106,6 +106,6 @@ return [
 
 ## Booleans
 
-```php
+```php +torchlight-php
 'is_published' => (rand(1,9) > 7)
 ``` -->

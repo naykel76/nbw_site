@@ -18,7 +18,7 @@ This cast automatically converts money values stored as `integers` (cents) in th
 `double` value (dollars) when the attribute is accessed on your Eloquent model and convert it back
 to cents when setting the value on the model.
 
-```php
+```php +torchlight-php
 protected $casts = [
     'price' => \Naykel\Gotime\Casts\MoneyCast::class
 ];
@@ -38,7 +38,7 @@ H:i:s` format for database storage.
 
 **Important:** this cast is strict and will yell at you if the format is not correct. **MUST** be `datetime` or `timestamps`
 
-```php
+```php +torchlight-php
 protected $casts = [
     'ordered_at' => \Naykel\Gotime\Casts\DateCast::class,
 ];

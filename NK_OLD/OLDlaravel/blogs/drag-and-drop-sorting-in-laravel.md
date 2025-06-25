@@ -53,7 +53,7 @@ Schema::create('to_dos', function (Blueprint $table) {
 
 Open the generated factory file and add the following code to define the factory:
 
-```php
+```php +torchlight-php
 public function definition(): array
 {
     return [
@@ -71,7 +71,7 @@ is to make it easier to visualise the sorting functionality and the values being
 
 Intentionally set the `position` out of order to demonstrate the sorting functionality.
 
-```php
+```php +torchlight-php
 ToDo::create(['id' => 487, 'name' => 'First todo...', 'position' => 0]);
 ToDo::create(['name' => 'Second todo...', 'position' => 1]);
 ToDo::create(['name' => 'Third todo...', 'position' => 4]);
@@ -109,7 +109,7 @@ The command will generate two files `app/Livewire/SortableToDoList` and
 Now, modify the `SortableToDoList` component to fetch the to-dos from the database and display them
 in the view.
 
-```php
+```php +torchlight-php
 <?php
 
 namespace App\Http\Livewire;
@@ -152,7 +152,7 @@ there is at least one public property defined in the component.
 Add the `sort` method to the `SortableToDoList` component to handle the drag-and-drop sorting
 functionality.
 
-```php
+```php +torchlight-php
 public function sort($id, $position): void
 {
     $model = $this->query()->findOrFail($id);
@@ -236,7 +236,7 @@ $position using update(['position' => $position]).
 The `arrange` method is used to reassign the positions of all items in the list after a drag-and-drop
 operation. This ensures that the positions are sequential and there are no gaps between the items.
 
-```php 
+```php +torchlight-php 
 public function arrange(): void
 {
     DB::transaction(function () {

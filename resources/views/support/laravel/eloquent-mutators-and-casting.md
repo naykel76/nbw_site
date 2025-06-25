@@ -16,7 +16,7 @@ Existing attributes can be transformed by defining a method in the model class
 that matches the attribute name in pascal case.  For example, if you have an
 attribute `first_name` then the method name should be `firstName()`.
 
-```php
+```php +torchlight-php
 protected function firstName(): Attribute
 {
     return Attribute::make(
@@ -34,7 +34,7 @@ protected function firstName(): Attribute
 
 ### Casts a date to a boolean, and save as date if true or null if false.
 
-```php
+```php +torchlight-php
 protected function activatedAt(): Attribute
 {
     return Attribute::make(
@@ -47,7 +47,7 @@ protected function activatedAt(): Attribute
 The may be occasions where you want to display the actual date stored in the
 database, for this you can use the `getOriginal()` method.
 
-```php
+```php +torchlight-php
 public function getOriginalActivatedAt(){
     return $this->getOriginal('activated_at');
 }

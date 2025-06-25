@@ -4,7 +4,7 @@
 
 Convert to human-readable format:
 
-```php
+```php +torchlight-php
  return $this->created_at->format('d-m-Y');
 ```
 

@@ -41,7 +41,7 @@ flexibility in how records are arranged.
 
 ### Step 1. Add `Draggable` trait to the model class.
 
-```php
+```php +torchlight-php
 use Naykel\Gotime\Traits\Draggable;
 
 class ToDo extends Model
@@ -63,7 +63,7 @@ requirements within the `move` method to dynamically modify the query conditions
 
 Here's an example of how you can define the `sortableFilter` query scope in the model:
 
-```php
+```php +torchlight-php
 use Closure;
 use Illuminate\Database\Eloquent\Builder;
 
@@ -94,7 +94,7 @@ Add a `sort` method to the component class that accepts the primary `key` of the
 
 
 
-```php
+```php +torchlight-php
 class ToDoList extends Component
 {
     // other traits, properties and methods ...
@@ -128,7 +128,7 @@ conditions as shown in the example above.
 When seeding, you may want to add the `WithoutModelEvents` trait to the `DatabaseSeeder` class to
 prevent model events from firing. The will prevent overriding the sort order when seeding.
 
-```php
+```php +torchlight-php
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder

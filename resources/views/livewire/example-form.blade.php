@@ -8,10 +8,7 @@
                     <x-gt-button wire:click="cancel" class="btn xs" text="CANCEL" />
                     <x-gt-button wire:click="save" class="btn primary xs" text="SAVE" />
                 </div>
-                <div class="bx">
-                    <div class="bx-title">Slim Select</div>
-                    <x-gotime::v2.input.controls.slim-select wire:model.live="form.tags" :options="$countries" multiple />
-                </div>
+
 
                 {{-- <div class="bx-title">Inputs</div>
                 <x-gt-input wire:model="form.name" label="name" />

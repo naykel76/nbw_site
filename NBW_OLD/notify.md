@@ -1,5 +1,5 @@
 Certainly! You can include all the necessary code within a single Blade view. Here's how you can set up your view to show a popup notification using Alpine.js when a session flash message is present:
-```php
+```php +torchlight-php
 // {{-- Include Alpine.js --}}
 <script src="//unpkg.com/alpinejs" defer></script>
 

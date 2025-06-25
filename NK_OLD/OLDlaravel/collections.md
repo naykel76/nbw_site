@@ -1,7 +1,7 @@
 
 ## `sortBy()`
 
-```php
+```php +torchlight-php
 $collection = collect([
     ['name' => 'Desk', 'price' => 200],
     ['name' => 'Chair', 'price' => 100],
@@ -17,7 +17,7 @@ $sorted->values()->all();
 
 
 
-```php
+```php +torchlight-php
 $collection = collect(['name' => 'Desk', 'price' => 100]);
 $collection->contains('Desk');
 // true

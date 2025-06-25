@@ -101,7 +101,7 @@ Start by importing the `RouteBuilder` class at the beginning of your file. Next,
 of `RouteBuilder` and call its `create` method. This method takes the name of your navigation JSON
 file as its argument (exclude the `.json` extension).
 
-```php
+```php +torchlight-php
 use Naykel\Gotime\RouteBuilder;
 
 (new RouteBuilder('nav-main'))->create();
@@ -117,7 +117,7 @@ In some cases, you may want to create a layout where the contents of the menu it
 into a specific layout. To do this, you can specify a layout for all views associated with the menu
 as the second parameter.
 
-```php
+```php +torchlight-php
 use Naykel\Gotime\RouteBuilder;
 
 (new RouteBuilder('nav-docs', 'components.layouts.markdown-docs'))->create();

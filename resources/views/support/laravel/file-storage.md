@@ -97,7 +97,7 @@ However, they work slightly differently:
    filename</span>. The `$path` parameter is the directory where the file will
    be stored, and `$disk` is the storage disk that the file will be stored on.
 
-```php
+```php +torchlight-php
 use Illuminate\Support\Facades\Storage;
 
 $request->validate([
@@ -108,14 +108,14 @@ $file = $request->hasFile('image'); // Retrieve the uploaded file from the reque
 $filename = $file->getClientOriginalName(); // Retrieve the original filename
 ```
 
-```php
+```php +torchlight-php
 Storage::disk('public')->put('path/to/file', $contents);
 $file->store('path/to/file', 'public');
 ```
 
 ### Naming Files
 
-```php
+```php +torchlight-php
 $originalName = $file->getClientOriginalName(); // Retrieve the original filename
 $timestampName = time() . '.' . $image->getClientOriginalExtension();
 ```
@@ -123,7 +123,7 @@ $timestampName = time() . '.' . $image->getClientOriginalExtension();
 
 ## Getting Files
 
-```php
+```php +torchlight-php
 Storage::disk('public')->get('path/to/file');
 ```
 
@@ -131,7 +131,7 @@ Storage::disk('public')->get('path/to/file');
 
 ## Deleting Files
 
-```php
+```php +torchlight-php
 use Illuminate\Support\Facades\Storage;
 
 Storage::disk('public')->delete('path/to/file');
@@ -141,7 +141,7 @@ Storage::delete(['path/to/file1', 'path/to/file2']);
 
 ## Downloading Files
 
-```php  
+```php +torchlight-php  
 return Storage::disk('your_disk_name')->download('path/to/file');
 return Storage::download('path/to/file');
 ```

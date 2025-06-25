@@ -82,7 +82,7 @@ Alternatively you can iterate over the options directly within the component vie
 <livewire:gotime.components.select />
 ```
 
-```php
+```php +torchlight-php
 public $countries = [ 'AU' => 'Australia', 'CA' => 'Canada', 'NZ' => 'New Zealand' ];
 public $country = 'NZ'; 
 
@@ -114,14 +114,14 @@ element to a property on the form object using the `wire:model` attribute.
 <livewire:gotime.components.select />
 ```
 
-```php
+```php +torchlight-php
 public $countries = [ 'AU' => 'Australia', 'CA' => 'Canada', 'NZ' => 'New Zealand' ];
 public $country = 'NZ';
 
 <x-gt-select wire:model="form.country" label="country" :options="$countries" />
 ```
 
-```php
+```php +torchlight-php
 <x-gt-select wire:model="form.type" label="Event Type" 
     :options="$this->modelClass::EVENT_TYPES"/>
 ```

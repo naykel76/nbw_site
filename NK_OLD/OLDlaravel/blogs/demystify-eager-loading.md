@@ -16,20 +16,20 @@ The `with` method is used to eager load relationships when retrieving a model. I
 For example, if you want to load the `comments` relationship when retrieving a `Post` model, you can
 use the `with` method like this:
 
-```php
+```php +torchlight-php
 $post = Post::with('comments')->find(1);
 ```
 
 If you already have a `Post` model instance (for example, from route model binding) and you want to
 load the `comments` relationship, you can use the `load` method like this:
 
-```php
+```php +torchlight-php
 $post->load('comments');
 ```
 
 Another example;
 
-```php
+```php +torchlight-php
 public function mount(StudentCourse $studentCourse)
 {
     // This gives you the entire student course instance with no related courses loaded.
@@ -55,7 +55,7 @@ things to check:
 
 Ensure there are no spaces after commas in the column selection syntax.
 
-```php
+```php +torchlight-php
 // Correct
 $studentCourse = $studentCourse->load('course:id,title');
 
@@ -67,7 +67,7 @@ $studentCourse = $studentCourse->load('course:id, title');
 
 Make sure to include the foreign key in the eager loading statement.
 
-```php
+```php +torchlight-php
 // Correct
 $studentCourse = $studentCourse->load('course:id,title');
 
@@ -79,7 +79,7 @@ $studentCourse = $studentCourse->load('course:title');
 
 When eager loading nested relationships, always include the foreign keys of the child models as well.
 
-```php
+```php +torchlight-php
 // Correct
 $studentCourse = $studentCourse->load([
     'course:id,title',

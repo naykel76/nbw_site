@@ -58,6 +58,10 @@
                 "route_name": "pages.gotime.components.select"
             },
             {
+                "name": "Sidebar",
+                "route_name": "pages.gotime.components.sidebar"
+            },
+            {
                 "name": "Table",
                 "route_name": "pages.gotime.components.table"
             }

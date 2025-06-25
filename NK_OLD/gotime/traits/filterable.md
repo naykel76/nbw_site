@@ -12,7 +12,7 @@ and reduces boilerplate.
 
 To use the `Filterable` trait, include it in your model class as follows:
 
-```php
+```php +torchlight-php
 use App\Models\Traits\Filterable;
 
 class MyModel extends Model
@@ -26,7 +26,7 @@ class MyModel extends Model
 The `scopeWhereDateWithinLast` query scope allows you to filter records where the specified
 date column falls within the last N days.
 
-```php
+```php +torchlight-php
 $lastWeek = MyModel::whereDateWithinLast('created_at', 7)->get();
 ```
 

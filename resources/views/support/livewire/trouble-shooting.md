@@ -7,7 +7,7 @@ If you are dispatching to a dynamic component, make sure the component is availa
 the event. For example, the code below will fail because the `create-edit` component is not available
 to listen to the event.
 
-```php
+```php +torchlight-php
 @foreach ($mediaItems as $media)
     <button wire:click="$dispatchTo('create-edit', 'set-editing-item', {id: {{ $>id }}})"> </button>
 @endforeach

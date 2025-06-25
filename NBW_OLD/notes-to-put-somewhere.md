@@ -14,7 +14,7 @@ npm install -D autoprefixer nk_jtb postcss postcss-cli sass
 
 The difference is how you access the properties
 
-```php
+```php +torchlight-php
 // array
 $resultArray[$menu] = [
     'standalone' => $menuData['standalone_menu'] ?? false,
@@ -26,7 +26,7 @@ $resultArray[$menu] = [
 ];
 ```
 
-```php
+```php +torchlight-php
 // Fetch JSON and Decode to PHP associative array
 $menus = getJsonFile(resource_path("navs/$this->filename.json"), true);
 // Initialize an empty array to store the processed data.
@@ -43,7 +43,7 @@ foreach ($menus as $menu => $menuData) {
 }
 ```
 
-```php
+```php +torchlight-php
 $filePath = resource_path("navs/{$filename}.json");
 $fileContents = file_get_contents($filePath);
 $dataArray = json_decode($fileContents, true);
@@ -51,7 +51,7 @@ $dataArray = json_decode($fileContents, true);
 
 
 All of these are considered empty (true)
-```php
+```php +torchlight-php
 $var1 = "";         // true
 $var2 = null;       // true
 $var3 = [];         // true
@@ -79,14 +79,14 @@ rm -rf vendor
 composer install
 ```
 
-```php
+```php +torchlight-php
 // Checks if the object or class has a property
 property_exists($object_or_class, string $property): bool
 ```
 
 #### How to count the sections in a php path?
 
-```php
+```php +torchlight-php
 $path = "section1/section2";
 $sections = explode("/", $path);
 $num_sections = count($sections);

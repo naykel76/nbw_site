@@ -1,13 +1,77 @@
-<x-gt-app-layout layout="{{ config('gotime.template') }}" hasContainer class="py-5-3-2-2">
+<x-gt-app-layout layout="{{ config('gotime.template') }}" class="py-5-3-2-2">
 
-    <section class="relative overflow-x-clip py-2 md:py-4" style="background-color: rgba(0,0,0,0.1)">
-        <img src="/svg/blur-pink.svg" class="absolute z-bottom" style=" right:-5%; bottom: -340px; ">
-        <div class="container">
-            <h2>Quick Reference</h2>
-            <x-gt-menu filename="nav-programming" />
+    {{-- <x-gt-sidebar /> --}}
+
+    {{-- @php
+        $width = 'w-20';
+    @endphp
+    <div x-data="{ open: true }">
+        <!-- Toggle -->
+        <button class="btn primary" x-on:click="open = ! open">
+            <span x-text="open ? 'Click to Close' : 'Click to Open'"></span>
+        </button>
+
+        <!-- Backdrop -->
+        <div x-show="open" x-on:click="open = !open" class="overlay"></div>
+
+        <!-- Sidebar -->
+        <aside x-show="open" class="sidebar top-0 left-0 z-40 h-screen transition-transform -translate-x-full {{ $width }}">
+            <div class="h-full overflow-y-auto bg-sky-700">
+                <div class="flex va-c space-between pxy-05 bdr-b">
+                    <div class="flex va-c">
+                        <img src="{{ asset('favicon.svg') }}" alt="{{ config('app.name') }}">
+                        <div class="txt-lg fw7 ml-1">NAYKEL</div>
+                    </div>
+                    <button x-on:click="open = ! open" type="button" class="btn dark pxy-025">
+                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+
+                <div>
+                </div>
+            </div>
+        </aside>
+    </div> --}}
+
+    <div class="container">
+        <livewire:form-examples-and-testing />
+    </div>
+
+    <section>
+        <div class="container-sm">
+
+            <div class="bx info-light bdr-3">
+                <div class="bx-title">Current Task</div>
+                <div class="lead">
+                    finish off multi select and add to IBLCE
+                </div>
+            </div>
         </div>
     </section>
 
+    <section class="relative overflow-x-clip py-2 md:py-5">
+        <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-10%; bottom: -240px; ">
+        <img src="/svg/blur-pink.svg" class="absolute z-bottom" style="left: 10%; bottom: -440px; ">
+        <img src="/svg/blur-yellow.svg" class="absolute z-bottom" style="right: -20%; top: -120%; ">
+        <div class="container">
+            <div class="grid lg:cols-2 ha-t">
+                <div class="space-y-1">
+                    <div class="txt-xl">Hi, my name is</div>
+                    <div class="txt-4 fw7 lh-1">Nathan Watts</div>
+                    <div class="maxw-md lead"> I design and develop Laravel web applications, dabble in server management and am training to become a full stack developer. </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="relative overflow-x-clip py-2 md:py-4" style="background-color: rgba(0,0,0,0.1)">
+        <img src="/svg/blur-pink.svg" class="absolute z-bottom" style=" right:-5%; bottom: -340px; ">
+        <div class="container">
+            <h2>Cheat Sheets and Quick Reference</h2>
+            <x-gt-menu filename="nav-programming" />
+        </div>
+    </section>
     {{-- 
     <section class="py-3" style="background-color: rgba(0,0,0,0.2)">
         <div class="container">
@@ -61,20 +125,8 @@
             </blockquote>
         </div>
     </section>
-    <section class="flex space-between wrap px py-3 va-c ha-c">
-        <img src="/svg/blur-red.svg" class="wh-2 animate-pulse-slow">
-        <img style="animation-duration: 4s" src="/svg/blur-pink.svg" class="wh-3 animate-pulse-slow">
-        <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-4 animate-pulse-slow">
-        <img style="animation-duration: 6s" src="/svg/blur-blue.svg" class="wh-5 animate-pulse-slow">
-        <img style="animation-duration: 7s" src="/svg/blur-yellow.svg" class="wh-6 animate-pulse-slow">
-        <img style="animation-duration: 7s" src="/svg/blur-red.svg" class="wh-6 animate-pulse-slow">
-        <img style="animation-duration: 6s" src="/svg/blur-pink.svg" class="wh-5 animate-pulse-slow">
-        <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-4 animate-pulse-slow">
-        <img style="animation-duration: 4s" src="/svg/blur-blue.svg" class="wh-3 animate-pulse-slow">
-        <img src="/svg/blur-yellow.svg" class="wh-2 animate-pulse-slow">
-    </section> --}}
+ --}}
 
-    <hr>
     <livewire:user-profile-form />
 
     <div class="container-sm">
@@ -142,7 +194,7 @@
 
                     <div x-show="open" x-transition x-cloak
                         x-on:click.outside="open = false" x-on:mouseleave="open = false"
-                        class="absolute pos-r w-16 pxy-0 z-100 mt-025">
+                        class="absolute right-0 w-16 pxy-0 z-100 mt-025">
 
 
                     </div>
@@ -223,5 +275,16 @@
             </div>
         </div>
     </div>
-
+    <section class="flex space-between wrap px py-3 va-c ha-c">
+        <img src="/svg/blur-red.svg" class="wh-2 animate-pulse-slow">
+        <img style="animation-duration: 4s" src="/svg/blur-pink.svg" class="wh-3 animate-pulse-slow">
+        <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-4 animate-pulse-slow">
+        <img style="animation-duration: 6s" src="/svg/blur-blue.svg" class="wh-5 animate-pulse-slow">
+        <img style="animation-duration: 7s" src="/svg/blur-yellow.svg" class="wh-6 animate-pulse-slow">
+        <img style="animation-duration: 7s" src="/svg/blur-red.svg" class="wh-6 animate-pulse-slow">
+        <img style="animation-duration: 6s" src="/svg/blur-pink.svg" class="wh-5 animate-pulse-slow">
+        <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-4 animate-pulse-slow">
+        <img style="animation-duration: 4s" src="/svg/blur-blue.svg" class="wh-3 animate-pulse-slow">
+        <img src="/svg/blur-yellow.svg" class="wh-2 animate-pulse-slow">
+    </section>
 </x-gt-app-layout>

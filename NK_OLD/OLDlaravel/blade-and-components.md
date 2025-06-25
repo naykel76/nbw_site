@@ -50,7 +50,7 @@
 
 ### When a slot is set
 
-```php
+```php +torchlight-php
 <div {{ attributes->class(['text-lg', isset($aside) ? 'danger' : 'success']) }}>
     {{ $main }}
 </div>

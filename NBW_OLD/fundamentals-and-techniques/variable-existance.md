@@ -13,7 +13,7 @@
 - `empty` function is used to check if a variable is empty.
 - `is_null` function is used to check if a variable is `null`.
 
-```php
+```php +torchlight-php
 // No variable declaration
 isset($var)   // returns false
 empty($var)   // returns true

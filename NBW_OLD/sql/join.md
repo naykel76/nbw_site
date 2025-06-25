@@ -21,7 +21,7 @@ JOIN `join_to`, using `join_to.id`(PK) <br>
 CONSTRAINED ON `current_table.join_to_id`(FK)
 
 
-```php
+```php +torchlight-php
 Model::join('join_to', 'join_to.id', 'current_table.join_to_id')->get();
 ```
 

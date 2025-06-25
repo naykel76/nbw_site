@@ -31,7 +31,7 @@ https://livewire.laravel.com/docs/security
   strings and integers. Because of this, store the entire model as a property on the component
   instead of individual id.
 
-```php
+```php +torchlight-php
 class ShowPost extends Component
 {
     public Post $post;
@@ -43,7 +43,7 @@ class ShowPost extends Component
 - Locking properties is done by applying the #[Locked] attribute. Now if users attempt to tamper
   with this value an error will be thrown.
 
-```php
+```php +torchlight-php
 use Livewire\Attributes\Locked;
 
 class ShowPost extends Component
@@ -57,7 +57,7 @@ class ShowPost extends Component
 
 
 
-```php
+```php +torchlight-php
 class ShowPost extends Component
 {
     public $postId;

@@ -23,7 +23,7 @@ Or, in other words, who the email is going to be "from". There are two ways to c
 
 <div class="bx info-light">The <code>envelop</code> can be omitted and the mailable will create the subject based on the class name and use the sender details configured in <code>config/mail.php</code>.</div>
 
-```php
+```php +torchlight-php
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Mail\Mailables\Address;
 
@@ -51,7 +51,7 @@ And the second way is to specify a global "from" address in your config/mail.php
 
 Define markdown or blade view
 
-```php
+```php +torchlight-php
 use Illuminate\Mail\Mailables\Content;
 
 public function content(): Content
@@ -71,7 +71,7 @@ mailer will automatically use their email and name properties when determining t
 recipients, so make sure these attributes are available on your objects. Once you have specified
 your recipients, you may pass an instance of your mailable class to the send method:
 
-```php
+```php +torchlight-php
 use Illuminate\Support\Facades\Mail;
 
 public function testEmail(Request $request): RedirectResponse
@@ -102,7 +102,7 @@ public function testEmail(Request $request): RedirectResponse
 
 A handy way to develop and test your mailable is to directly display the template file in the browser. In the `web.php` routes file add the `mail` facade, `mailable` class and create a route to display in the browser.
 
-```php
+```php +torchlight-php
 Route::get('/test-email', function () {
     Mail::raw('Hello World!', function ($msg) {
         $msg->to('myemail@gmail.com')->subject('Test Email');
@@ -114,6 +114,6 @@ Route::get('/test-email', function () {
 
 Simply return it!
 
-```php
+```php +torchlight-php
 return new EnrolmentSuccess($order, $cart);
 ```

@@ -15,7 +15,7 @@ php artisan livewire:form PostFormObject
 
 ## Step 3: Add the `init` Method and Initialize the Form Model
 
-```php
+```php +torchlight-php
 public function init(Post $user): void
 {
     $this->editing = $user;
@@ -38,7 +38,7 @@ initially set or after the form has been saved, not during the editing process.
 
 This method creates a new model instance, often used when initialising the form for a new record.
 
-```php
+```php +torchlight-php
 public function createNewModel(array $data = []): Post
 {
     return Post::make(array_merge([

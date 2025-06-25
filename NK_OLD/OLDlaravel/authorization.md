@@ -2,7 +2,7 @@
 
 ##
 
-```php
+```php +torchlight-php
 public function delete($id)
 {
     // INSECURE!
@@ -15,7 +15,7 @@ public function delete($id)
 php artisan make:policy PostPolicy --model=Post
 ```
 
-```php
+```php +torchlight-php
 <?php
  
 namespace App\Policies;
@@ -39,7 +39,7 @@ class PostPolicy
 
 If this user 'id' the currently authenticated user, then you are authorized.
 
-```php
+```php +torchlight-php
 $user->is(Auth::user());
 $user->isNot(Auth::user());
 

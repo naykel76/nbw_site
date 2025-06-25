@@ -14,7 +14,7 @@
 
 Not to be confused with `array_sum` which sums the values of an array.
 
-```php
+```php +torchlight-php
 $values = [5, 3, 7];
 $count = count($values);
 ```
@@ -23,14 +23,14 @@ $count = count($values);
 
 ### PHP
 
-```php
+```php +torchlight-php
 $values = [5, 3, 7];
 $sum = array_sum($values);
 ```
 
 #### Multi-dimensional array
 
-```php
+```php +torchlight-php
 $cart = [
     'items' => [
         '5' => [
@@ -49,7 +49,7 @@ $totalQty = array_sum(array_column($cart['items'], 'qty'));
 
 ### PHP
 
-```php
+```php +torchlight-php
 $first = ['a', 'b', 'c'];
 $second = ['d', 'e', 'f'];
 $merged = array_merge($first, $second);

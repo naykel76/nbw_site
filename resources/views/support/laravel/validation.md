@@ -33,7 +33,7 @@ request fields as `nullable` if you do not want the validator to consider `null`
 This regex pattern will match any string that starts with one or more digits and optionally ends
 with a dot followed by exactly two digits.
 
-```php
+```php +torchlight-php
 'price' => 'required|regex:/^\d+(\.\d{2})?$/',
 ```
 
@@ -46,7 +46,7 @@ with a dot followed by exactly two digits.
 
 ### Phone Number
 
-```php
+```php +torchlight-php
 'phone_number' => 'required|string|regex:/^[0-9+\s]+$/i|min:10',
 ```
 
@@ -58,12 +58,12 @@ In this example, we're validating a phone number input called "phone_number" tha
 
 ### Ignore a given ID or a specific record
 
-```php
+```php +torchlight-php
 'code' => 'required|min:3|unique:courses,code,' . $this->course->id,
 'email' => 'required|string|email|max:255|unique:users,email,' . auth()->user()->id,
 ```
 
-```php
+```php +torchlight-php
 use Illuminate\Validation\Rule;
 
 'code' => ['required', Rule::unique('courses')->ignore($this->course)],
@@ -86,7 +86,7 @@ This 'always false' condition is because the unique rule requires a valid
 WHERE clause to work, and in this case, when the `is_category` field is
 `false`, there is no need to apply any condition to the query.
 
-```php
+```php +torchlight-php
 'route_prefix' => [
     Rule::requiredIf($this->editing->is_category),
     Rule::unique('pages', 'route_prefix')
@@ -106,7 +106,7 @@ WHERE clause to work, and in this case, when the `is_category` field is
 
 #### `exclude_if` and `exclude_unless`
 
-```php
+```php +torchlight-php
 'field' => 'exclude_if:anotherField,value|required',
 'field' => 'exclude_unless:anotherField,value|required',
 ```
@@ -116,20 +116,20 @@ you can check multiple against values using comma separated values.
 
 #### `required_with` and `required_with_all`
 
-```php
+```php +torchlight-php
 'password' => 'required|confirmed|min:6',
 'password_confirmation' => 'required_with:password',
 ```
 
 #### `required_if` and `required_unless`
-```php
+```php +torchlight-php
 'field' => 'required_if:anotherField,value,anotherValue',
 'field' => 'required_unless:anotherField,value,anotherValue',
 ```
 
 ## Validate Nested Properties (TBD)
 
-```php
+```php +torchlight-php
 'blocks.*.title' => [
     'exclude_if:blocks.*.type,apple,banana', 'required'
 ],
@@ -143,11 +143,11 @@ you can check multiple against values using comma separated values.
 
 Is valid option for the `in` rule to use the `keys` method on a collection to get a comma separated list of keys.
 
-```php
+```php +torchlight-php
 'status' => 'required|in:active,inactive,pending',
 ```
 
-```php
+```php +torchlight-php
 // convert to comma separated list of keys
 'status' => 'required|in:' . collect(Order::STATUSES)->keys()->implode(','),
 ```

@@ -1,7 +1,7 @@
 # Build a Table Component with Actions, Sorting, and Pagination
 
 
-```php
+```php +torchlight-php
 use Naykel\Gotime\Traits\Searchable;
 
 public array $searchableFields = ['title', 'category'];
@@ -42,7 +42,7 @@ In order to use actions, you need to include the `WithFormActions` trait in your
 
 ## Add a Route
 
-```php
+```php +torchlight-php
 use App\Livewire\PostTable;
 
 Route::get('/posts', PostTable::class)->name('posts.index');
@@ -58,7 +58,7 @@ Route::get('/posts', PostTable::class)->name('posts.index');
 - ☐ Add a `filterBy` property to the component class to allow users to filter records dynamically.
 
     Example:
-    ```php
+    ```php +torchlight-php
     public string $filterBy = '';
     ```
     - Use the `when()` method in `prepareData()` to apply conditions based on the `filterBy` property. -->
@@ -171,7 +171,7 @@ To allow users to filter records dynamically, add a `filterBy` property and appl
 conditions using the `when()` method in `prepareData()` (or wherever you are fetching the
 data).
 
-```php
+```php +torchlight-php
 public string $filterBy = '';
 
 protected function prepareData()
@@ -199,7 +199,7 @@ In the view, use buttons to update `filterBy` dynamically.
 In cases where all records are fetched first, filtering can be applied **after**
 retrieving the results.
 
-```php
+```php +torchlight-php
 protected function prepareData()
 {
     $query = auth()->user()->studentCourses()->overview()->get();
