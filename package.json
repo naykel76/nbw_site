@@ -3,7 +3,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
+        "build": "rm -f public/hot && vite build",
         "build1": "concurrently \"vite build\" \"npm run build:css\"",
         "build:css": "sass resources/scss/app.scss public/css/app.css --no-source-map --style=compressed",
         "build:staging": "vite build --mode=staging",

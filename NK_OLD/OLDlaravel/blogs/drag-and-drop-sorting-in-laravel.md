@@ -254,7 +254,7 @@ public function arrange(): void
 Open `resources/views/livewire/sortable-to-do-list.blade.php` and add the following to build out our
 front end and sortable list.
 
-```html
+```html +torchlight-html
 <div x-sort="$wire.sort($item, $position)" class="space-y-05">
     @foreach ($items as $todo)
         <div wire:key="{{ $todo->id }}" x-sort:item="{{ $todo->id }}" class="bx flex va-c hover:bg-gray-100 cursor-move">

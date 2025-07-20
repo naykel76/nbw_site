@@ -9,7 +9,6 @@
 <!-- /TOC -->
 https://docs.npmjs.com/cli/v9/commands
 
-<a id="markdown-common-commands" name="common-commands"></a>
 
 ## Common Commands
 <code-first-col></code-first-col>
@@ -24,7 +23,6 @@ https://docs.npmjs.com/cli/v9/commands
 | npm update <package>      | Update a package                                     |
 | npm rm                    | Remove a package                                     |
 
-<a id="markdown-version-control-and-publishing" name="version-control-and-publishing"></a>
 
 ## Version Control and Publishing
 <code-first-col></code-first-col>
@@ -38,7 +36,6 @@ https://docs.npmjs.com/cli/v9/commands
 | npm show [package] version | See package version details                      |
 |                            |
 
-<a id="markdown-update-all-packages-including-packagejson" name="update-all-packages-including-packagejson"></a>
 
 ## Update all packages including package.json
 

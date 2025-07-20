@@ -21,7 +21,7 @@
   - [`hasAny(string|array $key): bool` - check if any of the items exist in the session](#hasanystringarray-key-bool---check-if-any-of-the-items-exist-in-the-session)
   - [`missing(string|array $key): bool` - check if an item is missing from the session](#missingstringarray-key-bool---check-if-an-item-is-missing-from-the-session)
 
-```html +parse
+```html +torchlight-html +parse
 <x-alert type="info">
 These examples are using the <code>Session</code> facade. You can also use the <code>session()</code> helper function.
 </x-alert>

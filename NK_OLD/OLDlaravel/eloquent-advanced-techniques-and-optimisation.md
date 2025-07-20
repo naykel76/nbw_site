@@ -194,7 +194,7 @@ table, and it must be present in the query to load the associated course data.
 
 ## View Example
 
-```html
+```html +torchlight-html
 <div class="bx space-y-05">
     <!-- student course details -->
     <div class="flex gap-3">

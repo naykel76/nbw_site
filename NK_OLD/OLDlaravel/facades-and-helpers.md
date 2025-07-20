@@ -22,7 +22,7 @@ Facades provide a static interface to classes that are available in the applicat
 container. They allow you to access these classes without having to inject them into your classes
 manually.
 
-```html +parse
+```html +torchlight-html +parse
 <x-alert type="info">
 In a Laravel application, a facade is a class that provides access to an object from the container.
 </x-alert>

@@ -1,33 +1,60 @@
 # Select
 
-- [Basic Usage](#basic-usage)
-    - [Control Group](#control-group)
-    - [Control Only](#control-only)
-- [REVIEW](#review)
-- [Setting the selected value](#setting-the-selected-value)
-- [Multi-select Options](#multi-select-options)
-- [Techniques](#techniques)
-    - [Using with Livewire Form Objects](#using-with-livewire-form-objects)
+- [Control Group](#control-group)
+    - [Multi-Select](#multi-select)
+    - [Error Handling](#error-handling)
+- [Control Only](#control-only)
+    - [Checked](#checked)
+    - [Disabled](#disabled)
+    - [Error Handling](#error-handling-1)
+    - [Adding Custom Labels (Closed Tag)](#adding-custom-labels-closed-tag)
 
 
-## Basic Usage
+---
 
-----------
+## Control Group
 
-### Control Group
+```html +torchlight-blade
+@verbatim<x-gt-select wire:model="country" :options="$countries" />@endverbatim
+```
 
 ```html +parse
-<div class="grid cols-2">
+<div class="maxw-sm">
     <livewire:gotime.components.select variant="control-group" />
+</div>
+```
+
+---
+
+### Multi-Select
+
+```html +parse
+<div class="maxw-sm">
+    <livewire:gotime.components.select variant="control-group-multi-select" />
+</div>
+```
+
+```html +torchlight-blade
+@verbatim<x-gt-select wire:model="country" :options="$countries" />@endverbatim
+```
+
+### Error Handling
+
+```html +parse
+<div class="maxw-sm">
     <livewire:gotime.components.select variant="control-group-with-error" />
 </div>
 ```
 
-```html
-@verbatim
-<x-gt-select wire:model="country" :options="$countries" />
-@endverbatim
-```
+## Control Only
+### Checked
+### Disabled
+### Error Handling
+### Adding Custom Labels (Closed Tag)
+
+
+----------
+<!-- 
 
 ----------
 
@@ -124,4 +151,4 @@ public $country = 'NZ';
 ```php +torchlight-php
 <x-gt-select wire:model="form.type" label="Event Type" 
     :options="$this->modelClass::EVENT_TYPES"/>
-```
+``` -->

@@ -30,7 +30,7 @@
 - Identifying the difference between slots and props can be useful for creating more
   advanced components. 
 
-```html
+```html +torchlight-html +torchlight-html
 @props([ 'heading' => 'Some default heading...', ])
 
 <div {{ $attributes->class(['bx']) }} >
@@ -60,19 +60,19 @@
 
 Create a named slot with `$attribute` forwarding in the component:
 
-```html
+```html +torchlight-html
 <div {{ $heading->attributes }}> {{ $heading }} </div>
 ```
 
 Use the named slot in the component using the `x-slot` directive:
 
-```html
+```html +torchlight-html
 <x-slot name="title"> ... </x-slot>
 ```
 
 You can merge attributes for named slots the same way you would for the default slot.
 
-```html
+```html +torchlight-html
 <div {{ $heading->attributes->class('bg-blue-400') }}> 
     {{ $heading }}
 </div>
@@ -80,7 +80,7 @@ You can merge attributes for named slots the same way you would for the default 
 
 You can also merge attributes based on the presence of slot attributes.
 
-```html
+```html +torchlight-html
 <x-slot name="footer" danger> ... </x-slot>
 
 <div {{ $heading->attributes->class('danger' => $footer->attributes->has('danger')) }}> 

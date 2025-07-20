@@ -1,10 +1,5 @@
 # Xampp Cheat Sheet
 
-- [Configure XAMPP for Laravel Development](#configure-xampp-for-laravel-development)
-    - [Change HTDOCS Location](#change-htdocs-location)
-    - [Add a Virtual Host](#add-a-virtual-host)
-    - [Enable extensions in php.ini](#enable-extensions-in-phpini)
-    - [Increase `max_allowed_packet` in MySQL Configuration `C:\xampp\mysql\bin\my.ini`](#increase-max_allowed_packet-in-mysql-configuration-cxamppmysqlbinmyini)
 - [Setting up HTTPS on XAMPP](#setting-up-https-on-xampp)
 - [Generate a self-signed certificate for testing purposes](#generate-a-self-signed-certificate-for-testing-purposes)
 - [How to Setup a Virtual Host](#how-to-setup-a-virtual-host)
@@ -15,61 +10,11 @@
 
 
 
-## Configure XAMPP for Laravel Development
-
-### Change HTDOCS Location
-
-Open `C:\xampp\apache\conf\httpd.conf` and edit the `DocumentRoot` and `Directory` paths:
-   
-```bash
-DocumentRoot "C:/xampp/htdocs"
-<Directory "C:/xampp/htdocs">
-```
-
-Change the paths to the new location of your htdocs folder. For example:
-
-```bash
-DocumentRoot "C:\Users\natha\sites"
-<Directory "C:\Users\natha\sites">
-```
-
-2. Save and Restart Your Apache
 
 
-### Add a Virtual Host
 
-Open `C:\xampp\apache\conf\extra\httpd-vhosts.conf` and add a new virtual host entry:
 
-```bash
-<VirtualHost *:80>
-	DocumentRoot "C:\Users\natha\sites\nbw_site\public"
-	ServerName nbw.site
-</VirtualHost>
-```
 
-### Enable extensions in php.ini
-
-Find and uncomment:
-
-```bash
-extension=intl
-extension=sqlite3
-```
-
-### Increase `max_allowed_packet` in MySQL Configuration `C:\xampp\mysql\bin\my.ini`
-
-Note that there are two one around line 37 and another around line 163
-
-```bash
-max_allowed_packet=48M
-```
-
-<!-- ## Set up for Laravel
-
-1. Increase the `post_max_size` and `upload_max_filesize` in the `php.ini` file to at least `100M`:
-```bash
-
-increase sql script sice -->
 
 ## Setting up HTTPS on XAMPP
 

@@ -1,0 +1,8 @@
+flowchart LR
+    subgraph Exam-Cram Event Workflow
+        direction LR
+        start([Add Exam Cram Event]) --> check{IBLCE Exam <br> Event Created?}
+        check -->|Yes| select(Select Relevant <br> Exam Date)
+        check -->|No| AddExamDate(Create IBLCE <br> Exam Event) --> check
+        select --> complete([Complete Form<br>and Save Event])
+    end

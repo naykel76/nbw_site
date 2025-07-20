@@ -21,10 +21,16 @@ class Modal extends Component
             'control-group' => ' 
             
             ',
+            'control-group-disabled' => ' 
+            
+            ',
             'control-group-with-error' => ' 
             
             ',
             'control-only' => ' 
+            
+            ',
+            'control-only-disabled' => ' 
             
             ',
             'control-only-with-error' => ' 

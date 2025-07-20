@@ -2,19 +2,24 @@
     "main": {
         "links": [
             {
-                "name": "scss",
-                "route_name": "support.scss-quick-reference",
-                "icon": "scss"
+                "name": "Github",
+                "route_name": "support.github-quick-reference",
+                "icon": "github"
             },
             {
                 "name": "Mermaid",
-                "route_name": "support.mermaid-cheatsheet",
+                "route_name": "support.mermaid-quick-reference",
                 "icon": "mermaidjs"
             },
             {
                 "name": "PHP",
                 "route_name": "support.php.php-cheatsheet",
                 "icon": "php"
+            },
+            {
+                "name": "scss",
+                "route_name": "support.scss-quick-reference",
+                "icon": "scss"
             }
         ]
     },

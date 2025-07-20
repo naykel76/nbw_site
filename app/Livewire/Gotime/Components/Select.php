@@ -36,6 +36,9 @@ class Select extends Component
             'control-group' => '
                 <x-gt-select wire:model="country" :options="$countries" />
             ',
+            'control-group-multi-select' => '
+                <x-gt-select wire:model="country" :options="$countries" multiple />
+            ',
             'control-group-with-error' => '
                 <x-gt-select wire:model="errorTest" :options="$countries" />
             ',

@@ -93,7 +93,7 @@ applying conditional logic in Blade templates, controllers, or global configurat
 
 ### Example: Conditional Content in Blade
 
-```html
+```html +torchlight-html
 @if (request()->routeIs('admin.course.show'))
     <p>You are viewing the admin course page.</p>
 @endif
@@ -101,7 +101,7 @@ applying conditional logic in Blade templates, controllers, or global configurat
 
 ### Example: Active State in Navigation Menus
 
-```html
+```html +torchlight-html
 <li class="{{ request()->routeIs('admin.course.show') ? 'active' : '' }}">
     <a href="{{ route('admin.course.show', $course) }}">View Course</a>
 </li>

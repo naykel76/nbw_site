@@ -131,7 +131,7 @@ $course = Course::select('id', 'title', 'code')
 
 ## Viewing the Results
 
-```html
+```html +torchlight-html
 <div class="bx flex gap-3">
     <div><strong>Course ID: </strong>{{ $course->id }}</div>
     <div><strong>Code: </strong>{{ $course->code }}</div>

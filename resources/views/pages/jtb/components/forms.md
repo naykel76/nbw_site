@@ -1,56 +1,36 @@
-# Input
+# JTB Forms
 
-- [Base Controls](#base-controls)
-- [Control Groups](#control-groups)
-    - [Horizontal Groups](#horizontal-groups)
-- [Control Sizes](#control-sizes)
-- [Theme Examples](#theme-examples)
-- [Examples](#examples)
-- [Trouble Shooting](#trouble-shooting)
-    - [Inconsistent control and button height](#inconsistent-control-and-button-height)
+- [Input](#input)
+    - [Control Groups](#control-groups)
+- [Select](#select)
+    - [Multi-Select](#multi-select)
+- [Things to Review ---------------------------------------------](#things-to-review----------------------------------------------)
+    - [Control Sizes (REVIEW)](#control-sizes-review)
+    - [Theme Examples](#theme-examples)
+    - [Examples](#examples)
+    - [Trouble Shooting](#trouble-shooting)
+        - [Inconsistent control and button height](#inconsistent-control-and-button-height)
 
-table>tr*3>td*2 
 
+## Input
 
-```html +parse
-<x-gt-alert type="warning">
-    This document is a work in progress and needs to be reviewed for accuracy.
-</x-gt-alert>
+Form controls are inline by default.
+
+<label for="email">Email</label>
+<input type="email" id="email" name="email">
+<button type="button" class="btn">Submit</button>
+
+```html +torchlight-html
+<label for="email">Email</label>
+<input type="email" id="email" name="email">
+<button type="button" class="btn">Submit</button>
 ```
 
-## Base Controls
+### Control Groups
 
-All form controls by default are `inline-flex`. This means out of the box they will shrink to fit
-the content and you are free to style them as you wish.
+Wrap controls in a `.frm-row` to make inputs full width and add vertical spacing. By default, groups are vertical.
 
-<div class="my">
-    <label for="input">Label</label>
-    <input id="input" name="input" type="text" placeholder="Text input">
-    <button type="button" class="btn">Button</button>
-</div>
-
-```html
-<label for="input"> ... </label>
-<input id="input" name="input" type="text" placeholder="Input">
-<button type="button" class="btn"> ... </button>
-```
-
-## Control Groups
-
-To create balanced control groups, simply wrap the control elements inside a `.frm-row` element.
-This will make all inputs 100% wide and automatically add vertical spacing between rows. By
-default, all control groups without any additional classes are vertical.
-
-```html
-<div class="frm-row">
-    <label for=""> </label>
-    <input id="" name="" placeholder="">
-</div>
-```
-
-### Horizontal Groups
-
-<div class="bx">
+<form class="bx maxw-xs">
     <div class="frm-row">
         <label for="name">Name</label>
         <input id="name" placeholder="Enter your name...">
@@ -59,9 +39,12 @@ default, all control groups without any additional classes are vertical.
         <label for="email">Email</label>
         <input type="email" id="email" placeholder="example@company.com">
     </div>
-</div>
+    <div class="frm-row">
+        <button type="submit" class="btn primary">Submit</button>
+    </div>
+</form>
 
-```html
+```html +torchlight-html
 <div class="frm-row">
     <label for="name">Name</label>
     <input id="name" placeholder="Enter your name...">
@@ -73,7 +56,54 @@ default, all control groups without any additional classes are vertical.
 ```
 
 
-## Control Sizes
+## Select
+
+<div class="frm-row">
+    <label for="country">Select your country</label>
+    <select name="country" id="country">
+        <option value="AU">Australia</option>
+        <option value="CA">Canada</option>
+        <option value="NZ">New Zealand</option>
+        <option value="UK">United Kingdom</option>
+        <option value="US">United States</option>
+    </select>
+</div>
+
+### Multi-Select
+
+**Note:** When using `.frm-row` (which applies flexbox), the multi-select
+`<select>` may collapse to a single line. To prevent this, set a minimum height
+on the select element (e.g., with a `min-height` utility class).
+
+<div class="frm-row">
+    <label for="countries">Select your country</label>
+    <select class="minh-8" name="countries" id="countries" multiple>
+        <option selected>Choose countries</option>
+        <option value="AU">Australia</option>
+        <option value="CA">Canada</option>
+        <option value="NZ">New Zealand</option>
+        <option value="UK">United Kingdom</option>
+    </select>
+</div>
+
+```html +torchlight-html
+<div class="frm-row">
+    <label for="countries">Select your country</label>
+    <select class="minh-8" name="countries" id="countries" multiple>
+        <option selected>Choose countries</option>
+        <option value="AU">Australia</option>
+        <option value="CA">Canada</option>
+        <option value="NZ">New Zealand</option>
+        <option value="UK">United Kingdom</option>
+    </select>
+</div>
+```
+
+
+## Things to Review ---------------------------------------------
+
+
+### Control Sizes (REVIEW)
 
 <div class="flex-col gap-1">
     <div>
@@ -98,7 +128,7 @@ default, all control groups without any additional classes are vertical.
     </div>
 </div>
 
-## Theme Examples
+### Theme Examples
 
 <div class="frm-row">
     <label for="success" class="txt-green ">Your name</label>
@@ -112,7 +142,7 @@ default, all control groups without any additional classes are vertical.
     <p class="txt-red txt-sm">Bugger! Some error message.</p>
 </div>
 
-## Examples
+### Examples
 
 <form class="bx light">
     <div class="grid md:cols-2">
@@ -158,7 +188,7 @@ default, all control groups without any additional classes are vertical.
     <button type="submit" class="btn primary">Submit</button>
 </form>
 
-```html
+```html +torchlight-html
 <form class="bx light">
     <div class="grid md:cols-2">
         <div class="frm-row">
@@ -203,21 +233,19 @@ default, all control groups without any additional classes are vertical.
     <button type="submit" class="btn primary">Submit</button>
 </form>
 ```
-## Trouble Shooting
 
+### Trouble Shooting
 
-### Inconsistent control and button height
+#### Inconsistent control and button height
 
-It is important that the input and button have the same border thickness to ensure they are the
-same height. In situations where you may want a button or control without a border you will need
-to set a fixed height.
+Input and button should have the same border thickness for equal height. If you remove borders, set a fixed height.
 
 <div>
     <input type="text" class="h-3 bdr-5">
     <button class="btn h-3">Click Me</button>
 </div>
 
-```html
+```html +torchlight-html
 <input type="text" class="h-3 bdr-5">
 <button class="btn h-3">Click Me</button>
 ```

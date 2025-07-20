@@ -54,6 +54,10 @@
     "Components": {
         "links": [
             {
+                "name": "Forms",
+                "route_name": "pages.jtb.components.forms"
+            },
+            {
                 "name": "Navbar",
                 "route_name": "pages.jtb.components.navbar"
             },

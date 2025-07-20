@@ -1,16 +1,5 @@
 # Writing Cleaner Tests 
 
-<p class="lead">
-These are some tips to help you write cleaner and more maintainable tests in Laravel,
-focusing on reusability and simplicity. By applying these practices, you can reduce
-repetition and keep your test suite organised.
-</p>
-
-
-- [Reusable Method to Authenticate Users Before Running Tests (Acting As)](#reusable-method-to-authenticate-users-before-running-tests-acting-as)
-- [Testing Role-Based Access Control (Spatie Permissions)](#testing-role-based-access-control-spatie-permissions)
-- [Debugging Techniques](#debugging-techniques)
-
 ## Reusable Method to Authenticate Users Before Running Tests (Acting As)
 
 Create a reusable method to authenticate users before running tests. This method will
@@ -114,17 +103,3 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 The solution it to either create a valid profile for the user or mock the `hasProfile()`
 method that is used in the `EnsureValidProfile` middleware to return true for the test.
-
-
-
-<!-- By adding a valid profile to the user, the test passed successfully.
-
-```php +torchlight-php
-it('shows the checkout when authenticated', function () {
-    $user = User::factory()->create();
-    $user->profile()->create(['name' => 'John Doe']);
-
-    $this->actingAs($user);
-    get(route('checkout'))->assertOk();
-});
-``` -->

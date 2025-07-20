@@ -7,10 +7,6 @@
     - [Preview Email in browser](#preview-email-in-browser)
 
 
-<a href="https://laravel.com/docs/10.x/mail#markdown-mailables" target="blank">https://laravel.com/docs/10.x/mail#markdown-mailables</a>
-
-
-
 ## Create New Email
 
 ```bash
@@ -19,7 +15,9 @@ php artisan make:mail TestEmail
 
 ### Configure The Sender (Envelope)
 
-Or, in other words, who the email is going to be "from". There are two ways to configure the sender. First, you may specify the "from" address on your message's envelope:
+Or, in other words, who the email is going to be "from". There are two ways to
+configure the sender. First, you may specify the "from" address on your
+message's envelope:
 
 <div class="bx info-light">The <code>envelop</code> can be omitted and the mailable will create the subject based on the class name and use the sender details configured in <code>config/mail.php</code>.</div>
 
@@ -40,7 +38,8 @@ public function envelope(): Envelope
 }
 ```
 
-And the second way is to specify a global "from" address in your config/mail.php configuration file.
+And the second way is to specify a global "from" address in your config/mail.php
+configuration file.
 
 ```
 'from' => [
@@ -65,18 +64,20 @@ public function content(): Content
 
 ## Sending Mail
 
-To send a message, use the to method on the Mail facade. The to method accepts an email address, a
-user instance, or a collection of users. If you pass an object or collection of objects, the
-mailer will automatically use their email and name properties when determining the email's
-recipients, so make sure these attributes are available on your objects. Once you have specified
-your recipients, you may pass an instance of your mailable class to the send method:
+To send a message, use the to method on the Mail facade. The to method accepts
+an email address, a user instance, or a collection of users. If you pass an
+object or collection of objects, the mailer will automatically use their email
+and name properties when determining the email's recipients, so make sure these
+attributes are available on your objects. Once you have specified your
+recipients, you may pass an instance of your mailable class to the send method:
 
 ```php +torchlight-php
 use Illuminate\Support\Facades\Mail;
 
 public function testEmail(Request $request): RedirectResponse
 {
-    Mail::to($request->user())->send(new TestEmail());
+    Mail::to($request->user())
+        ->send(new TestEmail());
 
     return redirect('/');
 
@@ -100,7 +101,9 @@ public function testEmail(Request $request): RedirectResponse
 
 ## Testing
 
-A handy way to develop and test your mailable is to directly display the template file in the browser. In the `web.php` routes file add the `mail` facade, `mailable` class and create a route to display in the browser.
+A handy way to develop and test your mailable is to directly display the
+template file in the browser. In the `web.php` routes file add the `mail`
+facade, `mailable` class and create a route to display in the browser.
 
 ```php +torchlight-php
 Route::get('/test-email', function () {

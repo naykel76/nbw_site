@@ -36,7 +36,7 @@
     </div> --}}
 
     <div class="container">
-        <livewire:form-examples-and-testing />
+        {{-- <livewire:form-examples-and-testing /> --}}
     </div>
 
     <section>

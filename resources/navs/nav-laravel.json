@@ -21,25 +21,29 @@
     "Essentials": {
         "links": [
             {
+                "name": "Mail",
+                "route_name": "support.laravel.mail"
+            },
+            {
                 "name": "Validation",
                 "route_name": "support.laravel.validation"
             }
         ]
     },
-    "Database": {
+    "Eloquent and Database": {
         "links": [
             {
                 "name": "Migrations",
                 "route_name": "support.laravel.database.migrations"
             },
             {
-                "name": "Factories and Seeding",
-                "route_name": "support.laravel.database.factories-and-seeding"
-            }
-        ]
-    },
-    "Eloquent": {
-        "links": [
+                "name": "Factories",
+                "route_name": "support.laravel.factories"
+            },
+            {
+                "name": "Seeding",
+                "route_name": "support.laravel.seeding"
+            },
             {
                 "name": "Mutators and Casting",
                 "route_name": "support.laravel.eloquent-mutators-and-casting"
@@ -57,9 +61,13 @@
     "testing": {
         "links": [
             {
-                "name": "Testing",
-                "route_name": "support.laravel.testing"
+                "name": "Quick Reference",
+                "route_name": "support.laravel.testing-quick-reference"
+            },
+            {
+                "name": "Test Examples",
+                "route_name": "support.laravel.testing-your-laravel-application"
             }
-        ]       
+        ]
     }
 }
