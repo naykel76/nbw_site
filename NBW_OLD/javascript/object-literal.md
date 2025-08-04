@@ -29,7 +29,7 @@ const person = {
 };
 ```
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 Object literals can also include functions, which can operate on the object's data.
 </x-alert>

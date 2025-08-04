@@ -10,7 +10,7 @@
   - [Why do we use `extraReducers` for asynchronous functions?](#why-do-we-use-extrareducers-for-asynchronous-functions)
 - [More Resources](#more-resources)
 
-```html +parse
+```html +torchlight-html
 <x-alert type="danger">
 This is not a comprehensive guide to Thunk, instead, it focuses on common patterns and
 concepts using abstract examples. Once you learn these patterns, you'll notice how they
@@ -18,7 +18,7 @@ repeat themselves, making them easier to implement.
 </x-alert>
 ```
 
-```html +parse
+```html +torchlight-html
 <x-alert type="danger">
 This guide will assume you are already familiar with the basics of Redux Toolkit such
 as creating a store, using reducers, and connecting components to the store. If these
@@ -108,7 +108,7 @@ them if you need to access the `value` or `thunkAPI` values.
     - Use the `useSelector` hook from `react-redux` to select and react to state changes
       triggered by the async thunk.
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 The steps above provide a high-level overview of the process. The following sections
 will dive deeper into each step, providing more context and examples.
@@ -178,7 +178,7 @@ such as pending, fulfilled, and rejected. The `extraReducers` object allows you 
 define reducers for these states separately from the synchronous reducers. This makes it
 easier to manage the different states and update the state accordingly.</answer>
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 Conceptually, the <code>extraReducers</code> works similarly to the <code>reducers</code> object. However it handles asynchronous actions using the <code>builder</code> object.
 </x-alert>

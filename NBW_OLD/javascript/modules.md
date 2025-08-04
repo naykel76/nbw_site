@@ -55,7 +55,7 @@ const { getName, getAge } = require('./user.js');
 
 With this method, you can call the functions directly: `getName()` and `getAge()`.
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 <b>Note:</b> The two methods of importing in CommonJS (importing the entire
 module vs. destructuring to import specific parts) can be loosely compared to
@@ -108,7 +108,7 @@ the exported item, which can be any name you choose.
 import User from './path/to/user';
 ```
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 The environment in which you are working will determine whether you need to specify
 the file extension (<code>.js</code>) when importing a module. In Node.js, you can omit the

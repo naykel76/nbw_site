@@ -26,19 +26,19 @@ editorId="{{ '_' . Str::uuid() }}"
 
 ### Classic Editor
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.ckeditor variant="classic-control-only-basic" />
 ```
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.ckeditor variant="classic-control-only-standard" />
 ```
 
 ### Balloon Editor
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.ckeditor variant="balloon-control-only-basic" />
 ```
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.ckeditor variant="balloon-control-only-standard" />
 ```
 
@@ -46,19 +46,19 @@ editorId="{{ '_' . Str::uuid() }}"
 
 ### Classic Editor
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.ckeditor variant="classic-control-group-basic" />
 ```
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.ckeditor variant="classic-control-group-standard" />
 ```
 
 ### Balloon Editor
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.ckeditor variant="balloon-control-group-basic" />
 ```
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.ckeditor variant="balloon-control-group-standard" />
 ```
 

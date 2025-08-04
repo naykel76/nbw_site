@@ -18,7 +18,7 @@
 @verbatim<x-gt-select wire:model="country" :options="$countries" />@endverbatim
 ```
 
-```html +parse
+```html +torchlight-html
 <div class="maxw-sm">
     <livewire:gotime.components.select variant="control-group" />
 </div>
@@ -28,7 +28,7 @@
 
 ### Multi-Select
 
-```html +parse
+```html +torchlight-html
 <div class="maxw-sm">
     <livewire:gotime.components.select variant="control-group-multi-select" />
 </div>
@@ -40,7 +40,7 @@
 
 ### Error Handling
 
-```html +parse
+```html +torchlight-html
 <div class="maxw-sm">
     <livewire:gotime.components.select variant="control-group-with-error" />
 </div>
@@ -60,7 +60,7 @@
 
 ### Control Only
 
-```html +parse
+```html +torchlight-html
 <div class="grid cols-2">
     <livewire:gotime.components.select variant="control-only" />
     <livewire:gotime.components.select variant="control-only-with-error" />
@@ -96,7 +96,7 @@ Alternatively you can iterate over the options directly within the component vie
 </x-gt-select>
 ```
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="warning">
     When binding to a Livewire property, ensure that you initialise the property with an empty string.
     Otherwise, the placeholder will be disregarded, and the first option will be automatically selected.
@@ -105,7 +105,7 @@ Alternatively you can iterate over the options directly within the component vie
 
 ## Setting the selected value
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.select />
 ```
 
@@ -122,7 +122,7 @@ Add the `multiple` attribute to the select element to allow multiple options to 
 
 Hold down the `Ctrl` key to select multiple options.
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.select multiple/>
 ```
 
@@ -137,7 +137,7 @@ Hold down the `Ctrl` key to select multiple options.
 When using the `select` component with Livewire form objects, you can bind the select
 element to a property on the form object using the `wire:model` attribute.
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.select />
 ```
 

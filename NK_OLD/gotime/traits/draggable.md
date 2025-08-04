@@ -111,7 +111,7 @@ class ToDoList extends Component
 }
 ```
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="info">
 The items to be sorted can be defined in the <code>sortableFilter</code> scope in the model class,
 or you can pass a callback to the <code>move</code> method to dynamically modify the query

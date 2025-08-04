@@ -64,7 +64,7 @@ checks the corresponding checkbox, allowing multiple tabs to be open simultaneou
 The `accordion` class provides the basic styles and functionality. Additional styling can
 be applied using utility classes.
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="warning">
 <b>NOTE: </b> Each accordion must have a unique <code>id</code> to function correctly
 </x-gt-alert>
@@ -95,7 +95,7 @@ be applied using utility classes.
 The radio button method uses hidden radio inputs and labels for each tab. Selecting a tab
 checks the corresponding radio button, allowing only one tab to be open at a time.
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="warning">
 <b>NOTE: </b> Each accordion in the group must have the same <code>name</code> attribute function correctly.
 </x-gt-alert>

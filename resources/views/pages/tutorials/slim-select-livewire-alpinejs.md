@@ -11,7 +11,7 @@
 Set up a basic component to confirm Slim Select works with AlpineJS. This is a
 static example with no Livewire interaction or dynamic data.
 
-```html +parse-and-code
+```html +torchlight-html-and-code
    <div x-data="slimSelect">
         <select x-ref="selectElement" multiple>
             <option value="AU">Australia</option>
@@ -98,7 +98,7 @@ watch the value. Here's how it works:
 
 ## Alpine Integration
 
-```html +parse-and-code
+```html +torchlight-html-and-code
 <div wire:ignore x-data="slimSelect">
     <select x-ref="select" multiple>
         <template x-for="option in [

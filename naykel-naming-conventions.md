@@ -41,7 +41,7 @@ app/Livewire/{Feature}/{Role}{Feature}{Purpose}.php
   wherever referenced (views, routes, tools), and groups admin-related files
   together for easier navigation.
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="info">
 <p>While the folder provides feature context, starting the class name with the role (e.g., Admin) makes admin/user boundaries obvious and keeps admin-related files grouped together. This is especially helpful in large codebases.</p>
 <p>This prioritises <b>clarity over brevity</b> , and avoids confusion across a growing codebase. </p>

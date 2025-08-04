@@ -25,7 +25,7 @@ Things to keep in mind:
 
 Use semantic markup for SEO and accessibility.
 
-```html +parse
+```html +torchlight-html
 <nav class="navbar">
     <ul>
         <li><a href="#">Home</a></li>

@@ -62,7 +62,7 @@ also adjust column widths using `w-` classes.
 In this example, `lg:w-16` sets the first column’s width to `16rem` on large screens. The
 second column is flexible and adjusts based on available space, thanks to the `fg1` class.
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="info">
     Ensure responsive classes are applied to both the parent (row) and the children (columns)
     for proper layout adjustment.

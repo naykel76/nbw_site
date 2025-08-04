@@ -7,13 +7,13 @@ The base modal component handles the display logic, including configuring the
 width, backdrop, and style. You can close the modal by pressing the escape key
 or by adding a button to set the `showModal` property to `false`.
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.modal variant="base"/>
 ```
 
 ## Variations
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.modal variant="dialog"/>
 ```
 

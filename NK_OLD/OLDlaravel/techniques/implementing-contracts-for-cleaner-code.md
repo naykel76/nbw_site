@@ -27,7 +27,7 @@ interface CartInterface {
 }
 ```
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 By defining an interface, you can ensure that any class implementing it adheres to a specific
 contract, promoting consistency and modularity in your codebase.
@@ -73,7 +73,7 @@ container. This tells Laravel which class to use when resolving the interface.
 You can do this in the `AppServiceProvider`. Open `AppServiceProvider.php` and add the binding in
 the `register` method.
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 Laravel's service container allows you to bind an interface to a given implementation. For example,
 you can bind the <code>CartInterface</code> to the <code>CartService</code> class, enabling you to
@@ -102,7 +102,7 @@ In this example, we bind the `CartInterface` to the `CartService` class using th
 This means that Laravel will only create a single instance of the `CartService` class and share it
 across the application whenever the `CartInterface` is requested.
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 By registering the `CartService` as a singleton, means that all parts of your application will share the same cart instance.
 </x-alert>

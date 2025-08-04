@@ -93,7 +93,7 @@ export default function App() {
 }
 ```
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 When nesting navigators, it's important to consider the order in which you nest them. The
 parent navigator will be the first navigator that you define and the child navigator will

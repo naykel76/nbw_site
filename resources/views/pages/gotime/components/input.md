@@ -19,7 +19,7 @@ for layout control.
 
 ### Control Group
 
-```html +parse
+```html +torchlight-html
 <div class="grid cols-2">
     <livewire:gotime.components.input variant="control-group" />
     <livewire:gotime.components.input variant="control-group-with-error" />
@@ -30,7 +30,7 @@ for layout control.
 
 ### Control Only
 
-```html +parse
+```html +torchlight-html
 <div class="grid cols-2">
     <livewire:gotime.components.input variant="control-only" />
     <livewire:gotime.components.input variant="control-only-with-error" />
@@ -42,7 +42,7 @@ for layout control.
 
 ----------
 
-```html +parse
+```html +torchlight-html
 <div class="grid cols-2">
     <livewire:gotime.components.input variant="control-group" />
     <livewire:gotime.components.input variant="control-group-with-error" />
@@ -54,7 +54,7 @@ In all of these examples, I am using for, but in reality, you can use `for` or
 
 This allows us to cater for both Laravel and Livewire usage.
 
-```html +parse
+```html +torchlight-html
 <div class="grid cols-2">
     <x-gt-input.password for="password" label="Password" />
 </div>

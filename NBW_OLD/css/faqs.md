@@ -19,7 +19,7 @@
 }
 </style> -->
 
-```html +parse
+```html +torchlight-html
 <div class="flex h-24 gap">
     <aside class="pink minw-20">
 
@@ -30,7 +30,7 @@
 ```
 
 
-```html +parse
+```html +torchlight-html
 <div class="flex h-24 gap">
     <aside class="pink minw-20">
 

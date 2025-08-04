@@ -163,7 +163,7 @@ texts. It's simply the input field with the essential attributes for handling va
 
 Form controls can be accessed using the `gotime::input.controls.{type}` namespace.
 
-```html +parse
+```html +torchlight-html
 <x-gotime::v2.input.controls.input for="firstname" />
 <x-gotime::v2.input.controls.input wire:model="firstname" />
 ```

@@ -1,6 +1,6 @@
 # Radio Group
 
-<!-- ```html +parse
+<!-- ```html +torchlight-html
 <livewire:gotime.components.radio />
 ``` -->
 

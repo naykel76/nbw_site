@@ -11,7 +11,7 @@ inside a `withAddons` element and add the `leadingAddon` or `trailingAddon` clas
     </div>
 </div>
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="warning">
    <div class="bx-title">Important</div>
     <div class="bx-content mt-05">

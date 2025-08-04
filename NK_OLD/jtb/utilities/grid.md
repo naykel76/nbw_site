@@ -40,7 +40,7 @@ map. For more verbose syntax you can also append the `gap` size directly onto th
 }
 </style>
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="danger" class="mt">
 NK::TD Create a mixin for this where you can pass in the desired width.
 </x-gt-alert>

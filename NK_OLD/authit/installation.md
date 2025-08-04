@@ -49,7 +49,7 @@ flowchart TD
 </x-mermaid>
 ```
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="info">
     When using dashboards, the views are copied locally to the appropriate <code>admin</code> or
     <code>user</code> directory, with the package managing the route. If necessary, these routes can be
@@ -110,7 +110,7 @@ registration form. All other user creation methods and routes are still availabl
 NK_ALLOW_REGISTER=false
 ```
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="warning">
 Note, disabling registration will also hide the registration links.
 </x-gt-alert>

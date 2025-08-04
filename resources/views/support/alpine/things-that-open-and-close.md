@@ -11,7 +11,7 @@ You can create a simple toggle using Alpine.js by binding a boolean variable to
 the `x-show` directive. This variable will control the visibility of the content
 that opens and closes.
 
-```html +parse
+```html +torchlight-html
 <div class="flex space-x">
     <div x-data="{ open: false }">
         <!-- Button to toggle open state -->
@@ -46,7 +46,7 @@ that opens and closes.
 The simplest way to achieve a transition using Alpine is by adding
 `x-transition` to an element with `x-show` on it. For example:
 
-```html +parse
+```html +torchlight-html
 <div x-data="{ open: false }">
     <button class="btn primary" x-on:click="open = ! open">
         <span x-text="open ? 'Click to Close' : 'Click to Open'"></span>
@@ -72,7 +72,7 @@ The simplest way to achieve a transition using Alpine is by adding
 
 Add Chevrons
 
-```html +parse
+```html +torchlight-html
 <div x-data="{ open: false }">
     <button class="btn primary" x-on:click="open = ! open">
         <span x-text="open ? 'Click to Close' : 'Click to Open'"></span>
@@ -108,7 +108,7 @@ Add Chevrons
 ## Hover to Open (REVIEW)
 
 
-```html +parse-and-code
+```html +torchlight-html-and-code
 <div class="flex space-x">
     <div x-data="{ open: false }" x-on:mouseenter="open=true" x-on:mouseleave="open=false">
         <button class="btn primary" x-on:click="open = ! open">

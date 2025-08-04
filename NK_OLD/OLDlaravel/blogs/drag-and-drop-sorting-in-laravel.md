@@ -138,7 +138,7 @@ class SortableToDoList extends Component
 }
 ```
 
-```html +parse
+```html +torchlight-html
 <x-alert type="warning">
 The <code>view</code> property is used to prevent an error when using the <code>sort</code> method.
 For reasons which are not clear, you get an error when the <code>sort</code> method fires unless

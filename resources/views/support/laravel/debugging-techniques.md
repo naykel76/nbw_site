@@ -2,7 +2,7 @@
 
 ## Dumping Variables in Blade
 
-```html +parse-code
+```html +torchlight-html-code
 <x-torchlight-code language="blade">
     <pre>@{{ json_encode($properties, JSON_PRETTY_PRINT) }}</pre>
 </x-torchlight-code>

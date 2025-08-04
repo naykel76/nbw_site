@@ -2,7 +2,7 @@
 
 ## TLDR
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="danger">
 <p>The date picker will fail if the format is incorrect. The date format is based on the
 `gotime.date_format` config value. You do not need to set the date format in the date
@@ -11,7 +11,7 @@ picker component as long as it is set in the config file.</p>
 </x-gt-alert>
 ```
 
-```html +parse
+```html +torchlight-html
 
 <x-gotime::input.controls.pikaday for="firstname" >
     <x-slot:trailingAddon>Date</x-slot:trailingAddon>
@@ -24,12 +24,12 @@ picker component as long as it is set in the config file.</p>
 </x-gotime::v2.input.controls.input>
 ```
 
-```html +parse
+```html +torchlight-html
 <x-gotime::input.controls.flatpickr />
 ```
 
 
-```html +parse
+```html +torchlight-html
 
 <div class="dark">Config Date Format : {{ config('gotime.date_format') }}</div>
 

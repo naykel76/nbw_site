@@ -141,7 +141,7 @@ console.log(clone); // Output: { firstname: 'Mike', lastname: 'Dingle' }
 
 ## Techniques for working with arrays of objects
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 All the following examples use the `people` array of objects defined below.
 </x-alert>

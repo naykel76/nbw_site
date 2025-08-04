@@ -85,7 +85,7 @@ This mixin is for generating **individual utility classes** based on a set of si
   is another map that specifies the possible **values** and other properties such as
   `prefix`, `unit`, `positions`, and `breakpoints`.
 
-```html +parse-code
+```html +torchlight-html-code
 <x-torchlight-code language="scss">
     $properties-map: (
         property-name: (
@@ -102,7 +102,7 @@ This mixin is for generating **individual utility classes** based on a set of si
 
 #### Example Usage:
 
-```html +parse-code
+```html +torchlight-html-code
 <x-torchlight-code language="scss">
     @@include build-property-classes($flex-properties-map, $responsive: true);
 </x-torchlight-code>
@@ -129,7 +129,7 @@ pair from the `$properties-map` and generate a class with all the properties inc
 This is particularly useful for creating classes that apply multiple styles at once, such
 as flexbox or grid layouts.
 
-```html +parse-code
+```html +torchlight-html-code
 <x-torchlight-code language="scss">
     $flex-classes-map: (
         flex-col: (
@@ -144,7 +144,7 @@ as flexbox or grid layouts.
 
 #### Example Usage:
 
-```html +parse-code
+```html +torchlight-html-code
 <x-torchlight-code language="scss">
     @@include build-composite-classes($flex-classes-map, $responsive: true);
 </x-torchlight-code>
@@ -153,7 +153,7 @@ as flexbox or grid layouts.
 This will generate classes like `.flex-col` and `.flex-row`, each with the specified
 properties applied.
 
-```html +parse-code
+```html +torchlight-html-code
 <x-torchlight-code language="css">
     .flex-col {
         display: flex;

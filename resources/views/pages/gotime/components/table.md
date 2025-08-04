@@ -44,7 +44,7 @@ The table header and the table body.
 
 ### Header Text Case Examples
 
-```html +parse
+```html +torchlight-html
 <table>
     <thead>
         <tr>
@@ -58,7 +58,7 @@ The table header and the table body.
 
 ### Header Alignment Examples (sortable)
 
-```html +parse
+```html +torchlight-html
 <table>
     <thead>
         <tr>

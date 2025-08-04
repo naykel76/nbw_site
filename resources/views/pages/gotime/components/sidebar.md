@@ -6,7 +6,7 @@ The base sidebar component handles the display logic, including configuring the
 width, backdrop, and style. You can close the sidebar by pressing the escape key
 or by adding a button to set the `open` property to `false`.
 
-```html +parse
+```html +torchlight-html
 <x-gt-sidebar>
  content
 </x-gt-sidebar>

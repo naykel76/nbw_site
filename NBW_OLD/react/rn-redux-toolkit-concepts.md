@@ -1,6 +1,6 @@
 # Redux Toolkit Concepts
 
-```html +parse
+```html +torchlight-html
 <x-alert type="warning">
 <p>Buckle up! The world of Redux can feel like a rabbit hole wonderland. This is by no
 means a comprehensive guide to Redux, but aimed at demystifying Redux, React-Redux, and
@@ -213,7 +213,7 @@ export default function HomeScreen() {
 - **Usage in a component**: `useSelector` and `useDispatch` hooks from `react-redux` to
   interact with the store in a component.
 
-```html +parse
+```html +torchlight-html
 <x-alert type="danger">
 The following diagram need to be checked for correctness.
 </x-alert>

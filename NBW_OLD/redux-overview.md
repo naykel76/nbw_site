@@ -17,7 +17,7 @@
 
 <!-- https://github.dev/gopinav/React-Redux-Tutorials/blob/master/react-redux-demo/src/redux/user/userActions.js -->
 
-```html +parse
+```html +torchlight-html
 <x-alert type="warning">
 Redux Toolkit is the standard way to write Redux logic and solve common problems with Redux. This is a general overview of Redux to help you understand the basics before diving into Redux Toolkit.
 </x-alert>
@@ -80,7 +80,7 @@ const NAME_OF_ACTION = 'NAME_OF_ACTION';
 }
 ```
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 Typically, in a Redux application, each unique operation or event would have its own
 separate action. For example, in a shopping cart application, you might have separate
@@ -242,7 +242,7 @@ import counterReducer from './counterReducer';
 const store = createStore(counterReducer);
 ```
 <!-- 
-```html +parse
+```html +torchlight-html
 <x-alert type="danger">
 This is a very basic example of creating a store. Dispatch and Subscribe have been included in the
 example I have not documented them here. Thats on Ron's list!

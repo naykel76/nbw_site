@@ -101,7 +101,7 @@ it('passes expected data to the checkout view', function () {
 
 ## Testing Emails
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="info">
 When testing email functionality, always call <code>Mail::fake()</code> at the start of
 your test. This ensures that no real emails are sent during the test run.

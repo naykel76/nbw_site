@@ -25,7 +25,7 @@ public function init(Post $user): void
 }
 ```
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="warning">
 The <code>editing</code> attribute, defined in the <code>Formable</code> trait, represents the
 form's initial or persisted state as a model instance. This attribute does not update to reflect

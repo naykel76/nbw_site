@@ -16,7 +16,7 @@
 To use the button component, call `<x-gt-button />` and set the button text using the
 `text` attribute or the slot.
 
-```html +parse
+```html +torchlight-html
 <x-gt-button text="Button" />
 ```
 
@@ -58,7 +58,7 @@ The base component supports the following slots:
 Buttons apply the JTB `btn` class by default, which provides a base style. You can apply
 custom styles just like any other HTML button element by using the `class` attribute.
 
-```html +parse
+```html +torchlight-html
 <x-gt-button text="Default" />
 <x-gt-button text="Primary" class="primary"/>
 <x-gt-button text="Secondary" class="secondary"/>
@@ -74,7 +74,7 @@ custom styles just like any other HTML button element by using the `class` attri
 
 To include an icon, simply add the `icon` attribute and provide the Gotime icon name.
 
-```html +parse
+```html +torchlight-html
 <x-gt-button text="Account" icon="user" />
 <x-gt-button icon="user" />
 ```
@@ -90,7 +90,7 @@ To include an icon, simply add the `icon` attribute and provide the Gotime icon 
 By default, the icon will appear to the left of the button’s text. To position the icon to
 the right of the text, use the `iconPosition` attribute with a value of `right`.
 
-```html +parse
+```html +torchlight-html
 <x-gt-button text="Account" icon="user" />
 <x-gt-button text="Account" icon="user" iconPosition="right" />
 ```
@@ -129,7 +129,7 @@ Button is tightly coupled to the Gotime Livewire CRUD system.
 | `icon`     |    No    | The icon to display        |
 | `iconOnly` |    No    |                            |
 <!-- 
-```html +parse
+```html +torchlight-html
 <div class="bx space-x tac pxy-4">
     <x-gt-resource-action action="edit" routePrefix="admin.posts"/>
 

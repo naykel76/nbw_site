@@ -24,7 +24,7 @@
 
 ### Control Group
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.choices variant="control-group" />
 <hr>
 <livewire:gotime.components.choices variant="control-group-disabled" />

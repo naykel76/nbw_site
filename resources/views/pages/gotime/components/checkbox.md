@@ -15,7 +15,7 @@
 
 ## Control Group
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.checkbox variant="control-group" />
 ```
 
@@ -24,7 +24,7 @@
 ```
 
 Close the tag to add custom labels.
-```html +parse
+```html +torchlight-html
 <x-gt-checkbox for="agree">
     I have read and agree to <a href="#" class="txt-underline" target="_blank">&nbsp;Terms & Conditions</a>
 </x-gt-checkbox>
@@ -45,7 +45,7 @@ Close the tag to add custom labels.
 There is nothing special about the checked state of the checkbox in the control
 group, it is handled by the `wire:model` attribute.
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.checkbox variant="control-group-checked" />
 ```
 
@@ -53,7 +53,7 @@ group, it is handled by the `wire:model` attribute.
 
 ### Disabled
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.checkbox variant="control-group-disabled" />
 ```
 
@@ -61,7 +61,7 @@ group, it is handled by the `wire:model` attribute.
 
 ### Error Handling
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.checkbox variant="control-group-with-error" />
 ```
 
@@ -70,7 +70,7 @@ group, it is handled by the `wire:model` attribute.
 
 ## Control Only
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.checkbox variant="control-only" />
 ```
 
@@ -80,7 +80,7 @@ group, it is handled by the `wire:model` attribute.
 
 Checked is handled by the `wire:model` attribute.
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.checkbox variant="control-only-checked" />
 ```
 
@@ -88,7 +88,7 @@ Checked is handled by the `wire:model` attribute.
 
 ### Disabled
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.checkbox variant="control-only-disabled" />
 ```
 
@@ -96,7 +96,7 @@ Checked is handled by the `wire:model` attribute.
 
 ### Error Handling
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.checkbox variant="control-only-with-error" />
 ```
 

@@ -93,7 +93,7 @@ Route::get('/posts', PostTable::class)->name('posts.index');
 - ☐ Add filters or bulk actions if needed  
 - ☐ Use `gtlv:table` snippet for a complete layout
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="info">
 <p>Run the <code>gtlv:table</code> snippet to scaffold a complete layout with all base markup and placeholders.</p>
 </x-gt-alert>
@@ -141,7 +141,7 @@ You can also include the optional `Searchable` trait for search functionality an
 `Sortable` trait for sorting. These traits are optional and can be added based on your
 needs.
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="info">
 You are not restricted to a specific behavior for tables or lists. Traits and methods will
 function consistently across both, allowing you to combine traits and functions as needed.

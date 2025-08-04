@@ -21,7 +21,7 @@ including the model being edited.
 
 The `editing` property represents the model being edited or a new instance being created. 
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="warning">
     This property only reflects the model's state when initially set or after saving the form. It does
     not update to reflect changes made during form editing.
@@ -51,7 +51,7 @@ To override the default factory state, you can pass an array of attributes to th
 like any other factory.
 
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="danger" title="IMPORTANT">
 This method will only set values for properties where the values are set in the model. This is a
 problem when creating a new model as the properties will not be set. The solution is to create a

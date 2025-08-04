@@ -1,12 +1,12 @@
 # Filepond
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="info">
 <div class="txt-lg">Filepond is a class based component</div>
 </x-gt-alert>
 ```
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.filepond variant="video" />
 ```
 

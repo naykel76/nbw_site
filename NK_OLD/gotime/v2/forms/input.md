@@ -60,7 +60,7 @@ To use the `input` component, render it and specify either the `for` attribute o
 `wire:model` for Livewire components. This will create a basic input wrapped in a
 `frm-row` control group, which is organized horizontally by default.
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.input variant="basic-input"/>
 ```
 
@@ -95,7 +95,7 @@ This component supports the following attributes:
 The `input` component automatically displays an error message below the field when an
 error is present. Errors are handled within the control group layout.
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.input variant="input-with-error" />
 ```
 
@@ -120,7 +120,7 @@ NK::TD
 
 Add a `label` attribute to display a label for the control group.
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.input variant="input-with-label"/>
 ```
 
@@ -135,7 +135,7 @@ rendering only the input field.
 
 Note: When using the `controlOnly` attribute, the label will be stripped out and ignored.
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="danger">
 NK::TD This example is incorrectly applying the error styles. Why? 
 </x-gt-alert>
@@ -147,7 +147,7 @@ NK::TD This example is incorrectly applying the error styles. Why?
 <x-gt-input wire:model='email' label='Your Email' controlOnly />
 ```
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.input variant="input-with-control-only"/>
 ```
 
@@ -155,7 +155,7 @@ NK::TD This example is incorrectly applying the error styles. Why?
 
 ### Help Text
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.input variant="input-with-help-text-bottom"/>
 ```
 
@@ -166,7 +166,7 @@ NK::TD This example is incorrectly applying the error styles. Why?
 By default the help text is displayed below the input field. To display the help text
 above the input field, use the `helpTextTop` attribute.
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.input variant="input-with-help-text-top"/>
 ```
 
@@ -181,13 +181,13 @@ To add a tooltip, close the input component and use the `tooltip` slot.
 
 **Note**: Tooltips work only when a label is present.
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="warning">
     NK::TD Attribute forwarding is not currently supported for tooltips so there is limited styling options.
 </x-gt-alert>
 ```
 
-```html +parse
+```html +torchlight-html
 <livewire:gotime.components.input variant="input-with-label-and-tooltip"/>
 ```
 
@@ -206,7 +206,7 @@ To add a tooltip, close the input component and use the `tooltip` slot.
 Use the `leadingAddon` and `trailingAddon` slots to add content before or after the input.
 These can be icons, text, or any other content.
 
-```html +parse
+```html +torchlight-html
 <x-gt-input for="title">
     <x-slot name="leadingAddon">Leading</x-slot>
     <x-slot name="trailingAddon">Trailing</x-slot>

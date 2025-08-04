@@ -17,7 +17,7 @@ target="blank">Laravel-Permission</a> package by Spatie to manage roles and perm
 There are no additional actions required to use permissions, as the config, migrations and
 middleware are handled during the installation process.
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="warning">
 According to the Laravel-Permission documentation, it's better to assign permissions to Roles, and
 then assign Roles to Users. See the <a href="https://spatie.be/docs/laravel-permission/v6/best-practices/roles-vs-permissions"

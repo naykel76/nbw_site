@@ -4,7 +4,7 @@ This guide provides a basic introduction on how to implement navigation using a
 combination of navigators. The aim is to assist you in handling common scenarios that
 you might encounter when first getting started with React Native navigation.
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 Please note that is not a comprehensive guide to React Native navigation. It assumes
 that you've already installed the necessary navigation packages and retrieved the data

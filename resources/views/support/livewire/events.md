@@ -18,7 +18,7 @@
 - **then** the parent component will call `$refresh`,  
 - **which means** the parent will be refreshed.
 
-```html +parse-code
+```html +torchlight-html-code
 <x-torchlight-code language="blade">
     <div>
         @<livewire:edit-post @saved="$refresh">
@@ -30,7 +30,7 @@
 
 
 
-```html +parse-code
+```html +torchlight-html-code
 <x-torchlight-code language="blade">
    <button wire:click="$parent.$set('showModal', false)">Close</button>
 </x-torchlight-code>

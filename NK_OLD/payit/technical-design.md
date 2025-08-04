@@ -26,7 +26,7 @@
 
 Stores the available payment platforms that users can choose from when making a payment.
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="warning">
 The Payment Platforms are hardcoded in the <code>PaymentPlatform</code> model using
 <code>calebporzio/sushi</code>. At this stage, it is overkill to use a database table for payment

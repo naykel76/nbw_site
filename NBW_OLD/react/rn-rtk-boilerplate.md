@@ -214,7 +214,7 @@ export default featureSlice.reducer;
 
 #### Payload techniques including existence, validation, and error handling
 
-```html +parse
+```html +torchlight-html
 <x-alert type="info">
 Always make sure you are aware of the data structure in your state before attempting
 to access it. This will help you avoid errors and make your code more robust.

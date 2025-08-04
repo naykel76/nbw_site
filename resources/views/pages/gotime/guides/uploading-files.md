@@ -28,7 +28,7 @@ component. The traits handle the upload and persistence process, while
   * Use `Crudable` trait to handle saving and moving the uploaded file.
   * Use `Formable` trait to manage form state and validation.
 
-```html +parse
+```html +torchlight-html
 <x-gt-alert type="warning">
   The <code>WithFileUploads</code> trait must be used in the Livewire component class, <b>not the</b> form object.
 </x-gt-alert>
@@ -53,7 +53,7 @@ To change where files are stored, set a `$storage` property in your form object 
 
 **Example**
 
-```html +parse-code
+```html +torchlight-html-code
 <x-torchlight-code language="php">
    public array $storage = [
       'disk' => 'media',
@@ -69,7 +69,7 @@ The `filepond` component binds to the `tmpUpload` property on the form object.
 This property is provided by the `Crudable` trait and should be accessed through
 the form object.
 
-```html +parse-code
+```html +torchlight-html-code
 <x-torchlight-code language="blade">
 @verbatim<x-gt-filepond wire:model="form.tmpUpload" />@endverbatim
 </x-torchlight-code>

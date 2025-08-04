@@ -3,7 +3,7 @@
 
 ### Multiple Items (single open)
 
-```html +parse
+```html +torchlight-html
 <div x-data="{ active: 1, }" class="space-y">
     <div x-data="{
         id: 1,
@@ -41,7 +41,7 @@
 ```
 
 ## Individual Items
-```html +parse
+```html +torchlight-html
 <div class="space-y-2">
     <div x-data="{ expanded: false }">
         <button x-on:click="expanded = !expanded" class="pxy-1 flex justify-between items-center bg-yellow-100 w-full">

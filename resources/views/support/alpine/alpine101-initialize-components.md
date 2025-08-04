@@ -27,7 +27,7 @@ components using `Alpine.data()` via the `alpine:init` event.
 
 ## Inline Example
 
-```html +parse-and-code
+```html +torchlight-html-and-code
 <div x-data="{
         name: '', 
         setName(name) { this.name = name },
@@ -77,7 +77,7 @@ listener.
 Next, define a basic component called `greet` with a `name` property, a
 `setName` method, and a `greeting` method.
 
-```html +parse-and-code-js
+```html +torchlight-html-and-code-js
 <script>
     window.addEventListener('alpine:init', function() {
         Alpine.data('greet', () => ({
@@ -102,7 +102,7 @@ methods when the component is initialised.
 <!-- What about passing initial values? Then initialise in the component -->
 
 <!-- i dont think this is correct! no need fo init??? -->
-```html +parse-and-code
+```html +torchlight-html-and-code
 <div x-data="greet" x-init="setName('Mike')">
     <span x-text="`Hello, ${name}!`"></span>
     <input x-model="name" placeholder="Enter your name" />
