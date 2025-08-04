@@ -90,6 +90,10 @@
                 "route_name": "pages.gotime.guides.create-and-edit-records"
             },
             {
+                "name": "Create Edit Component",
+                "route_name": "pages.gotime.guides.create-edit-component"
+            },
+            {
                 "name": "Table Component",
                 "route_name": "pages.gotime.guides.create-table-component"
             },

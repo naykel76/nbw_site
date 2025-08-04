@@ -8,6 +8,10 @@
             {
                 "name": "FAQ's",
                 "route_name": "pages.jtb.faqs"
+            },
+            {
+                "name": "Layout Techniques and Examples",
+                "route_name": "pages.jtb.layout-techniques"
             }
         ]
     },

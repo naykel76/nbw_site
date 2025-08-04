@@ -1,55 +1,10 @@
 <x-gt-app-layout layout="{{ config('gotime.template') }}" class="py-5-3-2-2">
 
-    {{-- <x-gt-sidebar /> --}}
+  
 
-    {{-- @php
-        $width = 'w-20';
-    @endphp
-    <div x-data="{ open: true }">
-        <!-- Toggle -->
-        <button class="btn primary" x-on:click="open = ! open">
-            <span x-text="open ? 'Click to Close' : 'Click to Open'"></span>
-        </button>
 
-        <!-- Backdrop -->
-        <div x-show="open" x-on:click="open = !open" class="overlay"></div>
 
-        <!-- Sidebar -->
-        <aside x-show="open" class="sidebar top-0 left-0 z-40 h-screen transition-transform -translate-x-full {{ $width }}">
-            <div class="h-full overflow-y-auto bg-sky-700">
-                <div class="flex va-c space-between pxy-05 bdr-b">
-                    <div class="flex va-c">
-                        <img src="{{ asset('favicon.svg') }}" alt="{{ config('app.name') }}">
-                        <div class="txt-lg fw7 ml-1">NAYKEL</div>
-                    </div>
-                    <button x-on:click="open = ! open" type="button" class="btn dark pxy-025">
-                        <svg class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
 
-                <div>
-                </div>
-            </div>
-        </aside>
-    </div> --}}
-
-    <div class="container">
-        {{-- <livewire:form-examples-and-testing /> --}}
-    </div>
-
-    <section>
-        <div class="container-sm">
-
-            <div class="bx info-light bdr-3">
-                <div class="bx-title">Current Task</div>
-                <div class="lead">
-                    finish off multi select and add to IBLCE
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section class="relative overflow-x-clip py-2 md:py-5">
         <img src="/svg/blur-red.svg" class="absolute z-bottom" style="left:-10%; bottom: -240px; ">

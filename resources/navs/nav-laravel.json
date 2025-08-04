@@ -21,6 +21,10 @@
     "Essentials": {
         "links": [
             {
+                "name": "Date and Time",
+                "route_name": "support.laravel.date-and-time"
+            },
+            {
                 "name": "Mail",
                 "route_name": "support.laravel.mail"
             },
@@ -67,6 +71,14 @@
             {
                 "name": "Test Examples",
                 "route_name": "support.laravel.testing-your-laravel-application"
+            },
+            {
+                "name": "Directory Structure and Best Practices",
+                "route_name": "support.laravel.testing.directory-structure-and-best-practices"
+            },
+            {
+                "name": "Troubleshooting and FAQs",
+                "route_name": "support.laravel.testing-troubleshooting-and-faqs"
             }
         ]
     }

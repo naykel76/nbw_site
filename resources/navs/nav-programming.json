@@ -2,6 +2,10 @@
     "main": {
         "links": [
             {
+                "name": "rclone",
+                "route_name": "support.rclone"
+            },
+            {
                 "name": "Github",
                 "route_name": "support.github-quick-reference",
                 "icon": "github"

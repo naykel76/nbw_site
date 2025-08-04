@@ -2,7 +2,6 @@
 
 - [Defining an Accessor](#defining-an-accessor)
 - [Examples](#examples)
-    - [Convert a comma separated string of values into an array.](#convert-a-comma-separated-string-of-values-into-an-array)
     - [Casts a date to a boolean, and save as date if true or null if false.](#casts-a-date-to-a-boolean-and-save-as-date-if-true-or-null-if-false)
 - [Trouble Shooting](#trouble-shooting)
     - [Not mutating as expected](#not-mutating-as-expected)
@@ -10,11 +9,13 @@
 
 ## Defining an Accessor
 
-An accessor transforms an Eloquent attribute value when it is accessed. 
 
-Existing attributes can be transformed by defining a method in the model class
-that matches the attribute name in pascal case.  For example, if you have an
-attribute `first_name` then the method name should be `firstName()`.
+* An accessor transforms an Eloquent attribute value when it is accessed. 
+* To define an accessor, add a protected method to your model for the attribute
+  you want to access.
+* The method name should match the camelCase version of the model attribute or
+  database column.
+
 
 ```php +torchlight-php
 protected function firstName(): Attribute
@@ -26,11 +27,8 @@ protected function firstName(): Attribute
 }
 ```
 
+
 ## Examples
-
-### Convert a comma separated string of values into an array.
-
-
 
 ### Casts a date to a boolean, and save as date if true or null if false.
 
@@ -53,13 +51,12 @@ public function getOriginalActivatedAt(){
 }
 ```
 
-
 ## Trouble Shooting
 
 ### Not mutating as expected
 
-Make sure you have set the method name correctly in pascal case.  For example,
-if you have an attribute `published_at` then the method name should be
+Make sure you have set the method name correctly in pascal case. For example, if
+you have an attribute `published_at` then the method name should be
 `publishedAt()`.
 
 
