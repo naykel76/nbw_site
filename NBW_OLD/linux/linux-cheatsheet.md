@@ -107,7 +107,7 @@
 
 ## Install Software Updates and Settings
 
-```bash
+```bash +torchlight-bash
   # Sync available packages and upgrade
   sudo apt update && sudo apt upgrade
   # remove packages that were automatically installed as dependencies and are no longer needed

@@ -9,7 +9,7 @@
 
 Get a list of all installed VS Code extensions.
 
-```bash
+```bash +torchlight-bash
 code --list-extensions
 ```
 

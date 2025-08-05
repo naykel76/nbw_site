@@ -15,7 +15,7 @@ learning about system security and I do not want to deal with long or complex pa
 
 With that out of the way, you can relax the Linux password by:
 
-```bash
+```bash +torchlight-bash
 # open /etc/pam.d/common-password file
 sudo nano /etc/pam.d/common-password
 # find

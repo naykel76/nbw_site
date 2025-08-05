@@ -12,7 +12,7 @@
 
 more information https://github.com/ionic-team/ionic-storage
 
-```bash
+```bash +torchlight-bash
 # using Angular
 npm install @ionic/storage-angular
 # otherwise
@@ -42,7 +42,7 @@ bootstrapApplication(AppComponent, {
 
 From the command line run:
 
-```bash
+```bash +torchlight-bash
 ionic g service services/storage
 ```
 

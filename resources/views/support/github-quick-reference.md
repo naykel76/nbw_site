@@ -98,7 +98,7 @@ results in a conflict or if the merge is not a fast-forward merge.
 To remove local references to remote branches that have been deleted on the
 remote server (without affecting any actual branches on the remote), run:
 
-```bash
+```bash +torchlight-bash
 git fetch --prune
 ```
 
@@ -111,25 +111,25 @@ references to branches that no longer exist on the remote.
 
 If the repository's URL has changed (which often happens when the repo is renamed), update your local remote URL with:
 
-```bash
+```bash +torchlight-bash
 git remote set-url origin https://github.com/yourusername/new-repo.git
 ```
 
 You can verify the update with:
 
-```bash
+```bash +torchlight-bash
 git remote -v
 ```
 
 ### <question>How do I change the last commit message?</question>
 
-```bash
+```bash +torchlight-bash
 git commit --amend -m "New commit message."
 ```
 
 ### <question>How do I rename a local and remote git branch?</question>
 
-```bash
+```bash +torchlight-bash
 # Update local repo name
 git branch -m new-branch-name
 # Delete old branch

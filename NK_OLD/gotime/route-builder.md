@@ -33,7 +33,7 @@ The <code>RouteBuilder</code> and <code>Menu</code> component use the same JSON 
 
 In the `resources/navs` directory, create a new file named `nav.json`. (replace `nav` with your preferred name).
 
-```bash
+```bash +torchlight-bash
 touch resources/navs/nav-docs.json
 ```
 
@@ -44,7 +44,7 @@ default menu name is `main`, but you can customise this to fit your project's re
 
 Note: multiple menus can be defined within this single file.
 
-```json
+```json +torchlight-json
 {
     "main": { },
     "footer": { }
@@ -68,7 +68,7 @@ Each item within the `links` array must contain either a `url` or `route_name`, 
 
 Here's an example structure:
 
-```json
+```json +torchlight-json
 {
     "main": {
         "links": [
@@ -138,7 +138,7 @@ By default, for each route, the `RouteBuilder` attempts to fetch a Blade view ba
 You are free to define the view path using dot notation or a directory path. The `RouteBuilder` will
 automatically convert the dot notation to a directory path.
 
-```json
+```json +torchlight-json
 {
     "blogs": {
         "links": [
@@ -171,7 +171,7 @@ To avoid any conflicts, you can add `"exclude_route": true` to any duplicate ite
 instruct the route builder to ignore these items, preventing it from attempting to create their
 routes again.
 
-```json
+```json +torchlight-json
 {
     "main": {
         "links": [
@@ -229,7 +229,7 @@ prevent a parent item from creating a route and clickable link, add `"exclude_ro
 **Note:** To prevent the creation of parent routes and avoid generating clickable links, when
 `"exclude_route": true`, you can omit the `route_name` and `url` attributes on the parent item.
 
-```json
+```json +torchlight-json
 {
   "user": {
     "links": [
@@ -258,7 +258,7 @@ markdown file instead, to be injected into a markdown layout.
 
 To do this, you can specify `"type": "md"` in your navigation JSON file.
 
-```json
+```json +torchlight-json
 {
     "user": {
         "links": [
@@ -283,7 +283,7 @@ items in the menu but will not create routes for them.
 
 How can I create a single child route? (Override `ignore_all_children`)
 
-```json
+```json +torchlight-json
 {
     "Menu1": {
         "links": [

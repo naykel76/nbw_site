@@ -4,7 +4,7 @@
 
 You can install the package via composer:
 
-```bash
+```bash +torchlight-bash
 composer require spatie/laravel-sluggable
 ```
 ## Creating and Using Slugs

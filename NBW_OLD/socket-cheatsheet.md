@@ -12,7 +12,7 @@
 
 ## Server Side
 
-```bash
+```bash +torchlight-bash
 npm install socket.io
 ```
 
@@ -62,7 +62,7 @@ io.on('connection', (socket) => {
 
 ## Client Side
 
-```bash
+```bash +torchlight-bash
 npm install socket.io-client
 ```
 

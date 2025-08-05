@@ -2,11 +2,11 @@
 
 ## Creating a Vite project
 
-```bash
+```bash +torchlight-bash
 npm create vite@latest
 ```
 
-```bash
+```bash +torchlight-bash
 npm install -D autoprefixer nk_jtb postcss postcss-cli sass
 ```
 
@@ -74,7 +74,7 @@ console.log(cleanedString); // Output: "HelloWorld"
 
 Remove the vendor directory and reinstall dependencies: Run the following commands to remove the existing vendor directory and reinstall the project's dependencies:
 
-```bash
+```bash +torchlight-bash
 rm -rf vendor
 composer install
 ```

@@ -17,7 +17,7 @@
 
 Important Paths
 
-```bash
+```bash +torchlight-bash
 # Apache configuration files
 /etc/apache2/
 # Apache virtual host files
@@ -36,7 +36,7 @@ Important Paths
 
 ### Install
 
-```bash
+```bash +torchlight-bash
 sudo apt update && apt upgrade -y
 sudo apt install apache2
 # Enable Apache
@@ -48,14 +48,14 @@ sudo systemctl start apache2
 
 ### Configuration
 
-```bash
+```bash +torchlight-bash
 # Go into the Apache directory where the configuration files are stored
 cd /etc/apache2/
 # Create a new virtual host file
 sudo nano apache2.conf
 ```
 
-```bash
+```bash +torchlight-bash
 # Open the Apache configuration file
 sudo nano /etc/apache2/apache2.conf
 ```
@@ -64,7 +64,7 @@ sudo nano /etc/apache2/apache2.conf
 
 ### Verify Apache status
 
-```bash
+```bash +torchlight-bash
 # Verify Apache status
 sudo systemctl status apache2
 # Restart Apache
@@ -78,14 +78,14 @@ sudo apache2ctl configtest
 
 ## Create Virtual Host
 
-```bash
+```bash +torchlight-bash
 # Go into the Apache directory where the configuration files are stored
 cd /etc/apache2/sites-available/
 # Create a new virtual host file
 sudo nano your_site.com.conf
 ```
 
-```bash
+```bash +torchlight-bash
 <VirtualHost *:80>
     ServerName your_site.com
     ServerAlias www.your_site.com
@@ -124,7 +124,7 @@ Private Key Path: /etc/letsencrypt/live/uni.nathanwatts.xyz/privkey.pem
 
 **Enable the virtual host file**
 
-```bash
+```bash +torchlight-bash
 sudo a2ensite your_site.com.conf
 # restart Apache
 sudo systemctl restart apache2
@@ -136,13 +136,13 @@ sudo systemctl restart apache2
 
 Enable Required Modules
 
-```bash
+```bash +torchlight-bash
 sudo a2enmod ssl
 sudo a2enmod proxy
 sudo a2enmod proxy_http
 ```
 
-```bash
+```bash +torchlight-bash
 # Install Certbot and the Apache plugin for Certbot
 sudo apt-get install certbot python3-certbot-apache
 # Obtain SSL certificate (bare minimum)
@@ -167,7 +167,7 @@ sudo certbot --apache --agree-tos --redirect --email your_email@example.com -d y
 
 **Verify SSL certificate**
 
-```bash
+```bash +torchlight-bash
 # Verify SSL certificate
 sudo certbot certificates
 # Verify SSL certificate location
@@ -181,7 +181,7 @@ sudo certbot certificates
 ## Configuration
 
 
-```bash
+```bash +torchlight-bash
 # List enabled sites
 sudo a2query -s
 # Disable the default configuration
@@ -201,7 +201,7 @@ sudo systemctl restart apache2
 
 ### UFW
 
-```bash
+```bash +torchlight-bash
 # Check UFW status
 sudo ufw status
 # Allow Apache

@@ -27,7 +27,7 @@ You can install Flatpickr using npm or include it via a CDN in your Blade file.
 
 Run the following command to install Flatpickr:  
 
-```bash
+```bash +torchlight-bash
 npm install flatpickr
 ```
 

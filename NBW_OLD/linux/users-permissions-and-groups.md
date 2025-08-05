@@ -43,33 +43,33 @@
 
 
 
-```bash
+```bash +torchlight-bash
 groups forge
 ```
 
 If forge is listed in the sudo group, then it has sudo privileges. The output might look something like this:
 
-```bash
+```bash +torchlight-bash
 forge : forge sudo www-data
 ```
 
-```bash
+```bash +torchlight-bash
 
 ```
 
 
-```bash
-
-```
-
-
-
-```bash
+```bash +torchlight-bash
 
 ```
 
 
 
-```bash
+```bash +torchlight-bash
+
+```
+
+
+
+```bash +torchlight-bash
 
 ```

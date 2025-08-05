@@ -1,5 +1,5 @@
 # Vite Quick Reference
 
-```bash
+```bash +torchlight-bash
 npm create vite@latest
 ```

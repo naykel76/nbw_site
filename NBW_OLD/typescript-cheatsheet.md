@@ -8,11 +8,11 @@
 
 <!-- /TOC -->
 
-```bash
+```bash +torchlight-bash
 npm install typescript --save-dev
 ```
 
-```bash
+```bash +torchlight-bash
 npm install typescript --save-dev
 ```
 

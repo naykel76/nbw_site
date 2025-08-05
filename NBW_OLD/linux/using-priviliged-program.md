@@ -6,7 +6,7 @@ The objective is to read `/etc/shadow` as a normal user.
 
 #### Copy the 'cat' program, change owner then attempt to access `/etc/shadow`
 
-```bash
+```bash +torchlight-bash
 cd ~
 # copy
 cp /bin/cat mycat
@@ -18,7 +18,7 @@ sudo chown root mycat
 
 Expected output:
 
-```bash
+```bash +torchlight-bash
 ./mycat: /etc/shadow: Permission denied
 # permission status:
 -rwxr-xr-x 1 root seed 43416 Mar 22 20:23 mycat
@@ -28,7 +28,7 @@ At this point are still unable to access `/etc/shadow` because the privilege has
 
 #### Change the permission to include `set-uid` bit
 
-```bash
+```bash +torchlight-bash
 cd ~
 # change program permissions bit to set-uid (4)
 sudo chmod 4755 mycat
@@ -37,7 +37,7 @@ sudo chmod 4755 mycat
 # output will show the contents of /etc/shadow
 ```
 
-```bash
+```bash +torchlight-bash
 # permission status:
 -rwsr-xr-x 1 seed seed 43416 Mar 22 20:23 mycat
 -rwsr-xr-x 1 root root 68208 Mar 14  2022 /usr/bin/passwd
@@ -58,7 +58,7 @@ Now that you are the owner of the `mycat` program, you can elevate your permissi
 <question></question>
 If you need to use the sudo command to change the permission regardless, don't we just increase privilege directly on `/ect/cat`? Will this not not achieve the same result?
 
-```bash
+```bash +torchlight-bash
 sudo chmod 4755 /bin/cat
 ```
 

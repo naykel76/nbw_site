@@ -131,7 +131,7 @@ To make the helper functions available throughout your application, you can regi
 in the `composer.json` file under the `autoload` section. This will ensure that the helper file is
 loaded automatically when the application starts.
 
-```json
+```json +torchlight-json
 {
     "autoload": {
         "files": [
@@ -144,7 +144,7 @@ loaded automatically when the application starts.
 After updating the `composer.json` file, you'll need to run the following command to regenerate the
 Composer autoloader:
 
-```bash
+```bash +torchlight-bash
 composer dump-autoload
 ```
 

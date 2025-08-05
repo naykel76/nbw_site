@@ -39,7 +39,7 @@
 
 Git bash can use either the Windows or Linux path format, but Powershell requires the Windows path format.
 
-```bash
+```bash +torchlight-bash
 # Windows path
 C:/Users/username/Desktop
 # Linux (WSL) path
@@ -56,7 +56,7 @@ the scp command can be slow and inefficient when copying large directories. **Yo
 
 ### Server to Local
 
-```bash
+```bash +torchlight-bash
 # Copy file from the server
 scp user@45.79.239.101:/home/username/abc.txt /c/Users/username
 
@@ -66,7 +66,7 @@ scp /c/Users/username user@45.79.239.101:/home/username/abc.txt
 
 ### Server To Server
 
-```bash
+```bash +torchlight-bash
 scp user1@server1:/home/username/example.txt user2@server2:/home/username/
 ```
 
@@ -78,7 +78,7 @@ scp user1@server1:/home/username/example.txt user2@server2:/home/username/
 
 https://www.youtube.com/watch?v=Pygr_TpZRpM&ab_channel=TonyTeachesTech
 
-```bash
+```bash +torchlight-bash
 # copy directory from server
 rsync -avz user@45.79.239.101:/home/username /c/Users/username
 
@@ -104,7 +104,7 @@ rsync -avz user@45.79.239.101:/home/username /c/Users/username
 
 https://linuxconfig.org/how-to-rename-multiple-files-on-linux
 
-```bash
+```bash +torchlight-bash
 # rename multiple files at once.
 
 # append .bak to every file that begins with the pattern 'my_file'.
@@ -130,7 +130,7 @@ find . -maxdepth 2 -type f -name "my_file*" | while read FNAME; do mv "$FNAME" "
 
 ## Change File Extensions (script)
 
-```bash
+```bash +torchlight-bash
 # add a .txt file extension to all files in your present working directory.
 for i in $( ls ); do mv $i $i.txt; done
 # remove a file extension from all files in your present working directory.
@@ -142,7 +142,7 @@ for i in *.log; do mv -- "$i" "${i%.log}.txt"; done
 
 ## Counting Files and Directories
 
-```bash
+```bash +torchlight-bash
 # Count the number of line in a file
 wc -l file.txt
 # Count the number of files in a directory
@@ -153,7 +153,7 @@ find . -type f | wc -l
 
 ### Excluding Files and Directories
 
-```bash
+```bash +torchlight-bash
 # Count the number of files in a directory (excluding files with a specific extension)
 find . -type f -not -name '*.txt' | wc -l
 # Count the number of files in a directory (excluding files with a specific name)
@@ -167,7 +167,7 @@ find . -type d -not -path "./node_modules/*" -not -path "./.git/*" -not -path ".
 
 ### Excluding Hidden Files and Directories
 
-```bash
+```bash +torchlight-bash
 
 find . -type d \( -path ./folder_to_exclude -o -path ./another_folder_to_exclude \) -prune -o -name '*.ts' -exec wc -l {} \;
 
@@ -184,38 +184,38 @@ ls -1 | grep -v '^\.' | wc -l
 
 
 Count the number of directories in a directory (including subdirectories)
-```bash
+```bash +torchlight-bash
 find . -type d | wc -l
 ```
 
 Count the number of files in a directory (including subdirectories) (excluding hidden files)
-```bash
+```bash +torchlight-bash
 find . -type f -not -path '*/\.*' | wc -l
 ```
 
 Count the number of directories in a directory (including subdirectories) (excluding hidden directories)
-```bash
+```bash +torchlight-bash
 find . -type d -not -path '*/\.*' | wc -l
 ```
 
 Count the number of files in a directory (including subdirectories) (excluding hidden files) (excluding files with a specific extension)
-```bash
+```bash +torchlight-bash
 find . -type f -not -path '*/\.*' -not -name '*.txt' | wc -l
 ```
 
 Count the number of directories in a directory (including subdirectories) (excluding hidden directories) (excluding directories with a specific name)
-```bash
+```bash +torchlight-bash
 find . -type d -not -path '*/\.*' -not -name 'node_modules' | wc -l
 ```
 
 Count the number of files in a directory (including subdirectories) (excluding hidden files) (excluding files with a specific extension) (excluding files with a specific name)
-```bash
+```bash +torchlight-bash
 
 find . -type f -not -path '*/\.*' -not -name '*.txt' -not -name 'file.txt' | wc -l
 ```
 
 Count the number of directories in a directory (including subdirectories) (excluding hidden directories) (excluding directories with a specific name) (excluding directories with a specific name)
-```bash
+```bash +torchlight-bash
 find . -type d -not -path '*/\.*' -not -name 'node_modules' -not -name 'vendor' | wc -l
 ```
 
@@ -238,11 +238,11 @@ building, installing and running native Windows software.
 
 1. Download and Install [MSYS2](https://www.msys2.org/):
 2. Open the MSYS2 shell and update the Package Database:
-```bash
+```bash +torchlight-bash
 pacman -Syu
 ```
 3. Install rsync and openssh (which includes `scp`):
-```bash
+```bash +torchlight-bash
 pacman -S rsync openssh
 ```
 

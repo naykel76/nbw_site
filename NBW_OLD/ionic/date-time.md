@@ -14,7 +14,7 @@
 
 Install the `date-fns` package
 
-```bash
+```bash +torchlight-bash
 npm install date-fns --save
 ```
 

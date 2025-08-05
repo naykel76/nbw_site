@@ -34,7 +34,7 @@
 | --skip-tests          | Do not generate "spec.ts" test files for the new project |
 | --strict              | Do not generate "spec.ts" test files for the new project |
 
-```bash
+```bash +torchlight-bash
 ng my-app --standalone --style=scss --routing
 ```
 
@@ -50,7 +50,7 @@ ng my-app --standalone --style=scss --routing
 | ng generate interface <interface-name> | Generate a new interface   |
 | ng generate service <service-name>     | Generate a new service     |
 
-```bash
+```bash +torchlight-bash
 ng generate component myComponent --skip-tests --inline-style
 ng generate component myComponent --skip-tests --inline-style --inline-template --flat
 ```

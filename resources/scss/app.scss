@@ -1,12 +1,28 @@
 @use './vars.scss' as *;
 @use './choices.scss' as *;
+// @use './layout-examples.scss' as *;
 
-@use "../../node_modules/nk_jtb/src/build" as *;
-@use "../../node_modules/nk_jtb/src/extras/nk-docs" as *;
+@use '../../node_modules/nk_jtb/src/build' as *;
+@use '../../node_modules/nk_jtb/src/extras/nk-docs' as *;
 // @use "../../node_modules/nk_jtb/src/extras/choices" as *;
 
+@debug $sm;
 
+.viewport-mobile {
+    // width: 375px;
+    width: $sm;
+    min-height: 500px;
+}
 
+.viewport-tablet {
+    width: 768px;
+    min-height: 400px;
+}
+
+.viewport-desktop {
+    width: $xxl;
+    min-height: 300px;
+}
 
 // @use 'node_modules/nk_jtb/src/extras/nk-docs' as * with (
 //     $code-color: hsl(49, 78%, 86%),

@@ -35,7 +35,7 @@ Using this package consists of two steps:
 Add the `Sushi` trait to a model.
 Add a `$rows` property to the model.
 
-```bash
+```bash +torchlight-bash
 composer require calebporzio/sushi
 ```
 

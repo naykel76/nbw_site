@@ -35,7 +35,7 @@ functionality.
 
 From the command line, run:
 
-```bash
+```bash +torchlight-bash
 php artisan livewire:make CreateEditComponent
 ```
 

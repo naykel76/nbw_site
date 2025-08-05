@@ -9,7 +9,7 @@
 
 ## Create New Email
 
-```bash
+```bash +torchlight-bash
 php artisan make:mail TestEmail
 ```
 

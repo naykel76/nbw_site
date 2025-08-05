@@ -23,13 +23,13 @@ find, `C:/xampp/htdocs` and replace with `C:\Users\natha\sites`
 
 ## PHP Configuration `C:\xampp\php\php.ini`
 
-```bash
+```bash +torchlight-bash
 # Enable PHP Extensions
 extension=intl
 extension=sqlite3
 ```
 
-```bash
+```bash +torchlight-bash
 # Increase upload limits
 post_max_size=500M
 upload_max_filesize=500M
@@ -38,7 +38,7 @@ upload_max_filesize=500M
 ## MySQL Configuration `C:\xampp\mysql\bin\my.ini`
 
 
-```bash
+```bash +torchlight-bash
 # Increase max_allowed_packet
 max_allowed_packet=48M
 ```

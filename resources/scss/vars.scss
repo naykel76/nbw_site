@@ -12,7 +12,9 @@
     $navbar-nav-hover-color: #ffbb1c,
     $navbar-nav-active-color: #ffbb1c
 );
+@use '../../node_modules/nk_jtb/src/maps_and_variables/layout' as *;
 
 // forward the files to make them available in the main scss file
 @forward '../../node_modules/nk_jtb/src/maps_and_variables/base';
 @forward '../../node_modules/nk_jtb/src/maps_and_variables/components';
+@forward '../../node_modules/nk_jtb/src/maps_and_variables/layout';

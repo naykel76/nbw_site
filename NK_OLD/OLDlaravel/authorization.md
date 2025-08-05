@@ -11,7 +11,7 @@ public function delete($id)
 }
 ```
 
-```bash
+```bash +torchlight-bash
 php artisan make:policy PostPolicy --model=Post
 ```
 

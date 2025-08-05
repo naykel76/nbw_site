@@ -39,7 +39,7 @@ https://docs.npmjs.com/cli/v9/commands
 
 ## Update all packages including package.json
 
-```bash
+```bash +torchlight-bash
 npm outdated # check for outdated packages
 npm update # update all packages
 npm install -g npm-check-updates # install npm-check-updates globally

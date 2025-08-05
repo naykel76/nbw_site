@@ -84,7 +84,7 @@ again.
 
 https://ionicframework.com/docs/native/google-maps
 
-```bash
+```bash +torchlight-bash
 npm install @capacitor/google-maps
 npm install @capacitor/geolocation
 npx capacitor sync

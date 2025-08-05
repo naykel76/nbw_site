@@ -14,7 +14,7 @@
 
 To get started, install Payit using the Composer package manager:
 
-```bash
+```bash +torchlight-bash
 composer require naykel/payit
 ```
 
@@ -22,7 +22,7 @@ composer require naykel/payit
 <!-- 
 Next, install Payit resources by executing the the `payit:install` command:
 
-```bash
+```bash +torchlight-bash
 php artisan payit:install
 ``` 
 -->
@@ -31,13 +31,13 @@ php artisan payit:install
 
 After installing Payit, you should migrate your database and seed the payment platforms:
 
-```bash
+```bash +torchlight-bash
 php artisan migrate
 ```
 
 ### Seed The Payment Platforms
 
-```bash
+```bash +torchlight-bash
 # add seeder to project
 $this->call(\Naykel\Payit\Database\Seeders\PaymentPlatformSeeder::class);
 # seed from command line

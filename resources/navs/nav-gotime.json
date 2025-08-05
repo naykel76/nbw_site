@@ -6,6 +6,10 @@
                 "route_name": "pages.gotime.installation"
             },
             {
+                "name": "Route and Menu Builder",
+                "route_name": "pages.gotime.route-and-menu-builder"
+            },
+            {
                 "name": "WIP",
                 "route_name": "pages.gotime.wip"
             }

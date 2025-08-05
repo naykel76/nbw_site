@@ -345,7 +345,7 @@ actions, reducers, and the store work together in Redux.
 
 Expected output:
 
-```bash
+```bash +torchlight-bash
 State has changed: { count: 1 }
 State has changed: { count: 2 }
 State has changed: { count: 1 }

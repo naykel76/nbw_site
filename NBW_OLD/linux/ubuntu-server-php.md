@@ -20,7 +20,7 @@ sudo apt install -y php8.4 php8.4-cli php8.4-dev php8.4-bcmath php8.4-bz2 php8.4
 
 `sudo apt install php` will install the latest stable version of PHP available in the default repositories for your distribution.
 
-```bash
+```bash +torchlight-bash
 sudo apt-get install curl php php-cli php-mbstring unzip
 ```
 
@@ -29,7 +29,7 @@ If you want to install a specific version of PHP, add `ondrej/php` PPA which pro
 <!-- 2. If you are using apache2, you are advised to add ppa:ondrej/apache2 -->
 <!-- 3. If you are using nginx, you are advised to add ppa:ondrej/nginx-mainline or ppa:ondrej/nginx -->
 
-```bash
+```bash +torchlight-bash
 # add the `ondrej/php` repo
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get install php8.2 php8.2-cli php8.2-common php8.2-imap php8.2-redis php8.2-snmp php8.2-xml php8.2-zip php8.2-mbstring php8.2-curl php8.2-mysql
@@ -37,13 +37,13 @@ sudo apt-get install php8.2 php8.2-cli php8.2-common php8.2-imap php8.2-redis ph
 
 ### Node, Git and npm
 
-```bash
+```bash +torchlight-bash
 sudo apt install nodejs npm git
 ```
 
 ### Composer
 
-```bash
+```bash +torchlight-bash
 # Go to your home directory, then retrieve the installer using curl:
 cd ~
 # download composer
@@ -58,7 +58,7 @@ sudo php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=compose
 
 #### Remove Composer
 
-```bash
+```bash +torchlight-bash
 sudo apt-get remove composer
 # If you want to remove any configuration files associated with Composer
 sudo apt-get purge composer
@@ -68,7 +68,7 @@ sudo apt-get autoremove
 
 If you do have Composer installed, but the `sudo apt-get remove composer` command doesn't work, you can try removing Composer by running the following command:
 
-```bash
+```bash +torchlight-bash
 sudo rm -rf /usr/local/bin/composer
 ```
 

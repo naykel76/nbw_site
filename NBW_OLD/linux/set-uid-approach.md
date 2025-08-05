@@ -3,7 +3,7 @@
 
 ## Copy the 'id' program and display the default permissions
 
-```bash
+```bash +torchlight-bash
 cd ~
 # copy 'id' program
 cp /usr/bin/id ./myfile1
@@ -13,7 +13,7 @@ cp /usr/bin/id ./myfile1
 
 Expected Output:
 
-```bash
+```bash +torchlight-bash
 uid=1000(seed) gid=1000(seed) groups=1000(seed),120(docker)
 # permissions
 -rwxr-xr-x 1 seed seed 47480 Mar 22 20:06 myfile1
@@ -29,7 +29,7 @@ user who runs the program. Therefore, `euid=uid && ruid=uid` so the answer is 10
 
 By elevating the program privileged the user can access files they would otherwise not be able to access, this is because ...
 
-```bash
+```bash +torchlight-bash
 cd ~
 # copy 'id' program
 cp /usr/bin/id ./myfile
@@ -43,7 +43,7 @@ sudo chmod 4755 myfile
 
 Expected output:
 
-```bash
+```bash +torchlight-bash
 uid=1000(seed) gid=1000(seed) euid=0(root) groups=1000(seed),120(docker)
 #permissions
 -rwsr-xr-x 1 root seed 47480 Mar 22 20:06 myfile

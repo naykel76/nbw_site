@@ -35,7 +35,7 @@ Livewire to-do list component with drag-and-drop functionality.
 First, we need to create a migration, model, and factory for the `to_dos` table. To do this, run the
 following command in your terminal:
 
-```bash
+```bash +torchlight-bash
 php artisan make:model ToDo -mf
 ```
 
@@ -81,7 +81,7 @@ ToDo::create(['name' => 'Fifth todo...', 'position' => 2]);
 
 Run the migration to create the `to_dos` table:
 
-```bash
+```bash +torchlight-bash
 php artisan migrate --seed
 ```
 
@@ -97,7 +97,7 @@ php artisan migrate --seed
 
 ## Create Livewire Component
 
-```bash
+```bash +torchlight-bash
 php artisan make:livewire SortableToDoList
 ```
 

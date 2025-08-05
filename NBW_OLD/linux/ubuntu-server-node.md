@@ -11,7 +11,7 @@
 
 ## Update server and install npm
 
-```bash
+```bash +torchlight-bash
 sudo apt update && apt upgrade -y
 sudo apt install npm
 ```
@@ -29,7 +29,7 @@ Installing NPM will also install node but it will not be the latest version! To 
 
 Install node version manager, then install latest stable node version, and switch to it.
 
-```bash
+```bash +torchlight-bash
 # install node version manager
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 ```
@@ -44,7 +44,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 
 ### Switching Node Versions
 
-```bash
+```bash +torchlight-bash
 # install version
 nvm install v18.17.1
 # switch to latest version

@@ -31,14 +31,14 @@
 
 ### Install Dependencies
 
-```bash
+```bash +torchlight-bash
 npm install express cors dotenv
 ```
 
 Install the `nodemon` package which automatically detects code changes and restarts the server
 whenever we make a code change.
 
-```bash
+```bash +torchlight-bash
 npm install nodemon --save-dev
 ```
 
@@ -77,11 +77,11 @@ app.listen(PORT, () => {
 You can either start the server using the regular `Node.js` command or use `nodemon` for automatic
 server restarts when the code changes.
 
-```bash
+```bash +torchlight-bash
 node server.js
 ```
 
-```bash
+```bash +torchlight-bash
 nodmon server.js
 ```
 

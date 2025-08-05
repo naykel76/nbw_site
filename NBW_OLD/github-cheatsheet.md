@@ -86,7 +86,7 @@ change it to any name you want.
 | git reset --hard <commit>  | Hard reset      |
 | git revert <commit>        | Revert a commit |
 
-```bash
+```bash +torchlight-bash
 git reset --soft HEAD~1         # Restore last commit but keep changes
 git reset --hard HEAD~1         # Restore last commit and delete changes
 ```
@@ -113,7 +113,7 @@ git config --global alias.naykel '!'"git clone https://github.com/naykel76/\$1 a
 
 ### Create Alias to Clone Repo
 
-```bash
+```bash +torchlight-bash
 git config --global alias.naykel '!'"f() { git clone https://github.com/naykel76/\$1 \$2; }; f"
 ```
 

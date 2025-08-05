@@ -54,7 +54,7 @@ npx expo install react-native-safe-area-context
 
 ### ESLint
 
-```bash
+```bash +torchlight-bash
 npm install --save-dev eslint eslint-plugin-react
 # install the config (optional)
 npm init @eslint/config
@@ -75,7 +75,7 @@ All screens have access to:
 
 ### Installing navigators
     
-```bash
+```bash +torchlight-bash
 # First, install the required packages using npm
 npm install @react-navigation/native 
 
@@ -236,7 +236,7 @@ export default Parent;
 
 <a href="https://react-native-async-storage.github.io/async-storage/docs/usage" target="blank">Async Storage Docs</a>
 
-```bash
+```bash +torchlight-bash
 npm install @react-native-async-storage/async-storage
 ```
 

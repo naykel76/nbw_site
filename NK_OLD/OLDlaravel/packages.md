@@ -89,7 +89,7 @@ public function register(){
 
 ## Seeding From Package
 
-```bash
+```bash +torchlight-bash
 # include seeder in project
 $this->call(\Vendor\Package\Database\Seeders\MySeeder::class);
 

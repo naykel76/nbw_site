@@ -37,7 +37,7 @@ that user's authorized_keys file, rather than allowing root access via SSH.
 
 ### Create SSH Key
 
-```bash
+```bash +torchlight-bash
 # Lists the files in your .ssh directory, if they exist
 ls -al ~/.ssh
 # generate ssh key (-b 4096 is the key length)
@@ -50,7 +50,7 @@ cat ~/.ssh/id_rsa.pub
 
 #### Upload the public key to server
 
-```bash
+```bash +torchlight-bash
 # create directory and set user permissions
 mkdir -p ~/.ssh && sudo chmod -R 700 ~/.ssh/
 # copy key from local computer
@@ -60,7 +60,7 @@ scp ~/.ssh/id_rsa.pub example_user@203.0.113.10:~/.ssh/authorized_keys
 
 ### Disable Root Access and Password Access
 
-```bash
+```bash +torchlight-bash
 # disable passwords in sshd_config
 sudo nano /etc/ssh/sshd_config
 # update to
@@ -88,7 +88,7 @@ In the `.ssh` directory, Create the following files if they do not already exist
 
 Add the following text to `.ssh/config`
 
-```bash
+```bash +torchlight-bash
 Host 114.142.160.30
     HostName 114.142.160.30
     IdentityFile ~/.ssh/id_rsa_nbw
@@ -103,7 +103,7 @@ Host 114.142.160.30
 ##### Can't add to `known_hosts`
 Manually add the 'host' to the `known_hosts` file
 
-```bash
+```bash +torchlight-bash
 ssh-keyscan -t ed25519 170.187.240.29 >> ~/.ssh/known_hosts
 ```
 

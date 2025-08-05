@@ -12,7 +12,7 @@
 
 ## Install
 
-```bash
+```bash +torchlight-bash
 npm install typedoc --save-dev
 ```
 <!-- npx typedoc src/index.ts -->
@@ -26,7 +26,7 @@ configuration from json files.
 
 You can either create a `typedoc.json` or use an existing `tsconfig.json`
 
-```json
+```json +torchlight-json
 {
     "entryPoints": ["src/index.ts"],
     "out": "docs"
@@ -35,7 +35,7 @@ You can either create a `typedoc.json` or use an existing `tsconfig.json`
 
 Existing  `tsconfig.json` file
 
-```json
+```json +torchlight-json
 {
     "compilerOptions": {
         // type script options

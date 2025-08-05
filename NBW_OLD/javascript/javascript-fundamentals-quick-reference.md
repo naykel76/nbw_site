@@ -47,7 +47,7 @@ the links in the sidebar.
 
 ### Primitive data types
 
-```bash
+```bash +torchlight-bash
 Number      # numeric values (1, 3.14, NaN)
 String      # textual data ('hello', "world", "51")
 Boolean     # true and false or 0 and 1
@@ -80,7 +80,7 @@ nullish     # null or undefined
 ## Operators
 
 ### Logical and Comparison Operators
-```bash
+```bash +torchlight-bash
 # Logical Operators
 && (AND)                     # First falsy or last truthy
 || (OR)                      # First truthy or last falsy
@@ -98,7 +98,7 @@ nullish     # null or undefined
 ```
 
 ### Arithmetic and Assignment Operators
-```bash
+```bash +torchlight-bash
 # Arithmetic Operators
 +   (Addition)               # Adds two operands
 -   (Subtraction)            # Subtracts two operands
@@ -117,13 +117,13 @@ nullish     # null or undefined
 ```
 
 ### Type Operators
-```bash
+```bash +torchlight-bash
 typeof                      # returns the type of a variable
 instanceof                  # returns true if an object is an instance of a class
 ```
 
 ### Operator Usage
-```bash
+```bash +torchlight-bash
 ||  # returns the first truthy value or the last if all are falsy
 ??  # returns the first non-nullish value or the last if all are nullish
 ```

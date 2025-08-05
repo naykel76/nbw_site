@@ -46,7 +46,7 @@
 Create the modal page and remove the automatically created route. For this example, we are going
 to create a user-profile modal.
 
-```bash
+```bash +torchlight-bash
 ionic generate page user-profile
 ```
 

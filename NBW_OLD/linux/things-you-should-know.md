@@ -20,7 +20,7 @@ The **shell** is the program that is run when the user logs in, and it provides 
 
 You can run the following commands to find out information about your shell.
 
-```bash
+```bash +torchlight-bash
 # to check your default shell run:
 ps -p $$
 # or
@@ -47,7 +47,7 @@ The `/etc/shadow` file contains password information for each user account, such
 <a id="how-to-create-a-new-user"></a>
 ## How to create a new user
 
-```bash
+```bash +torchlight-bash
 # adduser, enter password and details
 sudo adduser bob
 # check bob exists
@@ -74,7 +74,7 @@ The `/etc/passwd` file contains basic information about user accounts, such as t
 
 `/usr/bin/passwd` is a program used to change a normal user's password.
 
-```bash
+```bash +torchlight-bash
 # default permissions
 -rwxr-xr-x 1 root root 47480 Sep  5  2019 /usr/bin/id
 -rwsr-xr-x 1 root root 68208 Mar 14  2022 /usr/bin/passwd
@@ -104,7 +104,7 @@ which is used to change the users password.
 <a id="understanding-permissions"></a>
 ## Understanding permissions
 
-```bash
+```bash +torchlight-bash
 ls -l /bin/passwd
 # output
 -rwsr-xr-x 1 root root 68208 Nov 29 11:53 /bin/passwd
@@ -115,7 +115,7 @@ ls -l /bin/passwd
 - The next three characters (r-x) indicate that the owner (root) has read and execute permissions, but not write permissions.
 - The final three characters (r-x) indicate that both the group and others have read and execute permissions, but not write permissions.
 
-```bash
+```bash +torchlight-bash
 ls -ld /tmp
 # output
 d-rwx-rwx-rwt 18 root root 4096 Mar 21 18:32 /tmp
@@ -133,13 +133,13 @@ d-rwx-rwx-rwt 18 root root 4096 Mar 21 18:32 /tmp
 
 Both files are related to the user account and authentication. The primary difference between these two files is that `/etc/passwd` contains user account information, while `/etc/shadow` contains password information.
 
-```bash
+```bash +torchlight-bash
 # default permissions
 -rw-r--r-- 1 root root 2550 Mar 22 19:18 /etc/passwd
 -rw-r----- 1 root shadow 1365 Mar  7 07:33 /etc/shadow
 ```
 
-```bash
+```bash +torchlight-bash
 cat /etc/passwd | grep user_name
 # output
 user_name:x:1000:1000::/home/user_name:/bin/bash
@@ -157,7 +157,7 @@ user_name:x:1000:1000::/home/user_name:/bin/bash
 
 The shadow group is used to control access to sensitive password information stored in the /etc/shadow file. Only members of the shadow group (typically only the root user) are allowed to read the contents of the /etc/shadow file, which contains hashed passwords for user accounts on the system.
 
-```bash
+```bash +torchlight-bash
 # change program owner
 sudo chown root some_program
 # update permissions to include the set-uid bit (4) to elevate permissions

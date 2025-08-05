@@ -15,13 +15,13 @@
 
 To get started, install Authit using the Composer package manager:
 
-```bash
+```bash +torchlight-bash
 composer require naykel/authit
 ```
 
 Next, install Authit resources by executing the the `authit:install` command:
 
-```bash
+```bash +torchlight-bash
 php artisan authit:install
 ```
 
@@ -61,7 +61,7 @@ flowchart TD
 
 After installing Authit, you should migrate your database and make the necessary changes to the User model:
 
-```bash
+```bash +torchlight-bash
 php artisan migrate
 ```
 
@@ -69,7 +69,7 @@ php artisan migrate
 
 Seed default permissions direct from the package:
 
-```bash
+```bash +torchlight-bash
 # include seeder in project
 $this->call(\Naykel\Authit\Database\Seeders\RolesPermissionsSeeder::class);
 # seed from command line
@@ -90,7 +90,7 @@ Authit provides a number of configuration options that you can adjust to suit yo
 application's needs. These options can be set in your `.env` file. Alternatively you can
 publish the configuration file using the following command:
 
-```bash
+```bash +torchlight-bash
 php artisan vendor:publish --tag=authit-config
 ```
 
@@ -106,7 +106,7 @@ Please note that this does not prevent users from being created. It only disable
 registration form. All other user creation methods and routes are still available.
 
 
-```bash
+```bash +torchlight-bash
 NK_ALLOW_REGISTER=false
 ```
 
@@ -125,7 +125,7 @@ the following in your `.env` file:
 This will update the registration form and user migration to include separate
 `first_name` and `last_name` fields.
 
-```bash
+```bash +torchlight-bash
 NK_USE_SINGLE_NAME_FIELD=false
 ```
 

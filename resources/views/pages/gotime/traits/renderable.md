@@ -48,7 +48,7 @@ The `Renderable` trait will apply a layout automatically.
 By default, the layout is determined by the `livewire_layout` configuration value in the
 `naykel.php` config file:
 
-```bash
+```bash +torchlight-bash
 'livewire_layout' => env('NK_LIVEWIRE_LAYOUT', 'app'),
 ```
 

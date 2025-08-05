@@ -19,11 +19,11 @@
 ## Setting up HTTPS on XAMPP
 
 1. Navigate to the Apache directory in your XAMPP installation:
-```bash
+```bash +torchlight-bash
 cd /c/xampp/apache
 ```
 2. Create a new directory to store your SSL keys with the `mkdir` command:
-```bash
+```bash +torchlight-bash
 mkdir conf/ssl.crt
 ```
 3. Use the `openssl` command to generate a new self-signed SSL certificate:
@@ -67,7 +67,7 @@ SSLCertificateKeyFile "conf/ssl.key/server.key"
     Step 4: Add the site in Windows Hosts.
     Step 5: Edit the SSL Configuration file for Apache.
 
-```bash
+```bash +torchlight-bash
 # generate the private key
 openssl genpkey -algorithm RSA -out private.key
 ```
@@ -104,7 +104,7 @@ https://stackoverflow.com/questions/64800565/how-to-create-valid-ssl-in-localhos
 
 #### Configure `httpd-vhosts.conf`
 
-```bash
+```bash +torchlight-bash
 <VirtualHost *:443>
     DocumentRoot "C:/xampp/htdocs"
     ServerName site.test
@@ -115,7 +115,7 @@ https://stackoverflow.com/questions/64800565/how-to-create-valid-ssl-in-localhos
 </VirtualHost>
  ```
 
-```bash
+```bash +torchlight-bash
 <VirtualHost *:443>
     DocumentRoot "C:/xampp/htdocs"
     ServerName localhost
@@ -133,7 +133,7 @@ https://stackoverflow.com/questions/64800565/how-to-create-valid-ssl-in-localhos
 
 #### Configure `httpd.conf`
 
-```bash
+```bash +torchlight-bash
 # Virtual hosts
 Include conf/extra/httpd-vhosts.conf
 ```

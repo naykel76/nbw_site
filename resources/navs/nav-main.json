@@ -2,6 +2,24 @@
     "main": {
         "links": [
             {
+                "name": "Examples and Tutorials",
+                "route_name": "pages.examples-and-tutorials",
+                "children": [
+                    {
+                        "name": "Layout Examples",
+                        "route_name": "pages.layout-examples"
+                    },
+                    {
+                        "name": "Layout Comparison",
+                        "route_name": "pages.layout-comparison"
+                    },
+                    {
+                        "name": "Layout Playground",
+                        "route_name": "pages.layout-playground"
+                    }
+                ]
+            },
+            {
                 "name": "Form Example",
                 "route_name": "form-example",
                 "exclude_route": true
@@ -35,10 +53,6 @@
                 "name": "Gotime",
                 "route_name": "pages.gotime.installation",
                 "exclude_route": true
-            },
-            {
-                "name": "Tutorials",
-                "route_name": "pages.tutorials-homepage"
             }
         ]
     },

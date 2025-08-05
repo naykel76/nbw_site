@@ -48,7 +48,7 @@ standard way to write Redux logic and solve common problems with Redux like:
 
 ## Installation
 
-```bash
+```bash +torchlight-bash
 npm install @reduxjs/toolkit react-redux
 ```
 

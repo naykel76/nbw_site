@@ -13,7 +13,7 @@ export const routes: Routes = [ ];
 
 Then you can create standalone components by adding the `--standalone` flag
 
-```bash
+```bash +torchlight-bash
 ionic g posts --standalone
 ```
 
