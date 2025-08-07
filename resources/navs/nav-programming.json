@@ -11,6 +11,11 @@
                 "icon": "github"
             },
             {
+                "name": "Linux",
+                "route_name": "support.linux-quick-reference",
+                "icon": "github"
+            },
+            {
                 "name": "Mermaid",
                 "route_name": "support.mermaid-quick-reference",
                 "icon": "mermaidjs"

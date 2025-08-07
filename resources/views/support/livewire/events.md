@@ -10,8 +10,6 @@
 - **then** the child component will listen for that event,
 <!-- - **which means** the child component will call the `create` method from the trait???? -->
 
-
-
 ## Child Dispatch, Parent Listen
 
 - **If** the `edit-post` child component dispatches a `saved` event,  

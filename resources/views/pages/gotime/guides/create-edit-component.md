@@ -11,19 +11,13 @@
 
 ## Introduction
 
-<!-- add specifics about the guide base on the Gotime package-->
 This guide shows how to build Livewire components for creating and editing
 records using form objects. It explains how to initialize form data, set default
 values, and structure a component that handles both create and edit
 functionality.
 
-
-<!-- i think this guid will just focus on the component. separate form object docs??? -->
-
 ## TLDR (quick checklist)
 
-<!-- gtlc: are custom snippets -->
-<!-- i do not want artisan commands, this is just a quick checklist to work through-->
 1. Add the form object, traits, and properties. (`gtlc:form-class`)
 3. Initialize the form with a model instance in the `mount()` method
 4. 

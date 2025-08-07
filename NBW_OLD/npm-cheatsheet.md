@@ -1,31 +1,21 @@
 # NPM Cheatsheet
 
-<!-- TOC -->
-
-- [Common Commands](#common-commands)
-- [Version Control and Publishing](#version-control-and-publishing)
-- [Update all packages including package.json](#update-all-packages-including-packagejson)
-
-<!-- /TOC -->
-https://docs.npmjs.com/cli/v9/commands
-
 
 ## Common Commands
-<code-first-col></code-first-col>
+
 | Syntax                    | Action                                               |
 | :------------------------ | :--------------------------------------------------- |
 | npm audit                 | Scan and list all the vulnerabilities in the project |
 | npm audit fix             | Fix found vulnerabilities                            |
 | npm i <package>           | Install a package                                    |
 | npm install npm@latest -g | Update npm                                           |
-| npm ls                    | List packages                                        |
+| `npm list`                | List packages                                        |
 | npm outdated [PACKAGE]    | Check for outdated packages                          |
 | npm update <package>      | Update a package                                     |
 | npm rm                    | Remove a package                                     |
 
 
 ## Version Control and Publishing
-<code-first-col></code-first-col>
 | Syntax                     | Action                                           |
 | :------------------------- | :----------------------------------------------- |
 | npm publish                | Publish a package                                |

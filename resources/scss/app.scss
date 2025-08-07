@@ -1,12 +1,11 @@
 @use './vars.scss' as *;
 @use './choices.scss' as *;
+@use './tmp.scss' as *;
 // @use './layout-examples.scss' as *;
 
 @use '../../node_modules/nk_jtb/src/build' as *;
 @use '../../node_modules/nk_jtb/src/extras/nk-docs' as *;
 // @use "../../node_modules/nk_jtb/src/extras/choices" as *;
-
-@debug $sm;
 
 .viewport-mobile {
     // width: 375px;

@@ -1,7 +1,6 @@
-# Linux Command-Line Cheatsheet
+# Linux Quick Reference
 
-<!-- TOC -->
-
+- [Vim Editor Commands](#vim-editor-commands)
 - [Navigation](#navigation)
 - [Process Management](#process-management)
 - [Searching](#searching)
@@ -12,13 +11,23 @@
 - [Install Software Updates and Settings](#install-software-updates-and-settings)
     - [System Settings](#system-settings)
 
-<!-- /TOC -->
 
-<a id="markdown-navigation" name="navigation"></a>
+## Vim Editor Commands
+
+| Command | Description         |
+| ------- | ------------------- |
+| `i`     | Enter insert mode   |
+| `Esc`   | Exit insert mode    |
+| `:w`    | Save changes        |
+| `:q`    | Quit editor         |
+| `:wq`   | Save and quit       |
+| `:q!`   | Quit without saving |
+
+
 
 ## Navigation
 
-<code-first-col></code-first-col>
+
 | Command        | Description                                               |
 | -------------- | --------------------------------------------------------- |
 | cd [directory] | Change directory (`~` is home, and `/` is root directory) |
@@ -28,34 +37,31 @@
 | ls -a          | List all files, including hidden ones                     |
 | du -sh         | Get size of current directory                             |
 
-<a id="markdown-process-management" name="process-management"></a>
 
 ## Process Management
 
-<code-first-col></code-first-col>
-| Command           | Description.                               |
+
+| Command           | Description.                              |
 | ----------------- | ----------------------------------------- |
 | ps                | Display running processes                 |
 | top               | Monitor system processes in real-time     |
 | kill [PID]        | Terminate a process by its process ID     |
 | killall [process] | Terminate all processes with a given name |
 
-<a id="markdown-searching" name="searching"></a>
 
 ## Searching
 
-<code-first-col></code-first-col>
+
 | Command                           | Description                                     |
 | --------------------------------- | ----------------------------------------------- |
 | grep [pattern] [file]             | Search for a pattern in a file                  |
 | grep -r [pattern] [directory]     | Recursively search for a pattern in a directory |
 | find [directory] -name [filename] | Find files/directories by name                  |
 
-<a id="markdown-networking" name="networking"></a>
 
 ## Networking
 
-<code-first-col></code-first-col>
+
 | Command           | Description                                 |
 | ----------------- | ------------------------------------------- |
 | ifconfig          | Display network interfaces and IP addresses |
@@ -64,11 +70,10 @@
 | wget [URL]        | Download files from the web                 |
 | ssh [user]@[host] | Connect to a remote host using SSH          |
 
-<a id="markdown-compressionarchiving" name="compressionarchiving"></a>
 
 ## Compression/Archiving
 
-<code-first-col></code-first-col>
+
 | Command                                | Description                       |
 | -------------------------------------- | --------------------------------- |
 | tar -czvf [archive.tar.gz] [directory] | Create a gzip-compressed archive  |
@@ -76,11 +81,10 @@
 | unzip [file.zip]                       | Unzip a ZIP archive               |
 | gzip [file]                            | Compress a file (creates file.gz) |
 
-<a id="markdown-system-information" name="system-information"></a>
 
 ## System Information
 
-<code-first-col></code-first-col>
+
 | Command  | Description                |
 | -------- | -------------------------- |
 | uname -a | Display system information |
@@ -89,11 +93,10 @@
 | uptime   | Display system uptime      |
 | who      | Display logged-in users    |
 
-<a id="markdown-package-management-debianubuntu" name="package-management-debianubuntu"></a>
 
 ## Package Management (Debian/Ubuntu)
 
-<code-first-col></code-first-col>
+
 | Command                    | Description                |
 | -------------------------- | -------------------------- |
 | sudo apt update            | Update package lists       |
@@ -103,7 +106,6 @@
 | dpkg -i [package.deb]      | Install a .deb package     |
 
 
-<a id="markdown-install-software-updates-and-settings" name="install-software-updates-and-settings"></a>
 
 ## Install Software Updates and Settings
 
@@ -118,11 +120,8 @@
   timedatectl list-timezones
 ```
 
-
-<a id="markdown-system-settings" name="system-settings"></a>
-
 ### System Settings
-<code-first-col></code-first-col>
+
  | Syntax                                        | Action         |
  | :-------------------------------------------- | :------------- |
  | timedatectl                                   | list time zone |
