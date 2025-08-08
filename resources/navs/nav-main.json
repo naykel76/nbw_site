@@ -6,6 +6,10 @@
                 "route_name": "pages.examples-and-tutorials",
                 "children": [
                     {
+                        "name": "Table Component",
+                        "route_name": "pages.gotime.table-example"
+                    },
+                    {
                         "name": "Layout Examples",
                         "route_name": "pages.layout-examples"
                     },

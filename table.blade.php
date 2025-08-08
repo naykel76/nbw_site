@@ -1,14 +1,4 @@
 <div>
-
-    {{-- <x-gt-modal wire:model="showModal"> --}}
-
-    {{-- :video="$selected" :key="$selected?->id ?? 'new'" @saved="$refresh" --}}
-    <livewire:example-form />
-    {{-- </x-gt-modal> --}}
-
-    <x-gt-button wire:click="$dispatch('create-item')" text="Create From Parent" />
-
-
     <x-gt-table>
         <x-slot:thead>
             <tr>
@@ -16,7 +6,8 @@
                     sortable :direction="$this->getSortDirection('id')"> id </x-gt-table.th>
                 <x-gt-table.th wire:click="sortBy('name')"
                     sortable :direction="$this->getSortDirection('name')"> Name </x-gt-table.th>
-                <th></th>
+                <x-gt-table.th wire:click="sortBy('email')"
+                    sortable :direction="$this->getSortDirection('email')"> email </x-gt-table.th>
             </tr>
         </x-slot:thead>
         <x-slot:tbody>
@@ -24,14 +15,7 @@
                 <tr wire:key="{{ $item->id }}">
                     <td>{{ str_pad($item->id, 5, 0, STR_PAD_LEFT) }}</td>
                     <td>{{ $item->name }}</td>
-
-                    <td>
-                        <div class="flex ha-r space-x-05">
-                            {{-- fix to remove id when using local method --}}
-                            <x-gt-resource-action action="edit" wire:click="edit({{ $item->id }})" :id="$item->id" />
-                            {{-- <x-gt-resource-action action="delete" :id="$item->id" /> --}}
-                        </div>
-                    </td>
+                    <td>{{ $item->email }}</td>
                 </tr>
             @empty
                 <tr>

@@ -10,6 +10,10 @@
                 "route_name": "pages.gotime.route-and-menu-builder"
             },
             {
+                "name": "FAQ's",
+                "route_name": "pages.gotime.faqs"
+            },
+            {
                 "name": "WIP",
                 "route_name": "pages.gotime.wip"
             }
@@ -88,10 +92,6 @@
             {
                 "name": "Quick Start",
                 "route_name": "pages.gotime.guides.quick-start"
-            },
-            {
-                "name": "Create and Edit Records",
-                "route_name": "pages.gotime.guides.create-and-edit-records"
             },
             {
                 "name": "Create Edit Component",
