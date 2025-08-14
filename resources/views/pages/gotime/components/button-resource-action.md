@@ -4,19 +4,16 @@
 - [Features](#features)
 - [Basic Usage](#basic-usage)
 - [Using with Routes](#using-with-routes)
+- [Using Events](#using-events)
 - [Overriding Default Behavior](#overriding-default-behavior)
     - [1. Custom Wire Click (Full Control)](#1-custom-wire-click-full-control)
-    - [2. Component-to-Component Communication](#2-component-to-component-communication)
-    - [3. Global Event Dispatching](#3-global-event-dispatching)
-- [Customization](#customization)
-    - [Custom Text and Icons](#custom-text-and-icons)
-    - [Styling](#styling)
+    - [3. Global Event Dispatching   (i think i may remove this)](#3-global-event-dispatching---i-think-i-may-remove-this)
 - [Default Behaviors](#default-behaviors)
     - [Attributes](#attributes)
 
 ## Overview
 
-Resource action buttons are specialized buttons designed for CRUD operations on
+Resource action buttons are specialised buttons designed for CRUD operations on
 resources. They're tightly integrated with the Gotime Livewire CRUD system.
 
 ## Features
@@ -71,6 +68,23 @@ instead of Livewire buttons:
 @endverbatim
 ```
 
+## Using Events
+
+Use `dispatchTo` for targeted component communication:
+
+* uses convention when communicating with the `WithFormActions` trait so there
+  is no need to add the event name when using the resource action buttons.
+
+
+```html +torchlight-blade
+@verbatim
+<x-gt-resource-action action="create" dispatchTo="widget-create-edit" />
+<!-- Generates: wire:click="$dispatchTo('widget-create-edit', 'create-model')" -->
+
+<x-gt-resource-action action="edit" :id="$id" dispatchTo="widget-modal" />
+<!-- Generates: wire:click="$dispatchTo('widget-modal', 'edit-model', { id: 5 })" -->
+@endverbatim
+```
 
 
 
@@ -91,72 +105,23 @@ Override the default behavior completely by providing your own `wire:click`:
 > **Note:** When using custom `wire:click`, the `id` parameter is not required
 > since you control the method parameters.
 
-### 2. Component-to-Component Communication
-Use `dispatchTo` for targeted component communication:
 
-```html +torchlight-blade
-@verbatim
-<x-gt-resource-action action="create" dispatchTo="user-create-edit" />
-<!-- Generates: wire:click="$dispatchTo('user-create-edit', 'create-model')" -->
 
-<x-gt-resource-action action="edit" :id="$id" dispatchTo="user-modal" />
-<!-- Generates: wire:click="$dispatchTo('user-modal', 'edit-model', { id: 5 })" -->
-@endverbatim
-```
-
-### 3. Global Event Dispatching  
+### 3. Global Event Dispatching   (i think i may remove this)
 Use `dispatch` for global event broadcasting:
 
 ```html +torchlight-blade
 @verbatim
-<x-gt-resource-action action="create" dispatch="user-create" />
-<!-- Generates: wire:click="$dispatch('user-create')" -->
+<x-gt-resource-action action="create" dispatch="widget-create" />
+<!-- Generates: wire:click="$dispatch('widget-create')" -->
 
-<x-gt-resource-action action="edit" :id="$id" dispatch="edit-user" />
-<!-- Generates: wire:click="$dispatch('edit-user', { id: 5 })" -->
+<x-gt-resource-action action="edit" :id="$id" dispatch="edit-widget" />
+<!-- Generates: wire:click="$dispatch('edit-widget', { id: 5 })" -->
 @endverbatim
 ```
 
-> **Important:** Dispatch events must be handled in the view where the component
-> is rendered.
 
-## Customization
 
-### Custom Text and Icons
-
-```html +torchlight-blade
-@verbatim
-<!-- Custom text -->
-<x-gt-resource-action action="edit" text="Modify User" :id="$id" />
-
-<!-- Custom icon -->
-<x-gt-resource-action action="archive" icon="archive-box" :id="$id" />
-
-<!-- Both custom text and icon -->
-<x-gt-resource-action 
-    action="restore" 
-    text="Restore User" 
-    icon="arrow-path"
-    :id="$id" 
-/>
-@endverbatim
-```
-
-### Styling
-
-The component automatically applies contextual colors based on action:
-- **create**: `txt-sky-600` (blue)
-- **edit**: `txt-orange-600` (orange)  
-- **delete**: `txt-red-600` (red)
-- **view/show**: `txt-gray-600` (gray)
-
-You can override these with standard CSS classes:
-
-```html +torchlight-blade
-@verbatim
-<x-gt-resource-action action="edit" :id="$id" class="txt-purple-600" />
-@endverbatim
-```
 
 ## Default Behaviors
 

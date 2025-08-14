@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Widget::factory(5)->create();
+        Widget::factory(1)->create(['title' => 'Widget One']);
+        Widget::factory(1)->create(['title' => 'Widget Two']);
 
         User::factory()->create([
             'name' => 'Test User',

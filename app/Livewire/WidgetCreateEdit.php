@@ -15,8 +15,14 @@ class WidgetCreateEdit extends Component
     public WidgetFormObject $form;
     protected string $modelClass = Widget::class;
 
-    public function mount () {
-        $model = $this->modelClass::factory()->make();
-        $this->form->init($model);
+    // public function mount () {
+    //     $model = $this->modelClass::factory()->make();
+    //     $this->form->init($model);
+    // }
+
+    public function fillForm()
+    {
+        dd('fillForm called');
+        // Widget::factory()->make();
     }
 }

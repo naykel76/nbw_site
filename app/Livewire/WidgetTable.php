@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Widget;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Naykel\Gotime\Traits\Renderable;
@@ -15,6 +16,13 @@ class WidgetTable extends Component
     protected string $modelClass = Widget::class;
     public string $pageTitle = 'Widget Table';
     // public $routePrefix = '';
+
+    #[On('model-saved')]
+    public function refreshComponent()
+    {
+        // dd('here');
+        $this->resetPage();
+    }
 
     protected function prepareData()
     {

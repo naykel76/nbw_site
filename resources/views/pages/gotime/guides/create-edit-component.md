@@ -18,6 +18,7 @@
 - [FAQs](#faqs)
     - [Why use the `$modelClass` property?](#why-use-the-modelclass-property)
     - [When Should I use the `initialData` Property?](#when-should-i-use-the-initialdata-property)
+    - [When using events, how do i refresh a separate component?](#when-using-events-how-do-i-refresh-a-separate-component)
   
 ## Introduction
 
@@ -133,6 +134,11 @@ When using the `WithFormActions` trait, there is nothing special you need to do
 to listen for events. Just make sure to use the correct event names to
 communicate with the trait.
 
+<!-- use the resource action buttons to dispatch events that the form object can listen for. -->
+<!-- these use convention when communicating with the `WithFormActions` trait: -->
+
+
+
 * `create-model`
 * `delete-model`
 * `edit-model`
@@ -198,6 +204,10 @@ component more maintainable and reusable.
 
 Use `initialData` when default values depend on Widget context, route parameters,
 or other dynamic data that isn't known at compile time.
+
+### <question>When using events, how do i refresh a separate component?</question>
+
+
 
 
 <!-- REVIEW -->

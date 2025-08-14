@@ -15,61 +15,39 @@ class WidgetFormObject extends Form
     #[Validate('required|string|max: 255')]
     public string $title;
 
+    #[Validate('nullable|date|after_or_equal:today')]
+    public $start_date;
+
+    #[Validate('nullable|date|after:start_date')]
+    public $end_date;
+
     public function init(Widget $model): void
     {
         $this->editing = $model;
-        $this->setFormProperties($this->editing);
+        $this->setFormProperties($model);
     }
 
-    //     #[Validate('required|string|max:255')]
-    //     public string $name;
-
-    //     public string $email;
-
-    //     #[Validate('sometimes|string|min:8|max:255')]
-    //     public ?string $password = null;
-
-    //     #[Validate('sometimes|date|after_or_equal:today')]
-    //     public ?string $email_verified_at;
-
-    //     public function rules(): array
-    //     {
-    //         return [
-    //             'email' => 'required|string|email|max:255|unique:users,email,' . $this->editing->id,
-    //         ];
-    //     }
-
-    //     // 'phone' => 'nullable|string|regex:/^[0-9+\s]+$/i|min:10',
-
-    //     // #[Validate('nullable|string')]
-    //     // public string $bio;
-
-    //     // #[Validate('nullable|array')]
-    //     // public string|array $tags = []; // string is to allow setFormProperties to work
-
-    //     // #[Validate('nullable|array')]
-    //     // public string|array $hobbies = []; // string is to allow setFormProperties to work
-
-    //     public function init(User $model): void
-    //     {
-    //         $this->editing = $model;
-    //         $this->setFormProperties($this->editing);
-
-    //         // $this->email_verified_at = $model->email_verified_at ?? now();
-    //         $this->email_verified_at = $model->email_verified_at ?? now();
-    //         // $this->tags = $model->tags ?? [];
-    //         // $this->hobbies = $model->hobbies ?? [];
-    //         // $this->name = Str::title($this->name);
-    //     }
-
-    //     public function createNewModel(array $data = []): User
-    //     {
-    //         return User::factory()->make($data);
-
-    //         return User::make(array_merge([
-    //             'email_verified_at' => now(),
-    //             'password' => Hash::make(Str::random(10)),
-    //         ], $data));
-    //     }
-
+    public function createNewModel(array $data = []): Widget
+    {
+        return Widget::make(array_merge([
+            // 'title' => '',
+        ], $data));
+    }
 }
+
+// /     #[Validate('sometimes|date|after_or_equal:today')]
+//     public ?string $email_verified_at;
+
+//     // 'phone' => 'nullable|string|regex:/^[0-9+\s]+$/i|min:10',
+
+//     // #[Validate('nullable|string')]
+//     // public string $bio;
+
+//     // #[Validate('nullable|array')]
+//     // public string|array $tags = []; // string is to allow setFormProperties to work
+
+//     // #[Validate('nullable|array')]
+//     // public string|array $hobbies = []; // string is to allow setFormProperties to work
+// $this->tags = $model->tags ?? [];
+// $this->hobbies = $model->hobbies ?? [];
+// $this->name = Str::title($this->name);

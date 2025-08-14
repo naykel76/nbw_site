@@ -6,6 +6,7 @@
 - [Initial Setup](#initial-setup)
     - [Component Class](#component-class)
     - [Blade View](#blade-view)
+- [Refreshing the Table](#refreshing-the-table)
 - [TO BE REVIEWED ----------------------------------](#to-be-reviewed-----------------------------------)
 - [Add Action Buttons](#add-action-buttons)
 - [Filtering (TBD)](#filtering-tbd)
@@ -37,8 +38,6 @@ understanding of Livewire and Laravel.
 5. (optional) Add action buttons for each row, such as Edit, Delete, and View
 6. (optional) Add filtering or other functionality as needed
 8. Test the table component with sample data 
-
-
 
 ## Initial Setup
 
@@ -117,6 +116,15 @@ searching.
 </div>
 @endverbatim
 ```
+
+
+## Refreshing the Table
+
+When working with sibling components, using events to communicate the table will
+not automatically refresh. The `WithFormActions` trait dispatches a ....
+
+Add a listener in the table component to listen for the `model-saved` event:
+
 
 
 
