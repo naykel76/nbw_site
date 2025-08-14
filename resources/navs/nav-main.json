@@ -6,8 +6,9 @@
                 "route_name": "pages.examples-and-tutorials",
                 "children": [
                     {
-                        "name": "Table Component",
-                        "route_name": "pages.gotime.table-example"
+                        "name": "Gotime: Table and Form Examples",
+                        "route_name": "pages.gotime.table-and-form-examples",
+                        "type": "md"
                     },
                     {
                         "name": "Layout Examples",
@@ -22,11 +23,6 @@
                         "route_name": "pages.layout-playground"
                     }
                 ]
-            },
-            {
-                "name": "Form Example",
-                "route_name": "form-example",
-                "exclude_route": true
             },
             {
                 "name": "Conventions",

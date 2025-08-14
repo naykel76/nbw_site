@@ -1,21 +1,11 @@
 <?php
 
-use App\Livewire\ExampleForm;
-use App\Livewire\UserProfileForm;
 use Illuminate\Support\Facades\Route;
 use Naykel\Gotime\RouteBuilder;
-use Naykel\Postit\Http\Controllers\ShowPostController;
 
 Route::get('/', function () {
     return view('pages.home');
 })->name('home');
-
-// Route::get('/livewire-examples', function () {
-//     return view('pages.livewire-examples', ['pageTitle' => 'Livewire Examples']);
-// })->name('lwe');
-
-Route::get('/form-example', UserProfileForm::class)->name('form-example');
-Route::get('/form-example', ExampleForm::class)->name('form-example');
 
 (new RouteBuilder('nav-alpine', 'components.layouts.docs-default'))->create();
 (new RouteBuilder('nav-gotime', 'components.layouts.docs-default'))->create();

@@ -3,18 +3,22 @@
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Quick Checklist](#quick-checklist)
-- [Creating the Component and Initial Setup](#creating-the-component-and-initial-setup)
-    - [Required Properties and Traits](#required-properties-and-traits)
+- [Initial Setup](#initial-setup)
+    - [Component Class](#component-class)
+    - [Blade View](#blade-view)
 - [Initialising the Form](#initialising-the-form)
-    - [Route-based Initialisation (e.g. via route model binding)](#route-based-initialisation-eg-via-route-model-binding)
-    - [Event-driven initialization (**REVIEW**)](#event-driven-initialization-review)
-    - [Parent component data (**REVIEW**)](#parent-component-data-review)
+    - [Route-based Initialisation (via route model binding)](#route-based-initialisation-via-route-model-binding)
+    - [Event-Driven Initialisation](#event-driven-initialisation)
+        - [Listening for Events](#listening-for-events)
+        - [Dispatching Events](#dispatching-events)
     - [Setting Default Values](#setting-default-values)
         - [Method 1: Pass Defaults Directly](#method-1-pass-defaults-directly)
         - [Method 2: Use the `initialData` Property](#method-2-use-the-initialdata-property)
-- [Adding the Form to the View](#adding-the-form-to-the-view)
+- [Still to be reviewed](#still-to-be-reviewed)
 - [FAQs](#faqs)
-
+    - [Why use the `$modelClass` property?](#why-use-the-modelclass-property)
+    - [When Should I use the `initialData` Property?](#when-should-i-use-the-initialdata-property)
+  
 ## Introduction
 
 This guide shows how to build Livewire components for creating and editing
@@ -23,159 +27,70 @@ initialisation, setting default values, and binding the form to your view. You
 will learn how to structure a component that handles both create and edit
 scenarios efficiently.
 
-```html +parse
-<x-gt-alert type="warning">
-This document references custom VS Code snippets like
-<code>gtlc:form-class</code> and <code>gtlc:form-object</code> that generate
-boilerplate code for common patterns. These are not available by default but can
-be added as custom snippets to speed up development.
-</x-gt-alert>
-```
+> This document references custom VS Code snippets like `gtlc:form-class` and
+> `gtlc:form-object` that generate boilerplate code for common patterns. These
+> are not available by default but can be added as custom snippets to speed up
+> development.
 
 ## Prerequisites
 
-Requires the `Gotime` package to be installed and configured in your
-application. This guide assumes you have a basic understanding of Livewire and
-Laravel.
+Requires the `Gotime` package to be installed and configured. Assumes a basic
+understanding of Livewire and Laravel.
 
 ## Quick Checklist
 
-1. Create the Livewire component (`php artisan livewire:make CreateEditPost`)
-2. Add the form object, traits, and properties (`gtlc:form-class`)
+1. Create the Livewire component (`php artisan livewire:make WidgetCreateEdit`)
+2. Add the form object with traits and properties (`gtlc:form-class`)
 3. Initialise the form object with a model instance
 4. Bind the form to the view with `wire:model="form.property"`
 5. Add form inputs and submit/cancel buttons
 6. Test both create and edit functionality
 
-## Creating the Component and Initial Setup
+## Initial Setup
 
-From the command line, run:
+From the command line:
 
 ```bash +torchlight-bash
-php artisan livewire:make CreateEditPost
+php artisan livewire:make WidgetCreateEdit
 ```
 
-### Required Properties and Traits
+### Component Class
 
-Add the form object and model class properties to your component:
-
-```php +torchlight-php
-use WithFormActions;
-
-public PostFormObject $form;
-protected string $modelClass = Post::class;
-```
-
-- `WithFormActions` trait acts as a bridge between the Livewire component and a
-  Livewire form object
-- `$form` is the form object that handles the form logic
-- `$modelClass` is the primary model resource for CRUD operations
-
-## Initialising the Form
-
-Form objects must be initialised by calling `init()` and passing a model 
-instance. This instance can be a new model (for creating) or an existing one 
-(for editing). The initialisation approach depends on your component's context 
-and how it receives data.
-
-### Route-based Initialisation (e.g. via route model binding)
-
-When using route model binding, the model instance is passed to the `mount()`
-method. You can initialise the form with this model directly:
-
-**Note**: To handle both create and edit scenarios, you can make the model
-parameter optional and provide a fallback for when no model is passed. In this
-case we will create a new model instance using the `createNewModel()` method.
+Once created, update the component class to include the required traits and
+properties.
 
 ```php +torchlight-php
-public function mount(?Post $post)
+namespace App\Livewire;
+
+use App\Livewire\Forms\WidgetFormObject;
+use App\Models\Widget;
+use Livewire\Component;
+use Naykel\Gotime\Traits\Renderable;
+use Naykel\Gotime\Traits\WithFormActions;
+
+class WidgetCreateEdit extends Component
 {
-    $model = $post ?? $this->form->createNewModel();
-    $this->form->init($model);
+    use Renderable, WithFormActions;
+
+    public WidgetFormObject $form;
+    protected string $modelClass = Widget::class;
 }
 ```
 
-### Event-driven initialization (**REVIEW**)
+* `Renderable` (optional) – allows the component to render a view
+* `WithFormActions` – bridges the Livewire component and a Livewire form object
+* `$form` – the form object that handles form logic
+* `$modelClass` – the primary model resource for CRUD operations
 
-For modals or dynamic components, initialize via Livewire events:
-
-```php +torchlight-php
-#[On('openCreateModal')]
-public function initializeCreate(): void
-{
-    $model = $this->form->createNewModel(['user_id' => auth()->id()]);
-    $this->form->init($model);
-}
-
-#[On('openEditModal')]
-public function initializeEdit(int $postId): void
-{
-    $post = Post::findOrFail($postId);
-    $this->form->init($post);
-}
-```
-
-### Parent component data (**REVIEW**)
-
-When receiving data from a parent component:
-
-```php +torchlight-php
-public function mount(?array $postData = null, ?int $postId = null)
-{
-    if ($postId) {
-        $model = Post::find($postId);
-    } else {
-        $defaults = array_merge(['status' => 'draft'], $postData ?? []);
-        $model = $this->form->createNewModel($defaults);
-    }
-    
-    $this->form->init($model);
-}
-```
-
-### Setting Default Values
-
-The `createNewModel()` method generates a new model instance for your form. It
-accepts an optional array of default attributes and is provided by the
-`WithFormActions` trait.
-
-There are two main ways to set defaults when creating a new model:
-
-#### Method 1: Pass Defaults Directly
-
-Specify defaults inline when creating the model:
-
-```php +torchlight-php
-$model = $this->form->createNewModel(['published_at' => now()]);
-```
-
-#### Method 2: Use the `initialData` Property
-
-Set defaults on the component that the form object will merge when creating a
-new model:
-
-```php +torchlight-php
-public function mount(?Post $post)
-{
-    $this->initialData = ['status' => now()];
-    $model = $post ?? $this->form->createNewModel();
-    $this->form->init($model);
-}
-```
-
-## Adding the Form to the View
-
-<!-- this will need to include the different ways to initialise -->
-<!-- for -->
+### Blade View
 
 Bind inputs to the form object with `wire:model="form.property"` and handle
 submit/cancel:
 
 ```html +torchlight-blade
 @verbatim
-<form wire:submit="save">
-    <x-gt-input wire:model="form.title" label="Title" />
-    <x-gt-textarea wire:model="form.content" label="Content" />
+<form wire:submit="save" class="bx">
+    <x-gt-input wire:model="form.name" label="name" />
     <div class="tar">
         <x-gt-button wire:click="cancel" class="btn sm" text="CANCEL" />
         <x-gt-button wire:click="save" class="btn primary sm" text="SAVE" />
@@ -184,59 +99,126 @@ submit/cancel:
 @endverbatim
 ```
 
+## Initialising the Form
+
+Call the form object’s `init()` method with a model instance. Use a new instance
+for creating records or an existing one for editing. The form will populate its
+properties from the model, allowing direct input binding, validation, and
+saving.
+
+> Depending on your use case, you can initialise the form in different ways,
+> such as via route model binding, Livewire events, or passing data from a
+> parent component.
+
+### Route-based Initialisation (via route model binding)
+
+<!-- NK::REVIEW I am not sure this is complexly accurate  -->
+When using route model binding, the model instance is passed to `mount()`. Make
+the parameter optional to handle both create and edit scenarios, using
+`createNewModel()` when no model is provided.
+
+```php +torchlight-php
+public function mount(?Widget $Widget)
+{
+    $model = $Widget ?? $this->form->createNewModel();
+    $this->form->init($model);
+}
+```
+
+### Event-Driven Initialisation
+
+#### Listening for Events
+
+When using the `WithFormActions` trait, there is nothing special you need to do
+to listen for events. Just make sure to use the correct event names to
+communicate with the trait.
+
+* `create-model`
+* `delete-model`
+* `edit-model`
+* `model-deleted`
+* `model-saved`
+
+#### Dispatching Events
+
+* Make sure to use the correct event names to communicate with the
+  `WithFormActions` trait.
+* To avoid conflicts with other components, it is best to use `dispatchTo()`
+  instead of `dispatch()`. 
+
+```php +torchlight-php
+@verbatim
+<x-gt-button wire:click="$dispatchTo('Widget-create-edit', 'create-model')" text="Create" />
+@endverbatim
+```
 
 
+### Setting Default Values
 
+The `createNewModel()` method generates a new model instance for your form. It
+accepts an optional array of default attributes and is provided by the
+`WithFormActions` trait.
+
+#### Method 1: Pass Defaults Directly
+
+Specify defaults inline when creating the model:
+
+```php +torchlight-php
+$model = $this->form->createNewModel(['email_verified_at' => now()]);
+```
+
+#### Method 2: Use the `initialData` Property
+
+Set defaults on the component that the form object will merge when creating a
+new model:
+
+```php +torchlight-php
+public function mount(?Widget $Widget)
+{
+    $this->initialData = ['email_verified_at' => now(),];
+    $model = $Widget ?? $this->form->createNewModel();
+    $this->form->init($model);
+}
+```
+
+## Still to be reviewed
+
+* Updating table or list components after an action
+* Using Modals (actionId) ???
 
 ## FAQs
 
-<question>Why use the `$modelClass` property?</question>
+### <question>Why use the `$modelClass` property?</question>
 
 The `$modelClass` property tells the `WithFormActions` trait which Eloquent model
 to use for CRUD operations. This avoids hard-coding the model type, making your
 component more maintainable and reusable.
 
-<question>When Should I Use the `initialData` Property?</question>
+### <question>When Should I use the `initialData` Property?</question>
 
-Use `initialData` when default values depend on user context, route parameters,
+Use `initialData` when default values depend on Widget context, route parameters,
 or other dynamic data that isn't known at compile time.
 
 
+<!-- REVIEW -->
+```mermaid +parse-mermaid
+C4Component
+    title My System - Component Diagram
+
+    Container(web, "Web Application", "Laravel", "Serves the frontend and backend APIs")
+    ContainerDb(db, "Database", "MySQL", "Stores all application data")
+    Container(spa, "Frontend SPA", "Vue.js", "Handles UI and client-side logic")
+
+    Component(auth, "Authentication Service", "Laravel Module", "Handles login, registration, and auth tokens")
+    Component(events, "Events Module", "Laravel Module", "Manages events and webinars")
+    Component(cart, "Cart Service", "Laravel Module", "Handles product cart and checkout")
+
+    Rel(web, db, "Reads from and writes to", "SQL")
+    Rel(spa, web, "Uses API", "HTTPS")
+    Rel(web, auth, "Calls")
+    Rel(web, events, "Calls")
+    Rel(web, cart, "Calls")
+
+```
 
 
-
-
-
-
-
-
-
-
-<pre class="mermaid light">
-sequenceDiagram
-    actor User
-    participant M as mount()
-    participant model as Model
-    participant form as FormObject
-    participant R as render()
-
-    User->>M: Clicks 'Create' button
-    activate M
-    M->>M: Calls mount(Model)
-    alt Model not found
-        M->>model: Create new Model
-    end
-    activate model
-    model-->>M: Return Model
-    deactivate model
-    M->>form: Calls setModel(Model)
-    activate form
-    form-->>M: Model set
-    deactivate form
-    M->>M: Calls setPageTitle()
-    M->>R: Calls render()
-    activate R
-    R-->>User: Display form with Model details
-    deactivate R
-    deactivate M
-</pre>

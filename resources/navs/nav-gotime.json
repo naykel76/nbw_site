@@ -42,6 +42,10 @@
                 "route_name": "pages.gotime.components.button"
             },
             {
+                "name": "Button - Resource Action",
+                "route_name": "pages.gotime.components.button-resource-action"
+            },
+            {
                 "name": "Checkbox",
                 "route_name": "pages.gotime.components.checkbox"
             },
@@ -94,12 +98,16 @@
                 "route_name": "pages.gotime.guides.quick-start"
             },
             {
+                "name": "Form Object",
+                "route_name": "pages.gotime.guides.form-object"
+            },
+            {
                 "name": "Create Edit Component",
                 "route_name": "pages.gotime.guides.create-edit-component"
             },
             {
                 "name": "Table Component",
-                "route_name": "pages.gotime.guides.create-table-component"
+                "route_name": "pages.gotime.guides.table-component"
             },
             {
                 "name": "Deleting a Record",

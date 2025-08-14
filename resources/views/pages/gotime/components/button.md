@@ -7,25 +7,16 @@
     - [Styling Buttons](#styling-buttons)
     - [Button Icon](#button-icon)
     - [Icon Position](#icon-position)
-- [Variants and Specialty Buttons](#variants-and-specialty-buttons)
-    - [Resource Action](#resource-action)
-- [Attributes and Customisation](#attributes-and-customisation-1)
 
 ## Basic Usage
 
 To use the button component, call `<x-gt-button />` and set the button text using the
 `text` attribute or the slot.
 
-```html +parse
+```html +torchlight-blade
+@verbatim
 <x-gt-button text="Button" />
-```
-
-```html
-<x-gt-button text="Button" />
-```
-
-```html
-<x-gt-button>Button</x-gt-button>
+@endverbatim
 ```
 
 ## Component Composition
@@ -100,54 +91,10 @@ the right of the text, use the `iconPosition` attribute with a value of `right`.
 <x-gt-button text="Account" icon="user" iconPosition="right" />
 ```
 
-## Variants and Specialty Buttons
-
-There is no need to create a new component for every button variant, as you can simply
-pass classes to style the button. However, Gotime provides a few specialised buttons for
-common use cases.
-
-### Resource Action
-
-A resource action button is a specialised button designed for CRUD operations on a
-resource.
-
-Button is tightly coupled to the Gotime Livewire CRUD system.
-
-- Automatically sets the button text and icon based on the action. (both can be overridden)
-- Automatically sets the livewire click method based on the action.
-- Can be set to use a link instead of a button.
-- Exception handling for actions.
-
-- Can pass in the `id` or `slug` for route parameters.
-
-## Attributes and Customisation
-
-| Attribute  | Required | Description                |
-| :--------- | :------: | :------------------------- |
-| `action`   |   Yes    |                            |
-| `text`     |    No    | The button text to display |
-| `icon`     |    No    | The icon to display        |
-| `iconOnly` |    No    |                            |
-<!-- 
-```html +parse
-<div class="bx space-x tac pxy-4">
-    <x-gt-resource-action action="edit" routePrefix="admin.posts"/>
 
 
-    <x-gt-resource-action action="delete" />
-    <x-gt-resource-action action="view" />
-    <x-gt-resource-action action="create" />
-    <hr>
-    <x-gt-resource-action action="edit" iconOnly />
-    <x-gt-resource-action action="delete" iconOnly />
-    <x-gt-resource-action action="view" iconOnly />
-    <x-gt-resource-action action="create" iconOnly />
-</div>
-``` -->
-
-
-FYI
+<!-- FYI
 
 In Blade components, attributes passed directly to the component can override those set
 within the component itself. This means that if you set the wire:click attribute directly
-when using the component, it will override the wire:click attribute here.
+when using the component, it will override the wire:click attribute here. -->

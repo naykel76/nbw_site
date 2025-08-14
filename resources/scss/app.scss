@@ -4,35 +4,23 @@
 // @use './layout-examples.scss' as *;
 
 @use '../../node_modules/nk_jtb/src/build' as *;
-@use '../../node_modules/nk_jtb/src/extras/nk-docs' as *;
+@use '../../node_modules/nk_jtb/src/extras/nk-docs' as * with(
+    $question-color: #c40c9a
+);
 // @use "../../node_modules/nk_jtb/src/extras/choices" as *;
 
 
-// @use 'node_modules/nk_jtb/src/extras/nk-docs' as * with (
-//     $code-color: hsl(49, 78%, 86%),
-//     $table-bg: #10182b,
-//     $th-bdr-color: hsl(222, 46%, 20%),
-//     $td-bdr-color: hsl(222, 46%, 15%)
-// );
+// ------------------------------------------------------------------
+// -- MARKDOWN OVERRIDES --
+// ------------------------------------------------------------------
+code {
+    color: #ffda47;
+}
 
-// // increase the space between lists with nested lists.
-// // yep thats a trunk load of ugly but it works!
-// .increase-space-1 + ul li:not(ul li ul li) {
-//     margin-top: 1rem !important;
-// }
-// .increase-space-05 + ul li:not(ul li ul li) {
-//     margin-top: 0.5rem !important;
-// }
-
-// // ------------------------------------------------------------------
-// // -- MARKDOWN OVERRIDES --
-// // ------------------------------------------------------------------
-// code {
-//     // color: $code-color;
-//     // this may not work well everywhere but it is good for the regex examples
-//     color: #ffda47;
-// }
-
+pre.mermaid {
+    background-color: rgb(255, 247, 247);
+    border-radius: 0.25rem;
+}
 // // this is special style for MAD cheat sheet.
 // .special-code + ul li code {
 //     font-family: Consolas;
@@ -50,25 +38,25 @@
 //     line-height: 1;
 // }
 
-// // .special-code + ul {
-// //     font-size: 0.8rem;
-// // }
+// .special-code + ul {
+//     font-size: 0.8rem;
+// }
 
-// // this is special style for MAD cheat sheet.
-// // .special-code + p code {
-// //     font-family: Consolas;
-// //     font-size: .75rem;
-// //     &:not(.hljs) {
-// //         background-color: rgba(240, 240, 240, 0.1);
-// //         padding: 0 3px;
-// //     }
-// // }
-// // .special-code + ul li {
-// //     line-height: 1.1;
-// //     list-style: none;
-// //     margin-left: -1rem;
-// //     padding: 0;
-// // }
+// this is special style for MAD cheat sheet.
+// .special-code + p code {
+//     font-family: Consolas;
+//     font-size: .75rem;
+//     &:not(.hljs) {
+//         background-color: rgba(240, 240, 240, 0.1);
+//         padding: 0 3px;
+//     }
+// }
+// .special-code + ul li {
+//     line-height: 1.1;
+//     list-style: none;
+//     margin-left: -1rem;
+//     padding: 0;
+// }
 
 // ------------------------------------------------------------------
 // -- BASE OVERRIDES --
@@ -78,18 +66,6 @@ strong {
     color: rgb(156, 193, 124);
 }
 
-// p code {
-//     display: inline-block;
-//     margin: 0;
-//     padding: 0;
-// }
-
-// ol li::before {
-//     content: '';
-//     display: inline-block;
-//     width: 0.5rem;
-// }
-
 .navbar:not(.markdown .navbar) {
     // background-color: $body-bg;
     border-bottom: 1px solid #14213f;
@@ -97,52 +73,25 @@ strong {
     box-shadow: 1px 1px 70px #142c56;
 }
 
-// .fp-x {
-//     // grid-template-columns: repeat(2, 1fr);
-//     grid-template-columns: repeat(2, minmax(200px, 1fr));
-// }
-
-// // .menu-title {
-// //     color: burlywood;
-// // }
-
-// // // allow the grid to do it's job
-// // .remove-pre-margins pre {
-// //     margin: 0;
-// // }
-
-// // @include from-md {
-// //     .x {
-// //         font-size: 2rem !important;
-// //     }
-// // }
-
-// // for testing
-// .flexible-grid-150 {
-//     display: grid;
-//     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-// }
-
 // // front page link boxes
 // .icon-grid {
 //     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 // }
 
-// // body {
-// //     background-image: linear-gradient(to right bottom, #0b101d, #0d1220, #0e1424, #0f1627, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
-// //     // font-size: 1.15rem;
-// // }
+// body {
+//     background-image: linear-gradient(to right bottom, #0b101d, #0d1220, #0e1424, #0f1627, #10182b, #111b32, #131e38, #14213f, #14274b, #142c56, #123263, #0e386f);
+// }
 
-// // // home screen nav buttons
-// // .nav-buttons nav ul {
-// //     display: flex;
-// //     gap: 1rem;
-// //     flex-wrap: wrap;
-// // }
+// // home screen nav buttons
+// .nav-buttons nav ul {
+//     display: flex;
+//     gap: 1rem;
+//     flex-wrap: wrap;
+// }
 
-// // ------------------------------------------------------------------
-// // -- SPECIAL BACKGROUNDS --
-// // ------------------------------------------------------------------
+// ------------------------------------------------------------------
+// -- SPECIAL BACKGROUNDS --
+// ------------------------------------------------------------------
 
 // .diagonal {
 //     position: relative;
@@ -161,53 +110,15 @@ strong {
 //     }
 // }
 
-// // ------------------------------------------------------------------
-// // -- ANIMATIONS --
-// // ------------------------------------------------------------------
+// ------------------------------------------------------------------
+// -- ANIMATIONS --
+// ------------------------------------------------------------------
 
-// @keyframes pulse {
-//     50% {
-//         opacity: 0.1;
-//     }
-// }
-// .animate-pulse-slow {
-//     animation: pulse 3s ease-in-out infinite;
-// }
-
-// // // ------------------------------------------------------------------
-// // // -- COOKBOOK --
-// // // ------------------------------------------------------------------
-
-// // .draggable--over {
-// //     background-color: map.get($tailwind-colors, "rose", "50") !important;
-// // }
-
-// // // hide the button text while dragging
-// // .draggable-mirror {
-// //     .transparent-on-drag {
-// //         color: transparent;
-// //     }
-// // }
-
-// // .cookbook {
-// //     th {
-// //         background: #eee;
-// //         font-weight: 900;
-// //     }
-// //     td,
-// //     th {
-// //         border: none;
-// //     }
-
-// //     &.zebra {
-// //         h2 {
-// //             text-align: center;
-// //         }
-// //         & > *:nth-child(2n + 2):not(.primary):not(.secondary) {
-// //             background: white;
-// //             h2 {
-// //                 color: black;
-// //             }
-// //         }
-// //     }
-// // }
+@keyframes pulse {
+    50% {
+        opacity: 0.1;
+    }
+}
+.animate-pulse-slow {
+    animation: pulse 3s ease-in-out infinite;
+}

@@ -1,0 +1,24 @@
+sequenceDiagram
+    actor User
+    participant Table as Table <br> <<Component>>
+    participant Form as CreateEdit <br> <<Component>>
+    participant WithFormActions as WithFormActions <br> <<Trait>>
+    participant FormObject
+
+    User->>Table: Click "Create" button
+    Table->>Form: $dispatchTo('create-edit', 'create-model')
+    WithFormActions->>WithFormActions: Listen for 'create-model' event
+    WithFormActions->>FormObject: createNewModel()
+    FormObject-->>WithFormActions: Return new model
+    WithFormActions->>FormObject: init(newModel)
+    FormObject->>FormObject: setFormProperties(model)
+    Form-->>User: Show form with empty/default fields
+
+    User->>Form: Fill in form fields
+    User->>Form: Click "Save" button
+    Form->>WithFormActions: save()
+    WithFormActions->>FormObject: validate() & save()
+    FormObject-->>WithFormActions: Model saved successfully
+    Form-->>User: Show success message/redirect
+
+%% nee to update table!!!

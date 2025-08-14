@@ -9,7 +9,6 @@ class Checkbox extends Component
 {
     public string $variant = 'base';
     public string $markup;
-
     public bool $remember = false;
     public bool $newsLetter = true;
     public bool $events = false;
@@ -27,7 +26,7 @@ class Checkbox extends Component
             'control-group' => ' 
                 <x-gt-checkbox wire:model="remember" label="Remember Me" />
              ',
-        
+
             default => '<div class="yellow">THERE IS NO <span class="txt-red">{{ $variant }}</span> VARIANT FOR THIS SELECT COMPONENT</div>',
         };
     }

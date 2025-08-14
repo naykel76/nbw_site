@@ -2,78 +2,49 @@
 
 - [Overview](#overview)
 - [Adding Flatpickr](#adding-flatpickr)
-    - [Option 1: Install via npm](#option-1-install-via-npm)
-    - [Option 2: Use the CDN](#option-2-use-the-cdn)
+    - [Install via npm](#install-via-npm)
+    - [Use the CDN](#use-the-cdn)
 - [Creating a Datepicker](#creating-a-datepicker)
-- [Adding Livewire Integration and Two-Way Binding](#adding-livewire-integration-and-two-way-binding)
+- [Adding Livewire integration and two-way binding](#adding-livewire-integration-and-two-way-binding)
 - [Separating the Alpine Script from the HTML](#separating-the-alpine-script-from-the-html)
 - [Additional Resources](#additional-resources)
 - [TL:DR](#tldr)
     - [Pikaday vs Flatpickr with Livewire](#pikaday-vs-flatpickr-with-livewire)
 
-<!-- When using Pikaday, setting the year does not work as expected. You must pick the date
-AFTER setting the year.  -->
-
 ## Overview
 
-This tutorial demonstrates how to create a datepicker in a Laravel application using  
-Livewire and Alpine.js with the Flatpickr library.
+How to create a datepicker in Laravel with Livewire and Alpine.js using Flatpickr.
 
-## Adding Flatpickr  
+## Adding Flatpickr
 
-You can install Flatpickr using npm or include it via a CDN in your Blade file.
-
-### Option 1: Install via npm
-
-Run the following command to install Flatpickr:  
+### Install via npm
 
 ```bash +torchlight-bash
 npm install flatpickr
 ```
 
-Then, import it in your JavaScript file:
-
-```js
+```js +torchlight-js
 import flatpickr from "flatpickr"; 
 import "flatpickr/dist/flatpickr.css";
 ```
 
-### Option 2: Use the CDN
+### Use the CDN
 
-If you prefer not to install it via npm, you can include the CDN directly in your Blade file:
-
-```html
-@once
-    @push('styles')
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    @endpush
-
-    @push('scripts')
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    @endpush
-@endonce
+```php +torchlight-php
+@verbatim
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+@endverbatim
 ```
-
-Using the CDN is a quick way to get started, but installing it via npm allows better
-version control and customization.
 
 ## Creating a Datepicker 
 
 To add a datepicker, create an input field and initialise Flatpickr using Alpine.js:
 
-```html
+```html +torchlight-html
 <input type="text" x-data x-ref="datePickerInput"
     x-init="flatpickr($refs.datePickerInput, { dateFormat: 'd-m-Y' })" />
-
-<!-- or alternatively, you can wrap in a surrounding div -->
-<div x-data x-init="flatpickr($refs.datePickerInput, { dateFormat: 'd-m-Y' })">
-    <input type="text" x-ref="datePickerInput" />
-</div>
 ```
-
-**Note**: You can use either a div wrapper or a single input element directly. Both
-methods are valid, and you can choose the one that best suits your future components or
-app structure.
 
 **Explanation**:
 
@@ -82,43 +53,31 @@ app structure.
 - `x-ref="datePickerInput"`: This creates a reference to the input field, which is used by
   Flatpickr to initialize the datepicker on that specific element.
 
-So far, the datepicker works, but it does not sync with Livewire state. Flatpickr updates
-the input field when a date is selected, but changes to the input field (e.g., manual
-edits) do not update Flatpickr. This means we have **one-way binding** where Flatpickr
-controls the input but does not react to external changes.
+## Adding Livewire integration and two-way binding
 
-Next, we'll integrate Livewire to enable **two-way binding**, ensuring that Livewire state
-stays in sync with Flatpickr.
+By default, Flatpickr updates the input field when a date is selected, but this
+does not automatically keep the Livewire property in sync. This results in
+**one-way binding**: Flatpickr controls the input, but changes from Livewire or
+manual edits may not update Flatpickr.
 
-## Adding Livewire Integration and Two-Way Binding
+To achieve **two-way binding**—so that both Flatpickr and Livewire stay in sync:
 
-- Simply adding `wire:model` to the input field will bind it to a Livewire property. 
-- This does not work like a regular input field because Flatpickr does not trigger a native
-  change event when selecting a date and therefore does not update the Livewire property.
+- Adding `wire:model` to the input field binds it to a Livewire property, but
+    Flatpickr does not trigger a native change event when a date is picked. As a
+    result, Livewire does not update immediately.
+- To update the Livewire property as soon as a date is selected, you need to
+    manually dispatch an input event from Flatpickr’s `onChange` callback.
+- If you do not dispatch this event, you can use `wire:model.blur` as a
+    workaround. This will update the Livewire property when the input loses focus,
+    which is suitable if you only need the value after the user finishes editing.
 
-  
-- To update the Livewire property immediately, you need to manually dispatch an event when
-  a date is selected.
-- This is not working so as a workaround, you can use `wire:model.blur` to update the
-  Livewire property when the input field loses focus.
+In summary, for immediate updates, dispatch an input event on date selection.
+Otherwise, use `wire:model.blur` to update Livewire when the field loses focus.
 
-```html
+```html +torchlight-html
 <input type="text" x-data x-ref="datePickerInput" wire:model.blur="selectedDate"
         x-init="flatpickr($refs.datePickerInput, { dateFormat: 'd-m-Y' })" />
 ```
-
-**Explanation**:
-
-- `wire:model.blur="selectedDate"`: Binds the input field to the `selectedDate` Livewire
-  property and updates it when the input field loses focus.
-
-
-1. Adding wire:model to the input field to bind it to a Livewire property. (displaying the date)
-
-You can simply add `wire:model.blur` to update the Livewire property when the input field
-loses focus which is not a problem if you are using it to select a date and then submit
-the form. But if you are displaying the date live, then it is a problem.
-
 
 ## Separating the Alpine Script from the HTML
 
@@ -129,9 +88,12 @@ script for better organisation.
 Alpine.js component name (`datepicker` in this case). This ensures that the component is
 correctly linked to the script and initialised when the page loads.
 
-```html
+```html +torchlight-html
 <input x-data="datepicker" x-ref="datePickerInput" type="text">
+```
 
+```php +torchlight-php
+@verbatim
 @pushOnce('scripts')
     <script>
         document.addEventListener('alpine:init', () => {
@@ -146,6 +108,7 @@ correctly linked to the script and initialised when the page loads.
         });
     </script>
 @endPushOnce
+@endverbatim
 ```
 
 **Note**: When separating the script from the HTML, there is no need to use x-init as the
@@ -161,7 +124,7 @@ init() method will be automatically called when the component is initialized
 
 Here os a pikaday example;
 
-```html
+```html +torchlight-html
 @once
     @push('styles')
         <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
@@ -181,7 +144,7 @@ Here os a pikaday example;
 
 Flatpickr Inline Example;
 
-```html
+```html +torchlight-html
 <input type="text" x-data wire:model="selectedDate" x-ref="datePickerInput"
     x-init="flatpickr($refs.datePickerInput, {
         dateFormat: 'd-m-Y',
@@ -206,7 +169,7 @@ Flatpickr Inline Example;
 
 
 
-```html
+```html +torchlight-html
 <input x-data wire:model.blur="selectedDate" x-ref="datepicker"
     x-init="new Pikaday({ field: $refs.datepicker, format: 'DD-MM-YYYY' })"
     x-on:change="$dispatch('input', $el.value)"

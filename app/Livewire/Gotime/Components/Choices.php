@@ -9,10 +9,8 @@ class Choices extends Component
 {
     public string $variant = 'base';
     public string $markup;
-
     public $options = [];
     public $selections = [];
-
     public array $tags = [
         1 => 'Artistic',
         2 => 'Fashion',
@@ -22,7 +20,6 @@ class Choices extends Component
         6 => 'Technology',
         7 => 'Travel',
     ];
-
     public $selectedTags = [2, 4, 5];
 
     public function mount()
@@ -53,8 +50,6 @@ class Choices extends Component
             default => '<div>THERE IS NO <span class="txt-red">{{ $variant }}</span> VARIANT FOR THIS SELECT COMPONENT</div>',
         };
     }
-
-
 
     public function render()
     {

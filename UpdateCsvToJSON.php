@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\IblceOutline;
-use Illuminate\Support\Str;
 
 class DevTestingController extends Controller
 {
@@ -13,7 +11,7 @@ class DevTestingController extends Controller
         IblceOutline::whereNotNull('courses')->chunk(100, function ($outlines) {
             foreach ($outlines as $outline) {
                 $codes = collect(explode(',', $outline->courses))
-                    ->map(fn($code) => trim($code))
+                    ->map(fn ($code) => trim($code))
                     ->filter() // remove empty entries
                     ->values()
                     ->all();
@@ -22,6 +20,7 @@ class DevTestingController extends Controller
                 $outline->save();
             }
         });
+
         return view('dev');
     }
 }

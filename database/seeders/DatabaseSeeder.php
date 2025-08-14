@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Widget;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -13,14 +14,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        Widget::factory(5)->create();
 
         User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
             'bio' => 'This is a test user for the application.',
             'tags' => ['AU', 'UK', 'CA'],
-            'hobbies' => [ 'guitar', 'gaming', 'coding', ],
+            'hobbies' => ['guitar', 'gaming', 'coding'],
         ]);
     }
 }

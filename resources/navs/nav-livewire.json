@@ -12,6 +12,10 @@
             {
                 "name": "Alpine Sharing State",
                 "route_name": "support.livewire.livewire-alpine-entangle"
+            },
+            {
+                "name": "Component Design and Communication Patterns",
+                "route_name": "support.livewire.component-design-and-communication-patterns"
             }
         ]
     },

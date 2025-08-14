@@ -1,4 +1,5 @@
 <div>
+    <x-gt-resource-action action="create" dispatchTo="user-create-edit" text="Create (DispatchTo)" />
     <x-gt-table>
         <x-slot:thead>
             <tr>
@@ -8,6 +9,7 @@
                     sortable :direction="$this->getSortDirection('name')"> Name </x-gt-table.th>
                 <x-gt-table.th wire:click="sortBy('email')"
                     sortable :direction="$this->getSortDirection('email')"> email </x-gt-table.th>
+                <th></th>
             </tr>
         </x-slot:thead>
         <x-slot:tbody>
@@ -16,6 +18,9 @@
                     <td>{{ str_pad($item->id, 5, 0, STR_PAD_LEFT) }}</td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->email }}</td>
+                    <td>
+                        <x-gt-resource-action action="edit" dispatchTo="user-create-edit" :id="$item->id" text="Edit (DispatchTo)" />
+                    </td>
                 </tr>
             @empty
                 <tr>
@@ -24,4 +29,7 @@
             @endforelse
         </x-slot:tbody>
     </x-gt-table>
+    {{ $items->links('gotime::pagination.livewire') }}
+
+    <livewire:user-create-edit />
 </div>

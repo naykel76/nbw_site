@@ -32,7 +32,7 @@ class Input extends Component
                 <x-gotime::v2.input.controls.input wire:model="errorTest" placeholder="Enter your name..." />
             ',
             // these are the variations and extras that can be used in the input component
-            "with-label" => '
+            'with-label' => '
                 <x-gt-input wire:model="name" placeholder="Enter your name... label="Name" />
             ',
             // "input-with-help-text-bottom" => '

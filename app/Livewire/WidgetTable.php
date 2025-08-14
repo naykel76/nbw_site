@@ -2,24 +2,25 @@
 
 namespace App\Livewire;
 
-use App\Models\User;
+use App\Models\Widget;
 use Livewire\Component;
 use Livewire\WithPagination;
 use Naykel\Gotime\Traits\Renderable;
 use Naykel\Gotime\Traits\Sortable;
 
-class ExampleTable extends Component
+class WidgetTable extends Component
 {
     use Renderable, Sortable, WithPagination;
 
-    protected string $modelClass = User::class;
-    public string $pageTitle = 'User Table';
+    protected string $modelClass = Widget::class;
+    public string $pageTitle = 'Widget Table';
+    // public $routePrefix = '';
 
     protected function prepareData()
     {
         $query = $this->modelClass::query();
         $query = $this->applySorting($query);
 
-        return ['items' => $query->paginate(20)];
+        return ['items' => $query->paginate(4)];
     }
 }

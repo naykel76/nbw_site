@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant U as User
+    participant C as Livewire Component
+    participant S as Server (Laravel)
+    participant B as Browser DOM
+
+    U->>B: Click "Save"
+    B->>C: Emit event (saveModel)
+    C->>S: Sends AJAX request with data
+    S->>C: Returns updated data/state
+    C->>B: Update DOM via diff patch
