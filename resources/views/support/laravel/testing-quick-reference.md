@@ -1,6 +1,8 @@
 # Laravel Testing Quick Reference
 
-- [Testing Types](#testing-types)
+- [Unit vs Feature Tests](#unit-vs-feature-tests)
+    - [Feature Tests - Use When:](#feature-tests---use-when)
+    - [Unit Tests - Use When:](#unit-tests---use-when)
 - [Running Tests](#running-tests)
 - [Route Methods](#route-methods)
 - [Writing Tests](#writing-tests)
@@ -14,9 +16,7 @@
 - [Additional Resources](#additional-resources)
 
 
-<p class="lead">This quick reference provides a concise overview of testing in Laravel, focusing on the structure, types of tests, and common commands.</p>
-
-## Testing Types
+## Unit vs Feature Tests
 
 Laravel supports two main types of tests:
 
@@ -25,6 +25,35 @@ Laravel supports two main types of tests:
   rendering.
 - **Unit Tests** (`tests/Unit/`) – Test individual classes, methods, or
   functions in isolation.
+
+| Aspect           | Feature Tests                                  | Unit Tests                                   |
+| ---------------- | ---------------------------------------------- | -------------------------------------------- |
+| **Scope**        | Test complete user workflows and integrations  | Test individual methods/classes in isolation |
+| **Speed**        | Slower (full application stack)                | Very fast (no database/HTTP)                 |
+| **Dependencies** | Uses real dependencies (database, cache, etc.) | Mocked/stubbed external dependencies         |
+| **Database**     | Can use database, migrations, seeders          | No database interactions                     |
+
+### Feature Tests - Use When:
+- Testing API endpoints
+- Testing web routes and controllers
+- Testing complete user workflows
+- Testing authentication flows
+- Testing file uploads
+- Testing email sending
+- Testing database interactions end-to-end
+
+
+### Unit Tests - Use When:
+- Testing business logic methods
+- Testing model methods (accessors, mutators, scopes)
+- Testing service classes
+- Testing utility functions
+- Testing validation rules
+- Testing individual components in isolation
+
+
+
+
 
 ## Running Tests
 

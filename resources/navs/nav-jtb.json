@@ -22,16 +22,20 @@
                 "route_name": "pages.jtb.conventions"
             },
             {
-                "name": "Build Tools: Class and Utility Generation",
-                "route_name": "pages.jtb.build-tools"
+                "name": "Responsive Design",
+                "route_name": "pages.jtb.responsive-design"
             },
             {
-                "name": "Mixin: Build-Property-Classes",
-                "route_name": "pages.jtb.build-property-classes"
+                "name": "Class Builder Mixins",
+                "route_name": "pages.jtb.class-builder-mixins"
             },
             {
                 "name": "Magic Classes",
                 "route_name": "pages.jtb.magic-classes"
+            },
+            {
+                "name": "Color and Themes",
+                "route_name": "pages.jtb.color-and-themes"
             }
         ]
     },
@@ -46,12 +50,16 @@
                 "route_name": "pages.jtb.utilities.border"
             },
             {
-                "name": "Color and Themes",
-                "route_name": "pages.jtb.utilities.color-and-themes"
+                "name": "Display and Visibility",
+                "route_name": "pages.jtb.utilities.display-and-visibility"
             },
             {
                 "name": "Layout",
                 "route_name": "pages.jtb.utilities.layout"
+            },
+            {
+                "name": "Margin, Padding & Spacing",
+                "route_name": "pages.jtb.utilities.margin-padding-spacing"
             }
         ]
     },

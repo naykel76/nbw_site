@@ -20,7 +20,6 @@ class WidgetTable extends Component
     #[On('model-saved')]
     public function refreshComponent()
     {
-        // dd('here');
         $this->resetPage();
     }
 
@@ -29,6 +28,6 @@ class WidgetTable extends Component
         $query = $this->modelClass::query();
         $query = $this->applySorting($query);
 
-        return ['items' => $query->paginate(4)];
+        return ['items' => $query->paginate(8)];
     }
 }

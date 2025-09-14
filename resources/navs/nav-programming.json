@@ -29,6 +29,11 @@
                 "name": "scss",
                 "route_name": "support.scss-quick-reference",
                 "icon": "scss"
+            },
+            {
+                "name": "SQL",
+                "route_name": "support.sql-quick-reference",
+                "icon": "mysql"
             }
         ]
     },

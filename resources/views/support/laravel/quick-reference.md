@@ -1,6 +1,7 @@
 # Laravel Quick Reference
 
 - [Determining the Current Environment](#determining-the-current-environment)
+- [String Limiting](#string-limiting)
 
 ## Determining the Current Environment
 
@@ -31,4 +32,12 @@ if (App::environment(['local', 'staging'])) {
 ```
 
 
+## String Limiting
 
+```php +torchlight-php
+@verbatim
+// Character-based limiting
+{{ Str::limit($text, 30) }}          // 30 chars + "..."
+{{ Str::limit($text, 30, ' →') }}    // 30 chars + " →"
+@endverbatim
+```

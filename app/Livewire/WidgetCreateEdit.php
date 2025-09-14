@@ -22,7 +22,7 @@ class WidgetCreateEdit extends Component
 
     public function fillForm()
     {
-        dd('fillForm called');
-        // Widget::factory()->make();
+        $model = Widget::factory()->make();
+        $this->form->init($model);
     }
 }

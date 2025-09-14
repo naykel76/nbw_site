@@ -1,126 +1,152 @@
-# Border Utilities
+# Border and Outline Utilities
 
 Border utilities are used to add or remove borders from elements.
 
 - [Border Width](#border-width)
-    - [Size Map](#size-map)
-- [Border Style](#border-style)
 - [Border Color](#border-color)
-    - [Size Map](#size-map-1)
-- [Border Style](#border-style-1)
-- [Border Radius](#border-radius)
-    - [Variants](#variants)
-    - [Size Map](#size-map-2)
-- [Border Style](#border-style-2)
-- [Default Border](#default-border)
+- [Style](#style)
+- [Outline Style (REVIEW)](#outline-style-review)
 - [Border Positions](#border-positions)
-- [Border Width](#border-width-1)
-- [Techniques](#techniques)
-    - [Clip Border Radius](#clip-border-radius)
-
-
-custom identifier: yes
-
-- create theme with dark variation like alerts
-
-
-**Variant Maps** are a bit different to size or value maps as they include specific values
-intended to be used in a specific context. For example, the `rounded-1` uses a set value
-of 1 rem but `rounded-sm` can be used with any value.
-
-Does the really matter?? not really because they can be combined with sizes but it is just
-a mind set where the user can ....
-
-
-- have two seperate maps and merge making it easier to control custom variants
-
 
 ## Border Width
 
-### Size Map
+To add a border, simply add the `bdr` class to any element. You can adjust the
+width using `bdr-2` or `bdr-3` classes. The border color automatically inherits
+the text color.
 
-## Border Style
+**How it works:**
+1. **Base style** sets `border: 0 solid` (invisible but ready)
+2. **Width utilities** change `border-width` from 0, making the border visible
+3. **Color inheritance** happens automatically via `currentcolor` - the default
+   behavior of CSS `border-color`
+4. **No explicit color/style needed** - they're already configured in the base
+   style
+
+<div class="grid lg:cols-3 tac c-pxy-1">
+    <div class="bdr">
+        <code>bdr</code><br> Default border
+    </div>
+    <div class="bdr-2">
+        <code>bdr-2</code><br> 2px border
+    </div>
+    <div class="bdr-3">
+        <code>bdr-3</code><br> 3px border
+    </div>
+</div>
 
 ## Border Color
 
-### Size Map
+The border color automatically inherits the text color of the element. You can
+change the color by applying any text color utility class to the same element.
 
-## Border Style
+<div class="grid lg:cols-3 tac c-pxy-1">
+    <div class="bdr txt-red">
+        <code>bdr</code><br> Border color matches red text
+    </div>
+    <div class="bdr-2 txt-green">
+        <code>bdr-2 txt-green</code><br> Border color matches green text
+    </div>
+    <div class="bdr-3 txt-blue">
+        <code>bdr-3 txt-blue</code><br> Border color matches blue text
+    </div>
+</div>
 
-## Border Radius
+you can override the border color by applying a border-color utility class.
 
-### Variants
+<div class="grid lg:cols-3 tac c-pxy-1">
+    <div class="bdr txt-red bdr-pink">
+        <code>bdr bdr-pink</code><br>  Pink border overrides red text
+    </div>
+    <div class="bdr-2 txt-green bdr-pink">
+        <code>bdr-2 bdr-pink</code><br> Pink border overrides green text
+    </div>
+    <div class="bdr-3 txt-blue bdr-pink">
+        <code>bdr-3 bdr-pink</code><br> Pink border overrides blue text
+    </div>
+</div>
 
-### Size Map
+## Style
 
-## Border Style
+You can change the border style using the following classes:
+
+<div class="grid lg:cols-2 tac c-pxy-1">
+    <div class="bdr-3 bdr-solid">
+        <code class="txt-red">bdr-solid</code>
+    </div>
+    <div class="bdr-3 bdr-dashed">
+        <code class="txt-red">bdr-dashed</code>
+    </div>
+    <div class="bdr-3 bdr-dotted">
+        <code class="txt-red">bdr-dotted</code>
+    </div>
+    <div class="bdr-3 bdr-double">
+        <code class="txt-red">bdr-double</code>
+    </div>
+</div>
+
+## Outline Style (REVIEW)
+
+Works the same way as border styles, but for outlines. Add the `outline` class
+to any element to add an outline. You can adjust the width using `outline-2` or
+`outline-3` classes. The outline color automatically inherits the text color.
+
+<div class="grid md:cols-2 gap tac bx pxy-3">
+    <div class="bx bdr-5 bdr-blue outline-5 outline-pink outline-solid">
+        <code class="txt-red">outline-solid</code>
+    </div>
+    <div class="bx bdr-5 bdr-blue outline-5 outline-pink outline-dashed">
+        <code class="txt-red">outline-dashed</code>
+    </div>
+    <div class="bx bdr-5 bdr-blue outline-5 outline-pink outline-dotted">
+        <code class="txt-red">outline-dotted</code>
+    </div>
+    <div class="bx bdr-5 bdr-blue outline-5 outline-pink outline-double">
+        <code class="txt-red">outline-double</code>
+    </div>
+</div>
 
 
 
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-## Default Border
 
-Add the `bdr` class to to any element to add the default `$border`
-
-```html
-<div class="bdr"></div>
-```
 
 ## Border Positions
 
-You can apply any of the axis or position modifiers to add a border to a specific side of an element.
-
-<div class="grid cols-4 tac">
-    <div class="bx pxy-05"><div class="bdr-t bdr-blue pxy-05"><code>bdr-t</code></div></div>
-    <div class="bx pxy-05"><div class="bdr-b bdr-blue pxy-05"><code>bdr-b</code></div></div>
-    <div class="bx pxy-05"><div class="bdr-l bdr-blue pxy-05"><code>bdr-l</code></div></div>
-    <div class="bx pxy-05"><div class="bdr-r bdr-blue pxy-05"><code>bdr-r</code></div></div>
-</div>
-<div class="grid cols-4 tac">
-    <div class="bx pxy-05"><div class="bdr-x bdr-blue pxy-05"><code>bdr-x</code></div></div>
-    <div class="bx pxy-05"><div class="bdr-y bdr-blue pxy-05"><code>bdr-y</code></div></div>
-    <div class="bx pxy-05"><div class="bdr-x bdr-y bdr-blue pxy-05"><code>bdr-x bdr-y</code></div></div>
-</div>
 
 
 
-```html
-<div class="grid cols-4 tac">
-    <div class="bx pxy-05"><div class="bdr-t pxy-05"><code>bdr-t</code> top</div></div>
-    <div class="bx pxy-05"><div class="bdr-b pxy-05"><code>bdr-b</code> bottom</div></div>
-    <div class="bx pxy-05"><div class="bdr-l pxy-05"><code>bdr-l</code> left</div></div>
-    <div class="bx pxy-05"><div class="bdr-r pxy-05"><code>bdr-r</code> right</div></div>
-</div>
-```
-
-<div class="grid cols-4 tac bx">
-    <div class="pxy-05"><div class="bdr bdr-t-0 pxy-05"><code>bdr bdr-t-0</code></div></div>
-    <div class="pxy-05"><div class="bdr bdr-b-0 pxy-05"><code>bdr bdr-b-0</code></div></div>
-    <div class="pxy-05"><div class="bdr bdr-l-0 pxy-05"><code>bdr bdr-l-0</code></div></div>
-    <div class="pxy-05"><div class="bdr bdr-r-0 pxy-05"><code>bdr bdr-r-0</code></div></div>
-</div>
 
 
-## Border Width
 
-<div class="grid cols-3 gap-1 tac bx">
-    <div class="pxy-05"><div class="bdr-3 pxy-05"><code>bdr</code></div></div>
-    <div class="pxy-05"><div class="bdr bdr-x-0 pxy-05"><code>bdr bdr-x-0</code></div></div>
-    <div class="pxy-05"><div class="bdr bdr-y-0 pxy-05"><code>bdr bdr-y-0</code></div></div>
-</div>
 
-<div class="grid cols-4 tac bx">
-    <div class="pxy-05"><div class="bdr bdr-t-0 pxy-05"><code>bdr bdr-t-0</code></div></div>
-    <div class="pxy-05"><div class="bdr bdr-b-0 pxy-05"><code>bdr bdr-b-0</code></div></div>
-    <div class="pxy-05"><div class="bdr bdr-l-0 pxy-05"><code>bdr bdr-l-0</code></div></div>
-    <div class="pxy-05"><div class="bdr bdr-r-0 pxy-05"><code>bdr bdr-r-0</code></div></div>
-</div>
+<!-- ## FAQ's
+
+can apply class but its probably easier to use a theme class instead???
+What happens if i use a `bx` or other component class?
+
+<div class="grid md:cols-2 gap tac bx pxy-3">
+    <div class="bx bdr-5">
+        <code class="txt-red">bdr-double</code>
+        hey there
+    </div>
+    <div class="bx success bdr-5">
+        <code class="txt-red">bdr-double</code>
+        hey there
+    </div>
+</div> -->
+
+
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- 
+
+
+
+
 
 ## Techniques
 
@@ -142,4 +168,4 @@ want to add a border radius to an element that contains an image.
 <div class="rounded-2 overflow-hidden">
     <img src="">
 </div>
-```
+``` -->

@@ -1,6 +1,6 @@
 <div>
     <x-gt-modal wire:model="showModal">
-        <x-gt-button.primary wire:click="fillForm" text="Fill Form" />
+        <x-gt-button.primary wire:click="fillForm" text="Create New and Fill" />
         <form wire:submit="save">
             <x-gt-input wire:model="form.title" label="title" />
             <div class="grid md:cols-2">

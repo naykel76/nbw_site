@@ -10,6 +10,10 @@
     - [Adding Custom Labels (Closed Tag)](#adding-custom-labels-closed-tag)
 
 
+
+It is best not to type hint when using the select, otherwise it many not work as
+expected when the values is `null` instead of `""` empty string.
+
 ---
 
 ## Control Group

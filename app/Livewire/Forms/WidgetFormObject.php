@@ -16,10 +16,10 @@ class WidgetFormObject extends Form
     public string $title;
 
     #[Validate('nullable|date|after_or_equal:today')]
-    public $start_date;
+    public ?string $start_date;
 
     #[Validate('nullable|date|after:start_date')]
-    public $end_date;
+    public ?string $end_date;
 
     public function init(Widget $model): void
     {

@@ -80,7 +80,7 @@ Certainly! Here's how you can handle everything within the same Blade view, incl
 In this updated code:
 
 We include Alpine.js via CDN.
-We create an Alpine.js component with x-data that initializes the open state based on whether a session flash message is present. If there is a flash message, open is set to true; otherwise, it's false.
+We create an Alpine.js component with x-data that initialises the open state based on whether a session flash message is present. If there is a flash message, open is set to true; otherwise, it's false.
 The message property is set to the content of the session flash message.
 We use x-show to control the visibility of the popup based on the open state.
 We add transition directives for a smooth open/close animation.

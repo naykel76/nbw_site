@@ -16,6 +16,26 @@
 - [LIMIT](#limit)
 
 
+| Condition Type   | Syntax / Example                           | Description                   |
+| ---------------- | ------------------------------------------ | ----------------------------- |
+| Comparison       | `age = 18`                                 | Equals                        |
+|                  | `age != 18` / `age <> 18`                  | Not equal                     |
+|                  | `age > 18`                                 | Greater than                  |
+|                  | `age >= 18`                                | Greater than or equal         |
+|                  | `age < 18`                                 | Less than                     |
+|                  | `age <= 18`                                | Less than or equal            |
+| Logical          | `age > 18 AND status = 'active'`           | Both conditions true          |
+|                  | `age < 18 OR status = 'inactive'`          | Either condition true         |
+|                  | `NOT status = 'inactive'`                  | Negates condition             |
+| Range / Set      | `total BETWEEN 100 AND 500`                | Inclusive range               |
+|                  | `category IN ('books', 'electronics')`     | Matches any value in the list |
+|                  | `category NOT IN ('books', 'electronics')` | Excludes values in the list   |
+| Pattern Matching | `name LIKE 'J%'`                           | Starts with J                 |
+|                  | `name LIKE '%son'`                         | Ends with son                 |
+|                  | `name LIKE '%ann%'`                        | Contains ann                  |
+|                  | `name NOT LIKE 'J%'`                       | Does not start with J         |
+| Null Checks      | `column IS NULL`                           | Checks for NULL               |
+|                  | `column IS NOT NULL`                       | Checks for NOT NULL           |
 
 ## Group by example
 

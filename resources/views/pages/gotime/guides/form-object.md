@@ -5,6 +5,14 @@
 - [Quick Checklist](#quick-checklist)
 - [Initial Setup](#initial-setup)
     - [Form Object Class](#form-object-class)
+- [Troubleshooting: Livewire Forms and Custom Casts](#troubleshooting-livewire-forms-and-custom-casts)
+- [The Problem](#the-problem)
+- [Root Causes](#root-causes)
+    - [1. Property Type Declaration (Most Common)](#1-property-type-declaration-most-common)
+    - [2. Livewire Bypasses Eloquent Casts](#2-livewire-bypasses-eloquent-casts)
+- [Solutions](#solutions)
+    - [Solution 1: Fix Property Type Declaration (Recommended)](#solution-1-fix-property-type-declaration-recommended)
+    - [Solution 2: Manually Format in `init()` Method](#solution-2-manually-format-in-init-method)
 
 
 ## Introduction
@@ -118,4 +126,68 @@ public function createNewModel(array $data = []): Post
 }
 ```
  -->
+
+
+
+## Troubleshooting: Livewire Forms and Custom Casts
+
+## The Problem
+A common issue with Livewire and custom casts where the cast works correctly in
+tables but displays incorrect values in Livewire forms.
+
+**Symptoms:**
+- Cast works in tables: shows `149.99` ✅
+- Same data in Livewire forms: shows `14999` or `149` ❌
+- Database contains correct values: `14999` for $149.99
+
+## Root Causes
+
+### 1. Property Type Declaration (Most Common)
+```php +torchlight-php
+// ❌ WRONG - Forces integer conversion, truncating decimals
+#[Validate('integer|min:0')]
+public int $price = 0;  // 149.99 becomes 149
+
+// ✅ CORRECT - Preserves decimal values
+#[Validate('numeric|min:0')]
+public float $price = 0.0;
+
+// ✅ ALSO CORRECT - For form inputs (strings)
+#[Validate('numeric|min:0')]
+public string $price = '0.00';
+```
+
+### 2. Livewire Bypasses Eloquent Casts
+Livewire doesn't automatically apply casts when binding properties directly to
+model attributes.
+
+**What happens:**
+- **In tables**: `$model->price` triggers the cast's `get()` method ✅
+- **In Livewire**: Direct property assignment bypasses casting ❌
+  
+## Solutions
+
+### Solution 1: Fix Property Type Declaration (Recommended)
+```php +torchlight-php
+#[Validate('numeric|min:0')]
+public float $price = 0.0;
+
+public function init(Product $model): void
+{
+    $this->editing = $model;
+
+    // forces the cast to run
+    $this->price = $model->price; // Now works correctly!
+}
+```
+
+### Solution 2: Manually Format in `init()` Method
+```php +torchlight-php
+public function init(Product $model): void
+{
+    $this->editing = $model;
+    $this->price = number_format($model->price, 2, '.', '');
+}
+```
+
 

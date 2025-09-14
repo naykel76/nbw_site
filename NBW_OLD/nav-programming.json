@@ -119,12 +119,7 @@
                 "route_name": "docs.socket-cheatsheet",
                 "icon": "socketio"
             },
-            {
-                "name": "SQL",
-                "route_name": "docs.sql.sql-cheatsheet",
-                "icon": "mysql",
-                "exclude_route": true
-            },
+ 
             {
                 "name": "TypeDoc",
                 "route_name": "typedoc.typedoc-cheatsheet",

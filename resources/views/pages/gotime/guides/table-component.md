@@ -6,13 +6,11 @@
 - [Initial Setup](#initial-setup)
     - [Component Class](#component-class)
     - [Blade View](#blade-view)
-- [Refreshing the Table](#refreshing-the-table)
-- [TO BE REVIEWED ----------------------------------](#to-be-reviewed-----------------------------------)
-- [Add Action Buttons](#add-action-buttons)
-- [Filtering (TBD)](#filtering-tbd)
-- [Filtering Data](#filtering-data)
-    - [Filtering Based on Widget Selection](#filtering-based-on-widget-selection)
-    - [Filtering After Retrieving Data](#filtering-after-retrieving-data)
+- [Additional Features](#additional-features)
+    - [Searching Data (WIP)](#searching-data-wip)
+    - [Filtering Data (WIP)](#filtering-data-wip)
+- [FAQ's](#faqs)
+    - [How can I refresh the table from another component?](#how-can-i-refresh-the-table-from-another-component)
 
 
 ## Introduction 
@@ -117,125 +115,46 @@ searching.
 @endverbatim
 ```
 
+## Additional Features
 
-## Refreshing the Table
+### Searching Data (WIP)
 
-When working with sibling components, using events to communicate the table will
-not automatically refresh. The `WithFormActions` trait dispatches a ....
+### Filtering Data (WIP)
 
-Add a listener in the table component to listen for the `model-saved` event:
+## FAQ's
 
+### <question>How can I refresh the table from another component?</question>
 
+You can use Livewire events to communicate between components. For example, if
+you have a form component that updates data, you can dispatch an event after the
+data is saved. The table component can listen for this event and refresh its
+data accordingly.
 
+The `WithFormActions` trait dispatches:
 
+- `model-saved` is dispatched after a model is created or updated.
+- `model-deleted` is dispatched after a model is deleted.
 
-
-## TO BE REVIEWED ----------------------------------
-
+Add a listener in the table component using the `#[On]` attribute:
 
 ```php +torchlight-php
-use Naykel\Gotime\Traits\Searchable;
+use Livewire\Attributes\On;
 
-public array $searchableFields = ['title', 'category'];
-
-protected function prepareData()
+#[On('model-saved')]
+#[On('model-deleted')]
+public function refreshTable()
 {
-    $query = $this->modelClass::query();
-    $query = $this->applySearch($query);
-    return ['items' => $query->paginate(20)];
+    $this->resetPage();
+    // Additional refresh logic if needed
 }
 ```
 
-
-## Add Action Buttons
-
-In order to use actions, you need to include the `WithFormActions` trait in your component class. 
-
-- ☐ Add resource action buttons for **Edit**, **Delete**, and **View** to each row in the table.
-
-- You can use routes or methods
-- Passing the routePrefix automatically tells the component to use the route instead of a method.
-- works with id or slug
-
-    When using routes:
-
-    ```html
-    <x-gt-resource-action action="edit" :$routePrefix :id="$item->slug" />
-    ```
-
-
-
-## Filtering (TBD)
-
-
-
-- ☐ (optional) In the `mount` method set the default `sortColumn` and `sortDirection` 
-
-
-
-
-
-
-
-------------------------------------------
-
-## Filtering Data
-
-Filtering allows Widgets to refine displayed records based on specific conditions. There are
-two ways to filter data:
-
-1. **Widget Selection (`filterBy` Property)** - Filters data before fetching from the
-   database, based on Widget input.
-2. **Collection Filtering** - Filters results **after** retrieving the full dataset from
-   the database.
-
-### Filtering Based on Widget Selection
-
-To allow Widgets to filter records dynamically, add a `filterBy` property and apply
-conditions using the `when()` method in `prepareData()` (or wherever you are fetching the
-data).
+For a simple refresh without custom logic, you can use the built-in `$refresh` method:
 
 ```php +torchlight-php
-public string $filterBy = '';
+use Livewire\Attributes\On;
 
-protected function prepareData()
-{
-    $query = $this->modelClass::overview()
-        ->when($this->filterBy === 'active', fn ($query) => $query->active())
-        ->when($this->filterBy === 'expired', fn ($query) => $query->expired());
-
-    return ['items' => $query->get()];
-}
+#[On('model-saved')]
+#[On('model-deleted')]
+public function $refresh() {}
 ```
-
-In the view, use buttons to update `filterBy` dynamically.
-
-```html
-<div>
-    <button wire:click="$set('filterBy', '')">All</button>
-    <button wire:click="$set('filterBy', 'active')">Active</button>
-    <button wire:click="$set('filterBy', 'expired')">Expired</button>
-</div>
-```
-
-### Filtering After Retrieving Data
-
-In cases where all records are fetched first, filtering can be applied **after**
-retrieving the results.
-
-```php +torchlight-php
-protected function prepareData()
-{
-    $query = auth()->Widget()->studentCourses()->overview()->get();
-
-    return [
-        'active' => $query->filter(fn($course) => $course->isActive()),
-        'expired' => $query->filter(fn($course) => $course->isExpired()),
-    ];
-}
-```
-
-This approach avoids multiple queries by retrieving all records at once and filtering in
-memory using Laravel Collections.
-
-

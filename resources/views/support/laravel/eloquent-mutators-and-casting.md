@@ -2,7 +2,8 @@
 
 - [Defining an Accessor](#defining-an-accessor)
 - [Examples](#examples)
-    - [Casts a date to a boolean, and save as date if true or null if false.](#casts-a-date-to-a-boolean-and-save-as-date-if-true-or-null-if-false)
+    - [Cast Empty String to Null](#cast-empty-string-to-null)
+    - [Cast Date to Boolean](#cast-date-to-boolean)
 - [Trouble Shooting](#trouble-shooting)
     - [Not mutating as expected](#not-mutating-as-expected)
 
@@ -27,10 +28,22 @@ protected function firstName(): Attribute
 }
 ```
 
-
 ## Examples
 
-### Casts a date to a boolean, and save as date if true or null if false.
+### Cast Empty String to Null
+
+```php +torchlight-php
+  protected function relatedWidgetId(): Attribute
+    {
+        return Attribute::make(
+            set: fn($value) => $value === '' ? null : $value,
+        );
+    }
+```
+
+### Cast Date to Boolean
+
+Saves as a date if true or null if false.
 
 ```php +torchlight-php
 protected function activatedAt(): Attribute

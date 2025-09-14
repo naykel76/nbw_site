@@ -1,7 +1,9 @@
 <x-gt-app-layout layout="{{ config('gotime.template') }}" class="py-5-3-2-2">
 
-  
-<pre>
+
+    <div class="pxy dark">sdf</div>
+
+    <pre>
    <x-torchlight-code language="html">
 <div class='text-7xl font-bold'>
     <span>Syntax highlighting is</span>

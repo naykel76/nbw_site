@@ -22,8 +22,20 @@
     "Casts, Traits and Enums": {
         "links": [
             {
+                "name": "Casts",
+                "route_name": "pages.gotime.casts"
+            },
+            {
                 "name": "Crudable",
                 "route_name": "pages.gotime.traits.crudable"
+            },
+            {
+                "name": "Filterable",
+                "route_name": "pages.gotime.traits.filterable"
+            },
+            {
+                "name": "Formable",
+                "route_name": "pages.gotime.traits.formable"
             },
             {
                 "name": "Renderable",

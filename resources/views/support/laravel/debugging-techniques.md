@@ -8,6 +8,17 @@
 </x-torchlight-code>
 ```
 
+### Selected Form Values
+
+```php +torchlight-php
+@php
+    use Illuminate\Support\Arr;
+    $only = Arr::only($form->toArray(), ['name', 'code']);
+    $except = Arr::except($form->toArray(), ['editing', 'tmpUpload']);
+@endphp
+<pre>{{ json_encode($only, JSON_PRETTY_PRINT) }}</pre>
+<pre>{{ json_encode($except, JSON_PRETTY_PRINT) }}</pre>
+```
 
 ## Send Error to Log
 
