@@ -2,9 +2,8 @@
 
 - [Testing Philosophy](#testing-philosophy)
 - [Important Notes](#important-notes)
-- [Core Testing Patterns](#core-testing-patterns)
-        - [Structure your tests with clear sections:](#structure-your-tests-with-clear-sections)
-        - [Test Section Descriptions](#test-section-descriptions)
+- [Core Test Description Patterns](#core-test-description-patterns)
+    - [Test Section Descriptions](#test-section-descriptions)
         - [Best Practices:](#best-practices)
 - [Testing Techniques \& Best Practices](#testing-techniques--best-practices)
     - [Initial Value Testing: `assertSet()` vs `expect()`](#initial-value-testing-assertset-vs-expect)
@@ -44,9 +43,8 @@ unreliable for testing exact initial values.
 Instead, use `expect()` with `get()` to ensure strict type checking and precise
 value assertions.
 
-## Core Testing Patterns
+## Core Test Description Patterns
 
-#### Structure your tests with clear sections:
 ```php +torchlight-php
 describe('rendering', function () {
     // Test what users see and interact with such as buttons, forms, and lists.
@@ -75,7 +73,7 @@ describe('data persistence', function () {
 });
 ```
 
-#### Test Section Descriptions
+### Test Section Descriptions
 
 **Rendering**  
 *Tests the visual output and UI state of the component. Covers how data is

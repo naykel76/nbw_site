@@ -38,6 +38,10 @@
                 "route_name": "pages.gotime.traits.formable"
             },
             {
+                "name": "HasFormattedDates",
+                "route_name": "pages.gotime.traits.HasFormattedDates"
+            },
+            {
                 "name": "Renderable",
                 "route_name": "pages.gotime.traits.renderable"
             },

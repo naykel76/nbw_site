@@ -34,6 +34,10 @@
                 "name": "SQL",
                 "route_name": "support.sql-quick-reference",
                 "icon": "mysql"
+            },
+            {
+                "name": "Terminal and PowerShell",
+                "route_name": "support.terminal-and-powershell"
             }
         ]
     },

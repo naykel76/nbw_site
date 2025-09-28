@@ -2,6 +2,11 @@
     "main": {
         "links": [
             {
+                "name": "Chords and Scales",
+                "route_name": "pages.guitar-and-recording.theory.understanding-chords-and-scales",
+                "type": "md"
+            },
+            {
                 "name": "Examples and Tutorials",
                 "route_name": "pages.examples-and-tutorials",
                 "children": [

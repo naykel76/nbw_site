@@ -1,0 +1,185 @@
+{
+  "main": {
+    "id": "a235c198548ca526",
+    "type": "split",
+    "children": [
+      {
+        "id": "a13a3708cded8778",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "570ecdbaf80e9aba",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "theory/understanding-chords-and-scales.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "understanding-chords-and-scales"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "66c932f566477565",
+    "type": "split",
+    "children": [
+      {
+        "id": "7008c6ebd47df58e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "774a0f0b01d9b3bf",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "e6cedba83c25c9ee",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "642b515ebea5660d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8a5292e64e8da9c6",
+    "type": "split",
+    "children": [
+      {
+        "id": "56e66f0304ed33f7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "ccae73357bab4de6",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Studio One and Scarlett Solo.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Studio One and Scarlett Solo"
+            }
+          },
+          {
+            "id": "fbeca62c21506c92",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Studio One and Scarlett Solo.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Studio One and Scarlett Solo"
+            }
+          },
+          {
+            "id": "a9df9338dab08599",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "746ea77ec460dfd5",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Studio One and Scarlett Solo.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Studio One and Scarlett Solo"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "bases:Create new base": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "570ecdbaf80e9aba",
+  "lastOpenFiles": [
+    "Pasted image 20250921115303.png",
+    "Dial in Amp and Pedals.md",
+    "theory/understanding-chords-and-scales.md",
+    "understanding-chords-and-scales.md",
+    "Studio One and Scarlett Solo.md",
+    "Pasted image 20250916163705.png",
+    "Pasted image 20250916162818.png",
+    "Pasted image 20250916161701.png",
+    "Pasted image 20250916161133.png",
+    "Pasted image 20250916160445.png"
+  ]
+}

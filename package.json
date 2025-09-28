@@ -3,7 +3,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "rm -f public/hot && vite build",
+        "build3": "rm -f public/hot && vite build",
+        "build": "powershell -NoProfile -Command \"if (Test-Path public/hot) { Remove-Item public/hot -Force }\" && vite build",
         "build1": "concurrently \"vite build\" \"npm run build:css\"",
         "build:css": "sass resources/scss/app.scss public/css/app.css --no-source-map --style=compressed",
         "build:staging": "vite build --mode=staging",
