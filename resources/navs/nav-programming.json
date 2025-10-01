@@ -6,6 +6,10 @@
                 "route_name": "support.rclone"
             },
             {
+                "name": "Programming Quick Reference",
+                "route_name": "support.programming-quick-reference"
+            },
+            {
                 "name": "Github",
                 "route_name": "support.github-quick-reference",
                 "icon": "github"

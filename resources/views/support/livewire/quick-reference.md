@@ -2,7 +2,8 @@
 
 - [HTML Directives](#html-directives)
 - [Livewire Security Tips](#livewire-security-tips)
-
+- [Validation](#validation)
+    - [Real-time Validation](#real-time-validation)
 
 
 ## HTML Directives
@@ -72,3 +73,33 @@ class ShowPost extends Component
     }
 }
 ```
+
+## Validation
+
+### Real-time Validation
+
+**Real-time validation** validates user input as they type or interact with form
+fields, rather than waiting for form submission.
+
+When you use `#[Validate]` attributes on Livewire properties, validation rules
+automatically run whenever that property updates on the server.
+
+To enable real-time validation, simply add `wire:model.live` or
+`wire:model.blur` to your input fields:
+
+```php +torchlight-php
+#[Validate('required|email')]
+public string $email = '';
+```
+
+```html +torchlight-html
+<input type="email" wire:model.blur="email">
+```
+
+- With `wire:model.blur`, validation runs when the user tabs away from the
+  field.
+- With `wire:model.live`, it runs as they type.
+
+**No additional backend code needed - the validation happens automatically.**
+
+

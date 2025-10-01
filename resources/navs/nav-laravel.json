@@ -37,6 +37,10 @@
     "Eloquent and Database": {
         "links": [
             {
+                "name": "Relationships",
+                "route_name": "support.laravel.eloquent-relationships"
+            },
+            {
                 "name": "Migrations",
                 "route_name": "support.laravel.database.migrations"
             },
@@ -69,7 +73,7 @@
                 "route_name": "support.laravel.testing-quick-reference"
             },
             {
-                "name": "Test Examples",
+                "name": "Test Guide",
                 "route_name": "support.laravel.testing-your-laravel-application"
             },
             {

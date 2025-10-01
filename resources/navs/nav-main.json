@@ -35,6 +35,11 @@
                 "type": "md"
             },
             {
+                "name": "Programming Quick Reference",
+                "route_name": "support.programming-quick-reference",
+                "exclude_route": true
+            },
+            {
                 "name": "Alpine",
                 "route_name": "support.alpine.quick-reference",
                 "exclude_route": true

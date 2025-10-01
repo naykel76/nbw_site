@@ -2,8 +2,13 @@
 
 - [FloatAsInteger](#floatasinteger)
     - [How It Works](#how-it-works)
-    - [Basic Usage](#basic-usage)
+    - [Usage](#usage)
     - [Choosing Decimals](#choosing-decimals)
+- [MoneyCast](#moneycast)
+    - [How It Works](#how-it-works-1)
+    - [Usage](#usage-1)
+    - [Validation](#validation)
+
 
 ## FloatAsInteger
 
@@ -25,7 +30,7 @@ The cast uses powers of 10 to shift decimal places:
 12.3456 × (10 ** 4) = 123456 (stored) → 123456 ÷ 10000 = 12.3456 (retrieved)
 ```
 
-### Basic Usage
+### Usage
 
 ```php +torchlight-php
 use Naykel\Gotime\Casts\FloatAsInteger;
@@ -51,3 +56,62 @@ Use enough decimal places to store your values exactly:
 // 1.925% needs 3 decimals, not 2
 'rate' => FloatAsInteger::class . ':3',  // Stores exact 1.925%
 ```
+
+
+## MoneyCast
+
+The `MoneyCast` cast converts monetary values between their database storage
+format (integer cents) and application format (float dollars). This approach
+avoids floating-point precision issues that can occur when storing decimal
+currency values directly.
+
+
+### How It Works
+
+<!-- is this accurate? -->
+- **Database Storage**: Money is stored as integers representing cents (e.g., 1999 = $19.99)
+- **Application Access**: Values are automatically converted to floats representing dollars (e.g., 19.99)
+- **Precision**: Uses integer storage to avoid floating-point precision issues
+- **Null Handling**: Supports nullable columns - null values remain null
+
+### Usage
+
+**Add to Your Model**
+
+```php +torchlight-php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+use Naykel\Gotime\Casts\MoneyCast;
+
+class Product extends Model
+{
+    protected $casts = [
+        'price' => MoneyCast::class,
+    ];
+}
+```
+
+**Migration (store as integer):**
+
+```php +torchlight-php
+Schema::create('products', function (Blueprint $table) {
+    $table->integer('price')->nullable(); // or ->default(0) for non-nullable
+});
+```
+
+
+
+### Validation
+
+```php
+
+        'price' => 'required|numeric|min:0|max:999999.99',
+```
+
+
+
+
+
+
+

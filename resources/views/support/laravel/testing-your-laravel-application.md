@@ -1,18 +1,12 @@
 # Laravel Testing Guide with Pest
 
 - [Testing Philosophy](#testing-philosophy)
-- [Important Notes](#important-notes)
-- [Core Test Description Patterns](#core-test-description-patterns)
+- [Test Description Patterns](#test-description-patterns)
     - [Test Section Descriptions](#test-section-descriptions)
-        - [Best Practices:](#best-practices)
 - [Testing Techniques \& Best Practices](#testing-techniques--best-practices)
     - [Initial Value Testing: `assertSet()` vs `expect()`](#initial-value-testing-assertset-vs-expect)
         - [When to Use Each Approach](#when-to-use-each-approach)
     - [Date Testing](#date-testing)
-- [2. Create/Edit Tests (`tests/Feature/Livewire/WidgetCreateEditTest.php`)](#2-createedit-tests-testsfeaturelivewirewidgetcreateedittestphp)
-    - [Rendering](#rendering)
-    - [Initialisation](#initialisation)
-    - [Validation](#validation)
 - [3. Form Object Tests (`tests/Feature/Livewire/WidgetFormObjectTest.php`)](#3-form-object-tests-testsfeaturelivewirewidgetformobjecttestphp)
 - [Crap --------------------------------------------------](#crap---------------------------------------------------)
 - [Page Tests](#page-tests)
@@ -22,6 +16,7 @@
     - [Authentication Required for Protected Routes](#authentication-required-for-protected-routes)
 - [FAQ's](#faqs)
     - [What is the difference between `assertSee` and `assertSeeText`?](#what-is-the-difference-between-assertsee-and-assertseetext)
+- [Important Notes](#important-notes)
 
 
 ## Testing Philosophy
@@ -34,16 +29,7 @@ business scenarios.
 data updates, state changes, and validation. Avoid testing authentication or
 roles here; those belong in route or feature tests. 
 
-## Important Notes
-
-When testing Livewire components, avoid using `assertSet()` for checking initial
-values as it performs loose comparison or type coercion, which makes it
-unreliable for testing exact initial values.
-
-Instead, use `expect()` with `get()` to ensure strict type checking and precise
-value assertions.
-
-## Core Test Description Patterns
+## Test Description Patterns
 
 ```php +torchlight-php
 describe('rendering', function () {
@@ -111,13 +97,18 @@ properly formatted data is saved to the database, relationships are created
 correctly, events are dispatched, and users receive appropriate feedback. Covers
 create, update, and delete operations along with their side effects.*
 
-#### Best Practices:
-- **Test bindings, not HTML**: Use `assertPropertyWired()` or
-  `assertSet()`/`assertGet()`
-- **Test user workflows**: Complete scenarios from start to finish
-- **Verify side effects**: Database changes, events dispatched, redirects
+
+https://github.com/naykel76/wiggity/blob/main/tests/Feature/Livewire/ProductIndexTest.php
 
 
+https://github.com/naykel76/wiggity/blob/main/tests/Feature/Livewire/ProductCreateEditTest.php
+
+
+They're descriptive without being verbose. The pattern of:
+
+- `displays products in...`
+- `shows empty state when...`
+- `refreshes to show new product after...`
 
 
 
@@ -202,119 +193,17 @@ $this->end_date = $model->end_date?->format(config('gotime.date_format'));
 <!--  -->
 <!--  -->
 <!--  -->
-<!--  -->
 
 
 
 
-## 2. Create/Edit Tests (`tests/Feature/Livewire/WidgetCreateEditTest.php`)
 
-### Rendering
-
-```php +torchlight-php
-describe('rendering', function () {
-    it('renders form with correct fields', function () {
-        Livewire::test(WidgetCreateEdit::class)
-            ->assertSee('form.title');
-    });
-
-    it('renders form with save and cancel buttons', function () {
-        Livewire::test(WidgetCreateEdit::class)
-            ->assertSee('SAVE')
-            ->assertSee('CANCEL');
-    });
-});
-```
-
-### Initialisation
-
-```php +torchlight-php
-describe('initialisation', function () {
-    it('initialises form with default values', function () {
-        // ... test code
-    });
-
-
-    it('populates form when editing existing widget', function () {
-        // ... test code
-    });
-});
-```
-
-### Validation
-
-
-* `requires event_type and start_date for all event types`
-* `requires a related_event_id for the exam_cram event`
-* `requires end_date for iblce_exam and conference event types`
-* `requires url for exam_cram and webinar event types`
-* `validates start_date must be today or future`
-* `validates end_date is after start_date when required`
-
-```php +torchlight-php
-describe('validation', function () {
-    it('validates required title field', function () {
-        // ... test code
-    });
-
-    it('validates title max length', function () {
-        // ... test code
-    });
-
-    it('validates start date is after or equal to today', function () {
-        // ... test code
-    });
-});
-```
 
 
 
 
 <!-- 
 
-### Form State Management
-
-*Verifies form state handling, resetting, and data binding.*
-
-* `can reset form data`
-* `can cancel form editing`
-
-```php +torchlight-php
-describe('form state management', function () {
-    it('can reset form data', function () {
-        // ... test code
-    });
-
-    it('can cancel form editing', function () {
-        // ... test code
-    });
-});
-```
-
-
-### CRUD Operations
-
-*Confirms create and update operations, including event dispatching.*
-
-* `can save new widget`
-* `can update existing widget`
-* `dispatches model-saved event after successful save`
-
-```php +torchlight-php
-describe('crud operations', function () {
-    it('can save new widget', function () {
-        // ... test code
-    });
-
-    it('can update existing widget', function () {
-        // ... test code
-    });
-
-    it('dispatches model-saved event after successful save', function () {
-        // ... test code
-    });
-});
-```
 
 ### Relationships
 
@@ -459,3 +348,11 @@ $response->assertSee('<h1>Heading</h1>'); // Passes
 $response->assertSeeText('<h1>Heading</h1>'); // Fails
 ```
 
+## Important Notes
+
+When testing Livewire components, avoid using `assertSet()` for checking initial
+values as it performs loose comparison or type coercion, which makes it
+unreliable for testing exact initial values.
+
+Instead, use `expect()` with `get()` to ensure strict type checking and precise
+value assertions.

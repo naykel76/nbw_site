@@ -176,8 +176,8 @@ public function init(Product $model): void
 {
     $this->editing = $model;
 
-    // forces the cast to run
-    $this->price = $model->price; // Now works correctly!
+    // forces cast to run and handles null values
+    $this->price = $model->price ?? 0.0; // Now works correctly!
 }
 ```
 
