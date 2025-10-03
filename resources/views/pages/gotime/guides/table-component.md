@@ -7,8 +7,6 @@
     - [Component Class](#component-class)
     - [Blade View](#blade-view)
 - [Additional Features](#additional-features)
-    - [Searching Data (WIP)](#searching-data-wip)
-    - [Filtering Data (WIP)](#filtering-data-wip)
 - [FAQ's](#faqs)
     - [How can I refresh the table from another component?](#how-can-i-refresh-the-table-from-another-component)
 
@@ -117,9 +115,8 @@ searching.
 
 ## Additional Features
 
-### Searching Data (WIP)
 
-### Filtering Data (WIP)
+
 
 ## FAQ's
 

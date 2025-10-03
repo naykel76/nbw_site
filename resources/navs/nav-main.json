@@ -2,14 +2,14 @@
     "main": {
         "links": [
             {
-                "name": "Chords and Scales",
-                "route_name": "pages.guitar-and-recording.theory.understanding-chords-and-scales",
-                "type": "md"
-            },
-            {
-                "name": "Examples and Tutorials",
+                "name": "Guides and Tutorials",
                 "route_name": "pages.examples-and-tutorials",
                 "children": [
+                    {
+                        "name": "Laravel Setup Checklist",
+                        "route_name": "pages.checklist-for-setting-up-laravel-projects",
+                        "type": "md"
+                    },
                     {
                         "name": "Gotime: Table and Form Examples",
                         "route_name": "pages.gotime.table-and-form-examples",
@@ -30,12 +30,7 @@
                 ]
             },
             {
-                "name": "Conventions",
-                "route_name": "naykel-naming-conventions",
-                "type": "md"
-            },
-            {
-                "name": "Programming Quick Reference",
+                "name": "Programming Reference",
                 "route_name": "support.programming-quick-reference",
                 "exclude_route": true
             },

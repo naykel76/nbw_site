@@ -1,13 +1,12 @@
 @use './vars.scss' as *;
 @use './choices.scss' as *;
 @use './tmp.scss' as *;
-// @use './layout-examples.scss' as *;
 
 @use '../../node_modules/nk_jtb/src/build' as *;
 @use '../../node_modules/nk_jtb/src/extras/nk-docs' as * with(
     $question-color: #c40c9a
 );
-// @use "../../node_modules/nk_jtb/src/extras/choices" as *;
+@use "../../node_modules/nk_jtb/src/extras/nk-app" as *;
 
 
 // ------------------------------------------------------------------

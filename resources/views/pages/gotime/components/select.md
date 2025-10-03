@@ -3,11 +3,9 @@
 - [Control Group](#control-group)
     - [Multi-Select](#multi-select)
     - [Error Handling](#error-handling)
-- [Control Only](#control-only)
-    - [Checked](#checked)
-    - [Disabled](#disabled)
-    - [Error Handling](#error-handling-1)
-    - [Adding Custom Labels (Closed Tag)](#adding-custom-labels-closed-tag)
+- [FAQ's](#faqs)
+    - [How do I bind to a Livewire property?](#how-do-i-bind-to-a-livewire-property)
+    - [How do I define Livewire validation rules?](#how-do-i-define-livewire-validation-rules)
 
 
 
@@ -32,6 +30,11 @@ expected when the values is `null` instead of `""` empty string.
 
 ### Multi-Select
 
+Add the `multiple` attribute to the select element to allow multiple options to
+be selected.
+
+Hold down the `Ctrl` key to select multiple options.
+
 ```html +parse
 <div class="maxw-sm">
     <livewire:gotime.components.select variant="control-group-multi-select" />
@@ -39,7 +42,7 @@ expected when the values is `null` instead of `""` empty string.
 ```
 
 ```html +torchlight-blade
-@verbatim<x-gt-select wire:model="country" :options="$countries" />@endverbatim
+@verbatim<x-gt-select wire:model="country" :options="$countries" multiple />@endverbatim
 ```
 
 ### Error Handling
@@ -50,54 +53,19 @@ expected when the values is `null` instead of `""` empty string.
 </div>
 ```
 
-## Control Only
-### Checked
-### Disabled
-### Error Handling
-### Adding Custom Labels (Closed Tag)
+## FAQ's
 
+### <question>How do I bind to a Livewire property?</question>
 
-----------
-<!-- 
+When using the `select` component with Livewire form objects, you can bind the
+select element to a property on the form object using the `wire:model`
+attribute. There is no magic here, just standard Livewire binding.
 
-----------
+```php +torchlight-php
+public $countries = [ 'AU' => 'Australia', 'CA' => 'Canada', 'NZ' => 'New Zealand' ];
+public $country = 'NZ';
 
-### Control Only
-
-```html +parse
-<div class="grid cols-2">
-    <livewire:gotime.components.select variant="control-only" />
-    <livewire:gotime.components.select variant="control-only-with-error" />
-</div>
-```
-
-```html +torchlight-blade
-@verbatim
-<x-gotime::v2.input.controls.select wire:model="country" :options="$countries" />
-@endverbatim
-```
-
-----------
-
-## REVIEW
-
-You can specify select options in two ways. 
-
-The first is by passing an `options` array of key-value pairs, where each key is
-the option's value and each value is the display text. 
-
-When `setting wire:model`, there is no need to specify the `for` attribute, as the
-component will automatically bind to the specified property.
-
-
-Alternatively you can iterate over the options directly within the component view.
-
-```html
-<x-gt-select for="size">
-    @foreach($sizes as $key => $value)
-        <option value="{{ $key }}">{{ $value }}</option>
-    @endforeach
-</x-gt-select>
+@verbatim<x-gt-select wire:model="form.country" label="country" :options="$countries" />@endverbatim
 ```
 
 ```html +parse
@@ -107,52 +75,17 @@ Alternatively you can iterate over the options directly within the component vie
 </x-gt-alert>
 ```
 
-## Setting the selected value
 
-```html +parse
-<livewire:gotime.components.select />
-```
+### <question>How do I define Livewire validation rules?</question>
 
 ```php +torchlight-php
-public $countries = [ 'AU' => 'Australia', 'CA' => 'Canada', 'NZ' => 'New Zealand' ];
-public $country = 'NZ'; 
+#[Validate]
+public string $department = '';
 
-<x-gt-select wire:model="country" label="country" :options="$countries" />
+protected function rules()
+{
+    return [
+        'department' => 'in:' . implode(',', array_keys(Product::DEPARTMENTS)),
+    ];
+}
 ```
-
-## Multi-select Options
-
-Add the `multiple` attribute to the select element to allow multiple options to be selected.
-
-Hold down the `Ctrl` key to select multiple options.
-
-```html +parse
-<livewire:gotime.components.select multiple/>
-```
-
-```html
-<x-gt-select wire:model="country" label="country" :options="$countries" multiple />
-```
-
-## Techniques
-
-### Using with Livewire Form Objects
-
-When using the `select` component with Livewire form objects, you can bind the select
-element to a property on the form object using the `wire:model` attribute.
-
-```html +parse
-<livewire:gotime.components.select />
-```
-
-```php +torchlight-php
-public $countries = [ 'AU' => 'Australia', 'CA' => 'Canada', 'NZ' => 'New Zealand' ];
-public $country = 'NZ';
-
-<x-gt-select wire:model="form.country" label="country" :options="$countries" />
-```
-
-```php +torchlight-php
-<x-gt-select wire:model="form.type" label="Event Type" 
-    :options="$this->modelClass::EVENT_TYPES"/>
-``` -->
