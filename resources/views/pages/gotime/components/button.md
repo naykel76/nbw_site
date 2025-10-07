@@ -10,12 +10,22 @@
 
 ## Basic Usage
 
-To use the button component, call `<x-gt-button />` and set the button text using the
-`text` attribute or the slot.
+The icon size is automatically adjusted based on the button text size. 
+
+```html +parse
+<x-gt-button text="Button" />
+<x-gt-button.primary text="Primary" />
+<x-gt-button.secondary text="Secondary" />
+<x-gt-button text="Account" icon="user" />
+<x-gt-button text="Account" icon="user" iconPosition="right" />
+<x-gt-button icon="user" class="icon-only"/>
+```
 
 ```html +torchlight-blade
 @verbatim
 <x-gt-button text="Button" />
+<x-gt-button.primary text="Primary" />
+<x-gt-button.secondary text="Secondary" />
 @endverbatim
 ```
 
@@ -81,20 +91,9 @@ To include an icon, simply add the `icon` attribute and provide the Gotime icon 
 By default, the icon will appear to the left of the button’s text. To position the icon to
 the right of the text, use the `iconPosition` attribute with a value of `right`.
 
-```html +parse
-<x-gt-button text="Account" icon="user" />
-<x-gt-button text="Account" icon="user" iconPosition="right" />
-```
+
 
 ```html
 <x-gt-button text="Account" icon="user" />
 <x-gt-button text="Account" icon="user" iconPosition="right" />
 ```
-
-
-
-<!-- FYI
-
-In Blade components, attributes passed directly to the component can override those set
-within the component itself. This means that if you set the wire:click attribute directly
-when using the component, it will override the wire:click attribute here. -->

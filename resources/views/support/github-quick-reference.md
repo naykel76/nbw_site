@@ -32,35 +32,23 @@ results in a conflict or if the merge is not a fast-forward merge.
 
 ## Stashing Changes
 
-| Command             | What it stashes                                | Keyboard Shortcut          |
-| :------------------ | :--------------------------------------------- | -------------------------- |
-| `git stash push`    | Staged + unstaged tracked files                | `Ctrl` + `Alt` + `G` + `S` |
-| `git stash push -k` | Only unstaged tracked changes                  |                            |
-| `git stash push -u` | Stash tracked + untracked changes              |                            |
-| `git stash push -a` | Stash everything (tracked, untracked, ignored) |                            |
-
-| Flag |      | Action                                       |
-| :--- | :--- | :------------------------------------------- |
-| `-k` |      | Only unstaged tracked files                  |
-| `-u` | `--     | Include unstaged tracked and untracked files |
+| Command                                           | What it stashes                                    | Keyboard Shortcut          |
+| :------------------------------------------------ | :------------------------------------------------- | -------------------------- |
+| `git stash push --keep-index --include-untracked` | All tracked and untracked changes, **NOT STAGED**  |                            |
+| `git stash push`                                  | Staged and unstaged tracked files                  | `Ctrl` + `Alt` + `G` + `S` |
+| `git stash`                                       | All tracked changes                                |                            |
 
 
-<!-- 
-| `-a`                  | Include all files, even ignored ones         |
-| `--keep-index`        | Stash changes but keep staged files in index |
-| `--include-untracked` | Include untracked files in the stash         |
-| `--all`               | Include all files, even ignored ones         | -->
-
-
-
-| Goal                                         | Command                                           |
-| -------------------------------------------- | ------------------------------------------------- |
-| Stash **only unstaged tracked**              | `git stash push --keep-index`                     |
-| Stash **only unstaged tracked or untracked** | `git stash push --keep-index --include-untracked` |
-| Stash **unstaged tracked + untracked**       | `git stash push --keep-index -u`                  |
-| Stash **everything including ignored**       | `git stash push --keep-index -a`                  |
-
-
+<!-- | `git stash --all` or `git stash -a`               | All changes including tracked, untracked & ignored |                            |
+| `git stash --include-untracked` or `git stash -u` | All tracked changes + untracked files              |                            |
+| `git stash --keep-index`                          | Only unstaged tracked changes (keeps staged)       |                            |
+| `git stash push --keep-index --include-untracked` | All tracked and untracked changes, NOT STAGED      |                            |
+| `git stash push --keep-index -a`                  | Stash **everything including ignored**             |                            |
+| `git stash push --keep-index -u`                  | Stash **unstaged tracked + untracked**             |                            |
+| `git stash push --keep-index`                     | Stash **only unstaged tracked**                    |                            |
+| `git stash push -a`                               | Everything (tracked, untracked, and ignored files) |                            |
+| `git stash push -k`                               | Only unstaged tracked changes                      |                            |
+| `git stash push -u`                               | Tracked and untracked changes                      |                            | -->
 
 
 | Command                    | Action                            |
