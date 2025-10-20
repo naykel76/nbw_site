@@ -1,23 +1,13 @@
 <x-gt-app-layout layout="{{ config('gotime.template') }}" class="py-5-3-2-2">
 
-
-    <div class="container">
-        <pre>
-   <x-torchlight-code language="html">
-<div class='text-7xl font-bold'>
-    <span>Syntax highlighting is</span>
-    <span class='font-bold'>
-        <span aria-hidden="true" class="absolute inset-0 bg-yellow-100 transform -rotate-6"></span>
-        <span>broken.</span> <!-- [tl! focus] -->
-    </span>
-</div>
-
-
-   </x-torchlight-code>
-</pre>
-
+    <div class="container bx">
+        <x-gt-menu filename="nav-main" menuname="main" />
     </div>
+    <div class="container bx">
+        <x-gt-menu filename="nav-main" menuname="main" layout="hover"/>
 
+        {{-- <x-gt-menu layout="hover" class="gap-1" itemClass="nav-item rounded-05" /> --}}
+    </div>
 
 
     <section class="relative overflow-x-clip py-2 md:py-5">
@@ -146,7 +136,7 @@
             <x-gt-button text="text" icon="download" />
         </div>
 
-        <div class="container flex space-between items-start">
+        <div class="container flex justify-between items-start">
             <div class="flex space-x">
 
 
@@ -242,7 +232,7 @@
             </div>
         </div>
     </div>
-    <section class="flex space-between wrap px py-3 va-c ha-c">
+    <section class="flex justify-between container mt-3">
         <img src="/svg/blur-red.svg" class="wh-2 animate-pulse-slow">
         <img style="animation-duration: 4s" src="/svg/blur-pink.svg" class="wh-3 animate-pulse-slow">
         <img style="animation-duration: 5s" src="/svg/blur-green.svg" class="wh-4 animate-pulse-slow">

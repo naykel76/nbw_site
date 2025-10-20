@@ -6,7 +6,7 @@
                 "route_name": "pages.gotime.installation"
             },
             {
-                "name": "Route and Menu Builder",
+                "name": "Route Builder",
                 "route_name": "pages.gotime.route-and-menu-builder"
             },
             {
@@ -76,6 +76,10 @@
             {
                 "name": "Input",
                 "route_name": "pages.gotime.components.input"
+            },
+            {
+                "name": "Menu",
+                "route_name": "pages.gotime.components.menu"
             },
             {
                 "name": "Modal",

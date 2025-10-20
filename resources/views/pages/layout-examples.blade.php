@@ -1,10 +1,87 @@
 <x-gt-app-layout layout="{{ config('naykel.template') }}" pageTitle="Layout Examples" class="container-xxl py-3">
 
-    <div class="grid lg:cols-4 md:cols-2">
-        <div class="bx pink">Card 1</div>
-        <div class="bx pink">Card 2</div>
-        <div class="bx pink">Card 3</div>
-        <div class="bx pink">Card 4</div>
+    <style>
+        .responsive-tester {
+            position: relative;
+            width: 800px;
+            height: 500px;
+        }
+
+        .drag-handle {
+            position: absolute;
+            background: #007bff;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        .drag-handle:hover {
+            opacity: 1;
+        }
+
+        .drag-handle-corner {
+            bottom: 0;
+            right: 0;
+            width: 20px;
+            height: 20px;
+            cursor: nw-resize;
+            border-radius: 8px 0 5px 0;
+        }
+
+        .drag-handle-corner::after {
+            content: '';
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-bottom: 8px solid white;
+        }
+
+        .drag-handle-right {
+            top: 50%;
+            right: 0;
+            width: 6px;
+            height: 40px;
+            transform: translateY(-50%);
+            cursor: ew-resize;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .drag-handle-bottom {
+            bottom: 0;
+            left: 50%;
+            width: 40px;
+            height: 6px;
+            transform: translateX(-50%);
+            cursor: ns-resize;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .breakpoint-indicator {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+        }
+
+        .size-display {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+
+    {{-- this works as expected --}}
+    <div class="grid md:cols-2">
+        <div class="red">dfgdfg</div>
+        <div class="red">dfgdfg</div>
     </div>
 
     <section class="space-y">
@@ -30,7 +107,7 @@
             </x-torchlight-code>
         </pre>
 
-        <div id="responsive-tester-container" class="responsive-tester bx bdr-red bdr-5 mt-5" data-width="" data-height="">
+        <div id="responsive-tester-container" class="responsive-tester bx bdr-red bdr-5 mt-5">
             <div class="size-display secondary"></div>
             <div class="breakpoint-indicator"></div>
             <div class="bx">
@@ -41,6 +118,11 @@
                     <div class="bx pink">Card 2</div>
                     <div class="bx pink">Card 3</div>
                     <div class="bx pink">Card 4</div>
+                </div>
+
+                <div class="grid md:cols-2">
+                    <div class="red">dfgdfg</div>
+                    <div class="red">dfgdfg</div>
                 </div>
 
             </div>

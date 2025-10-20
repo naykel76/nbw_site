@@ -12,6 +12,10 @@
             {
                 "name": "Layout Techniques and Examples",
                 "route_name": "pages.jtb.layout-techniques"
+            },
+            {
+                "name": "Spacing and Layout Visual Testing",
+                "route_name": "pages.jtb.spacing-and-layout-visual-testing"
             }
         ]
     },
@@ -68,6 +72,10 @@
             {
                 "name": "Forms",
                 "route_name": "pages.jtb.components.forms"
+            },
+            {
+                "name": "Menu",
+                "route_name": "pages.jtb.components.menu"
             },
             {
                 "name": "Navbar",

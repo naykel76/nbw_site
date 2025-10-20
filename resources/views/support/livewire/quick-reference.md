@@ -1,11 +1,36 @@
 # Livewire Quick Reference
 
+- [Passing Data to Layouts](#passing-data-to-layouts)
 - [HTML Directives](#html-directives)
 - [Livewire Security Tips](#livewire-security-tips)
 - [Validation](#validation)
     - [Real-time Validation](#real-time-validation)
 
+## Passing Data to Layouts
 
+You can use the `#[Layout]` attribute to specify a layout for your Livewire
+component and pass data to it.
+
+```php +torchlight-php
+#[Layout('components.layouts.app', ['pageTitle' => 'The Page Title'])]
+public function render()
+{
+    return view('livewire.products.page');
+}
+```
+
+This will not work if you want to pass dynamic data to the layout. In that case, you
+need to return the layout from the `render()` method instead.
+
+```php +torchlight-php
+public function render()
+{
+    return view('livewire.products.page')
+        ->layout('components.layouts.app', [
+            'pageTitle' => $this->pageTitle
+        ]);
+}
+```
 ## HTML Directives
 
 ```html

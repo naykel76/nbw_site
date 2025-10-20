@@ -1,0 +1,51 @@
+sequenceDiagram
+    participant User as web.php
+    participant RB as RouteBuilder
+    participant FS as File System
+    participant DTO as RouteDTO
+    participant Route as Laravel Route
+
+    User->>RB: new RouteBuilder(filename, layout?)
+    RB->>FS: getMenusFromJson(filename)
+    FS-->>RB: JSON menu object
+    RB->>RB: Store menus & data['filename']
+    
+    User->>RB: create()
+    
+    loop For each menu in menus
+        RB->>RB: getMenuKeys(menus)
+        RB->>RB: data['menus'] = menu keys
+        RB->>RB: processLinks(menu.links)
+        
+        loop For each routeItem in links
+            RB->>DTO: new RouteDTO(routeItem)
+            DTO-->>RB: item
+            
+            alt excludeRoute is false
+                RB->>RB: make(item)
+                RB->>RB: Extract url, routeName, viewPath
+                RB->>RB: Set data['type']
+                
+                alt type is 'md'
+                    RB->>RB: data['path'] = viewPath
+                    RB->>RB: viewPath = 'components.layouts.markdown'
+                end
+                
+                alt layout is set
+                    RB->>RB: data['path'] = viewPath
+                    RB->>RB: viewPath = layout
+                end
+                
+                RB->>RB: createRoute(url, viewPath, routeName)
+                RB->>Route: Route::get(url, closure)->name(routeName)
+                Route-->>RB: Route created
+            end
+            
+            alt isParent && !exclude_child_routes
+                RB->>RB: processLinks(routeItem.children)
+                Note over RB: Recursive call for nested routes
+            end
+        end
+    end
+    
+    RB-->>User: Routes created

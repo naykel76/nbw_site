@@ -3,12 +3,17 @@
 @use './tmp.scss' as *;
 
 @use '../../node_modules/nk_jtb/src/build' as *;
-@use '../../node_modules/nk_jtb/src/extras/nk-docs' as * with(
-    $question-color: #c40c9a
-);
-@use "../../node_modules/nk_jtb/src/extras/nk-app" as *;
+@use '../../node_modules/nk_jtb/src/extras/nk-docs' as * with($question-color: #c40c9a);
+@use '../../node_modules/nk_jtb/src/extras/nk-app' as *;
 
-
+th,
+td {
+    padding-block: 0.5rem;
+    border: 1px solid rgb(95, 94, 94);
+}
+th {
+    background-color: rgb(13, 16, 15);
+}
 // ------------------------------------------------------------------
 // -- MARKDOWN OVERRIDES --
 // ------------------------------------------------------------------

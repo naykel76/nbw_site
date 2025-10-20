@@ -1,0 +1,26 @@
+sequenceDiagram
+    participant User as web.php
+    participant RB as RouteBuilder
+    participant Route as Laravel Route
+
+    User->>RB: new RouteBuilder(filename, layout?)
+    Note over RB: Loads JSON from resources/navs
+    
+    User->>RB: create()
+    
+    loop For each menu group (main, footer, etc.)
+        RB->>RB: processLinks(menu.links)
+        
+        loop For each link in group
+            alt excludeRoute is false
+                RB->>RB: resolveView(item)
+                Note over RB: Determines view path based on:<br/>markdown type, layout, or default
+                RB->>Route: Create route
+            end
+            
+            alt has children && !exclude_child_routes
+                RB->>RB: processLinks(children)
+                Note over RB: Recursive call
+            end
+        end
+    end

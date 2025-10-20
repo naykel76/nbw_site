@@ -4,17 +4,23 @@
 - [Philosophy](#philosophy)
 - [Structure \& Override Priority](#structure--override-priority)
 - [What makes JTB different?](#what-makes-jtb-different)
-    - [Consistent Theming Across Components](#consistent-theming-across-components)
-- [Build-Time Focused](#build-time-focused)
+    - [Predictable Naming](#predictable-naming)
+    - [Consistent Theming](#consistent-theming)
+- [Comparing Approaches](#comparing-approaches)
+- [No Runtime Dependencies](#no-runtime-dependencies)
 - [Getting Started](#getting-started)
-
 
 ## Introduction
 
-JTB is a lightweight Sass framework that sets clear, opinionated defaults for
-web projects while giving developers full control to override or extend styles.
-It focuses on clarity, consistency, and practicality—ideal for projects that
-don't need the bulk of a full CSS framework.
+JTB is a Sass framework focused on sensible defaults without over-styling. It
+provides a solid foundation for web projects through thoughtful base styles,
+minimal components, and a robust utility system—all designed to be easily
+customised or overridden.
+
+The framework emphasises clarity and maintainability through composable classes
+that separate structure from styling. Rather than fighting against opinionated
+frameworks or drowning in utility classes, JTB gives you just enough to build
+quickly while staying out of your way.
 
 ## Philosophy
 
@@ -34,8 +40,8 @@ JTB is split into four key areas with clear override hierarchy:
 
 1. **Base styles** – Reset and base HTML element styles. Provides functional
    foundation.
-2. **Component styles** – Optional, minimal UI patterns (buttons, forms, lists).
-   Can be overridden by utilities.
+2. **Component styles** – Optional, minimal UI patterns (buttons, forms, menus).
+   Handle structure and layout, not decoration.
 3. **Utility classes** – Granular control over specific properties. Override
    both base and component styles.
 4. **Maps & Mixins** – Build-time tools for utility generation and custom
@@ -49,25 +55,32 @@ Unlike Bootstrap which comes with heavy component styling and theme bloat, or
 Tailwind which can result in unreadable utility soup, JTB offers a balanced
 middle ground that prioritises developer experience and maintainability.
 
-<!-- - Focus on sensible defaults without over-styling -->
+JTB uses context-aware modifiers that adapt to whatever component they're
+attached to. Classes like `.primary`, `.xs`, or `.rounded` work universally—no
+need for `.btn-primary`, `.input-xs`, or `.card-rounded`. This keeps your CSS
+lean and eliminates duplication.
 
-- numbers have meaning 1 = 1rem, 2 = 2rem etc
-- decimal is only used for values greater than 1rem e.g. 05 = 0.5rem, 1.5 =
-  1.5rem
+### Predictable Naming
 
-### Consistent Theming Across Components
+JTB uses `rem` as its base unit, with class numbers mapping directly to `rem`
+values:
 
+* `m-1` = 1rem margin
+* `p-2` = 2rem padding
+* `gap-05` = 0.5rem gap
+* `w-1.5` = 1.5rem width
 
-<!-- I want to explain here that certain classes work across all components e.g.
-primary, secondary, success, warning, sky, rose are all theme classes and they
-work the same when applied to any component e.g. button, box, input etc
+This keeps class names clean and easy to read. Values below 1rem drop the
+leading zero (`05` = 0.5rem), while values above 1rem use standard decimal
+notation (`1.5` = 1.5rem).
 
-we no longer need special classes like btn-primary, box-primary, we split and
-add `btn` and `primary` so they can be used together or separately -->
+### Consistent Theming
 
+JTB uses a unified theming system that applies consistently across all
+components.
 
-One of JTB's key features is unified theming. Components share the same theme
-classes, creating visual consistency with minimal cognitive overhead.
+Apply `.primary` to any element—button, box, or badge—and it automatically
+adapts to that component’s style while keeping a consistent colour scheme.
 
 <div class="grid cols-2">
     <div class="bx primary">
@@ -95,40 +108,54 @@ teal">Teal Button</button>
 <button class="btn teal">Teal Button</button>
 ```
 
-The same theme classes work across all components apply `.primary` to a button,
-box, or badge and get consistent branding throughout your interface.
+There’s no need for duplicates like `.btn-primary`, `.card-primary`, or
+`.alert-primary`. A single `.primary` class handles theming for all components,
+keeping your interface consistent and simple.
 
-<!-- should this be under its own heading? -->
-Consider this tailwind button:
+## Comparing Approaches
 
-```html +torchlight-html    
-<button  class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-blue-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:focus:border-blue-700 dark:active:bg-gray-700 dark:active:text-gray-300" type="button"> Button </button>
+Consider this Tailwind button:
+
+```html +torchlight-html
+<button class="relative inline-flex items-center px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 leading-5 rounded-md hover:text-gray-500 focus:outline-none focus:ring ring-blue-300 focus:border-blue-300 active:bg-gray-100 active:text-gray-700 transition ease-in-out duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-300 dark:focus:border-blue-700 dark:active:bg-gray-700 dark:active:text-gray-300" type="button">
+    Button
+</button>
 ```
 
-These classes can be categorised as follows:
-
+These classes break down into:
 - **Layout** - `relative`, `inline-flex`, `items-center`
-- **Spacing** - `px-4`, `py-2` 
-- **Typography** - `text-sm`, `font-medium`, `leading-5` 
-- **Border** - `border`, `border-gray-300`, `rounded-md` 
-- **Colors (Light mode)** - `text-gray-700`, `bg-white` 
+- **Spacing** - `px-4`, `py-2`
+- **Typography** - `text-sm`, `font-medium`, `leading-5`
+- **Border** - `border`, `border-gray-300`, `rounded-md`
+- **Colors (Light mode)** - `text-gray-700`, `bg-white`
 - **States (Light mode)** - `hover:text-gray-500`, `focus:outline-none`,
   `focus:ring`, `focus:ring-blue-300`, `focus:border-blue-300`,
   `active:bg-gray-100`, `active:text-gray-700`
 - **Colors (Dark mode)** - `dark:bg-gray-800`, `dark:border-gray-600`,
-  `dark:text-gray-300` 
+  `dark:text-gray-300`
 - **States (Dark mode)** - `dark:focus:border-blue-700`,
-  `dark:active:bg-gray-700`, `dark:active:text-gray-300` 
+  `dark:active:bg-gray-700`, `dark:active:text-gray-300`
 - **Transitions** - `transition`, `ease-in-out`, `duration-150`
 
+**The JTB approach:**
 
-<!-- this needs to be relocated somewhere sensible -->
+```html +torchlight-html
+<!-- Basic button with theme -->
+<button class="btn primary">Button</button>
 
-## Build-Time Focused
+<!-- Customised with utilities when needed -->
+<button class="btn primary rounded-full px-2">Custom Button</button>
+```
+
+The `.btn` class handles structure, padding, transitions, and states. The
+`.primary` theme handles colors for all states and dark mode. Add utilities only
+when you need to override the defaults.
+
+## No Runtime Dependencies
 
 JTB emphasises compile-time generation over runtime complexity:
 
-- **Mixins and variables** generate utilities and components at build time
+- **Powerful mixins** for generating custom utilities and responsive variants
 - **No JavaScript dependencies** for styling or theming
 - **Customisable maps** let you define your own color palettes, spacing scales,
   and breakpoints
