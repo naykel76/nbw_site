@@ -3,15 +3,18 @@
         "links": [
             {
                 "name": "Introduction",
-                "route_name": "pages.jtb.introduction"
+                "route_name": "pages.jtb.introduction",
+                "icon": "book-open"
             },
             {
                 "name": "FAQ's",
-                "route_name": "pages.jtb.faqs"
+                "route_name": "pages.jtb.faqs",
+                "icon": "question-mark-circle"
             },
             {
                 "name": "Layout Techniques and Examples",
-                "route_name": "pages.jtb.layout-techniques"
+                "route_name": "pages.jtb.layout-techniques",
+                "icon": "building-office-2"
             },
             {
                 "name": "Spacing and Layout Visual Testing",

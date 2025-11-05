@@ -110,33 +110,5 @@
                 "route_name": "pages.gotime.filepond"
             }
         ]
-    },
-    "Quick Start Guides and Tutorials": {
-        "links": [
-            {
-                "name": "Quick Start",
-                "route_name": "pages.gotime.guides.quick-start"
-            },
-            {
-                "name": "Form Object",
-                "route_name": "pages.gotime.guides.form-object"
-            },
-            {
-                "name": "Create Edit Component",
-                "route_name": "pages.gotime.guides.create-edit-component"
-            },
-            {
-                "name": "Table Component",
-                "route_name": "pages.gotime.guides.table-component"
-            },
-            {
-                "name": "Deleting a Record",
-                "route_name": "pages.gotime.guides.deleting-a-record"
-            },
-            {
-                "name": "Uploading Files",
-                "route_name": "pages.gotime.guides.uploading-files"
-            }
-        ]
     }
 }

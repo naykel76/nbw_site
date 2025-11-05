@@ -38,14 +38,15 @@ contain multiple top-level groups (for example, `main` or `footer`), each with a
 
 | Property                 | Description                                                                                                                  |
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
+| **children**             | Nested routes or menu items (affects menus only; child routes are still created unless `exclude_route: true` is set on them) |
+| **exclude_child_routes** | Skips route create for ALL child routes????                                                |
+| **exclude_route**        | Skips route creation (useful for duplicates or menu-only links)                                                              |
 | **name** (required)      | Display name for the link                                                                                                    |
 | **route_name**           | Laravel route name (takes precedence over `url`)                                                                             |
+| **type**                 | Content type (`"md"` for markdown). Determines if the link should use the markdown layout                                    |
 | **url**                  | URL path if no `route_name` is provided                                                                                      |
 | **view**                 | Custom view path. Used to set the view file injected into the layout                                                         |
-| **exclude_route**        | Skips route creation (useful for duplicates or menu-only links)                                                              |
-| **type**                 | Content type (`"md"` for markdown). Determines if the link should use the markdown layout                                    |
-| **children**             | Nested routes or menu items (affects menus only; child routes are still created unless `exclude_route: true` is set on them) |
-| **exclude_child_routes** | Set to `true` to hide children in menus. **Does not prevent route creation**                                                 |
+
 
 ```html +parse
 <x-gt-alert type="info">
@@ -199,3 +200,5 @@ parent item.
     }
 }
 ``` -->
+
+How to I exclude child routes being created?
