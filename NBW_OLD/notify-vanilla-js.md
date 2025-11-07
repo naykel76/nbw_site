@@ -6,7 +6,7 @@ Here's how you can "emit" an event from a Laravel controller and handle it with 
 First, in your Laravel controller, after you perform the action that would trigger the
 notification, you can return a view with a specific variable that indicates the event occurred.
 
-```php +torchlight-php
+```php +code
 public function someAction(){
     // Redirect back with a session flash message
     return redirect()->back()->with('notification', 'Action was successful!');

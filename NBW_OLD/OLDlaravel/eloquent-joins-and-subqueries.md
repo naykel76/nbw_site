@@ -29,7 +29,7 @@ user_id and name columns from the users table in the posts table.
 
 Here’s how you can do it:
 
-```php +torchlight-php
+```php +code
 $posts = Post::table('posts')
     ->join('users', 'posts.user_id', '=', 'users.id')
     ->select('posts.*', 'users.name as author_name')
@@ -38,7 +38,7 @@ $posts = Post::table('posts')
 
 Or if you we in the `Post` model,  you can create a query scope:
 
-```php +torchlight-php
+```php +code
 public function scopeOverview(Builder $query): Builder
 {
     return $this->query->join('users', 'posts.user_id', '=', 'users.id')
@@ -81,7 +81,7 @@ first lesson that is incomplete (`completed_at = null`) and unlocked (`is_locked
 - **`limit(1)`:** Ensures only the first matching lesson is retrieved (the current lesson).
 - **`addSelect([...])`:** Adds the subquery result (`currentLessonId`) to the final result set.
 
-```php +torchlight-php
+```php +code
 $studentCourses = StudentCourse::whereUserId(3)
     ->with('course:id,title,code')
     ->addSelect([
@@ -107,14 +107,14 @@ final output.
 When using the `select` method, ensure you include all necessary columns from both the primary and
 joined tables to retrieve the expected data.
 
-```php +torchlight-php
+```php +code
 // Incorrect: Missing columns from the joined table
 $studentCourse = StudentCourse::select('course_id')
     ->join('courses', 'student_courses.course_id', 'courses.id')
     ->first();
 ```
 
-```php +torchlight-php
+```php +code
 // Correct: Include necessary columns from the joined table and specify table names
 $studentCourse = StudentCourse::select('student_courses.id', 'student_courses.course_id')
     ->join('courses', 'student_courses.course_id', 'courses.id')
@@ -125,14 +125,14 @@ Additionally, specifying the table name (or alias) for
 each column is crucial to avoid conflicts, especially when columns with the same name exist in
 multiple tables.
 
-```php +torchlight-php
+```php +code
 // Incorrect: This will cause a column name conflict
 StudentCourse::select('id', 'course_id')
     ->join('courses', 'student_courses.course_id', 'courses.id')
     ->get();
 ```
 
-```php +torchlight-php
+```php +code
 // Correct: Include the table name in the select method
 StudentCourse::select('student_courses.id', 'course_id')
     ->join('courses', 'student_courses.course_id', 'courses.id')

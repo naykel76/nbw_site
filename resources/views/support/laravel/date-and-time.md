@@ -36,7 +36,7 @@
 To remove the space between the time and the AM/PM, you simple add a space
 before the `A` or `a` in the format string:
 
-```php +torchlight-php
+```php +code
 $time = $carbon->format('g:i a'); // 2:05 pm
 $time = $carbon->format('g:ia'); // 2:05pm
 ```
@@ -58,7 +58,7 @@ $time = $carbon->format('g:ia'); // 2:05pm
 ## Carbon
 
 ### Set Date
-```php +torchlight-php
+```php +code
 $current = Carbon::now();
 $today = Carbon::today();
 $yesterday = Carbon::yesterday();
@@ -79,7 +79,7 @@ $year = $carbon->year;     // full year (e.g., 2025)
 
 https://carbon.nesbot.com/docs/#api-formatting
 
-```php +torchlight-php
+```php +code
 $dt->toDateString();                          // 1975-12-25
 $dt->toTimeString();                          // 14:15:16
 $dt->toDateTimeString();                      // 1975-12-25 14:15:16
@@ -92,7 +92,7 @@ Option 1
 Edit the `config/app.php` and set the `timezone` value from UTC to the desired timezone from the
 list of available timezones.
 
-```php +torchlight-php
+```php +code
 'timezone' => 'Australia/Brisbane',
 ```
 

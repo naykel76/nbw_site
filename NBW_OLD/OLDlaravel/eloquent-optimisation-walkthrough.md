@@ -52,7 +52,7 @@ associated with each module. The tables are related as follows:
 
 First, we retrieve a single course by its ID.
 
-```php +torchlight-php
+```php +code
 $course = Course::find($courseId);
 ```
 
@@ -75,7 +75,7 @@ just a few. In this example, Eloquent will load all `courses` and their associat
 `lessons` in a single query rather than querying each relationship separately:
 
 
-```php +torchlight-php
+```php +code
 $course = Course::with('modules.lessons')->find($courseId);
 ```
 
@@ -89,7 +89,7 @@ By default, Eloquent loads all columns from a table when fetching records. This 
 especially when dealing with large datasets where only a few columns are needed. To optimize your
 queries and minimize memory usage, you can use the select method to load only the necessary columns.
 
-```php +torchlight-php
+```php +code
 $course = Course::select('id', 'title', 'slug')
     ->with('modules.lessons')->find($courseId);
 ```
@@ -107,7 +107,7 @@ syntax.
 
 <div class="compare"></div>
 
-```php +torchlight-php
+```php +code
 // shorthand syntax
 $course = Course::select('id', 'title', 'code')
     ->with([
@@ -116,7 +116,7 @@ $course = Course::select('id', 'title', 'code')
     ])->find($courseId);
 ```
 
-```php +torchlight-php
+```php +code
 // traditional closures
 $course = Course::select('id', 'title', 'code')
     ->with([

@@ -31,7 +31,7 @@ roles here; those belong in route or feature tests.
 
 ## Test Description Patterns
 
-```php +torchlight-php
+```php +code
 describe('rendering', function () {
     // Test what users see and interact with such as buttons, forms, and lists.
     // Focus on the visual output and UI state, not the underlying implementation.
@@ -127,7 +127,7 @@ They're descriptive without being verbose. The pattern of:
 **The Problem**: `assertSet()` uses loose comparison and can't distinguish
 between different falsy values:
 
-```php +torchlight-php
+```php +code
 // ❌ BOTH of these will pass - this is wrong!
 ->assertSet('form.title', '')
 ->assertSet('form.title', null)
@@ -138,7 +138,7 @@ between `''`, `null`, `0`, and `false` matters.
 
 **The Solution**: Use `expect()` with `get()` for precise initial value testing:
 
-```php +torchlight-php
+```php +code
 it('initialises form with default values when creating', function () {
     $component = Livewire::test(WidgetCreateEdit::class)
         ->call('create');
@@ -164,7 +164,7 @@ it('initialises form with default values when creating', function () {
 
 When testing dates, ensure both sides use the same format:
 
-```php +torchlight-php
+```php +code
 // In your form object's init method, format dates consistently
 $this->start_date = $model->start_date?->format(config('gotime.date_format'));
 $this->end_date = $model->end_date?->format(config('gotime.date_format'));
@@ -212,7 +212,7 @@ $this->end_date = $model->end_date?->format(config('gotime.date_format'));
 * `handles empty related widget id correctly`
 * `can set related widget id`
 
-```php +torchlight-php
+```php +code
 describe('relationships', function () {
     it('handles empty related widget id correctly', function () {
         // ... test code
@@ -295,7 +295,7 @@ your test. This ensures that no real emails are sent during the test run.
 
 ### `sends email to ...`
 
-```php +torchlight-php
+```php +code
 it('sends email to ...', function () {
     // Arrange
     Mail::fake();
@@ -317,7 +317,7 @@ When testing protected routes (like admin pages), you'll often encounter
 authentication failures. The test below will fail because the route requires
 authentication:
 
-```php +torchlight-php
+```php +code
 // This will fail - no authenticated user
 it('displays the component on the page for authenticated users', function () {
     get(route('admin.courses.index'))
@@ -327,7 +327,7 @@ it('displays the component on the page for authenticated users', function () {
 
 To resolve this, you need to simulate an authenticated user in your test.
 
-```php +torchlight-php
+```php +code
 // This will pass - simulating an authenticated admin user
 it('displays the component on the page for authenticated users', function () {
     loginAsAdmin();
@@ -343,7 +343,7 @@ it('displays the component on the page for authenticated users', function () {
 - `assertSee` **includes** HTML in the search.  
 - `assertSeeText` **ignores** HTML and checks only plain text.
   
-```php +torchlight-php
+```php +code
 $response->assertSee('<h1>Heading</h1>'); // Passes
 $response->assertSeeText('<h1>Heading</h1>'); // Fails
 ```

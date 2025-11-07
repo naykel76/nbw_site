@@ -30,7 +30,7 @@ import "flatpickr/dist/flatpickr.css";
 
 ### Use the CDN
 
-```php +torchlight-php
+```php +code
 @verbatim
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
@@ -92,7 +92,7 @@ correctly linked to the script and initialised when the page loads.
 <input x-data="datepicker" x-ref="datePickerInput" type="text">
 ```
 
-```php +torchlight-php
+```php +code
 @verbatim
 @pushOnce('scripts')
     <script>

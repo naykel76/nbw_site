@@ -30,7 +30,7 @@ own implementation.
 
 Here's an example to illustrate this approach:
 
-```php +torchlight-php
+```php +code
 // Interface definition
 interface MyInterface {
     public function myMethod();

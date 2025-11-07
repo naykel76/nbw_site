@@ -15,7 +15,7 @@
 
 ### `randomDigit`, `randomNumber`, `numberBetween` 
 
-```php +torchlight-php
+```php +code
 // an integer between 0 and 9
 fake()->randomDigit();
 // random integer with UP TO n digits (123, 43, 19238, 5, or 1203)
@@ -28,11 +28,11 @@ fake()->randomNumber(5, true);
 
 ### `randomFloat`
 
-```php +torchlight-php
+```php +code
 randomFloat($nbMaxDecimals = null, $min = 0, $max = null): 
 ```
 
-```php +torchlight-php
+```php +code
 'price' => fake()->randomFloat(2),
 'price' => fake()->randomFloat(2, 5, 30);
 'price' => ceil(fake()->randomFloat(2, 5, 10.50)*10)/10,
@@ -40,7 +40,7 @@ randomFloat($nbMaxDecimals = null, $min = 0, $max = null):
 
 ### Text, Paragraphs and Sentences
 
-```php +torchlight-php
+```php +code
 'title' => fake()->sentence(),
 'intro' => fake()->paragraph(),
 'headline' => fake()->paragraph(),
@@ -51,7 +51,7 @@ randomFloat($nbMaxDecimals = null, $min = 0, $max = null):
 
 ## Arrays and Random Elements
 
-```php +torchlight-php
+```php +code
 <!-- Select random value from array -->
 $images = ['samples/sample001-600x338.jpg', 'samples/sample002-600x338.jpg', 'samples/sample003-600x338.jpg'];
 'image' => fake()->randomElement($images),
@@ -59,7 +59,7 @@ $images = ['samples/sample001-600x338.jpg', 'samples/sample002-600x338.jpg', 'sa
 
 ## Date and Time
 
-```php +torchlight-php
+```php +code
 'created_at' => now(),
 // create random date within 1 year past and future
 'created_at' => Carbon::today()->subDays(rand(-365, 365)),
@@ -74,7 +74,7 @@ $images = ['samples/sample001-600x338.jpg', 'samples/sample002-600x338.jpg', 'sa
 
 ### Get 100 random dates within the last year
 
-```php +torchlight-php
+```php +code
 $dates = [];
 
 for ($i = 0; $i < 100; $i++) {
@@ -89,7 +89,7 @@ For example, lets say you want to make a `playlist` of `songs` from an the 'song
 songs are not created using a seeder.
 
 
-```php +torchlight-php
+```php +code
 return [
     'song_id' => Arr::random(Song::all()->pluck('id')->toArray()),
 ];
@@ -102,7 +102,7 @@ return [
 
 You can generate unique data simply by using the `unique` method.
 
-```php +torchlight-php
+```php +code
 'code' => fake()->unique()->numberBetween(1000000, 9000000),
 'code' => fake()->unique()->randomNumber()
 ```

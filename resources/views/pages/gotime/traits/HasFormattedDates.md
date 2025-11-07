@@ -16,7 +16,7 @@ consistent API for common date operations.
 
 The trait provides several query scopes for common date filtering operations:
 
-```php +torchlight-php
+```php +code
 whereDateWithinLast(string $column, int $days): Builder
 whereDateWithinNext(string $column, int $days): Builder  
 whereDateBetween(string $column, string $start, string $end): Builder
@@ -26,7 +26,7 @@ whereDateThisMonth(string $column): Builder
 whereDateOverdue(string $column): Builder
 ```
 
-```php +torchlight-php
+```php +code
 User::whereDateWithinLast('created_at', 7)->get()
 Event::whereDateWithinNext('start_date', 30)->get()
 Task::whereDateToday('due_date')->get()
@@ -39,14 +39,14 @@ Methods for formatting date attributes into human-readable strings.
 
 `formatDate(string $attribute, ?string $format = null): ?string`
 
-```php +torchlight-php
+```php +code
 // Format any date attribute (uses config default if no format specified)
 $user->formatDate('created_at'); // "2024-09-29" 
 $user->formatDate('created_at', 'M d, Y'); // "Sep 29, 2024"
 $user->formatDate('last_login', 'F j, Y g:i A'); // "September 29, 2024 2:30 PM"
 ```
 
-```php +torchlight-php
+```php +code
 public function formatDate(string $attribute, ?string $format = null): ?string
 public function createdAtDate(?string $format = null): ?string
 public function updatedAtDate(?string $format = null): ?string
@@ -62,7 +62,7 @@ public function completedAtDate(?string $format = null): ?string
 These are quality-of-life methods for frequently used date fields like
 `created_at`, `updated_at`, `started_at` ... etc.
 
-```php +torchlight-php
+```php +code
 $user->createdAtDate();            // "2024-09-29"
 $user->createdAtDate('M d, Y');    // "Sep 29, 2024"
 $user->updatedAtDate('Y-m-d H:i'); // "2024-09-29 14:30"
@@ -78,6 +78,6 @@ $post->publishedAtDate('M j, Y');  // "Sep 29, 2024"
 
 Set the default date format in your `config/gotime.php`:
 
-```php +torchlight-php
+```php +code
 'date_format' => 'Y-m-d', // Default format used by all helpers
 ```

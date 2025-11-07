@@ -6,7 +6,7 @@ To group results by related models, you can use the `groupBy` method. This metho
 group results by a specific column or relationship. In this example, we group courses by their
 associated modules:
 
-```php +torchlight-php
+```php +code
 $course = Course::select('id', 'title', 'slug')
     ->with([
         'modules:id,course_id,title',
@@ -19,7 +19,7 @@ $course = Course::select('id', 'title', 'slug')
 <!-- To group by a related model, you can use the `with` method to load the related model and then use
 the `groupBy` method to group the results by a column from the related model.
 
-```php +torchlight-php
+```php +code
 StudentCourse::query()
     ->with('studentLessons')
     ->OverviewWithLessons()

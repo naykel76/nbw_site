@@ -17,7 +17,7 @@
 
 #### `array_fill_keys(array $keys, mixed $value): array` - Fill an array with values, specifying keys
 
-```php +torchlight-php
+```php +code
 $keys = ['a', 'b', 'c'];
 $filled = array_fill_keys($keys, 'apple');
 // outputs: [ 'a' => 'apple' 'b' => 'apple' 'c' => 'apple' ];
@@ -25,7 +25,7 @@ $filled = array_fill_keys($keys, 'apple');
 
 ## Common PHP Array Functions and Their Signatures
 
-```php +torchlight-php
+```php +code
 array_filter(array $array, callable $callback = null, int $flag = 0): array
 
 array_push(array &$array, mixed ...$values): int
@@ -51,7 +51,7 @@ array_product(array $array): int|float
 
 
 
-```php +torchlight-php
+```php +code
 array_change_key_case — Changes the case of all keys in an array
 array_chunk — Split an array into chunks
 array_column — Return the values from a single column in the input array

@@ -1,4 +1,4 @@
-# Gotime: Create and Edit Components
+
 
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
@@ -22,22 +22,6 @@
   
 ## Introduction
 
-This guide shows how to build Livewire components for creating and editing
-records using Gotime form objects. It covers component setup, form
-initialisation, setting default values, and binding the form to your view. You
-will learn how to structure a component that handles both create and edit
-scenarios efficiently.
-
-> This document references custom VS Code snippets like `gtlc:form-class` and
-> `gtlc:form-object` that generate boilerplate code for common patterns. These
-> are not available by default but can be added as custom snippets to speed up
-> development.
-
-## Prerequisites
-
-Requires the `Gotime` package to be installed and configured. Assumes a basic
-understanding of Livewire and Laravel.
-
 ## Quick Checklist
 
 1. Create the Livewire component (`php artisan livewire:make WidgetCreateEdit`)
@@ -60,7 +44,7 @@ php artisan livewire:make WidgetCreateEdit
 Once created, update the component class to include the required traits and
 properties.
 
-```php +torchlight-php
+```php +code
 namespace App\Livewire;
 
 use App\Livewire\Forms\WidgetFormObject;
@@ -118,7 +102,7 @@ When using route model binding, the model instance is passed to `mount()`. Make
 the parameter optional to handle both create and edit scenarios, using
 `createNewModel()` when no model is provided.
 
-```php +torchlight-php
+```php +code
 public function mount(?Widget $Widget)
 {
     $model = $Widget ?? $this->form->createNewModel();
@@ -138,7 +122,6 @@ communicate with the trait.
 <!-- these use convention when communicating with the `WithFormActions` trait: -->
 
 
-
 * `create-model`
 * `delete-model`
 * `edit-model`
@@ -152,7 +135,7 @@ communicate with the trait.
 * To avoid conflicts with other components, it is best to use `dispatchTo()`
   instead of `dispatch()`. 
 
-```php +torchlight-php
+```php +code
 @verbatim
 <x-gt-button wire:click="$dispatchTo('Widget-create-edit', 'create-model')" text="Create" />
 @endverbatim
@@ -169,7 +152,7 @@ accepts an optional array of default attributes and is provided by the
 
 Specify defaults inline when creating the model:
 
-```php +torchlight-php
+```php +code
 $model = $this->form->createNewModel(['email_verified_at' => now()]);
 ```
 
@@ -178,7 +161,7 @@ $model = $this->form->createNewModel(['email_verified_at' => now()]);
 Set defaults on the component that the form object will merge when creating a
 new model:
 
-```php +torchlight-php
+```php +code
 public function mount(?Widget $Widget)
 {
     $this->initialData = ['email_verified_at' => now(),];

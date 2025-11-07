@@ -61,7 +61,7 @@ To generate routes from a navigation file, import the `RouteBuilder` class in
 `web.php`. Create an instance with the filename (without `.json`) and call
 `create()`:
 
-```php +torchlight-php
+```php +code
 use Naykel\Gotime\RouteBuilder;
 
 (new RouteBuilder('nav-main'))->create();
@@ -85,7 +85,7 @@ You can apply a layout to all routes by passing it as the second parameter when
 creating the instance. This is useful for keeping pages consistent, such as
 documentation layouts.
 
-```php +torchlight-php
+```php +code
 use Naykel\Gotime\RouteBuilder;
 
 (new RouteBuilder('nav-docs', 'components.layouts.markdown-docs'))->create();

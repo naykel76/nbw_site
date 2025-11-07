@@ -6,7 +6,7 @@ Define the necessary methods in the model. You only need to define for the statu
 to use. The enum will handle the rest.
 
 
-```php +torchlight-php
+```php +code
 public function isPublished()
 {
     return $this->published_at != null;

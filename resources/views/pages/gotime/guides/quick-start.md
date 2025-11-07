@@ -2,9 +2,9 @@
 
 - [Table Component](#table-component)
 - [Form Object](#form-object)
-  - [Form Component](#form-component)
+- [Form Component](#form-component)
 - [Adding Additional Features](#adding-additional-features)
-  - [Search](#search)
+    - [Search](#search)
 
 
 ## Table Component
@@ -24,8 +24,6 @@
   handling.
 
 - [ ] Add any additional properties and validation rules as needed.
-
-- [ ] Set default property values for new instances in the `createNewModel` method.
 
 ## Form Component
 - [ ] Run `gtlc:form-class` to generate the class with the necessary traits,

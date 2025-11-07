@@ -18,7 +18,7 @@
   database column.
 
 
-```php +torchlight-php
+```php +code
 protected function firstName(): Attribute
 {
     return Attribute::make(
@@ -32,7 +32,7 @@ protected function firstName(): Attribute
 
 ### Cast Empty String to Null
 
-```php +torchlight-php
+```php +code
   protected function relatedWidgetId(): Attribute
     {
         return Attribute::make(
@@ -45,7 +45,7 @@ protected function firstName(): Attribute
 
 Saves as a date if true or null if false.
 
-```php +torchlight-php
+```php +code
 protected function activatedAt(): Attribute
 {
     return Attribute::make(
@@ -58,7 +58,7 @@ protected function activatedAt(): Attribute
 The may be occasions where you want to display the actual date stored in the
 database, for this you can use the `getOriginal()` method.
 
-```php +torchlight-php
+```php +code
 public function getOriginalActivatedAt(){
     return $this->getOriginal('activated_at');
 }

@@ -6,7 +6,7 @@
 
 From:
 
-```php +torchlight-php
+```php +code
 @if (empty($form->tmpUpload))
     <x-gt-button icon="download" text="download File" class="primary w-full" />
 @else
@@ -16,7 +16,7 @@ From:
 
 To:
 
-```php +torchlight-php
+```php +code
 <x-gt-button icon="download" text="Download File" class="primary w-full" :disabled="$form->tmpUpload" />
 ```
 

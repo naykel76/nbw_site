@@ -13,7 +13,7 @@
 ## Ternary operators
 <a id="markdown-ternary-operators" name="ternary-operators"></a>
 
-```php +torchlight-php
+```php +code
 // concise
 $isMain = ($item->type === 'main');
 // verbose
@@ -23,7 +23,7 @@ $isMain = $item->type == 'main' ? true : false;
 ### Ternary operators ( multiple nested conditions)
 <a id="markdown-ternary-operators--multiple-nested-conditions" name="ternary-operators--multiple-nested-conditions"></a>
 
-```php +torchlight-php
+```php +code
 $result = ($num == 0)
     ? "Zero" : (($num > 0)
     ? (($num % 2 == 0)
@@ -31,7 +31,7 @@ $result = ($num == 0)
     : (($num % 2 == 0) ? "Negative Even" : "Negative Odd"));
 ```
 
-```php +torchlight-php
+```php +code
 $result = ($item == 'abc')
     ? "Zero"
     : (($num > 0)

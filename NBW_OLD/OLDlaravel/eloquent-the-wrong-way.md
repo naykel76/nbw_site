@@ -2,7 +2,7 @@
 
 In this approach, we use the `StudentCourse` model to eager load `StudentLessons`:
 
-```php +torchlight-php
+```php +code
 public function mount(StudentCourse $studentCourse) {
     $studentCourse = $studentCourse->load('studentLessons');
     $this->lessons = $studentCourse->studentLessons;
@@ -12,7 +12,7 @@ public function mount(StudentCourse $studentCourse) {
 This approach produces the correct output by leveraging relationships, allowing us to use the view
 to display the data and retrieve additional information as needed.
 
-```php +torchlight-php
+```php +code
 <ul class="space-y-0 txt-sm">
     @foreach ($lessons->groupBy('media.module.id') as $moduleId => $groupedLessons)
         <li>Module ID: {{ $moduleId }} - {{ $groupedLessons->first()->media->module->title }}</li>

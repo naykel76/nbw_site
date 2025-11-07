@@ -24,7 +24,7 @@ initialisation.
 
 ### `$editing`
 
-```php +torchlight-php
+```php +code
 public ?Model $editing;
 ```
 
@@ -56,7 +56,7 @@ type casting based on property type hints.
 
 ## Usage
 
-```php +torchlight-php
+```php +code
 use Naykel\Gotime\Traits\Formable;
 use Livewire\Form;
 
@@ -83,7 +83,7 @@ class ProductFormObject extends Form
 
 Always set sensible defaults on form properties:
 
-```php +torchlight-php
+```php +code
 public string $name = '';           // ✅ Good
 public ?string $description = null; // ✅ Good  
 public int $price;                  // ❌ Bad - uninitialised
@@ -93,7 +93,7 @@ public int $price;                  // ❌ Bad - uninitialised
 
 Use type hints on all form properties for proper casting:
 
-```php +torchlight-php
+```php +code
 public string $title = '';    // ✅ Will be set directly
 public int $count = 0;        // ✅ Will be cast to integer
 public $untyped = '';         // ⚠️ No casting, fallback behavior

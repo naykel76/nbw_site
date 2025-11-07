@@ -22,7 +22,7 @@ The cast uses powers of 10 to shift decimal places:
 - **Storage**: Multiply by 10^decimals and store as integer
 - **Retrieval**: Divide by 10^decimals to restore decimal places
 
-```php +torchlight-php
+```php +code
 // 2 decimals: $12.34
 12.34 × (10 ** 2) = 1234 (stored) → 1234 ÷ 100 = 12.34 (retrieved)
 
@@ -32,7 +32,7 @@ The cast uses powers of 10 to shift decimal places:
 
 ### Usage
 
-```php +torchlight-php
+```php +code
 use Naykel\Gotime\Casts\FloatAsInteger;
 
 class Product extends Model
@@ -52,7 +52,7 @@ class Product extends Model
 ### Choosing Decimals
 
 Use enough decimal places to store your values exactly:
-```php +torchlight-php
+```php +code
 // 1.925% needs 3 decimals, not 2
 'rate' => FloatAsInteger::class . ':3',  // Stores exact 1.925%
 ```
@@ -78,7 +78,7 @@ currency values directly.
 
 **Add to Your Model**
 
-```php +torchlight-php
+```php +code
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -94,7 +94,7 @@ class Product extends Model
 
 **Migration (store as integer):**
 
-```php +torchlight-php
+```php +code
 Schema::create('products', function (Blueprint $table) {
     $table->integer('price')->nullable(); // or ->default(0) for non-nullable
 });

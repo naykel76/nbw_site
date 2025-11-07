@@ -32,7 +32,7 @@ In Livewire components, type hints can be applied to any property to define the
 intended type for internal use. Properties retain their type if populated from a
 model or programmatically.
 
-```php +torchlight-php
+```php +code
 use Livewire\Component;
 use Livewire\Attributes\Validate;
 
@@ -97,14 +97,14 @@ values, user input, or data from external sources.
 
 Suppose you store money in the database as **integers in cents**:
 
-```php +torchlight-php
+```php +code
 $amountCents = 199; // 199 cents
 ```
 
 If you want to display or calculate in dollars, you need to convert it to a
 float:
 
-```php +torchlight-php
+```php +code
 $amountDollars = $amountCents / 100; // 1.99
 ```
 

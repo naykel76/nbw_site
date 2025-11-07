@@ -5,7 +5,7 @@
 
 ## Determining the Current Environment
 
-```php +torchlight-php
+```php +code
 if (App::environment('local')) {
     // The environment is local
 }
@@ -34,7 +34,7 @@ if (App::environment(['local', 'staging'])) {
 
 ## String Limiting
 
-```php +torchlight-php
+```php +code
 @verbatim
 // Character-based limiting
 {{ Str::limit($text, 30) }}          // 30 chars + "..."

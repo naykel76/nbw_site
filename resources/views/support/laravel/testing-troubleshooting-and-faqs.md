@@ -12,7 +12,7 @@ when it’s freshly created in memory.
 So, right after calling `create()`, the `start_date` hasn’t been cast using your
 custom logic—it’s just whatever the factory gave it.
 
-```php +torchlight-php
+```php +code
 $event = Event::factory()->create(); 
 // At this point, $event->start_date is a Carbon instance as the custom cast has not been applied yet
 expect($event->start_date)->toBeInstanceOf(Carbon\Carbon::class);

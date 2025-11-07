@@ -118,7 +118,7 @@ should provide an overview of the course, including all course, module, and less
 First, we retrieve a single student course by its ID and eager load the `student_lessons`
 relationship:
 
-```php +torchlight-php
+```php +code
 $studentCourse = StudentCourse::select('id', 'started_at', 'completed_at', 'expired_at')
     ->with('studentLessons:id,student_course_id,completed_at')
     ->find($scid);
@@ -134,7 +134,7 @@ include human-readable data by adding the necessary course, module, and lesson d
 First, we will start by eager loading the `course` relationship, as it is a direct relationship with
 the `student_courses` table:
 
-```php +torchlight-php
+```php +code
 $studentCourse = StudentCourse::select('id', 'started_at', 'completed_at', 'expired_at')
     ->with([
         'course:id,title,code',
@@ -146,7 +146,7 @@ $studentCourse = StudentCourse::select('id', 'started_at', 'completed_at', 'expi
 Next, we extend the query to load nested relationships. Specifically, we will load the lesson and
 module details through the `studentLessons` relationship:
 
-```php +torchlight-php
+```php +code
 $studentCourse = StudentCourse::select('id', 'course_id', 'started_at', 'completed_at', 'expired_at')
     ->with([
         'course:id,title,code',                                         // Load course details
@@ -174,7 +174,7 @@ column is missing, the query may not return the expected results when eager load
 For example, in the query below, eager loading the course relationship won't work as expected if the
 `course_id` (the foreign key) is not selected:
 
-```php +torchlight-php
+```php +code
 // Incorrect: Will not return course details due to missing course_id
 $studentCourse = StudentCourse::select('id')
     ->with('course')->find($scid);
@@ -183,7 +183,7 @@ $studentCourse = StudentCourse::select('id')
 To resolve this, ensure that the foreign key `course_id` is included in the `select` method,
 allowing the relationship to be properly loaded:
 
-```php +torchlight-php
+```php +code
 // Correct: Include course_id to load the course relationship
 $studentCourse = StudentCourse::select('id', 'course_id')
     ->with('course')->find($scid);
@@ -243,7 +243,7 @@ table, and it must be present in the query to load the associated course data.
 
 Can now access the course details via the `studentCourse` relationship:
 
-```php +torchlight-php
+```php +code
 // from
 <div><strong>Course Title: </strong>{{ $studentCourse->course->title }}</div>
 // to

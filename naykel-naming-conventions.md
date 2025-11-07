@@ -29,7 +29,7 @@ within each feature folder and makes admin/user boundaries obvious.
 
 ### Folder and Class Structure
 
-```php +torchlight-php
+```php +code
 app/Livewire/{Feature}/{Role}{Feature}{Purpose}.php
 ```
 
@@ -167,7 +167,7 @@ On the other hand, Livewire components and other classes are often singular
 (e.g., PostComponent), as they usually represent a single logical unit or
 functionality.
 
-```php +torchlight-php
+```php +code
 class PostsController {  }
 ```
 
@@ -177,7 +177,7 @@ predictable structure to avoid the confusion that could arise if, for example, a
 controller named `PostsController` was associated with a view located at
 `post/post.blade.php` instead of `posts/post.blade.php`.
 
-```php +torchlight-php
+```php +code
 // In PostsController
 public function index() {
     return view('posts.index');
@@ -206,7 +206,7 @@ and enhances maintainability.
     <div>The route prefix should always be pluralized. `courses` not `course`.</div>
 </div>
 
-```php +torchlight-php
+```php +code
 // In User component
 <a href="{{ route("{$routePrefix}.edit", $user) }}">Edit</a>
 <a href="{{ route("{$routePrefix}.destroy", $user) }}">Delete</a>

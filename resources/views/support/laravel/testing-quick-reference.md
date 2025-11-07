@@ -82,7 +82,7 @@ Additional options:
 Use `get`, `post`, `put`, `patch`, and `delete` to test routes, matching the
 HTTP verb defined in your `web.php`.
 
-```php +torchlight-php
+```php +code
 get(route(...));
 post(route(...));
 put(route(...));
@@ -96,7 +96,7 @@ delete(route(...));
 
 You can use the `describe()` function to group related tests together.
 
-```php +torchlight-php
+```php +code
 describe('process order and enrol', function () {
     it('redirects to dashboard after successful payment', function () {
         // Test logic here
@@ -111,24 +111,24 @@ describe('process order and enrol', function () {
 ## Testing Dates
 
 ### Check that a date is set
-```php +torchlight-php
+```php +code
 expect($event->start_date)->toBeInstanceOf(Carbon\Carbon::class);
 expect($event->start_date)->not->toBeNull();
 ```
 
 ### Check if a date is in the future or past
-```php +torchlight-php
+```php +code
 expect($event->start_date->isFuture())->toBeTrue();
 expect($event->start_date->isPast())->toBeTrue();
 ```
 
 ### Check for a specific date (ignoring time)
-```php +torchlight-php
+```php +code
 expect($event->start_date->toDateString())->toEqual('2025-07-21');
 ```
 
 ### Check if a date is within a range (e.g. within next 7 days)
-```php +torchlight-php
+```php +code
 expect($event->start_date)->toBeBetween(now(), now()->addDays(7));
 ```
 

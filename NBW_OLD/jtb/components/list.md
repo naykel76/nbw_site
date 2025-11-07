@@ -68,7 +68,7 @@ Nested lists
 ---
 
 - List item one
-    ```php +torchlight-php
+    ```php +code
     // code block
     ```
 
@@ -84,7 +84,7 @@ Nested lists
 - List item one
     - Nested list item one
     - Nested list item two
-    ```php +torchlight-php
+    ```php +code
     // code block
     ```
     - Nested list item three

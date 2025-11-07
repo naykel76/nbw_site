@@ -6,7 +6,7 @@ This guide explains how to store and update an array of values (e.g. tags or cod
 
 To automatically convert the JSON field to and from an array, define a cast in your model:
 
-```php +torchlight-php
+```php +code
 protected $casts = [
     'tags' => 'array',
 ];
@@ -16,7 +16,7 @@ protected $casts = [
 
 To store an array of values in the database:
 
-```php +torchlight-php
+```php +code
 $user = User::find($id);
 $user->tags = ['CSS', 'Javascript', 'PHP'];
 $user->save();
@@ -26,7 +26,7 @@ $user->save();
 
 **Add a new value:**
 
-```php +torchlight-php
+```php +code
 $user = User::find($id);
 $tags = $user->tags ?? [];
 $tags[] = 'Laravel';
@@ -36,7 +36,7 @@ $user->save();
 
 **Remove an existing value:**
 
-```php +torchlight-php
+```php +code
 $user = User::find($id);
 $user->tags = array_values(array_diff($user->tags ?? [], ['PHP']));
 $user->save();

@@ -18,7 +18,7 @@ An enum is a special "class" that represents a group of constants (unchangeable 
 
 Enums are useful when you want to define a set of constants that represent a number of possible options.
 
-```php +torchlight-php
+```php +code
 enum PublishedStatus: string
 {
     case Draft = 'draft';
@@ -52,14 +52,14 @@ enum PublishedStatus: string
 
 Access the values of an enum using the `::` syntax:
 
-```php +torchlight-php
+```php +code
 PublishedStatus::Draft; // 'draft'
 PublishedStatus::Published; // 'published'
 ```
 
 You can also use the `::` syntax to access the methods of an enum:
 
-```php +torchlight-php
+```php +code
 PublishedStatus::Draft()->label(); // 'Draft'
 PublishedStatus::Draft()->icon(); // 'icon.pencil'
 PublishedStatus::Draft()->color(); // 'purple'
@@ -69,7 +69,7 @@ PublishedStatus::Draft()->color(); // 'purple'
 
 Enums can be used in models as follows:
 
-```php +torchlight-php
+```php +code
 use App\Enums\PublishedStatus;
 
 class Post extends Model
@@ -84,7 +84,7 @@ class Post extends Model
 
 You can loop over the values of an enum using the `::cases()` method:
 
-```php +torchlight-php
+```php +code
 foreach (PublishedStatus::cases() as $status) {
     echo $status->label();
 }

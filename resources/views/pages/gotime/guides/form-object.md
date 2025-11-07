@@ -54,7 +54,7 @@ php artisan livewire:form WidgetFormObject
 Once created, update the form object class to include the required traits and
 properties, then add the `init` method to initialise the form model.
 
-```php +torchlight-php
+```php +code
 namespace App\Livewire\Forms;
 
 use App\Models\Widget;
@@ -117,7 +117,7 @@ initially set or after the form has been saved, not during the editing process.
 
 This method creates a new model instance, often used when initialising the form for a new record.
 
-```php +torchlight-php
+```php +code
 public function createNewModel(array $data = []): Post
 {
     return Post::make(array_merge([
@@ -143,7 +143,7 @@ tables but displays incorrect values in Livewire forms.
 ## Root Causes
 
 ### 1. Property Type Declaration (Most Common)
-```php +torchlight-php
+```php +code
 // ❌ WRONG - Forces integer conversion, truncating decimals
 #[Validate('integer|min:0')]
 public int $price = 0;  // 149.99 becomes 149
@@ -168,7 +168,7 @@ model attributes.
 ## Solutions
 
 ### Solution 1: Fix Property Type Declaration (Recommended)
-```php +torchlight-php
+```php +code
 #[Validate('numeric|min:0')]
 public float $price = 0.0;
 
@@ -182,7 +182,7 @@ public function init(Product $model): void
 ```
 
 ### Solution 2: Manually Format in `init()` Method
-```php +torchlight-php
+```php +code
 public function init(Product $model): void
 {
     $this->editing = $model;

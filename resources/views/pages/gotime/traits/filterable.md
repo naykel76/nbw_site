@@ -106,7 +106,7 @@ filters are displayed in the UI.
 
 **Structure:**
 
-```php +torchlight-php
+```php +code
 public array $filterOptions = [
     'column_name' => [
         'mode' => 'single|multi-value',    // Optional: default is 'single'
@@ -143,7 +143,7 @@ presentation.
 
 **Example Configuration:**
 
-```php +torchlight-php
+```php +code
 public array $filterOptions = [
     'status' => [
         'label' => 'Status',
@@ -164,7 +164,7 @@ public array $filterOptions = [
 
 * Add the `Filterable` trait in your component class:
 
-```php +torchlight-php
+```php +code
 namespace App\Livewire;
 
 use Livewire\Component;
@@ -179,7 +179,7 @@ class ProductIndex extends Component
 
 * Chain the `applyFilters` method to your data query:
 
-```php +torchlight-php
+```php +code
 protected function prepareData()
 {
     $query = $this->modelClass::query();

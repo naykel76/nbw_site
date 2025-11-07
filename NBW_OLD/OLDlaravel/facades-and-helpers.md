@@ -36,7 +36,7 @@ to access.
 
 #### Step 1: Create the underlying class
 
-```php +torchlight-php
+```php +code
 namespace App\Helpers;
 
 class StringHelpers {
@@ -48,7 +48,7 @@ class StringHelpers {
 
 #### Step 2: Register helper in AppServiceProvider
 
-```php +torchlight-php
+```php +code
 // app/Providers/AppServiceProvider.php
 use App\Helpers\StringHelper;
 
@@ -61,7 +61,7 @@ public function register() {
 
 #### Step 3: Create a facade class
 
-```php +torchlight-php
+```php +code
 // app/Facades/StringHelperFacade.php
 namespace App\Facades;
 
@@ -80,7 +80,7 @@ To register a facade in a Laravel project, you can add an entry to the `aliases`
 `config/app.php` configuration file. This entry should map the facade class to the facade name you
 want to use in your application.
 
-```php +torchlight-php
+```php +code
 'aliases' => [
     'StringHelper' => App\Facades\StringHelperFacade::class,
 ]
@@ -92,7 +92,7 @@ want to use in your application.
 Once you've created and registered a facade in your Laravel project, you can start using the facade
 to access the underlying class.
 
-```php +torchlight-php
+```php +code
 // app/Http/Controllers/ExampleController.php
 use StringHelper;
 
@@ -118,7 +118,7 @@ To create a helper file in a Laravel project, you can create a new PHP file in a
 choice. It is a good practice to create a `Helpers` directory in the `app` directory to store your
 helper files.
 
-```php +torchlight-php
+```php +code
 // app/Helpers/StringHelper.php
 function toPath(string $input) {
     return str_replace('.', '/', ltrim($input, '/'));
@@ -156,7 +156,7 @@ making them a convenient way to encapsulate common functionality.
 
 Here's an example of how you can use the `toPath` helper function in your Laravel application:
 
-```php +torchlight-php
+```php +code
 class ExampleController extends Controller {
     public function index() {
         $path = toPath('app.Helpers.StringHelper');
@@ -167,7 +167,7 @@ class ExampleController extends Controller {
 
 ## Quick Reference
 
-```php +torchlight-php
+```php +code
 // 1. The underlying class:
 class StringHelpers {
     function toPath(string $input) { 
@@ -193,7 +193,7 @@ $this->app->singleton('apples', function($app) {
 What is the difference in the following two ways of binding a class to the service container in
 Laravel? 
 
-```php +torchlight-php
+```php +code
 // Method 1 - Using the service container
 $this->app->singleton('cart', function ($app) {
     return $app->make(CartService::class);

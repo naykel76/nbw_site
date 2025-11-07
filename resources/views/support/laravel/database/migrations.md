@@ -7,20 +7,20 @@
 
 Automatically creates an `UNSIGNED BIGINT` column
 
-```php +torchlight-php
+```php +code
 $table->foreignId('user_id');
 ```
 
 **When using the verbose syntax, you must define the column before defining the foreign key constraint.**
 
-```php +torchlight-php
+```php +code
 $table->unsignedBigInteger('user_id');
 $table->foreign('user_id')->references('id')->on('users');
 ```
 
 ## Self Referencing Foreign Keys
 
-```php +torchlight-php
+```php +code
 $table->foreignId('program_id')->constrained('courses');
 ```
 
@@ -28,7 +28,7 @@ This creates a foreign key on `program_id` referencing `id` on the `courses`
 table. Since the column name doesn’t follow Laravel’s conventions, you must
 define the `program` relationship manually in the model.
 
-```php +torchlight-php
+```php +code
 public function program() {
     return $this->belongsTo(Course::class, 'program_id');
 }
@@ -39,17 +39,17 @@ public function program() {
 <!-- To force referential integrity, you can add the `->constrained()` method to the column definition.
 This will create a foreign key constraint on the column.
 
-```php +torchlight-php
+```php +code
 $table->foreignId('user_id')->constrained();
 ``` -->
 
 ## Cascade Actions
 
-```php +torchlight-php
+```php +code
 $table->foreignId('post_id')->constrained()->cascadeOnDelete();
 ```
 
-```php +torchlight-php
+```php +code
 $table->cascadeOnUpdate();      // Updates should cascade.
 $table->restrictOnUpdate();     // Updates should be restricted.
 $table->cascadeOnDelete();      // Deletes should cascade.

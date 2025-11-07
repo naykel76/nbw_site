@@ -55,7 +55,7 @@ Then, add a modal bound to the `selectedId` property. When `selectedId` is set, 
 When using this method you only need to include the delete modal modal and add the `withRedirect`
 attribute. Thats it!
 
-```php +torchlight-php
+```php +code
 <x-gt-actions-toolbar :$routePrefix :$editing :$selectedId/>
 ```
 

@@ -67,7 +67,7 @@ options will reflect the values of that property.
 
 If using a form object, add a validation rule like this:
 
-```php +torchlight-php
+```php +code
 #[Validate('nullable|array')]
 public array $tags = [];
 ```

@@ -2,7 +2,7 @@
 
 ## Create Factory States
 
-```php +torchlight-php
+```php +code
 public function published(?Carbon $date = null): self
 {
     return $this->state(
@@ -13,7 +13,7 @@ public function published(?Carbon $date = null): self
 
 ### Using Factory States
 
-```php +torchlight-php
+```php +code
 $course = Course::factory()->published()->create();
 ```
 
@@ -21,7 +21,7 @@ $course = Course::factory()->published()->create();
 
 When creating a model with relationships, you can use factories to generate related models.
 
-```php +torchlight-php
+```php +code
 return [
     'started_at' => now(),
     'user_id' => User::factory(), // Use the User factory to generate a user_id
@@ -32,7 +32,7 @@ return [
 
 ### Has Many Relationships
 
-```php +torchlight-php
+```php +code
 $course = Course::factory()
             ->has(Chapter::factory()->count(3))
             ->create();
@@ -40,7 +40,7 @@ $course = Course::factory()
 
 ### Nested Relationships
 
-```php +torchlight-php
+```php +code
 $course = Course::factory()
             ->has(Chapter::factory()
                 ->has(Media::factory()->count(3))

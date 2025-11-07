@@ -10,7 +10,7 @@
 
 ### Selected Form Values
 
-```php +torchlight-php
+```php +code
 @php
     use Illuminate\Support\Arr;
     $only = Arr::only($form->toArray(), ['name', 'code']);

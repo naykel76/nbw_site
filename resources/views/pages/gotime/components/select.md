@@ -61,7 +61,7 @@ When using the `select` component with Livewire form objects, you can bind the
 select element to a property on the form object using the `wire:model`
 attribute. There is no magic here, just standard Livewire binding.
 
-```php +torchlight-php
+```php +code
 public $countries = [ 'AU' => 'Australia', 'CA' => 'Canada', 'NZ' => 'New Zealand' ];
 public $country = 'NZ';
 
@@ -78,7 +78,7 @@ public $country = 'NZ';
 
 ### <question>How do I define Livewire validation rules?</question>
 
-```php +torchlight-php
+```php +code
 #[Validate]
 public string $department = '';
 
