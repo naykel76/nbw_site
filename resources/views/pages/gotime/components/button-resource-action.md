@@ -40,7 +40,7 @@ resources. They're tightly integrated with the Gotime Livewire CRUD system.
 </div>
 ```
 
-```html +torchlight-blade
+```html +code-blade
 @verbatim
 <!-- Create a new resource -->
 <x-gt-resource-action action="create" />
@@ -58,7 +58,7 @@ resources. They're tightly integrated with the Gotime Livewire CRUD system.
 When you provide a `routePrefix`, the component renders as traditional links
 instead of Livewire buttons:
 
-```html +torchlight-blade
+```html +code-blade
 @verbatim
 <!-- Renders as: <a href="/posts/5/edit"> -->
 <x-gt-resource-action action="edit" routePrefix="posts" :id="$id" />
@@ -76,7 +76,7 @@ Use `dispatchTo` for targeted component communication:
   is no need to add the event name when using the resource action buttons.
 
 
-```html +torchlight-blade
+```html +code-blade
 @verbatim
 <x-gt-resource-action action="create" dispatchTo="widget-create-edit" />
 <!-- Generates: wire:click="$dispatchTo('widget-create-edit', 'create-model')" -->
@@ -96,7 +96,7 @@ can override this in three ways:
 ### 1. Custom Wire Click (Full Control)
 Override the default behavior completely by providing your own `wire:click`:
 
-```html +torchlight-blade
+```html +code-blade
 @verbatim
 <x-gt-resource-action wire:click="editEvent({{ $item->id }})" action="edit" />
 @endverbatim
@@ -110,7 +110,7 @@ Override the default behavior completely by providing your own `wire:click`:
 ### 3. Global Event Dispatching   (i think i may remove this)
 Use `dispatch` for global event broadcasting:
 
-```html +torchlight-blade
+```html +code-blade
 @verbatim
 <x-gt-resource-action action="create" dispatch="widget-create" />
 <!-- Generates: wire:click="$dispatch('widget-create')" -->

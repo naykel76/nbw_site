@@ -45,7 +45,7 @@ see [Filter Configuration](#filter-configuration).*
 
 #### Blade Usage
 
-```html +torchlight-blade
+```html +code-blade
 <button wire:click="setFilter('dbColumn', 'filterValue')">Display Text</button>
 ```
 
@@ -71,7 +71,7 @@ Removes a filter or a specific value from a **multi-value column**.
 
 Resets all active filters.
 
-```html +torchlight-blade
+```html +code-blade
 <button wire:click="clearAllFilters" class="btn">Clear All Filters</button>
 ```
 
@@ -192,7 +192,7 @@ protected function prepareData()
   other UI elements. This can be done directly in Blade or called from a method
   in your component:
 
-```html +torchlight-blade
+```html +code-blade
 <button wire:click="setFilter('status', 1)">Active</button>
 <button wire:click="setFilter('status', 0)">Inactive</button>
 ```

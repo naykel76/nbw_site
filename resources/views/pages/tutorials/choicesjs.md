@@ -16,7 +16,7 @@ To make Choices.js work seamlessly with Livewire and AlpineJS, you need to
 ensure that changes in the Choices.js selection are reflected in the Livewire
 property and vice versa. This requires a bit of manual syncing.
 
-```html +torchlight-blade
+```html +code-blade
 @verbatim
 <select 
     x-data="choicesComponent($wire.entangle('{{ $model }}'))" 

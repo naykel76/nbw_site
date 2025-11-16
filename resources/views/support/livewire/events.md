@@ -15,7 +15,7 @@ dynamic interaction between components.
 You can dispatch an event directly from a Blade view using the `wire:click`
 directive.
 
-```html +torchlight-blade
+```html +code-blade
 @verbatim
 <button wire:click="$dispatch('event-name', { id: {{ $model->id }} })"> Dispatch Event </button>
 @endverbatim

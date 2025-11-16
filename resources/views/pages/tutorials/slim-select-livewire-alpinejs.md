@@ -150,7 +150,7 @@ watch the value. Here's how it works:
 
 <!-- 
 
-```html +torchlight-blade
+```html +code-blade
 <div wire:ignore x-data
     x-init="selectInstance = new SlimSelect({
         select: $refs.selectElement,
@@ -220,7 +220,7 @@ watch the value. Here's how it works:
 This version communicates with livewire but it does not set the initial values
 correctly.
 
-```html +torchlight-blade
+```html +code-blade
 <div wire:ignore x-data
     x-init="new SlimSelect({
         select: $refs.select,

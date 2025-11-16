@@ -16,7 +16,7 @@ expected when the values is `null` instead of `""` empty string.
 
 ## Control Group
 
-```html +torchlight-blade
+```html +code-blade
 @verbatim<x-gt-select wire:model="country" :options="$countries" />@endverbatim
 ```
 
@@ -41,7 +41,7 @@ Hold down the `Ctrl` key to select multiple options.
 </div>
 ```
 
-```html +torchlight-blade
+```html +code-blade
 @verbatim<x-gt-select wire:model="country" :options="$countries" multiple />@endverbatim
 ```
 

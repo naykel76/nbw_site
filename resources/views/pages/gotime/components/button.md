@@ -21,7 +21,7 @@ The icon size is automatically adjusted based on the button text size.
 <x-gt-button icon="user" class="icon-only"/>
 ```
 
-```html +torchlight-blade
+```html +code-blade
 @verbatim
 <x-gt-button text="Button" />
 <x-gt-button.primary text="Primary" />

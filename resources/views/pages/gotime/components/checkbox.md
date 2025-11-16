@@ -19,7 +19,7 @@
 <livewire:gotime.components.checkbox variant="control-group" />
 ```
 
-```html +torchlight-blade
+```html +code-blade
 @verbatim<x-gt-checkbox wire:model="remember" label="Remember Me" />@endverbatim
 ```
 
@@ -30,7 +30,7 @@ Close the tag to add custom labels.
 </x-gt-checkbox>
 ```
 
-```html +torchlight-blade
+```html +code-blade
 @verbatim
 <x-gt-checkbox for="agree">
     I have read and agree to <a href="/terms"> Terms & Conditions</a>

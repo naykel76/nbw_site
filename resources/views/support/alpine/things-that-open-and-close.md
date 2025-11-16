@@ -26,7 +26,7 @@ that opens and closes.
 </div>
 ```
 
-```html +torchlight-blade
+```html +code-blade
 <div x-data="{ open: false }">
     <!-- Button to toggle open state -->
     <button class="btn primary" x-on:click="open = ! open">
@@ -57,7 +57,7 @@ The simplest way to achieve a transition using Alpine is by adding
 </div>
 ```
 
-```html +torchlight-blade
+```html +code-blade
 <div x-data="{ open: false }">
     <button class="btn primary" x-on:click="open = ! open">
         <span x-text="open ? 'Click to Close' : 'Click to Open'"></span>
@@ -85,7 +85,7 @@ Add Chevrons
 </div>
 ```
 
-```html +torchlight-blade
+```html +code-blade
 <div class="flex space-x">
     <div x-data="{ open: false }">
         <button class="btn primary" x-on:click="open = ! open">

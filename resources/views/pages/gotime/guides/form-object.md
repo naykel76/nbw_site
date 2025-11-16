@@ -1,10 +1,6 @@
 # Gotime: Form Object Guide
 
-- [Introduction](#introduction)
-- [Prerequisites](#prerequisites)
 - [Quick Checklist](#quick-checklist)
-- [Initial Setup](#initial-setup)
-    - [Form Object Class](#form-object-class)
 - [Troubleshooting: Livewire Forms and Custom Casts](#troubleshooting-livewire-forms-and-custom-casts)
 - [The Problem](#the-problem)
 - [Root Causes](#root-causes)
@@ -15,17 +11,7 @@
     - [Solution 2: Manually Format in `init()` Method](#solution-2-manually-format-in-init-method)
 
 
-## Introduction
 
-> This document references custom VS Code snippets like `gtlc:form-class` and
-> `gtlc:form-object` that generate boilerplate code for common patterns. These
-> are not available by default but can be added as custom snippets to speed up
-> development.
-
-## Prerequisites
-
-Requires the `Gotime` package to be installed and configured. Assumes a basic
-understanding of Livewire and Laravel.
 
 ## Quick Checklist
 
@@ -41,18 +27,6 @@ understanding of Livewire and Laravel.
 9. Implement any additional methods for custom logic
 10. Test the form in both create and edit scenarios -->
 
-## Initial Setup
-
-From the command line:
-
-```bash +torchlight-bash
-php artisan livewire:form WidgetFormObject
-```
-
-### Form Object Class
-
-Once created, update the form object class to include the required traits and
-properties, then add the `init` method to initialise the form model.
 
 ```php +code
 namespace App\Livewire\Forms;
