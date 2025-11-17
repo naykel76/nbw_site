@@ -1,4 +1,4 @@
-<x-gt-app-layout layout="{{ config('naykel.template') }}" pageTitle="Layout Examples" class="container-xxl py-3">
+<x-gt-layouts.app layout="{{ config('naykel.template') }}" pageTitle="Layout Examples" class="container-xxl py-3">
 
     <style>
         .responsive-tester {
@@ -251,4 +251,4 @@
             });
         </script>
     @endpush
-</x-gt-app-layout>
+</x-gt-layouts.app>

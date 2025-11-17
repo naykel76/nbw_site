@@ -1,4 +1,4 @@
-<x-gt-app-layout layout="{{ config('naykel.template') }}" pageTitle="Layout Examples" class="container-xxl py-3">
+<x-gt-layouts.app layout="{{ config('naykel.template') }}" pageTitle="Layout Examples" class="container-xxl py-3">
 
     @push('styles')
         <style>
@@ -278,4 +278,4 @@
         </section>
     </div>
 
-</x-gt-app-layout>
+</x-gt-layouts.app>

@@ -1,4 +1,4 @@
-<x-gt-app-layout layout="{{ config('naykel.template') }}" pageTitle="Layout Playground" class="container-xxl dark py-2">
+<x-gt-layouts.app layout="{{ config('naykel.template') }}" pageTitle="Layout Playground" class="container-xxl dark py-2">
 
     <h1>Layout Playground</h1>
     
@@ -380,4 +380,4 @@
     </script>
     @endpush
 
-</x-gt-app-layout>
+</x-gt-layouts.app>
