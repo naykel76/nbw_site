@@ -11,7 +11,7 @@ class DevComponent extends Component
 {
     use Renderable;
 
-    public string $pageTitle = 'Dev Component';
+    public string $title = 'Dev Component';
     public string $layout = 'admin';
 
     // public function render()
@@ -20,7 +20,7 @@ class DevComponent extends Component
 
     //     return view('livewire.dev-component', $data)
     //         ->layout(AppLayout::class, [
-    //             'pageTitle' => $this->pageTitle ?? 'null',
+    //             'title' => $this->title ?? 'null',
     //             'layout' => $this->layout ?? config('gotime.livewire_layout'),
     //         ]);
     // }

@@ -7,7 +7,7 @@ use Livewire\Component;
 class Toolbar extends Component
 {
     public string $type = 'title';
-    public string $pageTitle = 'User Title Toolbar Example';
+    public string $title = 'User Title Toolbar Example';
     public string $routePrefix = 'users'; // ??
 
     public function render()
@@ -15,7 +15,7 @@ class Toolbar extends Component
         if ($this->type === 'title')
             return <<<'HTML'
                 <div>
-                    <x-gt-title-bar :$pageTitle :$routePrefix />
+                    <x-gt-title-bar :$title :$routePrefix />
                 </div>
             HTML;
     }

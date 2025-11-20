@@ -1,4 +1,4 @@
-<x-gt-layouts.app layout="{{ config('naykel.template') }}" pageTitle="Tutorials" class="container maxw-md py-2">
+<x-gt-layouts.app title="Tutorials" class="container maxw-md py-2">
 
     <h1>Guides & Tutorials</h1>
 

@@ -44,7 +44,7 @@ Finally, in your Alpine.js component, you can listen for this custom event and r
     <!-- Popup Notification -->
     <div
         x-show="open"
-        @click.away="open = false"
+        @click.outside="open = false"
         x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 transform scale-90"
         x-transition:enter-end="opacity-100 transform scale-100"

@@ -12,7 +12,7 @@ You can use the `#[Layout]` attribute to specify a layout for your Livewire
 component and pass data to it.
 
 ```php +code
-#[Layout('components.layouts.app', ['pageTitle' => 'The Page Title'])]
+#[Layout('components.layouts.app', ['title' => 'The Page Title'])]
 public function render()
 {
     return view('livewire.products.page');
@@ -27,7 +27,7 @@ public function render()
 {
     return view('livewire.products.page')
         ->layout('components.layouts.app', [
-            'pageTitle' => $this->pageTitle
+            'title' => $this->title
         ]);
 }
 ```
