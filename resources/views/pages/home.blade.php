@@ -1,4 +1,4 @@
-<x-gt-layouts.app :title="$title ?? null" class="py-5-3-2-2">
+<x-layouts.app :title="$title ?? null" class="py-5-3-2-2">
     <div class="container">
         <div class="container mt">
             <h2>Centering with css</h2>
@@ -27,4 +27,4 @@
         <img style="animation-duration: 4s" src="/svg/blur-blue.svg" class="wh-3 animate-pulse-slow">
         <img src="/svg/blur-yellow.svg" class="wh-2 animate-pulse-slow">
     </section>
-</x-gt-layouts.app>
+</x-layouts.app>

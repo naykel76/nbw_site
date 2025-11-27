@@ -1,4 +1,4 @@
-<x-gt-layouts.app title="Tutorials" class="container maxw-md py-2">
+<x-layouts.app title="Tutorials" class="container maxw-md py-2">
 
     <h1>Guides & Tutorials</h1>
 
@@ -6,4 +6,4 @@
 
     <x-gt-nav filename="nav-tutorials" />
 
-</x-gt-layouts.app>
+</x-layouts.app>
