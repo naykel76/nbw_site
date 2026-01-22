@@ -22,8 +22,6 @@
 
 ## Send Error to Log
 
-
-
 @php
     // Debug: Check if $for is an array before using it
     if (is_array($for)) {

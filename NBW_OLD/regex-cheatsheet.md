@@ -127,9 +127,9 @@ Negated Output: <span class='txt-yellow dark'>0</span><span class='txt-yellow da
 
 ### Search for words or character in a string
 
-`/e/g` - Th<span class="font-mono txt-yellow fw9">e</span> quick brown fox jumps ov<span class="font-mono txt-yellow fw9">e</span>r th<span class="font-mono txt-yellow fw9">e</span> lazy dog. <br>
-`/the/g` - The quick brown fox jumps over <span class="font-mono txt-yellow fw9">the</span> lazy dog. <br>
-`/the/gi` - <span class="font-mono txt-yellow fw9">The</span> quick brown fox jumps over <span class="font-mono txt-yellow fw9">the</span> lazy dog. <br>
+`/e/g` - Th<span class="font-mono txt-yellow font-black">e</span> quick brown fox jumps ov<span class="font-mono txt-yellow font-black">e</span>r th<span class="font-mono txt-yellow font-black">e</span> lazy dog. <br>
+`/the/g` - The quick brown fox jumps over <span class="font-mono txt-yellow font-black">the</span> lazy dog. <br>
+`/the/gi` - <span class="font-mono txt-yellow font-black">The</span> quick brown fox jumps over <span class="font-mono txt-yellow font-black">the</span> lazy dog. <br>
 
 ### Find words that start with ...
 
@@ -139,13 +139,13 @@ Mike <span class='txt-yellow dark'>likes</span> to ride <span class='txt-yellow 
 `\b[bfla]\w*e` - words that start with `b`, `f`, `l`, or `a` and ends with `e`<br>
 Mike <span class='txt-yellow dark'>likes</span> to ride a <span class='txt-yellow dark'>bike</span> <span class='txt-yellow dark'>like</span> he is <span class='txt-yellow dark'>five</span> again, not fifty.
 
-`/\b[bdf]eer\b/g` - <span class="font-mono txt-yellow fw9">beer</span> <span class="font-mono txt-yellow fw9">deer</span> <span class="font-mono txt-yellow fw9">feer</span> <br>
-`/\b[^bdf]eer\b/g` - <span class="font-mono txt-yellow fw9">cheer</span> <span class="font-mono txt-yellow fw9">jeer</span> <span class="font-mono txt-yellow fw9">leer</span> <br>
+`/\b[bdf]eer\b/g` - <span class="font-mono txt-yellow font-black">beer</span> <span class="font-mono txt-yellow font-black">deer</span> <span class="font-mono txt-yellow font-black">feer</span> <br>
+`/\b[^bdf]eer\b/g` - <span class="font-mono txt-yellow font-black">cheer</span> <span class="font-mono txt-yellow font-black">jeer</span> <span class="font-mono txt-yellow font-black">leer</span> <br>
 
 ### Find all words except for. (Negated character set)
 
-`/\b[^t]he\b/g` - The quick brown fox jumps over <span class="font-mono txt-yellow fw9">the</span> lazy dog. <br>
-`/\b[^t]he\b/gi` - <span class="font-mono txt-yellow fw9">The</span> quick brown fox jumps over <span class="font-mono txt-yellow fw9">the</span> lazy dog. <br>
+`/\b[^t]he\b/g` - The quick brown fox jumps over <span class="font-mono txt-yellow font-black">the</span> lazy dog. <br>
+`/\b[^t]he\b/gi` - <span class="font-mono txt-yellow font-black">The</span> quick brown fox jumps over <span class="font-mono txt-yellow font-black">the</span> lazy dog. <br>
 
 
 ### Matching words that contain...

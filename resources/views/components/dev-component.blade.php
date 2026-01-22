@@ -23,6 +23,6 @@
 <button type="button" {{ $attributes->class([$class, 'action-button']) }}>
     <x-gt-icon name="{{ $icon }}" class="wh-1" />
     @if ($text != '' || $slot->isNotEmpty())
-        <span class="ml-025 fw6">{{ $slot->isNotEmpty() ? $slot : ($text != '' ? $text : '') }}</span>
+        <span class="ml-025 font-semibold">{{ $slot->isNotEmpty() ? $slot : ($text != '' ? $text : '') }}</span>
     @endif
 </button>

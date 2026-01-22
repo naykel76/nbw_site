@@ -85,5 +85,13 @@
                 "route_name": "support.laravel.testing-troubleshooting-and-faqs"
             }
         ]
-    }
+    },
+        "Laravel": {
+        "links": [
+            {
+                "name": "Enums",
+                "route_name": "pages.laravel.enums"
+            }
+        ]
+    },
 }
